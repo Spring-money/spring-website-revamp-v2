@@ -42,19 +42,19 @@ export default function MeetTheTeam() {
             <Squad
               image="/meet-the-team/Arnav.svg"
               name="Arnav Limaye"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/arnav-limaye/"
               title="Engineering"
             />
             <Squad
               image="/meet-the-team/Sheetal.svg"
               name="Sheetal Datir"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/sheetal-datir-697b1520a/"
               title="Engineering"
             />
             <Squad
               image="/meet-the-team/Rishabh.svg"
               name="Rishabh Shetty"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/rishabhshetty/"
               title="UI UX & Design"
             />
             <Squad
@@ -66,37 +66,37 @@ export default function MeetTheTeam() {
             <Squad
               image="/meet-the-team/Ravinder.svg"
               name="Ravinder Singh"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/ravindersingh36/"
               title="Engineering"
             />
             <Squad
               image="/meet-the-team/Khushi.svg"
               name="Khushi Pawar"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/khushi-pawar-30042b200/"
               title="Product"
             />
             <Squad
               image="/meet-the-team/Sahil.svg"
               name="Sahil Panda"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/sahil-panda-10360719b/"
               title="Product & Design"
             />
             <Squad
               image="/meet-the-team/Saurabh.svg"
               name="Saurabh Pharate"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/saurabhpharate/"
               title="Engineering"
             />
             <Squad
               image="/meet-the-team/Nirmal.svg"
-              name="Nirmal Kumar"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              name="Nirmal Nehra"
+              linkedinUrl="https://www.linkedin.com/in/nirmal-nehra-637048226/"
               title="Engineering"
             />
             <Squad
               image="/meet-the-team/Akhilesh.svg"
               name="Akhilesh Patidar"
-              linkedinUrl="https://www.linkedin.com/in/omkarjadhav1995/"
+              linkedinUrl="https://www.linkedin.com/in/akhilesh-patidar-8113a2258/"
               title="Engineering"
             />
           </div>
