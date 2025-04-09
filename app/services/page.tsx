@@ -231,7 +231,12 @@ export default function ServicesPage() {
               key={idx}
               className="p-4 flex flex-col items-center border border-[#108E66] rounded-lg bg-[#FCFFFE]"
             >
-              <Link href={partner.partnerPage} className="flex flex-col items-center">
+              <Link
+                href={partner.partnerPage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center"
+              >
                 <Image
                   src={partner.image}
                   width={50}
