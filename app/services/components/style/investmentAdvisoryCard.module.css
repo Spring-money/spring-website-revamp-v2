@@ -1,0 +1,236 @@
+.Card {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    border-radius: 8px;
+    background: rgb(252, 255, 254);
+    align-items: center;
+    padding-top: 1.17vw;
+    padding-bottom: 1.17vw;
+    display: flex;
+    flex-direction: column;
+    /* background-color: gold; */
+
+}
+
+.upperCard {
+    width: 95.0769231%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+    margin-bottom: 3%;
+}
+
+.upperCardLeft {
+    width: 72.6537217%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.upperCardLeftUpper {
+    display: flex;
+    width: 100%;
+}
+
+/* .image {
+    width: 10%;
+} */
+
+.upperCardLeftUpperText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    /* background-color: aqua; */
+}
+
+.upperCardLeftUpperText1 {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.upperCardLeftUpperText2 {
+    overflow: hidden;
+    color: rgba(39, 43, 42, 0.75);
+    text-overflow: ellipsis;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.upperCardLeftLower {
+    color: rgba(39, 43, 42, 0.9);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.640625vw;
+    letter-spacing: 0%;
+    text-align: left;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upperCardRight {
+    width: 24.7572816%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1%;
+    /* background-color: aqua; */
+    border-radius: 8px;
+    align-items: center;
+    background: rgba(16, 142, 102, 0.05);
+}
+
+.upperCardRightCopy {
+    width: 24.7572816%;
+    display: none;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1%;
+    /* background-color: aqua; */
+    border-radius: 8px;
+    align-items: center;
+    background: rgba(16, 142, 102, 0.05);
+}
+
+.upperCardRightUpper {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    width: 89.5424837%;
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.08);
+    background: rgb(16, 142, 102);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.viewPlan {
+    display: flex;
+    justify-content: center;
+}
+
+.upperCardRightUpper span {
+    width: 70.8029197%;
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.640625vw;
+    letter-spacing: 0%;
+}
+
+.upperCardRightLower {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.upperCardRightLowerSpan1 span {
+    color: #272B2A;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.upperCardRightLowerSpan2 {
+    margin-left: 25%;
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.horizontalLine {
+    width: 95.0769231%;
+    background-color: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.lowerCard {
+    width: 95.0769231%;
+    /* background-color: brown; */
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 3%;
+}
+
+.lowerCard1 {
+    margin-left: 4%;
+}
+
+.lowerCard2 {
+    margin-left: 5%;
+}
+
+.lowerCard1 li {
+    color: rgba(39, 43, 42, 0.90);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* background-color: brown; */
+}
+
+@media screen and (max-width:550px) {
+    .upperCard {
+        width: 95.0769231%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3%;
+    }
+
+    .upperCardLeft {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+
+    .upperCardLeftLower {
+        display: none;
+    }
+
+    .lowerCard {
+        width: 95.0769231%;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+
+    .upperCardRight {
+        display: none;
+    }
+
+    .upperCardRightCopy {
+        width: 100%;
+        display: flex;
+    }
+
+    .horizontalLine {
+        display: none;
+    }
+
+    .lowerCard2 {
+        margin-left: 4%;
+    }
+}

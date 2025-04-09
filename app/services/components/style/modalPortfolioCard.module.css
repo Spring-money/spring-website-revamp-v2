@@ -1,0 +1,275 @@
+.Card {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    border-radius: 8px;
+    background: rgb(252, 255, 254);
+    align-items: center;
+    padding-top: 1.17vw;
+    padding-bottom: 1.17vw;
+    display: flex;
+    flex-direction: column;
+    /* background-color: gold; */
+
+}
+
+.upperCard {
+    width: 95.0769231%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+    margin-bottom: 3%;
+}
+
+.upperCardLeft {
+    width: 72.6537217%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.upperCardLeftUpper {
+    display: flex;
+    width: 100%;
+}
+
+.image Image {
+    width: 3.75vw;
+    height: 8.205128205128204vh;
+}
+
+.upperCardLeftUpperText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+}
+
+.upperCardLeftUpperText1 {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.upperCardLeftUpperText2 {
+    overflow: hidden;
+    color: rgba(39, 43, 42, 0.75);
+    text-overflow: ellipsis;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.upperCardLeftLower {
+    color: rgba(39, 43, 42, 0.9);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.640625vw;
+    letter-spacing: 0%;
+    text-align: left;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upperCardRight {
+    width: 24.7572816%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1%;
+    border-radius: 8px;
+    align-items: center;
+    background: rgba(16, 142, 102, 0.05);
+}
+
+.upperCardRightCopy{
+    width: 24.7572816%;
+    display: none;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: 1%;
+    border-radius: 8px;
+    align-items: center;
+    background: rgba(16, 142, 102, 0.05);
+}
+
+.upperCardRightUpper {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    width: 89.5424837%;
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.08);
+    background: rgb(16, 142, 102);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.viewPlan {
+    display: flex;
+    justify-content: center;
+}
+
+.upperCardRightUpper span {
+    width: 70.8029197%;
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.640625vw;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.upperCardRightLower {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.upperCardRightLowerSpan1 span {
+    color: #272B2A;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.upperCardRightLowerSpan2 {
+    margin-left: 25%;
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.horizontalLine {
+    width: 95.0769231%;
+    background-color: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.verticleLine {
+    margin-top: 1%;
+    background-color: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 3.4375vw;
+    width: 0.5px;
+}
+
+.lowerCard {
+    width: 95.0769231%;
+    display: flex;
+    margin-top: 3%;
+}
+
+.lowerCard1 {
+    width: 13.5922%;
+    margin-top: 1%;
+}
+
+.lowerCard2 {
+    width: 22.977%;
+    margin-left: 3%;
+}
+
+.lowerCardText1 span {
+    color: rgba(39, 43, 42, 0.54);
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.lowerCardText2 span {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.lowerCardText2ColorGreen {
+    color: rgb(56, 182, 142);
+}
+
+.lowerCardText2ColorRed {
+    color: rgb(221, 93, 93);
+}
+
+.lowerCardText2ColorYellow {
+    color: rgb(255, 184, 0);
+}
+
+.lowerCardText3 span {
+    color: rgb(39, 43, 42);
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media screen and (max-width:550px) {
+    .upperCard {
+        width: 95.0769231%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3%;
+    }
+    .upperCardLeft {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+
+    .upperCardLeftLower {
+        display: none;
+    }
+
+    .upperCardRight{
+        display: none;
+    }
+    .upperCardLeftLower{
+        display: none;
+    }
+    .upperCardRightCopy {
+        width: 100%;
+        display: flex;
+    }
+    .horizontalLine{
+        display: none;
+    }
+    .verticleLine{
+        display: none;
+    }
+    .lowerCard{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .lowerCard2 {
+        margin-left: 0;
+    }
+    .lowerCardText1 span{
+        white-space: nowrap;
+    }
+    .lowerCardText2 span{
+        white-space: nowrap;
+    }
+    .lowerCardText3{
+        white-space: nowrap;
+    }
+}

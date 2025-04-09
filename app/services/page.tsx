@@ -65,6 +65,7 @@ const ourPartners = [
       "NS Wealth Solutions empowers clients with unbiased advice and cutting-edge technology to achieve their financial goals.",
     image: "/services/ns-wealth.svg",
     btnUrl: "https://nswealth.in/",
+    partnerPage: "/services/ns-wealth-solution",
   },
   {
     title: "Artha FinPlan",
@@ -72,6 +73,7 @@ const ourPartners = [
       "ARTHA FinPlan offers personalized financial planning and investment advice, guiding clients towards their goals with a holistic approach.",
     image: "/services/artha.svg",
     btnUrl: "https://arthafinplan.com/",
+    partnerPage: "/services/artha-finplan",
   },
   {
     title: "FinSharpe Investment Advisors",
@@ -79,6 +81,7 @@ const ourPartners = [
       "FinSharpe Investment Advisors provides data-driven, unbiased advice, helping investors make rational decisions with a transparent approach.",
     image: "/services/finsharp.svg",
     btnUrl: "https://finsharpe.com/",
+    partnerPage: "/services/finsharpe",
   },
 ];
 
@@ -228,19 +231,21 @@ export default function ServicesPage() {
               key={idx}
               className="p-4 flex flex-col items-center border border-[#108E66] rounded-lg bg-[#FCFFFE]"
             >
-              <Image
-                src={partner.image}
-                width={50}
-                height={50}
-                alt="partner image"
-                className="w-[290px] h-[100px] mb-4"
-              />
-              <p className="text-[#272B2A] text-xl font-medium mb-1">
-                {partner.title}
-              </p>
-              <p className="text-[#272b2abf] text-base font-normal mb-2">
-                {partner.description}
-              </p>
+              <Link href={partner.partnerPage} className="flex flex-col items-center">
+                <Image
+                  src={partner.image}
+                  width={50}
+                  height={50}
+                  alt="partner image"
+                  className="w-[290px] h-[100px] mb-4"
+                />
+                <p className="text-[#272B2A] text-xl font-medium mb-1">
+                  {partner.title}
+                </p>
+                <p className="text-[#272b2abf] text-base font-normal mb-2">
+                  {partner.description}
+                </p>
+              </Link>
               <Link
                 href={partner.btnUrl}
                 target="_blank"

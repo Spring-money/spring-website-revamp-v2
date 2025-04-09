@@ -1,0 +1,140 @@
+.container {
+    width: 100%;
+    /* border-radius: 0.625vw;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    background: #FCFFFE; */
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
+}
+
+.topCard {
+    width: 100%;
+    border-radius: 8px;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    background: #FCFFFE;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.topCardText1 {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.topCardText2 {
+    margin-top: 3%;
+    color: rgba(39, 43, 42, 0.90);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.topCardButton {
+    width: 70.285%;
+    margin-top: 3%;
+    border-radius: 0.3125vw;
+    border: 1px solid #108E66;
+    display: flex;
+    padding: 0.625vw 1.25vw;
+    justify-content: center;
+
+    color: #108E66;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.lowerCard {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    background: #FCFFFE;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.horizontalLine {
+    background-color: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.lowerCardUpper {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.lowerCardBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.lowerCardBoxText {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+}
+
+.lowerCardBoxText1 {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.lowerCardBoxText2 {
+    color: #898C8C;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.lowerCardBoxImage{
+    width: 30%;
+}
+
+.lowerCardBoxButton {
+    color: #108E66;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 5%;
+}
+
+@media screen and (max-width:550px) {
+    .topCardButton{
+        width: 40%;
+    }
+    .lowerCardBoxText{
+        width: 60%;
+    }
+}

@@ -1,0 +1,132 @@
+.LeftPannel {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    border-radius: 8px;
+    background: rgb(252, 255, 254);
+}
+
+.LeftPannelTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4%;
+    gap: 16px;
+}
+
+.LeftPannelTopText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.text1 {
+    color: rgb(39, 43, 42);
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.text2 {
+    color: rgba(39, 43, 42, 0.75);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.LeftPannelBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.selector {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    /* background: #FCFFFE; */
+    cursor: pointer;
+}
+
+.selected {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-left: 4px solid #108E66;
+    /* background: #FCFFFE; */
+    cursor: pointer;
+}
+
+.selected>div span {
+    color: #108E66;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.horizontalLine {
+    width: 100%;
+    background-color: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.selectorText {
+    color: rgb(39, 43, 42);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.640625vw;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+@media screen and (max-width:550px) {
+    .horizontalLine {
+        display: none;
+    }
+
+    .selector {
+        height: 37px;
+        display: flex;
+        padding: 8px 16px;
+        align-items: flex-start;
+        gap: 8px;
+        border-radius: 4px;
+        background: rgba(39, 43, 42, 0.05);
+        white-space: nowrap;
+    }
+
+    .selectorText{
+        align-self: center;
+    }
+
+    .selected {
+        height: 37px;
+        display: flex;
+        padding: 8px 16px;
+        align-items: flex-start;
+        gap: 8px;
+        border-radius: 4px;
+        background: rgba(16, 142, 102, 0.05);
+        border-left: 0 solid #108E66;
+        white-space: nowrap;
+    }
+
+    .LeftPannelBottom {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 0;
+        gap: 12px;
+        margin-bottom: 2%;
+    }
+}

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.button {
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 32px;
+    background: rgba(39, 43, 42, 0.05);
+    color: rgba(39, 43, 42, 0.90);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.selected {
+    color: #108E66;
+}
+
+.button:not(:first-child) {
+    margin-left: 0.8%;
+}
