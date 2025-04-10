@@ -2,11 +2,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import homeFrame from "../../public/home-frame.svg";
-import { desc } from "framer-motion/client";
 import CarouselCards from "../components/CarouselCards";
 import FAQAccordion from "../components/FAQAccordion";
-import { BasePrivateKeyEncodingOptions } from "crypto";
 
 // Data for core financial services
 const financialServices = [
@@ -15,12 +12,14 @@ const financialServices = [
     title: "Build Wealth & Secure Your Future",
     description: "Personalized strategies for growth and retirement.",
     image: "/services/pana.svg",
+    alt: "Illustration of people building wealth and planning for the future",
   },
   {
     id: 2,
     title: "Maximize Returns, Minimize Taxes",
     description: "Expert investment strategies across diverse assets.",
     image: "/services/bro.svg",
+    alt: "Illustration of investment growth and tax optimization",
   },
   {
     id: 3,
@@ -28,12 +27,14 @@ const financialServices = [
     description:
       "Tailored insurance planning for you, your family and your assets.",
     image: "/services/amico.svg",
+    alt: "Illustration of family protection and insurance",
   },
   {
     id: 4,
     title: "Secure Your Legacy",
     description: "Plan your estate and ensure a smooth wealth transfer.",
     image: "/services/legacy.svg",
+    alt: "Illustration of estate planning and wealth transfer",
   },
 ];
 
@@ -53,7 +54,7 @@ const carouselComponents = [
   {
     title: "Introducing POWER PLAY",
     description:
-      " Empowering Young Professionals Build a solid financial future with expert guidance from the start.",
+      " Empowering Young Professionals Build a solid financial future with expert guidance from the start.",
     btnUrl: "/programs/power-play",
   },
 ];
@@ -64,24 +65,27 @@ const ourPartners = [
     description:
       "NS Wealth Solutions empowers clients with unbiased advice and cutting-edge technology to achieve their financial goals.",
     image: "/services/ns-wealth.svg",
-    btnUrl: "https://nswealth.in/",
+    btnUrl: "/services/ns-wealth-solution",
     partnerPage: "/services/ns-wealth-solution",
+    alt: "NS Wealth Financial Planners logo",
   },
   {
     title: "Artha FinPlan",
     description:
       "ARTHA FinPlan offers personalized financial planning and investment advice, guiding clients towards their goals with a holistic approach.",
     image: "/services/artha.svg",
-    btnUrl: "https://arthafinplan.com/",
+    btnUrl: "/services/artha-finplan",
     partnerPage: "/services/artha-finplan",
+    alt: "Artha FinPlan logo",
   },
   {
     title: "FinSharpe Investment Advisors",
     description:
       "FinSharpe Investment Advisors provides data-driven, unbiased advice, helping investors make rational decisions with a transparent approach.",
     image: "/services/finsharp.svg",
-    btnUrl: "https://finsharpe.com/",
+    btnUrl: "/services/finsharpe",
     partnerPage: "/services/finsharpe",
+    alt: "FinSharpe Investment Advisors logo",
   },
 ];
 
@@ -126,12 +130,12 @@ export default function ServicesPage() {
       setActiveIndex(nextIndex);
     }, 3000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer as NodeJS.Timeout);
   }, [activeIndex, carouselComponents.length]);
   return (
     <div className="">
       {/* HERO SECTION */}
-      <section className="bg-[#108e66] py-20 px-4 text-center border-b border-[#272B2A]">
+      <section className="bg-[#108e66] py-20 px-4 text-center border-b border-[#272A2B]">
         <h1 className="text-4xl md:text-5xl font-bold text-[#FCFFFE] mb-4">
           Personalized Financial Planning, Simplified
         </h1>
@@ -143,7 +147,7 @@ export default function ServicesPage() {
           href="https://wa.me/+918668484607"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-4 bg-[#fcfffe] text-[#108e66] px-8 py-3 rounded-md font-semibold border border-[#108e66] hover:bg-[#fcfffe] transition-colors"
+          className="inline-block mt-4 bg-[#FCFFFE] text-[#108e66] px-8 py-3 rounded-md font-semibold border border-[#108e66] hover:bg-[#FCFFFE] transition-colors"
         >
           Get Started Now
         </Link>
@@ -151,7 +155,7 @@ export default function ServicesPage() {
 
       {/* CORE FINANCIAL SERVICES SECTION */}
       <section className="mx-auto py-16 flex flex-col items-center w-full">
-        <h2 className="text-[40px] font-semibold text-center text-[#272B2A] mb-2">
+        <h2 className="text-[40px] font-semibold text-center text-[#272A2B] mb-2">
           Our Expertise, Your Financial Success
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:max-xl:px-[60px] max-w-screen-xl">
@@ -164,13 +168,13 @@ export default function ServicesPage() {
                 width={240}
                 height={158}
                 src={service.image}
-                alt="Financial Planning"
+                alt={service.alt}
                 className="w-[240px] h-[158px]"
               />
-              <h3 className="text-xl font-medium text-[#272B2A] mt-4 mb-2 text-center">
+              <h3 className="text-xl font-medium text-[#272A2B] mt-4 mb-2 text-center">
                 {service.title}
               </h3>
-              <p className="text-[#272B2A] text-sm font-normal text-center">
+              <p className="text-[#272A2B] text-sm font-normal text-center">
                 {service.description}
               </p>
             </div>
@@ -188,15 +192,15 @@ export default function ServicesPage() {
               src={"/services/nikhil-51.svg"}
               width={1032}
               height={400}
-              alt="home frame"
+              alt="Illustration of the financial planning process"
             />
           </div>
           <div className="flex flex-col justify-between w-full md:w-[55%]">
             <div className="flex flex-col gap-2">
-              <p className="text-[#272B2A] text-[32px] font-bold">
+              <p className="text-[#272A2B] text-[32px] font-bold">
                 Financial Planning, Simplified: A Step-by-Step Guide
               </p>
-              <p className="text-[#272b2abf] text-2xl font-normal">
+              <p className="text-[#272a2bbf] text-2xl font-normal">
                 Learn how Spring Money simplifies financial planning. This video
                 guides you through the process, from goal setting to expert
                 advisor support. Gain clarity and achieve your financial
@@ -204,13 +208,13 @@ export default function ServicesPage() {
               </p>
             </div>
             <Link
-              href={"https://youtu.be/0LTAmuIidsI?si=8TZEOLyMHBGHXveP"}
+              href={"https://youtu.be/0LTAmuIidsI?si=IsnPYX6k3iHd5rTn"} // Remember to replace with the actual link
               target="_blank"
               rel="noopener noreferrer"
               className="w-fit px-6 py-3 border border-[#108E66] rounded"
             >
               <span className="text-[#108E66] text-base font-semibold ">
-                Start Your Journey Now !
+                Watch full video on Youtube
               </span>
             </Link>
           </div>
@@ -218,10 +222,10 @@ export default function ServicesPage() {
       </div>
 
       <div className="mx-auto flex flex-col items-center bg-linearGradient5 py-8 md:py-16">
-        <h2 className="text-[40px] font-semibold text-center text-[#272B2A] mb-2">
+        <h2 className="text-[40px] font-semibold text-center text-[#272A2B] mb-2">
           Our Partners
         </h2>
-        <p className="text-[#272B2A] text-xl font-normal text-center mb-4">
+        <p className="text-[#272A2B] text-xl font-normal text-center mb-4">
           We specialize in providing customized financial solutions for a
           diverse range of professionals.
         </p>
@@ -233,31 +237,31 @@ export default function ServicesPage() {
             >
               <Link
                 href={partner.partnerPage}
-                target="_blank"
+                // Removed target="_blank" to prevent opening in a new tab
                 rel="noopener noreferrer"
                 className="flex flex-col items-center"
               >
                 <Image
                   src={partner.image}
-                  width={50}
-                  height={50}
-                  alt="partner image"
+                  width={290}
+                  height={100}
+                  alt={partner.alt}
                   className="w-[290px] h-[100px] mb-4"
                 />
-                <p className="text-[#272B2A] text-xl font-medium mb-1">
+                <p className="text-[#272A2B] text-xl font-medium mb-1">
                   {partner.title}
                 </p>
-                <p className="text-[#272b2abf] text-base font-normal mb-2">
+                <p className="text-[#272a2bbf] text-base font-normal mb-2">
                   {partner.description}
                 </p>
               </Link>
               <Link
                 href={partner.btnUrl}
-                target="_blank"
+                // Removed target="_blank" to prevent opening in a new tab
                 rel="noopener noreferrer"
-                className="bg-[#108E66] rounded w-full py-3 flex justify-center text-[#FFF] text-sm font-semibold mt-auto"
+                className="bg-[#108E66] rounded w-full py-3 flex justify-center text-[#FCFFFE] text-sm font-semibold mt-auto"
               >
-                Visit Website
+                View Profile
               </Link>
             </div>
           ))}
@@ -287,6 +291,7 @@ export default function ServicesPage() {
                 activeIndex === index ? "bg-[#108E66]" : "bg-[#108e668a] "
               }`}
               onClick={() => setActiveIndex(index)}
+              aria-label={`Go to slide ${index + 1}`}
             ></button>
           ))}
         </div>

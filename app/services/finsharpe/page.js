@@ -30,7 +30,7 @@ export default function FinSharpeAdvisorsOverview() {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className={style.topHead}>
               <div>
-                <Image src={FineSharp} />
+                <Image src={FineSharp} alt="FinSharpe Investment Advisors logo" />
               </div>
               <div>
                 <div className={style.text1}>
@@ -47,6 +47,7 @@ export default function FinSharpeAdvisorsOverview() {
             <div className={style.linkdinPic}>
               <Image
                 src={linkdinPic}
+                alt="LinkedIn icon"
                 width={30}
                 style={{ marginTop: "1.25vw" }}
               />
@@ -61,7 +62,7 @@ export default function FinSharpeAdvisorsOverview() {
               long term investment strategies using quantitative finance.
             </span>
           </div>
-          <hr className={style.horizontalLine}></hr>
+          <hr className={style.horizontalLine} />
           <div className={style.middleTextConatiner}>
             <div className={style.middleTextConatinerText1}>
               <span>Why FinSharpe?</span>
@@ -85,7 +86,7 @@ export default function FinSharpeAdvisorsOverview() {
               </span>
             </div>
           </div>
-          <hr className={style.horizontalLine}></hr>
+          <hr className={style.horizontalLine} />
           <div className={style.middleTextConatiner}>
             <div className={style.middleTextConatinerText1}>
               <span>The Process</span>
@@ -126,38 +127,42 @@ export default function FinSharpeAdvisorsOverview() {
               </li>
             </div>
           </div>
-          <hr className={style.horizontalLine}></hr>
+          <hr className={style.horizontalLine} />
           <div className={style.middleTextConatiner}>
             <div className={style.middleTextConatinerText1}>
               <span>The Founders</span>
             </div>
             <div style={{ display: "flex", gap: "4%" }}>
               <div className={style.founders}>
-                <Image src={RohanPic} />
+                <Image src={RohanPic} alt="Founder Rohan Borawake portrait" />
                 <span className={style.middleTextConatinerText2}>
                   Rohan Borawake
                 </span>
-                <Image src={linkdinPic} />
+                <Image src={linkdinPic} alt="LinkedIn icon" />
               </div>
               <div className={style.founders}>
-                <Image src={SabirPic} />
+                <Image src={SabirPic} alt="Founder Sabir Jana (CFA) portrait" />
                 <span className={style.middleTextConatinerText2}>
                   Sabir Jana (CFA)
                 </span>
-                <Image src={linkdinPic} />
+                <Image src={linkdinPic} alt="LinkedIn icon" />
               </div>
             </div>
           </div>
-          <hr className={style.horizontalLine}></hr>
+          <hr className={style.horizontalLine} />
           <div className={style.middleTextConatiner}>
             <div className={style.middleTextConatinerText1}>
               <span>Accreditations</span>
             </div>
             <div>
-              <Image src={Accreditations} style={{ width: "100%" }} />
+              <Image
+                src={Accreditations}
+                alt="Accreditations logos"
+                style={{ width: "100%" }}
+              />
             </div>
           </div>
-          <hr className={style.horizontalLine}></hr>
+          <hr className={style.horizontalLine} />
           <div className={style.middleTextConatiner}>
             <div className={style.middleTextConatinerText1}>
               <span>Compliance & Grievances</span>
@@ -168,11 +173,11 @@ export default function FinSharpeAdvisorsOverview() {
             >
               <span>Principal Officer: Mr. Rohan Borawake</span>
               <div style={{ display: "flex", alignItems: "center", gap: "1%" }}>
-                <Image src={phone} />
+                <Image src={phone} alt="Phone icon" />
                 <span>+91 9923411966</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "1%" }}>
-                <Image src={mail} />
+                <Image src={mail} alt="Email icon" />
                 <span>info@finsharpe.com</span>
               </div>
             </div>
@@ -182,11 +187,11 @@ export default function FinSharpeAdvisorsOverview() {
             >
               <span>Compliance & Grievance Officer: Mr. Sabir Bakir Jana</span>
               <div style={{ display: "flex", alignItems: "center", gap: "1%" }}>
-                <Image src={phone} />
+                <Image src={phone} alt="Phone icon" />
                 <span>+91 7028004994</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "1%" }}>
-                <Image src={mail} />
+                <Image src={mail} alt="Email icon" />
                 <span>info@finsharpe.com</span>
               </div>
               <span>For grievances - https://smartodr.in/</span>
