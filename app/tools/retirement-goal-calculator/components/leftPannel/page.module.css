@@ -1,0 +1,81 @@
+.conatiner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    background: #FCFFFE;
+    font-family: Poppins;
+    font-style: normal;
+    line-height: normal;
+    position: sticky;
+    top: 20px;
+}
+
+.arrowTools {
+    display: flex;
+    color: #108E66;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    gap: 6px;
+    padding: 0 16px;
+}
+
+.headImage {
+    padding: 0 16px;
+    padding-top: 16px;
+}
+
+.heading {
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 8px 16px;
+}
+
+.discription {
+    color: rgba(39, 43, 42, 0.75);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 16px;
+    padding-bottom: 16px;
+}
+
+.horizontalLine {
+    background: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.categories {
+    padding: 16px;
+    color: #272B2A;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.selectedCategory {
+    padding: 16px;
+    border-left: 4px solid #108E66;
+    background: #FCFFFE;
+    color: #108E66;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
