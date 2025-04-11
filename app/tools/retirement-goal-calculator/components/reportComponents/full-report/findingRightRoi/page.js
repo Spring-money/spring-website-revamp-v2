@@ -346,7 +346,7 @@ export default function FindingRightRoi(props) {
                 href="https://wa.me/918459070919?text=Hey%2C%20I%20would%20like%20to%20book%20a%20call%20with%20financial%20expert%20at%20Spring%20Money.%20"
                 target="_blank"
               >
-                <div className=" text-white-A700 text-sm font-semibold font-['Poppins']">
+                <div className=" text-white text-sm font-semibold font-['Poppins']">
                   Book a free call
                 </div>
               </a>

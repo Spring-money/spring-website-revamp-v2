@@ -7,7 +7,7 @@ const shapes = {
 const variants = {
   fill: {
     white_A700: "bg-white-A700 text-gray-900",
-    teal_600: "bg-teal-600 text-white-A700_01",
+    teal_600: "bg-teal-600 text-white_01",
   },
 };
 const sizes = {

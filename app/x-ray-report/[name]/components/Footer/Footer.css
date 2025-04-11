@@ -1,0 +1,153 @@
+.Footer {
+  position: relative;
+  padding-bottom: 0;
+  margin: 0 16px 0;
+  overflow: hidden;
+}
+
+.Footer-content {
+  border-radius: 8px;
+  border: 0.5px solid rgba(14, 82, 53, 0.5);
+  background: #fff;
+  font-family: Poppins;
+  font-style: normal;
+  line-height: normal;
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 4px;
+  background: #f3f9f7;
+  margin: 16px;
+  padding: 16px;
+}
+
+.connect-heading {
+  color: #0e5235;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.connect-content {
+  color: #272b2a;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.connect-btn {
+  background: #108e66;
+  font-family: Poppins;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+}
+
+.connect-btn p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.second-para {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0px 16px;
+  color: #272b2a;
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.social-media {
+  margin: 16px;
+}
+
+.social-media p {
+  color: #272b2a;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 10px;
+}
+.social-media-links a img {
+  height: 24px;
+  width: 24px;
+}
+
+.Footer-honeyComb-img {
+  position: absolute;
+  left: -55px;
+  bottom: 70px;
+  z-index: -1;
+}
+
+.chatBtn {
+  display: block;
+  width: 193.919px;
+  height: 41px;
+  border-radius: 4px;
+}
+
+.chatBtn svg {
+  margin: 0;
+  padding: 0;
+}
+.disclaimer {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  height: min-content;
+  margin-bottom: 28px;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  font-family: Poppins;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  z-index: 100;
+}
+
+.disclaimer-heading {
+  color: #272b2a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.disclaimer-content {
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 15px;
+}
+
+@media screen and (max-width: 650px) {
+  .Footer-content {
+    gap: 0px;
+  }
+  .connect {
+    gap: 10px;
+  }
+  .social-media {
+    margin: 10px;
+  }
+  .disclaimer {
+    bottom: 20px;
+  }
+}

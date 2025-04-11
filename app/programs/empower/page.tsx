@@ -202,7 +202,7 @@ const EmpowerPage = () => {
           }}
         >
           <div className="flex flex-col justify-center items-center gap-2 self-stretch">
-            <div className="self-stretch text-white-A700 text-[4rem] text-white sm:text-[2rem] font-semibold leading-none tracking-[0.046rem] sm:tracking-[0.023rem]">
+            <div className="self-stretch text-white text-[4rem] text-white sm:text-[2rem] font-semibold leading-none tracking-[0.046rem] sm:tracking-[0.023rem]">
               Empower Your Team, Enhance Productivity
             </div>
             <div className="self-stretch text-[rgba(252,255,254,0.80)] font-poppins text-xl sm:text-[1rem] font-normal">

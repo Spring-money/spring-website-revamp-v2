@@ -1,0 +1,19 @@
+.ErrorTextContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    color: red;
+}
+
+.NumberToWordsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    color: rgba(177, 174, 174, 0.853);
+}

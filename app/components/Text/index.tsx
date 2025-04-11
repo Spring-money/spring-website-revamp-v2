@@ -15,11 +15,20 @@ interface TextProps {
   size?: keyof typeof sizes;
 }
 
-const Text = ({ children, className = "", as, size = "s", ...restProps }: TextProps) => {
+const Text = ({
+  children,
+  className = "",
+  as,
+  size = "s",
+  ...restProps
+}: TextProps) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-white-A700 font-poppins ${className} ${sizes[size]}`} {...restProps}>
+    <Component
+      className={`text-white font-poppins ${className} ${sizes[size]}`}
+      {...restProps}
+    >
       {children}
     </Component>
   );

@@ -1,0 +1,28 @@
+.Template{
+    position: relative;
+    padding-bottom: 0;
+    margin: 0 0 0;
+    /* width: var(--WIDTH);
+    max-width: var(--MAX-WIDTH); */
+    /* aspect-ratio: var(--ASPECT-RATIO); */
+    /* height: var(--HEIGHT); */
+    overflow-y: hidden;
+    background-color: #fff;
+    /* height: calc(100vh - 40px); */
+    /* margin-bottom: 40px; */
+    /* page-break-after: always; */
+    /* max-height: calc(100vh - 40px); */
+}
+
+.Template-line{
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    margin: 32px 0px;
+}
+
+.dist{
+    margin-bottom: 20px;
+}
+
+.dist:nth-last-child(){
+    margin-bottom: 0px;
+}

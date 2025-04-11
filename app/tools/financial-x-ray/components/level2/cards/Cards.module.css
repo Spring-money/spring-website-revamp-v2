@@ -1,0 +1,219 @@
+.Container{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: space-between;
+    padding: 12px 12px;
+    border: 1px solid #D6D6D6;
+    gap: 12px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: black;
+    transition: all 0.5s ease-in-out;
+}
+
+.ActiveContainer{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: space-between;
+    padding: 12px 12px;
+    border: 1.5px solid rgb(82, 94, 204);
+    gap: 12px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: black;
+    transition: all 0.4s ease-in-out;
+}
+
+.FinancialXrayCardContainer{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: space-between;
+    padding: 12px 12px;
+    /* border: 1px solid #D6D6D6; */
+    gap: 12px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.active{
+    border: 1.5px solid #525ECC;
+}
+
+.Top{
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ImgContainer{
+    height: 40px;
+    width: 40px;
+}
+
+.CategoryImg{
+    height: 100%;
+    width: 100%;
+}
+
+.MainText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 1px;
+    text-align: left;
+
+}
+
+.RightArrow{
+    height: 18px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #EDF0EF;
+}
+
+.Middle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Score{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 3px;
+}
+
+.Score span{
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+}
+
+.ProgressBarText{
+    color:#0ED647;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.ProgressBarContainer{
+    width: 100%;
+}
+
+/* Financial Xray Card */
+
+.Heading{
+    display: flex;
+    align-items: center;
+}
+
+.BackBtn{
+    height: 32px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.HeadingText{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.ContentText{
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+/* View Report Card */
+
+.HeadingContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TwotoneImg{
+    height: 75px;
+    aspect-ratio: 1;
+}
+
+.ReportScoreText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.TotalScore{
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    color: #E6EBEA;
+}
+
+.LockImage{
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+
+.Text{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.BtnContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ViewBtn{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    background-color: #ffffff;
+    color:#B4B4B4;
+    gap: 12px;
+    width: fit-content;
+    border: 0;
+    height: min-content;
+    margin: 0;
+}

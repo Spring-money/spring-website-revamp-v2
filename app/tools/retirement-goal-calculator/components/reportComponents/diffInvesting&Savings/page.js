@@ -227,7 +227,7 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
               Book a free 1 hour consultation call with our investment advisor.
             </div>
             <div className="px-6 py-2.5 bg-emerald-600 rounded justify-start items-start gap-2 flex">
-              <div className=" text-white-A700 text-sm font-semibold font-['Poppins']">
+              <div className=" text-white text-sm font-semibold font-['Poppins']">
                 Plan my retirement
               </div>
             </div>

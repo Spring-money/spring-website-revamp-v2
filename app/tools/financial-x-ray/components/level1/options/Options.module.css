@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+.buttonType1{
+    display: flex;
+    padding: 12px 34px;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    height: 100%;
+    width:  fit-content;
+    min-width: 100px;
+    color:black;
+    background: #fff;
+    border-radius: 45px;
+    border: 1px solid grey;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}

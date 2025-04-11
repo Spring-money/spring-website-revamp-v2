@@ -17,14 +17,14 @@ export default function Footer1({ ...props }) {
       <div className="flex flex-row justify-center w-full pb-[30px] mx-auto max-w-[1320px]">
         <div className="flex flex-col items-center justify-center w-full">
           <div className="flex flex-row justify-center items-center w-full pt-8 pb-[31px] gap-[498px] border-white-A700_3f border-b border-solid">
-            <Text size="lg" as="p" className="w-[37%] !text-white-A700_89_01">
-              <span className="text-white-A700_e5">Our vision </span>
-              <span className="text-white-A700_89_01">
+            <Text size="lg" as="p" className="w-[37%] !text-white_89_01">
+              <span className="text-white_e5">Our vision </span>
+              <span className="text-white_89_01">
                 is to help bring about a world that confidently makes smart financial decisions.
               </span>
             </Text>
             <div className="flex flex-col items-start justify-start w-[26%] gap-1.5">
-              <Text as="p" className="!text-white-A700_e5 text-center !font-medium">
+              <Text as="p" className="!text-white_e5 text-center !font-medium">
                 Download the app
               </Text>
               <div className="flex flex-row justify-start gap-4">
@@ -52,7 +52,7 @@ export default function Footer1({ ...props }) {
             </div>
             <div className="flex flex-row justify-center items-start w-[65%]">
               <div className="flex flex-col items-start justify-start w-[24%] gap-1.5">
-                <Text size="md" as="p" className="!text-white-A700_89">
+                <Text size="md" as="p" className="!text-white_89">
                   Advisory
                 </Text>
                 <div className="flex flex-row justify-start w-full">
@@ -88,7 +88,7 @@ export default function Footer1({ ...props }) {
               <ul className="flex flex-col items-start justify-start w-[21%] mt-0.5 ml-4">
                 <li>
                   <a href="#">
-                    <Text size="md" as="p" className="!text-white-A700_89">
+                    <Text size="md" as="p" className="!text-white_89">
                       Academy
                     </Text>
                   </a>
@@ -135,7 +135,7 @@ export default function Footer1({ ...props }) {
                 </li>
               </ul>
               <div className="flex flex-col items-start justify-start w-[24%] ml-[43px] gap-[7px]">
-                <Text size="md" as="p" className="!text-white-A700_89">
+                <Text size="md" as="p" className="!text-white_89">
                   Tools
                 </Text>
                 <div className="flex flex-col items-start justify-start w-full gap-2">
@@ -159,7 +159,7 @@ export default function Footer1({ ...props }) {
                 </div>
               </div>
               <div className="flex flex-col items-start justify-start w-[24%] ml-4 gap-[7px]">
-                <Text size="md" as="p" className="!text-white-A700_89">
+                <Text size="md" as="p" className="!text-white_89">
                   Quick Links
                 </Text>
                 <div className="flex flex-row justify-start w-full">
@@ -200,19 +200,19 @@ export default function Footer1({ ...props }) {
             </div>
           </div>
           <div className="flex flex-row justify-start items-center w-[37%] mt-[63px] gap-4">
-            <Text size="xs" as="p" className="!text-white-A700_89 text-center !font-medium">
+            <Text size="xs" as="p" className="!text-white_89 text-center !font-medium">
               © 2023 by 2AN Technologies Private Limited
             </Text>
             <div className="h-[17px] w-[18%] relative">
               <a href="#" className="justify-center w-max left-0 bottom-0 right-0 top-0 m-auto absolute">
-                <Text size="xs" as="p" className="!text-white-A700_e5 text-center !font-medium">
-                  <span className="text-white-A700_e5 font-semibold">Privacy Policy</span>
-                  <span className="text-white-A700_e5 font-semibold"></span>
+                <Text size="xs" as="p" className="!text-white_e5 text-center !font-medium">
+                  <span className="text-white_e5 font-semibold">Privacy Policy</span>
+                  <span className="text-white_e5 font-semibold"></span>
                 </Text>
               </a>
             </div>
             <a href="https://spring.money/terms-of-service" target="_blank" rel="noreferrer">
-              <Heading size="xs" as="p" className="!text-white-A700_e5 text-center">
+              <Heading size="xs" as="p" className="!text-white_e5 text-center">
                 Terms of Service
               </Heading>
             </a>

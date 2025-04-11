@@ -9,7 +9,7 @@ const shapes = {
 const variants = {
   fill: {
     gray_900_ce: "bg-gray-900_ce_02",
-    teal_600: "bg-teal-600 text-white-A700_01",
+    teal_600: "bg-teal-600 text-white_01",
   },
   outline: {
     teal_600: "border-teal-600 border-b-4 border-solid text-gray-900",
@@ -32,7 +32,7 @@ const Button = ({
   variant = "fill",
   size = "xs",
   color = "teal_600_b3_03",
-    ...restProps
+  ...restProps
 }) => {
   return (
     <button

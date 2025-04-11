@@ -387,7 +387,7 @@ export default function AdjustingRetirementAge(props) {
           {/* <div className="self-stretch p-4 bg-emerald-600/opacity-5 bg-colors-lightGreen rounded justify-start items-center gap-8 inline-flex">
             <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal font-['Poppins']">Book a free 1 hour consultation call with our investment advisor</div>
             <div className="px-6 py-2.5 bg-emerald-600 rounded justify-start items-start gap-2 flex">
-              <div className=" text-white-A700 text-sm font-semibold font-['Poppins']">CTA Button</div>
+              <div className=" text-white text-sm font-semibold font-['Poppins']">CTA Button</div>
             </div>
           </div> */}
           <div className="self-stretch  flex-col justify-start items-center gap-4 flex">

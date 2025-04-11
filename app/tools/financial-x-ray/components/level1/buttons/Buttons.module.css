@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+.buttonType1{
+    display: flex;
+    padding: 12px 34px;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    height: 100%;
+    width: 100%;
+    background: #108E66;
+    border-radius: 45px;
+    border: 1px solid #108E66;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+/* this is toogle btn if you want to change anyhting in it use variables defined under */
+
+.ToggleButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    --TRACK-NORMAL-COLOR:rgba(164, 160, 160, 0.912);
+    --TRACK-CLICKED-COLOR:rgba(129, 122, 237, 0.76);
+    --THUMB-NORMAL-COLOR:#fff;
+    --THUMB-CLICKED-COLOR:#fff;
+    --THUMB-MARGIN:0px;
+}
+
+.ToggleButtonTrack{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25px;
+    width: 50px;
+    background-color:var(--TRACK-NORMAL-COLOR);
+    border-radius: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ToggleButtonTrackClicked{
+    background-color:var(--TRACK-CLICKED-COLOR);
+}
+
+.ToggleButtonThumb{
+    position: absolute;
+    top: 50%;
+    left:var(--THUMB-MARGIN);
+    transform: translateY(-50%);
+    height: calc(100% - 2*(var(--THUMB-MARGIN)));
+    aspect-ratio: 1;
+    width: auto;
+    background-color: var(--THUMB-NORMAL-COLOR);
+    border-radius: 100px;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.ToggleButtonThumbClicked{
+    transition: all 0.2s ease-in-out;
+    right: var(--THUMB-MARGIN);
+    left: unset;
+    background-color: var(--THUMB-CLICKED-COLOR);
+}

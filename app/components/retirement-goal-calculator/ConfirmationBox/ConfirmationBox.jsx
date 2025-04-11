@@ -187,7 +187,7 @@ function ConfirmationBox(props) {
                             <div className='flex gap-2 flex-col self-stretch'>
                                 <div className="w-[432px] h-[45px] sm:w-full px-6 py-2.5 bg-emerald-600 rounded justify-center items-center gap-2 text-center hover:cursor-pointer"
                                     onClick={() => handleConfirmButton()}>
-                                    <button className="text-center text-sm font-semibold font-['Poppins'] text-white-A700">
+                                    <button className="text-center text-sm font-semibold font-['Poppins'] text-white">
                                         Confirm and Download my Report
                                     </button>
                                 </div>
