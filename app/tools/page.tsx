@@ -167,6 +167,13 @@ const baseCalculators = [
       "Compute maturity amounts and benefits of the SSY savings scheme.",
     slug: "sukanyaSamruddhi",
   },
+  {
+    id: 19,
+    title: "Retirement Goals Calculator",
+    description:
+      "Find your target corpus and monthly savings to secure your retirement.",
+    slug: "retirement-goal-calculator",
+  },
 ];
 
 // Merge additional tools on top of the existing calculators
