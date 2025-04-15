@@ -23,6 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body className="font-sans antialiased bg-[#fcfffe] text-[#272B2A]">
           <ClientHeader />
           <main>{children}</main>
+          <script src="https://gateway.smallcase.com/scdk/2.0.0/scdk.js" type="text/javascript"></script>
           <Footer />
         </body>
       </html>
