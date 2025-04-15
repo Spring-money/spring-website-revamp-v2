@@ -11,7 +11,7 @@ const Text = ({ children, className = "", as, size = "s", ...restProps }) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-gray-900 whitespace-nowrap font-poppins ${className} ${sizes[size]}`} {...restProps}>
+    <Component className={`text-gray-900 whitespace-nowrap  ${className} ${sizes[size]}`} {...restProps}>
       {children}
     </Component>
   );

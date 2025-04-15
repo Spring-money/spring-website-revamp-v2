@@ -216,31 +216,31 @@ export default function AdjustingRetirementAge(props) {
   return (
     <>
       <div className="w-[100%] h-auto pt-4 bg-white flex-col justify-start items-start gap-8 inline-flex">
-        <div className="self-stretch text-zinc-800 text-xl font-medium font-['Poppins']">
+        <div className="self-stretch text-zinc-800 text-xl font-medium ">
           Adjusting your retirement age
         </div>
         <div className="self-stretch  flex-col justify-start items-center gap-8 flex">
           <div className="self-stretch justify-center items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Current timeline
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Retirement Age
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {props.ageLife?.Retirement_Age} years
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
-                  <div className="self-stretch text-emerald-600 text-sm font-medium font-['Poppins']">
+                  <div className="self-stretch text-emerald-600 text-sm font-medium ">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
@@ -254,25 +254,25 @@ export default function AdjustingRetirementAge(props) {
             {showTitle2 && (
               <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
                 <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                  <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                  <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                     Delayed Retirement
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                   <div className="self-stretch flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Retirement Age
                     </div>
-                    <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                    <div className="self-stretch text-zinc-800 text-base font-medium ">
                       {retirementAge2} years
                     </div>
                   </div>
                   <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Savings required
                     </div>
                     <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -287,25 +287,25 @@ export default function AdjustingRetirementAge(props) {
             )}
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   {title3}
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Retirement Age
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {retirementAge3} years
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -321,10 +321,10 @@ export default function AdjustingRetirementAge(props) {
           <div className="self-stretch  flex-col justify-start items-start gap-4 flex">
             <div className="self-stretch justify-start items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Current timeline for retirement
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Your current assumption is to reach a target of{" "}
                   {new Intl.NumberFormat("en-IN", {
                     style: "currency",
@@ -344,10 +344,10 @@ export default function AdjustingRetirementAge(props) {
             </div>
             {showTitle2 && (
               <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Delayed retirement
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Instead of your current target age for retirement, if you
                   change the horizon and plan to retire at an age of{" "}
                   {retirementAge2} years, the monthly savings required to reach
@@ -362,10 +362,10 @@ export default function AdjustingRetirementAge(props) {
               </div>
             )}
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 {detailTitle3}
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Instead of your current target age for retirement, if you change
                 the horizon and plan to retire at an age of {retirementAge3}{" "}
                 years, the monthly savings required to reach the target amount
@@ -380,11 +380,11 @@ export default function AdjustingRetirementAge(props) {
             </div>
           </div>
           <div className="self-stretch p-4 bg-emerald-600/opacity-5 bg-colors-lightGreen rounded justify-start items-center gap-8 inline-flex">
-            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal font-['Poppins']">
+            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal ">
               Book a free 1 hour consultation call with our investment advisor
             </div>
             <div className="px-6 py-2.5 bg-emerald-600 rounded justify-start items-start gap-2 flex">
-              <div className=" text-white text-sm font-semibold font-['Poppins']">
+              <div className=" text-white text-sm font-semibold ">
                 CTA Button
               </div>
             </div>
@@ -392,12 +392,12 @@ export default function AdjustingRetirementAge(props) {
           <div className="self-stretch  flex-col justify-start items-center gap-4 flex">
             <div className="self-stretch  p-4 bg-indigo-600/opacity-5 rounded flex-col justify-start items-start gap-2 flex">
               <div className="self-stretch justify-start items-center gap-2 inline-flex">
-                <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium font-['Poppins']">
+                <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium ">
                   Optimising The Horizon
                 </div>
               </div>
               <div className="self-stretch">
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   Although many of us would like to work till we want and we
                   can, the target age of retirement has to be properly deciding
                   after duly considering multiple elements. Be it the
@@ -407,27 +407,27 @@ export default function AdjustingRetirementAge(props) {
                   <br />
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Financial readiness:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   Your current financial situation, including savings,
                   investments, pensions, and other sources of income is crucial.{" "}
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Health and longevity:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   Factoring in potential healthcare costs and the likelihood of
                   needing long-term care as you age is also important. <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Post-retirement goals:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   Post-retirement goals, such as travel plans, hobbies,
                   volunteer work, or spending time with family are important

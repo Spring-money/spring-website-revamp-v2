@@ -205,7 +205,7 @@ const EmpowerPage = () => {
             <div className="self-stretch text-white text-[4rem] text-white sm:text-[2rem] font-semibold leading-none tracking-[0.046rem] sm:tracking-[0.023rem]">
               Empower Your Team, Enhance Productivity
             </div>
-            <div className="self-stretch text-[rgba(252,255,254,0.80)] font-poppins text-xl sm:text-[1rem] font-normal">
+            <div className="self-stretch text-[rgba(252,255,254,0.80)]  text-xl sm:text-[1rem] font-normal">
               Boost your employees’ financial confidence with expert guidance,
               personalized tools, and actionable insights.
             </div>
@@ -222,7 +222,7 @@ const EmpowerPage = () => {
                 height={32}
                 alt="whatsapp"
               />
-              <span className="text-[#FCFFFE] font-poppins text-lg font-semibold leading-normal sm:text-[1rem]">
+              <span className="text-[#FCFFFE] text-lg font-semibold leading-normal sm:text-[1rem]">
                 Drop us a message to get started !
               </span>
             </div>
@@ -231,7 +231,7 @@ const EmpowerPage = () => {
 
         <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4">
           <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
+            <span className="self-stretch text-center text-gray-900  text-3xl font-semibold leading-normal">
               Problem Statement
             </span>
           </div>

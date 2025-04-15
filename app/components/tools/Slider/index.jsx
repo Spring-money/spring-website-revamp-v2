@@ -143,14 +143,14 @@ export default function SliderComponent({
                 <>
                   <div onClick={showPlusCircle} className='flex mt-1 justify-end cursor-pointer gap-1'>
                     <Image src={editButton} />
-                    <span className='text-emerald-600 text-xs font-medium font-[Poppins]'>{edit}</span>
+                    <span className='text-emerald-600 text-xs font-medium '>{edit}</span>
                   </div>
                 </>
               ) : (
                 <>
                   <div onClick={showPlusCircle} className='flex mt-1 justify-end cursor-pointer gap-1'>
                     <Image src={plus_circle} />
-                    <span className='text-emerald-600 text-xs font-medium font-[Poppins]'>{AddDetails}</span>
+                    <span className='text-emerald-600 text-xs font-medium '>{AddDetails}</span>
                   </div>
                 </>
               )}

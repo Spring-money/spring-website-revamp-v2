@@ -203,32 +203,32 @@ export default function AlteringYourExpenses(props) {
         <div className="flex w-full justify-end items-center">
           <Image src={leadFormSpringMoneyLogo} alt="leadFormSpringMoneyLogo" />
         </div>
-        <div className="self-stretch text-zinc-800 text-[28px] font-semibold font-['Poppins']">
+        <div className="self-stretch text-zinc-800 text-[28px] font-semibold ">
           Altering your expenses
         </div>
         <div className="self-stretch  flex-col justify-start items-center gap-8 flex">
           <div className="self-stretch justify-center items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Current assumption
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Monthly Expenses
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     ₹ {props.currentMonthlyAmount}
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   {props.dataApi1 && (
-                    <div className="self-stretch text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="self-stretch text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -242,26 +242,26 @@ export default function AlteringYourExpenses(props) {
             </div>
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Higher expenditure
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Monthly Expenses
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     ₹ {monthlyExpenses2}
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
                     {apiData2 && (
-                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -276,26 +276,26 @@ export default function AlteringYourExpenses(props) {
             </div>
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Lower expenditure
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Monthly Expenses
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     ₹ {monthlyExpenses3}
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
                     {apiData3 && (
-                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -311,10 +311,10 @@ export default function AlteringYourExpenses(props) {
           </div>
           <div className="self-stretch  flex-col justify-start items-start gap-4 flex">
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 Starting with current assumption
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Your current assumption is to manage your monthly expenses
                 within ₹ {props.currentMonthlyAmount} during your retirement. In
                 this case, you will need to save{" "}
@@ -328,10 +328,10 @@ export default function AlteringYourExpenses(props) {
             </div>
             <div className="self-stretch justify-start items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Preparing for more costs than expected
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Instead of considering your monthly expenses as ₹{" "}
                   {props.currentMonthlyAmount}, if you consider the costs on the
                   higher side and assume ₹ {monthlyExpenses2}, the monthly
@@ -346,10 +346,10 @@ export default function AlteringYourExpenses(props) {
               </div>
             </div>
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 In case you need to spend less
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Instead of considering your monthly expenses as ₹{" "}
                 {props.currentMonthlyAmount}, if you manage your lifestyle in a
                 way where you restrict monthly expenses as ₹ {monthlyExpenses3},

@@ -52,11 +52,11 @@ function ConfirmationBox(props) {
                             <div className="flex flex-col gap-2">
                                 <div className="flex relative w-full justify-center items-center">
                                     <div className="">
-                                        <span className="text-zinc-800 text-xl font-medium font-poppins sm:text-lg">Confirm your inputs before downloading your Retirement Goal Report</span>
+                                        <span className="text-zinc-800 text-xl font-medium  sm:text-lg">Confirm your inputs before downloading your Retirement Goal Report</span>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <p className="font-poppins text-sm font-normal self-stretch text-zinc-600">
+                                    <p className="text-sm font-normal self-stretch text-zinc-600">
                                         Before we generate a downloadable report for you, please confirm these inputs you’ve mentioned.
                                     </p>
                                 </div>
@@ -187,13 +187,13 @@ function ConfirmationBox(props) {
                             <div className='flex gap-2 flex-col self-stretch'>
                                 <div className="w-[432px] h-[45px] sm:w-full px-6 py-2.5 bg-emerald-600 rounded justify-center items-center gap-2 text-center hover:cursor-pointer"
                                     onClick={() => handleConfirmButton()}>
-                                    <button className="text-center text-sm font-semibold font-['Poppins'] text-white">
+                                    <button className="text-center text-sm font-semibold  text-white">
                                         Confirm and Download my Report
                                     </button>
                                 </div>
                                 <div className="w-[432px] h-[45px] sm:w-full px-8 py-2.5 rounded border border-zinc-800/opacity-20 justify-center items-center gap-2 text-center hover:cursor-pointer"
                                     onClick={() => handleCancelButton()}>
-                                    <button className="text-center text-zinc-800 text-sm font-medium font-['Poppins']">
+                                    <button className="text-center text-zinc-800 text-sm font-medium ">
                                         Cancel
                                     </button>
                                 </div>
@@ -204,7 +204,7 @@ function ConfirmationBox(props) {
                             <div className="flex flex-col gap-2">
                                 <div className="flex relative w-full justify-center items-center">
                                     <div className="mr-8">
-                                        <span className="text-zinc-800 text-xl font-medium font-poppins">
+                                        <span className="text-zinc-800 text-xl font-medium ">
                                             Please wait while your report is being generated...
                                         </span>
                                     </div>
@@ -225,7 +225,7 @@ function ConfirmationBox(props) {
                             </div>
                             <div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <p className="text-center font-poppins text-base font-normal self-stretch text-zinc-600">
+                                    <p className="text-center text-base font-normal self-stretch text-zinc-600">
                                         Your report will be automatically downloaded in 14 seconds.
                                     </p>
                                 </div>

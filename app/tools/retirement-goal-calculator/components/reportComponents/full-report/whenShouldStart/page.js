@@ -134,31 +134,31 @@ export default function WhenShouldStart(props) {
         <div className="flex w-full justify-end items-center">
           <Image src={leadFormSpringMoneyLogo} alt="leadFormSpringMoneyLogo" />
         </div>
-        <div className="self-stretch text-zinc-800 text-[28px] font-semibold font-['Poppins']">
+        <div className="self-stretch text-zinc-800 text-[28px] font-semibold ">
           When should you start?
         </div>
         <div className="self-stretch  flex-col justify-start items-center gap-8 flex">
           <div className="self-stretch justify-center items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Starting today
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Starting Age
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {props.ageLife?.Current_Age} years
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
-                  <div className="self-stretch text-emerald-600 text-sm font-medium font-['Poppins']">
+                  <div className="self-stretch text-emerald-600 text-sm font-medium ">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
@@ -171,25 +171,25 @@ export default function WhenShouldStart(props) {
             </div>
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   {title2}
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Starting Age
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {currentAge2} years
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -204,25 +204,25 @@ export default function WhenShouldStart(props) {
             {showTitle3 && (
               <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
                 <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                  <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                  <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                     {title3}
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                   <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Starting Age
                     </div>
-                    <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                    <div className="self-stretch text-zinc-800 text-base font-medium ">
                       {currentAge3} years
                     </div>
                   </div>
                   <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Savings required
                     </div>
                     <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -239,10 +239,10 @@ export default function WhenShouldStart(props) {
           <div className="self-stretch  flex-col justify-start items-start gap-5 flex">
             <div className="self-stretch justify-start items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Starting today
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Your current assumption is to reach a target of{" "}
                   {new Intl.NumberFormat("en-IN", {
                     style: "currency",
@@ -261,10 +261,10 @@ export default function WhenShouldStart(props) {
               </div>
             </div>
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 {detailTitle2}
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Instead of starting your savings journey for retirement today,
                 if you had started it 5 years ago, i.e. had started at{" "}
                 {currentAge2} years, the monthly savings required to reach the
@@ -279,10 +279,10 @@ export default function WhenShouldStart(props) {
             </div>
             {showTitle3 && (
               <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   {detailTitle3}
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Instead of starting your savings journey for retirement today,
                   if you delay it by 5 years, ie. get started at {currentAge3}{" "}
                   years, the monthly savings required to reach the target amount
@@ -298,12 +298,12 @@ export default function WhenShouldStart(props) {
             )}
           </div>
           <div className="self-stretch p-4 bg-emerald-600/opacity-5 rounded bg-colors-lightGreen justify-start items-center gap-8 inline-flex">
-            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal font-['Poppins']">
+            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal ">
               Check your financial readiness for free with our Financial X-Ray.
             </div>
             <div className="px-6 py-2.5 bg-emerald-600 rounded justify-start items-start gap-2 flex">
               <Link href={"/academy/tools/financial-x-ray"}>
-                <div className=" text-white text-sm font-semibold font-['Poppins']">
+                <div className=" text-white text-sm font-semibold ">
                   Get a free report
                 </div>
               </Link>
@@ -312,12 +312,12 @@ export default function WhenShouldStart(props) {
           <div className="self-stretch  flex-col justify-start items-center gap-4 flex">
             <div className="self-stretch  p-4 bg-indigo-50 rounded flex-col justify-start items-start gap-2 flex">
               <div className="self-stretch justify-start items-center gap-2 inline-flex">
-                <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium font-['Poppins']">
+                <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium ">
                   Compounding Growth
                 </div>
               </div>
               <div className="self-stretch">
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   When you invest early, your money has more time to grow
                   through the power of compounding. This means that not only do
                   you earn returns on your initial investment, but you also earn
@@ -327,10 +327,10 @@ export default function WhenShouldStart(props) {
                   <br />
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Early Start, Consistent Contributions:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   Suppose you start investing for retirement in your 20s or
                   early 30s and consistently contribute to your retirement
@@ -340,10 +340,10 @@ export default function WhenShouldStart(props) {
                   sizeable nest egg and potentially retire comfortably.
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Late Start, Aggressive Saving:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   If you delay investing for retirement until later in life, you
                   may need to adopt a more aggressive saving strategy to catch
@@ -353,10 +353,10 @@ export default function WhenShouldStart(props) {
                   goals.
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Early Start, Reduced Contributions:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   In this scenario, you start investing for retirement early but
                   contribute less consistently over time. While you still
@@ -366,10 +366,10 @@ export default function WhenShouldStart(props) {
                   can grow significantly over time.
                   <br />
                 </span>
-                <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-medium ">
                   Early Start, Increased Contributions:
                 </span>
-                <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                <span className="text-zinc-800 text-sm font-normal ">
                   {" "}
                   Alternatively, you may choose to start investing early and
                   increase your contributions over time as your income grows.

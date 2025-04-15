@@ -333,11 +333,11 @@ export default function Home() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center bg-gray-100 ">
+      <div className="flex flex-col items-center bg-white ">
         <div className="w-full mx-auto ">
           <div className="flex items-start gap-5 px-2 flex-col md:flex-row md:px-6">
             <div className=" py-6 self-stretch  sm:py-5">
-              <div className="mb-6 border border-solid rounded-lg border-gray-900_3f bg-white-A700">
+              <div className="mb-6 border border-solid rounded-lg border-gray-300 bg-white-A700">
                 <div className="flex flex-col gap-4 rounded-lg bg-white-A700 pt-[16px] ">
                   <div className="flex flex-col gap-4 px-4">
                     <div className="flex justify-between gap-5 self-stretch">
@@ -365,7 +365,7 @@ export default function Home() {
                       <Text size="xl" as="p" className="!text-gray-900">
                         Financial X-Ray
                       </Text>
-                      <Text size="xs" as="p" className="!text-gray-900_bf">
+                      <Text size="xs" as="p" className="!text-gray-900">
                         Get a customised snapshot of your financial health,
                         strengths and areas of improvement.
                       </Text>
@@ -503,7 +503,7 @@ export default function Home() {
             {
               <div className="flex md:w-[60%] py-6 w-full sm:py-5">
                 <div
-                  className={`relative mb-6 flex w-full flex-col gap-4 rounded-lg border border-solid border-gray-900_3f bg-white-A700 p-[16px] overflow-hidden ${
+                  className={`relative mb-6 flex w-full flex-col gap-4 rounded-lg border border-solid border-gray-300 bg-white p-[16px] overflow-hidden ${
                     endOfCategory[selectedCategory] === 1 ||
                     showReport ||
                     selectedCategory !== "Report"

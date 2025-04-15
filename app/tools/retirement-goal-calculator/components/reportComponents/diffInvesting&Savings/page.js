@@ -71,31 +71,31 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
   return (
     <>
       <div className="w-[100%] h-auto pt-4 bg-white flex-col justify-start items-start gap-8 inline-flex">
-        <div className="self-stretch text-zinc-800 text-xl font-medium font-['Poppins']">
+        <div className="self-stretch text-zinc-800 text-xl font-medium ">
           Difference between investing & saving
         </div>
         <div className="self-stretch  flex-col justify-start items-center gap-8 flex">
           <div className="self-stretch justify-center items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Savings Account
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch h-11 flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Return on Investments
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     5%
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
-                  <div className="self-stretch text-emerald-600 text-sm font-medium font-['Poppins']">
+                  <div className="self-stretch text-emerald-600 text-sm font-medium ">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
@@ -108,25 +108,25 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
             </div>
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Retirement Plan
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch h-11 flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Return on Investments
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     9%
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -140,25 +140,25 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
             </div>
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Securities
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Return on Investments
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     12%
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -173,10 +173,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
           </div>
           <div className="self-stretch  flex-col justify-start items-start gap-4 flex">
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 Saving, but only in savings bank account
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 If you are getting started even with your savings bank account,
                 if you follow savings-only path, assuming 5% ROI, the monthly
                 savings required to reach the target amount will be{" "}
@@ -189,10 +189,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
               </div>
             </div>
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 Investing through Retirement Plans
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 If you instead switch to retirement plans, i.e. start
                 contributing to these options regularly, assuming 9% ROI, the
                 monthly savings required to reach the target amount will be{" "}
@@ -205,10 +205,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
               </div>
             </div>
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 Investing in securities
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Instead of relying only on bank’s savings account or retirement
                 plans, if you start investing it, and aim for 12% ROI, the
                 monthly savings required to reach the target amount would have
@@ -223,32 +223,32 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
             </div>
           </div>
           <div className="self-stretch p-4 bg-emerald-600/opacity-5 rounded justify-start bg-colors-lightGreen  items-center gap-8 inline-flex">
-            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal font-['Poppins']">
+            <div className="grow shrink basis-0 text-zinc-800 text-sm font-normal ">
               Book a free 1 hour consultation call with our investment advisor.
             </div>
             <div className="px-6 py-2.5 bg-emerald-600 rounded justify-start items-start gap-2 flex">
-              <div className=" text-white text-sm font-semibold font-['Poppins']">
+              <div className=" text-white text-sm font-semibold ">
                 Plan my retirement
               </div>
             </div>
           </div>
           <div className="self-stretch  p-4 bg-indigo-600/opacity-5 rounded flex-col justify-start items-start gap-2 flex">
             <div className="self-stretch justify-start items-center gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium font-['Poppins']">
+              <div className="grow shrink basis-0 text-black/opacity-20 text-base text-indigo-600 font-medium ">
                 The Importance of Investing
               </div>
             </div>
             <div className="self-stretch">
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 While saving is essential for short-term financial goals and
                 emergencies, investing offers several advantages over saving
                 alone when it comes to preparing for retirement:-
                 <br /> <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Potential for Higher Returns:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Investing in assets such as stocks, bonds, and mutual funds
                 typically offers the potential for higher returns compared to
@@ -257,10 +257,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
                 inflation, helping your retirement savings to grow faster.
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Beating Inflation:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Investing allows your money to grow at a rate that outpaces
                 inflation, preserving your purchasing power over time. In
@@ -269,10 +269,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
                 savings to erode over time.
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Harnessing the Power of Compounding:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Investing early allows you to benefit from the power of
                 compounding, where your investment earnings generate additional
@@ -281,10 +281,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
                 dividends and capital gains are allowed to accumulate.
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Diversification and Risk Management:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Investing enables you to diversify your portfolio across various
                 asset classNamees, industries, and geographic regions, reducing
@@ -293,10 +293,10 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
                 downturns, enhancing the stability of your retirement savings.
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Tax Advantages:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Certain retirement accounts and investment options offer tax
                 benefits that can help your investments grow more efficiently.
@@ -305,17 +305,17 @@ export default function DifferenceBetweenInvestingAndSavings(props) {
                 immediate tax consequences.
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-medium font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-medium ">
                 Long-Term Goals:
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 {" "}
                 Investing is well-suited for achieving long-term financial goals
                 like retirement, as it aligns with the extended time horizon and
                 provides the opportunity for wealth accumulation over decades.{" "}
                 <br />
               </span>
-              <span className="text-zinc-800 text-sm font-normal font-['Poppins']">
+              <span className="text-zinc-800 text-sm font-normal ">
                 <br />
                 While investing involves inherent risks, such as market
                 volatility and potential loss of principal, these risks can be

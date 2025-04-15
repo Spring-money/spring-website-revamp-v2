@@ -73,31 +73,31 @@ export default function ImpactOfInflation(props) {
         <div className="flex w-full justify-end items-center">
           <Image src={leadFormSpringMoneyLogo} alt="leadFormSpringMoneyLogo" />
         </div>
-        <div className="self-stretch text-zinc-800 text-[28px] font-semibold font-['Poppins']">
+        <div className="self-stretch text-zinc-800 text-[28px] font-semibold ">
           Impact of inflation
         </div>
         <div className="self-stretch  flex-col justify-start items-center gap-8 flex">
           <div className="self-stretch justify-center items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Assumed inflation
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Inflation Rate
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {props.annualInflation && props.annualInflation[0] * 100}%
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
-                  <div className="self-stretch text-emerald-600 text-sm font-medium font-['Poppins']">
+                  <div className="self-stretch text-emerald-600 text-sm font-medium ">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
@@ -111,25 +111,25 @@ export default function ImpactOfInflation(props) {
             {showTitle2 && (
               <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
                 <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                  <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                  <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                     Lower inflation
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                   <div className="self-stretch flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Inflation Rate
                     </div>
-                    <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                    <div className="self-stretch text-zinc-800 text-base font-medium ">
                       {inflation2}%
                     </div>
                   </div>
                   <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                    <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                       Savings required
                     </div>
                     <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                      <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -144,25 +144,25 @@ export default function ImpactOfInflation(props) {
             )}
             <div className="grow shrink basis-0 p-4 bg-white rounded-lg shadow border border-zinc-800/opacity-25 flex-col justify-start items-start gap-4 inline-flex">
               <div className="pb-2 border-b border-zinc-800/opacity-20 justify-start items-start gap-2 inline-flex">
-                <div className="text-zinc-800/opacity-75 text-xs font-medium font-['Poppins']">
+                <div className="text-zinc-800/opacity-75 text-xs font-medium ">
                   Higher inflation
                 </div>
               </div>
               <div className="self-stretch  flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Inflation Rate
                   </div>
-                  <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                  <div className="self-stretch text-zinc-800 text-base font-medium ">
                     {inflation3}%
                   </div>
                 </div>
                 <div className="self-stretch  flex-col justify-start items-start gap-0.5 flex">
-                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal font-['Poppins']">
+                  <div className="self-stretch text-zinc-800/opacity-75 text-xs font-normal ">
                     Savings required
                   </div>
                   <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium font-['Poppins']">
+                    <div className="grow shrink basis-0 text-emerald-600 text-sm font-medium ">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
@@ -178,10 +178,10 @@ export default function ImpactOfInflation(props) {
           <div className="self-stretch  flex-col justify-start items-start gap-4 flex">
             <div className="self-stretch justify-start items-start gap-4 inline-flex">
               <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Assumed annual inflation rate
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Your current assumption assumes an inflation rate of{" "}
                   {props.annualInflation && props.annualInflation[0] * 100}%
                   till your target retirement age. With this, you will have to
@@ -197,10 +197,10 @@ export default function ImpactOfInflation(props) {
             </div>
             {showTitle2 && (
               <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-                <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-base font-medium ">
                   Lower inflation rate
                 </div>
-                <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+                <div className="self-stretch text-zinc-800 text-sm font-normal ">
                   Instead of assuming the inflation rate as{" "}
                   {props.annualInflation && props.annualInflation[0] * 100}%, if
                   the inflation rate is set at {inflation2}%, the monthly
@@ -215,10 +215,10 @@ export default function ImpactOfInflation(props) {
               </div>
             )}
             <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
-              <div className="self-stretch text-zinc-800 text-base font-medium font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-base font-medium ">
                 Higher inflation rate
               </div>
-              <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
+              <div className="self-stretch text-zinc-800 text-sm font-normal ">
                 Instead of assuming the inflation rate as{" "}
                 {props.annualInflation && props.annualInflation[0] * 100}%, if
                 the inflation rate is set at {inflation3}%, the monthly savings

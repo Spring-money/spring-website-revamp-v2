@@ -8,7 +8,7 @@ const Heading = ({ children, className = "", size = "xs", as, ...restProps }) =>
   const Component = as || "h6";
 
   return (
-    <Component className={`text-gray-900_89 font-poppins ${className} ${sizes[size]}`} {...restProps}>
+    <Component className={`text-gray-900_89 ${className} ${sizes[size]}`} {...restProps}>
       {children}
     </Component>
   );
