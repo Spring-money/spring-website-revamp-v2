@@ -66,7 +66,7 @@ export default function EquityPage() {
               type: form.type,
               order_type: form.orderType,
               price: Number(form.price),
-              trigger_price: null,
+              trigger_price: Number(form.triggerPrice),
             },
           ],
         }),

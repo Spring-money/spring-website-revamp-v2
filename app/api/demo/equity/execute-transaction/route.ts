@@ -33,6 +33,7 @@ export async function POST(request: Request): Promise<Response> {
     const data: RetirementCalculatorResponse = await response.json();
     return Response.json(data);
   } catch (error) {
+    console.error("Error in POST request:", error);
     return new Response(JSON.stringify({ error: (error as Error).message }), {
       status: 500,
     });
