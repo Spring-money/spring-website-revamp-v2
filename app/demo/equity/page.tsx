@@ -8,20 +8,34 @@ declare global {
 }
 
 export default function EquityPage() {
-  const [form, setForm] = useState({
+  type OrderType = ""|"MARKET" | "LIMIT" | "SL" | "SLM";
+
+  const [form, setForm] = useState<{
+    ticker: string;
+    quantity: string;
+    type: string;
+    orderType: OrderType;
+    price: string;
+    triggerPrice: string;
+  }>({
     ticker: "",
     quantity: "",
     type: "",
-    orderType: "",
+    orderType: "MARKET" as OrderType,
     price: "",
+    triggerPrice: "",
   });
 
   const isFormValid =
     form.ticker !== "" &&
     form.quantity !== "" &&
     form.type !== "" &&
-    form.orderType !== "" &&
-    form.price !== "";
+    ((form.orderType === "LIMIT" || form.orderType === "SL"
+      ? form.price !== ""
+      : false) ||
+      (form.orderType === "SL" || form.orderType === "SLM"
+        ? form.triggerPrice !== ""
+        : false) || form.orderType !== "");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -122,7 +136,6 @@ export default function EquityPage() {
       })
       .catch((err: any) => {
         console.error("Error in triggering transaction:", err);
-        // DeleteNotification(smallCaseNotificationDetails.id);
       });
   };
 
@@ -134,7 +147,7 @@ export default function EquityPage() {
         </h2>
 
         <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Ticker</label>
+          <label className="block mb-1 text-[#108e66]">Ticker(Stock Symbol)</label>
           <select
             name="ticker"
             value={form.ticker}
@@ -184,21 +197,36 @@ export default function EquityPage() {
             <option value="">Select order type</option>
             <option value="MARKET">MARKET</option>
             <option value="LIMIT">LIMIT</option>
-            <option value="SL">SL</option>
-            <option value="SLM">SLM</option>
+            <option value="SL">SL(Stop Loss)</option>
+            <option value="SLM">SLM(Stop Loss Market)</option>
           </select>
         </div>
 
-        <div className="mb-6">
-          <label className="block mb-1 text-[#108e66]">Price</label>
-          <input
-            type="number"
-            name="price"
-            value={form.price}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          />
-        </div>
+        {(form.orderType === "LIMIT" || form.orderType === "SL") && (
+          <div className="mb-6">
+            <label className="block mb-1 text-[#108e66]">Price</label>
+            <input
+              type="number"
+              name="price"
+              value={form.price}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            />
+          </div>
+        )}
+
+        {(form.orderType === "SL" || form.orderType === "SLM") && (
+          <div className="mb-6">
+            <label className="block mb-1 text-[#108e66]">Trigger Price</label>
+            <input
+              type="number"
+              name="price"
+              value={form.triggerPrice}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            />
+          </div>
+        )}
 
         <button
           onClick={handleSubmit}
