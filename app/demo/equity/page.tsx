@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { ClipLoader } from "react-spinners";
 
 declare global {
   interface Window {
@@ -8,7 +9,8 @@ declare global {
 }
 
 export default function EquityPage() {
-  type OrderType = ""|"MARKET" | "LIMIT" | "SL" | "SLM";
+  type OrderType = "" | "MARKET" | "LIMIT" | "SL" | "SLM";
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [form, setForm] = useState<{
     ticker: string;
@@ -35,7 +37,8 @@ export default function EquityPage() {
       : false) ||
       (form.orderType === "SL" || form.orderType === "SLM"
         ? form.triggerPrice !== ""
-        : false) || form.orderType !== "");
+        : false) ||
+      form.orderType !== "");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -45,6 +48,7 @@ export default function EquityPage() {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch("/api/demo/equity/execute-transaction", {
         method: "POST",
@@ -115,6 +119,7 @@ export default function EquityPage() {
     JwtToken: any,
     TransactionIdApiResponse: any
   ) => {
+    setIsLoading(false);
     const gatewayInstance = new window.scDK({
       gateway: "plan360degree",
       smallcaseAuthToken: `${JwtToken}`,
@@ -147,7 +152,9 @@ export default function EquityPage() {
         </h2>
 
         <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Ticker(Stock Symbol)</label>
+          <label className="block mb-1 text-[#108e66]">
+            Ticker(Stock Symbol)
+          </label>
           <select
             name="ticker"
             value={form.ticker}
@@ -233,11 +240,11 @@ export default function EquityPage() {
           disabled={!isFormValid}
           className={`w-full p-2 rounded text-white font-semibold transition-colors duration-300 ${
             isFormValid
-              ? "bg-[#108e66] hover:bg-teal-700"
+              ? " text-teal-700 bg-teal-400"
               : "bg-gray-400 cursor-not-allowed"
           }`}
         >
-          Call SDK
+          {isLoading ? <ClipLoader color="#108e66" /> : "Call SDK"}
         </button>
       </div>
     </div>
