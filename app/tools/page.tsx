@@ -174,6 +174,13 @@ const baseCalculators = [
       "Find your target corpus and monthly savings to secure your retirement.",
     slug: "retirement-goal-calculator",
   },
+  {
+    id: 20,
+    title: "Financial X-Ray",
+    description:
+      "Find your target corpus and monthly savings to secure your retirement.",
+    slug: "financial-x-ray",
+  },
 ];
 
 // Merge additional tools on top of the existing calculators
