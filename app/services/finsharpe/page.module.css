@@ -1,289 +1,215 @@
-/* app/services/finsharpe/page.module.css */
+.container {
+  width: 100%;
+  padding: 1% 60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #F2F5F4;
+}
 
-/* Base container for the entire page */
-.pageContainer {
-    width: 100%;
-    padding: 1.5rem 3.75rem; /* 24px 60px -> using rem */
-    display: flex;
-    justify-content: center; /* Center content area */
-    gap: 1.25rem; /* 20px */
-    background-color: #f2f5f4; /* Slightly off-white background */
-    font-family: 'Poppins', sans-serif; /* Ensure Poppins font */
-    color: #272a2b; /* Neutral Black for text */
+.leftMiddlePannel {
+  display: flex;
+  gap: 20px;
+  width: 69.444%;
+}
+
+.leftPannel {
+  width: 270px;
+}
+
+.leftPannelLowerCard {
+  display: flex;
+}
+
+.middlePannel {
+  flex: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(39, 43, 42, 0.25);
+  background: #FCFFFE;
+}
+
+.topHead {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.linkdinPic{
+  display: none;
+}
+
+.text1 {
+  margin-left: 3%;
+  color: #272B2A;
+  /* font-family: Poppins; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.text2 {
+  margin-left: 3%;
+  color: rgba(39, 43, 42, 0.75);
+  /* font-family: Poppins; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.upper3 {
+  margin-left: 3%;
+  display: flex;
+  margin-top: 5%;
+}
+
+.upper4 {
+  display: flex;
+  justify-content: center;
+  margin-left: 4%;
+  margin-top: 5%;
+  width: 88%;
+  border-radius: 4px;
+  background: rgba(39, 43, 42, 0.05);
+}
+
+.upper4 span {
+  color: rgba(39, 43, 42, 0.75);
+  /* font-family: Poppins; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.horizontalLine {
+  background-color: rgba(39, 43, 42, 0.25);
+  border: none;
+  height: 0.5px;
+}
+
+.middleTextConatiner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.middleTextConatinerText1 {
+  color: #272B2A;
+  /* font-family: Poppins; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.middleTextConatinerText2 {
+  color: rgba(39, 43, 42, 0.90);
+  /* font-family: Poppins; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.middleTextConatinerText3 {
+  color: rgba(39, 43, 42, 0.54);
+  /* font-family: Poppins; */
+  font-size: 0.9375vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.founders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftPannelLowerCardMobile {
+  display: none;
+}
+
+.rightPannel {
+  width: 300px;
+}
+
+@media screen and (min-width : 1440px) {
+  .container{
+      padding: 1% 0;
   }
-  
-  /* Wrapper for the main content column */
-  .contentWrapper {
-    flex-grow: 1; /* Allow content to take available space */
-    max-width: 900px; /* Limit max width for readability */
-    padding: 1.5rem; /* 24px */
-    border-radius: 8px;
-    border: 1px solid rgba(39, 43, 42, 0.25); /* Subtle border */
-    background: #fcfffe; /* Neutral White background for content */
+  .leftMiddlePannel{
+      max-width: calc(1440px - 300px - 20px - 120px);
   }
-  
-  /* Page Header Section */
-  .pageHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items to the top */
-    margin-bottom: 1.5rem; /* 24px */
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+      flex-direction: column;
   }
-  
-  .headerContent {
-    display: flex;
-    align-items: center; /* Vertically align logo and text */
-    gap: 1rem; /* 16px space between logo and text */
+
+  .leftMiddlePannel {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+      width: 100%;
   }
-  
-  .headerLogo {
-    /* Add specific styling if needed, e.g., max-width */
-    height: auto; /* Maintain aspect ratio */
-    width: 60px; /* Example size, adjust as needed */
+
+  .rightPannel {
+      margin-top: 2%;
+      align-self: self-end;
   }
-  
-  .headerTextContainer {
-    display: flex;
-    flex-direction: column;
+}
+
+@media screen and (max-width:550px) {
+  .container{
+      padding: 1% 0;
   }
-  
-  .pageTitle {
-    color: #272a2b;
-    font-size: 1.5rem; /* 24px */
-    font-weight: 500; /* Medium weight */
-    line-height: 1.4;
-    margin: 0 0 0.25rem 0; /* Adjust spacing */
+  .leftMiddlePannel {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+      width: 100%;
   }
-  
-  .advisorInfo,
-  .sebiRegInfo {
-    font-size: 0.875rem; /* 14px */
-    font-weight: 400; /* Regular weight */
-    color: rgba(39, 43, 42, 0.75); /* Lighter black */
-    line-height: 1.5;
-    margin: 0;
+
+  .leftPannel{
+      width: 95%;
+      align-self: center;
   }
-  
-  .sebiRegInfo {
-    margin-top: 0.5rem; /* 8px */
-    background: rgba(39, 43, 42, 0.05); /* Light background */
-    padding: 0.25rem 0.5rem; /* 4px 8px */
-    border-radius: 4px;
-    display: inline-block; /* Fit content width */
+
+  .middlePannel{
+      margin-top: 2%;
+      width: 95%;
+      align-self: center;
   }
-  
-  /* Optional LinkedIn link in header */
-  .linkedinLink {
-    margin-top: 0.5rem; /* Align roughly with text */
+
+  .topHead{
+      /* display: none; */
   }
-  
-  /* Introduction Section */
-  .introSection {
-    margin-bottom: 1.5rem; /* 24px */
-    font-size: 1rem; /* 16px */
-    line-height: 1.6;
+  .middleTextConatinerText2{
+      margin-top: 2%;
   }
-  
-  .introSection p {
-    margin: 0;
+
+  .leftPannelLowerCard {
+      display: none;
   }
-  
-  /* Separator Line */
-  .separator {
-    border: none;
-    height: 1px;
-    background-color: rgba(39, 43, 42, 0.25); /* Subtle separator */
-    margin: 1.5rem 0; /* 24px */
+
+  .leftPannelLowerCardMobile {
+      display: flex;
+      width: 95%;
+      align-self: center;
   }
-  
-  /* Section Titles (h2) */
-  .sectionTitle {
-    color: #272a2b;
-    font-size: 1.25rem; /* 20px */
-    font-weight: 500; /* Medium weight */
-    margin-bottom: 1rem; /* 16px */
-    margin-top: 0;
+  .rightPannel{
+      width: 95%;
+      align-self: center;
+      margin-right: 0;
   }
-  
-  /* Video Container */
-  .videoContainer {
-    width: 100%;
-    margin-bottom: 1.5rem; /* 24px */
-    margin-top: 1rem; /* 16px */
-    /* Aspect ratio box for responsive video */
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-  }
-  
-  .videoContainer iframe,
-  .videoContainer object,
-  .videoContainer embed,
-  .videoContainer > div { /* Target the direct div child from react-youtube */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* The Process Section List */
-  .processList {
-    list-style: none; /* Remove default bullets */
-    padding-left: 0;
-    margin-top: 0.5rem;
-  }
-  
-  .processList li {
-    margin-bottom: 1rem; /* 16px */
-  }
-  
-  .processList strong {
-    font-weight: 500; /* Medium weight for emphasis */
-    color: #272a2b;
-    display: block; /* Put title on its own line */
-    margin-bottom: 0.25rem; /* Space below title */
-  }
-  
-  .processList li p {
-    margin-top: 0; /* Reset margin as strong provides spacing */
-    padding-left: 1rem; /* Indent description */
-  }
-  
-  /* Founders Section */
-  .foundersGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 1.5rem; /* 24px */
-    margin-top: 1rem;
-  }
-  
-  .founderCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .founderCard img { /* Style founder images */
-    max-width: 100px; /* Limit image size */
-    height: auto;
-    border-radius: 50%; /* Circular images */
-    margin-bottom: 0.75rem; /* 12px */
-  }
-  
-  .founderName {
-    font-size: 1rem; /* 16px */
-    font-weight: 500; /* Medium weight */
-    color: #272a2b;
-    margin-bottom: 0.25rem; /* 4px */
-  }
-  
-  /* Compliance Section */
-  .complianceBlock {
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  
-  .complianceBlock:last-child {
-    margin-bottom: 0;
-  }
-  
-  .complianceBlock p {
-    margin-bottom: 0.5rem; /* 8px */
-  }
-  
-  .complianceBlock strong {
-     font-weight: 500;
-     color: #272a2b;
-  }
-  
-  .contactInfo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* 8px */
-    font-size: 0.9375rem; /* 15px */
-    margin-bottom: 0.5rem; /* 8px */
-  }
-  
-  .contactInfo img { /* Style icons */
-    width: 16px;
-    height: 16px;
-  }
-  
-  .externalLink {
-    color: #108e66; /* Primary Green for links */
-    text-decoration: underline;
-    font-weight: 400;
-  }
-  
-  .externalLink:hover {
-    text-decoration: none;
-  }
-  
-  /* --- Responsive Design --- */
-  
-  /* Tablet and smaller */
-  @media screen and (max-width: 768px) {
-    .pageContainer {
-      padding: 1rem 1.5rem; /* Reduced padding */
-      flex-direction: column; /* Stack content */
-    }
-  
-    .contentWrapper {
-      max-width: 100%; /* Full width on smaller screens */
-      padding: 1rem; /* Reduced padding */
-    }
-  
-    .pageHeader {
-      flex-direction: column; /* Stack header content */
-      align-items: flex-start;
-    }
-  
-    .headerContent {
-       margin-bottom: 0.5rem; /* Space below logo/text */
-    }
-  
-    .foundersGrid {
-       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust grid for smaller */
-       gap: 1rem;
-    }
-  
-    .pageTitle {
-      font-size: 1.25rem; /* Slightly smaller title */
-    }
-  
-    .sectionTitle {
-      font-size: 1.125rem; /* Slightly smaller section title */
-    }
-  }
-  
-  /* Mobile */
-  @media screen and (max-width: 550px) {
-    .pageContainer {
-      padding: 1rem; /* Further reduced padding */
-    }
-  
-    .headerContent {
-      flex-direction: column; /* Stack logo and text */
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-  
-    .headerLogo {
-      width: 50px; /* Smaller logo */
-    }
-  
-    .sebiRegInfo {
-       display: block; /* Ensure it wraps if needed */
-       margin-top: 0.75rem;
-    }
-  
-    .processList li p {
-      padding-left: 0.5rem; /* Less indent */
-    }
-  
-    .foundersGrid {
-       grid-template-columns: 1fr; /* Single column on smallest screens */
-    }
-  }
+}
