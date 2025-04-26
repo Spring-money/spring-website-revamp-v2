@@ -4,10 +4,14 @@ import Image from "next/image"
 // TODO: Add import for MyGuide2Wealth large logo
 import myGuide2WealthLarge from "../components/images/myGuide2WealthLarge.svg"
 import linkdinPic from "../components/images/logos_linkedin-icon.svg"
+import instagramlogo from "../components/images/icons_instagram.svg"
+import xlogo from "../components/images/icons_twitter.svg"
+import facebookslogo from "../components/images/icons_facebook.svg"
 import phone from "../components/images/phone.svg"
 import mail from "../components/images/mail.svg"
 // TODO: Add import for Robins Joseph portrait
 import robinsJosephPortrait from "../components/images/robinsJosephPortrait.svg"
+import { alignProperty } from "@mui/material/styles/cssUtils"
 
 
 export default function MyGuide2WealthOverview() {
@@ -106,14 +110,25 @@ export default function MyGuide2WealthOverview() {
                                 {/* TODO: Add src for Robins Joseph portrait */}
                                 <Image src={robinsJosephPortrait} width={180} alt="Principal Advisor Robins Joseph portrait" />
                             </div>
-                            <div className='flex-col'>
-                                <div>
-                                    <span className={style.middleTextConatinerText2}>Robins Joseph</span>
+                            <div className='flex-col text-left'>
+                                <div>
+                                    <span className={style.middleTextConatinerText2}>Robins Joseph</span>
+                                </div>
+                                <div style={{ display: 'flex', gap: '24px', marginTop: '24px' }}> 
+                                    <a href="https://www.linkedin.com/in/robins-joseph-4166678/" target="_blank" rel="noopener noreferrer">
+                                        <Image src={linkdinPic} alt="LinkedIn icon" width={24} height={24} /> 
+                                    </a>
+                                    <a href="https://www.instagram.com/robinsjoseph1/" target="_blank" rel="noopener noreferrer">
+                                        <Image src={instagramlogo} alt="Instagram icon" width={24} height={24} /> 
+                                    </a>
+                                    <a href="https://www.facebook.com/robins.joseph.581/" target="_blank" rel="noopener noreferrer">
+                                        <Image src={facebookslogo} alt="Facebook icon" width={24} height={24} /> 
+                                    </a>
+                                    <a href="https://x.com/RobinsJos1980" target="_blank" rel="noopener noreferrer">
+                                        <Image src={xlogo} alt="Twitter icon" width={24} height={24} /> 
+                                    </a>
                                 </div>
-                                <a href="https://www.linkedin.com/in/robins-joseph-4166678/" target="_blank" rel="noopener noreferrer">
-                                    <Image src={linkdinPic} alt="LinkedIn icon" />
-                                </a>
-                            </div>
+                            </div>
                         </div>
                         <span style={{ marginTop: '2%' }} className={style.middleTextConatinerText2}>
                            As a SEBI RIA, Robins Joseph offers Independent, Personalized and Unbiased financial Planning & Investment advise. He is also a faculty member with International College of Financial Planning (unit of Bajaj Capital) where he educates future wealth planners and CFPs on investment planning and mutual fund advisory. His focus is always on the client's interests first, aiming to strengthen the theme of MyGuide2Wealth. His financial advice is centered on the client's needs and not on selling financial services of his interest. He uses unique methods to systematically create strategies that best fit client's financial needs and goals. As an affordable fee only planner, his financial advice and the benefits that accrue to clients surpasses much more than the sum they pay him.
