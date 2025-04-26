@@ -70,6 +70,15 @@ const ourPartners = [
     alt: "NS Wealth Financial Planners logo",
   },
   {
+    title: "My Guide 2 Wealth",
+    description:
+      "At MyGuide2Wealth, we're not just financial advisors - we're your partners on a journey towards prosperity and financial wellness.", // Using the tagline from the PDF
+    image: "/services/myGuide2Wealth.svg", // Placeholder, update with actual image path
+    btnUrl: "/services/myguide2wealth", // Assuming a similar URL structure
+    partnerPage: "/services/myguide2wealth", // Assuming a similar URL structure
+    alt: "MyGuide2Wealth logo",
+},
+{
     title: "Artha FinPlan",
     description:
       "ARTHA FinPlan offers personalized financial planning and investment advice, guiding clients towards their goals with a holistic approach.",
@@ -229,7 +238,7 @@ export default function ServicesPage() {
           We specialize in providing customized financial solutions for a
           diverse range of professionals.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center px-4 md:max-xl:px-[60px]  max-w-screen-xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 text-center px-4 md:max-xl:px-[60px]  max-w-screen-xl">
           {ourPartners.map((partner, idx) => (
             <div
               key={idx}
