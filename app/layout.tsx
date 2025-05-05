@@ -19,6 +19,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <head>
           {/* Ensure proper scaling on mobile devices */}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          {/* Pinterest meta tag */}
+          <meta
+            name="p:domain_verify"
+            content="71682144c218fb2ada31b182ce003cee"
+          />
+
+          {/* Microsoft Clarity */}
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`
+     (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "re9hm0zkl8");
+  `}
+          </Script>
         </head>
         {/* Global body styles: using our off‑white (#fcfffe) background and dark text (#272B2A) */}
         <body className="font-sans antialiased bg-[#fcfffe] text-[#272B2A]">
