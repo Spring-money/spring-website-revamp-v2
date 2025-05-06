@@ -10,13 +10,21 @@ const DEFAULT_IFSC = "HDFC0000007";
 const DEFAULT_HOLDER = "Omkar Vitthalrao Jadhav";
 
 const TRANSACTION_TYPES = [
-  { value: "lum_sum", label: "Lum sum" },
-  { value: "sip", label: "SIP" },
+  { value: "lum_sum", label: "Lump sum" },
+  { value: "sip", label: "SIP from today" },
+  { value: "sip_scheduled", label: "SIP scheduled" },
+  { value: "redeem", label: "Redeem" },
+  { value: "switch", label: "Switch" },
+  { value: "stp", label: "STP" },
+  { value: "swp", label: "SWP" },
 ];
 
 const PAYMENT_MODES = [
   { value: "UPI", label: "UPI" },
-  { value: "net banking", label: "Net Banking" },
+  { value: "OL", label: "Online" },
+  { value: "M", label: "Debit Mandate" },
+  { value: "CH", label: "Cheque" },
+  { value: "DD", label: "Demand Draft" },
 ];
 
 const PRODUCTS = [
@@ -217,7 +225,7 @@ export default function NsePage() {
     <div className="flex justify-center items-center min-h-screen bg-[#108e66]">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-xl font-bold text-[#108e66] mb-6 text-center">
-          NSE Transaction Form
+          NSE NMF Transaction 
         </h2>
         <div className="mb-4">
           <label className="block mb-1 text-[#108e66]">IIN</label>
@@ -248,7 +256,17 @@ export default function NsePage() {
             className="w-full p-2 border rounded border-[#108e66]"
           >
             {TRANSACTION_TYPES.map((type) => (
-              <option key={type.value} value={type.value}>
+              <option
+                key={type.value}
+                value={type.value}
+                disabled={[
+                  "sip_scheduled",
+                  "redeem",
+                  "switch",
+                  "stp",
+                  "swp"
+                ].includes(type.value)}
+              >
                 {type.label}
               </option>
             ))}
@@ -263,7 +281,16 @@ export default function NsePage() {
             className="w-full p-2 border rounded border-[#108e66]"
           >
             {PAYMENT_MODES.map((mode) => (
-              <option key={mode.value} value={mode.value}>
+              <option
+                key={mode.value}
+                value={mode.value}
+                disabled={[
+                  "OL",
+                  "M",
+                  "CH",
+                  "DD"
+                ].includes(mode.value)}
+              >
                 {mode.label}
               </option>
             ))}
@@ -285,7 +312,7 @@ export default function NsePage() {
           </select>
         </div>
         <div className="mb-6">
-          <label className="block mb-1 text-[#108e66]">Lum sum Amount</label>
+          <label className="block mb-1 text-[#108e66]">Lump sum Amount</label>
           <input
             type="number"
             name="lum_sum_amount"
