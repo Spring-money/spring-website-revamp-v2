@@ -187,7 +187,7 @@ export default function NsePage() {
       }
       const data = await response.json();
       // Extract Paymentlink from response (service_response or service_status)
-      let paymentLinkHtml =
+      const paymentLinkHtml =
         data?.data?.service_response?.Paymentlink ||
         data?.data?.service_status?.Paymentlink;
       if (paymentLinkHtml) {
