@@ -1,11 +1,19 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function NseSuccess() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <NseSuccessContent />
+    </Suspense>
+  );
+}
+
+function NseSuccessContent() {
   const searchParams = useSearchParams();
   const paymentStatus = searchParams?.get("PaymentStatus");
   const paymentMsg = searchParams?.get("PaymentMsg");
-
   const isSuccess = paymentStatus === "SUCCESS";
 
   return (
