@@ -42,7 +42,7 @@ interface Results {
 }
 
 // -----------------------
-// Updated Tooltip Component
+// Utility: Tooltip Component for Inputs
 // -----------------------
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -77,9 +77,10 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .tooltiptext {
           visibility: visible;
           width: 220px;
-          background-color: #108e66;
-          color: #fcfffe;
+          background-color: #fcfffe;
+          color: #272B2A;
           text-align: left;
+          border: 1px solid #108e66;
           border-radius: 4px;
           padding: 6px 8px;
           position: absolute;
@@ -100,7 +101,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           margin-left: -4px;
           border-width: 4px;
           border-style: solid;
-          border-color: #108e66 transparent transparent transparent;
+          border-color: #fcfffe transparent transparent transparent;
         }
       `}</style>
     </span>
@@ -185,7 +186,7 @@ const numberToWordsPercent = (value: number): string => {
 };
 
 // -----------------------
-// Custom Tooltip for Line Chart (Updated UI)
+// Custom Tooltip for Line Chart
 // -----------------------
 const CustomLineTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -203,21 +204,23 @@ const CustomLineTooltip = ({ active, payload, label }: any) => {
         </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #108e66;
-            border: 1px solid #272b2a;
+            background: #fcfffe;
+            border: 1px solid #108e66;
             padding: 8px;
             border-radius: 4px;
-            color: #fcfffe;
           }
           .label {
             font-weight: bold;
             margin-bottom: 4px;
+            color: #272B2A;
           }
           .intro {
             margin: 0;
+            color: #272B2A;
           }
           .desc {
             font-size: 0.8rem;
+            color: #272B2A;
             margin-top: 4px;
           }
         `}</style>
@@ -228,7 +231,7 @@ const CustomLineTooltip = ({ active, payload, label }: any) => {
 };
 
 // -----------------------
-// Custom Tooltip for Area Chart (Updated UI)
+// Custom Tooltip for Area Chart
 // -----------------------
 const CustomAreaTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -239,25 +242,27 @@ const CustomAreaTooltip = ({ active, payload, label }: any) => {
           Corpus Difference: ₹{payload[0]?.value?.toLocaleString("en-IN")}
         </p>
         <p className="desc">
-          The shaded area represents the extra value in NPS (with tax benefit) compared to Mutual Fund.
+          The shaded area shows the extra value in NPS (with tax benefit) compared to Mutual Fund.
         </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #108e66;
-            border: 1px solid #272b2a;
+            background: #fcfffe;
+            border: 1px solid #108e66;
             padding: 8px;
             border-radius: 4px;
-            color: #fcfffe;
           }
           .label {
             font-weight: bold;
             margin-bottom: 4px;
+            color: #272B2A;
           }
           .intro {
             margin: 0;
+            color: #272B2A;
           }
           .desc {
             font-size: 0.8rem;
+            color: #272B2A;
             margin-top: 4px;
           }
         `}</style>
@@ -268,7 +273,7 @@ const CustomAreaTooltip = ({ active, payload, label }: any) => {
 };
 
 // -----------------------
-// Main Mutual Fund vs. NPS Tier I Calculator Component (UI Updated)
+// Main Mutual Fund vs. NPS Calculator Component
 // -----------------------
 const MutualFundvsNPSTierICalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
@@ -397,7 +402,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
 
   return (
     <div className="container">
-      {/* Top Navigation */}
+      {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
@@ -408,7 +413,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
       <p className="description">
         Compare long-term returns between market-driven Mutual Funds and government-backed NPS Tier I investments.
       </p>
-      {/* Explanation Section */}
+      {/* Simple Explanation Section */}
       <div className="explanation">
         <p>
           <strong>Mutual Funds:</strong> Investment vehicles that pool money from many investors to buy a diversified portfolio of stocks or bonds. They are managed by professionals and reflect market performance.
@@ -598,22 +603,22 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" && lineChartData ? (
                 <LineChart data={lineChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#272B2A" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
                   <RechartsTooltip content={CustomLineTooltip} />
                   <Legend />
-                  <Line type="monotone" dataKey="Mutual Fund" stroke="#1B1F13" strokeWidth={2} name="Mutual Fund SIP" />
-                  <Line type="monotone" dataKey="NPS (incl. Tax Benefit)" stroke="#CAEF7D" strokeWidth={2} name="NPS Tier I" />
+                  <Line type="monotone" dataKey="Mutual Fund" stroke="#525ECC" strokeWidth={2} name="Mutual Fund SIP" />
+                  <Line type="monotone" dataKey="NPS (incl. Tax Benefit)" stroke="#108e66" strokeWidth={2} name="NPS Tier I" />
                 </LineChart>
               ) : chartType === "area" && areaChartData ? (
                 <AreaChart data={areaChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#272B2A" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
                   <RechartsTooltip content={CustomAreaTooltip} />
                   <Legend />
-                  <Area type="monotone" dataKey="Difference" stroke="#1B1F13" fill="#1B1F13" name="Corpus Difference" />
+                  <Area type="monotone" dataKey="Difference" stroke="#108e66" fill="#108e66" name="Corpus Difference" />
                 </AreaChart>
               ) : (
                 <React.Fragment />
@@ -621,35 +626,43 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* Get in Touch CTA */}
-          <div className="cta-container mt-8 text-center">
-            <Link
-              href="https://wa.me/your-phone-number"  // Replace with your actual WhatsApp link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#108e66] text-[#fcfffe] px-8 py-3 rounded-md font-medium hover:bg-[#272b2a] transition-colors"
-            >
-              Get in touch
-            </Link>
+          <h2 className="results-title">Year-wise Breakdown</h2>
+          <div className="amortization-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Mutual Fund Corpus (INR)</th>
+                  <th>NPS Corpus (incl. Tax Benefit) (INR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.yearWise.map((data) => (
+                  <tr key={data.year}>
+                    <td>{data.year}</td>
+                    <td>{data.mfCorpus.toLocaleString("en-IN")}</td>
+                    <td>{data.npsCorpus.toLocaleString("en-IN")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
-      )}
 
-      {results && (
-        <div className="disclaimer">
-          <h4>Important Considerations</h4>
-          <ul>
-            <li>
-              This calculator projects your investment corpus over the chosen tenure based on the input parameters.
-            </li>
-            <li>
-              Mutual Funds and NPS are compared using a SIP formula, with NPS including an estimated tax benefit.
-            </li>
-            <li>
-              Actual returns can vary due to market conditions and other factors.
-            </li>
-          </ul>
-          <p>Please consult with a financial advisor before making any investment decisions.</p>
+          <div className="disclaimer">
+            <h4>Important Considerations</h4>
+            <ul>
+              <li>
+                This calculator projects your investment corpus over the chosen tenure based on the input parameters.
+              </li>
+              <li>
+                Mutual Funds and NPS are compared using a SIP formula, with NPS including an estimated tax benefit.
+              </li>
+              <li>
+                Actual returns can vary due to market conditions and other factors.
+              </li>
+            </ul>
+            <p>Please consult with a financial advisor before making any investment decisions.</p>
+          </div>
         </div>
       )}
 
@@ -657,15 +670,15 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
         .container {
           padding: 2rem;
           font-family: "Poppins", sans-serif;
-          background: #fcfffe;
-          color: #1b1f13;
+          background: #FCFFFE;
+          color: #272B2A;
         }
         .top-nav {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #000000;
-          color: #fcfffe;
+          background: #108e66;
+          color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 4px;
@@ -685,11 +698,11 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
           margin-bottom: 1rem;
         }
         .explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
-          border-left: 4px solid #caef7d;
+          border-left: 4px solid #108e66;
           font-size: 0.95rem;
         }
         .explanation p {
@@ -697,7 +710,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
           line-height: 1.5;
         }
         .form-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -729,16 +742,18 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
         .select-input {
           padding: 0.5rem;
           margin-top: 0.5rem;
-          border: 1px solid #ccc;
+          border: 1px solid #272B2A;
           border-radius: 4px;
           height: 38px;
           width: 100%;
           box-sizing: border-box;
           font-size: 1rem;
+          background: #FCFFFE;
+          color: #272B2A;
         }
         .converter {
           font-size: 0.9rem;
-          color: #777;
+          color: #272B2A;
           margin-top: 0.25rem;
         }
         .error {
@@ -747,7 +762,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
         }
         .calculate-button {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -761,7 +776,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
           cursor: not-allowed;
         }
         .results-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -774,19 +789,20 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
           text-align: center;
         }
         .summary-card {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
+          border-left: 4px solid #108e66;
         }
         .summary-item {
           font-size: 1rem;
           margin: 0.25rem 0;
         }
         .chart-explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
@@ -802,15 +818,16 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
         }
         .chart-toggle button {
           background: transparent;
-          border: 1px solid #272b2a;
+          border: 1px solid #272B2A;
           padding: 0.5rem 1rem;
           cursor: pointer;
           border-radius: 4px;
           transition: all 0.2s ease;
+          color: #272B2A;
         }
         .chart-toggle button.active {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border-color: #108e66;
         }
         .chart-container {
@@ -823,7 +840,7 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
           overflow-y: auto;
           margin-bottom: 1.5rem;
           border-radius: 8px;
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
         }
         .amortization-table table {
           width: 100%;
@@ -831,27 +848,29 @@ const MutualFundvsNPSTierICalculator: React.FC = () => {
         }
         .amortization-table th,
         .amortization-table td {
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
           padding: 0.5rem;
           text-align: center;
+          color: #272B2A;
         }
         .amortization-table th {
-          background: #f0f8e8;
+          background: #108e66;
+          color: #FCFFFE;
           position: sticky;
           top: 0;
         }
         .disclaimer {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 4px;
           font-size: 0.9rem;
-          color: #555;
-          border: 1px solid #ddd;
+          color: #272B2A;
+          border: 1px solid #272B2A;
           margin-top: 2rem;
         }
         .disclaimer h4 {
           margin-top: 0;
-          color: #272b2a;
+          color: #272B2A;
           margin-bottom: 0.5rem;
         }
         .disclaimer ul {

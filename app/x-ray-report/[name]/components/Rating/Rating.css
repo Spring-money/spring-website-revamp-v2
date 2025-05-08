@@ -1,0 +1,130 @@
+.Rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 8px;
+  border: 0.5px solid #108e66;
+  background: rgba(16, 142, 102, 0.01);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.Rating-container {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.Rating-img-0 img {
+  width: 26.9px;
+  height: 18.246px;
+}
+.Rating-img-1 img {
+  width: 33.396px;
+  height: 25.674px;
+}
+.Rating-img-2 img {
+  width: 44.111px;
+  height: 42.361px;
+}
+.Rating-img-3 img {
+  width: 47.938px;
+  height: 60.093px;
+}
+.Rating-img-4 img {
+  width: 49.626px;
+  height: 81.852px;
+}
+
+.Rating-logo,
+.Rating-logo-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #b7c7c2;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px; /* 125% */
+}
+
+.Rating-logo-dark {
+  color: #108e66;
+}
+
+.Rating-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-grow: 1;
+}
+
+.Rating-content-heading {
+  color: #0e5235;
+  font-family: Poppins;
+  font-size: 16px;
+  /* font-size: 16px; */
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.Rating-content {
+  color: #0e5235;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width: 650px) {
+  .Rating {
+    gap: 16px;
+  }
+  .Rating-logo,
+  .Rating-logo-dark {
+    font-size: 10px;
+  }
+  .Rating-logo img {
+    width: 25px;
+    height: auto;
+  }
+
+  .Rating-img-0 img {
+    width: 26.9px;
+    height: 18.246px;
+  }
+  .Rating-img-1 img {
+    width: 33.396px;
+    height: 25.674px;
+  }
+  .Rating-img-2 img {
+    width: 44.111px;
+    height: 42.361px;
+  }
+  .Rating-img-3 img {
+    width: 47.938px;
+    height: 60.093px;
+  }
+  .Rating-img-4 img {
+    width: 49.626px;
+    height: 81.852px;
+  }
+  .Rating-content-heading {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .Rating-content {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

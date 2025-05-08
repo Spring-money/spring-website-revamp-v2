@@ -4,8 +4,6 @@ import Link from "next/link";
 import {
   LineChart,
   Line,
-  AreaChart,
-  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,12 +12,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// -----------------------
-// Interfaces
-// -----------------------
+// Interfaces for SIP Calculator inputs and results
 interface CalculatorInputs {
-  monthlyInvestment: string;         // Fixed monthly investment (INR)
-  investmentDuration: string;          // Investment Tenure (Years)
+  monthlyInvestment: string;
+  investmentDuration: string; // in years
   expectedAnnualReturn: string;
 }
 
@@ -37,14 +33,16 @@ interface Results {
   yearWise: YearlyData[];
 }
 
-// -----------------------
-// Utility: Tooltip Component
-// -----------------------
+//
+// Tooltip Component
+// Displays info text on hover over an "i" icon
+//
 const Tooltip: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <span
-      className="tooltip"
+    <span 
+      className="tooltip" 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -61,7 +59,7 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
         .info-icon {
           display: inline-block;
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -74,7 +72,7 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
           visibility: visible;
           width: 200px;
           background-color: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           text-align: left;
           border-radius: 4px;
           padding: 6px 8px;
@@ -103,9 +101,10 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// -----------------------
-// Utility: Number to Words Converters
-// -----------------------
+//
+// Number to Words Converter
+// Converts a number to a simple word representation (supports values up to millions).
+//
 const numberToWords = (num: number): string => {
   if (num === undefined || num === null) return "";
   num = Math.abs(Math.round(num));
@@ -172,17 +171,23 @@ const numberToWords = (num: number): string => {
   );
 };
 
+//
+// Number to Words Percent Converter
+// Converts a number into words and appends "percent" at the end.
+//
 const numberToWordsPercent = (value: number): string => {
   if (value === undefined || value === null) return "";
-  if (Number.isInteger(value)) return numberToWords(value) + " percent";
+  if (Number.isInteger(value)) {
+    return numberToWords(value) + " percent";
+  }
   const intPart = Math.floor(value);
   const decimalPart = Math.round((value - intPart) * 10);
   return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
 };
 
-// -----------------------
+//
 // Main SIP Calculator Component
-// -----------------------
+//
 const SipCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
     monthlyInvestment: "",
@@ -194,13 +199,11 @@ const SipCalculator: React.FC = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [chartType, setChartType] = useState<"line" | "area">("line");
 
-  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Validate required inputs
   const validateInputs = (): boolean => {
     const newErrors: Partial<CalculatorInputs> = {};
     ["monthlyInvestment", "investmentDuration", "expectedAnnualReturn"].forEach((field) => {
@@ -213,7 +216,6 @@ const SipCalculator: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Calculate results using the SIP formula
   const calculateResults = () => {
     if (!validateInputs()) return;
     setIsCalculating(true);
@@ -221,9 +223,11 @@ const SipCalculator: React.FC = () => {
     const monthlyInvestment = parseFloat(inputs.monthlyInvestment);
     const durationYears = parseFloat(inputs.investmentDuration);
     const annualReturn = parseFloat(inputs.expectedAnnualReturn);
+
     const n = durationYears * 12;
     const monthlyRate = annualReturn / 12 / 100;
-    // SIP formula: FV = P * [((1+r)^n - 1)/r] * (1+r)
+    // Future Value formula for SIP:
+    // FV = P * [((1+r)^n - 1)/r] * (1+r)
     const futureValue =
       monthlyInvestment *
       ((Math.pow(1 + monthlyRate, n) - 1) / monthlyRate) *
@@ -255,10 +259,11 @@ const SipCalculator: React.FC = () => {
       wealthGained: parseFloat(wealthGained.toFixed(2)),
       yearWise,
     });
+
     setTimeout(() => setIsCalculating(false), 1000);
   };
 
-  // Prepare chart data from year-wise breakdown
+  // Prepare chart data from yearWise breakdown
   const chartData =
     results &&
     results.yearWise.map((data) => ({
@@ -269,16 +274,17 @@ const SipCalculator: React.FC = () => {
 
   return (
     <div className="container">
-      {/* Top Navigation */}
+      {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
-
+      
       <h1 className="title">What Will Be My SIP Corpus?</h1>
       <p className="description">
-        Calculate the future value of your Systematic Investment Plan (SIP) based on your monthly investment, expected annual return, and investment duration.
+        Calculate the future value of your Systematic Investment Plan (SIP) based on your monthly investment,
+        expected annual return, and investment duration.
       </p>
 
       <div className="form-container">
@@ -297,7 +303,8 @@ const SipCalculator: React.FC = () => {
               placeholder="e.g., 5000"
             />
             <span className="converter">
-              {inputs.monthlyInvestment && numberToWords(parseFloat(inputs.monthlyInvestment))} Rupees
+              {inputs.monthlyInvestment &&
+                numberToWords(parseFloat(inputs.monthlyInvestment))} Rupees
             </span>
             {errors.monthlyInvestment && <span className="error">{errors.monthlyInvestment}</span>}
           </label>
@@ -314,7 +321,8 @@ const SipCalculator: React.FC = () => {
               placeholder="e.g., 10"
             />
             <span className="converter">
-              {inputs.investmentDuration && numberToWords(parseFloat(inputs.investmentDuration))} Years
+              {inputs.investmentDuration &&
+                numberToWords(parseFloat(inputs.investmentDuration))} Years
             </span>
             {errors.investmentDuration && <span className="error">{errors.investmentDuration}</span>}
           </label>
@@ -331,7 +339,8 @@ const SipCalculator: React.FC = () => {
               placeholder="e.g., 12"
             />
             <span className="converter">
-              {inputs.expectedAnnualReturn && numberToWordsPercent(parseFloat(inputs.expectedAnnualReturn))}
+              {inputs.expectedAnnualReturn &&
+                numberToWordsPercent(parseFloat(inputs.expectedAnnualReturn))}
             </span>
             {errors.expectedAnnualReturn && <span className="error">{errors.expectedAnnualReturn}</span>}
           </label>
@@ -361,25 +370,32 @@ const SipCalculator: React.FC = () => {
           </div>
 
           <h2 className="results-title">Investment Growth Visualization</h2>
-          <div className="chart-explanation">
-            {chartType === "line" ? (
-              <p>
-                The Growth Chart shows the total future value of your SIP investment over time. It illustrates how your monthly investment grows to form your corpus.
-              </p>
-            ) : (
-              <p>
-                The Wealth Chart highlights the profit component of your investment over time – the extra wealth gained beyond your principal.
-              </p>
-            )}
-          </div>
+          {chartType === "line" && (
+            <div className="chart-explanation">
+              <p>This Growth Chart shows the total future value of your SIP investment over time. The green line shows how your ₹{parseFloat(inputs.monthlyInvestment).toLocaleString("en-IN")} monthly investment grows to ₹{results.futureValue.toLocaleString("en-IN")} after {inputs.investmentDuration} years with compounding returns.</p>
+            </div>
+          )}
+          {chartType === "area" && (
+            <div className="chart-explanation">
+              <p>This Wealth Chart focuses on the gains from your investment. The purple line represents the profit portion (₹{results.wealthGained.toLocaleString("en-IN")}) of your investment, showing how compound interest helps your money grow beyond your principal amount.</p>
+            </div>
+          )}
+          
           <div className="chart-toggle">
-            <button onClick={() => setChartType("line")} className={chartType === "line" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("line")}
+              className={chartType === "line" ? "active" : ""}
+            >
               Growth Chart
             </button>
-            <button onClick={() => setChartType("area")} className={chartType === "area" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("area")}
+              className={chartType === "area" ? "active" : ""}
+            >
               Wealth Chart
             </button>
           </div>
+
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" ? (
@@ -389,7 +405,7 @@ const SipCalculator: React.FC = () => {
                   <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                   <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Future Value"]} />
                   <Legend />
-                  <Line type="monotone" dataKey="FutureValue" stroke="#CAEF7D" strokeWidth={2} name="Future Value" />
+                  <Line type="monotone" dataKey="FutureValue" stroke="#108e66" strokeWidth={2} name="Future Value" />
                 </LineChart>
               ) : (
                 <LineChart data={chartData || []} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
@@ -398,22 +414,50 @@ const SipCalculator: React.FC = () => {
                   <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                   <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Wealth Gained"]} />
                   <Legend />
-                  <Line type="monotone" dataKey="WealthGained" stroke="#1B1F13" strokeWidth={2} name="Wealth Gained" />
+                  <Line type="monotone" dataKey="WealthGained" stroke="#525ECC" strokeWidth={2} name="Wealth Gained" />
                 </LineChart>
               )}
             </ResponsiveContainer>
           </div>
 
-          {/* Get in Touch CTA */}
-          <div className="cta-container mt-8 text-center">
-            <Link
-              href="https://wa.me/your-phone-number"  // Replace with your actual WhatsApp link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
-              Get in touch
-            </Link>
+          <h2 className="results-title">Year-wise SIP Growth</h2>
+          <div className="amortization-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Total Invested (₹)</th>
+                  <th>Future Value (₹)</th>
+                  <th>Wealth Gained (₹)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.yearWise.map((data) => (
+                  <tr key={data.year}>
+                    <td>{data.year}</td>
+                    <td>{data.totalInvested.toLocaleString("en-IN")}</td>
+                    <td>{data.futureValue.toLocaleString("en-IN")}</td>
+                    <td>{data.wealthGained.toLocaleString("en-IN")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="disclaimer">
+            <h4>Important Considerations</h4>
+            <ul>
+              <li>
+                The future value is estimated using monthly compounding based on the inputs provided.
+              </li>
+              <li>
+                Actual returns may vary based on market fluctuations and changes in interest rates.
+              </li>
+              <li>
+                This calculator is for informational purposes only and should not be considered financial advice.
+              </li>
+            </ul>
+            <p>Please consult with a financial advisor before making any investment decisions.</p>
           </div>
         </div>
       )}
@@ -422,19 +466,20 @@ const SipCalculator: React.FC = () => {
         .container {
           padding: 2rem;
           font-family: "Poppins", sans-serif;
-          background: #fcfffe;
-          color: #272b2a;
+          background: #FCFFFE;
+          color: #272B2A;
         }
         .top-nav {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #000000;
-          color: #fcfffe;
+          background: #108e66;
+          color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 4px;
           cursor: pointer;
+          font-family: "Poppins", sans-serif;
           font-weight: 500;
         }
         .title {
@@ -449,7 +494,7 @@ const SipCalculator: React.FC = () => {
           margin-bottom: 2rem;
         }
         .form-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -481,7 +526,7 @@ const SipCalculator: React.FC = () => {
         .select-input {
           padding: 0.5rem;
           margin-top: 0.5rem;
-          border: 1px solid #ccc;
+          border: 1px solid #272B2A;
           border-radius: 4px;
           height: 38px;
           width: 100%;
@@ -490,7 +535,7 @@ const SipCalculator: React.FC = () => {
         }
         .converter {
           font-size: 0.9rem;
-          color: #777;
+          color: #272B2A;
           margin-top: 0.25rem;
         }
         .error {
@@ -499,7 +544,7 @@ const SipCalculator: React.FC = () => {
         }
         .calculate-button {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -513,7 +558,7 @@ const SipCalculator: React.FC = () => {
           cursor: not-allowed;
         }
         .results-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -526,25 +571,28 @@ const SipCalculator: React.FC = () => {
           text-align: center;
         }
         .summary-card {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
+          border: 1px solid #108e66;
         }
         .summary-item {
           font-size: 1rem;
           margin: 0.25rem 0;
         }
         .chart-explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
           border-left: 4px solid #108e66;
-          text-align: center;
-          font-size: 0.95rem;
+        }
+        .chart-explanation p {
+          margin: 0;
+          line-height: 1.5;
         }
         .chart-toggle {
           display: flex;
@@ -554,7 +602,7 @@ const SipCalculator: React.FC = () => {
         }
         .chart-toggle button {
           background: transparent;
-          border: 1px solid #272b2a;
+          border: 1px solid #272B2A;
           padding: 0.5rem 1rem;
           cursor: pointer;
           border-radius: 4px;
@@ -562,7 +610,7 @@ const SipCalculator: React.FC = () => {
         }
         .chart-toggle button.active {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border-color: #108e66;
         }
         .chart-container {
@@ -575,7 +623,7 @@ const SipCalculator: React.FC = () => {
           overflow-y: auto;
           margin-bottom: 1.5rem;
           border-radius: 8px;
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
         }
         .amortization-table table {
           width: 100%;
@@ -583,42 +631,47 @@ const SipCalculator: React.FC = () => {
         }
         .amortization-table th,
         .amortization-table td {
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
           padding: 0.5rem;
           text-align: center;
         }
         .amortization-table th {
-          background: #f0f8e8;
+          background: #108e66;
+          color: #FCFFFE;
           position: sticky;
           top: 0;
         }
-        .cta-container {
-          margin-top: 2rem;
-        }
-        .cta-button {
-          background: #108e66;
-          color: #fcfffe;
-          padding: 0.75rem 1.5rem;
+        .wealth-difference {
+          background: #FCFFFE;
+          padding: 1rem;
           border-radius: 4px;
-          text-decoration: none;
-          font-weight: 500;
-          transition: background 0.2s ease;
+          text-align: center;
+          font-size: 1.1rem;
+          border: 1px solid #108e66;
+          margin-bottom: 1.5rem;
         }
-        .cta-button:hover {
-          background: #272b2a;
+        .wealth-difference p {
+          margin: 0 0 0.5rem 0;
+        }
+        .recommendation {
+          background: #272B2A;
+          color: #FCFFFE;
+          padding: 0.75rem;
+          border-radius: 4px;
+          margin-top: 0.5rem;
         }
         .disclaimer {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 4px;
           font-size: 0.9rem;
-          color: #555;
-          border: 1px solid #ddd;
+          color: #272B2A;
+          border: 1px solid #272B2A;
           margin-top: 2rem;
         }
         .disclaimer h4 {
           margin-top: 0;
-          color: #272b2a;
+          color: #272B2A;
           margin-bottom: 0.5rem;
         }
         .disclaimer ul {

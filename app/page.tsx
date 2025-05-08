@@ -1,265 +1,337 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import FAQAccordion from "./components/FAQAccordion";
+import sideArrow from "../public/Arrow 1.svg";
+import CarouselCards from "./components/CarouselCards";
 
 /* ---------------------------------
    Carousel Component with Auto-Scrolling Animation
 --------------------------------- */
 const Carousel = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative overflow-hidden">
-    <div className="flex space-x-4 animate-autoScroll">{children}</div>
+  <div className="relative overflow-hidden w-full">
+    <div className="flex space-x-4 animate-autoScroll w-max">{children}</div>
   </div>
 );
 
-/* ---------------------------------
-   Who We Serve Section Data
---------------------------------- */
-const professionalSolutions = [
-  { id: 1, title: "Young Professionals", tagline: "Start Strong, Stay Ahead!", description: "Tailored strategies for early career growth and smart investments." },
-  { id: 2, title: "MBA Graduates", tagline: "Smart Money Moves for Smart MBAs!", description: "Optimize high-income potential with strategic planning and tax-efficient investments." },
-  { id: 3, title: "IT Professionals", tagline: "Maximize Earnings, Build Wealth Like a Pro!", description: "Diversified investment strategies and ESOP planning to secure financial independence." },
-  { id: 4, title: "Doctors & Medical Professionals", tagline: "You Care for Patients, We Care for Your Wealth!", description: "Structured roadmaps for managing loans, optimizing taxes, and planning retirement." },
-  { id: 5, title: "Lawyers & Legal Professionals", tagline: "Win in Court, Win with Your Money!", description: "Manage irregular income and tax liabilities with strategic investment plans." },
-  { id: 6, title: "Armed Forces & Government Officials", tagline: "Secure Your Future While Serving the Nation!", description: "Pension maximization, tax-efficient investments, and real estate advisory." },
-  { id: 7, title: "Professional Athletes", tagline: "Short Careers, Lifelong Wealth!", description: "Wealth preservation, passive income, and tax-efficient plans for long-term security." },
-  { id: 8, title: "Startup Founders & Entrepreneurs", tagline: "Scale Your Startup, Scale Your Wealth!", description: "Structured wealth-building plans balancing reinvestment and long-term planning." },
-  { id: 9, title: "Engineers & Architects", tagline: "Design the Future, Build Your Wealth!", description: "Optimizing tax strategies and planning for early retirement with tailored investments." },
-  { id: 10, title: "Teachers & Professors", tagline: "Shape Minds, Secure Your Future!", description: "Smart savings, side-income strategies, and pension planning for educators." },
-  { id: 11, title: "Media & Creative Professionals", tagline: "Transform Creativity into Wealth!", description: "Manage irregular income with smart tax planning and secure investment strategies." },
-  { id: 12, title: "Freelancers & Consultants", tagline: "From Irregular Income to Consistent Wealth!", description: "Income stabilization and tax-efficient financial roadmaps for independent professionals." },
-  { id: 13, title: "Real Estate Agents & Investors", tagline: "Build Properties, Build Your Empire!", description: "Optimize commissions and create diversified portfolios for sustained wealth." },
-  { id: 14, title: "Finance Experts", tagline: "Optimize Your Finances!", description: "Customized strategies for financial professionals to manage and grow wealth." },
-  { id: 15, title: "Government Officials", tagline: "Secure Your Future!", description: "Tailored plans focusing on pension maximization and secure investments." },
-];
+interface WhoWeServeCardsProps {
+  img: string;
+  heading: string;
+  subHeading: string;
+}
 
 /* ---------------------------------
    Tools (Calculators) Data for Home Page
    (Three new placeholder tools are added on top)
 --------------------------------- */
-const additionalCalculators = [
-  {
-    id: 16,
-    title: "Placeholder Tool 1",
-    description: "This is a placeholder tool for future features.",
-    slug: "placeholder-tool-1",
-  },
-  {
-    id: 17,
-    title: "Placeholder Tool 2",
-    description: "This is a placeholder tool for future features.",
-    slug: "placeholder-tool-2",
-  },
-  {
-    id: 18,
-    title: "Placeholder Tool 3",
-    description: "This is a placeholder tool for future features.",
-    slug: "placeholder-tool-3",
-  },
-];
+
 const baseCalculators = [
-  { id: 1, title: "Should I Buy or Rent a Home?", description: "Analyze whether it's more cost-effective to buy a house or continue renting.", slug: "buyVsRent" },
-  { id: 2, title: "Buy a Car vs. Commute Calculator", description: "Compare the costs of owning a car versus using alternative commuting options.", slug: "carVsCommute" },
-  { id: 3, title: "EMI Calculator", description: "Estimate monthly loan payments for car, home, or other loans.", slug: "emiCalculator" },
-  { id: 4, title: "Endowment Calculator", description: "Determine whether to continue your endowment policy or surrender it.", slug: "endowmentVsTerm" },
-  { id: 5, title: "FD vs RD Calculator", description: "Project maturity values and growth for Fixed and Recurring Deposits.", slug: "fdRdCalculator" },
-  { id: 6, title: "FD-Based Retirement Calculator", description: "Plan your retirement corpus using FD-based projections.", slug: "fdRetirementCalculator" },
-  { id: 7, title: "FIRE Calculator", description: "Evaluate if 25x your annual expenses is enough for early retirement.", slug: "fireCalculator" },
-  { id: 8, title: "When Will I Make My First Crore?", description: "Find out how long it takes to accumulate ₹1 crore based on your investments.", slug: "firstCrore" },
-  { id: 9, title: "Fuel vs. Electric Vehicle Calculator", description: "Compare long-term costs of fuel-based versus electric vehicles.", slug: "fuelVsEv" },
-  { id: 10, title: "Hourly Wage Calculator", description: "Convert your annual or monthly salary into an hourly wage.", slug: "hourlyWage" },
-  { id: 11, title: "MBA ROI Calculator", description: "Assess lost earnings during an MBA versus potential salary growth post-MBA.", slug: "mbaRoi" },
-  { id: 12, title: "Mutual Fund vs. NPS Tier I Calculator", description: "Compare market-driven Mutual Funds with government-backed NPS Tier I investments.", slug: "npsVsMf" },
-  { id: 13, title: "CTC vs. In-Hand Salary Calculator", description: "Break down your Cost-to-Company into net monthly take-home pay.", slug: "salaryCalculator" },
-  { id: 14, title: "SIP Calculator", description: "Explore potential returns of Systematic Investment Plans over time.", slug: "sipCalculator" },
-  { id: 15, title: "Sukanya Samriddhi Yojana Calculator", description: "Compute maturity amounts and benefits of the SSY savings scheme.", slug: "sukanyaSamruddhi" },
+  {
+    id: 1,
+    title: "Should I Buy or Rent a Home?",
+    description:
+      "Analyze whether it's more cost-effective to buy a house or continue renting.",
+    slug: "buyVsRent",
+  },
+  {
+    id: 2,
+    title: "Buy a Car vs. Commute Calculator",
+    description:
+      "Compare the costs of owning a car versus using alternative commuting options.",
+    slug: "carVsCommute",
+  },
+  {
+    id: 3,
+    title: "EMI Calculator",
+    description:
+      "Estimate monthly loan payments for car, home, or other loans.",
+    slug: "emiCalculator",
+  },
+  {
+    id: 4,
+    title: "Endowment Calculator",
+    description:
+      "Determine whether to continue your endowment policy or surrender it.",
+    slug: "endowmentVsTerm",
+  },
+  {
+    id: 5,
+    title: "FD vs RD Calculator",
+    description:
+      "Project maturity values and growth for Fixed and Recurring Deposits.",
+    slug: "fdRdCalculator",
+  },
+  {
+    id: 6,
+    title: "FD-Based Retirement Calculator",
+    description: "Plan your retirement corpus using FD-based projections.",
+    slug: "fdRetirementCalculator",
+  },
+  // {
+  //   id: 7,
+  //   title: "FIRE Calculator",
+  //   description:
+  //     "Evaluate if 25x your annual expenses is enough for early retirement.",
+  //   slug: "fireCalculator",
+  // },
+  // {
+  //   id: 8,
+  //   title: "When Will I Make My First Crore?",
+  //   description:
+  //     "Find out how long it takes to accumulate ₹1 crore based on your investments.",
+  //   slug: "firstCrore",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Fuel vs. Electric Vehicle Calculator",
+  //   description:
+  //     "Compare long-term costs of fuel-based versus electric vehicles.",
+  //   slug: "fuelVsEv",
+  // },
+  // {
+  //   id: 10,
+  //   title: "Hourly Wage Calculator",
+  //   description: "Convert your annual or monthly salary into an hourly wage.",
+  //   slug: "hourlyWage",
+  // },
+  // {
+  //   id: 11,
+  //   title: "MBA ROI Calculator",
+  //   description:
+  //     "Assess lost earnings during an MBA versus potential salary growth post-MBA.",
+  //   slug: "mbaRoi",
+  // },
+  // {
+  //   id: 12,
+  //   title: "Mutual Fund vs. NPS Tier I Calculator",
+  //   description:
+  //     "Compare market-driven Mutual Funds with government-backed NPS Tier I investments.",
+  //   slug: "npsVsMf",
+  // },
+  // {
+  //   id: 13,
+  //   title: "CTC vs. In-Hand Salary Calculator",
+  //   description:
+  //     "Break down your Cost-to-Company into net monthly take-home pay.",
+  //   slug: "salaryCalculator",
+  // },
+  // {
+  //   id: 14,
+  //   title: "SIP Calculator",
+  //   description:
+  //     "Explore potential returns of Systematic Investment Plans over time.",
+  //   slug: "sipCalculator",
+  // },
+  // {
+  //   id: 15,
+  //   title: "Sukanya Samriddhi Yojana Calculator",
+  //   description:
+  //     "Compute maturity amounts and benefits of the SSY savings scheme.",
+  //   slug: "sukanyaSamruddhi",
+  // },
 ];
-const calculators = [...additionalCalculators, ...baseCalculators];
-
-/* ---------------------------------
-   Testimonial Videos Data
---------------------------------- */
-const testimonialVideos = [
-  { videoId: "CSVJa2PK7M8", quote: '"Spring Money transformed my financial future."' },
-  { videoId: "5m5Qigm2j7w", quote: '"Expert advice that makes a real difference."' },
-  { videoId: "jx_6soC3wuM", quote: '"Innovative insights for lasting impact."' },
-  { videoId: "2YlOxs78WPc", quote: '"Trusted and reliable financial guidance."' },
-  { videoId: "abc123XYZ", quote: '"Their personalized approach is unmatched."' },
-];
-
-/* ---------------------------------
-   Mission & Vision Data
---------------------------------- */
-// const missionVisionCards = [
-//   { id: 1, title: "Expert Guidance", image: "/images/mission1.jpg" },
-//   { id: 2, title: "Innovative Solutions", image: "/images/mission2.jpg" },
-//   { id: 3, title: "Long-Term Planning", image: "/images/mission3.jpg" },
-//   { id: 4, title: "Personalized Advice", image: "/images/mission4.jpg" },
-//   { id: 5, title: "Sustainable Growth", image: "/images/mission5.jpg" },
-// ];
-
-/* ---------------------------------
-   TestimonialCard Component
---------------------------------- */
-const TestimonialCard = ({
-  videoId,
-  quote,
-  isActive,
-  onPlay,
-}: {
-  videoId: string;
-  quote: string;
-  isActive: boolean;
-  onPlay: () => void;
-}) => {
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-  return (
-    <motion.div
-      onClick={onPlay}
-      whileHover={{ scale: 1.05 }}
-      className="bg-[#fcfffe] rounded-2xl p-6 shadow-lg transition cursor-pointer"
-    >
-      <div className="relative pb-[56.25%] mb-4">
-        {isActive ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-            title="Testimonial Video"
-            className="absolute top-0 left-0 w-full h-full rounded-md"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
-          <Image
-            src={thumbnailUrl}
-            alt="Video Thumbnail"
-            className="absolute top-0 left-0 w-full h-full rounded-md object-cover"
-            fill
-          />
-        )}
-      </div>
-      <p className="text-center text-[#272B2A] text-base font-semibold">{quote}</p>
-    </motion.div>
-  );
-};
+const calculators = [...baseCalculators];
 
 /* ---------------------------------
    HomePage Component
 --------------------------------- */
-export default function HomePage() {
-  const [activeTestimonial, setActiveTestimonial] = useState<string | null>(null);
 
+const faqs = [
+  {
+    question: "Who are the financial advisors on Spring Money?",
+    answer:
+      "Our network consists exclusively of SEBI-registered investment advisors. This ensures that you receive expert financial guidance from professionals who are regulated and held to the highest ethical and professional standards.",
+  },
+  {
+    question:
+      "How does Spring Money connect me with an advisor?",
+    answer:
+      "To begin, simply reach out to us via WhatsApp. We'll initiate a conversation to understand your specific financial goals, current situation, and preferences. Based on this, we'll match you with a suitable advisor from our network. This personalized approach ensures you find an advisor whose expertise aligns with your needs.",
+  },
+  {
+    question: "What types of financial planning do you offer?",
+    answer:
+      "Our partner advisors provide personalized financial planning services designed to address your unique circumstances. They offer a comprehensive suite of solutions, encompassing everything from holistic financial planning that integrates investments, retirement, insurance, tax optimization, debt management, and budgeting, to focused strategies for building and managing your investment portfolio. Additionally, they specialize in retirement planning to ensure a secure future and goal-based planning to help you achieve specific financial objectives like homeownership or educational funding.",
+  },
+  {
+    question: "Is Spring Money suitable for all income levels?",
+    answer:
+      "Yes, absolutely. We believe that everyone deserves access to quality financial advice. Our services are designed to be flexible and adaptable, catering to individuals at every stage of their financial journey, from those just starting out to those managing substantial wealth.",
+  },
+  {
+    question: "Are the financial tools on your website free to use?",
+    answer:
+      "Yes, our financial calculators are completely free to use. They are designed to provide you with valuable insights and help you make informed financial decisions.",
+  },
+  {
+    question: "What are the costs associated with financial planning?",
+    answer:
+      "You get a range of financial planning options, including one-time consultations and comprehensive, ongoing planning services. Pricing varies depending on the complexity of your financial situation and the services you require. We recommend contacting us via WhatsApp to discuss your specific needs and receive a personalized quote.",
+  },
+];
+
+const WhoWeServeCards: React.FC<WhoWeServeCardsProps> = ({
+  img,
+  heading,
+  subHeading,
+}) => {
+  return (
+    <div className="flex flex-col gap-4 rounded-lg border border-[#108E66] bg-[#FCFFFE] p-6 items-center">
+      <Image src={img} width={441} height={400} alt="who we serve image" className="mb-4 w-full h-auto object-contain"/>
+      <span className="text-[24px] md:text-[28px] font-semibold text-[#272a2b] mb-2">
+        {heading}
+      </span>
+      <span className="text-[18px] md:text-[20px] font-normal text-[#272a2b]">{subHeading}</span>
+    </div>
+  );
+};
+
+export default function HomePage() {
   return (
     <div className="font-sans space-y-16">
       {/* HERO SECTION (Solid Background, No Gradient) */}
-      <section className="bg-[#108e66] text-white py-16 px-4 md:pb-0 md:px-8">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center md:justify-between">
-          <div className="md:w-1/2 text-center md:text-left space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Smart, Simple, and Transparent Financial Planning
+      <section className="bg-[#108e66] text-white lg:pb-0">
+        <div className="mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
+          <div className="lg:w-[70%] text-center lg:text-left space-y-4 px-16 py-16 lg:py-0">
+            <h1 className="text-4xl lg:text-5xl font-bold">
+            Smart, Comprehensive and Unbiased Financial Planning
             </h1>
             <p className="text-lg md:text-xl">
-              Experience innovative, tailored, and comprehensive financial planning for every stage of your life.
+            Experience digital-first, personalised and goal-based financial planning for every stage of your life
             </p>
             <Link
               href="/services"
-              className="inline-block bg-[#fcfffe] text-[#108e66] px-8 py-3 rounded-md font-medium border border-[#108e66] hover:bg-[#272B2A] transition-colors"
+              className="inline-block bg-[#fcfffe] text-[#108e66] px-8 py-3 rounded-md font-semibold border border-[#108e66] hover:bg-[#fcfffe] transition-colors"
             >
-              Get Started Now
+              Get Started
             </Link>
           </div>
-          
-            <Image src="/unsplash_Orl8HXvlfJ8.svg" alt="Fintech Hero Illustration" className="hidden md:block" width={400} height={200}/>
 
+          <Image
+            src="/dashboard.svg"
+            alt="Fintech Hero Illustration"
+            className="hidden lg:block w-auto max-w-full"
+            width={100}
+            height={100}
+            priority={true}
+          />
         </div>
       </section>
 
       {/* WHO WE SERVE SECTION (Carousel with Auto-Scrolling) */}
-      <section className="container mx-auto px-4 max-w-screen-xl">
-        <h2 className="text-3xl font-bold text-center text-[#272B2A] mb-4">Who We Serve</h2>
-        <p className="text-center text-[#272B2A] mb-10 max-w-2xl mx-auto">
-          We specialize in providing customized financial solutions for a diverse range of professionals.
+      <section className="mx-auto  max-w-screen-xl">
+        <h2 className="text-3xl font-bold text-center text-[#272B2A] mb-4">
+        We Serve You and Your Aspirations
+        </h2>
+        <p className="text-center text-[#272B2A] mb-10 max-w-2xl mx-auto text-xl font-normal">
+          Tailored Financial Strategies for Every Professional Journey.
         </p>
-        <Carousel>
-          {professionalSolutions.concat(professionalSolutions).map((profile, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 bg-[#fcfffe] border border-gray-200 p-6 rounded-2xl shadow-md mx-2 w-64 hover:shadow-xl transition-shadow flex flex-col"
-            >
-              <h3 className="text-xl font-semibold text-[#272B2A] mb-1">{profile.title}</h3>
-              <p className="text-sm text-[#272B2A] font-medium mb-2">{profile.tagline}</p>
-              <p className="text-sm text-[#272B2A]">{profile.description}</p>
-            </div>
-          ))}
-        </Carousel>
-      </section>
-
-      {/* TESTIMONIALS SECTION */}
-      <section className="container mx-auto px-4 max-w-screen-xl">
-        <h2 className="text-3xl font-bold text-center text-[#272B2A] mb-2">Testimonial</h2>
-        <p className="text-lg text-center text-[#272B2A] mb-8">Some Heading for the testimonial video</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {testimonialVideos.map((item, index) => (
-            <TestimonialCard
-              key={index}
-              videoId={item.videoId}
-              quote={item.quote}
-              isActive={activeTestimonial === item.videoId}
-              onPlay={() => setActiveTestimonial(item.videoId)}
-            />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 sm:px-6 md:px-16 max-w-screen-xl">
+          <WhoWeServeCards
+            img="/who-we-serve/it.svg"
+            heading="IT Professionals"
+            subHeading="Maximize IT Earnings: ESOP & Wealth Strategies."
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/mba.svg"
+            heading="MBA Graduates"
+            subHeading="MBA Financial Edge: Maximize Income, Minimize Taxes."
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/professional.svg"
+            heading="Young Professionals"
+            subHeading="Young Pro Wealth: Smart Start, Long-Term Growth"
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/forces.svg"
+            heading="Armed Forces & Government Officials"
+            subHeading="Serve & Secure: Pension & Investment Strategies"
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/doctors.svg"
+            heading="Doctors & Medical Professionals"
+            subHeading="Secure Your Practice: Loan, Tax & Retirement Planning."
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/lawyer.svg"
+            heading="Lawyers & Legal Professionals"
+            subHeading="Legal Wealth: Navigate Irregular Income & Taxes."
+          />
         </div>
       </section>
+
+      <CarouselCards />
 
       {/* TOOLS SECTION (Carousel with Auto-Scrolling) */}
-      <section className="py-20 px-4 text-center bg-[#fcfffe] text-[#272B2A]">
+      <section className="mx-auto py-20 text-center bg-[#fcfffe] text-[#272B2A] max-w-screen-xl p">
         <div className="max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Smart Financial Tools</h1>
-          <p className="text-lg md:text-xl mb-8">
-            Plan, Calculate &amp; Succeed – your suite of financial tools for effective planning.
+          <h1 className="text-[40px] font-semibold mb-4 text-[#108E66]">
+            Smart Financial Tools
+          </h1>
+          <p className="text-xl mb-8 text-[#108E66] font-normal">
+          Empower Your Financial Decisions with comprehensive Calculators.
           </p>
-          <Link
-            href="/tools"
-            className="inline-block bg-[#108e66] text-[#fcfffe] px-8 py-3 rounded-md font-medium hover:bg-[#272B2A] transition-colors"
-          >
-            Explore All Tools
-          </Link>
         </div>
-        <Carousel>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
           {calculators.map((calc) => (
-            <motion.div
+            <div
               key={calc.id}
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 bg-[#fcfffe] border border-gray-200 p-6 rounded-2xl shadow-md w-64 hover:shadow-xl transition-shadow flex flex-col"
+              // whileHover={{ scale: 1.05 }}
+              className="flex-shrink-0 bg-[#F0FAF7] border border-[#108e6633] p-4 rounded-2xl shadow-md  items-start hover:shadow-xl transition-shadow flex flex-col"
             >
-              <h2 className="text-2xl font-bold mb-3">{calc.title}</h2>
-              <p className="mb-6 flex-grow break-words">{calc.description}</p>
+              <h2 className="text-xl text-[#272B2A] font-medium mb-2">
+                {calc.title}
+              </h2>
+              <p className="mb-6 text-[#272b2ae6] text-base font-normal text-start flex-grow">
+                {calc.description}
+              </p>
               <Link
                 href={`/tools/${calc.slug}`}
-                className="inline-block bg-[#272B2A] text-[#fcfffe] px-4 py-2 rounded-md hover:bg-[#108e66] transition text-center"
+                className="flex border border-[#108E66] gap-[6px] px-4 py-2 rounded-md hover:bg-white transition text-center"
               >
-                Calculate
+                <p className="text-base font-semibold text-[#108E66]">
+                  Check Now
+                </p>
+                <Image
+                  src={sideArrow}
+                  width={10}
+                  height={10}
+                  alt="right arrow"
+                />
               </Link>
-            </motion.div>
+            </div>
           ))}
-        </Carousel>
+          <div className="flex justify-center "></div>
+          <Link
+              href="/tools"
+              className="inline-block bg-[#fcfffe] text-[#108e66] mt-4 px-8 py-3 rounded-md font-medium border border-[#108e66] hover:bg-[#108e66] hover:text-[#fcfffe] transition-colors"
+            >
+              View all tools
+            </Link>
+        </div>
       </section>
 
       {/* MISSION & VISION SECTION */}
       <section className="container mx-auto px-4 py-16 max-w-screen-xl">
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center text-center justify-center gap-4">
+          <p className="text-[#272B2A] text-[40px] font-semibold">
+            Our Mission & Vision
+          </p>
+          <p className="text-[#272B2A] text-xl font-normal">
+          Democratizing Expert Financial Advice: Comprehensive, Transparent, Effective.
+          </p>
           <Link
-            href="/financial-planning"
+            href="/meet-the-team"
             className="inline-block bg-[#108e66] text-[#fcfffe] px-8 py-3 rounded-md font-medium hover:bg-[#272B2A] transition-colors"
           >
-            Learn More About Our Financial Planning
+            Meet the team
           </Link>
         </div>
-        <p className="text-center text-[#272B2A] text-lg mt-4">
-          Our vision is to help bring about a world that confidently makes smart financial decisions.
-        </p>
       </section>
+      {/* FAQ Accordion remains intact */}
+      <FAQAccordion faqs={faqs} />
     </div>
   );
 }

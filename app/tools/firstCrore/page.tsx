@@ -69,7 +69,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .info-icon {
           display: inline-block;
           background: #108e66;
-          color: #272b2a;
+          color: #fcfffe;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -93,7 +93,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(39, 43, 42, 0.1);
           opacity: 1;
         }
         .tooltiptext::after {
@@ -393,7 +393,7 @@ const FirstCroreCalculator: React.FC = () => {
     <div className="container">
       {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
-        <Link href="/">
+        <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
@@ -607,7 +607,7 @@ const FirstCroreCalculator: React.FC = () => {
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" && lineChartData ? (
                 <LineChart data={lineChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
+                  <CartesianGrid stroke="#272B2A" strokeDasharray="3 3" />
                   <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
                   <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                   <RechartsTooltip content={CustomLineTooltip} />
@@ -616,12 +616,12 @@ const FirstCroreCalculator: React.FC = () => {
                 </LineChart>
               ) : chartType === "area" && areaChartData ? (
                 <AreaChart data={areaChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
+                  <CartesianGrid stroke="#272B2A" strokeDasharray="3 3" />
                   <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
                   <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                   <RechartsTooltip content={CustomAreaTooltip} />
                   <Legend />
-                  <Area type="monotone" dataKey="WealthGained" stroke="#525ecc" fill="#525ecc" name="Wealth Gained" />
+                  <Area type="monotone" dataKey="WealthGained" stroke="#525ECC" fill="#525ECC" name="Wealth Gained" />
                   <Line type="monotone" dataKey="Corpus" stroke="#108e66" strokeWidth={2} name="Corpus Growth" />
                 </AreaChart>
               ) : (
@@ -688,7 +688,7 @@ const FirstCroreCalculator: React.FC = () => {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #272b2a;
+          background: #108e66;
           color: #fcfffe;
           border: none;
           padding: 0.5rem 1rem;
@@ -712,7 +712,7 @@ const FirstCroreCalculator: React.FC = () => {
           background: #fcfffe;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .section-title {
@@ -747,6 +747,8 @@ const FirstCroreCalculator: React.FC = () => {
           width: 100%;
           box-sizing: border-box;
           font-size: 1rem;
+          color: #272b2a;
+          background: #fcfffe;
         }
         .converter {
           font-size: 0.9rem;
@@ -776,7 +778,7 @@ const FirstCroreCalculator: React.FC = () => {
           background: #fcfffe;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .results-title {
@@ -828,10 +830,12 @@ const FirstCroreCalculator: React.FC = () => {
           cursor: pointer;
           border-radius: 4px;
           transition: all 0.2s ease;
+          color: #272b2a;
+          background: #fcfffe;
         }
         .chart-toggle button.active {
           background: #108e66;
-          color: #272b2a;
+          color: #fcfffe;
           border-color: #108e66;
         }
         .chart-container {
@@ -857,7 +861,8 @@ const FirstCroreCalculator: React.FC = () => {
           text-align: center;
         }
         .amortization-table th {
-          background: #fcfffe;
+          background: #108e66;
+          color: #fcfffe;
           position: sticky;
           top: 0;
         }

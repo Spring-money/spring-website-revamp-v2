@@ -1,0 +1,34 @@
+.BarContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.25rem;
+    margin: 1rem 0 2rem;
+    flex-shrink: 0;
+    width: 100%;
+    --HEIGHT:0.25rem;
+    --BAR-TRACK-COLOR: rgba(39, 43, 42, 0.10);    ;
+    --BAR-PROGRESS-COLOR:#108E66;
+    --BAR-PROGRESS-WIDTH:70%;
+}
+
+.BarTrack{
+    height: var(--HEIGHT);
+    position: relative;
+    width: 100%;
+    background-color: var(--BAR-TRACK-COLOR);
+    border-radius: var(--HEIGHT);
+    overflow: hidden;
+}
+
+.BarTrack::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--HEIGHT);
+    width: var(--BAR-PROGRESS-WIDTH);
+    background-color: var(--BAR-PROGRESS-COLOR);
+    border-radius: var(--HEIGHT);
+    transition: all 0.5s ease-in-out;
+}

@@ -15,11 +15,11 @@ import {
 } from "recharts";
 
 // -----------------------
-// Interfaces for FIRE Calculator
+// Interfaces
 // -----------------------
 interface CalculatorInputs {
   annualExpenses: string;  // Annual expenses (INR)
-  expectedReturn: string;  // Expected annual return (%)
+  expectedReturn: string;  // Expected annual return (%) 
   inflationRate: string;   // Expected annual inflation rate (%)
 }
 
@@ -36,21 +36,20 @@ interface Results {
 }
 
 // -----------------------
-// Updated TooltipIcon Component
-// Uses our primary brand colour (#108e66) with white text
+// Tooltip for Inputs
 // -----------------------
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <span
-      className="TooltipIcon"
+      className="tooltipIcon"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <span className="info-icon">i</span>
       {isHovered && <span className="tooltiptext">{text}</span>}
       <style jsx>{`
-        .TooltipIcon {
+        .tooltipIcon {
           position: relative;
           display: inline-block;
           margin-left: 5px;
@@ -60,7 +59,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .info-icon {
           display: inline-block;
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -73,7 +72,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           visibility: visible;
           width: 220px;
           background-color: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           text-align: left;
           border-radius: 4px;
           padding: 6px 8px;
@@ -84,7 +83,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(39, 43, 42, 0.1);
           opacity: 1;
         }
         .tooltiptext::after {
@@ -103,30 +102,72 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
 };
 
 // -----------------------
-// Utility: Number to Words Converters
+// Utility: Number to Words
 // -----------------------
 const numberToWords = (num: number): string => {
   if (num === undefined || num === null) return "";
   num = Math.abs(Math.round(num));
   if (num === 0) return "Zero";
   const ones = [
-    "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-    "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-    "Seventeen", "Eighteen", "Nineteen",
+    "",
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Eleven",
+    "Twelve",
+    "Thirteen",
+    "Fourteen",
+    "Fifteen",
+    "Sixteen",
+    "Seventeen",
+    "Eighteen",
+    "Nineteen",
   ];
   const tens = [
-    "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety",
+    "",
+    "Ten",
+    "Twenty",
+    "Thirty",
+    "Forty",
+    "Fifty",
+    "Sixty",
+    "Seventy",
+    "Eighty",
+    "Ninety",
   ];
   if (num < 20) return ones[num];
   if (num < 100)
     return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
   if (num < 1000)
-    return ones[Math.floor(num / 100)] + " Hundred" + (num % 100 !== 0 ? " " + numberToWords(num % 100) : "");
+    return (
+      ones[Math.floor(num / 100)] +
+      " Hundred" +
+      (num % 100 !== 0 ? " " + numberToWords(num % 100) : "")
+    );
   if (num < 100000)
-    return numberToWords(Math.floor(num / 1000)) + " Thousand" + (num % 1000 !== 0 ? " " + numberToWords(num % 1000) : "");
+    return (
+      numberToWords(Math.floor(num / 1000)) +
+      " Thousand" +
+      (num % 1000 !== 0 ? " " + numberToWords(num % 1000) : "")
+    );
   if (num < 10000000)
-    return numberToWords(Math.floor(num / 100000)) + " Lakh" + (num % 100000 !== 0 ? " " + numberToWords(num % 100000) : "");
-  return numberToWords(Math.floor(num / 10000000)) + " Crore" + (num % 10000000 !== 0 ? " " + numberToWords(num % 10000000) : "");
+    return (
+      numberToWords(Math.floor(num / 100000)) +
+      " Lakh" +
+      (num % 100000 !== 0 ? " " + numberToWords(num % 100000) : "")
+    );
+  return (
+    numberToWords(Math.floor(num / 10000000)) +
+    " Crore" +
+    (num % 10000000 !== 0 ? " " + numberToWords(num % 10000000) : "")
+  );
 };
 
 const numberToWordsPercent = (value: number): string => {
@@ -139,33 +180,35 @@ const numberToWordsPercent = (value: number): string => {
 
 // -----------------------
 // Custom Tooltip for Line Chart
-// Updated to use white background and dark text (#272B2A)
+// -----------------------
 const CustomLineTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
         <p className="label">Year: {label}</p>
         <p className="intro">Corpus: ₹{payload[0]?.value?.toLocaleString("en-IN")}</p>
-        <p className="desc">This line chart displays the evolution of your FIRE corpus over time.</p>
+        <p className="desc">
+          This line chart displays the evolution of your FIRE corpus over time.
+        </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #fcfffe;
-            border: 1px solid #272b2a;
+            background: #FCFFFE;
+            border: 1px solid #272B2A;
             padding: 8px;
             border-radius: 4px;
           }
           .label {
             font-weight: bold;
             margin-bottom: 4px;
-            color: #272b2a;
+            color: #272B2A;
           }
           .intro {
             margin: 0;
-            color: #272b2a;
+            color: #272B2A;
           }
           .desc {
             font-size: 0.8rem;
-            color: #272b2a;
+            color: #272B2A;
             margin-top: 4px;
           }
         `}</style>
@@ -177,7 +220,7 @@ const CustomLineTooltip = ({ active, payload, label }: any) => {
 
 // -----------------------
 // Custom Tooltip for Area Chart
-// Updated to use white background and dark text (#272B2A)
+// -----------------------
 const CustomAreaTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
@@ -185,27 +228,28 @@ const CustomAreaTooltip = ({ active, payload, label }: any) => {
         <p className="label">Year: {label}</p>
         <p className="intro">Gap: ₹{payload[0]?.value?.toLocaleString("en-IN")}</p>
         <p className="desc">
-          The area represents the gap between your corpus and the required FIRE corpus (25× annual expenses).
+          The area represents the gap between your corpus and the required FIRE corpus (25× annual
+          expenses).
         </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #fcfffe;
-            border: 1px solid #272b2a;
+            background: #FCFFFE;
+            border: 1px solid #272B2A;
             padding: 8px;
             border-radius: 4px;
           }
           .label {
             font-weight: bold;
             margin-bottom: 4px;
-            color: #272b2a;
+            color: #272B2A;
           }
           .intro {
             margin: 0;
-            color: #272b2a;
+            color: #272B2A;
           }
           .desc {
             font-size: 0.8rem;
-            color: #272b2a;
+            color: #272B2A;
             margin-top: 4px;
           }
         `}</style>
@@ -235,7 +279,7 @@ const FIRECalculator: React.FC = () => {
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Validate required inputs
+  // Validate inputs
   const validateInputs = (): boolean => {
     const newErrors: Partial<CalculatorInputs> = {};
     const requiredFields = ["annualExpenses", "expectedReturn", "inflationRate"];
@@ -270,13 +314,13 @@ const FIRECalculator: React.FC = () => {
 
     for (let year = 1; year <= maxYears; year++) {
       yearsSustainable = year;
-      // Corpus grows by expected return
+      // Corpus grows by expectedReturn
       corpus = corpus * (1 + expectedReturn);
       // Then withdraw this year's expenses
       corpus = corpus - expense;
 
       if (corpus < 0) {
-        corpus = 0;
+        corpus = 0; // ensure corpus doesn't go negative
         yearWise.push({
           year,
           expense: parseFloat(expense.toFixed(2)),
@@ -284,12 +328,14 @@ const FIRECalculator: React.FC = () => {
         });
         break;
       }
+
       yearWise.push({
         year,
         expense: parseFloat(expense.toFixed(2)),
         corpus: parseFloat(corpus.toFixed(2)),
       });
-      // Increase expense for next year with inflation
+
+      // Next year's expenses grow with inflation
       expense = expense * (1 + inflationRate);
     }
 
@@ -309,6 +355,7 @@ const FIRECalculator: React.FC = () => {
       Corpus: data.corpus,
     }));
 
+  // For the area chart, show the gap between the current corpus and the required FIRE corpus
   const areaChartData =
     results &&
     results.yearWise.map((data) => ({
@@ -318,9 +365,7 @@ const FIRECalculator: React.FC = () => {
 
   return (
     <div className="container">
-      {/* -----------------------
-          Top Navigation: Back to Dashboard
-      ----------------------- */}
+      {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
@@ -329,20 +374,25 @@ const FIRECalculator: React.FC = () => {
 
       <h1 className="title">FIRE 25x Calculator</h1>
       <p className="description">
-        Determine whether a corpus equal to <strong>25× your annual expenses</strong> will sustain your retirement over 50 years, given your expected return and inflation rate.
+        Determine whether a corpus equal to <strong>25× your annual expenses</strong> will sustain your retirement
+        over 50 years, given your expected return and inflation rate.
       </p>
 
-      {/* Explanation Box */}
+      {/* Explanation Box Below Heading */}
       <div className="explanation">
         <p>
-          <strong>FIRE (Financial Independence, Retire Early):</strong> The <strong>25× rule</strong> suggests you need a corpus of <em>25 times</em> your annual expenses to retire early. This simulation models your corpus growth against annual withdrawals that rise with inflation.
+          <strong>FIRE (Financial Independence, Retire Early):</strong> The <strong>25× rule</strong> is a popular guideline
+          suggesting you need a corpus of <em>25 times</em> your annual expenses to retire early. At a ~4% withdrawal rate,
+          this amount typically lasts 30+ years if market returns and inflation remain steady.
         </p>
         <p>
-          If your corpus depletes before 50 years, you may need to adjust your savings or spending habits.
+          This calculator simulates how your <strong>FIRE corpus</strong> evolves each year as it grows with your{" "}
+          <strong>expected investment return</strong> but shrinks from <strong>annual expense withdrawals</strong>{" "}
+          (which rise with inflation). If the final corpus hits <strong>0</strong>, your funds are depleted under current
+          assumptions.
         </p>
       </div>
 
-      {/* Input Form */}
       <div className="form-container">
         <h2 className="section-title">Retirement Details</h2>
         <div className="input-group">
@@ -403,7 +453,6 @@ const FIRECalculator: React.FC = () => {
         </button>
       </div>
 
-      {/* Results Section */}
       {results && (
         <div className="results-container">
           <h2 className="results-title">FIRE Corpus Sustainability</h2>
@@ -426,12 +475,15 @@ const FIRECalculator: React.FC = () => {
           <h2 className="results-title">Corpus Growth Visualization</h2>
           <div className="chart-explanation">
             <p>
-              The <strong>Line Chart</strong> shows your corpus over time, starting at 25× your annual expenses, growing with your expected return and decreasing by inflation-adjusted withdrawals.
+              The <strong>Line Chart</strong> shows your corpus over time, starting at <strong>25×</strong> your annual
+              expenses, growing at the expected return, and decreasing by your expenses (which rise with inflation).
             </p>
             <p>
-              The <strong>Area Chart</strong> highlights the gap between your corpus and the required FIRE corpus. Hover over the charts for details.
+              The <strong>Area Chart</strong> highlights the difference (gap) between your corpus each year and the required{" "}
+              <strong>25× annual expenses</strong>. Hover over the charts for detailed figures.
             </p>
           </div>
+
           <div className="chart-toggle">
             <button onClick={() => setChartType("line")} className={chartType === "line" ? "active" : ""}>
               Line Chart
@@ -440,25 +492,26 @@ const FIRECalculator: React.FC = () => {
               Area Chart
             </button>
           </div>
+
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" && lineChartData ? (
                 <LineChart data={lineChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#272B2A" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
                   <RechartsTooltip content={CustomLineTooltip} />
                   <Legend />
-                  <Line type="monotone" dataKey="Corpus" stroke="#CAEF7D" strokeWidth={2} name="Corpus" />
+                  <Line type="monotone" dataKey="Corpus" stroke="#108e66" strokeWidth={2} name="Corpus" />
                 </LineChart>
               ) : chartType === "area" && areaChartData ? (
                 <AreaChart data={areaChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#272B2A" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
                   <RechartsTooltip content={CustomAreaTooltip} />
                   <Legend />
-                  <Area type="monotone" dataKey="NetGap" stroke="#1B1F13" fill="#1B1F13" name="Net Gap" />
+                  <Area type="monotone" dataKey="NetGap" stroke="#525ECC" fill="#525ECC" name="Net Gap" />
                 </AreaChart>
               ) : (
                 <></>
@@ -466,39 +519,46 @@ const FIRECalculator: React.FC = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* -----------------------
-              Get in Touch CTA Section
-          ----------------------- */}
-          <div className="cta-container mt-8 text-center">
-            <Link
-              href="https://wa.me/your-phone-number"  // Replace with your actual WhatsApp link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#108e66] text-[#fcfffe] px-8 py-3 rounded-md font-medium hover:bg-[#272B2A] transition-colors"
-            >
-              Get in touch
-            </Link>
+          <h2 className="results-title">Year-wise Breakdown</h2>
+          <div className="amortization-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Expense (INR)</th>
+                  <th>Corpus (INR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.yearWise.map((data) => (
+                  <tr key={data.year}>
+                    <td>{data.year}</td>
+                    <td>{data.expense.toLocaleString("en-IN")}</td>
+                    <td>{data.corpus.toLocaleString("en-IN")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
-      )}
 
-      {results && (
-        <div className="disclaimer">
-          <h4>Important Considerations</h4>
-          <ul>
-            <li>
-              This calculator estimates how long your FIRE corpus (25× your annual expenses) will sustain your retirement withdrawals.
-            </li>
-            <li>
-              It assumes a consistent rate of return and inflation, which may vary in reality.
-            </li>
-            <li>
-              Results are based on the provided inputs and are for reference only.
-            </li>
-            <li>
-              Please consult with a financial advisor before making any major retirement decisions.
-            </li>
-          </ul>
+          <div className="disclaimer">
+            <h4>Important Considerations</h4>
+            <ul>
+              <li>
+                The FIRE corpus starts at <strong>25×</strong> your annual expenses, following the ~4% withdrawal rule.
+              </li>
+              <li>
+                Annual expenses increase with inflation, while your corpus grows at the expected return.
+              </li>
+              <li>
+                The simulation runs for up to 50 years or until your corpus depletes (whichever comes first).
+              </li>
+              <li>
+                Real-world outcomes can differ due to market volatility, unexpected expenses, and changing lifestyle needs.
+              </li>
+            </ul>
+            <p>Please consult with a financial advisor before making any major retirement decisions.</p>
+          </div>
         </div>
       )}
 
@@ -506,19 +566,20 @@ const FIRECalculator: React.FC = () => {
         .container {
           padding: 2rem;
           font-family: "Poppins", sans-serif;
-          background: #fcfffe;
-          color: #272b2a;
+          background: #FCFFFE;
+          color: #272B2A;
         }
         .top-nav {
           margin-bottom: 1rem;
         }
         .back-button {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 4px;
           cursor: pointer;
+          font-family: "Poppins", sans-serif;
           font-weight: 500;
         }
         .title {
@@ -530,25 +591,26 @@ const FIRECalculator: React.FC = () => {
         .description {
           text-align: center;
           font-size: 1.2rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
         }
         .explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
-          border-left: 4px solid #caef7d;
+          border-left: 4px solid #108e66;
           font-size: 0.95rem;
+          color: #272B2A;
         }
         .explanation p {
           margin: 0.5rem 0;
           line-height: 1.5;
         }
         .form-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .section-title {
@@ -572,21 +634,25 @@ const FIRECalculator: React.FC = () => {
           display: flex;
           align-items: center;
           margin-bottom: 4px;
+          color: #272B2A;
         }
         .input-group input,
         .select-input {
           padding: 0.5rem;
           margin-top: 0.5rem;
-          border: 1px solid #ccc;
+          border: 1px solid #272B2A;
           border-radius: 4px;
           height: 38px;
           width: 100%;
           box-sizing: border-box;
           font-size: 1rem;
+          background: #FCFFFE;
+          color: #272B2A;
         }
         .converter {
           font-size: 0.9rem;
-          color: #777;
+          color: #272B2A;
+          opacity: 0.7;
           margin-top: 0.25rem;
         }
         .error {
@@ -595,7 +661,7 @@ const FIRECalculator: React.FC = () => {
         }
         .calculate-button {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -609,10 +675,10 @@ const FIRECalculator: React.FC = () => {
           cursor: not-allowed;
         }
         .results-container {
-          background: #fff;
+          background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .results-title {
@@ -620,36 +686,31 @@ const FIRECalculator: React.FC = () => {
           font-weight: 600;
           margin-bottom: 1rem;
           text-align: center;
+          color: #272B2A;
         }
         .summary-card {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
+          border: 1px solid #108e66;
         }
         .summary-item {
           font-size: 1rem;
           margin: 0.25rem 0;
-        }
-        .tip-message {
-          background: #f0f8e8;
-          padding: 1rem;
-          border-left: 4px solid #caef7d;
-          border-radius: 4px;
-          margin-bottom: 1.5rem;
-          font-size: 1rem;
-          text-align: center;
+          color: #272B2A;
         }
         .chart-explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
           border-left: 4px solid #108e66;
           text-align: center;
           font-size: 0.95rem;
+          color: #272B2A;
         }
         .chart-toggle {
           display: flex;
@@ -659,15 +720,16 @@ const FIRECalculator: React.FC = () => {
         }
         .chart-toggle button {
           background: transparent;
-          border: 1px solid #272b2a;
+          border: 1px solid #272B2A;
           padding: 0.5rem 1rem;
           cursor: pointer;
           border-radius: 4px;
           transition: all 0.2s ease;
+          color: #272B2A;
         }
         .chart-toggle button.active {
           background: #108e66;
-          color: #fcfffe;
+          color: #FCFFFE;
           border-color: #108e66;
         }
         .chart-container {
@@ -680,7 +742,7 @@ const FIRECalculator: React.FC = () => {
           overflow-y: auto;
           margin-bottom: 1.5rem;
           border-radius: 8px;
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
         }
         .amortization-table table {
           width: 100%;
@@ -688,30 +750,28 @@ const FIRECalculator: React.FC = () => {
         }
         .amortization-table th,
         .amortization-table td {
-          border: 1px solid #eee;
+          border: 1px solid #272B2A;
           padding: 0.5rem;
           text-align: center;
         }
         .amortization-table th {
-          background: #fcfffe;
+          background: #108e66;
+          color: #FCFFFE;
           position: sticky;
           top: 0;
         }
-        .cta-container {
-          margin-top: 2rem;
-        }
         .disclaimer {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 4px;
           font-size: 0.9rem;
-          color: #555;
-          border: 1px solid #ddd;
+          color: #272B2A;
+          border: 1px solid #272B2A;
           margin-top: 2rem;
         }
         .disclaimer h4 {
           margin-top: 0;
-          color: #272b2a;
+          color: #272B2A;
           margin-bottom: 0.5rem;
         }
         .disclaimer ul {

@@ -71,8 +71,8 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
         }
         .info-icon {
           display: inline-block;
-          background: #108E66;
-          color: #FCFFFE; /* Improved contrast */
+          background: #108e66;
+          color: #FCFFFE;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -84,8 +84,8 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
         .tooltiptext {
           visibility: visible;
           width: 200px;
-          background-color: #108E66;
-          color: #FCFFFE; /* Improved contrast */
+          background-color: #108e66;
+          color: #FCFFFE;
           text-align: left;
           border-radius: 4px;
           padding: 6px 8px;
@@ -96,7 +96,7 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(39, 43, 42, 0.1);
           opacity: 1;
         }
         .tooltiptext::after {
@@ -107,7 +107,7 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
           margin-left: -4px;
           border-width: 4px;
           border-style: solid;
-          border-color: #108E66 transparent transparent transparent;
+          border-color: #108e66 transparent transparent transparent;
         }
       `}</style>
     </span>
@@ -327,7 +327,7 @@ const FDRDCalculator: React.FC = () => {
     <div className="container">
       {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
-        <Link href="/">
+        <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
@@ -528,7 +528,7 @@ const FDRDCalculator: React.FC = () => {
                 <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                 <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Maturity Value"]} />
                 <Legend />
-                <Line type="monotone" dataKey="MaturityValue" stroke="#108E66" strokeWidth={2} name="Maturity Value" />
+                <Line type="monotone" dataKey="MaturityValue" stroke="#108e66" strokeWidth={2} name="Maturity Value" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -588,7 +588,7 @@ const FDRDCalculator: React.FC = () => {
                 <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                 <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Future Value"]} />
                 <Legend />
-                <Line type="monotone" dataKey="FutureValue" stroke="#108E66" strokeWidth={2} name="Future Value" />
+                <Line type="monotone" dataKey="FutureValue" stroke="#108e66" strokeWidth={2} name="Future Value" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -649,7 +649,7 @@ const FDRDCalculator: React.FC = () => {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #272B2A;
+          background: #108e66;
           color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
@@ -685,15 +685,15 @@ const FDRDCalculator: React.FC = () => {
           color: #272B2A;
         }
         .calc-toggle button.active {
-          background: #108E66;
-          color: #FCFFFE; /* Improved contrast */
-          border-color: #108E66;
+          background: #108e66;
+          color: #FCFFFE;
+          border-color: #108e66;
         }
         .form-container {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .section-title {
@@ -739,8 +739,8 @@ const FDRDCalculator: React.FC = () => {
           font-size: 0.8rem;
         }
         .calculate-button {
-          background: #108E66;
-          color: #FCFFFE; /* Improved contrast */
+          background: #108e66;
+          color: #FCFFFE;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -757,7 +757,7 @@ const FDRDCalculator: React.FC = () => {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .results-title {
@@ -773,6 +773,7 @@ const FDRDCalculator: React.FC = () => {
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
+          border: 1px solid #272B2A;
         }
         .summary-item {
           font-size: 1rem;
@@ -783,7 +784,7 @@ const FDRDCalculator: React.FC = () => {
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
-          border-left: 4px solid #108E66;
+          border-left: 4px solid #108e66;
         }
         .chart-explanation p {
           margin: 0;
@@ -812,7 +813,8 @@ const FDRDCalculator: React.FC = () => {
           text-align: center;
         }
         .amortization-table th {
-          background: #FCFFFE;
+          background: #108e66;
+          color: #FCFFFE;
           position: sticky;
           top: 0;
         }

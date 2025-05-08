@@ -1,0 +1,120 @@
+.conatiner {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(39, 43, 42, 0.25);
+    background: #FCFFFE;
+}
+
+.breadShare {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+.breadCrums {
+    display: flex;
+    color: #108E66;
+    /* font-family: Poppins; */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Share {
+    display: flex;
+    gap: 8px;
+}
+
+.download {
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    border: 0.5px solid rgba(39, 43, 42, 0.54);
+    cursor: pointer;
+}
+
+.shareIcon {
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    border: 0.5px solid rgba(39, 43, 42, 0.54);
+}
+
+.heading {
+    color: #272B2A;
+    /* font-family: Poppins; */
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+
+
+.infoDetail {
+    margin-bottom: 2%;
+    display: flex;
+    gap: 4px;
+    color: rgba(39, 43, 42, 0.75);
+    /* font-family: Poppins; */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.outputField {
+    margin-bottom: 2%;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 4px;
+    background-color: rgba(16, 142, 102, 0.05);
+}
+
+.outputFieldTextFields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.outputFieldText span {
+    color: #108E66;
+    /* font-family: Poppins; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.horizontalLine {
+    background: rgba(39, 43, 42, 0.25);
+    border: none;
+    height: 0.5px;
+}
+
+.outputFinalText {
+    color: rgba(39, 43, 42, 0.90);
+    /* font-family: Poppins; */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (max-width:550px) {
+    .breadShare{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

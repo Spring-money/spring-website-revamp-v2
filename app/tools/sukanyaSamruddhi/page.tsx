@@ -12,9 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// -----------------------
 // Interfaces for inputs and results
-// -----------------------
 interface CalculatorInputs {
   investmentMode: string;            // "Monthly" or "Yearly"
   investmentAmount: string;          // Periodic contribution (INR)
@@ -39,11 +37,13 @@ interface Results {
   yearWise: YearlyData[];
 }
 
-// -----------------------
+//
 // Tooltip Component
-// -----------------------
+// Displays an "i" icon that shows friendly info when hovered over.
+//
 const Tooltip: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <span 
       className="tooltip" 
@@ -87,7 +87,7 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           opacity: 1;
         }
         .tooltiptext::after {
@@ -105,9 +105,10 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// -----------------------
-// Utility: Number to Words Converter
-// -----------------------
+//
+// Number to Words Converter
+// Converts a number to a simple word representation (up to millions).
+//
 const numberToWords = (num: number): string => {
   if (num === undefined || num === null) return "";
   num = Math.abs(Math.round(num));
@@ -174,20 +175,27 @@ const numberToWords = (num: number): string => {
   );
 };
 
+//
+// Number to Words Percent Converter
+// Converts a number to words and appends "percent".
+//
 const numberToWordsPercent = (value: number): string => {
   if (value === undefined || value === null) return "";
-  if (Number.isInteger(value)) return numberToWords(value) + " percent";
+  if (Number.isInteger(value)) {
+    return numberToWords(value) + " percent";
+  }
   const intPart = Math.floor(value);
   const decimalPart = Math.round((value - intPart) * 10);
   return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
 };
 
-// -----------------------
+//
 // Main Sukanya Samriddhi Yojana Calculator Component
-// -----------------------
+//
 const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
+  // Define inputs according to logic
   const [inputs, setInputs] = useState<CalculatorInputs>({
-    investmentMode: "Monthly",  // "Monthly" or "Yearly"
+    investmentMode: "Monthly",         // "Monthly" or "Yearly"
     investmentAmount: "",
     investmentDuration: "",
     currentInterestRate: "",
@@ -214,7 +222,7 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
         newErrors[field as keyof CalculatorInputs] = "Please enter a valid number";
       }
     });
-    // Investment duration must be <= 15 years per SSY rules
+    // Investment duration must be <= 15 (per SSY rules)
     if (Number(inputs.investmentDuration) > 15) {
       newErrors.investmentDuration = "Investment duration cannot exceed 15 years";
     }
@@ -234,24 +242,24 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
     const mode = inputs.investmentMode; // "Monthly" or "Yearly"
     const baseInvestment = parseFloat(inputs.investmentAmount);
     const duration = parseFloat(inputs.investmentDuration); // years of deposit (max 15)
-    const r = parseFloat(inputs.currentInterestRate) / 100; // annual interest rate
+    const r = parseFloat(inputs.currentInterestRate) / 100; // annual rate
     const daughtersAge = parseFloat(inputs.daughtersAge);
     const lumpSum = inputs.lumpSum ? parseFloat(inputs.lumpSum) : 0;
     const stepUpPercent = inputs.stepUp ? parseFloat(inputs.stepUp) : 0;
 
-    // Maturity occurs when daughter turns 21.
-    const maturityPeriod = 21 - daughtersAge; // years remaining until maturity
+    // Maturity happens at 21 years of daughter's age.
+    const maturityPeriod = 21 - daughtersAge; // years from now until maturity
 
-    // Calculate future value of regular contributions
+    // Regular Contributions Future Value
     let totalRegularFV = 0;
     let totalRegularInvested = 0;
     const yearWise: YearlyData[] = [];
     let currentDeposit = baseInvestment;
     for (let year = 1; year <= duration; year++) {
-      // Determine annual contribution based on mode
+      // For Monthly mode, total contribution for the year:
       const annualContribution = mode === "Monthly" ? currentDeposit * 12 : currentDeposit;
       totalRegularInvested += annualContribution;
-      // Each year's contributions compound for (maturityPeriod - year) years
+      // Deposits made at end of each year will compound for (maturityPeriod - year) years.
       const compoundingYears = Math.max(maturityPeriod - year, 0);
       const futureValueForYear = annualContribution * Math.pow(1 + r, compoundingYears);
       totalRegularFV += futureValueForYear;
@@ -261,11 +269,11 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
         futureValue: parseFloat(totalRegularFV.toFixed(2)),
         wealthGained: parseFloat((totalRegularFV - totalRegularInvested).toFixed(2)),
       });
-      // Apply step-up for next year's deposit if provided
+      // Update deposit for next year if step-up is provided
       currentDeposit = currentDeposit * (1 + stepUpPercent / 100);
     }
 
-    // Calculate future value of lump sum (if provided)
+    // Lump Sum Future Value (if provided)
     const lumpSumFV = lumpSum * Math.pow(1 + r, maturityPeriod);
     const finalCorpus = totalRegularFV + lumpSumFV;
     const totalInvested = totalRegularInvested + lumpSum;
@@ -292,7 +300,7 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
 
   return (
     <div className="container">
-      {/* Back to Dashboard Button */}
+      {/* Back to Dashboard Button at Top */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
@@ -370,7 +378,8 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
               placeholder="e.g., 7.6"
             />
             <span className="converter">
-              {inputs.currentInterestRate && numberToWordsPercent(parseFloat(inputs.currentInterestRate))}
+              {inputs.currentInterestRate &&
+                numberToWordsPercent(parseFloat(inputs.currentInterestRate))}
             </span>
             {errors.currentInterestRate && <span className="error">{errors.currentInterestRate}</span>}
           </label>
@@ -455,21 +464,15 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           <h2 className="results-title">SSY Growth Visualization</h2>
           {chartType === "line" && (
             <div className="chart-explanation">
-              <p>
-                This Growth Chart shows the total maturity value of your Sukanya Samriddhi Yojana investment over time.
-                The green line represents your contributions growing at an annual rate of {inputs.currentInterestRate}% until maturity.
-              </p>
+              <p>This Growth Chart shows the total maturity value of your Sukanya Samriddhi Yojana investment over time. The green line demonstrates how your investment of ₹{parseFloat(inputs.investmentAmount).toLocaleString("en-IN")} {inputs.investmentMode.toLowerCase()} grows to ₹{results.futureValue.toLocaleString("en-IN")} by year {inputs.investmentDuration} with compounding at {inputs.currentInterestRate}% annually.</p>
             </div>
           )}
           {chartType === "bar" && (
             <div className="chart-explanation">
-              <p>
-                This Comparison Chart highlights the wealth gained (the difference between your total investment and the maturity value)
-                through compound interest.
-              </p>
+              <p>This Comparison Chart focuses on the interest earned from your investment. The purple line represents only the wealth gained (₹{results.wealthGained.toLocaleString("en-IN")}), which is the difference between your total investment and the final maturity amount. This demonstrates how compound interest significantly enhances your daughter&apos;s education fund.</p>
             </div>
           )}
-          
+
           <div className="chart-toggle">
             <button
               onClick={() => setChartType("line")}
@@ -484,23 +487,23 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
               Comparison Chart
             </button>
           </div>
-          
+
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" ? (
                 <LineChart data={chartData || []} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#525ECC" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
-                  <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Value"]} />
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
+                  <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Future Value"]} />
                   <Legend />
-                  <Line type="monotone" dataKey="FutureValue" stroke="#525ECC" strokeWidth={2} name="Future Value" />
+                  <Line type="monotone" dataKey="FutureValue" stroke="#108e66" strokeWidth={2} name="Future Value" />
                 </LineChart>
               ) : (
                 <LineChart data={chartData || []} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#525ECC" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} stroke="#272B2A" />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} stroke="#272B2A" />
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
+                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
                   <RechartsTooltip formatter={(value: number) => [`₹${value.toLocaleString("en-IN")}`, "Wealth Gained"]} />
                   <Legend />
                   <Line type="monotone" dataKey="WealthGained" stroke="#525ECC" strokeWidth={2} name="Wealth Gained" />
@@ -536,10 +539,18 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           <div className="disclaimer">
             <h4>Important Considerations</h4>
             <ul>
-              <li>The maturity value is calculated using annual compounding.</li>
-              <li>Deposits are allowed for a maximum of 15 years; thereafter, the corpus grows until maturity at age 21.</li>
-              <li>Optional step-up contributions and lump-sum investments are factored in if provided.</li>
-              <li>Actual returns may vary due to market fluctuations and changes in government rates.</li>
+              <li>
+                The maturity value is calculated using annual compounding.
+              </li>
+              <li>
+                Deposits are allowed for a maximum of 15 years; thereafter, the accumulated corpus grows until maturity (age 21).
+              </li>
+              <li>
+                Optional step-up contributions and lump-sum investments are factored in if provided.
+              </li>
+              <li>
+                Actual returns may vary due to market fluctuations and changes in government rates.
+              </li>
             </ul>
             <p>Please consult a financial advisor before making any major financial decisions.</p>
           </div>
@@ -557,12 +568,13 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #272B2A;
+          background: #108e66;
           color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 4px;
           cursor: pointer;
+          font-family: "Poppins", sans-serif;
           font-weight: 500;
         }
         .title {
@@ -580,7 +592,7 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           margin-bottom: 2rem;
         }
         .section-title {
@@ -615,8 +627,13 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           width: 100%;
           box-sizing: border-box;
           font-size: 1rem;
-          color: #272B2A;
           background: #FCFFFE;
+          color: #272B2A;
+        }
+        .converter {
+          font-size: 0.9rem;
+          color: #272B2A;
+          margin-top: 0.25rem;
         }
         .error {
           color: red;
@@ -641,7 +658,7 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           margin-bottom: 2rem;
         }
         .results-title {
@@ -651,7 +668,7 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           text-align: center;
         }
         .summary-card {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
@@ -663,13 +680,15 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           margin: 0.25rem 0;
         }
         .chart-explanation {
-          background: #f0f8e8;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
           border-left: 4px solid #108e66;
-          text-align: center;
-          font-size: 0.95rem;
+        }
+        .chart-explanation p {
+          margin: 0;
+          line-height: 1.5;
         }
         .chart-toggle {
           display: flex;
@@ -714,12 +733,31 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           text-align: center;
         }
         .amortization-table th {
-          background: #f0f8e8;
+          background: #FCFFFE;
           position: sticky;
           top: 0;
         }
+        .wealth-difference {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 4px;
+          text-align: center;
+          font-size: 1.1rem;
+          border: 1px solid #108e66;
+          margin-bottom: 1.5rem;
+        }
+        .wealth-difference p {
+          margin: 0 0 0.5rem 0;
+        }
+        .recommendation {
+          background: #272B2A;
+          color: #FCFFFE;
+          padding: 0.75rem;
+          border-radius: 4px;
+          margin-top: 0.5rem;
+        }
         .disclaimer {
-          background: #f9f9f9;
+          background: #FCFFFE;
           padding: 1rem;
           border-radius: 4px;
           font-size: 0.9rem;

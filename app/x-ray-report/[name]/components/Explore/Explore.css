@@ -1,0 +1,42 @@
+.Explore {
+  border-radius: 8px;
+  background: #f3f9f7;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.Explore-heading {
+  color: #0e5235;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.Explore-content {
+  color: #272b2a;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Explore-content span {
+  color: #108e66;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+@media screen and (max-width: 650px) {
+  .Explore {
+    padding: 10px;
+  }
+  .Explore-heading {
+    font-size: 12px;
+  }
+  .Explore-content {
+    font-size: 10px;
+  }
+}

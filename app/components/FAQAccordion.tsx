@@ -3,43 +3,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import arrow from "../../public/chevron-down.svg";
 
-const faqs = [
-  {
-    question: "How do I start my financial planning journey with Spring Money?",
-    answer:
-      "Connect with us on WhatsApp, and our SEBI-registered experts will assess your needs and guide you toward the right plan.",
-  },
-  {
-    question: "What makes Spring Money different from other financial advisory platforms?",
-    answer:
-      "We connect you directly with SEBI-registered experts who provide unbiased, personalized guidance with transparency and actionable strategies.",
-  },
-  {
-    question: "Do I need a high income to benefit from financial planning?",
-    answer:
-      "Not at all. Our strategies are tailored for every stage of your financial journey, whether you're starting out or managing substantial wealth.",
-  },
-  {
-    question: "Is my data secure with Spring Money?",
-    answer: "Yes. We follow strict data protection policies to keep your financial information safe.",
-  },
-  {
-    question: "How do I access the free financial calculators?",
-    answer:
-      "Simply explore our tools on the website. For detailed analysis, we can send a personalized report directly to your WhatsApp.",
-  },
-  {
-    question: "How much does a financial planning consultation cost?",
-    answer:
-      "We offer both one-time and comprehensive planning options. Pricing depends on your unique needs. Contact us on WhatsApp to discuss the best plan for you.",
-  },
-];
 
-export default function FAQAccordion() {
+export default function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }) {
   return (
-    <div className="mt-6">
-      <h3 className="text-lg font-bold text-[#FCFFEE] mb-4">FAQs</h3>
-      <div className="flex flex-col gap-8 ">
+    <div className="mt-2 md:mt-6 px-4 pb-4 md:px-[60px] md:pb-[60px] flex flex-col items-center w-full">
+      <h3 className="flex justify-center text-[32px] font-semibold text-[#272B2A] mb-6 text-center">Frequently Asked Questions</h3>
+      <div className="flex flex-col gap-6  max-w-screen-xl w-full">
         {faqs.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}
@@ -51,10 +20,10 @@ export default function FAQAccordion() {
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-gray-500 py-3 bg-accordion rounded-lg">
+    <div className="border border-[#108E66]  bg-[#FCFFFE] rounded-lg">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full text-left text-base font-semibold text-[#FCFFEE] focus:outline-none px-6 py-4 flex justify-between"
+        className="w-full text-left text-lg font-semibold text-[#108E66] focus:outline-none px-6 py-4 flex justify-between"
       >
         {question}
         <Image 
@@ -63,10 +32,11 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           height={24} 
           alt="chevron image" 
           className={`transform duration-300 transition-transform ${open ? '' : 'rotate-180'}`}
+          style={{ filter: 'brightness(0) saturate(100%) invert(45%) sepia(95%) saturate(427%) hue-rotate(116deg) brightness(94%) contrast(91%)' }}
         />
       </button>
       {open && (
-        <p className="border-t text-sm text-[#FCFFEE] transition-all duration-300 px-6 py-4">
+        <p className="border-t border-[#108E66] text-base font-medium text-[#272A2B] transition-all duration-300 px-6 py-4">
           {answer}
         </p>
       )}

@@ -1,0 +1,8 @@
+<svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="calendar">
+<path id="Vector" d="M16.625 4.25H4.375C3.4085 4.25 2.625 5.0335 2.625 6V18.25C2.625 19.2165 3.4085 20 4.375 20H16.625C17.5915 20 18.375 19.2165 18.375 18.25V6C18.375 5.0335 17.5915 4.25 16.625 4.25Z" stroke="#272B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M14 2.5V6" stroke="#272B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M7 2.5V6" stroke="#272B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M2.625 9.5H18.375" stroke="#272B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

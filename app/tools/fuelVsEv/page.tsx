@@ -77,16 +77,16 @@ function numberToWords(num: number): string {
 // Interface: Calculator Inputs
 // -----------------------
 interface CalculatorInputs {
-  evPrice: string;             // EV Price (INR)
-  fuelVehiclePrice: string;    // Fuel Vehicle Price (INR)
-  evRange: string;             // EV Range (km/charge)
-  fuelMileage: string;         // Fuel Mileage (km/L)
-  electricityPrice: string;    // Electricity Price (INR/kWh)
-  fuelPrice: string;           // Fuel Price (INR/L)
-  dailyDriving: string;        // Daily Driving Distance (km)
-  annualEVMaintenance: string; // Annual EV Maintenance (INR)
-  annualFuelMaintenance: string; // Annual Fuel Maintenance (INR)
-  evIncentives?: string;       // EV Purchase Incentives (Optional, INR)
+  evPrice: string;             
+  fuelVehiclePrice: string;    
+  evRange: string;             
+  fuelMileage: string;         
+  electricityPrice: string;    
+  fuelPrice: string;           
+  dailyDriving: string;        
+  annualEVMaintenance: string; 
+  annualFuelMaintenance: string;
+  evIncentives?: string;       
 }
 
 // Yearly cost structure for TCO
@@ -98,15 +98,15 @@ interface YearlyCost {
 
 // Final results after 5-year analysis
 interface Results {
-  cumulativeEVCost: number;     // EV TCO after 5 years
-  cumulativeFuelCost: number;   // Fuel TCO after 5 years
-  breakEvenYear: number | null; // First year where EV < Fuel
-  savings: number;              // total difference (Fuel - EV)
-  co2Savings: number;           // annual CO2 saved
-  yearWise: YearlyCost[];       // year-by-year cost
+  cumulativeEVCost: number;     
+  cumulativeFuelCost: number;   
+  breakEvenYear: number | null; 
+  savings: number;              
+  co2Savings: number;           
+  yearWise: YearlyCost[];       
 }
 
-// Simple tooltip for “i” icon
+// Simple tooltip for “i” icon with updated colors
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -127,8 +127,8 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         }
         .info-icon {
           display: inline-block;
-          background: #108E66;
-          color: #FCFFFE;
+          background: #108e66;
+          color: #fcfffe;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -140,8 +140,8 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .tooltiptext {
           visibility: visible;
           width: 220px;
-          background-color: #108E66;
-          color: #FCFFFE;
+          background-color: #108e66;
+          color: #fcfffe;
           text-align: left;
           border-radius: 4px;
           padding: 6px 8px;
@@ -152,7 +152,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(39, 43, 42, 0.1);
           opacity: 1;
         }
         .tooltiptext::after {
@@ -163,7 +163,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           margin-left: -4px;
           border-width: 4px;
           border-style: solid;
-          border-color: #108E66 transparent transparent transparent;
+          border-color: #108e66 transparent transparent transparent;
         }
       `}</style>
     </span>
@@ -171,7 +171,6 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
 };
 
 const FuelvsElectricCalculator: React.FC = () => {
-  // We store separate inputs for 2 Wheeler and 4 Wheeler
   const initialInputs: CalculatorInputs = {
     evPrice: "",
     fuelVehiclePrice: "",
@@ -196,45 +195,30 @@ const FuelvsElectricCalculator: React.FC = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [chartType, setChartType] = useState<"line" | "bar">("line");
 
-  // We fix a 5-year TCO analysis
   const analysisYears = 5;
-
-  // Hardcode battery capacity: 2.5 kWh for 2 Wheeler, 50 kWh for 4 Wheeler
   const batteryCapacity = vehicleType === "2 Wheeler" ? 2.5 : 50;
-
-  // Environmental Impact container reference
   const envImpactRef = useRef<HTMLDivElement>(null);
 
-  // Toggle between 2 Wheeler & 4 Wheeler
   const handleVehicleTypeToggle = (newType: "2 Wheeler" | "4 Wheeler") => {
     if (vehicleType !== newType) {
-      // Save current inputs to whichever set we were on
       if (vehicleType === "2 Wheeler") {
         setInputs2Wheeler(currentInputs);
       } else {
         setInputs4Wheeler(currentInputs);
       }
-      // Switch vehicle type
       setVehicleType(newType);
-      setResults(null); // reset results
-      // Load the stored inputs for the new type
+      setResults(null);
       setCurrentInputs(newType === "2 Wheeler" ? inputs2Wheeler : inputs4Wheeler);
     }
   };
 
-  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setCurrentInputs((prev) => {
-      const updated = { ...prev, [name]: value };
-      return updated;
-    });
+    setCurrentInputs((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Validate required fields
   const validateInputs = (): boolean => {
     const newErrors: Partial<CalculatorInputs> = {};
-    // Required fields for our 5-year TCO
     const required: (keyof CalculatorInputs)[] = [
       "evPrice",
       "fuelVehiclePrice",
@@ -256,7 +240,6 @@ const FuelvsElectricCalculator: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Main calculation logic
   const calculateResults = () => {
     if (!validateInputs()) return;
     setIsCalculating(true);
@@ -272,29 +255,23 @@ const FuelvsElectricCalculator: React.FC = () => {
     const annualFuelMaintenance = parseFloat(currentInputs.annualFuelMaintenance);
     const evIncentives = currentInputs.evIncentives ? parseFloat(currentInputs.evIncentives) : 0;
 
-    // 5-year distance
     const annualDistance = dailyDriving * 365;
     const totalDistance = annualDistance * analysisYears;
 
-    // Fuel & electricity cost
     const totalFuelCost = (annualDistance / fuelMileage) * fuelPrice * analysisYears;
     const totalElectricityCost = (annualDistance / evRange) * batteryCapacity * electricityPrice * analysisYears;
 
-    // Maintenance cost
     const totalEVMaintenance = annualEVMaintenance * analysisYears;
     const totalFuelMaintenance = annualFuelMaintenance * analysisYears;
 
-    // TCO
     const tcoEV = (evPrice - evIncentives) + totalElectricityCost + totalEVMaintenance;
     const tcoFuel = fuelVehiclePrice + totalFuelCost + totalFuelMaintenance;
 
-    // Year-by-year cumulative
     let cumulativeEVCost = evPrice - evIncentives;
     let cumulativeFuelCost = fuelVehiclePrice;
     let breakEvenYear: number | null = null;
 
     const yearWise: YearlyCost[] = [];
-    // annual cost
     const annualFuelCost = (annualDistance / fuelMileage) * fuelPrice + annualFuelMaintenance;
     const annualEVCost = (annualDistance / evRange) * batteryCapacity * electricityPrice + annualEVMaintenance;
 
@@ -312,11 +289,8 @@ const FuelvsElectricCalculator: React.FC = () => {
     }
 
     const savings = cumulativeFuelCost - cumulativeEVCost;
-
-    // Environmental Impact (approx. CO2)
-    // Assume 2.3 kg CO2/liter
     const litersPerYear = annualDistance / fuelMileage;
-    const co2Savings = litersPerYear * 2.3; // per year
+    const co2Savings = litersPerYear * 2.3;
 
     setResults({
       cumulativeEVCost: parseFloat(cumulativeEVCost.toFixed(2)),
@@ -330,28 +304,11 @@ const FuelvsElectricCalculator: React.FC = () => {
     setIsCalculating(false);
   };
 
-  // Prepare data for chart
-  const lineChartData =
-    results &&
-    results.yearWise.map((item) => ({
-      year: item.year,
-      "EV TCO": item.evCumulative,
-      "Fuel TCO": item.fuelCumulative,
-    }));
-
-  // Recommendation
-  const recommendation =
-    results && results.savings > 0
-      ? `Over 5 years, the EV is cheaper by about ₹${results.savings.toLocaleString("en-IN")}.`
-      : results && results.savings < 0
-      ? `Over 5 years, the fuel vehicle is cheaper by about ₹${Math.abs(results.savings).toLocaleString("en-IN")}.`
-      : "";
-
   return (
     <div className="container">
       {/* Top Nav */}
       <div className="top-nav">
-        <Link href="/">
+        <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
@@ -361,7 +318,7 @@ const FuelvsElectricCalculator: React.FC = () => {
         Compare the 5-year total cost of ownership for a 2 Wheeler or 4 Wheeler EV vs. a fuel-based vehicle.
       </p>
 
-      {/* Side-by-side toggle for 2 Wheeler vs 4 Wheeler */}
+      {/* Toggle for vehicle type */}
       <div className="toggle-container">
         <button
           onClick={() => handleVehicleTypeToggle("2 Wheeler")}
@@ -600,7 +557,11 @@ const FuelvsElectricCalculator: React.FC = () => {
               {results.savings.toLocaleString("en-IN")}
             </div>
             <div className="summary-item">
-              <strong>Recommendation:</strong> {recommendation}
+              <strong>Recommendation:</strong> {results.savings > 0
+                ? `Over 5 years, the EV is cheaper by about ₹${results.savings.toLocaleString("en-IN")}.`
+                : results.savings < 0
+                ? `Over 5 years, the fuel vehicle is cheaper by about ₹${Math.abs(results.savings).toLocaleString("en-IN")}.`
+                : ""}
             </div>
           </div>
 
@@ -646,14 +607,14 @@ const FuelvsElectricCalculator: React.FC = () => {
                   <Line
                     type="monotone"
                     dataKey="EV TCO"
-                    stroke="#108E66"
+                    stroke="#108e66"
                     strokeWidth={2}
                     name="EV Total Cost"
                   />
                   <Line
                     type="monotone"
                     dataKey="Fuel TCO"
-                    stroke="#525ECC"
+                    stroke="#272B2A"
                     strokeWidth={2}
                     name="Fuel Vehicle Total Cost"
                   />
@@ -674,14 +635,13 @@ const FuelvsElectricCalculator: React.FC = () => {
                     formatter={(value: number) => "₹" + Math.round(value).toLocaleString("en-IN")}
                   />
                   <Legend />
-                  <Bar dataKey="EV TCO" fill="#108E66" name="EV Total Cost" />
-                  <Bar dataKey="Fuel TCO" fill="#525ECC" name="Fuel Vehicle Total Cost" />
+                  <Bar dataKey="EV TCO" fill="#108e66" name="EV Total Cost" />
+                  <Bar dataKey="Fuel TCO" fill="#272B2A" name="Fuel Vehicle Total Cost" />
                 </BarChart>
               )}
             </ResponsiveContainer>
           </div>
 
-          {/* Environmental Impact */}
           <div ref={envImpactRef} className="env-impact-container">
             <h2 className="results-title">Environmental Impact</h2>
             <div className="env-impact-content">
@@ -734,7 +694,7 @@ const FuelvsElectricCalculator: React.FC = () => {
           margin-bottom: 1rem;
         }
         .back-button {
-          background: #272B2A;
+          background: #108e66;
           color: #FCFFFE;
           border: none;
           padding: 0.5rem 1rem;
@@ -771,15 +731,15 @@ const FuelvsElectricCalculator: React.FC = () => {
           color: #272B2A;
         }
         .toggle-button.active {
-          background: #108E66;
+          background: #108e66;
           color: #FCFFFE;
-          border-color: #108E66;
+          border-color: #108e66;
         }
         .form-container {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .section-title {
@@ -820,12 +780,12 @@ const FuelvsElectricCalculator: React.FC = () => {
           margin-top: 0.25rem;
         }
         .error {
-          color: #525ECC;
+          color: red;
           font-size: 0.8rem;
         }
         .calculate-button {
-          background: #108E66;
-          color: #fcfffe;
+          background: #108e66;
+          color: #FCFFFE;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -842,7 +802,7 @@ const FuelvsElectricCalculator: React.FC = () => {
           background: #FCFFFE;
           padding: 2rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
           margin-bottom: 2rem;
         }
         .results-title {
@@ -858,6 +818,7 @@ const FuelvsElectricCalculator: React.FC = () => {
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
+          border: 1px solid #272B2A;
         }
         .summary-item {
           font-size: 1rem;
@@ -868,7 +829,7 @@ const FuelvsElectricCalculator: React.FC = () => {
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
-          border-left: 4px solid #108E66;
+          border-left: 4px solid #108e66;
           text-align: center;
           font-size: 0.95rem;
         }
@@ -888,9 +849,9 @@ const FuelvsElectricCalculator: React.FC = () => {
           color: #272B2A;
         }
         .chart-toggle button.active {
-          background: #108E66;
+          background: #108e66;
           color: #FCFFFE;
-          border-color: #108E66;
+          border-color: #108e66;
         }
         .chart-container {
           margin: 1rem 0 2rem;
@@ -901,7 +862,7 @@ const FuelvsElectricCalculator: React.FC = () => {
           background: #FCFFFE;
           padding: 1.5rem;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 8px rgba(39,43,42,0.1);
           border: 1px solid #272B2A;
           margin-bottom: 2rem;
         }
@@ -919,7 +880,7 @@ const FuelvsElectricCalculator: React.FC = () => {
         .env-impact-number {
           font-size: 2rem;
           font-weight: bold;
-          color: #108E66;
+          color: #108e66;
         }
         .env-impact-details {
           flex: 2;
