@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
 // Define advisor interface
@@ -101,11 +102,16 @@ const AdvisorDetail = () => {
           <div className="flex items-start gap-6 flex-wrap md:flex-nowrap">
             <div className="w-full md:w-1/3 lg:w-1/4 flex-shrink-0">
               <div className="aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src={advisor.profileImage || "https://via.placeholder.com/300"}
-                  alt={advisor.advisorName}
-                  className="h-full w-full object-cover"
-                />
+                <div className="relative h-full w-full">
+                  <Image
+                    src={advisor.profileImage || "https://via.placeholder.com/300"}
+                    alt={advisor.advisorName}
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
+                  />
+                </div>
               </div>
             </div>
             

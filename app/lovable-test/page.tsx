@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
   // This is a simplified version of the marketplace
@@ -48,10 +49,13 @@ export default function Page() {
           {advisors.map((advisor) => (
             <div key={advisor.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
               <div className="aspect-video w-full overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={advisor.profileImage}
                   alt={advisor.advisorName}
-                  className="h-full w-full object-cover"
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
                 />
               </div>
               

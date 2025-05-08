@@ -1,0 +1,2 @@
+# Ignore the entire spring-advisor-spotlight directory
+app/lovable-test/spring-advisor-spotlight/**/*
