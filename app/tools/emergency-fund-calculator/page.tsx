@@ -1,8 +1,8 @@
 /*  /app/tools/emergency-fund-planner/page.tsx
-    Emergency Fund Calculator – Spring Money
+    Emergency Fund Calculator – Spring Money
 ---------------------------------------------------------------- */
 "use client";
-import React, { useState } from "react";
+import * as React from "react";
 import Link from "next/link";
 import {
   LineChart,
@@ -16,9 +16,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { useState } from "react";
 
 /* ──────────────────────────
-   Type Definitions
+   Type Definitions
    ────────────────────────── */
 interface Inputs {
   targetFund: string;        // How much do you need?
@@ -27,6 +28,10 @@ interface Inputs {
   monthlySavings: string;    // Planned monthly contribution
   monthlyIncome?: string;    // For info (optional)
   style: "Conservative" | "Moderate" | "Aggressive";
+}
+
+interface ErrorMessages {
+  [key: string]: string;
 }
 
 interface Results {
@@ -39,9 +44,9 @@ interface Results {
 }
 
 /* ──────────────────────────
-   Tooltip Icon (reuse style)
+   Tooltip Icon (reuse style)
    ────────────────────────── */
-const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
+const TooltipIcon = ({ text }: { text: string }) => {
   const [open, setOpen] = useState(false);
   return (
     <span
@@ -147,8 +152,8 @@ const numberToWords = (num: number): string => {
 /* ──────────────────────────
    Component
    ────────────────────────── */
-const EmergencyFundCalculator: React.FC = () => {
-  const [inputs, setInputs] = useState<Inputs>({
+const EmergencyFundCalculator = () => {
+  const [inputs, setInputs] = React.useState<Inputs>({
     targetFund: "",
     periodYears: "",
     alreadySaved: "",
@@ -156,25 +161,25 @@ const EmergencyFundCalculator: React.FC = () => {
     monthlyIncome: "",
     style: "Moderate",
   });
-  const [errors, setErrors] = useState<Partial<Inputs>>({});
-  const [results, setResults] = useState<Results | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [chartType, setChartType] = useState<"bar" | "line">("bar");
+  const [errors, setErrors] = React.useState<ErrorMessages>({});
+  const [results, setResults] = React.useState<Results | null>(null);
+  const [loading, setLoading] = React.useState(false);
+  const [chartType, setChartType] = React.useState<"bar" | "line">("bar");
 
-  /* handle changes */
+  /* handle changes */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
-    setInputs((p) => ({ ...p, [e.target.name]: e.target.value }));
+    setInputs((prev: Inputs) => ({ ...prev, [e.target.name]: e.target.value }));
 
   /* validation */
   const validate = () => {
     const req: (keyof Inputs)[] = ["targetFund", "periodYears", "monthlySavings"];
-    const newErr: Partial<Inputs> = {};
+    const newErr: ErrorMessages = {};
     req.forEach((k) => {
       if (!inputs[k] || isNaN(+inputs[k]!) || +inputs[k]! <= 0)
         newErr[k] = "Enter a valid number";
     });
     if (inputs.periodYears && (!Number.isInteger(+inputs.periodYears) || +inputs.periodYears > 50))
-      newErr.periodYears = "Enter whole years (max 50)";
+      newErr.periodYears = "Enter whole years (max 50)";
     if (inputs.alreadySaved && (+inputs.alreadySaved < 0 || isNaN(+inputs.alreadySaved)))
       newErr.alreadySaved = "Enter a valid number";
     if (inputs.monthlyIncome && (+inputs.monthlyIncome <= 0 || isNaN(+inputs.monthlyIncome)))
@@ -237,7 +242,7 @@ const EmergencyFundCalculator: React.FC = () => {
   /* ────────────────────────── render ────────────────────────── */
   return (
     <div className="container">
-      {/* back nav */}
+      {/* back nav */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
@@ -263,7 +268,7 @@ const EmergencyFundCalculator: React.FC = () => {
       <div className="form-container">
         <h2 className="section-title">Plan Inputs</h2>
         <div className="input-group">
-          {/* Target Fund */}
+          {/* Target Fund */}
           <label>
             <span className="input-label">
               Desired Emergency Fund (₹)
@@ -301,7 +306,7 @@ const EmergencyFundCalculator: React.FC = () => {
             {errors.periodYears && <span className="error">{errors.periodYears}</span>}
           </label>
 
-          {/* Already Saved */}
+          {/* Already Saved */}
           <label>
             <span className="input-label">
               Already Saved (₹)
@@ -320,7 +325,7 @@ const EmergencyFundCalculator: React.FC = () => {
             {errors.alreadySaved && <span className="error">{errors.alreadySaved}</span>}
           </label>
 
-          {/* Monthly Savings */}
+          {/* Monthly Savings */}
           <label>
             <span className="input-label">
               Monthly Contribution (₹)
@@ -339,10 +344,10 @@ const EmergencyFundCalculator: React.FC = () => {
             {errors.monthlySavings && <span className="error">{errors.monthlySavings}</span>}
           </label>
 
-          {/* Monthly Income (optional) */}
+          {/* Monthly Income (optional) */}
           <label>
             <span className="input-label">
-              Monthly Income (₹) <em style={{ fontWeight: 400 }}>(optional)</em>
+              Monthly Income (₹) <em style={{ fontWeight: 400 }}>(optional)</em>
               <TooltipIcon text="Helps us show how much of your income goes into this goal." />
             </span>
             <input
@@ -358,11 +363,11 @@ const EmergencyFundCalculator: React.FC = () => {
             {errors.monthlyIncome && <span className="error">{errors.monthlyIncome}</span>}
           </label>
 
-          {/* Investment Style */}
+          {/* Investment Style */}
           <label>
             <span className="input-label">
               Investment Style
-              <TooltipIcon text="Expected return: Conservative 4 %, Moderate 8 %, Aggressive 12 % p.a." />
+              <TooltipIcon text="Expected return: Conservative 4 %, Moderate 8 %, Aggressive 12 % p.a." />
             </span>
             <select name="style" value={inputs.style} onChange={handleChange} className="select">
               <option>Conservative</option>
@@ -398,7 +403,7 @@ const EmergencyFundCalculator: React.FC = () => {
             </div>
             {results.savingsRatio !== undefined && (
               <div className="summary-item">
-                <strong>Saving → Income:</strong> {results.savingsRatio.toFixed(1)} %
+                <strong>Saving → Income:</strong> {results.savingsRatio.toFixed(1)} %
               </div>
             )}
           </div>
@@ -415,7 +420,7 @@ const EmergencyFundCalculator: React.FC = () => {
             }}
           >
             {results.gap <= 0 ? (
-              <>Great job! You’re on track to exceed your goal.</>
+              <>Great job! You're on track to exceed your goal.</>
             ) : (
               <>
                 You need an extra ₹{results.gap.toLocaleString("en-IN")} in&nbsp;
@@ -429,8 +434,8 @@ const EmergencyFundCalculator: React.FC = () => {
           {/* chart explanation */}
           <div className="chart-explanation">
             <p>
-              <strong>Bar Chart</strong> compares the goal versus projected corpus. Switch to a{" "}
-              <strong>Line Chart</strong> for month‑on‑month growth.
+              <strong>Bar Chart</strong> compares the goal versus projected corpus. Switch to a{" "}
+              <strong>Line Chart</strong> for month‑on‑month growth.
             </p>
           </div>
 
