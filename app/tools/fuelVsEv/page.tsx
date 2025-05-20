@@ -316,7 +316,15 @@ const FuelvsElectricCalculator: React.FC = () => {
       <h1 className="title">Fuel vs. Electric Vehicle Calculator</h1>
       <p className="description">
         Compare the 5-year total cost of ownership for a 2 Wheeler or 4 Wheeler EV vs. a fuel-based vehicle.
-      </p>
+      </p>    <div className="explanation">
+  <p>
+    <strong>Fuel vs. Electric Vehicle Calculator:</strong> This calculator helps you compare the total cost of ownership between a <strong>fuel-powered vehicle</strong> and an <strong>electric vehicle (EV)</strong> based on your <strong>driving habits</strong>, <strong>fuel cost</strong>, and <strong>electricity rates</strong>.
+  </p>
+  <p>
+    By entering the <strong>mileage</strong>, <strong>monthly distance driven</strong>, and the <strong>cost of fuel vs. electricity</strong>, the calculator estimates the <strong>total annual cost</strong> of both vehicles. It helps you understand the long-term savings of switching to an electric vehicle and whether it’s the right financial decision for you.
+  </p>
+</div>
+
 
       {/* Toggle for vehicle type */}
       <div className="toggle-container">
@@ -702,6 +710,19 @@ const FuelvsElectricCalculator: React.FC = () => {
           cursor: pointer;
           font-family: "Poppins", sans-serif;
           font-weight: 500;
+        }
+           .explanation {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .title {
           text-align: center;

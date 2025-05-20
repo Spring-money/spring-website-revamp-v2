@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
+ 
 // Interfaces for inputs and results
 interface CalculatorInputs {
   investmentMode: string;            // "Monthly" or "Yearly"
@@ -312,6 +312,17 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
         Plan for your daughter&apos;s financial future under the Sukanya Samriddhi Yojana scheme.
         Enter your investment details below to estimate the maturity value at 21 years.
       </p>
+        <div className="explanation-box">
+          <p>
+            <strong>Sukanya Samruddhi Yojna (SSY):</strong> This government-backed savings scheme is designed for the girl child. It offers attractive interest rates, tax benefits, and a secure investment avenue.
+          </p>
+          <p>
+            This calculator helps you estimate the future value of your investments in the Sukanya Samruddhi Yojna, based on the <strong>current interest rate</strong> and the <strong>number of years</strong> you contribute. It also factors in your <strong>annual contributions</strong> and calculates the total corpus at maturity.
+          </p>
+          <p>
+            Please note that the <strong>interest rate</strong> is subject to change periodically by the government, and this calculator uses the most recent available rate for the calculation.
+          </p>
+        </div>
 
       <div className="form-container">
         <h2 className="section-title">Investment Details</h2>
@@ -587,6 +598,20 @@ const SukanyaSamriddhiYojanaCalculator: React.FC = () => {
           text-align: center;
           font-size: 1.2rem;
           margin-bottom: 2rem;
+        }
+          .explanation-box {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation-box p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
+          
         }
         .form-container {
           background: #FCFFFE;

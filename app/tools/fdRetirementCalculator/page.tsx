@@ -18,11 +18,11 @@ import {
 // Interfaces
 // -----------------------
 interface CalculatorInputs {
-  fdCorpus: string;           // FD Corpus (INR)
-  annualWithdrawal: string;   // Annual Withdrawal (INR)
-  fdInterestRate: string;     // FD Interest Rate (% p.a.)
-  inflationRate: string;      // Inflation Rate (% p.a.)
-  taxRate?: string;           // Optional: Tax Rate on Interest (% p.a.)
+  fdCorpus: string; // FD Corpus (INR)
+  annualWithdrawal: string; // Annual Withdrawal (INR)
+  fdInterestRate: string; // FD Interest Rate (% p.a.)
+  inflationRate: string; // Inflation Rate (% p.a.)
+  taxRate?: string; // Optional: Tax Rate on Interest (% p.a.)
   lifestyleAdjustment?: string; // Optional: Annual adjustment for lifestyle changes (% p.a.)
 }
 
@@ -153,7 +153,9 @@ const numberToWords = (num: number): string => {
   ];
   if (num < 20) return ones[num];
   if (num < 100)
-    return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
+    return (
+      tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "")
+    );
   if (num < 1000)
     return (
       ones[Math.floor(num / 100)] +
@@ -184,7 +186,9 @@ const numberToWordsPercent = (value: number): string => {
   if (Number.isInteger(value)) return numberToWords(value) + " percent";
   const intPart = Math.floor(value);
   const decimalPart = Math.round((value - intPart) * 10);
-  return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
+  return `${numberToWords(intPart)} point ${numberToWords(
+    decimalPart
+  )} percent`;
 };
 
 // -----------------------
@@ -213,11 +217,17 @@ const FDBasedRetirementCalculator: React.FC = () => {
   // Validate inputs
   const validateInputs = (): boolean => {
     const newErrors: Partial<CalculatorInputs> = {};
-    const requiredFields = ["fdCorpus", "annualWithdrawal", "fdInterestRate", "inflationRate"];
+    const requiredFields = [
+      "fdCorpus",
+      "annualWithdrawal",
+      "fdInterestRate",
+      "inflationRate",
+    ];
     requiredFields.forEach((field) => {
       const value = inputs[field as keyof CalculatorInputs];
       if (!value || isNaN(Number(value)) || Number(value) < 0) {
-        newErrors[field as keyof CalculatorInputs] = "Please enter a valid number";
+        newErrors[field as keyof CalculatorInputs] =
+          "Please enter a valid number";
       }
     });
     setErrors(newErrors);
@@ -234,7 +244,9 @@ const FDBasedRetirementCalculator: React.FC = () => {
     const r = parseFloat(inputs.fdInterestRate) / 100;
     const inflation = parseFloat(inputs.inflationRate) / 100;
     const taxRate = inputs.taxRate ? parseFloat(inputs.taxRate) / 100 : 0;
-    const lifestyle = inputs.lifestyleAdjustment ? parseFloat(inputs.lifestyleAdjustment) / 100 : 0;
+    const lifestyle = inputs.lifestyleAdjustment
+      ? parseFloat(inputs.lifestyleAdjustment) / 100
+      : 0;
 
     let year = 0;
     let corpus = FD;
@@ -249,7 +261,10 @@ const FDBasedRetirementCalculator: React.FC = () => {
       const taxPaid = taxRate ? interestEarned * taxRate : 0;
       const netInterest = interestEarned - taxPaid;
       totalInterestEarned += netInterest;
-      const withdrawal = withdrawalBase * Math.pow(1 + inflation, year - 1) * Math.pow(1 + lifestyle, year - 1);
+      const withdrawal =
+        withdrawalBase *
+        Math.pow(1 + inflation, year - 1) *
+        Math.pow(1 + lifestyle, year - 1);
       totalWithdrawals += withdrawal;
       corpus = startingCorpus + netInterest - withdrawal;
       yearWise.push({
@@ -309,8 +324,29 @@ const FDBasedRetirementCalculator: React.FC = () => {
 
       <h1 className="title">Can I retire solely on my FD corpus?</h1>
       <p className="description">
-        Assess whether relying on your Fixed Deposit corpus can sustainably fund your retirement withdrawals.
+        Assess whether relying on your Fixed Deposit corpus can sustainably fund
+        your retirement withdrawals.
       </p>
+      <div className="explanationn">
+        <p>
+          <strong>FD-Based Retirement Calculator:</strong> This calculator helps
+          you estimate how much you need to invest in{" "}
+          <strong>Fixed Deposits (FDs)</strong> to secure your{" "}
+          <strong>retirement</strong> corpus. It considers the{" "}
+          <strong>interest rate</strong> offered by FDs, your{" "}
+          <strong>monthly contributions</strong>, and your{" "}
+          <strong>retirement age target</strong>.
+        </p>
+        <p>
+          By entering your <strong>current savings</strong>,{" "}
+          <strong>expected interest rate</strong>, and the{" "}
+          <strong>retirement age</strong>, the calculator calculates whether
+          your FD investments will be sufficient to meet your{" "}
+          <strong>retirement expenses</strong> or if adjustments to your savings
+          plan are needed. This helps you ensure a financially secure
+          retirement, based on conservative growth projections.
+        </p>
+      </div>
 
       <div className="form-container">
         <h2 className="section-title">Retirement Investment Details</h2>
@@ -328,9 +364,12 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 10000000"
             />
             <span className="converter">
-              {inputs.fdCorpus && numberToWords(parseFloat(inputs.fdCorpus))} Rupees
+              {inputs.fdCorpus && numberToWords(parseFloat(inputs.fdCorpus))}{" "}
+              Rupees
             </span>
-            {errors.fdCorpus && <span className="error">{errors.fdCorpus}</span>}
+            {errors.fdCorpus && (
+              <span className="error">{errors.fdCorpus}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -345,9 +384,13 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 600000"
             />
             <span className="converter">
-              {inputs.annualWithdrawal && numberToWords(parseFloat(inputs.annualWithdrawal))} Rupees
+              {inputs.annualWithdrawal &&
+                numberToWords(parseFloat(inputs.annualWithdrawal))}{" "}
+              Rupees
             </span>
-            {errors.annualWithdrawal && <span className="error">{errors.annualWithdrawal}</span>}
+            {errors.annualWithdrawal && (
+              <span className="error">{errors.annualWithdrawal}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -362,9 +405,12 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 6.5"
             />
             <span className="converter">
-              {inputs.fdInterestRate && numberToWordsPercent(parseFloat(inputs.fdInterestRate))}
+              {inputs.fdInterestRate &&
+                numberToWordsPercent(parseFloat(inputs.fdInterestRate))}
             </span>
-            {errors.fdInterestRate && <span className="error">{errors.fdInterestRate}</span>}
+            {errors.fdInterestRate && (
+              <span className="error">{errors.fdInterestRate}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -379,9 +425,12 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 4"
             />
             <span className="converter">
-              {inputs.inflationRate && numberToWordsPercent(parseFloat(inputs.inflationRate))}
+              {inputs.inflationRate &&
+                numberToWordsPercent(parseFloat(inputs.inflationRate))}
             </span>
-            {errors.inflationRate && <span className="error">{errors.inflationRate}</span>}
+            {errors.inflationRate && (
+              <span className="error">{errors.inflationRate}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -396,7 +445,8 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 10"
             />
             <span className="converter">
-              {inputs.taxRate && numberToWordsPercent(parseFloat(inputs.taxRate))}
+              {inputs.taxRate &&
+                numberToWordsPercent(parseFloat(inputs.taxRate))}
             </span>
           </label>
           <label>
@@ -412,11 +462,16 @@ const FDBasedRetirementCalculator: React.FC = () => {
               placeholder="e.g., 2"
             />
             <span className="converter">
-              {inputs.lifestyleAdjustment && numberToWordsPercent(parseFloat(inputs.lifestyleAdjustment))}
+              {inputs.lifestyleAdjustment &&
+                numberToWordsPercent(parseFloat(inputs.lifestyleAdjustment))}
             </span>
           </label>
         </div>
-        <button className="calculate-button" onClick={calculateResults} disabled={isCalculating}>
+        <button
+          className="calculate-button"
+          onClick={calculateResults}
+          disabled={isCalculating}
+        >
           {isCalculating ? "Calculating..." : "Calculate"}
         </button>
       </div>
@@ -427,7 +482,8 @@ const FDBasedRetirementCalculator: React.FC = () => {
           <div className="summary-card">
             <div className="summary-item">
               <strong>Years Sustained:</strong> {results.yearsSustained}{" "}
-              {results.yearsSustained > 0 && `(${numberToWords(results.yearsSustained)} years)`}
+              {results.yearsSustained > 0 &&
+                `(${numberToWords(results.yearsSustained)} years)`}
             </div>
             <div className="summary-item">
               <strong>Total Withdrawals Made:</strong> ₹
@@ -452,48 +508,98 @@ const FDBasedRetirementCalculator: React.FC = () => {
           <h2 className="results-title">Corpus Projection Over Time</h2>
           <div className="chart-explanation">
             <p>
-              The charts below show how your FD corpus changes each year as you withdraw funds and earn interest.
-              <br />Hover over the graphs for detailed values.
+              The charts below show how your FD corpus changes each year as you
+              withdraw funds and earn interest.
+              <br />
+              Hover over the graphs for detailed values.
             </p>
             {chartType === "line" && (
               <p>
-                <strong>Line Chart:</strong> Displays the remaining corpus balance year by year.
+                <strong>Line Chart:</strong> Displays the remaining corpus
+                balance year by year.
               </p>
             )}
             {chartType === "bar" && (
               <p>
-                <strong>Bar Chart:</strong> Illustrates annual withdrawals and net interest effects.
+                <strong>Bar Chart:</strong> Illustrates annual withdrawals and
+                net interest effects.
               </p>
             )}
           </div>
           <div className="chart-toggle">
-            <button onClick={() => setChartType("line")} className={chartType === "line" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("line")}
+              className={chartType === "line" ? "active" : ""}
+            >
               Line Chart
             </button>
-            <button onClick={() => setChartType("bar")} className={chartType === "bar" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("bar")}
+              className={chartType === "bar" ? "active" : ""}
+            >
               Bar Chart
             </button>
           </div>
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" && lineChartData ? (
-                <LineChart data={lineChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
+                <LineChart
+                  data={lineChartData}
+                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")} />
-                  <RechartsTooltip formatter={(value: number) => "₹" + Math.round(value).toLocaleString("en-IN")} />
+                  <XAxis
+                    dataKey="year"
+                    label={{
+                      value: "Year",
+                      position: "insideBottom",
+                      offset: -5,
+                    }}
+                  />
+                  <YAxis
+                    domain={["auto", "auto"]}
+                    tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")}
+                  />
+                  <RechartsTooltip
+                    formatter={(value: number) =>
+                      "₹" + Math.round(value).toLocaleString("en-IN")
+                    }
+                  />
                   <Legend />
-                  <Line type="monotone" dataKey="Remaining Corpus" stroke="#108e66" strokeWidth={2} name="Remaining Corpus" />
+                  <Line
+                    type="monotone"
+                    dataKey="Remaining Corpus"
+                    stroke="#108e66"
+                    strokeWidth={2}
+                    name="Remaining Corpus"
+                  />
                 </LineChart>
               ) : chartType === "bar" && barChartData ? (
-                <BarChart data={barChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
+                <BarChart
+                  data={barChartData}
+                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="year" />
-                  <YAxis tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")} />
-                  <RechartsTooltip formatter={(value: number) => "₹" + Math.round(value).toLocaleString("en-IN")} />
+                  <YAxis
+                    tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")}
+                  />
+                  <RechartsTooltip
+                    formatter={(value: number) =>
+                      "₹" + Math.round(value).toLocaleString("en-IN")
+                    }
+                  />
                   <Legend />
-                  <Bar dataKey="Withdrawal" fill="#108e66" name="Annual Withdrawal" />
-                  <Bar dataKey="Net Interest" fill="#525ECC" name="Net Interest" />
+                  <Bar
+                    dataKey="Withdrawal"
+                    fill="#108e66"
+                    name="Annual Withdrawal"
+                  />
+                  <Bar
+                    dataKey="Net Interest"
+                    fill="#525ECC"
+                    name="Net Interest"
+                  />
                 </BarChart>
               ) : (
                 <React.Fragment />
@@ -503,25 +609,29 @@ const FDBasedRetirementCalculator: React.FC = () => {
         </div>
       )}
 
-    {results && (
-      <div className="disclaimer">
-        <h4>Important Considerations</h4>
-        <ul>
-          <li>
-            This calculator estimates how long your FD corpus can support your retirement withdrawals.
-          </li>
-          <li>
-            Calculations account for interest earned (net of tax, if provided) and withdrawals adjusted for inflation and lifestyle changes.
-          </li>
-          <li>
-            Results are based on the input parameters and are for reference only.
-          </li>
-          <li>
-            Please consult a financial advisor before making any major retirement decisions.
-          </li>
-        </ul>
-      </div>
-    )}
+      {results && (
+        <div className="disclaimer">
+          <h4>Important Considerations</h4>
+          <ul>
+            <li>
+              This calculator estimates how long your FD corpus can support your
+              retirement withdrawals.
+            </li>
+            <li>
+              Calculations account for interest earned (net of tax, if provided)
+              and withdrawals adjusted for inflation and lifestyle changes.
+            </li>
+            <li>
+              Results are based on the input parameters and are for reference
+              only.
+            </li>
+            <li>
+              Please consult a financial advisor before making any major
+              retirement decisions.
+            </li>
+          </ul>
+        </div>
+      )}
 
       <style jsx>{`
         .container {
@@ -574,6 +684,19 @@ const FDBasedRetirementCalculator: React.FC = () => {
           grid-template-columns: 1fr 1fr;
           gap: 1rem;
           margin-bottom: 1rem;
+        }
+        .explanationn {
+          background: #fcfffe;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272b2a;
+        }
+        .explanationn p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .input-group label {
           display: flex;

@@ -401,7 +401,18 @@ const FirstCroreCalculator: React.FC = () => {
       <h1 className="title">When Will I Make My First Crore?</h1>
       <p className="description">
         Estimate how long it will take you to accumulate ₹1 crore based on your current savings, annual income, and investment strategy.
-      </p>
+      </p> 
+      <div className="explanation">
+  <p>
+    <strong>First Crore Calculator:</strong> This calculator helps you plan how to achieve your first <strong>₹1 crore</strong> by estimating the amount you need to save and invest each month based on your <strong>investment return rate</strong> and <strong>savings tenure</strong>.
+  </p>
+  <p>
+    By entering your <strong>starting amount</strong>, <strong>monthly contribution</strong>, and the <strong>expected rate of return</strong>,
+    the calculator shows you how long it will take to reach your ₹1 crore goal. It also highlights the importance of consistency and
+    compounding to reach your milestone faster.
+  </p>
+</div>
+
 
       <div className="form-container">
         <h2 className="section-title">Your Financial Details</h2>
@@ -433,7 +444,7 @@ const FirstCroreCalculator: React.FC = () => {
               name="currentSavings"
               value={inputs.currentSavings}
               onChange={handleInputChange}
-              placeholder="e.g., 200000"
+              placeholder="e.g., 2,00,000"
             />
             <span className="converter">
               {inputs.currentSavings && numberToWords(parseFloat(inputs.currentSavings))} Rupees
@@ -450,7 +461,7 @@ const FirstCroreCalculator: React.FC = () => {
               name="currentAnnualIncome"
               value={inputs.currentAnnualIncome}
               onChange={handleInputChange}
-              placeholder="e.g., 600000"
+              placeholder="e.g., 6,00,000"
             />
             <span className="converter">
               {inputs.currentAnnualIncome && numberToWords(parseFloat(inputs.currentAnnualIncome))} Rupees
@@ -518,7 +529,7 @@ const FirstCroreCalculator: React.FC = () => {
               name="lumpsum"
               value={inputs.lumpsum || ""}
               onChange={handleInputChange}
-              placeholder="e.g., 50000"
+              placeholder="e.g., 50,000"
             />
             <span className="converter">
               {inputs.lumpsum && numberToWords(parseFloat(inputs.lumpsum))} Rupees
@@ -786,6 +797,19 @@ const FirstCroreCalculator: React.FC = () => {
           font-weight: 600;
           margin-bottom: 1rem;
           text-align: center;
+        }
+           .explanation {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .summary-card {
           background: #fcfffe;

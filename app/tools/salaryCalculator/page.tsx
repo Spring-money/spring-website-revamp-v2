@@ -1,3 +1,6 @@
+/*  /app/tools/ctc-vs-inhand/page.tsx
+    CTC vs In-Hand Salary Calculator – Spring Money
+---------------------------------------------------------------- */
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -15,19 +18,19 @@ import {
   CartesianGrid,
 } from "recharts";
 
-// -----------------------
-// Interfaces
-// -----------------------
+/* ──────────────────────────
+   Interfaces
+────────────────────────── */
 interface CalculatorInputs {
-  annualCTC: string;               // Annual CTC (INR)
-  bonusPercentage: string;         // Bonus % of CTC
-  monthlyProfessionalTax: string;  // Monthly professional tax
-  monthlyEmployerPF: string;       // Monthly employer PF contribution
-  monthlyEmployeePF: string;       // Monthly employee PF contribution
-  additionalMonthlyDeductions: string; // Additional monthly deductions
-  // Optional
-  incomeTaxSlab?: string;          // Income tax slab (%) (Optional)
-  hraAllowances?: string;          // HRA & other allowances (INR) (Optional)
+  annualCTC: string; // Annual CTC (INR)
+  bonusPercentage: string; // Bonus % of CTC
+  monthlyProfessionalTax: string; // Monthly professional tax
+  monthlyEmployerPF: string; // Monthly employer PF contribution
+  monthlyEmployeePF: string; // Monthly employee PF contribution
+  additionalMonthlyDeductions: string; // Any other monthly deductions
+  /* Optional */
+  incomeTaxSlab?: string; // Income-tax slab %
+  hraAllowances?: string; // HRA / other exempt allowances (INR)
 }
 
 interface SalaryBreakdown {
@@ -46,59 +49,55 @@ interface Results {
   breakdown: SalaryBreakdown;
 }
 
-// For Recharts data
+/* For Recharts */
 interface ChartData {
   name: string;
   value: number;
 }
-
-// For Bar chart data
 interface BarData {
   name: string;
   monthly: number;
 }
 
-// -----------------------
-// Tooltip for question marks
-// -----------------------
+/* ──────────────────────────
+   Tooltip Icon
+────────────────────────── */
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [show, setShow] = useState(false);
   return (
     <span
       className="tooltipIcon"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
     >
       <span className="info-icon">i</span>
-      {isHovered && <span className="tooltiptext">{text}</span>}
+      {show && <span className="tooltiptext">{text}</span>}
       <style jsx>{`
         .tooltipIcon {
           position: relative;
           display: inline-block;
           margin-left: 5px;
           cursor: pointer;
-          vertical-align: middle;
         }
         .info-icon {
-          display: inline-block;
           background: #108e66;
           color: #fcfffe;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
           height: 14px;
-          text-align: center;
-          line-height: 14px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           font-weight: bold;
         }
         .tooltiptext {
           visibility: visible;
           width: 220px;
-          background-color: #108e66;
+          background: #108e66;
           color: #fcfffe;
-          text-align: left;
-          border-radius: 4px;
           padding: 6px 8px;
+          border-radius: 4px;
           position: absolute;
           z-index: 1000;
           bottom: 130%;
@@ -106,8 +105,6 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           transform: translateX(-50%);
           font-size: 0.75rem;
           line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          opacity: 1;
         }
         .tooltiptext::after {
           content: "";
@@ -124,12 +121,11 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// -----------------------
-// Utility: number to words
-// -----------------------
+/* ──────────────────────────
+   Utils
+────────────────────────── */
 const numberToWords = (num: number): string => {
-  if (num === undefined || num === null) return "";
-  num = Math.abs(Math.round(num));
+  if (isNaN(num)) return "";
   if (num === 0) return "Zero";
   const ones = [
     "",
@@ -155,7 +151,7 @@ const numberToWords = (num: number): string => {
   ];
   const tens = [
     "",
-    "Ten",
+    "",
     "Twenty",
     "Thirty",
     "Forty",
@@ -165,49 +161,33 @@ const numberToWords = (num: number): string => {
     "Eighty",
     "Ninety",
   ];
-  if (num < 20) return ones[num];
-  if (num < 100)
-    return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
-  if (num < 1000)
-    return (
-      ones[Math.floor(num / 100)] +
-      " Hundred" +
-      (num % 100 !== 0 ? " " + numberToWords(num % 100) : "")
-    );
-  if (num < 100000)
-    return (
-      numberToWords(Math.floor(num / 1000)) +
-      " Thousand" +
-      (num % 1000 !== 0 ? " " + numberToWords(num % 1000) : "")
-    );
-  if (num < 10000000)
-    return (
-      numberToWords(Math.floor(num / 100000)) +
-      " Lakh" +
-      (num % 100000 !== 0 ? " " + numberToWords(num % 100000) : "")
-    );
-  return (
-    numberToWords(Math.floor(num / 10000000)) +
-    " Crore" +
-    (num % 10000000 !== 0 ? " " + numberToWords(num % 10000000) : "")
-  );
+  const helper = (n: number): string => {
+    if (n < 20) return ones[n];
+    if (n < 100)
+      return `${tens[Math.floor(n / 10)]}${n % 10 ? " " + ones[n % 10] : ""}`;
+    if (n < 1000)
+      return `${ones[Math.floor(n / 100)]} Hundred${
+        n % 100 ? " " + helper(n % 100) : ""
+      }`;
+    if (n < 100000)
+      return `${helper(Math.floor(n / 1000))} Thousand${
+        n % 1000 ? " " + helper(n % 1000) : ""
+      }`;
+    if (n < 10000000)
+      return `${helper(Math.floor(n / 100000))} Lakh${
+        n % 100000 ? " " + helper(n % 100000) : ""
+      }`;
+    return `${helper(Math.floor(n / 10000000))} Crore${
+      n % 10000000 ? " " + helper(n % 10000000) : ""
+    }`;
+  };
+  return helper(Math.round(Math.abs(num)));
 };
+const toWordsRupees = (n: number) => `${numberToWords(n)} Rupees`;
 
-const toWordsRupees = (num: number) => {
-  return `${numberToWords(Math.round(num))} Rupees`;
-};
-
-const numberToWordsPercent = (value: number): string => {
-  if (value === undefined || value === null) return "";
-  if (Number.isInteger(value)) return numberToWords(value) + " percent";
-  const intPart = Math.floor(value);
-  const decimalPart = Math.round((value - intPart) * 10);
-  return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
-};
-
-// -----------------------
-// Main CTC vs In-Hand Calculator Component
-// -----------------------
+/* ──────────────────────────
+   Main Component
+────────────────────────── */
 const CTCvsInHandCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
     annualCTC: "",
@@ -221,19 +201,15 @@ const CTCvsInHandCalculator: React.FC = () => {
   });
   const [errors, setErrors] = useState<Partial<CalculatorInputs>>({});
   const [results, setResults] = useState<Results | null>(null);
-  const [isCalculating, setIsCalculating] = useState<boolean>(false);
+  const [calculating, setCalculating] = useState(false);
   const [chartType, setChartType] = useState<"pie" | "bar">("pie");
 
-  // Input handler
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setInputs((prev) => ({ ...prev, [name]: value }));
-  };
+  /* ------- handlers ------- */
+  const handle = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  // Validation
-  const validateInputs = (): boolean => {
-    const newErrors: Partial<CalculatorInputs> = {};
-    const requiredFields = [
+  const validate = () => {
+    const req = [
       "annualCTC",
       "bonusPercentage",
       "monthlyProfessionalTax",
@@ -241,82 +217,70 @@ const CTCvsInHandCalculator: React.FC = () => {
       "monthlyEmployeePF",
       "additionalMonthlyDeductions",
     ];
-    requiredFields.forEach((field) => {
-      const value = inputs[field as keyof CalculatorInputs];
-      if (!value || isNaN(Number(value)) || Number(value) < 0) {
-        newErrors[field as keyof CalculatorInputs] = "Please enter a valid number";
-      }
+    const newErr: Partial<CalculatorInputs> = {};
+    req.forEach((k) => {
+      const v = inputs[k as keyof CalculatorInputs];
+      if (!v || isNaN(+v) || +v < 0)
+        newErr[k as keyof CalculatorInputs] = "Enter valid number";
     });
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors(newErr);
+    return !Object.keys(newErr).length;
   };
 
-  // Calculation logic
-  const calculateResults = () => {
-    if (!validateInputs()) return;
-    setIsCalculating(true);
+  /* ------- calculate ------- */
+  const calc = () => {
+    if (!validate()) return;
+    setCalculating(true);
 
-    const annualCTC = parseFloat(inputs.annualCTC);
-    const bonusPercentage = parseFloat(inputs.bonusPercentage) / 100;
-    const monthlyProfessionalTax = parseFloat(inputs.monthlyProfessionalTax);
-    const monthlyEmployerPF = parseFloat(inputs.monthlyEmployerPF);
-    const monthlyEmployeePF = parseFloat(inputs.monthlyEmployeePF);
-    const additionalMonthlyDeductions = parseFloat(inputs.additionalMonthlyDeductions);
-    const taxSlab = inputs.incomeTaxSlab ? parseFloat(inputs.incomeTaxSlab) / 100 : 0;
-    const hraAllowances = inputs.hraAllowances ? parseFloat(inputs.hraAllowances) : 0;
+    const annualCTC = +inputs.annualCTC;
+    const bonusPerc = +inputs.bonusPercentage / 100;
+    const monthlyProfTax = +inputs.monthlyProfessionalTax;
+    const monthlyErPF = +inputs.monthlyEmployerPF;
+    const monthlyEePF = +inputs.monthlyEmployeePF;
+    const addMonthlyDed = +inputs.additionalMonthlyDeductions;
+    const taxSlab = inputs.incomeTaxSlab ? +inputs.incomeTaxSlab / 100 : 0;
+    const hraAllow = inputs.hraAllowances ? +inputs.hraAllowances : 0;
 
-    // 1. Annual bonus
-    const annualBonus = annualCTC * bonusPercentage;
-
-    // 2. Gross annual salary (excl. bonus)
+    const annualBonus = annualCTC * bonusPerc;
     const grossAnnualSalary = annualCTC - annualBonus;
+    const totalMonthlyDed =
+      monthlyProfTax + monthlyErPF + monthlyEePF + addMonthlyDed;
+    const totalAnnualDed = totalMonthlyDed * 12;
+    const takeHomeAnnualBTax = grossAnnualSalary - totalAnnualDed + annualBonus;
+    const takeHomeMonthlyBTax = takeHomeAnnualBTax / 12;
 
-    // 3. Total monthly deductions
-    const totalMonthlyDeductions =
-      monthlyProfessionalTax + monthlyEmployerPF + monthlyEmployeePF + additionalMonthlyDeductions;
-
-    // 4. Total annual deductions
-    const totalAnnualDeductions = totalMonthlyDeductions * 12;
-
-    // 5. Take-home annual (before tax)
-    const takeHomeAnnualBeforeTax = grossAnnualSalary - totalAnnualDeductions + annualBonus;
-
-    // 6. Take-home monthly (before tax)
-    const takeHomeMonthlyBeforeTax = takeHomeAnnualBeforeTax / 12;
-
-    // 7. Income tax (if any)
-    let taxPaid = 0;
-    let finalTakeHomeAnnual = takeHomeAnnualBeforeTax;
-    let finalTakeHomeMonthly = takeHomeMonthlyBeforeTax;
+    let taxPaid = 0,
+      finalAnnual = takeHomeAnnualBTax,
+      finalMonthly = takeHomeMonthlyBTax;
     if (taxSlab > 0) {
-      const taxableIncome = grossAnnualSalary - hraAllowances;
-      taxPaid = taxableIncome * taxSlab;
-      finalTakeHomeAnnual = takeHomeAnnualBeforeTax - taxPaid;
-      finalTakeHomeMonthly = finalTakeHomeAnnual / 12;
+      const taxable = grossAnnualSalary - hraAllow;
+      taxPaid = taxable * taxSlab;
+      finalAnnual = takeHomeAnnualBTax - taxPaid;
+      finalMonthly = finalAnnual / 12;
     }
 
-    const breakdown: SalaryBreakdown = {
-      grossAnnualSalary,
-      annualBonus,
-      totalMonthlyDeductions,
-      totalAnnualDeductions,
-      takeHomeAnnualBeforeTax,
-      takeHomeMonthlyBeforeTax,
-      ...(taxSlab > 0
-        ? {
-            taxPaid,
-            finalTakeHomeAnnual,
-            finalTakeHomeMonthly,
-          }
-        : {}),
-    };
-
-    setResults({ breakdown });
-    setTimeout(() => setIsCalculating(false), 1000);
+    setResults({
+      breakdown: {
+        grossAnnualSalary,
+        annualBonus,
+        totalMonthlyDeductions: totalMonthlyDed,
+        totalAnnualDeductions: totalAnnualDed,
+        takeHomeAnnualBeforeTax: takeHomeAnnualBTax,
+        takeHomeMonthlyBeforeTax: takeHomeMonthlyBTax,
+        ...(taxSlab > 0
+          ? {
+              taxPaid,
+              finalTakeHomeAnnual: finalAnnual,
+              finalTakeHomeMonthly: finalMonthly,
+            }
+          : {}),
+      },
+    });
+    setTimeout(() => setCalculating(false), 600);
   };
 
-  // Prepare chart data for the toggle
-  // Pie data
+  /* ----------------- pie / bar data ----------------- */
+  const PIE_COLORS = ["#108e66", "#525ECC", "#272B2A", "#108e66", "#525ECC"];
   const pieData: ChartData[] = results
     ? (() => {
         const {
@@ -326,22 +290,19 @@ const CTCvsInHandCalculator: React.FC = () => {
           takeHomeAnnualBeforeTax,
           taxPaid = 0,
         } = results.breakdown;
-        const netAfterTax =
-          taxPaid > 0
-            ? results.breakdown.finalTakeHomeAnnual || takeHomeAnnualBeforeTax
-            : takeHomeAnnualBeforeTax;
-
+        const net = taxPaid
+          ? results.breakdown.finalTakeHomeAnnual || takeHomeAnnualBeforeTax
+          : takeHomeAnnualBeforeTax;
         return [
           { name: "Gross Salary (excl. Bonus)", value: grossAnnualSalary },
           { name: "Bonus", value: annualBonus },
           { name: "Deductions", value: totalAnnualDeductions },
           { name: "Tax (If any)", value: taxPaid },
-          { name: "Net In-Hand", value: netAfterTax },
+          { name: "Net In-Hand", value: net },
         ];
       })()
     : [];
 
-  // Bar data
   const barData: BarData[] = results
     ? (() => {
         const {
@@ -350,262 +311,292 @@ const CTCvsInHandCalculator: React.FC = () => {
           takeHomeMonthlyBeforeTax,
           finalTakeHomeMonthly,
         } = results.breakdown;
-        const netMonthly =
-          taxPaid > 0 ? finalTakeHomeMonthly || takeHomeMonthlyBeforeTax : takeHomeMonthlyBeforeTax;
-
+        const net = taxPaid
+          ? finalTakeHomeMonthly || takeHomeMonthlyBeforeTax
+          : takeHomeMonthlyBeforeTax;
         return [
-          { name: "Gross Monthly", monthly: parseFloat(inputs.annualCTC) / 12 },
+          { name: "Gross Monthly", monthly: +inputs.annualCTC / 12 },
           { name: "Monthly Deductions", monthly: totalMonthlyDeductions },
-          { name: "Net In-Hand", monthly: netMonthly },
+          { name: "Net In-Hand", monthly: net },
         ];
       })()
     : [];
 
-  // Updated Colors for the pie slices (only allowed colors)
-  const PIE_COLORS = ["#108e66", "#525ECC", "#272B2A", "#108e66", "#525ECC"];
-
+  /* ================= RENDER ================= */
   return (
     <div className="container">
-      {/* Back to Dashboard */}
+      {/* back */}
       <div className="top-nav">
         <Link href="/tools">
           <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
 
-      <h1 className="title">CTC vs. In-Hand Salary Calculator</h1>
+      <h1 className="title">CTC vs In-Hand Salary Calculator</h1>
       <p className="description">
-        Understand how your annual CTC breaks down into monthly in-hand salary after bonus, PF contributions, professional tax, and other deductions.
+        Enter your CTC details to see your estimated monthly take-home pay.
       </p>
+      <div className="explanation">
+        <p>
+          <strong>CTC vs In-Hand Salary:</strong> This calculator helps you break down your <strong>Cost-to-Company (CTC)</strong> into your actual <strong>monthly take-home pay</strong> by accounting for bonuses, PF contributions, professional tax, and other deductions.
+        </p>
+        <p>
+          Understand the difference between your total CTC and what you actually receive in your bank account each month. Use this tool to plan your finances, negotiate offers, and avoid surprises in your payslip.
+        </p>
+      </div>
 
-      {/* Form */}
+      {/* ---------- FORM ---------- */}
       <div className="form-container">
-        <h2 className="section-title">Salary & Deductions Details</h2>
+        <h2 className="section-title">Salary & Deductions</h2>
         <div className="input-group">
+          {/* Annual CTC */}
           <label>
             <span className="input-label">
-              Annual CTC (INR)
-              <TooltipIcon text="Enter your total Cost-to-Company, including all benefits." />
+              Annual CTC (INR){" "}
+              <TooltipIcon text="Total cost-to-company per year." />
             </span>
             <input
               type="number"
               name="annualCTC"
               value={inputs.annualCTC}
-              onChange={handleInputChange}
-              placeholder="e.g., 1200000"
+              onChange={handle}
+              placeholder="e.g., 12,00,000"
             />
-            {errors.annualCTC && <span className="error">{errors.annualCTC}</span>}
+            {errors.annualCTC && (
+              <span className="error">{errors.annualCTC}</span>
+            )}
           </label>
+
+          {/* Bonus % */}
           <label>
             <span className="input-label">
-              Bonus Percentage (%)
-              <TooltipIcon text="Enter the percentage of your CTC allocated as performance bonus." />
+              Bonus % of CTC{" "}
+              <TooltipIcon text="Annual performance / festive bonus percentage." />
             </span>
             <input
               type="number"
               name="bonusPercentage"
               value={inputs.bonusPercentage}
-              onChange={handleInputChange}
-              placeholder="e.g., 10"
+              onChange={handle}
+              placeholder="e.g., 15"
             />
-            {errors.bonusPercentage && <span className="error">{errors.bonusPercentage}</span>}
+            {errors.bonusPercentage && (
+              <span className="error">{errors.bonusPercentage}</span>
+            )}
           </label>
+
+          {/* Prof Tax */}
           <label>
             <span className="input-label">
-              Monthly Professional Tax (INR)
-              <TooltipIcon text="Enter your monthly professional tax deduction." />
+              Monthly Professional Tax (INR){" "}
+              <TooltipIcon text="Deducted by some state governments." />
             </span>
             <input
               type="number"
               name="monthlyProfessionalTax"
               value={inputs.monthlyProfessionalTax}
-              onChange={handleInputChange}
+              onChange={handle}
               placeholder="e.g., 200"
             />
             {errors.monthlyProfessionalTax && (
               <span className="error">{errors.monthlyProfessionalTax}</span>
             )}
           </label>
+
+          {/* Employer PF */}
           <label>
             <span className="input-label">
-              Monthly Employer PF (INR)
-              <TooltipIcon text="Enter your employer's monthly PF contribution." />
+              Employer PF (INR / month){" "}
+              <TooltipIcon text="Company's EPF contribution each month." />
             </span>
             <input
               type="number"
               name="monthlyEmployerPF"
               value={inputs.monthlyEmployerPF}
-              onChange={handleInputChange}
-              placeholder="e.g., 1800"
+              onChange={handle}
+              placeholder="e.g., 1,800"
             />
-            {errors.monthlyEmployerPF && <span className="error">{errors.monthlyEmployerPF}</span>}
+            {errors.monthlyEmployerPF && (
+              <span className="error">{errors.monthlyEmployerPF}</span>
+            )}
           </label>
+
+          {/* Employee PF */}
           <label>
             <span className="input-label">
-              Monthly Employee PF (INR)
-              <TooltipIcon text="Enter your monthly PF contribution deducted from salary." />
+              Employee PF (INR / month){" "}
+              <TooltipIcon text="Your share of EPF deducted from salary." />
             </span>
             <input
               type="number"
               name="monthlyEmployeePF"
               value={inputs.monthlyEmployeePF}
-              onChange={handleInputChange}
-              placeholder="e.g., 1800"
+              onChange={handle}
+              placeholder="e.g., 1,800"
             />
-            {errors.monthlyEmployeePF && <span className="error">{errors.monthlyEmployeePF}</span>}
+            {errors.monthlyEmployeePF && (
+              <span className="error">{errors.monthlyEmployeePF}</span>
+            )}
           </label>
+
+          {/* Other deductions */}
           <label>
             <span className="input-label">
-              Additional Monthly Deductions (INR)
-              <TooltipIcon text="Enter any other monthly deductions (loan EMIs, insurance, etc.)" />
+              Other Monthly Deductions (INR){" "}
+              <TooltipIcon text="Insurance premiums, loan EMIs, etc." />
             </span>
             <input
               type="number"
               name="additionalMonthlyDeductions"
               value={inputs.additionalMonthlyDeductions}
-              onChange={handleInputChange}
-              placeholder="e.g., 2000"
+              onChange={handle}
+              placeholder="e.g., 2,000"
             />
             {errors.additionalMonthlyDeductions && (
-              <span className="error">{errors.additionalMonthlyDeductions}</span>
+              <span className="error">
+                {errors.additionalMonthlyDeductions}
+              </span>
             )}
           </label>
         </div>
 
-        {/* Optional Advanced Fields */}
+        {/* Optional */}
         <h2 className="section-title">Optional: Tax & Allowances</h2>
         <div className="input-group">
           <label>
             <span className="input-label">
-              Income Tax Slab (%)
-              <TooltipIcon text="Enter your income tax slab (e.g. 10, 20, 30). This will reduce your net in-hand salary." />
+              Income-Tax Slab (%){" "}
+              <TooltipIcon text="Your highest tax slab (old regime)." />
             </span>
             <input
               type="number"
               name="incomeTaxSlab"
               value={inputs.incomeTaxSlab}
-              onChange={handleInputChange}
+              onChange={handle}
               placeholder="e.g., 20"
             />
           </label>
           <label>
             <span className="input-label">
-              HRA & Other Allowances (INR)
-              <TooltipIcon text="Enter total tax-exempt allowances (HRA, LTA, etc.) if applicable." />
+              HRA / Exempt Allowances (INR){" "}
+              <TooltipIcon text="Tax-free allowances like HRA, LTA, etc." />
             </span>
             <input
               type="number"
               name="hraAllowances"
               value={inputs.hraAllowances}
-              onChange={handleInputChange}
-              placeholder="e.g., 50000"
+              onChange={handle}
+              placeholder="e.g., 50,000"
             />
           </label>
         </div>
 
-        <button className="calculate-button" onClick={calculateResults} disabled={isCalculating}>
-          {isCalculating ? "Calculating..." : "Calculate"}
+        <button
+          className="calculate-button"
+          onClick={calc}
+          disabled={calculating}
+        >
+          {calculating ? "Calculating…" : "Calculate"}
         </button>
       </div>
 
+      {/* ---------- RESULTS ---------- */}
       {results && (
         <div className="results-container">
-          <h2 className="results-title">CTC vs In-Hand Salary Breakdown</h2>
+          <h2 className="results-title">Salary Breakdown</h2>
           <div className="summary-card">
-            <div className="summary-item">
-              <strong>Gross Annual Salary (Excl. Bonus):</strong>{" "}
-              ₹{results.breakdown.grossAnnualSalary.toLocaleString("en-IN")}{" "}
-              ({toWordsRupees(results.breakdown.grossAnnualSalary)})
-            </div>
-            <div className="summary-item">
-              <strong>Annual Bonus:</strong> ₹{results.breakdown.annualBonus.toLocaleString("en-IN")}{" "}
-              ({toWordsRupees(results.breakdown.annualBonus)})
-            </div>
-            <div className="summary-item">
-              <strong>Total Annual Deductions:</strong>{" "}
-              ₹{results.breakdown.totalAnnualDeductions.toLocaleString("en-IN")}{" "}
-              ({toWordsRupees(results.breakdown.totalAnnualDeductions)})
-            </div>
-            <div className="summary-item">
-              <strong>Take-Home (Annual, Before Tax):</strong>{" "}
-              ₹{results.breakdown.takeHomeAnnualBeforeTax.toLocaleString("en-IN")}{" "}
-              ({toWordsRupees(results.breakdown.takeHomeAnnualBeforeTax)})
-            </div>
-            <div className="summary-item">
-              <strong>Take-Home (Monthly, Before Tax):</strong>{" "}
-              ₹{results.breakdown.takeHomeMonthlyBeforeTax.toLocaleString("en-IN")}{" "}
-              ({toWordsRupees(results.breakdown.takeHomeMonthlyBeforeTax)})
-            </div>
+            {(
+              [
+                [
+                  "Gross Annual (excl. Bonus)",
+                  results.breakdown.grossAnnualSalary,
+                ],
+                ["Annual Bonus", results.breakdown.annualBonus],
+                ["Annual Deductions", results.breakdown.totalAnnualDeductions],
+                [
+                  "Take-Home Annual (pre-tax)",
+                  results.breakdown.takeHomeAnnualBeforeTax,
+                ],
+                [
+                  "Take-Home Monthly (pre-tax)",
+                  results.breakdown.takeHomeMonthlyBeforeTax,
+                ],
+              ] as [string, number][]
+            ).map(([label, val]) => (
+              <div className="summary-item" key={label}>
+                <strong>{label}:</strong> ₹{val.toLocaleString("en-IN")} (
+                {toWordsRupees(val)})
+              </div>
+            ))}
             {results.breakdown.taxPaid !== undefined && (
               <>
                 <div className="summary-item">
-                  <strong>Estimated Tax Paid:</strong>{" "}
-                  ₹{results.breakdown.taxPaid.toLocaleString("en-IN")}{" "}
-                  ({toWordsRupees(results.breakdown.taxPaid)})
+                  <strong>Estimated Tax Paid:</strong> ₹
+                  {results.breakdown.taxPaid.toLocaleString("en-IN")} (
+                  {toWordsRupees(results.breakdown.taxPaid)})
                 </div>
                 <div className="summary-item">
-                  <strong>Final Take-Home (Annual):</strong>{" "}
-                  ₹{results.breakdown.finalTakeHomeAnnual?.toLocaleString("en-IN")}{" "}
-                  ({toWordsRupees(results.breakdown.finalTakeHomeAnnual || 0)})
+                  <strong>Final Take-Home (Annual):</strong> ₹
+                  {results.breakdown.finalTakeHomeAnnual!.toLocaleString(
+                    "en-IN"
+                  )}{" "}
+                  ({toWordsRupees(results.breakdown.finalTakeHomeAnnual!)})
                 </div>
                 <div className="summary-item">
-                  <strong>Final Take-Home (Monthly):</strong>{" "}
-                  ₹{results.breakdown.finalTakeHomeMonthly?.toLocaleString("en-IN")}{" "}
-                  ({toWordsRupees(results.breakdown.finalTakeHomeMonthly || 0)})
+                  <strong>Final Take-Home (Monthly):</strong> ₹
+                  {results.breakdown.finalTakeHomeMonthly!.toLocaleString(
+                    "en-IN"
+                  )}{" "}
+                  ({toWordsRupees(results.breakdown.finalTakeHomeMonthly!)})
                 </div>
               </>
             )}
           </div>
 
-          <h2 className="results-title">Salary Distribution Visualization</h2>
-          <div className="chart-explanation">
-            <p>
-              Toggle between a pie chart that shows the distribution of your total CTC into base salary, bonus, deductions, tax, and net pay,
-              and a bar chart that compares your monthly gross salary, monthly deductions, and net in-hand pay.
-            </p>
-          </div>
-
-          {/* Toggle for Pie / Bar */}
+          {/* Chart toggle */}
+          <h2 className="results-title">Visual Comparison</h2>
           <div className="chart-toggle">
-            <button onClick={() => setChartType("pie")} className={chartType === "pie" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("pie")}
+              className={chartType === "pie" ? "active" : ""}
+            >
               Pie Chart
             </button>
-            <button onClick={() => setChartType("bar")} className={chartType === "bar" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("bar")}
+              className={chartType === "bar" ? "active" : ""}
+            >
               Bar Chart
             </button>
           </div>
 
           {chartType === "pie" ? (
-            <PieChartContainer results={results} />
+            <PieChartContainer data={pieData} colors={PIE_COLORS} />
           ) : (
-            <BarChartContainer results={results} inputs={inputs} />
+            <BarChartContainer data={barData} />
           )}
 
-          {/* Important Considerations Section */}
+          {/* footnote */}
           <div className="disclaimer">
             <h4>Important Considerations</h4>
             <ul>
+              <li>This is an estimate based on the inputs provided.</li>
               <li>
-                This calculator provides an approximate breakdown of your CTC vs. in-hand salary based on the inputs provided.
+                Actual take-home may vary with changing tax laws or allowances.
               </li>
               <li>
-                Actual take-home pay may vary due to additional factors such as variable bonuses, special allowances, or changes in tax laws.
-              </li>
-              <li>
-                The calculations use simplified assumptions and may not include all possible deductions.
-              </li>
-              <li>
-                Consult with your HR or a financial advisor for personalized advice.
+                Consult your HR or a tax professional for personalised advice.
               </li>
             </ul>
           </div>
         </div>
       )}
 
+      {/* ---- styles ---- */}
       <style jsx>{`
         .container {
           padding: 2rem;
-          font-family: "Poppins", sans-serif;
+          font-family: Poppins, sans-serif;
           background: #fcfffe;
           color: #272b2a;
         }
@@ -619,19 +610,18 @@ const CTCvsInHandCalculator: React.FC = () => {
           padding: 0.5rem 1rem;
           border-radius: 4px;
           cursor: pointer;
-          font-family: "Poppins", sans-serif;
           font-weight: 500;
         }
         .title {
           text-align: center;
           font-size: 2.5rem;
-          font-weight: bold;
+          font-weight: 700;
           margin-bottom: 0.5rem;
         }
         .description {
           text-align: center;
           font-size: 1.2rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
         .form-container {
           background: #fcfffe;
@@ -641,7 +631,7 @@ const CTCvsInHandCalculator: React.FC = () => {
           margin-bottom: 2rem;
         }
         .section-title {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           font-weight: 600;
           margin: 1rem 0;
         }
@@ -651,25 +641,16 @@ const CTCvsInHandCalculator: React.FC = () => {
           gap: 1rem;
           margin-bottom: 1rem;
         }
-        .input-group label {
+        label {
           display: flex;
           flex-direction: column;
           font-size: 1rem;
-          position: relative;
         }
-        .input-label {
-          display: flex;
-          align-items: center;
-          margin-bottom: 4px;
-        }
-        .input-group input {
+        input {
           padding: 0.5rem;
-          margin-top: 0.5rem;
+          margin-top: 0.4rem;
           border: 1px solid #272b2a;
           border-radius: 4px;
-          height: 38px;
-          width: 100%;
-          box-sizing: border-box;
           font-size: 1rem;
         }
         .error {
@@ -680,7 +661,7 @@ const CTCvsInHandCalculator: React.FC = () => {
           background: #108e66;
           color: #fcfffe;
           border: none;
-          padding: 0.75rem 1.5rem;
+          padding: 0.8rem 1.5rem;
           border-radius: 4px;
           font-size: 1rem;
           cursor: pointer;
@@ -699,45 +680,44 @@ const CTCvsInHandCalculator: React.FC = () => {
           margin-bottom: 2rem;
         }
         .results-title {
-          font-size: 1.8rem;
+          text-align: center;
+          font-size: 1.6rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          text-align: center;
         }
         .summary-card {
-          background: #fcfffe;
-          padding: 1rem;
-          border-radius: 8px;
-          margin-bottom: 1.5rem;
           display: grid;
-          gap: 0.75rem;
+          gap: 0.7rem;
+          margin-bottom: 1.3rem;
         }
         .summary-item {
           font-size: 1rem;
-          margin: 0.25rem 0;
-        }
-        .chart-explanation {
-          background: #fcfffe;
-          padding: 1rem;
-          border-radius: 8px;
-          margin-bottom: 1rem;
-          border-left: 4px solid #108e66;
-          text-align: center;
-          font-size: 0.95rem;
         }
         .chart-toggle {
           display: flex;
           justify-content: center;
-          margin: 1rem 0;
           gap: 1rem;
+          margin: 1rem 0;
+        }
+          .explanation {
+          background: #fcfffe;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272b2a;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .chart-toggle button {
           background: transparent;
           border: 1px solid #272b2a;
           padding: 0.5rem 1rem;
-          cursor: pointer;
           border-radius: 4px;
-          transition: all 0.2s ease;
+          cursor: pointer;
         }
         .chart-toggle button.active {
           background: #108e66;
@@ -751,180 +731,63 @@ const CTCvsInHandCalculator: React.FC = () => {
           background: #fcfffe;
           padding: 1rem;
           border-radius: 4px;
-          font-size: 0.9rem;
-          color: #272b2a;
           border: 1px solid #272b2a;
-          margin-top: 2rem;
+          font-size: 0.9rem;
         }
-        .disclaimer h4 {
-          margin-top: 0;
-          color: #272b2a;
-          margin-bottom: 0.5rem;
-        }
-        .disclaimer ul {
+        ul {
           margin: 0;
-          padding-left: 1.5rem;
+          padding-left: 1.3rem;
         }
-        .disclaimer li {
-          margin-bottom: 0.5rem;
+        li {
+          margin-bottom: 0.4rem;
         }
         @media (max-width: 768px) {
           .input-group {
             grid-template-columns: 1fr;
           }
-          .chart-container {
-            margin: 1.5rem 0;
-          }
         }
       `}</style>
     </div>
   );
 };
 
-// -----------------------
-// Updated Graph Components
-// -----------------------
+/* ---------- Chart components ---------- */
+const PieChartContainer: React.FC<{ data: ChartData[]; colors: string[] }> = ({
+  data,
+  colors,
+}) => (
+  <div className="chart-container">
+    <ResponsiveContainer width="100%" height={360}>
+      <PieChart>
+        <RechartsTooltip
+          formatter={(v: number) => `₹${v.toLocaleString("en-IN")}`}
+        />
+        <Legend verticalAlign="bottom" />
+        <Pie data={data} dataKey="value" nameKey="name" outerRadius={110} label>
+          {data.map((_, i) => (
+            <Cell key={i} fill={colors[i % colors.length]} />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
+  </div>
+);
 
-// Separate component for the Pie Chart
-const PieChartContainer: React.FC<{ results: Results }> = ({ results }) => {
-  const {
-    grossAnnualSalary,
-    annualBonus,
-    totalAnnualDeductions,
-    takeHomeAnnualBeforeTax,
-    taxPaid = 0,
-  } = results.breakdown;
-
-  const netAfterTax =
-    taxPaid > 0
-      ? results.breakdown.finalTakeHomeAnnual || takeHomeAnnualBeforeTax
-      : takeHomeAnnualBeforeTax;
-
-  const pieData: ChartData[] = [
-    { name: "Gross Salary (excl. Bonus)", value: grossAnnualSalary },
-    { name: "Bonus", value: annualBonus },
-    { name: "Deductions", value: totalAnnualDeductions },
-    { name: "Tax (If any)", value: taxPaid },
-    { name: "Net In-Hand", value: netAfterTax },
-  ];
-
-  // Updated PIE_COLORS using only the allowed colors
-  const PIE_COLORS = ["#108e66", "#525ECC", "#272B2A", "#108e66", "#525ECC"];
-
-  return (
-    <div className="chart-container">
-      <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
-          <RechartsTooltip
-            formatter={(value: number, name: string) => [
-              `₹${value.toLocaleString("en-IN")} (${toWordsRupees(value)})`,
-              name,
-            ]}
-          />
-          <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-          <Pie
-            dataKey="value"
-            data={pieData}
-            cx="50%"
-            cy="45%"
-            outerRadius={120}
-            labelLine={true}
-            label={({ name }) => name}
-          >
-            {pieData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
-      <div className="pie-legend">
-        {pieData.map((entry, index) => (
-          <div key={`legend-${index}`} className="legend-item">
-            <span className="color-box" style={{ backgroundColor: PIE_COLORS[index % PIE_COLORS.length] }}></span>
-            <span className="legend-text">
-              {entry.name}: ₹{entry.value.toLocaleString("en-IN")} ({toWordsRupees(entry.value)})
-            </span>
-          </div>
-        ))}
-      </div>
-      <style jsx>{`
-        .pie-legend {
-          margin-top: 1rem;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 0.5rem;
-          padding: 1rem;
-          background: #fcfffe;
-          border-radius: 8px;
-          border: 1px solid #272b2a;
-        }
-        .legend-item {
-          display: flex;
-          align-items: center;
-          font-size: 0.9rem;
-          padding: 0.25rem;
-          color: #272b2a;
-        }
-        .color-box {
-          width: 12px;
-          height: 12px;
-          margin-right: 8px;
-          border-radius: 2px;
-        }
-        .legend-text {
-          flex: 1;
-        }
-      `}</style>
-    </div>
-  );
-};
-
-// Separate component for the Bar Chart
-const BarChartContainer: React.FC<{ results: Results; inputs: CalculatorInputs }> = ({
-  results,
-  inputs,
-}) => {
-  const {
-    totalMonthlyDeductions,
-    taxPaid = 0,
-    takeHomeMonthlyBeforeTax,
-    finalTakeHomeMonthly,
-  } = results.breakdown;
-
-  const netMonthly =
-    taxPaid > 0 ? finalTakeHomeMonthly || takeHomeMonthlyBeforeTax : takeHomeMonthlyBeforeTax;
-
-  const barData: BarData[] = [
-    {
-      name: "Gross Monthly",
-      monthly: parseFloat(inputs.annualCTC) / 12,
-    },
-    {
-      name: "Monthly Deductions",
-      monthly: totalMonthlyDeductions,
-    },
-    {
-      name: "Net In-Hand",
-      monthly: netMonthly,
-    },
-  ];
-
-  return (
-    <div className="chart-container">
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={barData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis tickFormatter={(val) => val.toLocaleString("en-IN")} />
-          <RechartsTooltip
-            formatter={(value: number) => `₹${value.toLocaleString("en-IN")} (${toWordsRupees(value)})`}
-          />
-          <Legend />
-          <Bar dataKey="monthly" fill="#108e66" name="Amount (Monthly)" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-  );
-};
+const BarChartContainer: React.FC<{ data: BarData[] }> = ({ data }) => (
+  <div className="chart-container">
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis tickFormatter={(v) => v.toLocaleString("en-IN")} />
+        <RechartsTooltip
+          formatter={(v: number) => `₹${v.toLocaleString("en-IN")}`}
+        />
+        <Legend />
+        <Bar dataKey="monthly" fill="#108e66" name="Amount (Monthly)" />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+);
 
 export default CTCvsInHandCalculator;

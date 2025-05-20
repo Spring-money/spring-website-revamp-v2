@@ -286,6 +286,18 @@ const SipCalculator: React.FC = () => {
         Calculate the future value of your Systematic Investment Plan (SIP) based on your monthly investment,
         expected annual return, and investment duration.
       </p>
+      <div className="explanation-box">
+  <p>
+    <strong>SIP (Systematic Investment Plan) Calculator:</strong> This tool helps you calculate the future value of your SIP investments by considering the monthly investment amount, expected rate of return, and the investment period.
+  </p>
+  <p>
+    By entering the <strong>monthly SIP amount</strong>, the <strong>expected annual return</strong>, and the <strong>investment period</strong> in years, this calculator computes the <strong>total value of your SIP investment</strong> over time. It takes into account the compounding effect, helping you visualize how your wealth can grow with regular investments.
+  </p>
+  <p>
+    The <strong>SIP calculator</strong> can also help you set realistic investment goals by adjusting the variables, allowing you to plan your finances more effectively. Regular SIP investments, even with small amounts, can lead to substantial wealth creation over time due to the power of compounding.
+  </p>
+</div>
+
 
       <div className="form-container">
         <h2 className="section-title">SIP Details</h2>
@@ -521,6 +533,19 @@ const SipCalculator: React.FC = () => {
           display: flex;
           align-items: center;
           margin-bottom: 4px;
+        }
+          .explanation-box {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation-box p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .input-group input,
         .select-input {

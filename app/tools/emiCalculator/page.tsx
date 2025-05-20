@@ -321,6 +321,15 @@ const EmiCalculator: React.FC = () => {
         Compute your Equated Monthly Installment (EMI) for a loan. Enter the loan amount, tenure, and annual
         interest rate to see your fixed monthly payment, total interest, and repayment summary.
       </p>
+      <div className="explanation">
+  <p>
+    <strong>EMI Calculator:</strong> This calculator helps you determine the <strong>Equated Monthly Installment (EMI)</strong> you will need to pay on your loan. It takes into account the <strong>loan amount</strong>, <strong>interest rate</strong>, and <strong>loan tenure</strong> to give you an accurate monthly payment estimate.
+  </p>
+  <p>
+    By entering the <strong>principal amount</strong>, <strong>rate of interest</strong>, and <strong>loan tenure</strong>, the calculator instantly computes your <strong>EMI</strong> along with the total interest paid over the entire loan period. This helps you plan your finances effectively and manage your loan repayment schedule.
+  </p>
+</div>
+
 
       <div className="form-container">
         <h2 className="section-title">Loan Details</h2>
@@ -645,6 +654,19 @@ const EmiCalculator: React.FC = () => {
           cursor: pointer;
           margin-top: 1rem;
           width: 100%;
+        }
+          .explanation {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .calculate-button:disabled {
           opacity: 0.6;

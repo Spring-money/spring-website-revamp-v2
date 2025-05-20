@@ -19,13 +19,13 @@ import {
 // Interfaces
 // -----------------------
 interface CalculatorInputs {
-  annualSalary: string;         // Annual Salary (INR)
-  workHoursPerWeek: string;     // Work Hours per Week
-  vacationWeeks: string;        // Vacation Weeks per Year
-  paidHolidays: string;         // Number of Paid Public Holidays per Year
-  unpaidLeave?: string;         // Optional: Unpaid Leave (Weeks)
-  bonuses?: string;             // Optional: Annual Bonuses (INR)
-  deductions?: string;          // Optional: Annual Deductions (INR)
+  annualSalary: string; // Annual Salary (INR)
+  workHoursPerWeek: string; // Work Hours per Week
+  vacationWeeks: string; // Vacation Weeks per Year
+  paidHolidays: string; // Number of Paid Public Holidays per Year
+  unpaidLeave?: string; // Optional: Unpaid Leave (Weeks)
+  bonuses?: string; // Optional: Annual Bonuses (INR)
+  deductions?: string; // Optional: Annual Deductions (INR)
 }
 
 interface Results {
@@ -147,7 +147,9 @@ const numberToWords = (num: number): string => {
   ];
   if (num < 20) return ones[num];
   if (num < 100)
-    return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
+    return (
+      tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "")
+    );
   if (num < 1000)
     return (
       ones[Math.floor(num / 100)] +
@@ -178,7 +180,9 @@ const numberToWordsPercent = (value: number): string => {
   if (Number.isInteger(value)) return numberToWords(value) + " percent";
   const intPart = Math.floor(value);
   const decimalPart = Math.round((value - intPart) * 10);
-  return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
+  return `${numberToWords(intPart)} point ${numberToWords(
+    decimalPart
+  )} percent`;
 };
 
 // -----------------------
@@ -217,7 +221,8 @@ const HourlyWageCalculator: React.FC = () => {
     requiredFields.forEach((field) => {
       const value = inputs[field as keyof CalculatorInputs];
       if (!value || isNaN(Number(value)) || Number(value) < 0) {
-        newErrors[field as keyof CalculatorInputs] = "Please enter a valid number";
+        newErrors[field as keyof CalculatorInputs] =
+          "Please enter a valid number";
       }
     });
     setErrors(newErrors);
@@ -244,7 +249,10 @@ const HourlyWageCalculator: React.FC = () => {
     // Calculate paid holiday hours (assuming 5 workdays per week)
     const paidHolidayHours = (paidHolidays / 5) * workHoursPerWeek;
     // Actual work hours: subtract vacation weeks, unpaid leave (converted to hours), and paid holiday hours
-    const actualHours = theoreticalHours - (vacationWeeks + unpaidLeave) * workHoursPerWeek - paidHolidayHours;
+    const actualHours =
+      theoreticalHours -
+      (vacationWeeks + unpaidLeave) * workHoursPerWeek -
+      paidHolidayHours;
     const adjustedSalary = annualSalary + bonuses - deductions;
     const actualHourly = adjustedSalary / actualHours;
 
@@ -256,24 +264,29 @@ const HourlyWageCalculator: React.FC = () => {
   };
 
   // Prepare chart data for Bar and Pie charts (rounding off values)
-  const chartData: ChartData[] =
-    results
-      ? [
-          { name: "Theoretical", value: Math.round(results.theoreticalHourly) },
-          { name: "Actual", value: Math.round(results.actualHourly) },
-        ]
-      : [];
+  const chartData: ChartData[] = results
+    ? [
+        { name: "Theoretical", value: Math.round(results.theoreticalHourly) },
+        { name: "Actual", value: Math.round(results.actualHourly) },
+      ]
+    : [];
 
   // Colors for charts: use primary green and purple
   const COLORS = ["#108e66", "#525ECC"];
 
   // Calculate difference message using a non-null diff value
-  const diff: number = results ? results.actualHourly - results.theoreticalHourly : 0;
+  const diff: number = results
+    ? results.actualHourly - results.theoreticalHourly
+    : 0;
   const diffMessage =
     results && diff !== 0
       ? diff > 0
-        ? `Your actual hourly wage is ₹${Math.abs(diff).toFixed(2)} more per hour than the theoretical rate.`
-        : `Your actual hourly wage is ₹${Math.abs(diff).toFixed(2)} less per hour than the theoretical rate.`
+        ? `Your actual hourly wage is ₹${Math.abs(diff).toFixed(
+            2
+          )} more per hour than the theoretical rate.`
+        : `Your actual hourly wage is ₹${Math.abs(diff).toFixed(
+            2
+          )} less per hour than the theoretical rate.`
       : "";
 
   return (
@@ -287,8 +300,25 @@ const HourlyWageCalculator: React.FC = () => {
 
       <h1 className="title">What is my effective hourly wage?</h1>
       <p className="description">
-        Evaluate your real earnings per hour based on your work schedule and time off.
+        Evaluate your real earnings per hour based on your work schedule and
+        time off.
       </p>
+      <div className="explanationn">
+        <p>
+          <strong>Hourly Wage Calculator:</strong> This calculator helps you
+          determine your <strong>hourly earnings</strong> based on your{" "}
+          <strong>total income</strong> and <strong>hours worked</strong> over a
+          given period. It’s useful for both salaried employees and freelancers
+          who want to track effective hourly pay.
+        </p>
+        <p>
+          By entering your <strong>total earnings</strong> and the{" "}
+          <strong>number of hours worked</strong> (weekly, monthly, or
+          annually), the calculator gives you a precise{" "}
+          <strong>hourly wage</strong>. It can help you evaluate job offers, set
+          freelance rates, or track income efficiency.
+        </p>
+      </div>
 
       <div className="form-container">
         <h2 className="section-title">Enter Your Financial Details</h2>
@@ -303,12 +333,16 @@ const HourlyWageCalculator: React.FC = () => {
               name="annualSalary"
               value={inputs.annualSalary}
               onChange={handleInputChange}
-              placeholder="e.g., 1200000"
+              placeholder="e.g., 12,00,000"
             />
             <span className="converter">
-              {inputs.annualSalary && numberToWords(parseFloat(inputs.annualSalary))} Rupees
+              {inputs.annualSalary &&
+                numberToWords(parseFloat(inputs.annualSalary))}{" "}
+              Rupees
             </span>
-            {errors.annualSalary && <span className="error">{errors.annualSalary}</span>}
+            {errors.annualSalary && (
+              <span className="error">{errors.annualSalary}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -323,9 +357,13 @@ const HourlyWageCalculator: React.FC = () => {
               placeholder="e.g., 40"
             />
             <span className="converter">
-              {inputs.workHoursPerWeek && numberToWords(parseFloat(inputs.workHoursPerWeek))} Hours
+              {inputs.workHoursPerWeek &&
+                numberToWords(parseFloat(inputs.workHoursPerWeek))}{" "}
+              Hours
             </span>
-            {errors.workHoursPerWeek && <span className="error">{errors.workHoursPerWeek}</span>}
+            {errors.workHoursPerWeek && (
+              <span className="error">{errors.workHoursPerWeek}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -340,9 +378,13 @@ const HourlyWageCalculator: React.FC = () => {
               placeholder="e.g., 4"
             />
             <span className="converter">
-              {inputs.vacationWeeks && numberToWords(parseFloat(inputs.vacationWeeks))} Weeks
+              {inputs.vacationWeeks &&
+                numberToWords(parseFloat(inputs.vacationWeeks))}{" "}
+              Weeks
             </span>
-            {errors.vacationWeeks && <span className="error">{errors.vacationWeeks}</span>}
+            {errors.vacationWeeks && (
+              <span className="error">{errors.vacationWeeks}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -357,9 +399,13 @@ const HourlyWageCalculator: React.FC = () => {
               placeholder="e.g., 10"
             />
             <span className="converter">
-              {inputs.paidHolidays && numberToWords(parseFloat(inputs.paidHolidays))} Days
+              {inputs.paidHolidays &&
+                numberToWords(parseFloat(inputs.paidHolidays))}{" "}
+              Days
             </span>
-            {errors.paidHolidays && <span className="error">{errors.paidHolidays}</span>}
+            {errors.paidHolidays && (
+              <span className="error">{errors.paidHolidays}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -374,7 +420,9 @@ const HourlyWageCalculator: React.FC = () => {
               placeholder="e.g., 1"
             />
             <span className="converter">
-              {inputs.unpaidLeave && numberToWords(parseFloat(inputs.unpaidLeave))} Weeks
+              {inputs.unpaidLeave &&
+                numberToWords(parseFloat(inputs.unpaidLeave))}{" "}
+              Weeks
             </span>
           </label>
           <label>
@@ -387,10 +435,11 @@ const HourlyWageCalculator: React.FC = () => {
               name="bonuses"
               value={inputs.bonuses || ""}
               onChange={handleInputChange}
-              placeholder="e.g., 50000"
+              placeholder="e.g., 50,000"
             />
             <span className="converter">
-              {inputs.bonuses && numberToWords(parseFloat(inputs.bonuses))} Rupees
+              {inputs.bonuses && numberToWords(parseFloat(inputs.bonuses))}{" "}
+              Rupees
             </span>
           </label>
           <label>
@@ -403,14 +452,20 @@ const HourlyWageCalculator: React.FC = () => {
               name="deductions"
               value={inputs.deductions || ""}
               onChange={handleInputChange}
-              placeholder="e.g., 20000"
+              placeholder="e.g., 20,000"
             />
             <span className="converter">
-              {inputs.deductions && numberToWords(parseFloat(inputs.deductions))} Rupees
+              {inputs.deductions &&
+                numberToWords(parseFloat(inputs.deductions))}{" "}
+              Rupees
             </span>
           </label>
         </div>
-        <button className="calculate-button" onClick={calculateResults} disabled={isCalculating}>
+        <button
+          className="calculate-button"
+          onClick={calculateResults}
+          disabled={isCalculating}
+        >
           {isCalculating ? "Calculating..." : "Calculate"}
         </button>
       </div>
@@ -422,7 +477,8 @@ const HourlyWageCalculator: React.FC = () => {
             <div className="summary-item">
               <strong>Theoretical Hourly Wage:</strong> ₹
               {results.theoreticalHourly.toLocaleString("en-IN")} (
-              {numberToWords(Math.round(results.theoreticalHourly))} Rupees/hour)
+              {numberToWords(Math.round(results.theoreticalHourly))}{" "}
+              Rupees/hour)
             </div>
             <div className="summary-item">
               <strong>Actual Hourly Wage:</strong> ₹
@@ -431,7 +487,8 @@ const HourlyWageCalculator: React.FC = () => {
             </div>
             {results.theoreticalHourly !== 0 && (
               <div className="summary-item">
-                <strong>Difference:</strong> {diff >= 0 
+                <strong>Difference:</strong>{" "}
+                {diff >= 0
                   ? `₹${Math.abs(diff).toLocaleString("en-IN")} more per hour`
                   : `₹${Math.abs(diff).toLocaleString("en-IN")} less per hour`}
               </div>
@@ -441,39 +498,61 @@ const HourlyWageCalculator: React.FC = () => {
           <h2 className="results-title">Graphical Comparison</h2>
           <div className="chart-explanation">
             <p>
-              The charts below compare your theoretical hourly wage (based on a full-time schedule) with your actual hourly wage (after accounting for time off). Hover over the graphs for detailed values.
+              The charts below compare your theoretical hourly wage (based on a
+              full-time schedule) with your actual hourly wage (after accounting
+              for time off). Hover over the graphs for detailed values.
             </p>
             {chartType === "bar" && (
               <p>
-                <strong>Bar Chart:</strong> Displays the two hourly wages side by side.
+                <strong>Bar Chart:</strong> Displays the two hourly wages side
+                by side.
               </p>
             )}
             {chartType === "pie" && (
               <p>
-                <strong>Pie Chart:</strong> Shows the proportional breakdown of your hourly wages.
+                <strong>Pie Chart:</strong> Shows the proportional breakdown of
+                your hourly wages.
               </p>
             )}
           </div>
           <div className="chart-toggle">
-            <button onClick={() => setChartType("bar")} className={chartType === "bar" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("bar")}
+              className={chartType === "bar" ? "active" : ""}
+            >
               Bar Chart
             </button>
-            <button onClick={() => setChartType("pie")} className={chartType === "pie" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("pie")}
+              className={chartType === "pie" ? "active" : ""}
+            >
               Pie Chart
             </button>
           </div>
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "bar" ? (
-                <BarChart data={chartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
+                <BarChart
+                  data={chartData}
+                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
-                  <YAxis tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")} />
-                  <RechartsTooltip formatter={(value: number) => "₹" + Math.round(value).toLocaleString("en-IN")} />
+                  <YAxis
+                    tickFormatter={(val) => "₹" + val.toLocaleString("en-IN")}
+                  />
+                  <RechartsTooltip
+                    formatter={(value: number) =>
+                      "₹" + Math.round(value).toLocaleString("en-IN")
+                    }
+                  />
                   <Legend />
                   <Bar dataKey="value" name="Hourly Wage">
                     {chartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
                     ))}
                   </Bar>
                 </BarChart>
@@ -489,10 +568,17 @@ const HourlyWageCalculator: React.FC = () => {
                     label
                   >
                     {chartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
                     ))}
                   </Pie>
-                  <RechartsTooltip formatter={(value: number) => "₹" + Math.round(value).toLocaleString("en-IN")} />
+                  <RechartsTooltip
+                    formatter={(value: number) =>
+                      "₹" + Math.round(value).toLocaleString("en-IN")
+                    }
+                  />
                   <Legend />
                 </PieChart>
               ) : (
@@ -508,16 +594,21 @@ const HourlyWageCalculator: React.FC = () => {
           <h4>Important Considerations</h4>
           <ul>
             <li>
-              This calculator estimates your effective hourly wage based on your annual income and the actual hours you work after accounting for vacations, holidays, and leave.
+              This calculator estimates your effective hourly wage based on your
+              annual income and the actual hours you work after accounting for
+              vacations, holidays, and leave.
             </li>
             <li>
-              The theoretical hourly wage assumes a full-time schedule without any time off.
+              The theoretical hourly wage assumes a full-time schedule without
+              any time off.
             </li>
             <li>
-              Actual hourly earnings may vary based on bonuses, deductions, and changes in your work schedule.
+              Actual hourly earnings may vary based on bonuses, deductions, and
+              changes in your work schedule.
             </li>
             <li>
-              Results are for reference only; please consult a financial advisor for personalized advice.
+              Results are for reference only; please consult a financial advisor
+              for personalized advice.
             </li>
           </ul>
         </div>
@@ -568,6 +659,19 @@ const HourlyWageCalculator: React.FC = () => {
           font-size: 1.5rem;
           font-weight: 600;
           margin: 1rem 0;
+        }
+        .explanationn {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanationn p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .input-group {
           display: grid;
