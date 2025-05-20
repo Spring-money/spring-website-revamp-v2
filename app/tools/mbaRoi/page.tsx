@@ -18,12 +18,12 @@ import {
 // Interfaces
 // -----------------------
 interface CalculatorInputs {
-  currentSalary: string;            // Current annual salary (INR)
-  expectedSalaryGrowth: string;     // Expected annual salary growth (%) without MBA
-  mbaCost: string;                  // Total cost of MBA (INR)
-  mbaDuration: string;              // Duration of MBA (Years)
-  postMbaSalary: string;            // Expected starting salary after MBA (INR)
-  postMbaGrowth: string;            // Expected annual salary growth after MBA (%)
+  currentSalary: string; // Current annual salary (INR)
+  expectedSalaryGrowth: string; // Expected annual salary growth (%) without MBA
+  mbaCost: string; // Total cost of MBA (INR)
+  mbaDuration: string; // Duration of MBA (Years)
+  postMbaSalary: string; // Expected starting salary after MBA (INR)
+  postMbaGrowth: string; // Expected annual salary growth after MBA (%)
   // (Comparison period is fixed at 50 years)
 }
 
@@ -68,7 +68,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .info-icon {
           display: inline-block;
           background: #108e66;
-          color: #FCFFFE;
+          color: #fcfffe;
           border-radius: 50%;
           font-size: 0.6rem;
           width: 14px;
@@ -80,8 +80,8 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
         .tooltiptext {
           visibility: visible;
           width: 220px;
-          background-color: #FCFFFE;
-          color: #272B2A;
+          background-color: #fcfffe;
+          color: #272b2a;
           text-align: left;
           border-radius: 4px;
           padding: 6px 8px;
@@ -94,7 +94,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           line-height: 1.2;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           opacity: 1;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
         }
         .tooltiptext::after {
           content: "";
@@ -104,7 +104,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           margin-left: -4px;
           border-width: 4px;
           border-style: solid;
-          border-color: #FCFFFE transparent transparent transparent;
+          border-color: #fcfffe transparent transparent transparent;
         }
       `}</style>
     </span>
@@ -154,7 +154,9 @@ const numberToWords = (num: number): string => {
   ];
   if (num < 20) return ones[num];
   if (num < 100)
-    return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
+    return (
+      tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "")
+    );
   if (num < 1000)
     return (
       ones[Math.floor(num / 100)] +
@@ -185,7 +187,9 @@ const numberToWordsPercent = (value: number): string => {
   if (Number.isInteger(value)) return numberToWords(value) + " percent";
   const intPart = Math.floor(value);
   const decimalPart = Math.round((value - intPart) * 10);
-  return `${numberToWords(intPart)} point ${numberToWords(decimalPart)} percent`;
+  return `${numberToWords(intPart)} point ${numberToWords(
+    decimalPart
+  )} percent`;
 };
 
 // -----------------------
@@ -203,12 +207,13 @@ const CustomLineTooltip = ({ active, payload, label }: any) => {
           With MBA: ₹{payload[1]?.value?.toLocaleString("en-IN")}
         </p>
         <p className="desc">
-          This chart compares your cumulative earnings over time for both scenarios.
+          This chart compares your cumulative earnings over time for both
+          scenarios.
         </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #FCFFFE;
-            border: 1px solid #272B2A;
+            background: #fcfffe;
+            border: 1px solid #272b2a;
             padding: 8px;
             border-radius: 4px;
           }
@@ -221,7 +226,7 @@ const CustomLineTooltip = ({ active, payload, label }: any) => {
           }
           .desc {
             font-size: 0.8rem;
-            color: #272B2A;
+            color: #272b2a;
             margin-top: 4px;
           }
         `}</style>
@@ -243,12 +248,13 @@ const CustomAreaTooltip = ({ active, payload, label }: any) => {
           Net Benefit: ₹{payload[0]?.value?.toLocaleString("en-IN")}
         </p>
         <p className="desc">
-          The shaded area represents the additional earnings gained from pursuing an MBA.
+          The shaded area represents the additional earnings gained from
+          pursuing an MBA.
         </p>
         <style jsx>{`
           .custom-tooltip {
-            background: #FCFFFE;
-            border: 1px solid #272B2A;
+            background: #fcfffe;
+            border: 1px solid #272b2a;
             padding: 8px;
             border-radius: 4px;
           }
@@ -261,7 +267,7 @@ const CustomAreaTooltip = ({ active, payload, label }: any) => {
           }
           .desc {
             font-size: 0.8rem;
-            color: #272B2A;
+            color: #272b2a;
             margin-top: 4px;
           }
         `}</style>
@@ -308,7 +314,8 @@ const MBACalculator: React.FC = () => {
     requiredFields.forEach((field) => {
       const value = inputs[field as keyof CalculatorInputs];
       if (!value || isNaN(Number(value)) || Number(value) < 0) {
-        newErrors[field as keyof CalculatorInputs] = "Please enter a valid number";
+        newErrors[field as keyof CalculatorInputs] =
+          "Please enter a valid number";
       }
     });
     setErrors(newErrors);
@@ -359,9 +366,11 @@ const MBACalculator: React.FC = () => {
         age:
           Math.round(
             currentSalary > 0
-              ? parseFloat(inputs.currentSalary) * 0.0 + year + parseFloat(inputs.currentSalary) * 0.0
+              ? parseFloat(inputs.currentSalary) * 0.0 +
+                  year +
+                  parseFloat(inputs.currentSalary) * 0.0
               : 0
-          ) || (currentSalary + year),
+          ) || currentSalary + year,
         salaryWithoutMBA: currentSalaryWithoutMBA,
         cumulativeWithoutMBA,
         salaryWithMBA: year <= mbaDuration ? 0 : salaryWithMBA,
@@ -370,7 +379,9 @@ const MBACalculator: React.FC = () => {
     }
 
     const breakEvenYear =
-      yearWise.find((data) => data.cumulativeWithMBA >= data.cumulativeWithoutMBA)?.year || null;
+      yearWise.find(
+        (data) => data.cumulativeWithMBA >= data.cumulativeWithoutMBA
+      )?.year || null;
 
     setResults({
       breakEvenYear,
@@ -409,8 +420,26 @@ const MBACalculator: React.FC = () => {
 
       <h1 className="title">MBA Opportunity Cost Calculator</h1>
       <p className="description">
-        Assess the financial impact of pursuing an MBA by comparing your cumulative earnings with and without it.
+        Assess the financial impact of pursuing an MBA by comparing your
+        cumulative earnings with and without it.
       </p>
+
+      {/* Explanation Box Below Heading */}
+      <div className="explanation">
+        <p>
+          <strong>MBA ROI (Return on Investment) Calculator:</strong> This tool
+          helps you estimate the long-term financial impact of pursuing an MBA
+          versus continuing your career without it. It considers your current
+          salary, expected growth, MBA costs, and post-MBA salary prospects.
+        </p>
+        <p>
+          Use this calculator to compare <strong>cumulative earnings</strong>,
+          determine your <strong>break-even year</strong>, and assess the net
+          financial benefit of an MBA over a 50-year career span. It helps you
+          make an informed decision about whether the investment in an MBA
+          aligns with your career and financial goals.
+        </p>
+      </div>
 
       <div className="form-container">
         <h2 className="section-title">Your Career & Education Details</h2>
@@ -425,12 +454,16 @@ const MBACalculator: React.FC = () => {
               name="currentSalary"
               value={inputs.currentSalary}
               onChange={handleInputChange}
-              placeholder="e.g., 600000"
+              placeholder="e.g., ₹6,00,000 INR"
             />
             <span className="converter">
-              {inputs.currentSalary && numberToWords(parseFloat(inputs.currentSalary))} Rupees
+              {inputs.currentSalary &&
+                numberToWords(parseFloat(inputs.currentSalary))}{" "}
+              Rupees
             </span>
-            {errors.currentSalary && <span className="error">{errors.currentSalary}</span>}
+            {errors.currentSalary && (
+              <span className="error">{errors.currentSalary}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -445,9 +478,12 @@ const MBACalculator: React.FC = () => {
               placeholder="e.g., 10"
             />
             <span className="converter">
-              {inputs.expectedSalaryGrowth && numberToWordsPercent(parseFloat(inputs.expectedSalaryGrowth))}
+              {inputs.expectedSalaryGrowth &&
+                numberToWordsPercent(parseFloat(inputs.expectedSalaryGrowth))}
             </span>
-            {errors.expectedSalaryGrowth && <span className="error">{errors.expectedSalaryGrowth}</span>}
+            {errors.expectedSalaryGrowth && (
+              <span className="error">{errors.expectedSalaryGrowth}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -459,10 +495,11 @@ const MBACalculator: React.FC = () => {
               name="mbaCost"
               value={inputs.mbaCost}
               onChange={handleInputChange}
-              placeholder="e.g., 2000000"
+              placeholder="e.g., ₹20,00,000 INR"
             />
             <span className="converter">
-              {inputs.mbaCost && numberToWords(parseFloat(inputs.mbaCost))} Rupees
+              {inputs.mbaCost && numberToWords(parseFloat(inputs.mbaCost))}{" "}
+              Rupees
             </span>
             {errors.mbaCost && <span className="error">{errors.mbaCost}</span>}
           </label>
@@ -479,9 +516,13 @@ const MBACalculator: React.FC = () => {
               placeholder="e.g., 2"
             />
             <span className="converter">
-              {inputs.mbaDuration && numberToWords(parseFloat(inputs.mbaDuration))} Years
+              {inputs.mbaDuration &&
+                numberToWords(parseFloat(inputs.mbaDuration))}{" "}
+              Years
             </span>
-            {errors.mbaDuration && <span className="error">{errors.mbaDuration}</span>}
+            {errors.mbaDuration && (
+              <span className="error">{errors.mbaDuration}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -493,12 +534,16 @@ const MBACalculator: React.FC = () => {
               name="postMbaSalary"
               value={inputs.postMbaSalary}
               onChange={handleInputChange}
-              placeholder="e.g., 1500000"
+              placeholder="e.g., ₹15,00,000 INR"
             />
             <span className="converter">
-              {inputs.postMbaSalary && numberToWords(parseFloat(inputs.postMbaSalary))} Rupees
+              {inputs.postMbaSalary &&
+                numberToWords(parseFloat(inputs.postMbaSalary))}{" "}
+              Rupees
             </span>
-            {errors.postMbaSalary && <span className="error">{errors.postMbaSalary}</span>}
+            {errors.postMbaSalary && (
+              <span className="error">{errors.postMbaSalary}</span>
+            )}
           </label>
           <label>
             <span className="input-label">
@@ -513,12 +558,19 @@ const MBACalculator: React.FC = () => {
               placeholder="e.g., 15"
             />
             <span className="converter">
-              {inputs.postMbaGrowth && numberToWordsPercent(parseFloat(inputs.postMbaGrowth))}
+              {inputs.postMbaGrowth &&
+                numberToWordsPercent(parseFloat(inputs.postMbaGrowth))}
             </span>
-            {errors.postMbaGrowth && <span className="error">{errors.postMbaGrowth}</span>}
+            {errors.postMbaGrowth && (
+              <span className="error">{errors.postMbaGrowth}</span>
+            )}
           </label>
         </div>
-        <button className="calculate-button" onClick={calculateResults} disabled={isCalculating}>
+        <button
+          className="calculate-button"
+          onClick={calculateResults}
+          disabled={isCalculating}
+        >
           {isCalculating ? "Calculating..." : "Calculate"}
         </button>
       </div>
@@ -530,13 +582,16 @@ const MBACalculator: React.FC = () => {
             <div className="summary-item">
               <strong>Break-even Year:</strong>{" "}
               {results.breakEvenYear !== null
-                ? `${results.breakEvenYear} (${numberToWords(results.breakEvenYear)} years)`
+                ? `${results.breakEvenYear} (${numberToWords(
+                    results.breakEvenYear
+                  )} years)`
                 : "Not reached within 50 years"}
             </div>
             <div className="summary-item">
               <strong>Total Earnings Without MBA:</strong> ₹
               {results.totalEarningsWithoutMBA.toLocaleString("en-IN")} (
-              {numberToWords(Math.round(results.totalEarningsWithoutMBA))} Rupees)
+              {numberToWords(Math.round(results.totalEarningsWithoutMBA))}{" "}
+              Rupees)
             </div>
             <div className="summary-item">
               <strong>Total Earnings With MBA:</strong> ₹
@@ -550,33 +605,48 @@ const MBACalculator: React.FC = () => {
             </div>
           </div>
 
-          <h2 className="results-title">Cumulative Earnings Comparison (50 Years)</h2>
+          <h2 className="results-title">
+            Cumulative Earnings Comparison (50 Years)
+          </h2>
           <div className="chart-explanation">
             <p>
-              The charts below compare your cumulative earnings over a 50‑year period for two scenarios:
+              The charts below compare your cumulative earnings over a 50‑year
+              period for two scenarios:
               <br />
-              <strong>Without MBA:</strong> Your career progresses naturally, with your salary increasing at your current growth rate year after year.
+              <strong>Without MBA:</strong> Your career progresses naturally,
+              with your salary increasing at your current growth rate year after
+              year.
               <br />
-              <strong>With MBA:</strong> Your investment journey includes a pause in earnings during studies and upfront MBA costs, followed by rewards of higher starting salary and faster career growth.
+              <strong>With MBA:</strong> Your investment journey includes a
+              pause in earnings during studies and upfront MBA costs, followed
+              by rewards of higher starting salary and faster career growth.
               <br />
               Hover over the graphs for detailed values.
             </p>
             {chartType === "line" && (
               <p>
-                <strong>Line Chart:</strong> This chart provides a continuous, smooth view of your earnings trend over time.
+                <strong>Line Chart:</strong> This chart provides a continuous,
+                smooth view of your earnings trend over time.
               </p>
             )}
             {chartType === "area" && (
               <p>
-                <strong>Area Chart:</strong> This chart visually emphasizes the gap between the two scenarios with a shaded area.
+                <strong>Area Chart:</strong> This chart visually emphasizes the
+                gap between the two scenarios with a shaded area.
               </p>
             )}
           </div>
           <div className="chart-toggle">
-            <button onClick={() => setChartType("line")} className={chartType === "line" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("line")}
+              className={chartType === "line" ? "active" : ""}
+            >
               Line Chart
             </button>
-            <button onClick={() => setChartType("area")} className={chartType === "area" ? "active" : ""}>
+            <button
+              onClick={() => setChartType("area")}
+              className={chartType === "area" ? "active" : ""}
+            >
               Area Chart
             </button>
           </div>
@@ -584,20 +654,58 @@ const MBACalculator: React.FC = () => {
           <div className="chart-container">
             <ResponsiveContainer width="90%" height={300}>
               {chartType === "line" && lineChartData ? (
-                <LineChart data={lineChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
+                <LineChart
+                  data={lineChartData}
+                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
+                  <XAxis
+                    dataKey="year"
+                    label={{
+                      value: "Year",
+                      position: "insideBottom",
+                      offset: -5,
+                    }}
+                  />
+                  <YAxis
+                    domain={["auto", "auto"]}
+                    tickFormatter={(val) => val.toLocaleString("en-IN")}
+                  />
                   <RechartsTooltip content={CustomLineTooltip} />
                   <Legend />
-                  <Line type="monotone" dataKey="Without MBA" stroke="#272B2A" strokeWidth={2} name="Without MBA" />
-                  <Line type="monotone" dataKey="With MBA" stroke="#108e66" strokeWidth={2} name="With MBA" />
+                  <Line
+                    type="monotone"
+                    dataKey="Without MBA"
+                    stroke="#272B2A"
+                    strokeWidth={2}
+                    name="Without MBA"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="With MBA"
+                    stroke="#108e66"
+                    strokeWidth={2}
+                    name="With MBA"
+                  />
                 </LineChart>
               ) : chartType === "area" && areaChartData ? (
-                <AreaChart data={areaChartData} margin={{ left: 50, right: 30, top: 20, bottom: 20 }}>
+                <AreaChart
+                  data={areaChartData}
+                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: "Year", position: "insideBottom", offset: -5 }} />
-                  <YAxis domain={["auto", "auto"]} tickFormatter={(val) => val.toLocaleString("en-IN")} />
+                  <XAxis
+                    dataKey="year"
+                    label={{
+                      value: "Year",
+                      position: "insideBottom",
+                      offset: -5,
+                    }}
+                  />
+                  <YAxis
+                    domain={["auto", "auto"]}
+                    tickFormatter={(val) => val.toLocaleString("en-IN")}
+                  />
                   <RechartsTooltip content={CustomAreaTooltip} />
                   <Legend />
                   <Area
@@ -644,16 +752,23 @@ const MBACalculator: React.FC = () => {
             <h4>Important Considerations</h4>
             <ul>
               <li>
-                This calculator estimates your cumulative earnings over 50 years for both scenarios – with and without an MBA.
+                This calculator estimates your cumulative earnings over 50 years
+                for both scenarios – with and without an MBA.
               </li>
               <li>
-                It factors in the MBA cost and lost earnings during the MBA period, as well as different salary growth rates before and after the MBA.
+                It factors in the MBA cost and lost earnings during the MBA
+                period, as well as different salary growth rates before and
+                after the MBA.
               </li>
               <li>
-                Actual results may vary due to changes in market conditions, salary growth, and other factors.
+                Actual results may vary due to changes in market conditions,
+                salary growth, and other factors.
               </li>
             </ul>
-            <p>Please consult with a financial advisor before making any major career or financial decisions.</p>
+            <p>
+              Please consult with a financial advisor before making any major
+              career or financial decisions.
+            </p>
           </div>
         </div>
       )}
@@ -662,15 +777,15 @@ const MBACalculator: React.FC = () => {
         .container {
           padding: 2rem;
           font-family: "Poppins", sans-serif;
-          background: #FCFFFE;
-          color: #272B2A;
+          background: #fcfffe;
+          color: #272b2a;
         }
         .top-nav {
           margin-bottom: 1rem;
         }
         .back-button {
           background: #108e66;
-          color: #FCFFFE;
+          color: #fcfffe;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 4px;
@@ -690,12 +805,12 @@ const MBACalculator: React.FC = () => {
           margin-bottom: 2rem;
         }
         .form-container {
-          background: #FCFFFE;
+          background: #fcfffe;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           margin-bottom: 2rem;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
         }
         .section-title {
           font-size: 1.5rem;
@@ -723,18 +838,18 @@ const MBACalculator: React.FC = () => {
         .select-input {
           padding: 0.5rem;
           margin-top: 0.5rem;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
           border-radius: 4px;
           height: 38px;
           width: 100%;
           box-sizing: border-box;
           font-size: 1rem;
-          background: #FCFFFE;
-          color: #272B2A;
+          background: #fcfffe;
+          color: #272b2a;
         }
         .converter {
           font-size: 0.9rem;
-          color: #272B2A;
+          color: #272b2a;
           margin-top: 0.25rem;
         }
         .error {
@@ -743,7 +858,7 @@ const MBACalculator: React.FC = () => {
         }
         .calculate-button {
           background: #108e66;
-          color: #FCFFFE;
+          color: #fcfffe;
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 4px;
@@ -757,12 +872,12 @@ const MBACalculator: React.FC = () => {
           cursor: not-allowed;
         }
         .results-container {
-          background: #FCFFFE;
+          background: #fcfffe;
           padding: 2rem;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           margin-bottom: 2rem;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
         }
         .results-title {
           font-size: 1.8rem;
@@ -771,25 +886,38 @@ const MBACalculator: React.FC = () => {
           text-align: center;
         }
         .summary-card {
-          background: #FCFFFE;
+          background: #fcfffe;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1.5rem;
           display: grid;
           gap: 0.75rem;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
         }
         .summary-item {
           font-size: 1rem;
           margin: 0.25rem 0;
         }
+        .explanation {
+          background: #fcfffe;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272b2a;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
+        }
         .chart-explanation {
-          background: #FCFFFE;
+          background: #fcfffe;
           padding: 1rem;
           border-radius: 8px;
           margin-bottom: 1rem;
           border-left: 4px solid #108e66;
-          color: #272B2A;
+          color: #272b2a;
         }
         .chart-explanation p {
           margin: 0;
@@ -803,16 +931,16 @@ const MBACalculator: React.FC = () => {
         }
         .chart-toggle button {
           background: transparent;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
           padding: 0.5rem 1rem;
           cursor: pointer;
           border-radius: 4px;
           transition: all 0.2s ease;
-          color: #272B2A;
+          color: #272b2a;
         }
         .chart-toggle button.active {
           background: #108e66;
-          color: #FCFFFE;
+          color: #fcfffe;
           border-color: #108e66;
         }
         .chart-container {
@@ -825,7 +953,7 @@ const MBACalculator: React.FC = () => {
           overflow-y: auto;
           margin-bottom: 1.5rem;
           border-radius: 8px;
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
         }
         .amortization-table table {
           width: 100%;
@@ -833,28 +961,28 @@ const MBACalculator: React.FC = () => {
         }
         .amortization-table th,
         .amortization-table td {
-          border: 1px solid #272B2A;
+          border: 1px solid #272b2a;
           padding: 0.5rem;
           text-align: center;
         }
         .amortization-table th {
           background: #108e66;
-          color: #FCFFFE;
+          color: #fcfffe;
           position: sticky;
           top: 0;
         }
         .disclaimer {
-          background: #FCFFFE;
+          background: #fcfffe;
           padding: 1rem;
           border-radius: 4px;
           font-size: 0.9rem;
-          color: #272B2A;
-          border: 1px solid #272B2A;
+          color: #272b2a;
+          border: 1px solid #272b2a;
           margin-top: 2rem;
         }
         .disclaimer h4 {
           margin-top: 0;
-          color: #272B2A;
+          color: #272b2a;
           margin-bottom: 0.5rem;
         }
         .disclaimer ul {

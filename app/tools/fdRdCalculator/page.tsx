@@ -338,6 +338,16 @@ const FDRDCalculator: React.FC = () => {
         based on your chosen investment strategy. Toggle between FD and RD to view their respective calculations.
       </p>
 
+      {/* Explanation Box Below Heading */}
+      <div className="explanation">
+        <p>
+          <strong>FD (Fixed Deposit) & RD (Recurring Deposit):</strong> FDs are lump-sum investments for a fixed tenure at a fixed interest rate, while RDs allow you to invest a fixed amount every month for a set period. Both are popular, low-risk savings options offered by banks and financial institutions in India.
+        </p>
+        <p>
+          This calculator helps you estimate the <strong>maturity value</strong> and <strong>total interest earned</strong> for both FDs and RDs, based on your investment amount, tenure, and interest rate. Use it to compare which option best suits your savings goals and cash flow preferences.
+        </p>
+      </div>
+
       {/* Toggle for FD and RD */}
       <div className="calc-toggle">
         <button
@@ -668,6 +678,19 @@ const FDRDCalculator: React.FC = () => {
           text-align: center;
           font-size: 1.2rem;
           margin-bottom: 2rem;
+        }
+        .explanation {
+          background: #FCFFFE;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid #108e66;
+          font-size: 0.95rem;
+          color: #272B2A;
+        }
+        .explanation p {
+          margin: 0.5rem 0;
+          line-height: 1.5;
         }
         .calc-toggle {
           display: flex;

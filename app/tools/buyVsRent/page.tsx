@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import {
@@ -12,6 +13,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// -----------------------
+// Interfaces
+// -----------------------
 interface CalculatorInputs {
   propertyPrice: string;
   downPayment: string;
@@ -38,16 +42,14 @@ interface Results {
   rentingData: Array<{ year: number; netWorth: number; annualRent: number }>;
 }
 
-/* =========================================
-   1) Tooltip Component
-   Displays info text on hover over an "i" icon
-========================================= */
+// -----------------------
+// Tooltip Component
+// -----------------------
 const Tooltip: React.FC<{ text: string }> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
-  
   return (
-    <span 
-      className="tooltip" 
+    <span
+      className="tooltip"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -57,39 +59,34 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
         .tooltip {
           position: relative;
           display: inline-block;
-          margin-left: 5px;
-          cursor: pointer;
+          margin-left: 4px;
           vertical-align: middle;
         }
         .info-icon {
-          display: inline-block;
           background: #108e66;
-          color: #272B2A;
-          border-radius: 50%;
-          font-size: 0.6rem;
+          color: #fcfffe;
           width: 14px;
           height: 14px;
-          text-align: center;
-          line-height: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          font-size: 0.6rem;
           font-weight: bold;
+          cursor: default;
         }
         .tooltiptext {
-          visibility: visible;
-          width: 200px;
-          background-color: #108e66;
-          color: #272B2A;
-          text-align: left;
-          border-radius: 4px;
-          padding: 6px 8px;
           position: absolute;
-          z-index: 1000;
-          bottom: 130%;
+          bottom: 125%;
           left: 50%;
           transform: translateX(-50%);
+          background: #108e66;
+          color: #fcfffe;
+          padding: 6px 8px;
+          border-radius: 4px;
           font-size: 0.75rem;
-          line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(39,43,42,0.2);
-          opacity: 1;
+          white-space: nowrap;
+          z-index: 10;
         }
         .tooltiptext::after {
           content: "";
@@ -97,26 +94,20 @@ const Tooltip: React.FC<{ text: string }> = ({ text }) => {
           top: 100%;
           left: 50%;
           margin-left: -4px;
-          border-width: 4px;
-          border-style: solid;
-          border-color: #108e66 transparent transparent transparent;
+          border: 4px solid transparent;
+          border-top-color: #108e66;
         }
       `}</style>
     </span>
   );
 };
 
-/* =========================================
-   2) Number to Words Conversion Function
-   Consistent with EMI calculator
-========================================= */
+// -----------------------
+// Number to Words Helpers
+// -----------------------
 const numberToWords = (num: number): string => {
-  if (num === undefined || num === null) return "";
-  
-  num = Math.abs(Math.round(num));
-  
-  if (num === 0) return "Zero";
-  
+  const n = Math.round(Math.abs(num));
+  if (n === 0) return "Zero";
   const ones = [
     "",
     "One",
@@ -141,7 +132,7 @@ const numberToWords = (num: number): string => {
   ];
   const tens = [
     "",
-    "Ten",
+    "",
     "Twenty",
     "Thirty",
     "Forty",
@@ -151,58 +142,42 @@ const numberToWords = (num: number): string => {
     "Eighty",
     "Ninety",
   ];
-
-  if (num < 20) return ones[num];
-  if (num < 100)
-    return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "");
-  if (num < 1000)
+  const helper = (x: number): string => {
+    if (x < 20) return ones[x];
+    if (x < 100)
+      return (
+        tens[Math.floor(x / 10)] + (x % 10 ? " " + ones[x % 10] : "")
+      );
+    if (x < 1000)
+      return (
+        ones[Math.floor(x / 100)] +
+        " Hundred" +
+        (x % 100 ? " " + helper(x % 100) : "")
+      );
+    if (x < 100000)
+      return (
+        helper(Math.floor(x / 1000)) +
+        " Thousand" +
+        (x % 1000 ? " " + helper(x % 1000) : "")
+      );
+    if (x < 10000000)
+      return (
+        helper(Math.floor(x / 100000)) +
+        " Lakh" +
+        (x % 100000 ? " " + helper(x % 100000) : "")
+      );
     return (
-      ones[Math.floor(num / 100)] +
-      " Hundred" +
-      (num % 100 !== 0 ? " " + numberToWords(num % 100) : "")
+      helper(Math.floor(x / 10000000)) +
+      " Crore" +
+      (x % 10000000 ? " " + helper(x % 10000000) : "")
     );
-  if (num < 100000)
-    return (
-      numberToWords(Math.floor(num / 1000)) +
-      " Thousand" +
-      (num % 1000 !== 0 ? " " + numberToWords(num % 1000) : "")
-    );
-  if (num < 10000000)
-    return (
-      numberToWords(Math.floor(num / 100000)) +
-      " Lakh" +
-      (num % 100000 !== 0 ? " " + numberToWords(num % 100000) : "")
-    );
-  return (
-    numberToWords(Math.floor(num / 10000000)) +
-    " Crore" +
-    (num % 10000000 !== 0 ? " " + numberToWords(num % 10000000) : "")
-  );
+  };
+  return helper(n);
 };
 
-/* =========================================
-   3) Number to Words Percent
-   Converts numbers to word format with percent
-========================================= */
-const numberToWordsPercent = (value: number): string => {
-  if (value === undefined || value === null) return "";
-  
-  if (Number.isInteger(value)) {
-    return numberToWords(value) + " percent";
-  }
-  
-  const intPart = Math.floor(value);
-  const decimalPart = Math.round((value - intPart) * 10);
-  
-  const intWords = numberToWords(intPart);
-  const decimalWords = numberToWords(decimalPart);
-  
-  return `${intWords} point ${decimalWords} percent`;
-};
-
-/* =========================================
-   4) Main Component
-========================================= */
+// -----------------------
+// Main Component
+// -----------------------
 const BuyVsRentCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
     propertyPrice: "",
@@ -216,501 +191,267 @@ const BuyVsRentCalculator: React.FC = () => {
     rentInflation: "",
     investmentReturn: "",
   });
-
   const [errors, setErrors] = useState<Partial<CalculatorInputs>>({});
   const [results, setResults] = useState<Results | null>(null);
-  const [isCalculating, setIsCalculating] = useState<boolean>(false);
+  const [isCalculating, setIsCalculating] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setInputs((prev) => ({ ...prev, [name]: value }));
+    setInputs(prev => ({ ...prev, [name]: value }));
   };
 
-  const validateInputs = (): boolean => {
-    const newErrors: Partial<CalculatorInputs> = {};
-    Object.keys(inputs).forEach((key) => {
-      const value = inputs[key as keyof CalculatorInputs];
-      if (value.trim() === "" || isNaN(Number(value))) {
-        newErrors[key as keyof CalculatorInputs] = "Please enter a valid number";
-      }
+  const validate = () => {
+    const errs: Partial<CalculatorInputs> = {};
+    Object.entries(inputs).forEach(([k, v]) => {
+      if (!v.trim() || isNaN(Number(v))) errs[k as keyof CalculatorInputs] = "Invalid";
     });
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors(errs);
+    return !Object.keys(errs).length;
   };
 
-  const calculateResults = () => {
-    if (!validateInputs()) return;
+  const calculate = () => {
+    if (!validate()) return;
     setIsCalculating(true);
+    const P = parseFloat(inputs.propertyPrice);
+    const D = parseFloat(inputs.downPayment);
+    const T = parseFloat(inputs.loanTenure);
+    const r = parseFloat(inputs.interestRate)/100;
+    const a = parseFloat(inputs.propertyAppreciation)/100;
+    const tb = parseFloat(inputs.incomeTaxBracket)/100;
+    const md = parseFloat(inputs.maxTaxDeduction);
+    const rent0 = parseFloat(inputs.currentMonthlyRent);
+    const ri = parseFloat(inputs.rentInflation)/100;
+    const ir = parseFloat(inputs.investmentReturn)/100;
 
-    const propertyPrice = parseFloat(inputs.propertyPrice);
-    const downPayment = parseFloat(inputs.downPayment);
-    const loanAmount = propertyPrice - downPayment;
-    const loanTenure = parseFloat(inputs.loanTenure);
-    const interestRate = parseFloat(inputs.interestRate);
-    const propertyAppreciation = parseFloat(inputs.propertyAppreciation);
-    const incomeTaxBracket = parseFloat(inputs.incomeTaxBracket);
-    const maxTaxDeduction = parseFloat(inputs.maxTaxDeduction);
+    // EMI
+    const L = P - D;
+    const mrate = r/12;
+    const n = T*12;
+    const EMI = (L*mrate*Math.pow(1+mrate,n))/(Math.pow(1+mrate,n)-1);
+    const totalEMI = EMI*n;
+    const interestPaid = totalEMI - L;
+    const taxB = Math.min(interestPaid*tb, md);
+    const homeVal = P*Math.pow(1+a,T);
+    const buyNW = homeVal - (D+totalEMI) + taxB;
 
-    const currentMonthlyRent = parseFloat(inputs.currentMonthlyRent);
-    const rentInflation = parseFloat(inputs.rentInflation);
-    const investmentReturn = parseFloat(inputs.investmentReturn);
+    // Rent & invest
+    let rentPaid = 0, rentNW = 0;
+    const buyData: Results["buyingData"] = [], rentData: Results["rentingData"] = [];
 
-    const monthlyInterestRate = interestRate / 100 / 12;
-    const numberOfPayments = loanTenure * 12;
-    const emi =
-      (loanAmount *
-        monthlyInterestRate *
-        Math.pow(1 + monthlyInterestRate, numberOfPayments)) /
-      (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
-
-    const totalEmiPaid = emi * 12 * loanTenure;
-    const totalInterest = totalEmiPaid - loanAmount;
-    const taxBenefit = Math.min(totalInterest * (incomeTaxBracket / 100), maxTaxDeduction);
-    const finalHomeValue = propertyPrice * Math.pow(1 + propertyAppreciation / 100, loanTenure);
-    const buyingNetWorth = finalHomeValue - (downPayment + totalEmiPaid) + taxBenefit;
-
-    let totalRentPaid = 0;
-    let rentingNetWorth = 0;
-    const buyingData: Array<{ year: number; netWorth: number; annualCost: number }> = [];
-    const rentingData: Array<{ year: number; netWorth: number; annualRent: number }> = [];
-
-    for (let i = 0; i < loanTenure; i++) {
-      const year = i + 1;
-      const yearlyRent = currentMonthlyRent * 12 * Math.pow(1 + rentInflation / 100, i);
-      totalRentPaid += yearlyRent;
-
-      const annualBuyingCost = emi * 12;
-      const annualSavings = annualBuyingCost - yearlyRent;
-      const compoundedSavings = annualSavings * Math.pow(1 + investmentReturn / 100, loanTenure - i);
-      rentingNetWorth += compoundedSavings;
-
-      const propertyValueAtYear = propertyPrice * Math.pow(1 + propertyAppreciation / 100, year);
-      const cumulativeEmiPaid = emi * 12 * year;
-      const taxBenefitPortion = taxBenefit * (year / loanTenure);
-
-      const buyingNetWorthYear =
-        propertyValueAtYear - (downPayment + cumulativeEmiPaid) + taxBenefitPortion;
-
-      buyingData.push({
-        year,
-        netWorth: parseFloat(buyingNetWorthYear.toFixed(2)),
-        annualCost: parseFloat(annualBuyingCost.toFixed(2)),
-      });
-      rentingData.push({
-        year,
-        netWorth: parseFloat(rentingNetWorth.toFixed(2)),
-        annualRent: parseFloat(yearlyRent.toFixed(2)),
-      });
+    for(let i=0;i<T;i++){
+      const year = i+1;
+      const yrRent = rent0*12*Math.pow(1+ri,i);
+      rentPaid += yrRent;
+      const buyCost = EMI*12;
+      const saved = buyCost - yrRent;
+      rentNW += saved*Math.pow(1+ir,T-i);
+      const hv = P*Math.pow(1+a,year);
+      const paid = EMI*12*year;
+      const taxPart = taxB*(year/T);
+      buyData.push({ year, netWorth: +(hv - (D+paid) + taxPart).toFixed(2), annualCost: +buyCost.toFixed(2) });
+      rentData.push({ year, netWorth: +rentNW.toFixed(2), annualRent: +yrRent.toFixed(2) });
     }
 
-    const decision =
-      buyingNetWorth > rentingNetWorth
-        ? "Buying is financially better"
-        : rentingNetWorth > buyingNetWorth
-        ? "Renting and investing your savings is financially better"
-        : "Both options are nearly equal";
+    const decision = buyNW>rentNW
+      ? "Buying yields higher wealth"
+      : rentNW>buyNW
+      ? "Renting & investing yields higher wealth"
+      : "Both are comparable";
 
     setResults({
-      emi: emi.toFixed(2),
-      totalEmiPaid: totalEmiPaid.toFixed(2),
-      taxBenefit: taxBenefit.toFixed(2),
-      finalHomeValue: finalHomeValue.toFixed(2),
-      buyingNetWorth: buyingNetWorth.toFixed(2),
-      totalRentPaid: totalRentPaid.toFixed(2),
-      rentingNetWorth: rentingNetWorth.toFixed(2),
+      emi: EMI.toFixed(2),
+      totalEmiPaid: totalEMI.toFixed(2),
+      taxBenefit: taxB.toFixed(2),
+      finalHomeValue: homeVal.toFixed(2),
+      buyingNetWorth: buyNW.toFixed(2),
+      totalRentPaid: rentPaid.toFixed(2),
+      rentingNetWorth: rentNW.toFixed(2),
       decision,
-      buyingData,
-      rentingData,
+      buyingData: buyData,
+      rentingData: rentData,
     });
-
-    setTimeout(() => {
-      setIsCalculating(false);
-    }, 1000);
+    setTimeout(()=>setIsCalculating(false),300);
   };
 
-  const combinedData =
-    results &&
-    results.buyingData.map((data, index) => ({
-      year: data.year,
-      "Buying Net Worth": data.netWorth,
-      "Renting Net Worth": results.rentingData[index]?.netWorth || 0,
-    }));
+  // chart data
+  const combined = results?.buyingData.map((b,i)=>( {
+    year: b.year,
+    "Buying NW": b.netWorth,
+    "Renting NW": results.rentingData[i].netWorth
+  }));
 
   return (
-    <div className="container">
+    <main className="container">
+      {/* Top nav */}
       <div className="top-nav">
         <Link href="/tools">
-          <button className="back-button">Back to Dashboard</button>
+          <button className="back-button"> Back to Dashboard</button>
         </Link>
       </div>
 
       <h1 className="title">Should I Buy or Rent a Home?</h1>
       <p className="description">
-        This tool evaluates the financial implications of buying versus renting. Enter your details
-        below to see which option might build more wealth over time.
+        Enter your details below to compare <strong>home-ownership</strong> vs. <strong>rent-and-invest</strong> 
+        over your loan tenure.
       </p>
 
-      <div className="form-container">
+      {/* Explanation */}
+      <div className="explanation">
+        <p>
+          <strong>Buying vs. Renting:</strong> This tool factors in your <em>EMI</em>, <em>property appreciation</em>, 
+          and <em>tax deductions</em> when buying—versus <em>rent inflation</em> and <em>investment returns</em> 
+          on your savings when renting.
+        </p>
+        <p>
+          Over your chosen <strong>loan tenure</strong>, you'll see year-by-year <strong>net worth</strong> and 
+          <strong>cashflows</strong> for both scenarios. Use this to visualize which approach may 
+          <strong>build more wealth</strong>—then weigh flexibility and maintenance before you decide.
+        </p>
+      </div>
+
+      {/* Form */}
+      <section className="form-container">
         <h2 className="section-title">Buying Details</h2>
-        <div className="input-group">
-          <label>
-            <span className="input-label">
-              Property Price (INR)
-              <Tooltip text="Total cost of the home, e.g. 50,00,000" />
-            </span>
-            <input
-              type="number"
-              name="propertyPrice"
-              value={inputs.propertyPrice}
-              onChange={handleInputChange}
-              placeholder="e.g., 5000000"
-            />
-            <span className="converter">
-              {inputs.propertyPrice && numberToWords(parseFloat(inputs.propertyPrice))} Rupees
-            </span>
-            {errors.propertyPrice && <span className="error">{errors.propertyPrice}</span>}
-          </label>
-          <label>
-            <span className="input-label">
-              Down Payment (INR)
-              <Tooltip text="Amount paid upfront, e.g. 10,00,000" />
-            </span>
-            <input
-              type="number"
-              name="downPayment"
-              value={inputs.downPayment}
-              onChange={handleInputChange}
-              placeholder="e.g., 1000000"
-            />
-            <span className="converter">
-              {inputs.downPayment && numberToWords(parseFloat(inputs.downPayment))} Rupees
-            </span>
-            {errors.downPayment && <span className="error">{errors.downPayment}</span>}
-          </label>
-          <label>
-            <span className="input-label">
-              Loan Tenure (Years)
-              <Tooltip text="Duration of the loan in years" />
-            </span>
-            <input
-              type="number"
-              name="loanTenure"
-              value={inputs.loanTenure}
-              onChange={handleInputChange}
-              placeholder="e.g., 20"
-            />
-            <span className="converter">
-              {inputs.loanTenure && numberToWords(parseFloat(inputs.loanTenure))} Years
-            </span>
-            {errors.loanTenure && <span className="error">{errors.loanTenure}</span>}
-          </label>
-          <label>
-            <span className="input-label">
-              Interest Rate (%)
-              <Tooltip text="Annual interest rate, e.g. 7.5" />
-            </span>
-            <input
-              type="number"
-              name="interestRate"
-              value={inputs.interestRate}
-              onChange={handleInputChange}
-              placeholder="e.g., 7.5"
-            />
-            <span className="converter">
-              {inputs.interestRate && numberToWordsPercent(parseFloat(inputs.interestRate))}
-            </span>
-            {errors.interestRate && <span className="error">{errors.interestRate}</span>}
-          </label>
-          <label>
-            <span className="input-label">
-              Property Appreciation Rate (%)
-              <Tooltip text="Expected yearly increase in property value" />
-            </span>
-            <input
-              type="number"
-              name="propertyAppreciation"
-              value={inputs.propertyAppreciation}
-              onChange={handleInputChange}
-              placeholder="e.g., 5"
-            />
-            <span className="converter">
-              {inputs.propertyAppreciation &&
-                numberToWordsPercent(parseFloat(inputs.propertyAppreciation))}
-            </span>
-            {errors.propertyAppreciation && (
-              <span className="error">{errors.propertyAppreciation}</span>
-            )}
-          </label>
-          <label>
-            <span className="input-label">
-              Income Tax Bracket (%)
-              <Tooltip text="Your tax bracket for calculating loan interest benefits" />
-            </span>
-            <input
-              type="number"
-              name="incomeTaxBracket"
-              value={inputs.incomeTaxBracket}
-              onChange={handleInputChange}
-              placeholder="e.g., 30"
-            />
-            <span className="converter">
-              {inputs.incomeTaxBracket &&
-                numberToWordsPercent(parseFloat(inputs.incomeTaxBracket))}
-            </span>
-            {errors.incomeTaxBracket && (
-              <span className="error">{errors.incomeTaxBracket}</span>
-            )}
-          </label>
-          <label>
-            <span className="input-label">
-              Max Tax Deduction (INR)
-              <Tooltip text="Upper limit of home loan interest deduction" />
-            </span>
-            <input
-              type="number"
-              name="maxTaxDeduction"
-              value={inputs.maxTaxDeduction}
-              onChange={handleInputChange}
-              placeholder="e.g., 200000"
-            />
-            <span className="converter">
-              {inputs.maxTaxDeduction &&
-                numberToWords(parseFloat(inputs.maxTaxDeduction))} Rupees
-            </span>
-            {errors.maxTaxDeduction && (
-              <span className="error">{errors.maxTaxDeduction}</span>
-            )}
-          </label>
+        <div className="input-grid">
+          {[
+            { name:"propertyPrice", label:"Property Price (₹)", placeholder:"e.g., ₹75,00,000 INR", tip:"Total cost of the home" },
+            { name:"downPayment",   label:"Down Payment (₹)",   placeholder:"e.g., ₹15,00,000 INR", tip:"Upfront payment" },
+            { name:"loanTenure",    label:"Loan Tenure (yrs)",   placeholder:"e.g., 20",       tip:"Duration in years" },
+            { name:"interestRate",  label:"Interest Rate (%)",   placeholder:"e.g., 7.5%",     tip:"Annual interest rate" },
+            { name:"propertyAppreciation", label:"Appreciation (%)", placeholder:"e.g., 3%",      tip:"Yearly home value growth" },
+            { name:"incomeTaxBracket",     label:"Tax Bracket (%)",   placeholder:"e.g., 30%",     tip:"For interest deduction" },
+            { name:"maxTaxDeduction",      label:"Max Deduction (₹)", placeholder:"e.g., ₹2,00,000 INR",  tip:"Upper limit" },
+          ].map(f => (
+            <label key={f.name}>
+              <span className="input-label">
+                {f.label}
+                <Tooltip text={f.tip} />
+              </span>
+              <input
+                type="number"
+                name={f.name}
+                value={(inputs as any)[f.name]}
+                onChange={handleInputChange}
+                placeholder={f.placeholder}
+                className="pr-6"
+              />
+              <small className="converter">
+                {((inputs as any)[f.name] && numberToWords(Number((inputs as any)[f.name]))) || ""} 
+                {f.placeholder.endsWith("%")?" percent":" Rupees"}
+              </small>
+              {errors[f.name as keyof CalculatorInputs] && (
+                <small className="error">Invalid</small>
+              )}
+
+            </label>
+          ))}
         </div>
 
         <hr className="divider" />
 
         <h2 className="section-title">Renting Details</h2>
-        <div className="input-group">
-          <label>
-            <span className="input-label">
-              Current Monthly Rent (INR)
-              <Tooltip text="Your current monthly rent, e.g. 20,000" />
-            </span>
-            <input
-              type="number"
-              name="currentMonthlyRent"
-              value={inputs.currentMonthlyRent}
-              onChange={handleInputChange}
-              placeholder="e.g., 20000"
-            />
-            <span className="converter">
-              {inputs.currentMonthlyRent &&
-                numberToWords(parseFloat(inputs.currentMonthlyRent))} Rupees
-            </span>
-            {errors.currentMonthlyRent && (
-              <span className="error">{errors.currentMonthlyRent}</span>
-            )}
-          </label>
-          <label>
-            <span className="input-label">
-              Rent Inflation Rate (%)
-              <Tooltip text="Expected annual increase in rent" />
-            </span>
-            <input
-              type="number"
-              name="rentInflation"
-              value={inputs.rentInflation}
-              onChange={handleInputChange}
-              placeholder="e.g., 3"
-            />
-            <span className="converter">
-              {inputs.rentInflation && numberToWordsPercent(parseFloat(inputs.rentInflation))}
-            </span>
-            {errors.rentInflation && <span className="error">{errors.rentInflation}</span>}
-          </label>
-          <label>
-            <span className="input-label">
-              Investment Return Rate (%)
-              <Tooltip text="Annual return on money saved by renting" />
-            </span>
-            <input
-              type="number"
-              name="investmentReturn"
-              value={inputs.investmentReturn}
-              onChange={handleInputChange}
-              placeholder="e.g., 8"
-            />
-            <span className="converter">
-              {inputs.investmentReturn &&
-                numberToWordsPercent(parseFloat(inputs.investmentReturn))}
-            </span>
-            {errors.investmentReturn && (
-              <span className="error">{errors.investmentReturn}</span>
-            )}
-          </label>
+        <div className="input-grid">
+          {[
+            { name:"currentMonthlyRent", label:"Monthly Rent (₹)", placeholder:"e.g., 20,000", tip:"Your current rent" },
+            { name:"rentInflation",      label:"Rent Inflation (%)", placeholder:"e.g., 5%", tip:"Yearly increase" },
+            { name:"investmentReturn",   label:"Investment Return (%)", placeholder:"e.g., 8%", tip:"On saved difference" },
+          ].map(f => (
+            <label key={f.name}>
+              <span className="input-label">
+                {f.label}
+                <Tooltip text={f.tip} />
+              </span>
+              <input
+                type="number"
+                name={f.name}
+                value={(inputs as any)[f.name]}
+                onChange={handleInputChange}
+                placeholder={f.placeholder}
+              />
+              <small className="converter">
+                {((inputs as any)[f.name] && numberToWords(Number((inputs as any)[f.name]))) || ""} 
+                {f.label.endsWith("%")?" percent":" Rupees"}
+              </small>
+              {errors[f.name as keyof CalculatorInputs] && (
+                <small className="error">Invalid</small>
+              )}
+            </label>
+          ))}
         </div>
 
-        <button className="calculate-button" onClick={calculateResults} disabled={isCalculating}>
-          {isCalculating ? "Calculating..." : "Calculate"}
+        <button
+          className="calculate-button"
+          onClick={calculate}
+          disabled={isCalculating}
+        >
+          {isCalculating ? "Calculating…" : "Calculate"}
         </button>
-      </div>
+      </section>
 
+      {/* Results */}
       {results && (
-        <div className="results-container">
+        <section className="results-container">
           <h2 className="results-title">Comparison Results</h2>
           <div className="decision-banner">
-            <h3>{results.decision}</h3>
-          </div>
-          
-          <div className="comparison-grid">
-            <div className="comparison-column buying-column">
-              <h3 className="comparison-title">Buying a Home</h3>
-              <div className="result-card">
-                <div className="result-item">
-                  <div className="result-label">Monthly EMI</div>
-                  <div className="result-value">₹{parseFloat(results.emi).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.emi))} Rupees</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Total EMI Paid</div>
-                  <div className="result-value">₹{parseFloat(results.totalEmiPaid).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.totalEmiPaid))} Rupees</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Tax Benefit</div>
-                  <div className="result-value">₹{parseFloat(results.taxBenefit).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.taxBenefit))} Rupees</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Final Property Value</div>
-                  <div className="result-value">₹{parseFloat(results.finalHomeValue).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.finalHomeValue))} Rupees</div>
-                </div>
-                <div className="result-item highlight">
-                  <div className="result-label">Net Worth After {inputs.loanTenure} Years</div>
-                  <div className="result-value">₹{parseFloat(results.buyingNetWorth).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.buyingNetWorth))} Rupees</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="comparison-column renting-column">
-              <h3 className="comparison-title">Renting & Investing</h3>
-              <div className="result-card">
-                <div className="result-item">
-                  <div className="result-label">Monthly Rent (Starting)</div>
-                  <div className="result-value">₹{parseFloat(inputs.currentMonthlyRent).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(inputs.currentMonthlyRent))} Rupees</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Total Rent Paid</div>
-                  <div className="result-value">₹{parseFloat(results.totalRentPaid).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.totalRentPaid))} Rupees</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Investment Return Rate</div>
-                  <div className="result-value">{inputs.investmentReturn}%</div>
-                  <div className="result-words">{numberToWordsPercent(parseFloat(inputs.investmentReturn))}</div>
-                </div>
-                <div className="result-item">
-                  <div className="result-label">Rent Inflation Rate</div>
-                  <div className="result-value">{inputs.rentInflation}%</div>
-                  <div className="result-words">{numberToWordsPercent(parseFloat(inputs.rentInflation))}</div>
-                </div>
-                <div className="result-item highlight">
-                  <div className="result-label">Net Worth After {inputs.loanTenure} Years</div>
-                  <div className="result-value">₹{parseFloat(results.rentingNetWorth).toLocaleString('en-IN')}</div>
-                  <div className="result-words">{numberToWords(parseFloat(results.rentingNetWorth))} Rupees</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="wealth-difference">
-            <p>
-              <strong>Wealth Difference:</strong> ₹{Math.abs(parseFloat(results.buyingNetWorth) - parseFloat(results.rentingNetWorth)).toLocaleString('en-IN')} 
-              ({numberToWords(Math.round(Math.abs(parseFloat(results.buyingNetWorth) - parseFloat(results.rentingNetWorth))))} Rupees) 
-              in favor of {parseFloat(results.buyingNetWorth) > parseFloat(results.rentingNetWorth) ? 'buying' : 'renting & investing'}
-            </p>
-            <div className="recommendation">
-              <strong>Recommendation:</strong> Based on the numbers, you should consider {parseFloat(results.buyingNetWorth) > parseFloat(results.rentingNetWorth) ? 'buying a home' : 'renting and investing the difference'}. 
-              {parseFloat(results.buyingNetWorth) > parseFloat(results.rentingNetWorth) 
-                ? ' The property appreciation and tax benefits outweigh the rental investment returns in your scenario.' 
-                : ' The investment returns on your savings outperform the property appreciation in your scenario.'}
-            </div>
+            <strong>{results.decision}</strong>
           </div>
 
-          {combinedData && (
+          {/* Net Worth Chart */}
+          {combined && (
             <div className="chart-container">
               <ResponsiveContainer width="90%" height={300}>
-                <LineChart
-                  data={combinedData}
-                  margin={{ left: 50, right: 30, top: 20, bottom: 20 }}
-                >
+                <LineChart data={combined} margin={{ top:20,right:30,left:50,bottom:20 }}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="year"
-                    label={{ value: "Year", position: "insideBottom", offset: -5 }}
-                  />
-                  <YAxis
-                    domain={["auto", "auto"]}
-                    tickFormatter={(val) => val.toLocaleString("en-IN")}
-                  />
-                  <RechartsTooltip
-                    formatter={(value: number) => value.toLocaleString("en-IN")}
-                  />
+                  <XAxis dataKey="year" label={{ value:"Year", position:"insideBottom", offset:-5 }} />
+                  <YAxis tickFormatter={v=>v.toLocaleString("en-IN")} />
+                  <RechartsTooltip />
                   <Legend />
-                  <Line
-                    type="monotone"
-                    dataKey="Buying Net Worth"
-                    stroke="#108e66"
-                    strokeWidth={2}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Renting Net Worth"
-                    stroke="#525ECC"
-                    strokeWidth={2}
-                  />
+                  <Line type="monotone" dataKey="Buying NW" stroke="#108e66" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Renting NW" stroke="#525ecc" strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           )}
 
-          <h2 className="results-title">Year-wise Cashflow</h2>
-          <div className="amortization-table">
+          {/* Yearly Table */}
+          <h3 className="results-subtitle">Year-wise Breakdown</h3>
+          <div className="table-wrap">
             <table>
               <thead>
                 <tr>
                   <th>Year</th>
                   <th>Buying Net Worth (₹)</th>
                   <th>Renting Net Worth (₹)</th>
-                  <th>Annual Buying Cost (₹)</th>
+                  <th>Annual EMI (₹)</th>
                   <th>Annual Rent (₹)</th>
                 </tr>
               </thead>
               <tbody>
-                {results.buyingData.map((data) => (
-                  <tr key={data.year}>
-                    <td>{data.year}</td>
-                    <td>{data.netWorth.toLocaleString('en-IN')}</td>
-                    <td>{results.rentingData[data.year-1]?.netWorth.toLocaleString('en-IN')}</td>
-                    <td>{data.annualCost.toLocaleString('en-IN')}</td>
-                    <td>{results.rentingData[data.year-1]?.annualRent.toLocaleString('en-IN')}</td>
+                {results.buyingData.map((b,i) => (
+                  <tr key={b.year}>
+                    <td>{b.year}</td>
+                    <td>{b.netWorth.toLocaleString("en-IN")}</td>
+                    <td>{results.rentingData[i].netWorth.toLocaleString("en-IN")}</td>
+                    <td>{b.annualCost.toLocaleString("en-IN")}</td>
+                    <td>{results.rentingData[i].annualRent.toLocaleString("en-IN")}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
+          {/* Disclaimer */}
           <div className="disclaimer">
             <h4>Important Considerations</h4>
-            <p>This calculator provides a financial comparison only. Your decision should also consider:</p>
             <ul>
-              <li><strong>Lifestyle preferences:</strong> Home ownership brings stability but less flexibility than renting</li>
-              <li><strong>Maintenance costs:</strong> Homeowners face additional expenses for repairs and upkeep</li>
-              <li><strong>Market conditions:</strong> Property appreciation and investment returns may vary significantly</li>
-              <li><strong>Time horizon:</strong> Short-term plans may favor renting, while long-term stability often favors buying</li>
+              <li>Maintenance & repairs are extra for homeowners.</li>
+              <li>Flexibility and mobility favor renting.</li>
+              <li>Market volatility affects both property and investments.</li>
+              <li>Your personal time horizon may tilt the decision.</li>
             </ul>
-            <p>The results shown are based on your inputs and are for illustration purposes only. Actual outcomes may vary. Please consult with a financial advisor before making major financial decisions.</p>
+            <p>Please consult a financial advisor before making any major decision.</p>
           </div>
-        </div>
+        </section>
       )}
 
       <style jsx>{`
@@ -720,264 +461,94 @@ const BuyVsRentCalculator: React.FC = () => {
           background: #FCFFFE;
           color: #272B2A;
         }
-        .top-nav {
-          margin-bottom: 1rem;
-        }
+        .top-nav { margin-bottom:1rem; }
         .back-button {
-          background: #108e66;
-          color: #FCFFFE;
-          border: none;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-          cursor: pointer;
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
+          background:#108e66; color:#FCFFFE;
+          border:none; padding:.5rem 1rem;
+          border-radius:4px; cursor:pointer;
+          font-family:"Poppins",sans-serif;
         }
         .title {
-          text-align: center;
-          font-size: 2.5rem;
-          font-weight: bold;
-          margin-bottom: 0.5rem;
+          text-align:center; font-size:2.5rem; font-weight:700;
+          margin-bottom:.5rem;
         }
         .description {
-          text-align: center;
-          font-size: 1.2rem;
-          margin-bottom: 2rem;
+          text-align:center; font-size:1.1rem;
+          margin-bottom:1.5rem;
         }
+        .explanation {
+          background:#FCFFFE; padding:1rem;
+          border-radius:8px; margin-bottom:1.5rem;
+          border-left:4px solid #108e66;
+        }
+        .explanation p { margin:.5rem 0; line-height:1.5; }
         .form-container {
-          background: #FCFFFE;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
-          margin-bottom: 2rem;
+          background:#FCFFFE; padding:2rem;
+          border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+          margin-bottom:2rem;
         }
-        .section-title {
-          font-size: 1.5rem;
-          font-weight: 600;
-          margin: 1rem 0;
+        .section-title { font-size:1.5rem; font-weight:600; margin:1rem 0; }
+        .input-grid {
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:1rem; margin-bottom:1rem;
         }
-        .divider {
-          border: none;
-          border-top: 1px solid #272B2A;
-          margin: 2rem 0;
-        }
-        .input-group {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-          margin-bottom: 1rem;
-        }
-        .input-group label {
-          display: flex;
-          flex-direction: column;
-          font-size: 1rem;
-          position: relative;
-        }
-        .input-label {
-          display: flex;
-          align-items: center;
-          margin-bottom: 4px;
-        }
-        .input-group input {
-          padding: 0.5rem;
-          margin-top: 0.5rem;
-          border: 1px solid #272B2A;
-          border-radius: 4px;
-          height: 38px;
-          width: 100%;
-          box-sizing: border-box;
-          font-size: 1rem;
-          color: #272B2A;
-          background: #FCFFFE;
+        label { display:flex; flex-direction:column; }
+        .input-label { font-weight:500; display:flex; align-items:center; }
+        input {
+          margin-top:.3rem; padding:.5rem;
+          border:1px solid #272B2A; border-radius:4px;
+          font-size:1rem; background:#FCFFFE; color:#272B2A;
         }
         .converter {
-          font-size: 0.9rem;
-          color: #272B2A;
-          margin-top: 0.25rem;
+          font-size:.85rem; color:#272B2A; opacity:.7;
+          margin-top:.25rem;
         }
-        .error {
-          color: red;
-          font-size: 0.8rem;
+        .error { color:red; font-size:.8rem; }
+        .divider {
+          border:none; border-top:1px solid #ccc;
+          margin:2rem 0;
         }
         .calculate-button {
-          background: #108e66;
-          color: #FCFFFE;
-          border: none;
-          padding: 0.75rem 1.5rem;
-          border-radius: 4px;
-          font-size: 1rem;
-          cursor: pointer;
-          margin-top: 1rem;
-          width: 100%;
+          width:100%; padding:.75rem; font-size:1rem;
+          background:#108e66; color:#FCFFFE; border:none;
+          border-radius:4px; cursor:pointer;
         }
-        .calculate-button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
+        .calculate-button:disabled { opacity:.6; cursor:not-allowed; }
         .results-container {
-          background: #FCFFFE;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(39, 43, 42, 0.1);
-          margin-bottom: 2rem;
+          background:#FCFFFE; padding:2rem;
+          border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
         }
-        .results-title {
-          font-size: 1.8rem;
-          font-weight: 600;
-          margin-bottom: 1rem;
-          text-align: center;
-        }
+        .results-title { text-align:center; font-size:1.8rem; font-weight:600; margin-bottom:1rem; }
         .decision-banner {
-          background: #272B2A;
-          color: #FCFFFE;
-          padding: 1rem;
-          border-radius: 4px;
-          text-align: center;
-          margin-bottom: 1.5rem;
+          background:#108e66; color:#FCFFFE;
+          padding:.75rem; border-radius:4px; text-align:center;
+          margin-bottom:1.5rem;
         }
-        .decision-banner h3 {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin: 0;
+        .chart-container { margin:2rem 0; display:flex; justify-content:center; }
+        .results-subtitle { font-size:1.3rem; font-weight:600; margin:2rem 0 1rem; }
+        .table-wrap { overflow-x:auto; }
+        table {
+          width:100%; border-collapse:collapse;
+          margin-bottom:1.5rem;
         }
-        .comparison-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.5rem;
-          margin-bottom: 1.5rem;
+        th,td {
+          border:1px solid #272B2A; padding:.5rem;
+          text-align:center; font-size:.9rem;
         }
-        .comparison-column {
-          background: #FCFFFE;
-          border-radius: 8px;
-          overflow: hidden;
-          border: 1px solid #272B2A;
-        }
-        .comparison-column .comparison-title {
-          padding: 0.75rem;
-          text-align: center;
-          margin: 0;
-          font-size: 1.1rem;
-          color: #FCFFFE;
-        }
-        .buying-column .comparison-title {
-          background: #108e66;
-        }
-        .renting-column .comparison-title {
-          background: #272B2A;
-        }
-        .result-card {
-          padding: 1rem;
-        }
-        .result-item {
-          padding: 0.5rem 0;
-          border-bottom: 1px solid #272B2A;
-        }
-        .result-item.highlight {
-          background: #FCFFFE;
-          padding: 0.75rem;
-          border-radius: 4px;
-          margin-top: 0.5rem;
-          border: 1px solid #108e66;
-        }
-        .result-label {
-          font-weight: 600;
-          margin-bottom: 0.25rem;
-        }
-        .result-value {
-          font-size: 1.2rem;
-          color: #272B2A;
-        }
-        .result-words {
-          font-size: 0.8rem;
-          color: #272B2A;
-        }
-        .wealth-difference {
-          background: #FCFFFE;
-          padding: 1rem;
-          border-radius: 4px;
-          text-align: center;
-          font-size: 1.1rem;
-          border: 1px solid #108e66;
-          margin-bottom: 1.5rem;
-        }
-        .wealth-difference p {
-          margin: 0 0 0.5rem 0;
-        }
-        .recommendation {
-          background: #272B2A;
-          color: #FCFFFE;
-          padding: 0.75rem;
-          border-radius: 4px;
-          margin-top: 0.5rem;
-        }
-        .chart-container {
-          margin: 2rem 0;
-          display: flex;
-          justify-content: center;
-        }
-        .amortization-table {
-          max-height: 400px;
-          overflow-y: auto;
-          margin-bottom: 1.5rem;
-          border-radius: 8px;
-          border: 1px solid #272B2A;
-        }
-        .amortization-table table {
-          width: 100%;
-          border-collapse: collapse;
-        }
-        .amortization-table th,
-        .amortization-table td {
-          border: 1px solid #272B2A;
-          padding: 0.5rem;
-          text-align: center;
-        }
-        .amortization-table th {
-          background: #108e66;
-          color: #FCFFFE;
-          position: sticky;
-          top: 0;
-        }
+        th { background:#108e66; color:#FCFFFE; position:sticky; top:0; }
         .disclaimer {
-          margin-top: 2rem;
-          font-size: 0.9rem;
-          color: #272B2A;
-          background: #FCFFFE;
-          padding: 1rem;
-          border-radius: 4px;
-          border: 1px solid #272B2A;
+          background:#FCFFFE; border:1px solid #ccc; padding:1rem;
+          border-radius:4px; font-size:.9rem;
         }
-        .disclaimer h4 {
-          margin-top: 0;
-          color: #272B2A;
-          margin-bottom: 0.5rem;
-        }
-        .disclaimer ul {
-          margin: 0.5rem 0;
-          padding-left: 1.5rem;
-        }
-        .disclaimer li {
-          margin-bottom: 0.5rem;
-        }
-        .disclaimer li:last-child {
-          margin-bottom: 0;
-        }
-        .disclaimer p {
-          margin: 0.5rem 0;
-        }
-        @media (max-width: 768px) {
-          .input-group {
-            grid-template-columns: 1fr;
-          }
-          .chart-container {
-            margin: 1.5rem 0;
-          }
-          .comparison-grid {
-            grid-template-columns: 1fr;
-          }
+        .disclaimer h4 { margin-top:0; }
+        .disclaimer ul { padding-left:1.2rem; }
+        .disclaimer li { margin-bottom:.5rem; }
+        @media (max-width:768px) {
+          .input-grid { grid-template-columns:1fr; }
         }
       `}</style>
-    </div>
+    </main>
   );
 };
 
