@@ -1,5 +1,4 @@
 // File: /app/tools/gym-membership-roi-calculator/page.tsx
-
 "use client";
 
 import React, { useState } from "react";
@@ -17,7 +16,7 @@ import {
   Area,
 } from "recharts";
 
-// Tooltip component
+/* ───────── Tooltip ───────── */
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [show, setShow] = useState(false);
   return (
@@ -73,7 +72,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// Number→Words (Indian)
+/* ───────── Number→Words (Indian) ───────── */
 const numberToWords = (num: number): string => {
   const n = Math.round(Math.abs(num));
   if (n === 0) return "Zero";
@@ -111,39 +110,20 @@ const numberToWords = (num: number): string => {
     "Eighty",
     "Ninety",
   ];
-  const helper = (x: number): string => {
+  const h = (x: number): string => {
     if (x < 20) return ones[x];
-    if (x < 100)
-      return tens[Math.floor(x / 10)] + (x % 10 ? " " + ones[x % 10] : "");
-    if (x < 1000)
-      return (
-        ones[Math.floor(x / 100)] +
-        " Hundred" +
-        (x % 100 ? " " + helper(x % 100) : "")
-      );
-    if (x < 100000)
-      return (
-        helper(Math.floor(x / 1000)) +
-        " Thousand" +
-        (x % 1000 ? " " + helper(x % 1000) : "")
-      );
-    if (x < 10000000)
-      return (
-        helper(Math.floor(x / 100000)) +
-        " Lakh" +
-        (x % 100000 ? " " + helper(x % 100000) : "")
-      );
-    return (
-      helper(Math.floor(x / 10000000)) +
-      " Crore" +
-      (x % 10000000 ? " " + helper(x % 10000000) : "")
-    );
+    if (x < 100) return tens[Math.floor(x / 10)] + (x % 10 ? " " + ones[x % 10] : "");
+    if (x < 1000) return ones[Math.floor(x / 100)] + " Hundred" + (x % 100 ? " " + h(x % 100) : "");
+    if (x < 100000) return h(Math.floor(x / 1000)) + " Thousand" + (x % 1000 ? " " + h(x % 1000) : "");
+    if (x < 10000000) return h(Math.floor(x / 100000)) + " Lakh" + (x % 100000 ? " " + h(x % 100000) : "");
+    return h(Math.floor(x / 10000000)) + " Crore" + (x % 10000000 ? " " + h(x % 10000000) : "");
   };
-  return helper(n);
+  return h(n);
 };
 
+/* ───────── Component ───────── */
 export default function GymMembershipROICalculator() {
-  // Inputs state
+  /* ---------- input states ---------- */
   const [fee, setFee] = useState("");
   const [joining, setJoining] = useState("");
   const [sessions, setSessions] = useState("");
@@ -163,16 +143,11 @@ export default function GymMembershipROICalculator() {
     roiPct: number;
     costPerWorkout: number;
     savingsVsAlt: number;
-    monthlyData: Array<{
-      month: number;
-      cumCost: number;
-      cumBenefit: number;
-      net: number;
-    }>;
+    monthlyData: { month: number; cumCost: number; cumBenefit: number; net: number }[];
   }>(null);
   const [calculating, setCalculating] = useState(false);
 
-  // Validate inputs
+  /* ---------- validation ---------- */
   const validate = () => {
     const e: Record<string, string> = {};
     const nums = {
@@ -196,6 +171,7 @@ export default function GymMembershipROICalculator() {
 
   const round100 = (n: number) => Math.round(n / 100) * 100;
 
+  /* ---------- calculate ---------- */
   const calculate = () => {
     if (!validate()) return;
     setCalculating(true);
@@ -209,33 +185,29 @@ export default function GymMembershipROICalculator() {
       PB = +prodBoost;
     const D = +discount / 100,
       A = +altCost;
-    // costs
+
     const annualCost = F + J + S * 52 * T;
     const timeCost = S * 52 * H * V;
     const totalCost = round100(annualCost + timeCost);
-    // benefits
+
     const benefit = HS + PB;
     const benefitNPV = round100(benefit / (1 + D));
-    // metrics
+
     const netGain = round100(benefitNPV - totalCost);
     const roiPct = +((netGain / totalCost) * 100).toFixed(2);
     const costPerWorkout = +(totalCost / (S * 52)).toFixed(2);
     const altAnnual = S * 52 * A;
     const savingsVsAlt = round100(altAnnual - totalCost);
-    // monthly breakdown
+
     const monthlyCost = totalCost / 12;
     const monthlyBenefit = benefitNPV / 12;
     const monthlyData = Array.from({ length: 12 }, (_, i) => {
       const m = i + 1;
       const cumCost = round100(monthlyCost * m);
       const cumBenefit = round100(monthlyBenefit * m);
-      return {
-        month: m,
-        cumCost,
-        cumBenefit,
-        net: round100(cumBenefit - cumCost),
-      };
+      return { month: m, cumCost, cumBenefit, net: round100(cumBenefit - cumCost) };
     });
+
     setResults({
       totalCost,
       benefitNPV,
@@ -256,131 +228,79 @@ export default function GymMembershipROICalculator() {
       ]
     : [];
 
+  /* ---------- UI ---------- */
   return (
     <main className="container">
-      {/* Back */}
+      {/* Back nav */}
       <div className="top-nav">
         <Link href="/tools">
-          <button className="back"> Back to Dashboard</button>
+          <button className="back">Back to Dashboard</button>
         </Link>
       </div>
+
       <h1 className="title">Is My Gym Membership Really Worth It?</h1>
       <p className="desc">
         Compare your <strong>total costs</strong> (fees, travel, time) to the{" "}
         <strong>discounted value</strong> of health & productivity benefits.
       </p>
+
       <div className="explanation">
         <p>
-          <strong>Gym Membership ROI:</strong> This calculator helps evaluate
-          whether your <strong>monthly or annual gym membership</strong> is
-          worth the cost by comparing it against your{" "}
-          <strong>usage, fitness goals, and potential alternatives</strong>.
-        </p>
-        <p>
-          It considers your <strong>attendance frequency</strong>,{" "}
-          <strong>cost per visit</strong>, and potential{" "}
-          <strong>healthcare savings or gains</strong> in productivity or
-          well-being. You can also factor in{" "}
-          <em>alternative options like home workouts</em> or{" "}
-          <em>pay-per-visit gyms</em> for comparison.
-        </p>
-        <p>
-          Use this tool to ensure your fitness investment is giving you the best
-          value — not just financially but also in terms of{" "}
-          <strong>health outcomes and lifestyle fit</strong>.
+          <strong>Gym Membership ROI:</strong> Evaluate whether your membership
+          fees are justified compared with health and productivity gains or
+          cheaper alternatives.
         </p>
       </div>
 
-      {/* Inputs */}
+      {/* ----- input cards ----- */}
+      {/* Membership Costs */}
       <section className="card">
         <h2>Membership Costs</h2>
         <div className="grid">
           {[
-            {
-              label: "Annual Fee (₹)",
-              value: fee,
-              set: setFee,
-              tip: "Yearly subscription including taxes",
-              ex: "24000",
-            },
-            {
-              label: "Joining / Locker (₹)",
-              value: joining,
-              set: setJoining,
-              tip: "One-time ancillary charges",
-              ex: "2000",
-            },
-          ].map((f) => (
-            <div key={f.label}>
+            ["Annual Fee (₹)", fee, setFee, "Yearly subscription", "24000"],
+            ["Joining / Locker (₹)", joining, setJoining, "One-time charges", "2000"],
+          ].map(([lbl, val, setter, tip, ph]) => (
+            <div key={lbl as string}>
               <label>
-                {f.label}
-                <TooltipIcon text={f.tip} />
+                {String(lbl)} <TooltipIcon text={tip as string} />
                 <input
                   type="number"
-                  value={f.value}
-                  onChange={(e) => f.set(e.target.value)}
-                  placeholder={`e.g. ${f.ex}`}
+                  value={val as string}
+                  onChange={(e) => (setter as any)(e.target.value)}
+                  placeholder={`e.g. ${ph}`}
                 />
-                {errors[f.value as string] && (
-                  <small className="error">{errors[f.value]}</small>
-                )}
               </label>
-              {!!f.value && (
-                <small className="conv">{numberToWords(+f.value)} Rupees</small>
-              )}
+              {!!val && <small className="conv">{numberToWords(+val)} Rupees</small>}
             </div>
           ))}
         </div>
       </section>
 
+      {/* Usage */}
       <section className="card">
         <h2>Usage & Opportunity Cost</h2>
         <div className="grid">
           {[
-            {
-              label: "Sessions/Week",
-              value: sessions,
-              set: setSessions,
-              tip: "How many times you go",
-              ex: "3",
-            },
-            {
-              label: "Session Length (hrs)",
-              value: hoursPer,
-              set: setHoursPer,
-              tip: "Duration of each session",
-              ex: "1.5",
-            },
-            {
-              label: "Travel Cost/Visit (₹)",
-              value: travelCost,
-              set: setTravelCost,
-              tip: "Fuel, cab, etc.",
-              ex: "60",
-            },
-            {
-              label: "Hourly Value (₹)",
-              value: hourlyValue,
-              set: setHourlyValue,
-              tip: "Cost per hour",
-              ex: "500",
-            },
-          ].map((f) => (
-            <div key={f.label}>
+            ["Sessions/Week", sessions, setSessions, "How many visits", "3"],
+            ["Session Length (hrs)", hoursPer, setHoursPer, "Hours each visit", "1.5"],
+            ["Travel Cost/Visit (₹)", travelCost, setTravelCost, "Fuel or transport", "60"],
+            ["Hourly Value (₹)", hourlyValue, setHourlyValue, "Your time worth", "500"],
+          ].map(([lbl, val, setter, tip, ph]) => (
+            <div key={lbl as string}>
               <label>
-                {f.label}
-                <TooltipIcon text={f.tip} />
+                {String(lbl)} <TooltipIcon text={tip as string} />
                 <input
                   type="number"
-                  value={f.value}
-                  onChange={(e) => f.set(e.target.value)}
-                  placeholder={`e.g. ${f.ex}`}
+                  value={val as string}
+                  onChange={(e) => (setter as any)(e.target.value)}
+                  placeholder={`e.g. ${ph}`}
                 />
               </label>
-              {!!f.value && (
+              {!!val && (
                 <small className="conv">
-                  {numberToWords(+f.value)}
-                  {f.label.includes("hr") ? " Hours" : " Rupees"}
+                  {numberToWords(+val)}
+                  {lbl.toString().includes("hrs") ? " Hours" : " Rupees"}
                 </small>
               )}
             </div>
@@ -388,54 +308,30 @@ export default function GymMembershipROICalculator() {
         </div>
       </section>
 
+      {/* Benefits */}
       <section className="card">
         <h2>Benefits & Comparison</h2>
         <div className="grid">
           {[
-            {
-              label: "Health Savings (₹)",
-              value: healthSave,
-              set: setHealthSave,
-              tip: "Lower medical bills",
-              ex: "8000",
-            },
-            {
-              label: "Productivity Boost (₹)",
-              value: prodBoost,
-              set: setProdBoost,
-              tip: "Better focus earnings",
-              ex: "6000",
-            },
-            {
-              label: "Discount Rate (%)",
-              value: discount,
-              set: setDiscount,
-              tip: "For Net Present Value of benefits",
-              ex: "7",
-            },
-            {
-              label: "Alt Cost/Session (₹)",
-              value: altCost,
-              set: setAltCost,
-              tip: "Pay-per-class rate",
-              ex: "300",
-            },
-          ].map((f) => (
-            <div key={f.label}>
+            ["Health Savings (₹)", healthSave, setHealthSave, "Lower medical bills", "8000"],
+            ["Productivity Boost (₹)", prodBoost, setProdBoost, "Extra earnings", "6000"],
+            ["Discount Rate (%)", discount, setDiscount, "For NPV", "7"],
+            ["Alt Cost/Session (₹)", altCost, setAltCost, "Pay-per-class", "300"],
+          ].map(([lbl, val, setter, tip, ph]) => (
+            <div key={lbl as string}>
               <label>
-                {f.label}
-                <TooltipIcon text={f.tip} />
+                {String(lbl)} <TooltipIcon text={tip as string} />
                 <input
                   type="number"
-                  value={f.value}
-                  onChange={(e) => f.set(e.target.value)}
-                  placeholder={`e.g. ${f.ex}`}
+                  value={val as string}
+                  onChange={(e) => (setter as any)(e.target.value)}
+                  placeholder={`e.g. ${ph}`}
                 />
               </label>
-              {!!f.value && (
+              {!!val && (
                 <small className="conv">
-                  {numberToWords(+f.value)}
-                  {f.label.includes("%") ? " percent" : " Rupees"}
+                  {numberToWords(+val)}
+                  {lbl.toString().includes("%") ? " percent" : " Rupees"}
                 </small>
               )}
             </div>
@@ -443,59 +339,43 @@ export default function GymMembershipROICalculator() {
         </div>
       </section>
 
+      {/* Calculate */}
       <button className="calc" onClick={calculate} disabled={calculating}>
         {calculating ? "Calculating…" : "Calculate"}
       </button>
 
-      {/* Results */}
+      {/* ----- results ----- */}
       {results && (
         <section className="card results">
           <h2>Results</h2>
           <div className="summary">
-            <div>
-              <strong>Total Annual Cost</strong>
-              <br />₹{results.totalCost.toLocaleString()}
-            </div>
-            <div>
-              <strong>NPV of Benefits</strong>
-              <br />₹{results.benefitNPV.toLocaleString()}
-            </div>
-            <div>
-              <strong>Net Gain</strong>
-              <br />₹{results.netGain.toLocaleString()}
-            </div>
-            <div>
-              <strong>ROI %</strong>
-              <br />
-              {results.roiPct}%
-            </div>
-            <div>
-              <strong>Cost/Workout</strong>
-              <br />₹{results.costPerWorkout.toLocaleString()}
-            </div>
-            <div>
-              <strong>Savings vs Alt</strong>
-              <br />₹{results.savingsVsAlt.toLocaleString()}
-            </div>
+            {[
+              ["Total Annual Cost", results.totalCost],
+              ["NPV of Benefits", results.benefitNPV],
+              ["Net Gain", results.netGain],
+              ["ROI %", results.roiPct],
+              ["Cost/Workout", results.costPerWorkout],
+              ["Savings vs Alt", results.savingsVsAlt],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <strong>{k}</strong>
+                <br />
+                {typeof v === "number" ? `₹${v.toLocaleString()}` : v}
+              </div>
+            ))}
           </div>
 
-          {/* Chart Toggle */}
+          {/* chart toggle */}
           <div className="toggle">
-            <button
-              className={mode === "bar" ? "active" : ""}
-              onClick={() => setMode("bar")}
-            >
+            <button className={mode === "bar" ? "active" : ""} onClick={() => setMode("bar")}>
               Bar Chart
             </button>
-            <button
-              className={mode === "area" ? "active" : ""}
-              onClick={() => setMode("area")}
-            >
+            <button className={mode === "area" ? "active" : ""} onClick={() => setMode("area")}>
               Area Chart
             </button>
           </div>
 
-          {/* Chart */}
+          {/* charts */}
           <div className="chart">
             <ResponsiveContainer width="100%" height={300}>
               {mode === "bar" ? (
@@ -503,41 +383,24 @@ export default function GymMembershipROICalculator() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
                   <YAxis />
-                  <RechartsTooltip
-                    formatter={(v: number) => `₹${v.toLocaleString()}`}
-                  />
+                  <RechartsTooltip formatter={(v: number) => `₹${v.toLocaleString()}`} />
                   <Legend />
-                  <Bar dataKey="value" fill="#108E66" />
+                  <Bar dataKey="value" fill="#108e66" />
                 </BarChart>
               ) : (
                 <AreaChart data={results.monthlyData}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="month"
-                    label={{
-                      value: "Month",
-                      position: "insideBottom",
-                      offset: -5,
-                    }}
-                  />
+                  <XAxis dataKey="month" />
                   <YAxis />
-                  <RechartsTooltip
-                    formatter={(v: number) => `₹${v.toLocaleString()}`}
-                  />
+                  <RechartsTooltip formatter={(v: number) => `₹${v.toLocaleString()}`} />
                   <Legend />
-                  <Area
-                    type="monotone"
-                    dataKey="net"
-                    stroke="#108E66"
-                    fill="#108E66"
-                    name="Net"
-                  />
+                  <Area type="monotone" dataKey="net" stroke="#108e66" fill="#108e66" name="Net" />
                 </AreaChart>
               )}
             </ResponsiveContainer>
           </div>
 
-          {/* Table */}
+          {/* table */}
           <div className="table-wrap">
             <table>
               <thead>
@@ -561,30 +424,19 @@ export default function GymMembershipROICalculator() {
             </table>
           </div>
 
-          {/* Insights */}
+          {/* considerations */}
           <div className="disc">
             <h4>Important considerations</h4>
             <ul>
-              <li>
-                This calculator focuses on{" "}
-                <em>financial and usage-based value</em> — intangible benefits
-                like mental well-being or social engagement may not be fully
-                captured.
-              </li>
-              <li>
-                Assumes <em>consistent attendance</em> and that alternative
-                options (e.g., home gym, running) are viable and cost-effective.
-              </li>
-              <li>
-                Health improvements and healthcare savings are{" "}
-                <em>estimated</em> and can vary significantly by individual.
-              </li>
+              <li>Intangible benefits like mental well-being are not fully captured.</li>
+              <li>Assumes consistent attendance and viable alternatives.</li>
+              <li>Health savings vary widely by individual.</li>
             </ul>
           </div>
         </section>
       )}
 
-      {/* Styles */}
+      {/* styles */}
       <style jsx>{`
         .container {
           padding: 2rem;
@@ -602,7 +454,6 @@ export default function GymMembershipROICalculator() {
           padding: 0.5rem 1rem;
           border-radius: 4px;
           cursor: pointer;
-          font-family: "Poppins", sans-serif;
           font-weight: 500;
         }
         .title {
@@ -622,11 +473,6 @@ export default function GymMembershipROICalculator() {
           margin-bottom: 1.5rem;
           border-left: 4px solid #108e66;
           font-size: 0.95rem;
-          color: #272b2a;
-        }
-        .explanation p {
-          margin: 0.5rem 0;
-          line-height: 1.5;
         }
         .card {
           background: #fcfffe;
@@ -637,7 +483,6 @@ export default function GymMembershipROICalculator() {
         }
         h2 {
           font-size: 1.25rem;
-          font-weight: 500;
           margin-bottom: 1rem;
         }
         .grid {
@@ -664,18 +509,6 @@ export default function GymMembershipROICalculator() {
         .error {
           color: red;
           font-size: 0.8rem;
-        }
-        .disc {
-          background: #fcfffe;
-          padding: 1rem;
-          border-radius: 4px;
-          font-size: 0.9rem;
-          border: 1px solid #272a2b;
-          margin-top: 1.2rem;
-        }
-        .disc ul {
-          margin: 0;
-          padding-left: 1.4rem;
         }
         .calc {
           width: 100%;
@@ -742,14 +575,30 @@ export default function GymMembershipROICalculator() {
           background: #108e66;
           color: #fcfffe;
         }
-        .insight {
-          text-align: center;
-          font-weight: 500;
-          color: #108e66;
-          margin: 1rem 0;
+        .disc {
+          background: #fcfffe;
+          padding: 1rem;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          border: 1px solid #272a2b;
+          margin-top: 1.2rem;
         }
 
-        @media (max-width: 600px) {
+        /* ───────── Mobile tweaks ───────── */
+        @media (max-width: 680px) {
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .title {
+            font-size: 1.6rem;
+          }
+          .toggle {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+          .toggle button {
+            width: 100%;
+          }
           .summary {
             grid-template-columns: 1fr;
           }

@@ -1,5 +1,5 @@
 /*  /app/tools/net-worth-calculator/page.tsx
-    Net‑Worth Calculator – Spring Money
+    Net-Worth Calculator – Spring Money
 ----------------------------------------------------------------------------*/
 "use client";
 import React, { useState } from "react";
@@ -19,7 +19,7 @@ import {
 } from "recharts";
 
 /* ──────────────────────────
-   Type Definitions
+   Type Definitions
    ────────────────────────── */
 interface Inputs {
   /* Assets */
@@ -43,7 +43,7 @@ interface Results {
 }
 
 /* ──────────────────────────
-   Tooltip Icon  (consistent style)
+   Tooltip Icon
    ────────────────────────── */
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [open, setOpen] = useState(false);
@@ -191,14 +191,13 @@ const NetWorthCalculator: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputs((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  /* validation (any filled value must be ≥ 0) */
+  /* validation */
   const validate = () => {
     const newErr: Partial<Inputs> = {};
     Object.entries(inputs).forEach(([k, v]) => {
       if (v && (isNaN(+v) || +v < 0))
         newErr[k as keyof Inputs] = "Enter a valid number";
     });
-    /* need at least one asset OR one liability to proceed */
     const allEmpty = Object.values(inputs).every((v) => !v);
     if (allEmpty) newErr.liquidAssets = "Enter at least one value";
     setErrors(newErr);
@@ -210,7 +209,6 @@ const NetWorthCalculator: React.FC = () => {
     if (!validate()) return;
     setLoading(true);
 
-    /* blank → 0 */
     const v = Object.fromEntries(
       Object.entries(inputs).map(([k, val]) => [k, val ? +val : 0])
     ) as Record<keyof Inputs, number>;
@@ -225,7 +223,7 @@ const NetWorthCalculator: React.FC = () => {
 
     const pieData = [
       { name: "Liquid", value: v.liquidAssets },
-      { name: "Partial Liquid", value: v.partialLiquidAssets },
+      { name: "Partial Liquid", value: v.partialLiquidAssets },
       { name: "Illiquid", value: v.illiquidAssets },
     ];
     const barData = [
@@ -242,7 +240,9 @@ const NetWorthCalculator: React.FC = () => {
       barData,
       assetDist: {
         liquid: totalAssets ? (v.liquidAssets / totalAssets) * 100 : 0,
-        partial: totalAssets ? (v.partialLiquidAssets / totalAssets) * 100 : 0,
+        partial: totalAssets
+          ? (v.partialLiquidAssets / totalAssets) * 100
+          : 0,
         illiquid: totalAssets ? (v.illiquidAssets / totalAssets) * 100 : 0,
       },
     });
@@ -261,20 +261,25 @@ const NetWorthCalculator: React.FC = () => {
         </Link>
       </div>
 
-      <h1 className="title">Net Worth Calculator</h1>
+      <h1 className="title">Net Worth Calculator</h1>
       <p className="description">
         Get a clear snapshot of your financial health by comparing everything
         you own with everything you owe.
       </p>
-      <div className="explanation">
-  <p>
-    <strong>Net Worth Calculator:</strong> This tool helps you determine your overall financial health by calculating the difference between your total assets and total liabilities.
-  </p>
-  <p>
-    It provides a clear snapshot of your <strong>current financial position</strong>, helping you track your wealth growth over time and make informed decisions about budgeting, saving, and investing.
-  </p>
-</div>
 
+      <div className="explanation">
+        <p>
+          <strong>Net Worth Calculator:</strong> This tool helps you determine
+          your overall financial health by calculating the difference between
+          your total assets and total liabilities.
+        </p>
+        <p>
+          It provides a clear snapshot of your{" "}
+          <strong>current financial position</strong>, helping you track your
+          wealth growth over time and make informed decisions about budgeting,
+          saving, and investing.
+        </p>
+      </div>
 
       {/* ─── form ─── */}
       <div className="form-container">
@@ -286,18 +291,21 @@ const NetWorthCalculator: React.FC = () => {
               "liquidAssets",
               "Liquid Assets (₹)",
               "Savings A/c, liquid funds, FDs.",
+              "e.g., 1,50,000",
             ],
             [
               "partialLiquidAssets",
-              "Partial Liquid Assets (₹)",
+              "Partial Liquid Assets (₹)",
               "Bonds, insurance, corporate deposits.",
+              "e.g., 4,00,000",
             ],
             [
               "illiquidAssets",
               "Illiquid Assets (₹)",
               "Property, business, art, gold.",
+              "e.g., 25,00,000",
             ],
-          ].map(([k, lbl, tip]) => (
+          ].map(([k, lbl, tip, ph]) => (
             <label key={k}>
               <span className="input-label">
                 {lbl}
@@ -308,6 +316,7 @@ const NetWorthCalculator: React.FC = () => {
                 name={k}
                 value={(inputs as any)[k]}
                 onChange={handleChange}
+                placeholder={ph as string}
               />
               {(inputs as any)[k] && (
                 <span className="converter">
@@ -327,20 +336,23 @@ const NetWorthCalculator: React.FC = () => {
           {[
             [
               "shortTermLiabilities",
-              "Short‑Term Liabilities (₹)",
+              "Short-Term Liabilities (₹)",
               "Credit cards, taxes, bills.",
+              "e.g., 20,000",
             ],
             [
               "longTermLiabilities",
-              "Long‑Term Liabilities (₹)",
+              "Long-Term Liabilities (₹)",
               "Home / car / personal loans.",
+              "e.g., 12,00,000",
             ],
             [
               "otherLiabilities",
               "Other Liabilities (₹)",
               "Any additional outstanding debt.",
+              "e.g., 50,000",
             ],
-          ].map(([k, lbl, tip]) => (
+          ].map(([k, lbl, tip, ph]) => (
             <label key={k}>
               <span className="input-label">
                 {lbl}
@@ -351,6 +363,7 @@ const NetWorthCalculator: React.FC = () => {
                 name={k}
                 value={(inputs as any)[k]}
                 onChange={handleChange}
+                placeholder={ph as string}
               />
               {(inputs as any)[k] && (
                 <span className="converter">
@@ -389,13 +402,13 @@ const NetWorthCalculator: React.FC = () => {
               {numberToWords(results.totalLiabilities)} Rupees)
             </div>
             <div className="summary-item">
-              <strong>Net Worth:</strong> ₹
+              <strong>Net Worth:</strong> ₹
               {results.netWorth.toLocaleString("en-IN")} (
               {numberToWords(results.netWorth)} Rupees)
             </div>
             <div className="summary-item">
-              <strong>Debt‑to‑Asset Ratio:</strong>{" "}
-              {results.debtToAssetRatio.toFixed(1)} %
+              <strong>Debt-to-Asset Ratio:</strong>{" "}
+              {results.debtToAssetRatio.toFixed(1)} %
             </div>
           </div>
 
@@ -425,8 +438,8 @@ const NetWorthCalculator: React.FC = () => {
           {/* chart explanation */}
           <div className="chart-explanation">
             <p>
-              Use the <strong>Pie Chart</strong> to view the asset allocation
-              and the <strong>Bar Chart</strong> to compare total assets versus
+              Use the <strong>Pie Chart</strong> to view the asset allocation
+              and the <strong>Bar Chart</strong> to compare total assets versus
               liabilities.
             </p>
           </div>
@@ -458,7 +471,7 @@ const NetWorthCalculator: React.FC = () => {
                     nameKey="name"
                     outerRadius={110}
                     label={({ name, percent }) =>
-                      `${name}: ${(percent * 100).toFixed(0)} %`
+                      `${name}: ${(percent * 100).toFixed(0)} %`
                     }
                   >
                     {results.pieData.map((_, i) => (
@@ -480,14 +493,14 @@ const NetWorthCalculator: React.FC = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* optional table */}
+          {/* breakdown table */}
           <h2 className="results-title">Asset Breakdown</h2>
           <div className="amortization-table">
             <table>
               <thead>
                 <tr>
                   <th>Asset Type</th>
-                  <th>Value (₹)</th>
+                  <th>Value (₹)</th>
                   <th>% of Assets</th>
                 </tr>
               </thead>
@@ -498,15 +511,15 @@ const NetWorthCalculator: React.FC = () => {
                     ₹
                     {(+inputs.liquidAssets || 0).toLocaleString("en-IN")}
                   </td>
-                  <td>{results.assetDist.liquid.toFixed(1)} %</td>
+                  <td>{results.assetDist.liquid.toFixed(1)} %</td>
                 </tr>
                 <tr>
-                  <td>Partial Liquid</td>
+                  <td>Partial Liquid</td>
                   <td>
                     ₹
                     {(+inputs.partialLiquidAssets || 0).toLocaleString("en-IN")}
                   </td>
-                  <td>{results.assetDist.partial.toFixed(1)} %</td>
+                  <td>{results.assetDist.partial.toFixed(1)} %</td>
                 </tr>
                 <tr>
                   <td>Illiquid</td>
@@ -514,7 +527,7 @@ const NetWorthCalculator: React.FC = () => {
                     ₹
                     {(+inputs.illiquidAssets || 0).toLocaleString("en-IN")}
                   </td>
-                  <td>{results.assetDist.illiquid.toFixed(1)} %</td>
+                  <td>{results.assetDist.illiquid.toFixed(1)} %</td>
                 </tr>
               </tbody>
             </table>
@@ -527,11 +540,11 @@ const NetWorthCalculator: React.FC = () => {
                 A positive net worth indicates a healthy financial position.
               </li>
               <li>
-                Aim to keep your debt‑to‑asset ratio as low as possible to
+                Aim to keep your debt-to-asset ratio as low as possible to
                 reduce financial risk.
               </li>
               <li>
-                Revisit your net‑worth calculation every six months to track
+                Revisit your net-worth calculation every six months to track
                 progress.
               </li>
             </ul>

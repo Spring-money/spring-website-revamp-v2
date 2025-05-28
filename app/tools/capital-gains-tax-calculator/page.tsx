@@ -18,7 +18,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Tooltip Component
+/* ───────── Tooltip Component ───────── */
 const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   const [show, setShow] = useState(false);
   return (
@@ -74,7 +74,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// Number→Words (Indian)
+/* ───────── Number → Words (Indian) ───────── */
 const numberToWords = (num: number): string => {
   const n = Math.round(Math.abs(num));
   if (n === 0) return "Zero";
@@ -143,11 +143,10 @@ const numberToWords = (num: number): string => {
   return helper(n);
 };
 
-// Fiscal Year helper
+/* ───────── Helpers & CII table (unchanged) ───────── */
 const getFiscalYear = (date: Date): number =>
   date.getMonth() >= 3 ? date.getFullYear() + 1 : date.getFullYear();
 
-// CII Table (FY → index)
 const CII: Record<number, number> = {
   2001: 100,
   2002: 105,
@@ -175,9 +174,9 @@ const CII: Record<number, number> = {
   2024: 348,
 };
 
-// Main Component
+/* ───────── Main Component ───────── */
 export default function CapitalGainsCalculator() {
-  // Inputs
+  /* ---------------- inputs & states (unchanged) ---------------- */
   const [assetType, setAssetType] = useState("Real Estate");
   const [buyDate, setBuyDate] = useState("");
   const [sellDate, setSellDate] = useState("");
@@ -191,7 +190,6 @@ export default function CapitalGainsCalculator() {
   const [applyCess, setApplyCess] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Results
   const [holdingYears, setHoldingYears] = useState(0);
   const [holdingMonths, setHoldingMonths] = useState(0);
   const [isLTCG, setIsLTCG] = useState(false);
@@ -205,15 +203,13 @@ export default function CapitalGainsCalculator() {
   const [chartType, setChartType] = useState<"bar" | "pie">("bar");
   const [computed, setComputed] = useState(false);
 
-  // Format helpers
   const fmtNum = (n: number) =>
     n.toLocaleString("en-IN", { maximumFractionDigits: 0 });
   const fmtPct = (n: number) => n.toFixed(2);
 
-  // Calculate
+  /* ---------------- calculation (unchanged) ---------------- */
   const calculate = () => {
     setError(null);
-    // parse
     const bp = parseFloat(buyPrice) || 0;
     const sp = parseFloat(sellPrice) || 0;
     const imp = parseFloat(improvement) || 0;
@@ -226,19 +222,18 @@ export default function CapitalGainsCalculator() {
     const bd = new Date(buyDate),
       sd = new Date(sellDate);
     if (sd <= bd) return setError("Sale date must be after purchase date.");
-    // holding period
+
     const totalMonths =
-      (sd.getFullYear() - bd.getFullYear()) * 12 +
-      (sd.getMonth() - bd.getMonth());
+      (sd.getFullYear() - bd.getFullYear()) * 12 + (sd.getMonth() - bd.getMonth());
     const y = Math.floor(totalMonths / 12);
     const m = totalMonths % 12;
     setHoldingYears(y);
     setHoldingMonths(m);
-    // classify
+
     const lt =
       assetType === "Real Estate" ? totalMonths > 36 : totalMonths > 12;
     setIsLTCG(lt);
-    // indexation
+
     let cost = bp + imp + ex;
     if (
       lt &&
@@ -249,47 +244,47 @@ export default function CapitalGainsCalculator() {
       const idx =
         (CII[fySell] || CII[fySell - 1]) / (CII[fyBuy] || CII[fyBuy - 1]);
       cost = bp * idx + imp * idx + ex;
-      setIndexedCost(Math.round(cost));
-    } else {
-      setIndexedCost(Math.round(cost));
     }
-    // raw gain & exemptions
+    setIndexedCost(Math.round(cost));
+
     const gain = sp - cost;
     setRawGain(Math.round(gain));
+
     let exm = 0;
     if (assetType === "Real Estate" && lt) {
       exm = Math.min(gain, s54 + s54ec);
     }
     setExempt(Math.round(exm));
+
     const tg = Math.max(0, gain - exm);
     setTaxableGain(Math.round(tg));
-    // tax
+
     let tax = 0;
     if (lt) {
       if (assetType === "Equity Shares") {
-        const tk = Math.max(0, tg - 100000);
-        tax = tk * 0.1;
+        tax = Math.max(0, tg - 100000) * 0.1;
       } else {
         tax = tg * 0.2;
       }
     } else {
       tax = tg * (parseFloat(taxSlab) / 100);
     }
-    // surcharge & cess
+
     if (applyCess) {
       const s = tax > 5000000 ? (tax > 10000000 ? 0.15 : 0.1) : 0;
       tax = tax * (1 + s) * 1.04;
     }
     tax = Math.round(tax);
     setTaxPayable(tax);
-    // net & eff rate
+
     const net = sp - tax;
     setNetProceeds(Math.round(net));
     setEffRate(tg > 0 ? +((tax / tg) * 100).toFixed(2) : 0);
+
     setComputed(true);
   };
 
-  // Chart data
+  /* ---------------- chart data ---------------- */
   const barData = [
     { name: "Raw Gain", value: rawGain },
     { name: "Tax", value: taxPayable },
@@ -302,48 +297,43 @@ export default function CapitalGainsCalculator() {
   ];
   const COLORS = ["#108E66", "#272A2B", "#108E66"];
 
+  /* ---------------- UI ---------------- */
   return (
     <main className="container">
-      {/* Back */}
+      {/* nav & header */}
       <div className="top-nav">
         <Link href="/tools">
-          <button className="back-button"> Back to Dashboard</button>
+          <button className="back-button">Back to Dashboard</button>
         </Link>
       </div>
 
-      {/* Header */}
       <h1 className="title">How Much Capital Gains Tax Will I Owe?</h1>
       <p className="description">
         Compute STCG or LTCG on Real Estate, Equity or Debt/Gold funds for FY
         2024-25.
       </p>
+
+      {/* explanation */}
       <div className="explanation">
-  <p>
-    <strong>Capital Gains Tax:</strong> This calculator helps you estimate the <strong>tax payable</strong> on profits made from the sale of
-    <strong> capital assets</strong> such as stocks, mutual funds, or real estate. It distinguishes between
-    <strong> short-term</strong> and <strong>long-term gains</strong> based on the holding period and applies
-    the applicable tax rates.
-  </p>
-  <p>
-    By entering details like the <strong>purchase price, sale price, holding period</strong>, and
-    <strong> asset type</strong>, the calculator determines whether your gain is <strong>tax-exempt</strong>,
-    <strong>partially taxed</strong>, or subject to <strong>full capital gains tax</strong>. This helps you plan
-    better for your post-sale net income.
-  </p>
-</div>
+        <p>
+          <strong>Capital Gains Tax:</strong> Estimate the tax on profits made
+          from selling capital assets. The calculator separates short-term and
+          long-term gains, applies indexation where eligible, and factors
+          surcharge & cess.
+        </p>
+      </div>
 
-
-      {/* Inputs */}
+      {/* --- input cards (markup unchanged) --- */}
+      {/* Asset Details */}
       <section className="card">
         <h2 className="card-title">Asset Details</h2>
         <div className="grid">
+          {/* asset & dates */}
           <div>
             <label>
-              Asset Type{" "}
-              <TooltipIcon text="Real Estate / Equity Shares / Mutual Funds (Debt/Gold)" />
+              Asset Type <TooltipIcon text="Choose asset category" />
             </label>
             <select
-              aria-label="Select asset type"
               value={assetType}
               onChange={(e) => setAssetType(e.target.value)}
             >
@@ -360,8 +350,6 @@ export default function CapitalGainsCalculator() {
               type="date"
               value={buyDate}
               onChange={(e) => setBuyDate(e.target.value)}
-              aria-label="Purchase date"
-              placeholder="YYYY-MM-DD"
             />
           </div>
           <div>
@@ -372,14 +360,11 @@ export default function CapitalGainsCalculator() {
               type="date"
               value={sellDate}
               onChange={(e) => setSellDate(e.target.value)}
-              aria-label="Sale date"
-              placeholder="YYYY-MM-DD"
             />
           </div>
           <div>
             <label>
-              Purchase Price (₹){" "}
-              <TooltipIcon text="Cost + stamp duty for property" />
+              Purchase Price (₹) <TooltipIcon text="Include stamp duty etc." />
             </label>
             <input
               type="number"
@@ -395,7 +380,7 @@ export default function CapitalGainsCalculator() {
           </div>
           <div>
             <label>
-              Sale Price (₹) <TooltipIcon text="Net proceeds after TDS" />
+              Sale Price (₹) <TooltipIcon text="Net proceeds" />
             </label>
             <input
               type="number"
@@ -412,13 +397,13 @@ export default function CapitalGainsCalculator() {
         </div>
       </section>
 
+      {/* Allowable Costs */}
       <section className="card">
         <h2 className="card-title">Allowable Costs</h2>
         <div className="grid">
           <div>
             <label>
-              Improvement Cost (₹){" "}
-              <TooltipIcon text="Capital improvements (prop only)" />
+              Improvement Cost (₹) <TooltipIcon text="Capital additions" />
             </label>
             <input
               type="number"
@@ -441,13 +426,13 @@ export default function CapitalGainsCalculator() {
         </div>
       </section>
 
+      {/* Exemptions */}
       <section className="card">
         <h2 className="card-title">Exemptions &amp; Deductions</h2>
         <div className="grid">
           <div>
             <label>
-              Section 54 Reinvestment (₹){" "}
-              <TooltipIcon text="Prop only, reinvestment" />
+              Section 54 Reinvestment (₹) <TooltipIcon text="Property only" />
             </label>
             <input
               type="number"
@@ -458,8 +443,7 @@ export default function CapitalGainsCalculator() {
           </div>
           <div>
             <label>
-              Section 54EC Bonds (₹){" "}
-              <TooltipIcon text="Prop only, notified bonds" />
+              Section 54EC Bonds (₹) <TooltipIcon text="Property only" />
             </label>
             <input
               type="number"
@@ -471,37 +455,28 @@ export default function CapitalGainsCalculator() {
         </div>
       </section>
 
+      {/* Tax settings */}
       <section className="card">
         <h2 className="card-title">Tax Settings</h2>
         <div className="grid">
           <div>
             <label>
-              STCG Slab (%){" "}
-              <TooltipIcon text="For short-term gains added to income" />
+              STCG Slab (%) <TooltipIcon text="Short-term gains rate" />
             </label>
-            <select
-              value={taxSlab}
-              onChange={(e) => setTaxSlab(e.target.value)}
-              aria-label="STCG Tax Slab"
-            >
-              <option>5</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>30</option>
+            <select value={taxSlab} onChange={(e) => setTaxSlab(e.target.value)}>
+              {[5, 10, 15, 20, 25, 30].map((r) => (
+                <option key={r}>{r}</option>
+              ))}
             </select>
           </div>
           <div className="switch-row">
             <label>
-              Apply Surcharge &amp; Cess?{" "}
-              <TooltipIcon text="Health & Education Cess 4 %; surcharge >₹50 L" />
+              Apply Cess? <TooltipIcon text="4 % H&EC cess" />
             </label>
             <input
               type="checkbox"
               checked={applyCess}
               onChange={(e) => setApplyCess(e.target.checked)}
-              aria-label="Apply Surcharge and Cess"
             />
           </div>
         </div>
@@ -510,58 +485,36 @@ export default function CapitalGainsCalculator() {
       {error && <p className="error">{error}</p>}
 
       <button className="calculate-button" onClick={calculate}>
-        Calculate 
+        Calculate
       </button>
 
-      {/* Results */}
+      {/* --------------- Results --------------- */}
       {computed && (
         <section className="card results">
           <h2 className="card-title">Results</h2>
 
-          {/* Summary */}
+          {/* summary grid */}
           <div className="summary">
-            <div>
-              <strong>Holding Period</strong>
-              <br />
-              {holdingYears} yrs {holdingMonths} mths
-            </div>
-            <div>
-              <strong>Classification</strong>
-              <br />
-              {isLTCG ? "LTCG" : "STCG"}
-            </div>
-            <div>
-              <strong>Indexed Cost Basis</strong>
-              <br />₹{fmtNum(indexedCost)}
-            </div>
-            <div>
-              <strong>Raw Gain</strong>
-              <br />₹{fmtNum(rawGain)}
-            </div>
-            <div>
-              <strong>Exemptions</strong>
-              <br />₹{fmtNum(exempt)}
-            </div>
-            <div>
-              <strong>Taxable Gain</strong>
-              <br />₹{fmtNum(taxableGain)}
-            </div>
-            <div>
-              <strong>Tax Payable</strong>
-              <br />₹{fmtNum(taxPayable)}
-            </div>
-            <div>
-              <strong>Net Proceeds</strong>
-              <br />₹{fmtNum(netProceeds)}
-            </div>
-            <div>
-              <strong>Effective Rate</strong>
-              <br />
-              {fmtPct(effRate)}%
-            </div>
+            {[
+              ["Holding Period", `${holdingYears} yrs ${holdingMonths} mths`],
+              ["Classification", isLTCG ? "LTCG" : "STCG"],
+              ["Indexed Cost Basis", `₹${fmtNum(indexedCost)}`],
+              ["Raw Gain", `₹${fmtNum(rawGain)}`],
+              ["Exemptions", `₹${fmtNum(exempt)}`],
+              ["Taxable Gain", `₹${fmtNum(taxableGain)}`],
+              ["Tax Payable", `₹${fmtNum(taxPayable)}`],
+              ["Net Proceeds", `₹${fmtNum(netProceeds)}`],
+              ["Effective Rate", `${fmtPct(effRate)} %`],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <strong>{k}</strong>
+                <br />
+                {v}
+              </div>
+            ))}
           </div>
 
-          {/* Chart Toggle */}
+          {/* chart toggle */}
           <div className="chart-toggle">
             <button
               className={chartType === "bar" ? "active" : ""}
@@ -577,7 +530,7 @@ export default function CapitalGainsCalculator() {
             </button>
           </div>
 
-          {/* Chart */}
+          {/* chart */}
           <div className="chart-container">
             <ResponsiveContainer width="100%" height={300}>
               {chartType === "bar" ? (
@@ -595,9 +548,7 @@ export default function CapitalGainsCalculator() {
                     data={pieData}
                     dataKey="value"
                     nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={100}
+                    outerRadius={110}
                     label
                   >
                     {pieData.map((_, i) => (
@@ -610,7 +561,7 @@ export default function CapitalGainsCalculator() {
             </ResponsiveContainer>
           </div>
 
-          {/* Indexation Table */}
+          {/* indexation table */}
           {isLTCG && (
             <div className="table-wrap">
               <h3>Indexation Details</h3>
@@ -642,64 +593,42 @@ export default function CapitalGainsCalculator() {
             </div>
           )}
 
-          {/* Insight */}
           <p className="insight">
             {isLTCG
-              ? `You have ₹${fmtNum(rawGain)} of LTCG; tax payable ₹${fmtNum(
+              ? `You have ₹${fmtNum(rawGain)} LTCG; tax ≈ ₹${fmtNum(
                   taxPayable
                 )}.`
-              : `You have ₹${fmtNum(rawGain)} of STCG taxed at your slab rate.`}
+              : `You have ₹${fmtNum(rawGain)} STCG taxed at slab rate.`}
           </p>
 
-
-          {/* Points to Consider */}
-      <div className="points">
-        <h3>Important considrations</h3>
-        <ul>
-          <li>
-            This calculator uses FY 2024-25 rates and CII tables under Indian
-            tax law.
-          </li>
-          <li>Always round all monetary values to the nearest rupee.</li>
-          <li>Figures-to-words conversion helps avoid input mistakes.</li>
-          <li>Ensure dates are accurate to classify STCG vs LTCG correctly.</li>
-          <li>
-            Select the proper asset type—indexation applies only to real estate
-            and debt/gold funds.
-          </li>
-          <li>SLAB rate applies only to STCG added to your total income.</li>
-          <li>
-            Surcharge &amp; cess are auto-applied if the gain exceeds ₹ 50 lakh.
-          </li>
-          <li>
-            Charts provide visual breakdowns—toggle between bar and pie for
-            insight.
-          </li>
-          <li>
-            Refer to a tax professional for any complex exemptions (e.g.,
-            Sections 54, 54EC).
-          </li>
-        </ul>
-      </div>
+          {/* notes */}
+          <div className="points">
+            <h3>Important considerations</h3>
+            <ul>
+              <li>Uses FY 2024-25 rates and CII table.</li>
+              <li>Indexation for real-estate and debt/gold funds only.</li>
+              <li>
+                Surcharge/cess auto-applied if taxable gain &gt; ₹50 lakh.
+              </li>
+              <li>Figures rounded to nearest rupee.</li>
+              <li>Consult a tax professional for complex cases.</li>
+            </ul>
+          </div>
         </section>
       )}
 
-     
-
-      
-
-      {/* Styles */}
+      {/* ───────── styles ───────── */}
       <style jsx>{`
         .container {
           width: 100%;
-          margin: auto;
+          max-width: 1200px;
+          margin: 0 auto;
           padding: 2rem;
           font-family: "Poppins", sans-serif;
           background: #fcfffe;
           color: #272a2b;
         }
         .top-nav {
-          text-align: left;
           margin-bottom: 1rem;
         }
         .back-button {
@@ -714,12 +643,12 @@ export default function CapitalGainsCalculator() {
           text-align: center;
           font-size: 2.25rem;
           font-weight: 600;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.35rem;
         }
         .description {
           text-align: center;
           font-size: 1rem;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.3rem;
           color: #555;
         }
         .card {
@@ -741,21 +670,8 @@ export default function CapitalGainsCalculator() {
         }
         label {
           font-size: 0.9rem;
-          margin-bottom: 0.25rem;
           display: block;
-        }
-           .explanation {
-          background: #FCFFFE;
-          padding: 1rem;
-          border-radius: 8px;
-          margin-bottom: 1.5rem;
-          border-left: 4px solid #108e66;
-          font-size: 0.95rem;
-          color: #272B2A;
-        }
-        .explanation p {
-          margin: 0.5rem 0;
-          line-height: 1.5;
+          margin-bottom: 0.25rem;
         }
         input,
         select {
@@ -769,6 +685,7 @@ export default function CapitalGainsCalculator() {
           font-size: 0.85rem;
           color: #444;
           margin-top: 0.25rem;
+          display: block;
         }
         .switch-row {
           display: flex;
@@ -800,9 +717,9 @@ export default function CapitalGainsCalculator() {
         }
         .results .summary {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1rem;
-          margin-bottom: 1.25rem;
+          margin-bottom: 1.2rem;
         }
         .results .summary > div {
           border: 1px solid #108e66;
@@ -815,7 +732,7 @@ export default function CapitalGainsCalculator() {
           display: flex;
           justify-content: center;
           gap: 1rem;
-          margin-bottom: 1rem;
+          margin: 1rem 0;
         }
         .chart-toggle button {
           padding: 0.5rem 1rem;
@@ -858,25 +775,52 @@ export default function CapitalGainsCalculator() {
           color: #108e66;
           margin-top: 1rem;
         }
-       
-       
         .points {
           background: #fcfffe;
-          padding: 1rem;
-          border-radius: 4px;
-          font-size: 0.9rem;
           border: 1px solid #272a2b;
-          margin-top: 1.2rem
-        
+          border-radius: 4px;
+          padding: 1rem;
+          font-size: 0.9rem;
+          margin-top: 1.2rem;
         }
         .points ul {
           margin: 0;
           padding-left: 1.4rem;
+        }
+
+        /* ───────── Mobile tweaks ───────── */
+        @media (max-width: 680px) {
+          .container {
+            padding: 1rem;
           }
-        @media (max-width: 600px) {
+          .grid {
+            grid-template-columns: 1fr;
+          }
           .results .summary {
             grid-template-columns: 1fr;
           }
+          .chart-toggle {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+          .chart-toggle button {
+            width: 100%;
+          }
+          .chart-container {
+            margin: 0 -0.4rem 1.2rem;
+          }
+        }
+      `}</style>
+
+      {/* hide number spinners */}
+      <style jsx global>{`
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          -moz-appearance: textfield;
         }
       `}</style>
     </main>
