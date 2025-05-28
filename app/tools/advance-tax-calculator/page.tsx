@@ -74,7 +74,7 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
 };
 
 /* ──────────────────────────────────
-   Number → Words (Indian grouping)
+   Number → Words
    ────────────────────────────────── */
 const numberToWords = (num: number): string => {
   const n = Math.round(Math.abs(num));
@@ -251,7 +251,7 @@ export default function AdvanceTaxCalculator() {
     const raw = slabCalc(taxInc, regime === "Old" ? slabsOld : slabsNew);
     setRawTax(raw);
 
-    let twc = raw * 1.04; // +4 % cess
+    let twc = raw * 1.04; // + 4% cess
     const rebateCap = regime === "New" ? 700_000 : 500_000;
     if (taxInc <= rebateCap) twc = 0;
     twc = Math.round(twc);
@@ -319,20 +319,23 @@ export default function AdvanceTaxCalculator() {
         Estimate your quarterly advance-tax instalments under old / new regime
         for FY {fy}.
       </p>
-      <div className="explanation">
-  <p>
-    <strong>Advance Tax Calculator:</strong> Advance tax refers to the income tax that is paid in advance instead of a lump sum payment at year-end. It is applicable when your estimated tax liability for the financial year is <strong>₹10,000 or more</strong>.
-  </p>
-  <p>
-    This calculator helps you estimate your <strong>advance tax liability</strong> based on your expected income, deductions, and applicable tax slabs. It is especially useful for <strong>freelancers</strong>, <strong>business owners</strong>, and individuals with <strong>non-salaried income</strong> like rent, capital gains, or interest. Payments are made in installments as per the <em>advance tax schedule</em> set by the Income Tax Department.
-  </p>
-</div>
 
+      <div className="explanation">
+        <p>
+          <strong>Advance Tax:</strong> Pay-as-you-earn tax in four instalments
+          when residual liability exceeds <strong>₹10,000</strong>.
+        </p>
+        <p>
+          Helpful for freelancers, business owners and anyone with significant
+          non-salary income (rent, capital gains, interest).
+        </p>
+      </div>
 
       {/* INPUTS */}
       <section className="card inputs">
         <h2 className="section-title">Income &amp; Deductions</h2>
         <div className="grid">
+          {/* numeric inputs */}
           {[
             {
               label: "Gross Income (₹)",
@@ -386,9 +389,7 @@ export default function AdvanceTaxCalculator() {
                 onChange={(e) => f.set(e.target.value)}
                 placeholder={f.ph}
               />
-              {errors[f.key] && (
-                <small className="error">{errors[f.key]}</small>
-              )}
+              {errors[f.key] && <small className="error">{errors[f.key]}</small>}
               {f.val && (
                 <small className="converter">
                   {numberToWords(+f.val)} Rupees
@@ -449,7 +450,6 @@ export default function AdvanceTaxCalculator() {
             ))}
           </div>
 
-          {/* Chart toggle */}
           <div className="chart-toggle">
             <button
               className={chartView === "bar" ? "active" : ""}
@@ -465,7 +465,6 @@ export default function AdvanceTaxCalculator() {
             </button>
           </div>
 
-          {/* Chart */}
           <div className="chart-container">
             <ResponsiveContainer width="100%" height={300}>
               {chartView === "bar" ? (
@@ -500,7 +499,6 @@ export default function AdvanceTaxCalculator() {
             </ResponsiveContainer>
           </div>
 
-          {/* Table */}
           <div className="table-wrap">
             <table>
               <thead>
@@ -531,42 +529,38 @@ export default function AdvanceTaxCalculator() {
             </table>
           </div>
 
-          {/* Insights */}
           <div className="disc">
             <h3>Important Considerations</h3>
             <ul>
               <li>
-                Advance-tax instalments: 15 Jun (15 %), 15 Sep (45 %), 15 Dec
-                (75 %), 15 Mar (100 %).
+                Instalments: 15 Jun (15 %), 15 Sep (45 %), 15 Dec (75 %), 15 Mar
+                (100 %).
               </li>
               <li>
-                Shortfall in any instalment → interest u/s 234C (1 % p.m.).
+                Shortfall → 1 %/mo interest under section 234C on the deficit.
               </li>
               <li>
-                <strong>Net tax payable &gt; ₹10,000</strong> → 234B interest
-                applies if 90 % of tax not cleared by 31 Mar.
+                Residual tax &gt; ₹10 000 → section 234B interest if 90 % not
+                cleared by 31 Mar.
               </li>
               <li>
-                New regime disallows most deductions (except employer NPS /
-                EPF).
+                New regime disallows most deductions (except employer NPS/EPF).
               </li>
-              <li>
-                No advance-tax if residual tax ≤ ₹10,000 (fully covered by TDS /
-                TCS).
-              </li>
-              <li>Always match with Form 26AS before filing return.</li>
+              <li>Match with Form 26AS before filing your return.</li>
             </ul>
           </div>
         </section>
       )}
 
-      {/* styles truncated for brevity  */}
+      {/* ───────── styles ───────── */}
       <style jsx>{`
         .container {
-          padding: 2rem;
+          padding-top: 2rem;
           font-family: "Poppins", sans-serif;
           background: #fcfffe;
           color: #272a2b;
+          // max-width: 1200px;
+          margin: 0 auto;
         }
         .back {
           background: #108e66;
@@ -585,7 +579,7 @@ export default function AdvanceTaxCalculator() {
         }
         .description {
           text-align: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.2rem;
           color: #555;
         }
         .card {
@@ -694,26 +688,25 @@ export default function AdvanceTaxCalculator() {
           background: #108e66;
           color: #fcfffe;
         }
-
         .disc {
           background: #fcfffe;
-          padding: 1rem;
-          border-radius: 4px;
-          font-size: 0.9rem;
           border: 1px solid #272a2b;
+          border-radius: 4px;
+          padding: 1rem;
+          font-size: 0.9rem;
           margin-top: 1.2rem;
         }
         .disc ul {
           margin: 0;
           padding-left: 1.4rem;
         }
-            .explanation {
+        .explanation {
           background: #fcfffe;
+          border-left: 4px solid #108e66;
           padding: 1rem;
           border-radius: 8px;
-          margin-bottom: 1.5rem;
-          border-left: 4px solid #108e66;
           font-size: 0.95rem;
+          margin-bottom: 1.5rem;
           color: #272b2a;
         }
         .explanation p {
@@ -721,10 +714,39 @@ export default function AdvanceTaxCalculator() {
           line-height: 1.5;
         }
 
-        @media (max-width: 600px) {
+        /* ───────── Mobile tweaks ───────── */
+        @media (max-width: 680px) {
+          .inputs .grid {
+            grid-template-columns: 1fr;
+          }
           .results .summary {
             grid-template-columns: 1fr;
           }
+          .chart-toggle {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+          .chart-toggle button {
+            width: 100%;
+          }
+          .container {
+            padding: 1rem;
+          }
+          .chart-container {
+            margin: 0 -0.4rem 1rem;
+          }
+        }
+      `}</style>
+
+      {/* hide number spinners */}
+      <style jsx global>{`
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          -moz-appearance: textfield;
         }
       `}</style>
     </main>

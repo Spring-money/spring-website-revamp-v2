@@ -315,8 +315,8 @@ const SideIncomeEstimator: React.FC = () => {
 
       <h1 className="h1">Side-Hustle Profit Calculator</h1>
       <p className="tagline">
-        Know exactly what your gig earns after expenses, tax & the value of your
-        time.
+        Know exactly what your gig earns after expenses, tax &amp; the value of
+        your time.
       </p>
       <div className="explanation">
         <p>
@@ -409,8 +409,7 @@ const SideIncomeEstimator: React.FC = () => {
             ] as const
           ).map(([k, lbl, tip, ph]) => {
             const val = inputs[k as keyof Inputs]!;
-            const isPercent =
-              k === "growthRate" || k === "taxRate" ? true : false;
+            const isPercent = k === "growthRate" || k === "taxRate";
             return (
               <label key={k} className="field">
                 <span className="lbl">
@@ -482,7 +481,7 @@ const SideIncomeEstimator: React.FC = () => {
           </div>
 
           <div className="chartBox">
-            <ResponsiveContainer width="95%" height={280}>
+            <ResponsiveContainer width="100%" height={280}>
               {chartType === "line" ? (
                 <LineChart data={results.lineData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -560,7 +559,7 @@ const SideIncomeEstimator: React.FC = () => {
             <h4>Important</h4>
             <ul>
               <li>
-                Assumes costs & growth stay constant for 12 months. Update
+                Assumes costs &amp; growth stay constant for 12 months. Update
                 quarterly.
               </li>
               <li>Revenue should be exclusive of GST; remit GST separately.</li>
@@ -754,10 +753,28 @@ const SideIncomeEstimator: React.FC = () => {
           margin-bottom: 0.5rem;
         }
 
-        /* responsive */
+        /* ───────── mobile tweaks ───────── */
         @media (max-width: 700px) {
           .wrap {
             padding: 1rem;
+          }
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .summary {
+            border-left: none;
+            padding-left: 0;
+          }
+          .sumItem {
+            text-align: center;
+          }
+          .chartBox {
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+          }
+          .switch {
+            flex-direction: column;
+            align-items: stretch;
           }
         }
       `}</style>

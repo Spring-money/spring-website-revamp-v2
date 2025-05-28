@@ -35,7 +35,7 @@ interface Results {
   intOld: number;
   costNew: number;
   savings: number;
-  breakeven: number | null; // month count or null
+  breakeven: number | null;
   tenureDiff: number;
   roi: number | null;
   balSeries: { m: number; old: number; new: number }[];
@@ -89,7 +89,6 @@ const TooltipIcon: React.FC<{ text: string }> = ({ text }) => {
           font-size: 0.75rem;
           line-height: 1.2;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          opacity: 1;
         }
         .tooltiptext::after {
           content: "";
@@ -111,7 +110,7 @@ const toWords = (n: number): string => {
   if (!isFinite(n)) return "";
   n = Math.round(Math.abs(n));
   if (n === 0) return "Zero";
-  const o = [
+  const ones = [
     "",
     "One",
     "Two",
@@ -133,7 +132,7 @@ const toWords = (n: number): string => {
     "Eighteen",
     "Nineteen",
   ];
-  const t = [
+  const tens = [
     "",
     "",
     "Twenty",
@@ -146,11 +145,11 @@ const toWords = (n: number): string => {
     "Ninety",
   ];
   const h = (x: number): string => {
-    if (x < 20) return o[x];
+    if (x < 20) return ones[x];
     if (x < 100)
-      return `${t[Math.floor(x / 10)]}${x % 10 ? " " + o[x % 10] : ""}`;
+      return `${tens[Math.floor(x / 10)]}${x % 10 ? " " + ones[x % 10] : ""}`;
     if (x < 1000)
-      return `${o[Math.floor(x / 100)]} Hundred${
+      return `${ones[Math.floor(x / 100)]} Hundred${
         x % 100 ? " " + h(x % 100) : ""
       }`;
     if (x < 100000)
@@ -167,6 +166,7 @@ const toWords = (n: number): string => {
   };
   return h(n);
 };
+
 const wordsRupees = (v: string) =>
   v && !isNaN(+v) && +v > 0 ? `${toWords(+v)} rupees` : "";
 
@@ -189,7 +189,6 @@ const BalanceTransfer: React.FC = () => {
   const [results, setResults] = useState<Results | null>(null);
   const [busy, setBusy] = useState(false);
 
-  /* chart toggle */
   const [chart, setChart] = useState<"balance" | "cost">("balance");
 
   const onChange = (
@@ -209,12 +208,11 @@ const BalanceTransfer: React.FC = () => {
     return Object.keys(e).length === 0;
   };
 
-  /* ── Core Calculation ─────────────────────── */
+  /* ── Core Calculation ── */
   const calculate = () => {
     if (!validate()) return;
     setBusy(true);
 
-    /* Input Parsing */
     const B = +inputs.balance,
       n1 = +inputs.remYears * 12,
       n2 = +inputs.newYears * 12,
@@ -224,30 +222,31 @@ const BalanceTransfer: React.FC = () => {
       financeFee = inputs.financeFee === "true",
       extra = +inputs.prepay;
 
-    /* Current EMI */
-    const EMI1 = (B * r1 * (1 + r1) ** n1) / ((1 + r1) ** n1 - 1);
-    const emiGiven = inputs.currEmi ? +inputs.currEmi : EMI1;
-    const emiOld = Math.round(emiGiven);
+    /* Current EMI (or given EMI) */
+    const calcEmi = (P: number, r: number, n: number) =>
+      (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
 
-    /* Amortise OLD loan */
+    const emiOld = Math.round(
+      inputs.currEmi ? +inputs.currEmi : calcEmi(B, r1, n1)
+    );
+
+    /* Interest left if you stay */
     let bal = B,
       intOld = 0;
-    for (let t = 1; t <= n1; t++) {
+    for (let t = 1; t <= n1 && bal > 0; t++) {
       const int = bal * r1;
       const prin = emiOld - int;
       bal -= prin;
       intOld += int;
-      if (bal <= 0) break;
     }
 
-    /* New Principal incl. fee if financed */
+    /* New loan principal (fee financed?) */
     const P2 = financeFee ? B + F : B;
-    /* New EMI */
-    let emiNew = (P2 * r2 * (1 + r2) ** n2) / ((1 + r2) ** n2 - 1);
+    let emiNew = calcEmi(P2, r2, n2);
     emiNew += extra;
     emiNew = Math.round(emiNew);
 
-    /* Amortise NEW loan */
+    /* Amortise new loan */
     bal = P2;
     let intNew = 0,
       monthsPaid = 0;
@@ -260,21 +259,23 @@ const BalanceTransfer: React.FC = () => {
       monthsPaid = t;
       balSeries.push({
         m: t,
-        old: Math.max(
-          0,
-          (B * ((1 + r1) ** n1 - (1 + r1) ** t)) / ((1 + r1) ** n1 - 1)
-        ),
+        old:
+          (B * (Math.pow(1 + r1, n1) - Math.pow(1 + r1, t))) /
+          (Math.pow(1 + r1, n1) - 1),
         new: Math.max(0, bal),
       });
     }
+
     const totalCostNew = intNew + (financeFee ? 0 : F);
     const savings = Math.round(intOld - totalCostNew);
     const tenureDiff = n1 - monthsPaid;
     const breakeven =
-      savings > 0 ? balSeries.find((x) => x.old - x.new > F)?.m ?? null : null;
-    const roi = F > 0 && savings > 0 ? +(savings / F).toFixed(1) : null;
+      savings > 0
+        ? balSeries.find((x) => x.old - x.new > F)?.m ?? null
+        : null;
+    const roi =
+      F > 0 && savings > 0 ? Math.round((savings / F) * 10) / 10 : null;
 
-    /* Prepare bar data */
     const barSeries = [
       { name: "Stay – Interest", value: Math.round(intOld) },
       { name: "Transfer – All Cost", value: Math.round(totalCostNew) },
@@ -297,7 +298,7 @@ const BalanceTransfer: React.FC = () => {
 
   const COLORS = ["#272a2b", "#108e66"];
 
-  /* ───────────────── UI ───────────────── */
+  /* ───────────────── JSX ───────────────── */
   return (
     <div className="container">
       {/* nav */}
@@ -313,36 +314,24 @@ const BalanceTransfer: React.FC = () => {
         switching really saves you money.
       </p>
 
-      {/* meaning card */}
+      {/* explanation card */}
       <div className="meaning-card">
         <p>
-          <strong>Balance Transfer Savings Calculator:</strong> A balance
-          transfer involves moving outstanding debt, usually from a credit card
-          or loan, to a new account with a lower interest rate. It is commonly
-          used to <strong>reduce interest payments</strong> and manage debt more
-          efficiently.
-        </p>
-        <p>
-          This calculator helps you estimate the <strong>total savings</strong>{" "}
-          you can achieve by transferring your existing loan or credit balance
-          to a new lender. It factors in details like{" "}
-          <strong>current and new interest rates</strong>,{" "}
-          <strong>remaining tenure</strong>, and any applicable{" "}
-          <strong>processing fees</strong>. It’s a useful tool for comparing
-          your current loan with potential offers and making informed financial
-          decisions.
+          <strong>Balance Transfer:</strong> Move an existing loan to a new
+          lender at a lower rate to cut interest outgo. This calculator weighs
+          the savings against processing fees and tenure reset.
         </p>
       </div>
 
-      {/* form card */}
+      {/* input card */}
       <div className="card">
-        {/* Current Loan */}
         <h2 className="section-title">Current Loan</h2>
         <div className="input-group">
+          {/* outstanding balance */}
           <label>
             <span className="input-label">
               Outstanding Balance (₹)
-              <TooltipIcon text="Principal left to repay on existing loan." />
+              <TooltipIcon text="Principal left on present loan." />
             </span>
             <input
               name="balance"
@@ -355,6 +344,7 @@ const BalanceTransfer: React.FC = () => {
             <span className="words">{wordsRupees(inputs.balance)}</span>
           </label>
 
+          {/* remaining years */}
           <label>
             <span className="input-label">
               Remaining Tenure (Years)
@@ -369,9 +359,10 @@ const BalanceTransfer: React.FC = () => {
             />
           </label>
 
+          {/* current rate */}
           <label>
             <span className="input-label">
-              Current Rate (% p.a.)
+              Current Rate (% pa)
               <TooltipIcon text="Existing reducing-balance interest rate." />
             </span>
             <input
@@ -384,10 +375,11 @@ const BalanceTransfer: React.FC = () => {
             />
           </label>
 
+          {/* current EMI optional */}
           <label>
             <span className="input-label">
               Current EMI (₹) (optional)
-              <TooltipIcon text="If blank we’ll estimate from rate & balance." />
+              <TooltipIcon text="Leave blank to auto-estimate." />
             </span>
             <input
               name="currEmi"
@@ -400,12 +392,12 @@ const BalanceTransfer: React.FC = () => {
           </label>
         </div>
 
-        {/* Transfer Offer */}
         <h2 className="section-title">Transfer Offer</h2>
         <div className="input-group">
+          {/* new rate */}
           <label>
             <span className="input-label">
-              New Rate (% p.a.)
+              New Rate (% pa)
               <TooltipIcon text="Promotional / new lender rate." />
             </span>
             <input
@@ -418,6 +410,7 @@ const BalanceTransfer: React.FC = () => {
             />
           </label>
 
+          {/* new tenure */}
           <label>
             <span className="input-label">
               New Tenure (Years)
@@ -432,9 +425,10 @@ const BalanceTransfer: React.FC = () => {
             />
           </label>
 
+          {/* processing fee */}
           <label>
             <span className="input-label">
-              Processing Fee (₹) (Optional)
+              Processing Fee (₹)
               <TooltipIcon text="Set 0 if waived." />
             </span>
             <input
@@ -447,6 +441,7 @@ const BalanceTransfer: React.FC = () => {
             <span className="words">{wordsRupees(inputs.procFee)}</span>
           </label>
 
+          {/* finance fee select */}
           <label>
             <span className="input-label">
               Finance the Fee?
@@ -462,10 +457,11 @@ const BalanceTransfer: React.FC = () => {
             </select>
           </label>
 
+          {/* pre-pay extra EMI */}
           <label>
             <span className="input-label">
-              Extra EMI Payment (₹/mo) (Optional)
-              <TooltipIcon text="Optional extra you plan to pre-pay." />
+              Extra EMI Payment (₹/mo)
+              <TooltipIcon text="Optional extra you’ll prepay each month." />
             </span>
             <input
               name="prepay"
@@ -487,57 +483,57 @@ const BalanceTransfer: React.FC = () => {
         </button>
       </div>
 
-      {/* results */}
+      {/* ───────── Results ───────── */}
       {results && (
         <div className="card">
           <h2 className="section-title">Savings Snapshot</h2>
 
-          {/* summary numbers */}
           <div className="summary-card">
             <div className="summary-item">
-              <strong>Current EMI:</strong>&nbsp;₹
+              <strong>Current EMI:</strong> ₹
               {results.emiOld.toLocaleString("en-IN")} (
               {toWords(results.emiOld)})
             </div>
             <div className="summary-item">
-              <strong>New EMI:</strong>&nbsp;₹
+              <strong>New EMI:</strong> ₹
               {results.emiNew.toLocaleString("en-IN")} (
               {toWords(results.emiNew)})
             </div>
             <div className="summary-item">
-              <strong>Interest to Stay:</strong>&nbsp;₹
+              <strong>Interest to Stay:</strong> ₹
               {results.intOld.toLocaleString("en-IN")} (
               {toWords(results.intOld)})
             </div>
             <div className="summary-item">
-              <strong>Total Cost to Transfer:</strong>&nbsp;₹
+              <strong>Total Cost to Transfer:</strong> ₹
               {results.costNew.toLocaleString("en-IN")} (
               {toWords(results.costNew)})
             </div>
             <div className="summary-item">
-              <strong>Net&nbsp;Savings:</strong>&nbsp;
-              <span style={{ color: results.savings > 0 ? "#108e66" : "red" }}>
+              <strong>Net Savings:</strong>{" "}
+              <span
+                style={{ color: results.savings > 0 ? "#108e66" : "red" }}
+              >
                 ₹{results.savings.toLocaleString("en-IN")}
-              </span>{" "}
-              ({toWords(Math.abs(results.savings))})
+              </span>
             </div>
             <div className="summary-item">
-              <strong>Breakeven:</strong>&nbsp;
+              <strong>Breakeven:</strong>{" "}
               {results.breakeven ? `${results.breakeven} months` : "–"}
             </div>
             <div className="summary-item">
-              <strong>Tenure Change:</strong>&nbsp;
+              <strong>Tenure Change:</strong>{" "}
               {results.tenureDiff >= 0 ? "-" : "+"}
               {Math.abs(results.tenureDiff)} months
             </div>
             {results.roi && (
               <div className="summary-item">
-                <strong>ROI on Fee:</strong>&nbsp;{results.roi.toFixed(1)} ×
+                <strong>ROI on Fee:</strong> {results.roi.toFixed(1)} ×
               </div>
             )}
           </div>
 
-          {/* toggle */}
+          {/* chart toggle */}
           <div className="toggle">
             <button
               onClick={() => setChart("balance")}
@@ -553,19 +549,16 @@ const BalanceTransfer: React.FC = () => {
             </button>
           </div>
 
-          {/* chart explanations */}
           <div className="chart-explanation">
             {chart === "balance" ? (
               <p>
-                <strong>Balance Pay-off Chart:</strong> Tracks the outstanding
-                balance month-by-month if you stay with the current lender
-                (black) versus transfer (green).
+                <strong>Balance Pay-off Chart:</strong> Outstanding balance if
+                you stay (black) versus transfer (green).
               </p>
             ) : (
               <p>
-                <strong>Stay vs Transfer Cost Chart:</strong> Compares total
-                interest & fees if you stay versus the all-in cost after
-                transferring.
+                <strong>Cost Comparison Chart:</strong> Total interest & fees
+                staying vs transferring.
               </p>
             )}
           </div>
@@ -576,13 +569,13 @@ const BalanceTransfer: React.FC = () => {
               <ResponsiveContainer width="95%" height={240}>
                 <AreaChart
                   data={results.balSeries}
-                  margin={{ top: 20, right: 10, left: 55, bottom: 5 }}
+                  margin={{ top: 20, right: 10, left: 50, bottom: 5 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="m" tickFormatter={(m) => `M${m}`} />
                   <YAxis
-                    tick={{ fill: "#272b2a", fontSize: 12 }}
                     tickFormatter={(v) => v.toLocaleString("en-IN")}
+                    tick={{ fill: "#272b2a", fontSize: 12 }}
                   />
                   <RechartsTooltip />
                   <Legend />
@@ -610,13 +603,13 @@ const BalanceTransfer: React.FC = () => {
               <ResponsiveContainer width="95%" height={220}>
                 <BarChart
                   data={results.barSeries}
-                  margin={{ top: 20, right: 10, left: 55, bottom: 5 }}
+                  margin={{ top: 20, right: 10, left: 50, bottom: 5 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
                   <YAxis
-                    tick={{ fill: "#272b2a", fontSize: 12 }}
                     tickFormatter={(v) => v.toLocaleString("en-IN")}
+                    tick={{ fill: "#272b2a", fontSize: 12 }}
                   />
                   <RechartsTooltip />
                   <Bar dataKey="value">
@@ -634,33 +627,27 @@ const BalanceTransfer: React.FC = () => {
             <h4>Important Considerations</h4>
             <ul>
               <li>
-                Rates are assumed constant; promotional rates may reset higher
-                later.
+                Future rate resets, pre-payment penalties and GST on fees can
+                alter the savings.
               </li>
+              <li>Verify numbers with both current & new lenders.</li>
               <li>
-                Processing fees, insurance &amp; legal charges add to total
-                cost.
-              </li>
-              <li>
-                Check foreclosure / pre-payment penalties on your current
-                lender.
-              </li>
-              <li>
-                This is illustrative only—confirm numbers with the new lender.
+                Calculator assumes rates remain unchanged for simplicity; real
+                savings may vary.
               </li>
             </ul>
           </div>
         </div>
       )}
 
-      {/* styles */}
+      {/* ───────── Styles ───────── */}
       <style jsx>{`
         .container {
           padding: 1.25rem 1rem;
-          font-family: 'Poppins', sans-serif;
+          font-family: "Poppins", sans-serif;
           background: #fcfffe;
           color: #272b2a;
-          width: 100%;
+          max-width: 1200px;
           margin: 0 auto;
         }
         .top-nav {
@@ -681,18 +668,18 @@ const BalanceTransfer: React.FC = () => {
           font-weight: 700;
           margin-bottom: 0.4rem;
         }
+        .description {
+          text-align: center;
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
         .meaning-card {
           background: #fcfffe;
           border-left: 4px solid #108e66;
           padding: 0.8rem 1rem;
           border-radius: 6px;
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.9rem;
           font-size: 0.95rem;
-        }
-        .description {
-          text-align: center;
-          font-size: 1rem;
-          margin-bottom: 1rem;
         }
         .card {
           background: #ffffff;
@@ -713,15 +700,15 @@ const BalanceTransfer: React.FC = () => {
           row-gap: 1.1rem;
           margin-bottom: 1.2rem;
         }
-        .input-label {
-          display: flex;
-          align-items: center;
-          margin-bottom: 4px;
-        }
         label {
           display: flex;
           flex-direction: column;
           font-size: 0.9rem;
+        }
+        .input-label {
+          display: flex;
+          align-items: center;
+          margin-bottom: 4px;
         }
         input,
         select {
@@ -733,7 +720,6 @@ const BalanceTransfer: React.FC = () => {
         }
         .words {
           font-size: 0.8rem;
-          color: #272b2a;
           margin-top: 2px;
         }
         .error {
@@ -752,6 +738,19 @@ const BalanceTransfer: React.FC = () => {
           border-radius: 4px;
           cursor: pointer;
         }
+        .summary-card {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.65rem;
+          background: #fcfffe;
+          border: 1px solid #272b2a;
+          border-radius: 8px;
+          padding: 0.9rem 1rem;
+          margin-bottom: 0.9rem;
+        }
+        .summary-item {
+          font-size: 1rem;
+        }
         .toggle {
           display: flex;
           justify-content: center;
@@ -762,33 +761,22 @@ const BalanceTransfer: React.FC = () => {
           background: #ffffff;
           border: 1px solid #108e66;
           padding: 0.4rem 0.9rem;
-          cursor: pointer;
           border-radius: 20px;
+          cursor: pointer;
           font-weight: 500;
         }
         .toggle .active {
           background: #108e66;
           color: #fcfffe;
-        }
-        .summary-card {
-          background: #fcfffe;
-          padding: 0.9rem 1rem;
-          border-radius: 8px;
-          margin-bottom: 0.9rem;
-          display: grid;
-          gap: 0.65rem;
-          border: 1px solid #272b2a;
-        }
-        .summary-item {
-          font-size: 1rem;
+          border-color: #108e66;
         }
         .chart-explanation {
           background: #fcfffe;
+          border-left: 4px solid #108e66;
           padding: 0.8rem 1rem;
           border-radius: 8px;
-          margin-bottom: 1rem;
-          border-left: 4px solid #108e66;
           font-size: 0.9rem;
+          margin-bottom: 1rem;
         }
         .chart-container {
           margin-bottom: 1rem;
@@ -797,75 +785,40 @@ const BalanceTransfer: React.FC = () => {
         }
         .disclaimer {
           background: #fcfffe;
-          padding: 0.8rem 1rem;
-          border-radius: 4px;
-          font-size: 0.9rem;
-          color: #272b2a;
           border: 1px solid #272b2a;
+          border-radius: 4px;
+          padding: 0.9rem 1rem;
+          font-size: 0.9rem;
           margin-top: 1.2rem;
-        }
-        .disclaimer h4 {
-          margin: 0 0 0.5rem;
         }
         .disclaimer ul {
           margin: 0;
-          padding-left: 1.4rem;
+          padding-left: 1.3rem;
         }
         .disclaimer li {
           margin-bottom: 0.5rem;
         }
-        /* Tooltip styles */
-        .tooltipIcon {
-          position: relative;
-          display: inline-block;
-          margin-left: 5px;
-          cursor: pointer;
-          vertical-align: middle;
-        }
-        .info-icon {
-          display: inline-block;
-          background: #108e66;
-          color: #fcfffe;
-          border-radius: 50%;
-          font-size: 0.6rem;
-          width: 14px;
-          height: 14px;
-          text-align: center;
-          line-height: 14px;
-          font-weight: bold;
-        }
-        .tooltiptext {
-          visibility: visible;
-          width: 220px;
-          background-color: #108e66;
-          color: #fcfffe;
-          text-align: left;
-          border-radius: 4px;
-          padding: 6px 8px;
-          position: absolute;
-          z-index: 1000;
-          bottom: 130%;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: 0.75rem;
-          line-height: 1.2;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          opacity: 1;
-        }
-        .tooltiptext::after {
-          content: '';
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin-left: -4px;
-          border-width: 4px;
-          border-style: solid;
-          border-color: #108e66 transparent transparent transparent;
-<|diff_marker|> PATCH A
-        }
+
+        /* ───────── Mobile tweaks ───────── */
         @media (max-width: 768px) {
+          .container {
+            padding: 1rem 0.6rem;
+          }
+          .input-group {
+            grid-template-columns: 1fr;
+          }
           .summary-card {
             grid-template-columns: 1fr;
+          }
+          .toggle {
+            flex-direction: column;
+            gap: 0.4rem;
+          }
+          .toggle button {
+            width: 100%;
+          }
+          .chart-container {
+            margin: 0 -0.4rem 1rem;
           }
         }
       `}</style>
