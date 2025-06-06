@@ -7,7 +7,8 @@ import Link from "next/link";
 import ImageWithDescription from "../../components/empower/ImageWithDescription";
 import CardWithDescription from "../../components/empower/CardWithDescription";
 import FaqDropDown from "../../components/empower/faqDropDown";
-import TestimonialCard from "../../components/testimonialCard";
+import TestimonialCard from "../../components/TestimonialCard";
+import PortfolioCard from "../../components/PortfolioCard";
 
 const EmpowerPage = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1024px)");
@@ -159,7 +160,7 @@ const EmpowerPage = () => {
     {
       title: "How much time will my employees need to invest in the program?",
       description:
-        "The initial workshop takes just 45 minutes and is designed to fit into your team’s schedule seamlessly. Ongoing support and financial planning are personalized, allowing employees to engage at their own pace.",
+        "The initial workshop takes just 45 minutes and is designed to fit into your team's schedule seamlessly. Ongoing support and financial planning are personalized, allowing employees to engage at their own pace.",
     },
     {
       title: "What kind of results can I expect as an employer?",
@@ -169,7 +170,7 @@ const EmpowerPage = () => {
     {
       title: "How secure is the financial information shared by employees?",
       description:
-        "We prioritize data security and confidentiality. All financial information is handled by SEBI-registered advisors under strict compliance with industry regulations. Your employees’ data is encrypted and never shared without consent.",
+        "We prioritize data security and confidentiality. All financial information is handled by SEBI-registered advisors under strict compliance with industry regulations. Your employees' data is encrypted and never shared without consent.",
     },
     {
       title:
@@ -179,185 +180,195 @@ const EmpowerPage = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      description: "Testimonial 1 description",
+      author: "Author 1",
+    },
+    {
+      description: "Testimonial 2 description",
+      author: "Author 2",
+    },
+    {
+      description: "Testimonial 3 description",
+      author: "Author 3",
+    },
+  ];
+
   return (
     <div>
       <Head>
         <title>
-          Comprehensive Financial Planning & SEBI-Registered Investment Advisory
-          Services | Spring Money
+          Empower Your Team with Financial Wellness | Spring Money
         </title>
         <meta
           name="description"
-          content="Secure your financial future with personalized financial planning and SEBI-registered investment advisory services from Spring Money. Tailored strategies to achieve your financial goals."
+          content="Transform your workplace with Spring Money's financial wellness programs. Boost productivity and retention by empowering your team with expert financial guidance."
         />
       </Head>
-
-      <div className="flex flex-col items-center gap-9 pb-[2.25rem] self-stretch w-full">
-        <div
-          className="flex p-[3.75rem] sm:py-[3.75] sm:px-4 flex-col justify-center items-start gap-8 self-stretch bg-lightGray bg-cover bg-no-repeat flex-wrap"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, #272B2A 0%, rgba(39, 43, 42, 0.60) 100%), url('/old-images/empower_main.webp')",
-            backgroundPosition: "50%",
-          }}
-        >
-          <div className="flex flex-col justify-center items-center gap-2 self-stretch">
-            <div className="self-stretch text-white text-[4rem] text-white sm:text-[2rem] font-semibold leading-none tracking-[0.046rem] sm:tracking-[0.023rem]">
-              Empower Your Team, Enhance Productivity
-            </div>
-            <div className="self-stretch text-[rgba(252,255,254,0.80)]  text-xl sm:text-[1rem] font-normal">
-              Boost your employees’ financial confidence with expert guidance,
-              personalized tools, and actionable insights.
-            </div>
-          </div>
-          <Link
-            href="https://wa.me/+918668484607"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex p-3 px-6 justify-center items-center gap-2 rounded-md bg-teal-600">
-              <Image
-                src="/old-images/whatsapp.svg"
-                width={32}
-                height={32}
-                alt="whatsapp"
-              />
-              <span className="text-[#FCFFFE] text-lg font-semibold leading-normal sm:text-[1rem]">
-                Drop us a message to get started !
-              </span>
-            </div>
-          </Link>
+      <div className="py-20 px-10 flex items-center justify-center flex-col gap-10">
+        <div className="flex flex-col items-center justify-center gap-5 w-[70%]">
+          <span className="text-5xl font-semibold text-gray-900 text-center">
+            Unlock Your Team&apos;s Potential with Financial Wellness
+          </span>
+          <span className="text-xl font-normal text-gray-600 text-center">
+            Transform your workplace with Spring Money&apos;s financial wellness programs.
+            Boost productivity and retention by empowering your team with expert
+            financial guidance.
+          </span>
         </div>
-
-        <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4">
-          <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900  text-3xl font-semibold leading-normal">
-              Problem Statement
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-            {cardData.map((data, index) => (
-              <div
-                key={index}
-                className="grid grid-col-1 md:grid-col-2 lg:gride-col-3 rounded-lg bg-white shadow-lg"
-              >
-                <CardWithDescription
-                  image={data.image}
-                  title={data.title}
-                  description={data.description}
-                />
+        <div className="flex gap-5">
+          <button className="bg-green-500 rounded-lg text-white font-semibold text-lg px-5 py-3">
+            Request a free demo
+          </button>
+          <button className="border border-gray-900 rounded-lg text-gray-900 font-semibold text-lg px-5 py-3">
+            Learn More
+          </button>
+        </div>
+      </div>
+      <div className="bg-[#FAFAFA] py-20 px-10 flex flex-col items-center justify-center gap-10">
+        <span className="text-5xl font-semibold text-gray-900">
+          Our trusted partners
+        </span>
+        <div className="flex gap-10">
+          <Image
+            src="/old-images/partner1.png"
+            width={120}
+            height={40}
+            alt="jain university"
+          />
+          <Image src="/old-images/partner2.png" width={120} height={40} alt="zoop" />
+          <Image
+            src="/old-images/partner3.png"
+            width={120}
+            height={40}
+            alt="technogise"
+          />
+          <Image
+            src="/old-images/partner4.png"
+            width={120}
+            height={40}
+            alt="dainik bhaskar"
+          />
+        </div>
+      </div>
+      <div className="py-20 px-10 flex flex-col gap-10 items-center justify-center">
+        <span className="text-5xl font-semibold text-gray-900">
+          Transform Your Team&apos;s Financial Future
+        </span>
+        <div className="grid grid-cols-3 gap-5">
+          {cardData.map((item, index) => (
+            <CardWithDescription
+              key={index}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="py-20 px-10 flex flex-col gap-10">
+        <span className="text-5xl font-semibold text-gray-900 text-center">
+          Invest in Your Team&apos;s Success
+        </span>
+        <div className="grid grid-cols-3 gap-5">
+          {ImageData.map((item, index) => (
+            <ImageWithDescription
+              key={index}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="bg-[#000] py-20 px-10 flex flex-col gap-10 items-center justify-center">
+        <div className="flex flex-col gap-5 w-[70%] text-center">
+          <span className="text-5xl font-semibold text-white">
+            Why Financial Wellness Matters
+          </span>
+          <span className="text-xl font-normal text-gray-300">
+            A financially secure team is a productive team. See how our
+            programs drive tangible results for your business.
+          </span>
+        </div>
+        <div className="grid grid-cols-3 gap-5">
+          {benefitsData.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-5 p-5 border border-gray-700 rounded-lg"
+            >
+              <Image src={item.image} width={364} height={200} alt="benefit" />
+              <div className="flex flex-col gap-2">
+                <span className="text-2xl font-semibold text-white">
+                  {item.title}
+                </span>
+                <span className="text-base font-normal text-gray-300">
+                  {item.description}
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
-        <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4 w-full">
-          <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
-              Opportunities For Growth
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full sm:w-full">
-            {ImageData.map((data, index) => {
-              return (
-                <div key={index} className="flex w-1/2 sm:w-full flex-shrink-0">
-                  <ImageWithDescription
-                    image={data.image}
-                    title={data.title}
-                    description={data.description}
-                  />
-                </div>
-              );
-            })}
-          </div>
+      </div>
+      <div className="py-20 px-10 flex flex-col gap-10 items-center justify-center">
+        <span className="text-5xl font-semibold text-gray-900">
+          Our Portfolio
+        </span>
+        <div className="grid grid-cols-2 gap-10">
+          {portfolioData.map((item, index) => (
+            <PortfolioCard
+              key={index}
+              title={item.title}
+              image={item.image}
+              isImage={item.isImage}
+              secondayImage={item.secondaryImage}
+              link={item.link}
+              linkText={item.linkText}
+            />
+          ))}
         </div>
-        <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4 w-full items-center">
-          <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
-              Benefits For Employers
-            </span>
-          </div>
-          <div className="flex flex-col lg:flex-row gap-5">
-            {benefitsData.map((data, index) => (
-              <div
-                key={index}
-                className="flex-[1_1_calc(33.333%_-_1rem)] sm:flex-[1_1_calc(50%_-_1rem)] rounded-lg bg-white shadow-lg"
-              >
-                <CardWithDescription
-                  title={data.title}
-                  description={data.description}
-                  image={data.image}
-                />
-              </div>
-            ))}
-          </div>
+      </div>
+      <div className="bg-[#FAFAFA] py-20 px-10 flex flex-col gap-10 items-center justify-center">
+        <div className="flex flex-col gap-5 w-[70%]">
+          <span className="text-5xl font-semibold text-gray-900 text-center">
+            What Our Partners Say
+          </span>
+          <span className="text-xl font-normal text-gray-600 text-center">
+            Hear from leaders who have transformed their workplaces with Spring
+            Money.
+          </span>
         </div>
-        {isLargeScreen && (
-          <Image
-            src="/old-images/empPower/empower-1.svg"
-            width={1440}
-            height={516}
-            alt="empower"
-          />
-        )}
-
-        {isMediumScreen && (
-          <Image
-            src="/old-images/empPower/empower-1.svg"
-            width={1440}
-            height={516}
-            alt="empower"
-          />
-        )}
-
-        {isSmallScreen && (
-          <Image
-            src="/old-images/empPower/empower-2.svg"
-            width={1440}
-            height={516}
-            alt="empower"
-          />
-        )}
-
-        <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4 w-full">
-          <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
-              Our EmpPower Portfolio
-            </span>
-          </div>
-          <div className="flex items-center justify-center gap-5 self-stretch flex-wrap ">
-            {portfolioData.map((data, index) => (
-              <TestimonialCard
-                key={index}
+        <div className="grid grid-cols-3 gap-10">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              key={index}
+              testimonial={{
+                text: testimonial.description,
+                author: testimonial.author,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="py-20 px-10 flex flex-col gap-10 items-center justify-center">
+        <div className="flex flex-col items-center gap-6 self-stretch">
+          <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
+            Common FAQs
+          </span>
+        </div>
+        <div className="flex flex-col p-4 items-start gap-4 self-stretch rounded-md border border-gray-900_25 bg-white-A700">
+          {faqData.map((data, index) => (
+            <div key={index} className="flex flex-col gap-1 w-full">
+              <FaqDropDown
                 title={data.title}
-                image={data.image}
-                isImage={data.isImage}
-                secondayImage={data.secondaryImage}
-                link={data.link}
-                linkText={data.linkText}
+                description={data.description}
               />
-            ))}
-          </div>
-        </div>
-        <div className="flex px-[3.75rem] py-[0.5rem] flex-col items-start gap-2 bg-white sm:py-0 sm:px-4 w-full">
-          <div className="flex flex-col items-center gap-6 self-stretch">
-            <span className="self-stretch text-center text-gray-900 font-poppins text-3xl font-semibold leading-normal">
-              Common FAQs
-            </span>
-          </div>
-          <div className="flex flex-col p-4 items-start gap-4 self-stretch rounded-md border border-gray-900_25 bg-white-A700">
-            {faqData.map((data, index) => (
-              <div key={index} className="flex flex-col gap-1 w-full">
-                <FaqDropDown
-                  title={data.title}
-                  description={data.description}
-                />
-                {faqData.length - 1 !== index && (
-                  <hr className="w-full border-t border-gray-900_25 my-2" />
-                )}
-              </div>
-            ))}
-          </div>
+              {faqData.length - 1 !== index && (
+                <hr className="w-full border-t border-gray-900_25 my-2" />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
