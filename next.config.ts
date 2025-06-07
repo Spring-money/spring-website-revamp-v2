@@ -1,10 +1,29 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // 🔧 other config options …
   images: {
-    domains: ["static.wixstatic.com"],
-  },
-};
+    // allow both Wix-hosted and Unsplash images
+    domains: ['static.wixstatic.com', 'images.unsplash.com'],
 
-export default nextConfig;
+    /* -----------------------------------------------------------
+       Prefer stricter control?  Replace the `domains` array above
+       with `remotePatterns` like this:
+
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+        pathname: '/**',          // keep full access
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',          // or narrow to `/photo-*` etc.
+      },
+    ],
+    ----------------------------------------------------------- */
+  },
+}
+
+export default nextConfig

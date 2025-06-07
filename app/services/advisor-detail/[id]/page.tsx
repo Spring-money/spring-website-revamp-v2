@@ -1,4 +1,9 @@
 // /src/app/advisor-detail/[id]/page.tsx
+// -----------------------------------------------------------------------------
+// Advisor Detail Page – fully‑typed, error‑free implementation with FAQ section
+// -----------------------------------------------------------------------------
+
+import { use } from 'react';
 import {
   ArrowLeft,
   MapPin,
@@ -7,136 +12,212 @@ import {
   Video,
   Users,
   Newspaper,
-} from "lucide-react";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
-import {
-  mockAdvisors,
-  type Advisor,
-  type Testimonial,
-  type Specialization,
-  type AudienceType,
-} from "@/services/data/advisors";
-import TestimonialCard from "@/components/TestimonialCard";
-import BlogPost, { BlogPostType } from "@/components/BlogPost";
-import ClientImage from "@/components/ClientImage";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Badge } from "@/components/ui/badge";
+import type { Advisor, AudienceType, Testimonial } from '@/services/data/advisors';
+import { mockAdvisors } from '@/services/data/advisors';
+import TestimonialCard from '@/components/TestimonialCard';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 /* --------------------------------------------------------------------
-   Helper types
+   Types & Constants
 -------------------------------------------------------------------- */
-interface ServiceItem {
-  name: string;
-  description: string;
-}
-interface FeeItem {
-  service: string;
-  amount: string;
-}
+interface ServiceItem { name: string; description: string; }
+interface FeeItem { service: string; amount: string; }
+interface QA { question: string; answer: string; }
 
-/* --------------------------------------------------------------------
-   Sample blog data (static for UI mock‑up)
--------------------------------------------------------------------- */
-const sampleBlogs: BlogPostType[] = [
-  {
-    id: "1",
-    title: "Understanding Mutual Fund Expense Ratios",
-    excerpt:
-      "Learn how expense ratios impact your investment returns and what to look for when choosing mutual funds.",
-    date: "June 15, 2023",
-    slug: "understanding-mutual-fund-expense-ratios",
-    image:
-      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=800&q=60",
-    author: "John Doe",
-  },
-  {
-    id: "2",
-    title: "Tax Planning Strategies for High‑Income Professionals",
-    excerpt:
-      "Discover effective tax‑planning strategies specifically designed for doctors, lawyers, and other high‑income professionals.",
-    date: "May 22, 2023",
-    slug: "tax-planning-strategies-high-income",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=60",
-    author: "Jane Smith",
-  },
-  {
-    id: "3",
-    title: "Retirement Planning in Your 40s: What You Need to Know",
-    excerpt:
-      "It's never too late to start planning for retirement. Here's what to focus on if you're beginning in your 40s.",
-    date: "April 10, 2023",
-    slug: "retirement-planning-40s",
-    image:
-      "https://images.unsplash.com/photo-1559519529-0936e4058364?auto=format&fit=crop&w=800&q=60",
-    author: "Michael Johnson",
-  },
+const sampleBlogs = [
+  { id: '1', title: 'Understanding Mutual Fund Expense Ratios', excerpt: 'Learn how expense ratios impact your investment returns and what to look for when choosing mutual funds.', date: 'June 15, 2023', slug: 'understanding-mutual-fund-expense-ratios', image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=800&q=60', author: 'John Doe' },
+  { id: '2', title: 'Tax Planning Strategies for High‑Income Professionals', excerpt: 'Discover effective tax‑planning strategies specifically designed for doctors, lawyers, and other high‑income professionals.', date: 'May 22, 2023', slug: 'tax-planning-strategies-high-income', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=60', author: 'Jane Smith' },
+  { id: '3', title: 'Retirement Planning in Your 40s: What You Need to Know', excerpt: "It's never too late to start planning for retirement. Here's what to focus on if you're beginning in your 40s.", date: 'April 10, 2023', slug: 'retirement-planning-40s', image: 'https://images.unsplash.com/photo-1559519529-0936e4058364?auto=format&fit=crop&w=800&q=60', author: 'Michael Johnson' },
 ];
 
-/* --------------------------------------------------------------------
-   Static intro‑video map (1‑to‑1 with mock advisor ids)
--------------------------------------------------------------------- */
 const videoMap: Record<string, string> = {
-  "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
-  "2": "https://www.youtube.com/embed/TvnX-xEjQYk",
-  "3": "https://www.youtube.com/embed/VIDEO_ID_3",
-  "4": "https://www.youtube.com/embed/VIDEO_ID_4",
-  "5": "https://www.youtube.com/embed/VIDEO_ID_5",
+  '1': 'https://www.youtube.com/embed/JWcG7FCQu1w',
+  '2': 'https://www.youtube.com/embed/TvnX-xEjQYk',
+  '3': 'https://www.youtube.com/embed/VIDEO_ID_3',
+  '4': 'https://www.youtube.com/embed/VIDEO_ID_4',
+  '5': 'https://www.youtube.com/embed/VIDEO_ID_5',
 };
 
-/* -------------------------------------------------------------------- 
-   Page component 
+/* --------------------------------------------------------------------
+   FAQ content (6 Q&A per advisor)
 -------------------------------------------------------------------- */
-// Helper function to get advisor data
-function getAdvisor(id: string) {
-  const advisor = mockAdvisors.find((a) => String(a.id) === id);
-  if (!advisor) notFound();
-  return advisor;
+const faqBank: Record<string, QA[]> = {
+  '1': [
+    { question: 'What makes MyGuide2Wealth different from other advisors?', answer: 'We focus on holistic financial wellness with strategic planning and continuous education tailored to your goals.' },
+    { question: 'How do you charge for your services?', answer: 'Transparent flat fee for planning, plus an optional annual retainer for ongoing support.' },
+    { question: 'Can I meet virtually?', answer: 'Yes. Secure Zoom meetings and digital document handling are standard.' },
+    { question: 'How often will you review my plan?', answer: 'Twice‑yearly formal reviews plus quarterly check‑ins or as needed for life changes.' },
+    { question: 'Do you earn product commissions?', answer: 'No. We are fee‑only and commission‑free for unbiased advice.' },
+    { question: 'What should I prepare for the first meeting?', answer: 'Recent pay slips, investment statements, insurance policies, and a list of goals.' },
+  ],
+  '2': [
+    { question: 'What is Candor Investing’s philosophy?', answer: 'Evidence‑based, low‑cost investing with a quality‑business tilt.' },
+    { question: 'Do you manage smallcases?', answer: 'Yes—SEBI‑registered model portfolios clients can replicate.' },
+    { question: 'How often is my portfolio rebalanced?', answer: 'Monthly drift reviews with threshold‑based rebalancing.' },
+    { question: 'Can you help liquidate ESOPs?', answer: 'Yes—ESOP diversification and tax guidance are core services.' },
+    { question: 'Do you have minimums?', answer: 'No strict AUM minimum; recommended ₹25 000 monthly investment ability.' },
+    { question: 'How are fees structured?', answer: 'Flat ₹18 000 planning fee plus 0.80 % on equity AUM above ₹10 L.' },
+  ],
+  '3': [
+    { question: 'How do you avoid double taxation for NRIs?', answer: 'By utilising DTAA treaties and foreign tax credits effectively.' },
+    { question: 'Can you handle fund repatriation?', answer: 'Yes—advice on LRS limits, 15CA/CB filings, and bank coordination.' },
+    { question: 'Do you serve NRIs worldwide?', answer: 'Yes, except jurisdictions with regulatory restrictions.' },
+    { question: 'What if I return to India?', answer: 'We craft a transition roadmap covering residency status, assets, and taxes.' },
+    { question: 'Communication frequency?', answer: 'Quarterly video calls plus on‑demand email support.' },
+    { question: 'Are you fee‑only fiduciary?', answer: 'Absolutely—compensation is solely client‑paid.' },
+  ],
+  '4': [
+    { question: 'What makes ARTHA FinPlan unique?', answer: 'Retirement‑centric planning with education and transparency.' },
+    { question: 'Do you sell products?', answer: 'No—only unbiased policy recommendations.' },
+    { question: 'How do you compute retirement corpus?', answer: 'We model inflation, longevity, healthcare costs, and lifestyle.' },
+    { question: 'Serve clients outside Pune?', answer: 'Yes—secure virtual consultations across India and abroad.' },
+    { question: 'Engagement timeline?', answer: 'Plans implemented in 4–6 weeks; annual reviews thereafter.' },
+    { question: 'Fee schedule?', answer: 'Flat ₹25 000 plan; annual review ₹7 500.' },
+  ],
+  '5': [
+    { question: 'Do you work only with HNIs?', answer: 'We specialise in HNIs but accept any client needing sophisticated advice.' },
+    { question: 'Estate‑planning services?', answer: 'Coordination with legal experts for wills, trusts, and governance.' },
+    { question: 'Data confidentiality?', answer: 'Encrypted vault storage and NDAs for every engagement.' },
+    { question: 'Are portfolios tax‑efficient?', answer: 'Yes—asset location, harvesting, and instrument choice maximise tax alpha.' },
+    { question: 'Onboarding process?', answer: 'Intro call → Data gathering → Draft plan → Implementation → Monitoring.' },
+    { question: 'Performance fees?', answer: 'No—transparent 1 % AUM fee above ₹1 Cr with zero hidden costs.' },
+  ],
+};
+
+/* --------------------------------------------------------------------
+   Helpers
+-------------------------------------------------------------------- */
+function getAdvisor(id: string): Advisor {
+  const found = mockAdvisors.find((a): a is Advisor => String(a.id) === id);
+  if (!found) notFound();
+  return found;
 }
 
-export default async function AdvisorDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>   // <-- params is now a Promise
-}) {
-  const { id } = await params;      // <-- resolve it immediately
-  const advisor = getAdvisor(id);   // synchronous lookup against mock data
+/* --------------------------------------------------------------------
+   Page Component
+-------------------------------------------------------------------- */
+export default function AdvisorDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const advisor = getAdvisor(id);
 
-  /* ------------------------------------------------------------------
-     Derived & fallback data
-  ------------------------------------------------------------------ */
-  const address = advisor.location ?? "Location not specified";
-  const sebiReg = advisor.reg ?? "INA1000137000";
-  const services: ServiceItem[] = (advisor.services as ServiceItem[]) ?? [];
+  /* Derived data */
+  const address = advisor.location ?? 'Location not specified';
+  const sebiReg = advisor.reg ?? 'INA1000137000';
+  const services: ServiceItem[] = advisor.services ?? [];
   const feeStructure: FeeItem[] = [
-    { service: "Financial Planning", amount: "₹15 000 – ₹35 000" },
-    { service: "Investment Management", amount: "0.75 – 1.25 % of AUM" },
-    { service: "Hourly Consultation", amount: "₹2 500 / hour" },
+    { service: 'Financial Planning', amount: '₹15 000 – ₹35 000' },
+    { service: 'Investment Management', amount: '0.75 – 1.25 % of AUM' },
+    { service: 'Hourly Consultation', amount: '₹2 500 / hour' },
   ];
-
-  const credentials = [
-    "Certified Financial Planner (CFP)",
-    "SEBI Registered Investment Advisor",
-  ];
-
-  const testimonials = (advisor.testimonials ?? []).slice(0, 3);
+  const credentials = ['Certified Financial Planner (CFP)', 'SEBI Registered Investment Advisor'];
+  const testimonials = (advisor.testimonials ?? []) as Testimonial[];
+  const faqs = faqBank[advisor.id] ?? [];
   const advisorVideo = videoMap[advisor.id];
+  const isSpecial = advisor.id === '1';
 
+  /* Card factories */
+  const FeeCard = () => (
+    <Card>
+      <CardHeader className="pb-2"><CardTitle className="text-lg font-semibold text-[#272A2B]">Fee Structure</CardTitle></CardHeader>
+      <CardContent>
+        <div className="space-y-1 text-sm">
+          {feeStructure.map(({ service, amount }) => (
+            <div key={service} className="flex justify-between">
+              <span className="text-[#272A2B]">{service}</span>
+              <span className="font-medium text-[#272A2B]">{amount}</span>
+            </div>
+          ))}
+        </div>
+        <p className="pt-4 text-xs text-gray-500">* Fees may vary depending on scope.</p>
+      </CardContent>
+    </Card>
+  );
+
+  const CredentialsCard = () => (
+    <Card>
+      <CardHeader className="pb-2"><CardTitle className="text-lg font-semibold text-[#272A2B]">Credentials</CardTitle></CardHeader>
+      <CardContent>
+        <ul className="space-y-1">
+          {credentials.map((cred) => (
+            <li key={cred} className="flex items-center">
+              <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-spring-green">✓</span>
+              <span className="text-[#272A2B]">{cred}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+
+  const IdealClientsCard = () => (
+    <Card>
+      <CardHeader className="pb-2"><CardTitle className="flex items-center text-lg font-semibold text-[#272A2B]"><Users size={18} className="mr-2 text-spring-green"/>Ideal Clients</CardTitle></CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2 pt-2">
+          {advisor.audience.map((aud) => (
+            <span key={aud} className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">{aud}</span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+
+  const SidebarStack = () => (
+    <div className="flex flex-col space-y-6">
+      {FeeCard()}
+      {CredentialsCard()}
+      {IdealClientsCard()}
+    </div>
+  );
+
+  const InfoCardsGrid = () => (
+    <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {FeeCard()}
+        {CredentialsCard()}
+        {IdealClientsCard()}
+      </div>
+    </div>
+  );
+
+  const FAQSection = () => (
+    faqs.length ? (
+      <div className="mx-auto mt-12 max-w-7xl px-4 pb-12">
+        <h2 className="mb-4 text-2xl font-semibold text-[#272A2B]">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {faqs.map(({ question, answer }, idx: number) => (
+            <details
+              key={idx}
+              className="group rounded-lg border border-spring-green bg-[#F5FFFB] p-4 shadow-sm open:shadow-md"
+            >
+              <summary className="flex items-center justify-between cursor-pointer text-spring-green font-semibold">
+                <span>{question}</span>
+                <ChevronDown size={16} className="transition-transform group-open:rotate-180" />
+              </summary>
+              <hr className="-mx-4 my-2 h-px w-[calc(100%+2rem)] border-0 bg-spring-green" />
+              <p className="text-sm text-[#272A2B]">{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    ) : null
+  );
+
+  /* ----------------------------- JSX ----------------------------- */
   return (
     <main className="mx-auto w-[90%] overflow-x-hidden">
       <div className="min-h-screen bg-gray-50 pb-12">
-        {/* ------------------------------------------------------------ */}
-        {/*                        Hero Section                        */}
-        {/* ------------------------------------------------------------ */}
+        {/* ----------------------------- Hero Section ----------------------------- */}
         <div className="border-b border-gray-200 bg-[#FCFFFE] pb-2 md:pb-4">
           <div className="mx-auto max-w-7xl px-4 pt-8">
-            <Link
-              href="/services"
-              className="mb-6 inline-flex items-center text-spring-green hover:text-opacity-80"
-            >
+            <Link href="/services" className="mb-6 inline-flex items-center text-spring-green hover:text-opacity-80">
               <ArrowLeft size={16} className="mr-1" />
               Back to Advisors
             </Link>
@@ -146,79 +227,39 @@ export default async function AdvisorDetailPage({
                 <div className="flex flex-col gap-8 md:flex-row">
                   {/* Photo */}
                   <div className="md:w-1/4">
-                  <div className="aspect-[1/1] overflow-hidden rounded-lg bg-gray-100 shadow-md">
-                      <ClientImage
-                        src={advisor.photo}
-                        alt={advisor.advisorName}
-                        className="h-full w-full object-cover"
-                      />
+                    <div className="aspect-[1/1] overflow-hidden rounded-lg bg-gray-100 shadow-md">
+                      <Image src={advisor.photo} alt={advisor.advisorName} width={500} height={500} className="h-full w-full object-cover" />
                     </div>
                   </div>
-
                   {/* Info */}
                   <div className="md:w-2/3">
-                    {/* Firm name + badge */}
                     <div className="mb-2 flex flex-wrap items-center gap-2">
-                      <h1 className="text-3xl font-bold text-[#272A2B]">
-                        {advisor.firmName}
-                      </h1>
+                      <h1 className="text-3xl font-bold text-[#272A2B]">{advisor.firmName}</h1>
                       {advisor.verifiedBySpring && (
-                        <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-semibold text-spring-green">
-                          <CheckCircle size={14} className="mr-1" />
-                          Verified by Spring
-                        </span>
+                        <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-semibold text-spring-green"><CheckCircle size={14} className="mr-1"/>Verified by Spring</span>
                       )}
                     </div>
-
-                    {/* Principal advisor + SEBI reg */}
                     <div className="mb-4 flex flex-wrap items-center gap-x-8 gap-y-2">
-                      <p className="text-sm">
-                        <span className="font-semibold text-[#272A2B]">
-                          Principal Advisor:
-                        </span>{" "}
-                        <span className="font-semibold text-[#272A2B]">
-                          {advisor.PrincipalAdvisor}
-                        </span>
-                      </p>
-
-                      <p className="text-sm font-semibold text-[#272A2B]">
-                        {sebiReg}
-                      </p>
+                      <p className="text-sm"><span className="font-semibold text-[#272A2B]">Principal Advisor:</span> {advisor.PrincipalAdvisor}</p>
+                      <p className="text-sm font-semibold text-[#272A2B]">{sebiReg}</p>
                     </div>
-
-                    <div className="mb-6 flex items-center text-gray-500">
-                      <MapPin size={16} className="mr-1" />
-                      {address}
-                    </div>
-
+                    <div className="mb-6 flex items-center text-gray-500"><MapPin size={16} className="mr-1"/>{address}</div>
                     <p className="mb-6 text-gray-700">{advisor.about}</p>
-
-                    {/* Specialisation chips */}
                     <div className="-m-1 flex flex-wrap">
                       {advisor.specializations.map((spec) => (
-                        <span
-                          key={spec}
-                          className="m-1 inline-flex whitespace-nowrap rounded-full bg-[#018e66] px-2.5 py-0.5 text-xs font-semibold text-[#fcfffe]"
-                        >
-                          {spec}
-                        </span>
+                        <span key={spec} className="m-1 inline-flex whitespace-nowrap rounded-full bg-[#018e66] px-2.5 py-0.5 text-xs font-semibold text-[#fcfffe]">{spec}</span>
                       ))}
                     </div>
-
-                    {/* CTA */}
-                    {advisor.contactDetails.calendlyLink && (
-                      <div className="mt-6">
-                        <a
-                          href={advisor.contactDetails.calendlyLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex h-10 items-center justify-center rounded-md bg-[#018e66] px-4 font-medium text-[#fcfffe] shadow hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
-                        >
-                          <Calendar size={16} className="mr-2" />
-                          Schedule Meeting
+                    <div className="mt-6 flex flex-wrap gap-4">
+                      {advisor.contactDetails.calendlyLink && (
+                        <a href={advisor.contactDetails.calendlyLink} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center justify-center rounded-md px-4 font-medium shadow focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2" style={{ backgroundColor: '#108e66', color: '#fefefe' }}>
+                          <Calendar size={16} className="mr-2"/>Schedule Meeting
                         </a>
-                      </div>
-                    )}
+                      )}
+                      {['2','5'].includes(advisor.id) && advisor.contactDetails.phone && (
+                        <a href={`tel:${advisor.contactDetails.phone}`} className="inline-flex h-10 items-center justify-center rounded-md border border-spring-green bg-transparent px-4 font-medium text-spring-green hover:bg-green-50">view smallcase</a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -226,219 +267,50 @@ export default async function AdvisorDetailPage({
           </div>
         </div>
 
-        {/* ------------------------------------------------------------ */}
-        {/*                Main Grid (primary + sidebar)               */}
-        {/* ------------------------------------------------------------ */}
-        <div className="mx-auto max-w-7xl gap-8 px-4 py-4 lg:grid lg:grid-cols-3">
-          {/* ---------------- Primary column -------------------- */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Intro video */}
-            <Card>
-              <CardHeader className="flex flex-col items-start pb-4">
-                <div className="mb-1 flex items-center text-2xl font-semibold text-[#272A2B]">
-                  <Video size={24} className="mr-2 text-spring-green" />
-                  Meet {advisor.advisorName}
-                </div>
-                <p className="text-lg font-light text-[#272A2B]">
-                  {advisor.tagline}
-                </p>
-              </CardHeader>
-              <CardContent>
-                <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    src={advisorVideo}
-                    title={`${advisor.advisorName} introduction video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full rounded-md object-cover"
-                  />
-                </AspectRatio>
-              </CardContent>
-            </Card>
+        {/* --------------------------- Conditional Layout --------------------------- */}
+        {isSpecial ? InfoCardsGrid() : (
+          <div className="mx-auto max-w-7xl gap-8 px-4 py-8 lg:grid lg:grid-cols-3">
+            <div className="space-y-8 lg:col-span-2">
+              <Card>
+                <CardHeader className="flex flex-col items-start pb-4"><div className="mb-1 flex items-center text-2xl font-semibold text-[#272A2B]"><Video size={24} className="mr-2 text-spring-green"/>Meet {advisor.advisorName}</div><p className="text-lg font-light text-[#272A2B]">{advisor.tagline}</p></CardHeader>
+                <CardContent><AspectRatio ratio={16/9}><iframe src={advisorVideo} title="intro video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="h-full w-full rounded-md object-cover"/></AspectRatio></CardContent>
+              </Card>
+            </div>
+            <aside className="mt-8 flex flex-col space-y-6 lg:mt-0">{SidebarStack()}</aside>
           </div>
+        )}
 
-          {/* ---------------- Sidebar --------------------------- */}
-          <aside className="mt-8 flex flex-col space-y-6 lg:mt-0">
-            {/* Fee structure */}
-            <Card className="flex flex-col">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-semibold text-[#272A2B]">
-                  Fee Structure
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="grow">
-                <div className="space-y-1 text-sm">
-                  {feeStructure.map((f) => (
-                    <div key={f.service} className="flex justify-between">
-                      <span className="text-[#272A2B]">{f.service}</span>
-                      <span className="font-medium text-[#272A2B]">
-                        {f.amount}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-auto pt-4 text-xs text-gray-500">
-                  * Fees may vary according to complexity and scope of work
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Credentials */}
-            <Card className="flex flex-col">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-semibold text-[#272A2B]">
-                  Credentials
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="grow">
-                <ul className="space-y-1">
-                  {credentials.map((cred) => (
-                    <li key={cred} className="flex items-center">
-                      <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-spring-green">
-                        ✓
-                      </span>
-                      <span className="text-[#272A2B]">{cred}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Ideal clients */}
-            <Card className="flex flex-col">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center text-lg font-semibold text-[#272A2B]">
-                  <Users size={18} className="mr-2 text-spring-green" />
-                  Ideal Clients
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="grow">
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {advisor.audience.map((aud: AudienceType) => (
-                    <span key={aud} className="m-1 inline-flex whitespace-nowrap rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">
-                      {aud}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-2 text-sm text-gray-500">
-                  These are the client profiles{" "}
-                  {advisor.advisorName.split(" ")[0]} works with most often.
-                </p>
-              </CardContent>
-            </Card>
-          </aside>
-        </div>
-
-        {/* ------------------------------------------------------------ */}
-        {/*                   Services Offered Card                     */}
-        {/* ------------------------------------------------------------ */}
+        {/* ---------------------------- Services Offered --------------------------- */}
         <div className="mx-auto mb-8 max-w-7xl px-4">
           <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-2xl font-semibold text-[#272A2B]">
-                Services Offered
-              </CardTitle>
-            </CardHeader>
+            <CardHeader className="pb-2"><CardTitle className="text-2xl font-semibold text-[#272A2B]">Services Offered</CardTitle></CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-                {services.map((svc, index) => (
-                  <div
-                    key={svc.name}
-                    className={`flex items-start gap-3 rounded-lg bg-white p-2 ${
-                      index === 0 && advisor.id === "4" ? "col-span-2" : "" // Only for advisor with ID 4, first service takes full width
-                    }`}
-                  >
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-spring-green">
-                      ✓
-                    </span>
-                    <div className="flex-1 space-y-1 overflow-hidden">
-                      <h3 className="font-medium text-[#272A2B]">{svc.name}</h3>
-                      <p className="break-words text-sm text-gray-500">
-                        {svc.description}
-                      </p>
-                    </div>
-                  </div>
+                {services.map((svc, i) => (
+                  <div key={svc.name} className={`flex items-start gap-3 rounded-lg bg-white p-2 ${i===0 && advisor.id==='4' ? 'col-span-2' : ''}`}> <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-spring-green">✓</span><div className="flex-1 space-y-1 overflow-hidden"><h3 className="font-medium text-[#272A2B]">{svc.name}</h3><p className="break-words text-sm text-gray-500">{svc.description}</p></div></div>
                 ))}
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* ------------------------------------------------------------ */}
-        {/*                        About Section                        */}
-        {/* ------------------------------------------------------------ */}
-        <div className="mx-auto max-w-7xl px-4">
-          <Card>
-            <CardHeader className="pt-5 pb-2">
-              <CardTitle className="text-2xl font-semibold text-[#272A2B]">
-                About {advisor.firmName}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-[#272A2B]">{advisor.description}</p>
-            </CardContent>
-          </Card>
-        </div>
+        {/* -------------------------------- About --------------------------------- */}
+        <div className="mx-auto max-w-7xl px-4"><Card><CardHeader className="pt-5 pb-2"><CardTitle className="text-2xl font-semibold text-[#272A2B]">About {advisor.firmName}</CardTitle></CardHeader><CardContent><p className="text-[#272A2B]">{advisor.description}</p></CardContent></Card></div>
 
-        {/* ------------------------------------------------------------ */}
-        {/*                       Testimonials                         */}
-        {/* ------------------------------------------------------------ */}
+        {/* --------------------------- Testimonials ------------------------------- */}
         {testimonials.length > 0 && (
-          <div className="mx-auto mt-12 max-w-7xl px-4">
-            <h2 className="mb-4 text-2xl font-semibold text-[#272A2B]">
-              Client Testimonials
-            </h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {testimonials.map((t: Testimonial, i: number) => (
-                <TestimonialCard key={i} testimonial={t} />
-              ))}
-            </div>
-          </div>
+          <div className="mx-auto mt-12 max-w-7xl px-4"><h2 className="mb-4 text-2xl font-semibold text-[#272A2B]">Client Testimonials</h2><div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">{testimonials.map((t, idx) => (<TestimonialCard key={idx} testimonial={t}/>))}</div></div>
         )}
 
-{/* ------------------------------------------------------------ */}
-{/*                       Latest Articles Section               */}
-{/* ------------------------------------------------------------ */}
-<div className="mx-auto mt-12 max-w-7xl px-4">
-  <header className="mb-4 flex items-center justify-between">
-    <h2 className="text-2xl font-semibold text-[#272A2B]">
-      Latest Articles
-    </h2>
-    <Link
-      className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
-      href={`/services/advisor-detail/${advisor.id}/blogs`}
-    >
-      <Newspaper size={16} />
-      Blogs
-    </Link>
-  </header>
-  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-    {sampleBlogs.map((post) => (
-      <div key={post.id} className="bg-white p-6 rounded-lg shadow-lg">
-        <div className="h-48 bg-gray-100 rounded-md overflow-hidden">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="mt-4 text-xl font-semibold text-[#272A2B]">
-          {post.title}
-        </h3>
-        <p className="mt-2 text-sm text-gray-500">{post.excerpt}</p>
-        <p className="mt-4 text-xs text-gray-400">{post.date}</p>
-        <Link
-          href={`/blog/${post.slug}`}
-          className="mt-4 inline-block text-sm font-medium text-spring-green hover:underline"
-        >
-          Read More
-        </Link>
-      </div>
-    ))}
-  </div>
-</div>
+        
+        
 
+        {/* --------------------------- Latest Articles --------------------------- */}
+        <div className="mx-auto mt-12 max-w-7xl px-4"><header className="mb-4 flex items-center justify-between"><h2 className="text-2xl font-semibold text-[#272A2B]">Latest Articles</h2><Link href={`/services/advisor-detail/${advisor.id}/blogs`} className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"><Newspaper size={16}/>Blogs</Link></header><div className="grid grid-cols-1 gap-6 md:grid-cols-3">{sampleBlogs.map(({id,title,excerpt,date,slug,image})=>(<div key={id} className="rounded-lg bg-white p-6 shadow-lg"><div className="h-48 overflow-hidden rounded-md bg-gray-100"><Image src={image} alt={title} width={400} height={200} className="h-full w-full object-cover"/></div><h3 className="mt-4 text-xl font-semibold text-[#272A2B]">{title}</h3><p className="mt-2 text-sm text-gray-500">{excerpt}</p><p className="mt-4 text-xs text-gray-400">{date}</p><Link href={`/blog/${slug}`} className="mt-4 inline-block text-sm font-medium text-spring-green hover:underline">Read More</Link></div>))}</div></div>
       </div>
+
+      {/* FAQ Section */}
+        {FAQSection()}
     </main>
   );
 }
