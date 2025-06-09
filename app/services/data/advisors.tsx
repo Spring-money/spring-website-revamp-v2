@@ -150,7 +150,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9876543210",
       email: "rajiv@wealthwisdom.in",
       website: "https://wealthwisdom.in",
-      calendlyLink: "https://calendly.com/rajivmehta",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/rajivmehta"
     },
     sebiRegistrationNumber: "INA100013700",
     verifiedBySpring: true,
@@ -162,8 +162,8 @@ export const mockAdvisors: Advisor[] = [
   {
     id: "2",
     firmName: "Candor Investing",
-    advisorName: "Amey Kulkarnai",
-    PrincipalAdvisor: "Amey Kulkarnai",
+    advisorName: "Amey Kulkarni",
+    PrincipalAdvisor: "Amey Kulkarni",
     reg: "SEBI RIA REG NO: INA000019479",
     photo: "/advisors/AmeyKulkarni2.svg",
     location: "Pune, Maharashtra",
@@ -215,7 +215,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9000001122",
       email: "priya@futureforwardfinancial.in",
       website: "https://futureforwardfinancial.in",
-      calendlyLink: "https://calendly.com/priyasingh",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/priyasingh"
     },
     sebiRegistrationNumber: "INH000002345",
     verifiedBySpring: true,
@@ -276,7 +276,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9867452310",
       email: "vikram@globalindianadvisors.com",
       website: "https://globalindianadvisors.com",
-      calendlyLink: "https://calendly.com/vikramkhanna",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
     },
     sebiRegistrationNumber: "INH000003456",
     verifiedBySpring: true,
@@ -337,7 +337,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9844556677",
       email: "ajay@retireright.in",
       website: "https://retireright.in",
-      calendlyLink: "https://calendly.com/ajayvaidya",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/ajayvaidya"
     },
     sebiRegistrationNumber: "INH000004567",
     verifiedBySpring: true,
@@ -397,7 +397,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9833221144",
       email: "nisha@elitewealthmanagers.com",
       website: "https://elitewealthmanagers.com",
-      calendlyLink: "https://calendly.com/nishaagarwal",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/nishaagarwal"
     },
     sebiRegistrationNumber: "INH000005678",
     verifiedBySpring: true,
