@@ -351,11 +351,11 @@ export const mockAdvisors: Advisor[] = [
       "Helped clients generate reliable pension income exceeding ₹2 crores annually.",
     ],
     testimonials: [
-      {
-        text: "Thanks to Ajay's methodical approach, we've secured our retirement and can help our children financially as well.",
-        author: "Suresh & Lalita Murthy",
-        designation: "Retired Government Officials",
-      },
+      // {
+      //   text: "Thanks to Ajay's methodical approach, we've secured our retirement and can help our children financially as well.",
+      //   author: "Suresh & Lalita Murthy",
+      //   designation: "Retired Government Officials",
+      // },
     ],
     socialMedia: [
       { type: "facebook", url: "https://facebook.com/retireright" },
@@ -411,11 +411,11 @@ export const mockAdvisors: Advisor[] = [
       "Guided 30+ founders through pre‑IPO wealth diversification",
     ],
     testimonials: [
-      {
-        text: "Nisha's expertise in structuring our family wealth has been invaluable, especially for business succession across generations.",
-        author: "Raj Malhotra",
-        designation: "Business Owner",
-      },
+      // {
+      //   text: "Nisha's expertise in structuring our family wealth has been invaluable, especially for business succession across generations.",
+      //   author: "Raj Malhotra",
+      //   designation: "Business Owner",
+      // },
     ],
     socialMedia: [
       { type: "linkedin", url: "https://linkedin.com/in/nishaagarwal" },
@@ -477,29 +477,29 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
   "1": [
     {
       text: "Schedule Meeting",
-      href: ".",
+      href: "https://wa.me/+919811031535",
       variant: 'primary',
       icon: <Calendar size={16} className="mr-2" />
     },
   ],
   "2": [
     {
-      text: "Schedule Meeting",
-      href: ".",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
-    },
-    {
       text: "View Smallcase",
-      href: "tel:+919000001122",
-      variant: 'secondary',
-      icon: <ChartBar size={16} className="mr-2" />
+      href: "https://candorinvesting.smallcase.com/",
+      variant: 'primary',
+      icon: <ChartBar size={16} className="mr-2"/>
     },
+    // {
+    //   text: "View Smallcase",
+    //   href: "tel:+919000001122",
+    //   variant: 'secondary',
+    //   icon: <ChartBar size={16} className="mr-2" />
+    // },
   ],
   "3": [
     {
       text: "Schedule Meeting",
-      href: ".",
+      href: "https://calendly.com/kiran-nswealth",
       variant: 'primary',
       icon: <Calendar size={16} className="mr-2" />
     },
@@ -507,22 +507,16 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
   "4": [
     {
       text: "Schedule Meeting",
-      href: ".",
+      href: "https://wa.me/+919769935011",
       variant: 'primary',
       icon: <Calendar size={16} className="mr-2" />
     },
   ],
   "5": [
     {
-      text: "Schedule Meeting",
-      href: ".",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
-    },
-    {
       text: "View Smallcase",
-      href: "tel:+919833221144",
-      variant: 'secondary',
+      href: "https://www.smallcase.com/manager/finsharpe/smallcases",
+      variant: 'primary',
       icon: <ChartBar size={16} className="mr-2" />
     },
   ]
@@ -533,34 +527,21 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
 -------------------------------------------------------------------- */
 export const feeStructureMap: Record<string, FeeItem[]> = {
   "1": [
-    { service: "Financial Planning", amount: "₹15,000 – ₹35,000" },
-    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },
-    { service: "Hourly Consultation", amount: "₹2,500 / hour" },
-    { service: "Tax Planning", amount: "₹10,000 – ₹25,000" }
-  ],
+    { service: "Financial Planning", amount: "₹15,000 – ₹25,000" },
+    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },  ],
   "2": [
     { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
-    { service: "Portfolio Management", amount: "1% – 1.5% of AUM" },
     { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
-    { service: "Wealth Management", amount: "1.25% – 1.75% of AUM" }
   ],
   "3": [
-    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
-    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
-    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
-    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+    { service: "Financial Checkup", amount: "Free" },
+    { service: "Financial Consultation", amount: "₹15,000 – ₹25,000" },
   ],
   "4": [
-    { service: "Comprehensive Financial Planning", amount: "₹25,000 – ₹45,000" },
-    { service: "Online Financial Advisory", amount: "₹20,000 – ₹35,000" },
-    { service: "Implementation & Review", amount: "₹15,000 / quarter" },
-    { service: "Retirement Planning", amount: "₹30,000 – ₹50,000" }
-  ],
+    { service: "Comprehensive Planning", amount: "₹25,000 – ₹45,000" },  ],
   "5": [
-    { service: "Wealth Management", amount: "1.5% – 2% of AUM" },
-    { service: "Estate Planning", amount: "₹40,000 – ₹60,000" },
-    { service: "Tax Planning", amount: "₹30,000 – ₹50,000" },
-    { service: "Financial Wellness Program", amount: "₹35,000 – ₹55,000" }
+    { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
+    { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
   ]
 };
 
@@ -569,10 +550,10 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
 -------------------------------------------------------------------- */
 export const videoMap: Record<string, string> = {
   "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
-  "2": "https://www.youtube.com/embed/TvnX-xEjQYk",
+  "2": "https://youtu.be/2KXY_0pqccA?si=axvC3EHb97-4AN9a",
   "3": "https://www.youtube.com/embed/VIDEO_ID_3",
-  "4": "https://www.youtube.com/embed/VIDEO_ID_4",
-  "5": "https://www.youtube.com/embed/VIDEO_ID_5",
+  "4": "https://youtu.be/18F9gdXnKnw?si=4U6L3I9tO4kCUt75",
+  "5": "https://youtu.be/3UJcfUdvF4U",
 };
 
 /* --------------------------------------------------------------------
@@ -580,44 +561,42 @@ export const videoMap: Record<string, string> = {
 -------------------------------------------------------------------- */
 export const faqBank: Record<string, QA[]> = {
   "1": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
   ],
   "2": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
   ],
   "3": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-  ],
+    { question: "What is comprehensive financial planning, and why do I need it?", answer: "Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind." },
+    { question: "How is NS Wealth different from other financial advisors?", answer: "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas." },
+    { question: "Who can benefit from NS Wealth's services?", answer: "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs." },
+    { question: "What does it mean to be a SEBI-registered investment advisor (RIA)?", answer: "Being SEBI-registered means that NS Wealth adheres to strict regulatory standards set by the Securities and Exchange Board of India (SEBI). As an RIA, we are required to act in a fiduciary capacity—putting your interests above our own. This ensures transparency, ethical practices, and unbiased advice tailored to your financial well-being." },
+    { question: "How often will my financial plan be reviewed?", answer: "We conduct regular reviews of your financial plan—typically once every quarter or as needed based on changes in your life circumstances or market conditions. These reviews ensure that your plan remains aligned with your goals and allows us to make any necessary adjustments for optimal performance." },  ],
   "4": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
   ],
   "5": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
+    // { question: "Question?", answer: "Answer" },
   ],
 };
 
@@ -627,33 +606,23 @@ export const faqBank: Record<string, QA[]> = {
 export const clientTypePillsMap: Record<string, string[]> = {
   "1": [
     "Salaried Professionals",
-    "Young Families",
-    "Tax Planning",
-    "Investment Planning"
+    "HNIs",
   ],
   "2": [
     "Business Owners",
-    "Entrepreneurs",
-    "Wealth Management",
-    "Succession Planning"
+    "HNIs",
   ],
   "3": [
-    "NRIs",
-    "Global Investors",
-    "Cross-border Planning",
-    "International Tax"
+    "Doctors",
+    "Salaried Professionals",
   ],
   "4": [
     "Retirees",
     "Pre-retirees",
-    "Estate Planning",
-    "Income Planning"
   ],
   "5": [
     "High Net Worth",
     "Family Offices",
-    "Wealth Preservation",
-    "Legacy Planning"
   ]
 };
 
@@ -661,10 +630,10 @@ export const clientTypePillsMap: Record<string, string[]> = {
    Ideal Client Description Map
 -------------------------------------------------------------------- */
 export const idealClientDescriptionMap: Record<string, string> = {
-  "1": "I specialize in helping salaried professionals and young families build a strong financial foundation. My approach focuses on creating sustainable wealth through systematic investment planning and tax optimization strategies.",
+  "1": "We specialize in guiding salaried professionals towards smart financial growth and HNIs with advanced wealth management and strategic investments.",
   "2": "I work with business owners and entrepreneurs who are looking to grow their wealth while managing their business finances effectively. My expertise lies in business succession planning and comprehensive wealth management.",
-  "3": "I specialize in serving NRIs and global investors, providing expert guidance on cross-border investments, tax planning, and wealth management across multiple jurisdictions.",
-  "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and retirement income strategies.",
+  "3": "I specialize in empowering Doctors and ambitious Salaried Professionals to maximize their wealth potential with Strategic investment planning, efficient tax optimization, and bespoke wealth management solutions.",
+  "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and robust retirement income strategies to ensure long-term financial security.",
   "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs."
 };
 

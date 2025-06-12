@@ -456,8 +456,8 @@ export default function AdvisorDetailPage({
         )}
 
         {/* --------------------------- Latest Articles --------------------------- */}
-        <div className="mx-auto mt-12 max-w-7xl px-4">
-          <header className="mb-4 flex items-center justify-between">
+        {/* <div className="mx-auto mt-12 max-w-7xl px-4"> */}
+          {/* <header className="mb-4 flex items-center justify-between">
             <h2 className="text-2xl font-semibold text-[#272A2B]">
               Latest Articles
             </h2>
@@ -494,9 +494,9 @@ export default function AdvisorDetailPage({
                 </Link>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
-      </div>
+      {/* </div> */}
 
       {/* FAQ Section */}
       {FAQSection()}
