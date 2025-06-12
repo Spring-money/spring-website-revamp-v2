@@ -53,6 +53,7 @@ const AdvisorFilters: React.FC<AdvisorFiltersProps> = ({
             Location
           </label>
           <select
+            aria-label="Select location"
             value={selectedLocation || ''}
             onChange={(e) => setSelectedLocation(e.target.value as Location || null)}
             className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE]"
@@ -72,6 +73,7 @@ const AdvisorFilters: React.FC<AdvisorFiltersProps> = ({
             Client Type
           </label>
           <select
+            aria-label="Select client type"
             value={selectedAudience || ''}
             onChange={(e) => setSelectedAudience(e.target.value as AudienceType || null)}
             className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE]"
