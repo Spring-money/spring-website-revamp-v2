@@ -61,7 +61,7 @@ export default function OnboardingForm() {
               <p className="mb-6 text-[#272A2B]"> Get in touch with us on whatsapp or email for the next steps.</p>
               <div className="flex justify-center gap-4 mt-6">
                 <a
-                  href={`mailto:omkar.springmoney@gmail.com`}
+                  href={`mailto:omkar.springmoney@gmail.com`} target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 items-center justify-center rounded-md px-4 font-medium shadow focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
                   style={{ backgroundColor: '#018e66', color: '#fcfffe' }}
                 >
@@ -70,7 +70,7 @@ export default function OnboardingForm() {
                 </a>
 
                 <a
-                  href={`https://wa.me/+91 8666884607`}
+                  href={`https://wa.me/+918668484607`} target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 items-center justify-center rounded-md px-4 font-medium shadow focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
                   style={{ backgroundColor: '#018e66', color: '#fcfffe' }}
                 >
@@ -79,7 +79,7 @@ export default function OnboardingForm() {
                 </a>
               </div>
               <p className="mt-4 text-sm text-gray-500">
-                By applying, you agree to Spring Money <a href="#" className="underline hover:text-[#108E66]">Terms of Service</a> and <a href="#" className="underline hover:text-[#108E66]">Privacy Policy</a>
+                By applying, you agree to Spring Money <a href="/privacy-policy" className="underline hover:text-[#108E66]">Terms of Service</a> and <a href="/privacy-policy" className="underline hover:text-[#108E66]">Privacy Policy</a>
               </p>
             </div>
           </div>

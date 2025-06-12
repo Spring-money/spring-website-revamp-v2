@@ -53,42 +53,28 @@ const faqBank: Record<string, QA[]> = {
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
   ],
   '2': [
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
    ],
   '3': [
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
+    { question: 'What is comprehensive financial planning, and why do I need it?', answer:"Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind." },
+    { question: 'How is NS Wealth different from other financial advisors?', answer: "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas." },
+    { question: "Who can benefit from NS Wealth's services?", answer: "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs." },
   ],
   '4': [
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
     { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
   ],
   '5': [
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' },
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
-    { question: 'Question?', answer: 'Answer' }, 
+    { question: "Do I have to open a broking account with Finsharpe?", answer: "No. You can execute our advice on any broking account of your choice. However, we recommend you assign a fresh broking account for easier segregation and tracking." },
+    { question: "Do I have to transfer funds to your account to start?", answer: "No. The investments will be held in your broking account. We would be guiding you on the exact transactions to be done and the subsequent changes." },
+    { question: "I have some on-going SIPs in Mutual Funds. Could you advise on what to do?", answer: "Yes. We will provide a one-time review of your portfolio. If you would like to continue with Mutual Funds you can invest in our Mutual Fund baskets. Else you could select any of our Direct Stocks strategies as per your risk profile." },
   ],
+  
 };
 
 /* --------------------------------------------------------------------
@@ -112,10 +98,8 @@ export default function AdvisorDetailPage({ params }: { params: Promise<{ id: st
   const sebiReg = advisor.reg ?? 'INA1000137000';
   const services: ServiceItem[] = advisor.services ?? [];
   const feeStructure: FeeItem[] = [
-    { service: 'Financial Planning', amount: '₹15 000 – ₹35 000' },
-    { service: 'Investment Management', amount: '0.75 – 1.25 % of AUM' },
-    { service: 'Hourly Consultation', amount: '₹2 500 / hour' },
-  ];
+    { service: 'Financial Planning', amount: '₹15 000 – ₹25 000' },
+    { service: 'Investment Management', amount: '0.75 – 1.25 % of AUM' },  ];
   const credentials = ['Certified Financial Planner (CFP)', 'SEBI Registered Investment Advisor'];
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
   const faqs = faqBank[advisor.id] ?? [];
