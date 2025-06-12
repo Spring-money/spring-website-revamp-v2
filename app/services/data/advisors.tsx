@@ -1,3 +1,5 @@
+import { Calendar, ChartBar } from "lucide-react";
+
 export type Specialization =
   | "Retirement Planning"
   | "Tax Planning"
@@ -128,7 +130,7 @@ export const mockAdvisors: Advisor[] = [
     ],
     successStories: [
       "Helped a client retire 5 years early through strategic planning and investment management",
-      "Created a tax‑efficient portfolio that saved clients an average of 3.5 % annually",
+      "Created a tax‑efficient portfolio that saved clients an average of 3.5 % annually",
     ],
     testimonials: [
       {
@@ -193,12 +195,12 @@ export const mockAdvisors: Advisor[] = [
       },
       {
         name: "Wealth Management",
-        description: "Comprehensive strategies for preserving and growing your wealth over time.. ",
+        description: "Comprehensive strategies for preserving and growing your wealth over time.. ",
       },
     ],
     successStories: [
       "Guided over 1,000 employees through ESOP diversification.",
-      "Built an automated model portfolio that outperformed the Nifty by 4 % CAGR since 2019.",
+      "Built an automated model portfolio that outperformed the Nifty by 4 % CAGR since 2019.",
     ],
     testimonials: [
       {
@@ -302,21 +304,21 @@ export const mockAdvisors: Advisor[] = [
       `ARTHA FinPlan is a SEBI Registered Investment Advisor dedicated to providing personalized, professional, and unbiased financial planning and investment advisory services. Founded by Priyadarshini Mulye, a seasoned financial expert with an MBA in Finance and CFP® certification, our core philosophy revolves around helping clients achieve their realistic financial goals through a holistic, fee‑only approach.\nWe believe in educating our clients about personal finance management, acting as a reliable partner throughout their wealth‑building journey. As a fiduciary, we are committed to acting in your best interest, ensuring complete transparency and conflict‑free advice by not being involved in any product distribution.`,
     services: [
       {
-        name: "Comprehensive financial Planning",
+        name: "Comprehensive Financial Planning",
         description: "Risk Profiling & Assessment, Goal-based Planning (Dream Home, Child's Education/Marriage, Retirement, World Tour, etc.), Review of Existing Investments & Insurance (Second Opinion), Tax Planning & Optimization, Insurance Planning (Adequate Coverage Assessment), Investment Planning (Aligned with Goals & Risk Profile), Retirement Planning",
       },
       {
-        name: "Online Financial Advisior",
-        description: "Serving clients across India and globally, with a significant client base from other cities..",
+        name: "Online Financial Advisory",
+        description: "Serving clients across India and globally, with a significant client base from other cities.",
       },
       {
         name: "Implementation & Review",
-        description: "We guide you through the implementation of your financial plan and provide regular reviews to track progress and make necessary adjustments..",
+        description: "We guide you through the implementation of your financial plan and provide regular reviews to track progress and make necessary adjustments.",
       },
-      // {
-      //   name: "Senior Citizen Investment Advisory",
-      //   description: "Low‑risk instruments and allocation guidance focused on capital preservation and regular cash‑flow.",
-      // },
+      {
+        name: "Retirement Planning",
+        description: "Specialized retirement planning services including pension optimization, income planning, and wealth preservation strategies for retirees.",
+      },
     ],
     successStories: [
       "Built inflation‑beating retirement plans for 500+ families.",
@@ -441,3 +443,226 @@ export const locations: Location[] = [
   "Remote/Virtual",
   "Noida, Uttar Pardesh",
 ];
+
+/* --------------------------------------------------------------------
+   Custom CTA Map
+-------------------------------------------------------------------- */
+export const customCTAMap: Record<string, CustomCTA[]> = {
+  "1": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
+  "2": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+    {
+      text: "View Smallcase",
+      href: "tel:+919000001122",
+      variant: 'secondary',
+      icon: <ChartBar size={16} className="mr-2" />
+    },
+  ],
+  "3": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
+  "4": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
+  "5": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+    {
+      text: "View Smallcase",
+      href: "tel:+919833221144",
+      variant: 'secondary',
+      icon: <ChartBar size={16} className="mr-2" />
+    },
+  ]
+};
+
+/* --------------------------------------------------------------------
+   Fee Structure Map
+-------------------------------------------------------------------- */
+export const feeStructureMap: Record<string, FeeItem[]> = {
+  "1": [
+    { service: "Financial Planning", amount: "₹15,000 – ₹35,000" },
+    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },
+    { service: "Hourly Consultation", amount: "₹2,500 / hour" },
+    { service: "Tax Planning", amount: "₹10,000 – ₹25,000" }
+  ],
+  "2": [
+    { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
+    { service: "Portfolio Management", amount: "1% – 1.5% of AUM" },
+    { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Wealth Management", amount: "1.25% – 1.75% of AUM" }
+  ],
+  "3": [
+    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
+    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
+    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+  ],
+  "4": [
+    { service: "Comprehensive Financial Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Online Financial Advisory", amount: "₹20,000 – ₹35,000" },
+    { service: "Implementation & Review", amount: "₹15,000 / quarter" },
+    { service: "Retirement Planning", amount: "₹30,000 – ₹50,000" }
+  ],
+  "5": [
+    { service: "Wealth Management", amount: "1.5% – 2% of AUM" },
+    { service: "Estate Planning", amount: "₹40,000 – ₹60,000" },
+    { service: "Tax Planning", amount: "₹30,000 – ₹50,000" },
+    { service: "Financial Wellness Program", amount: "₹35,000 – ₹55,000" }
+  ]
+};
+
+/* --------------------------------------------------------------------
+   Video Map
+-------------------------------------------------------------------- */
+export const videoMap: Record<string, string> = {
+  "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
+  "2": "https://www.youtube.com/embed/TvnX-xEjQYk",
+  "3": "https://www.youtube.com/embed/VIDEO_ID_3",
+  "4": "https://www.youtube.com/embed/VIDEO_ID_4",
+  "5": "https://www.youtube.com/embed/VIDEO_ID_5",
+};
+
+/* --------------------------------------------------------------------
+   FAQ Bank
+-------------------------------------------------------------------- */
+export const faqBank: Record<string, QA[]> = {
+  "1": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
+  "2": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
+  "3": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
+  "4": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
+  "5": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
+};
+
+/* --------------------------------------------------------------------
+   Client Type Pills Map
+-------------------------------------------------------------------- */
+export const clientTypePillsMap: Record<string, string[]> = {
+  "1": [
+    "Salaried Professionals",
+    "Young Families",
+    "Tax Planning",
+    "Investment Planning"
+  ],
+  "2": [
+    "Business Owners",
+    "Entrepreneurs",
+    "Wealth Management",
+    "Succession Planning"
+  ],
+  "3": [
+    "NRIs",
+    "Global Investors",
+    "Cross-border Planning",
+    "International Tax"
+  ],
+  "4": [
+    "Retirees",
+    "Pre-retirees",
+    "Estate Planning",
+    "Income Planning"
+  ],
+  "5": [
+    "High Net Worth",
+    "Family Offices",
+    "Wealth Preservation",
+    "Legacy Planning"
+  ]
+};
+
+/* --------------------------------------------------------------------
+   Ideal Client Description Map
+-------------------------------------------------------------------- */
+export const idealClientDescriptionMap: Record<string, string> = {
+  "1": "I specialize in helping salaried professionals and young families build a strong financial foundation. My approach focuses on creating sustainable wealth through systematic investment planning and tax optimization strategies.",
+  "2": "I work with business owners and entrepreneurs who are looking to grow their wealth while managing their business finances effectively. My expertise lies in business succession planning and comprehensive wealth management.",
+  "3": "I specialize in serving NRIs and global investors, providing expert guidance on cross-border investments, tax planning, and wealth management across multiple jurisdictions.",
+  "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and retirement income strategies.",
+  "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs."
+};
+
+/* --------------------------------------------------------------------
+   Types
+-------------------------------------------------------------------- */
+export interface ServiceItem {
+  name: string;
+  description: string;
+}
+
+export interface FeeItem {
+  service: string;
+  amount: string;
+}
+
+export interface QA {
+  question: string;
+  answer: string;
+}
+
+export interface CustomCTA {
+  text: string;
+  href: string;
+  variant: 'primary' | 'secondary';
+  icon?: React.ReactNode;
+}

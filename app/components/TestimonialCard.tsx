@@ -17,7 +17,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => (
   <Card className="relative flex h-full flex-col gap-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
     {/* Quote */}
-    <blockquote className="italic leading-relaxed text-[#272A2B]">
+    <blockquote className="text-left italic leading-relaxed text-[#272A2B]">
       &ldquo;{testimonial.text}&rdquo;
     </blockquote>
 
@@ -31,7 +31,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       )}
 
       {/* Author block */}
-      <div className="text-right">
+      <div className="text-left">
         <p className="font-semibold text-[#272A2B]">{testimonial.author}</p>
         {testimonial.designation && (
           <p className="text-sm text-gray-500">{testimonial.designation}</p>
