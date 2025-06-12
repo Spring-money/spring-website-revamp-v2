@@ -250,7 +250,7 @@ export const mockAdvisors: Advisor[] = [
     location: "Pune, Maharashtra",
     tagline: "Your search for Financial Independence ends here!",
     specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
-    audience: ["Doctors", "IT Professionals", "Business Owners",],
+    audience: [ "Business Owners",],
     about:
       "Our team of qualified financial planners, including CFP certificants, collaborates to craft holistic financial plans that deliver clarity and exceptional value to our clients.",
     description:
