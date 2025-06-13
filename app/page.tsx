@@ -178,12 +178,14 @@ const WhoWeServeCards: React.FC<WhoWeServeCardsProps> = ({
   subHeading,
 }) => {
   return (
-    <div className="flex flex-col gap-4 rounded-lg border border-[#108E66] bg-[#FCFFFE] p-6 items-center">
-      <Image src={img} width={441} height={400} alt="who we serve image" className="mb-4 w-full h-auto object-contain"/>
-      <span className="text-[24px] md:text-[28px] font-semibold text-[#272a2b] mb-2">
-        {heading}
-      </span>
-      <span className="text-[18px] md:text-[20px] font-normal text-[#272a2b]">{subHeading}</span>
+    <div className="flex flex-col gap-0 rounded-lg border-2 border-[#108E66] bg-[#FCFFFE] overflow-hidden">
+      <Image src={img} width={441} height={400} alt="who we serve image" className="w-full h-auto object-cover mb-2"/>
+      <div className="flex flex-col w-full text-left p-6"> {/* New wrapper div for text to ensure left alignment and full width */}
+        <span className="text-[16px] md:text-[24px] font-semibold text-[#272a2b] mb-0">
+          {heading}
+        </span>
+        <span className="text-[16px] md:text-[16px] font-normal text-[#272a2b]">{subHeading}</span>
+      </div>
     </div>
   );
 };
@@ -221,43 +223,52 @@ export default function HomePage() {
       </section>
 
       {/* WHO WE SERVE SECTION (Carousel with Auto-Scrolling) */}
-      <section className="mx-auto  max-w-screen-xl">
-        <h2 className="text-3xl font-bold text-center text-[#272B2A] mb-4">
+      <section className="mx-auto max-w-screen-2xl px-8 py-4">
+        <h2 className="text-4xl font-bold text-center text-[#272B2A] mb-2">
         We Serve You and Your Aspirations
         </h2>
         <p className="text-center text-[#272B2A] mb-10 max-w-2xl mx-auto text-xl font-normal">
           Tailored Financial Strategies for Every Professional Journey.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 sm:px-6 md:px-16 max-w-screen-xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-screen-2xl">
           <WhoWeServeCards
             img="/who-we-serve/it.svg"
             heading="IT Professionals"
-            subHeading="Maximize IT Earnings: ESOP & Wealth Strategies."
+            subHeading="Maximize IT Earnings: ESOPs, Stocks & Wealth Growth."
           />
           <WhoWeServeCards
             img="/who-we-serve/mba.svg"
             heading="MBA Graduates"
-            subHeading="MBA Financial Edge: Maximize Income, Minimize Taxes."
+            subHeading="Boost Income, Reduce Taxes, Build Wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/professional.svg"
             heading="Young Professionals"
-            subHeading="Young Pro Wealth: Smart Start, Long-Term Growth"
+            subHeading="Young Pro Wealth: Smart Start for Long-Term Financial Growth."
           />
           <WhoWeServeCards
             img="/who-we-serve/forces.svg"
-            heading="Armed Forces & Government Officials"
-            subHeading="Serve & Secure: Pension & Investment Strategies"
+            heading="Armed Forces"
+            subHeading="Serve & Secure: Pension, Investment & Financial Planning."
           />
           <WhoWeServeCards
+            img="/who-we-serve/govt-official.svg"
+            heading="Government Officials & Public Servants"
+            subHeading="Customized Planning: Pension, Tax & Loan Strategies."
+          />
+          <WhoWeServeCards
+            img="/who-we-serve/business.svg"
+            heading="Enterepreneurs & Business Owners"
+            subHeading="Business Wealth: Integrated Growth, Tax & Succession Plans."
+          /><WhoWeServeCards
             img="/who-we-serve/doctors.svg"
             heading="Doctors & Medical Professionals"
-            subHeading="Secure Your Practice: Loan, Tax & Retirement Planning."
+            subHeading="Secure Your Practice: Loans, Tax, Retirement & Wealth Plans."
           />
           <WhoWeServeCards
             img="/who-we-serve/lawyer.svg"
             heading="Lawyers & Legal Professionals"
-            subHeading="Legal Wealth: Navigate Irregular Income & Taxes."
+            subHeading="Legal Wealth: Expert Planning for Irregular Income & Taxes."
           />
         </div>
       </section>
@@ -265,7 +276,7 @@ export default function HomePage() {
       <CarouselCards />
 
       {/* TOOLS SECTION (Carousel with Auto-Scrolling) */}
-      <section className="mx-auto py-20 text-center bg-[#fcfffe] text-[#272B2A] max-w-screen-xl p">
+      <section className="mx-auto px-8 py-4 text-center bg-[#fcfffe] text-[#272B2A] max-w-screen-2xl">
         <div className="max-w-3xl mx-auto mb-12">
           <h1 className="text-[40px] font-semibold mb-4 text-[#108E66]">
             Smart Financial Tools
@@ -274,12 +285,12 @@ export default function HomePage() {
           Empower Your Financial Decisions with comprehensive Calculators.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
           {calculators.map((calc) => (
             <div
               key={calc.id}
               // whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 bg-[#F0FAF7] border border-[#108e6633] p-4 rounded-2xl shadow-md  items-start hover:shadow-xl transition-shadow flex flex-col"
+              className="flex-shrink-0 bg-[#F0FAF7] border border-[#108e66] p-4 rounded-2xl shadow-md  items-start hover:shadow-xl transition-shadow flex flex-col"
             >
               <h2 className="text-xl text-[#272B2A] font-medium mb-2">
                 {calc.title}
@@ -289,7 +300,7 @@ export default function HomePage() {
               </p>
               <Link
                 href={`/tools/${calc.slug}`}
-                className="flex border border-[#108E66] gap-[6px] px-4 py-2 rounded-md hover:bg-white transition text-center"
+                className="flex border border-[#108E66] gap-[6px] px-6 py-2 rounded-md hover:bg-white transition text-center"
               >
                 <p className="text-base font-semibold text-[#108E66]">
                   Check Now

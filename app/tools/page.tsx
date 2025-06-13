@@ -638,7 +638,7 @@ export default function ToolsPage() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search calculators..."
-          className="w-full border border-[#108e6633] rounded-md px-4 py-2   mb-5"
+          className="w-full border-2 border-[#272a2b] rounded-md px-4 py-2   mb-5"
           type="text"
         />
       </div>
@@ -664,8 +664,7 @@ export default function ToolsPage() {
 
       {/* Filters – desktop grid of chips */}
       <div
-        className="hidden sm:grid gap-2.5 w-full max-w-screen-xxl px-4 md:px-[60px] mb-2"
-        style={{ gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))" }}
+        className="hidden sm:flex sm:flex-wrap gap-2.5 w-full max-w-screen-xxl px-4 md:px-[60px] mb-2 justify-center"
       >
         {CATEGORIES.map((category) => (
           <button
@@ -705,7 +704,7 @@ export default function ToolsPage() {
       </div>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-[#fcfffe] w-full">
+      <section className="py-8 bg-[#fcfffe] w-full">
         <div className="flex flex-col items-center gap-4 text-center">
           <p className="text-[40px] font-semibold text-[#272B2A]">Our Mission & Vision</p>
           <p className="text-xl font-normal text-[#272B2A] px-4 md:px-[60px] max-w-screen-xl">

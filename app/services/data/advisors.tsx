@@ -4,6 +4,7 @@ export type Specialization =
   | "Retirement Planning"
   | "Tax Planning"
   | "NRI Services"
+  | "Custom Smallcase"
   | "Estate Planning"
   | "Mutual Funds"
   | "Insurance"
@@ -258,7 +259,7 @@ export const mockAdvisors: Advisor[] = [
     photo: "/advisors/NitinSawant3.svg",
     location: "Pune, Maharashtra",
     tagline: "Your search for Financial Independence ends here!",
-    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+    specializations: ["Retirement Planning", "Tax Planning", "Financial Planning"],
     audience: ["Business Owners"],
     about:
       "Our team of qualified financial planners, including CFP certificants, collaborates to craft holistic financial plans that deliver clarity and exceptional value to our clients.",
@@ -398,7 +399,11 @@ export const mockAdvisors: Advisor[] = [
     photo: "/advisors/RohanBorawake5.svg",
     location: "Pune, Maharashtra",
     tagline: "Sophisticated strategies for substantial wealth",
-    specializations: ["Wealth Management", "Estate Planning", "Tax Planning"],
+    specializations: [
+      "Stock Investments",
+      "Custom Smallcase",
+      "Financial Planning",
+    ],  
     audience: ["HNI", "Business Owners"],
     about:
       "As fiduciaries, we offer investment advice with full transparency and without any conflict of interest.",
@@ -570,7 +575,7 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
 export const videoMap: Record<string, string> = {
   "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
   "2": "https://www.youtube.com/embed/2KXY_0pqccA",
-  "3": "https://youtu.be/3HcIGQdyvjo?si=nFroc9nbPgdAVrwR",
+  "3": "https://www.youtube.com/embed/3HcIGQdyvjo",
   "4": "https://www.youtube.com/embed/18F9gdXnKnw",
   "5": "https://www.youtube.com/embed/3UJcfUdvF4U",
 };
