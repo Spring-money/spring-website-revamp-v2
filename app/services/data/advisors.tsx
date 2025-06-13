@@ -99,34 +99,38 @@ export const mockAdvisors: Advisor[] = [
     reg: "SEBI RIA REG NO: INA100013700",
     photo: "/advisors/RobinsJoseph1.svg",
     location: "Noida, Uttar Pardesh",
-    tagline: "Your partner on a journey Towards prosperity and Financial wellness",
+    tagline:
+      "Your partner on a journey Towards prosperity and Financial wellness",
     specializations: [
       "Financial Planning",
       "Retirement Planning",
       "Tax Planning",
     ],
     audience: ["Salaried", "HNI"],
-    
+
     about:
       "At MyGuide2Wealth, we're not just financial advisors — we're your partners on a journey towards prosperity and financial wellness.",
-    description:
-      `MyGuide2Wealth is your dedicated partner on the path to financial planning and Investment advisory . We are accredited as SEBI Registered Investment Advisor and Certified Financial Planner CM  who are here to guide you towards your financial aspirations. . We are independent , unbiased and fee only financial planners based in Noida carving the best investment strategies, equity research & financial planning for our client all over the globe`,
+    description: `MyGuide2Wealth is your dedicated partner on the path to financial planning and Investment advisory . We are accredited as SEBI Registered Investment Advisor and Certified Financial Planner CM  who are here to guide you towards your financial aspirations. . We are independent , unbiased and fee only financial planners based in Noida carving the best investment strategies, equity research & financial planning for our client all over the globe`,
     services: [
       {
         name: "Holistic Financial Planning",
-        description: "Crafting personalized strategies to achieve your financial goals and secure your future.",
+        description:
+          "Crafting personalized strategies to achieve your financial goals and secure your future.",
       },
       {
         name: "Personalized Retirement Planning",
-        description: "Secure your golden years with custom retirement strategies designed to ensure a comfortable and worry-free future.",
+        description:
+          "Secure your golden years with custom retirement strategies designed to ensure a comfortable and worry-free future.",
       },
       {
         name: "Strategic Tax Optimization",
-        description: "Reduce your taxable income and increase your net worth through proactive tax strategies and compliance expertise.",
+        description:
+          "Reduce your taxable income and increase your net worth through proactive tax strategies and compliance expertise.",
       },
       {
         name: "Children Education Planning",
-        description: "Invest in your child's future. We design smart investment portfolios to fund their higher education dreams.",
+        description:
+          "Invest in your child's future. We design smart investment portfolios to fund their higher education dreams.",
       },
     ],
     successStories: [
@@ -184,24 +188,27 @@ export const mockAdvisors: Advisor[] = [
     audience: ["Young Professionals", "Salaried"],
     about:
       "Candor Investing is a SEBI registered investment advisory firm founded by Amey Kulkarni. Amey is a full-time investor who brings significant experience to the table, having worked for over 9 years in corporate roles at companies like L&T, Jindal Steel, and Siemens Ltd.",
-    description:
-      `Candor Investing, founded by SEBI registered investment advisor Amey Kulkarni, operates on a core philosophy of "buying quality businesses at reasonable valuations and holding until the company executes." This approach is underpinned by strong values: Integrity, ensuring clients receive appropriate advice and that responsibilities are fulfilled; Focus, driven by the organization's mission to achieve strong CAGR returns; Excellence, aiming for extraordinary results beyond average market performance; and Simplicity, advocating for straightforward investment approaches over complex or exotic solutions. With 15 years of experience, Candor Investing serves a diverse client base including 15 NRI clients and a total of 200 clients, guided by Amey's extensive background in reputable corporations like L&T and Siemens. `,
+    description: `Candor Investing, founded by SEBI registered investment advisor Amey Kulkarni, operates on a core philosophy of "buying quality businesses at reasonable valuations and holding until the company executes." This approach is underpinned by strong values: Integrity, ensuring clients receive appropriate advice and that responsibilities are fulfilled; Focus, driven by the organization's mission to achieve strong CAGR returns; Excellence, aiming for extraordinary results beyond average market performance; and Simplicity, advocating for straightforward investment approaches over complex or exotic solutions. With 15 years of experience, Candor Investing serves a diverse client base including 15 NRI clients and a total of 200 clients, guided by Amey's extensive background in reputable corporations like L&T and Siemens. `,
     services: [
       {
         name: "Custom Equity Portfolio Advisory",
-        description: "Invest in your future with a strategically designed equity portfolio tailored specifically to your financial goals and risk profile. We handpick high-quality stocks to optimize for strategic asset growth and deliver personalized returns.",
+        description:
+          "Invest in your future with a strategically designed equity portfolio tailored specifically to your financial goals and risk profile. We handpick high-quality stocks to optimize for strategic asset growth and deliver personalized returns.",
       },
       {
         name: "Curated Model Portfolios (via Smallcase)",
-        description: "Gain access to our expertly curated model portfolios designed for diverse investment objectives, easily accessible and investable through the Smallcase platform. Benefit from our strategic allocation and regular rebalancing for optimal performance.",
+        description:
+          "Gain access to our expertly curated model portfolios designed for diverse investment objectives, easily accessible and investable through the Smallcase platform. Benefit from our strategic allocation and regular rebalancing for optimal performance.",
       },
       {
         name: "Forensic Accounting Insights for Investors",
-        description: "Equip yourself with crucial knowledge to identify red flags and protect your investments from potential accounting frauds and financial misrepresentation. Our program empowers investors with the skills for due diligence and fraud detection.",
+        description:
+          "Equip yourself with crucial knowledge to identify red flags and protect your investments from potential accounting frauds and financial misrepresentation. Our program empowers investors with the skills for due diligence and fraud detection.",
       },
       {
         name: "Wealth Management",
-        description: "Comprehensive strategies for preserving and growing your wealth over time.. ",
+        description:
+          "Comprehensive strategies for preserving and growing your wealth over time.. ",
       },
     ],
     successStories: [
@@ -252,27 +259,30 @@ export const mockAdvisors: Advisor[] = [
     location: "Pune, Maharashtra",
     tagline: "Your search for Financial Independence ends here!",
     specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
-    audience: [ "Business Owners",],
+    audience: ["Business Owners"],
     about:
       "Our team of qualified financial planners, including CFP certificants, collaborates to craft holistic financial plans that deliver clarity and exceptional value to our clients.",
-    description:
-      `Founded by Nitin Sawant and a cadre of seasoned professionals, NS Wealth was born from a vision to establish an all-encompassing financial management system. We recognized the need for services that could be customized to grant individuals freedom from financial burdens, thereby offering a life free from monetary stress. By embracing our proprietary 'Dream > Decide > Do' approach, we empower you to Implement and execute your personalized plan with our guidance. Our commitment to you is unwavering: we provide measurable, executable strategies that propel you toward your goals. Our strength lies in delivering comprehensive financial plans, consolidated investment reports, and end-to-end solutions that bring unparalleled convenience to your financial journey.`,
+    description: `Founded by Nitin Sawant and a cadre of seasoned professionals, NS Wealth was born from a vision to establish an all-encompassing financial management system. We recognized the need for services that could be customized to grant individuals freedom from financial burdens, thereby offering a life free from monetary stress. By embracing our proprietary 'Dream > Decide > Do' approach, we empower you to Implement and execute your personalized plan with our guidance. Our commitment to you is unwavering: we provide measurable, executable strategies that propel you toward your goals. Our strength lies in delivering comprehensive financial plans, consolidated investment reports, and end-to-end solutions that bring unparalleled convenience to your financial journey.`,
     services: [
       {
         name: "1-on-1 Rapid Investment Consultation",
-        description: "Need quick, expert insights on an urgent investment query or a specific portfolio decision? Our focused 1-on-1 session provides direct, actionable advice to help you navigate immediate investment opportunities or challenges with confidence. Get the answers you need, fast.",
+        description:
+          "Need quick, expert insights on an urgent investment query or a specific portfolio decision? Our focused 1-on-1 session provides direct, actionable advice to help you navigate immediate investment opportunities or challenges with confidence. Get the answers you need, fast.",
       },
       {
         name: "Master Your Money with Budgeting 101",
-        description: "Take control of your finances and build a solid foundation for your financial future. Our Budgeting 101 session guides you through practical steps to create an effective budget, track your spending, identify savings opportunities, and achieve your short-term and long-term financial goals. Start your journey to financial freedom today.",
+        description:
+          "Take control of your finances and build a solid foundation for your financial future. Our Budgeting 101 session guides you through practical steps to create an effective budget, track your spending, identify savings opportunities, and achieve your short-term and long-term financial goals. Start your journey to financial freedom today.",
       },
       {
         name: "Navigate Will & Probate Procedures",
-        description: "Understanding the legal processes after a loved one's passing can be complex. Get expert answers on paperwork, legal requirements, and the steps involved in fulfilling a will's provisions to ensure a smooth estate settlement process.",
+        description:
+          "Understanding the legal processes after a loved one's passing can be complex. Get expert answers on paperwork, legal requirements, and the steps involved in fulfilling a will's provisions to ensure a smooth estate settlement process.",
       },
       {
         name: "Comprehensive Financial Consultation for Your Future",
-        description: "This in-depth consultation covers your goals, assets, liabilities, and current financial strategies. Receive personalized advice on wealth building, retirement planning, risk management, and long-term financial security to chart a clear path towards your aspirations.",
+        description:
+          "This in-depth consultation covers your goals, assets, liabilities, and current financial strategies. Receive personalized advice on wealth building, retirement planning, risk management, and long-term financial security to chart a clear path towards your aspirations.",
       },
     ],
     successStories: [
@@ -286,7 +296,7 @@ export const mockAdvisors: Advisor[] = [
         //designation: "NRI, Singapore",
       },
       {
-        text: "Since I came in contact with Nitin, my finance guru, I can not only work with twice the efficiency, but importantly, work freely without any stress. Today I am satisfied with getting even 2 rupees or 2 lakh rupees because whatever my expectations and goals I had set, I have already completed 70-80% of them via my finance.",  
+        text: "Since I came in contact with Nitin, my finance guru, I can not only work with twice the efficiency, but importantly, work freely without any stress. Today I am satisfied with getting even 2 rupees or 2 lakh rupees because whatever my expectations and goals I had set, I have already completed 70-80% of them via my finance.",
         author: "Dr. Abhijeet",
         //designation: "Doctor",
       },
@@ -304,7 +314,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9867452310",
       email: "vikram@globalindianadvisors.com",
       website: "https://globalindianadvisors.com",
-      calendlyLink: "https://calendly.com/kiran-nswealth", 
+      calendlyLink: "https://calendly.com/kiran-nswealth",
     },
     sebiRegistrationNumber: "INH000003456",
     verifiedBySpring: true,
@@ -321,7 +331,8 @@ export const mockAdvisors: Advisor[] = [
     reg: "SEBI RIA REG NO:  INA000011796",
     photo: "/advisors/Priya4.svg",
     location: "Pune, Maharashtra",
-    tagline: "Fee Only Financial Planning services in Simple, Ethical and Unbiased Manner.",
+    tagline:
+      "Fee Only Financial Planning services in Simple, Ethical and Unbiased Manner.",
     specializations: ["Retirement Planning", "Financial Planning", "Insurance"],
     audience: ["Retired", "Salaried"],
     about:
@@ -331,19 +342,23 @@ export const mockAdvisors: Advisor[] = [
     services: [
       {
         name: "Comprehensive Financial Planning",
-        description: "Risk Profiling & Assessment, Goal-based Planning (Dream Home, Child's Education/Marriage, Retirement, World Tour, etc.), Review of Existing Investments & Insurance (Second Opinion), Tax Planning & Optimization, Insurance Planning (Adequate Coverage Assessment), Investment Planning (Aligned with Goals & Risk Profile), Retirement Planning",
+        description:
+          "Risk Profiling & Assessment, Goal-based Planning (Dream Home, Child's Education/Marriage, Retirement, World Tour, etc.), Review of Existing Investments & Insurance (Second Opinion), Tax Planning & Optimization, Insurance Planning (Adequate Coverage Assessment), Investment Planning (Aligned with Goals & Risk Profile), Retirement Planning",
       },
       {
         name: "Online Financial Advisory",
-        description: "Serving clients across India and globally, with a significant client base from other cities.",
+        description:
+          "Serving clients across India and globally, with a significant client base from other cities.",
       },
       {
         name: "Implementation & Review",
-        description: "We guide you through the implementation of your financial plan and provide regular reviews to track progress and make necessary adjustments.",
+        description:
+          "We guide you through the implementation of your financial plan and provide regular reviews to track progress and make necessary adjustments.",
       },
       {
         name: "Retirement Planning",
-        description: "Specialized retirement planning services including pension optimization, income planning, and wealth preservation strategies for retirees.",
+        description:
+          "Specialized retirement planning services including pension optimization, income planning, and wealth preservation strategies for retirees.",
       },
     ],
     successStories: [
@@ -391,19 +406,23 @@ export const mockAdvisors: Advisor[] = [
     services: [
       {
         name: "Comprehensive Financial Planning",
-        description: "Professional Comprehensive Financial Planning services tailored to your needs.",
+        description:
+          "Professional Comprehensive Financial Planning services tailored to your needs.",
       },
       {
         name: "Investment Advisiory Services",
-        description: "Expert investment advice tailored to your financial goals and risk profile.",
+        description:
+          "Expert investment advice tailored to your financial goals and risk profile.",
       },
       {
         name: "Financial Wellness Program",
-        description: "Tailored solutions for individuals and families seeking financial clarity and growth.",
+        description:
+          "Tailored solutions for individuals and families seeking financial clarity and growth.",
       },
       {
         name: "Online financial Advisor",
-        description: "Serving clients across India and globally, providing convenient access to expert advice.",
+        description:
+          "Serving clients across India and globally, providing convenient access to expert advice.",
       },
     ],
     successStories: [
@@ -478,16 +497,16 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
     {
       text: "Schedule Meeting",
       href: "https://wa.me/+919811031535",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
+      variant: "primary",
+      icon: <Calendar size={16} className="mr-2" />,
     },
   ],
   "2": [
     {
       text: "View Smallcase",
       href: "https://candorinvesting.smallcase.com/",
-      variant: 'primary',
-      icon: <ChartBar size={16} className="mr-2"/>
+      variant: "primary",
+      icon: <ChartBar size={16} className="mr-2" />,
     },
     // {
     //   text: "View Smallcase",
@@ -500,26 +519,26 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
     {
       text: "Schedule Meeting",
       href: "https://calendly.com/kiran-nswealth",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
+      variant: "primary",
+      icon: <Calendar size={16} className="mr-2" />,
     },
   ],
   "4": [
     {
       text: "Schedule Meeting",
       href: "https://wa.me/+919769935011",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
+      variant: "primary",
+      icon: <Calendar size={16} className="mr-2" />,
     },
   ],
   "5": [
     {
       text: "View Smallcase",
       href: "https://www.smallcase.com/manager/finsharpe/smallcases",
-      variant: 'primary',
-      icon: <ChartBar size={16} className="mr-2" />
+      variant: "primary",
+      icon: <ChartBar size={16} className="mr-2" />,
     },
-  ]
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -528,7 +547,8 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
 export const feeStructureMap: Record<string, FeeItem[]> = {
   "1": [
     { service: "Financial Planning", amount: "₹15,000 – ₹25,000" },
-    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },  ],
+    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },
+  ],
   "2": [
     { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
     { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
@@ -537,12 +557,11 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
     { service: "Financial Checkup", amount: "Free" },
     { service: "Financial Consultation", amount: "₹15,000 – ₹25,000" },
   ],
-  "4": [
-    { service: "Comprehensive Planning", amount: "₹25,000 – ₹45,000" },  ],
+  "4": [{ service: "Comprehensive Planning", amount: "₹25,000 – ₹45,000" }],
   "5": [
     { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
     { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
-  ]
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -550,10 +569,10 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
 -------------------------------------------------------------------- */
 export const videoMap: Record<string, string> = {
   "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
-  "2": "https://youtu.be/2KXY_0pqccA?si=axvC3EHb97-4AN9a",
+  "2": "https://www.youtube.com/embed/2KXY_0pqccA",
   "3": "https://www.youtube.com/embed/VIDEO_ID_3",
-  "4": "https://youtu.be/18F9gdXnKnw?si=4U6L3I9tO4kCUt75",
-  "5": "https://youtu.be/3UJcfUdvF4U",
+  "4": "https://www.youtube.com/embed/18F9gdXnKnw",
+  "5": "https://www.youtube.com/embed/3UJcfUdvF4U",
 };
 
 /* --------------------------------------------------------------------
@@ -577,11 +596,34 @@ export const faqBank: Record<string, QA[]> = {
     // { question: "Question?", answer: "Answer" },
   ],
   "3": [
-    { question: "What is comprehensive financial planning, and why do I need it?", answer: "Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind." },
-    { question: "How is NS Wealth different from other financial advisors?", answer: "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas." },
-    { question: "Who can benefit from NS Wealth's services?", answer: "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs." },
-    { question: "What does it mean to be a SEBI-registered investment advisor (RIA)?", answer: "Being SEBI-registered means that NS Wealth adheres to strict regulatory standards set by the Securities and Exchange Board of India (SEBI). As an RIA, we are required to act in a fiduciary capacity—putting your interests above our own. This ensures transparency, ethical practices, and unbiased advice tailored to your financial well-being." },
-    { question: "How often will my financial plan be reviewed?", answer: "We conduct regular reviews of your financial plan—typically once every quarter or as needed based on changes in your life circumstances or market conditions. These reviews ensure that your plan remains aligned with your goals and allows us to make any necessary adjustments for optimal performance." },  ],
+    {
+      question:
+        "What is comprehensive financial planning, and why do I need it?",
+      answer:
+        "Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind.",
+    },
+    {
+      question: "How is NS Wealth different from other financial advisors?",
+      answer:
+        "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas.",
+    },
+    {
+      question: "Who can benefit from NS Wealth's services?",
+      answer:
+        "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs.",
+    },
+    {
+      question:
+        "What does it mean to be a SEBI-registered investment advisor (RIA)?",
+      answer:
+        "Being SEBI-registered means that NS Wealth adheres to strict regulatory standards set by the Securities and Exchange Board of India (SEBI). As an RIA, we are required to act in a fiduciary capacity—putting your interests above our own. This ensures transparency, ethical practices, and unbiased advice tailored to your financial well-being.",
+    },
+    {
+      question: "How often will my financial plan be reviewed?",
+      answer:
+        "We conduct regular reviews of your financial plan—typically once every quarter or as needed based on changes in your life circumstances or market conditions. These reviews ensure that your plan remains aligned with your goals and allows us to make any necessary adjustments for optimal performance.",
+    },
+  ],
   "4": [
     // { question: "Question?", answer: "Answer" },
     // { question: "Question?", answer: "Answer" },
@@ -604,26 +646,11 @@ export const faqBank: Record<string, QA[]> = {
    Client Type Pills Map
 -------------------------------------------------------------------- */
 export const clientTypePillsMap: Record<string, string[]> = {
-  "1": [
-    "Salaried Professionals",
-    "HNIs",
-  ],
-  "2": [
-    "Business Owners",
-    "HNIs",
-  ],
-  "3": [
-    "Doctors",
-    "Salaried Professionals",
-  ],
-  "4": [
-    "Retirees",
-    "Pre-retirees",
-  ],
-  "5": [
-    "High Net Worth",
-    "Family Offices",
-  ]
+  "1": ["Salaried Professionals", "HNIs"],
+  "2": ["Business Owners", "HNIs"],
+  "3": ["Doctors", "Salaried Professionals"],
+  "4": ["Retirees", "Pre-retirees"],
+  "5": ["High Net Worth", "Family Offices"],
 };
 
 /* --------------------------------------------------------------------
@@ -634,7 +661,7 @@ export const idealClientDescriptionMap: Record<string, string> = {
   "2": "I work with business owners and entrepreneurs who are looking to grow their wealth while managing their business finances effectively. My expertise lies in business succession planning and comprehensive wealth management.",
   "3": "I specialize in empowering Doctors and ambitious Salaried Professionals to maximize their wealth potential with Strategic investment planning, efficient tax optimization, and bespoke wealth management solutions.",
   "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and robust retirement income strategies to ensure long-term financial security.",
-  "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs."
+  "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs.",
 };
 
 /* --------------------------------------------------------------------
@@ -658,6 +685,6 @@ export interface QA {
 export interface CustomCTA {
   text: string;
   href: string;
-  variant: 'primary' | 'secondary';
+  variant: "primary" | "secondary";
   icon?: React.ReactNode;
 }

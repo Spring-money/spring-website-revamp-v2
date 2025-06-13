@@ -29,14 +29,14 @@ import type {
   QA,
   CustomCTA,
 } from "@/services/data/advisors";
-import { 
-  mockAdvisors, 
+import {
+  mockAdvisors,
   customCTAMap,
   feeStructureMap,
   videoMap,
   faqBank,
   clientTypePillsMap,
-  idealClientDescriptionMap
+  idealClientDescriptionMap,
 } from "@/services/data/advisors";
 import TestimonialCard from "@/components/TestimonialCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,31 +49,40 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 /* --------------------------------------------------------------------
    Client Description Map
 -------------------------------------------------------------------- */
-const clientDescriptionMap: Record<string, { description: string; icon: React.ReactNode }> = {
-  "Salaried": {
-    description: "Professionals seeking financial stability, tax optimization, and long-term wealth building through systematic investment planning.",
-    icon: <Users size={16} className="text-spring-green" />
+const clientDescriptionMap: Record<
+  string,
+  { description: string; icon: React.ReactNode }
+> = {
+  Salaried: {
+    description:
+      "Professionals seeking financial stability, tax optimization, and long-term wealth building through systematic investment planning.",
+    icon: <Users size={16} className="text-spring-green" />,
   },
   "Business Owners": {
-    description: "Entrepreneurs looking for business succession planning, tax strategies, and wealth preservation for their business and personal assets.",
-    icon: <TrendingUp size={16} className="text-spring-green" />
+    description:
+      "Entrepreneurs looking for business succession planning, tax strategies, and wealth preservation for their business and personal assets.",
+    icon: <TrendingUp size={16} className="text-spring-green" />,
   },
-  "Retired": {
-    description: "Retirees focused on wealth preservation, estate planning, and generating sustainable income from their retirement corpus.",
-    icon: <ChartBar size={16} className="text-spring-green" />
+  Retired: {
+    description:
+      "Retirees focused on wealth preservation, estate planning, and generating sustainable income from their retirement corpus.",
+    icon: <ChartBar size={16} className="text-spring-green" />,
   },
-  "HNI": {
-    description: "High net worth individuals seeking sophisticated investment strategies, tax optimization, and comprehensive wealth management solutions.",
-    icon: <Globe size={16} className="text-spring-green" />
+  HNI: {
+    description:
+      "High net worth individuals seeking sophisticated investment strategies, tax optimization, and comprehensive wealth management solutions.",
+    icon: <Globe size={16} className="text-spring-green" />,
   },
-  "NRIs": {
-    description: "Non-resident Indians looking for cross-border investment opportunities, tax planning, and wealth management across multiple jurisdictions.",
-    icon: <Globe size={16} className="text-spring-green" />
+  NRIs: {
+    description:
+      "Non-resident Indians looking for cross-border investment opportunities, tax planning, and wealth management across multiple jurisdictions.",
+    icon: <Globe size={16} className="text-spring-green" />,
   },
   "Young Professionals": {
-    description: "Early career professionals seeking guidance on financial planning, investment strategies, and building a strong financial foundation.",
-    icon: <Users size={16} className="text-spring-green" />
-  }
+    description:
+      "Early career professionals seeking guidance on financial planning, investment strategies, and building a strong financial foundation.",
+    icon: <Users size={16} className="text-spring-green" />,
+  },
 };
 
 const sampleBlogs = [
@@ -204,17 +213,20 @@ export default function AdvisorDetailPage({
       <CardContent>
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {(clientTypePillsMap[advisor.id] || advisor.audience).map((pill) => (
-              <span
-                key={pill}
-                className="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-800"
-              >
-                {pill}
-              </span>
-            ))}
+            {(clientTypePillsMap[advisor.id] || advisor.audience).map(
+              (pill) => (
+                <span
+                  key={pill}
+                  className="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-800"
+                >
+                  {pill}
+                </span>
+              )
+            )}
           </div>
           <p className="text-sm text-gray-600">
-            {idealClientDescriptionMap[advisor.id] || "Clients seeking personalized financial advice and wealth management solutions."}
+            {idealClientDescriptionMap[advisor.id] ||
+              "Clients seeking personalized financial advice and wealth management solutions."}
           </p>
         </div>
       </CardContent>
@@ -341,12 +353,18 @@ export default function AdvisorDetailPage({
                         <a
                           key={index}
                           href={cta.href}
-                          target={cta.href.startsWith('tel:') ? undefined : '_blank'}
-                          rel={cta.href.startsWith('tel:') ? undefined : 'noopener noreferrer'}
+                          target={
+                            cta.href.startsWith("tel:") ? undefined : "_blank"
+                          }
+                          rel={
+                            cta.href.startsWith("tel:")
+                              ? undefined
+                              : "noopener noreferrer"
+                          }
                           className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
-                            cta.variant === 'primary'
-                              ? 'bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2'
-                              : 'border border-spring-green bg-transparent text-spring-green hover:bg-green-50'
+                            cta.variant === "primary"
+                              ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
+                              : "border border-spring-green bg-transparent text-spring-green hover:bg-green-50"
                           }`}
                         >
                           {cta.icon}
@@ -390,9 +408,7 @@ export default function AdvisorDetailPage({
                 </CardContent>
               </Card>
             </div>
-            <aside className="mt-8 lg:mt-0">
-              {SidebarStack()}
-            </aside>
+            <aside className="mt-8 lg:mt-0">{SidebarStack()}</aside>
           </div>
         )}
 
@@ -457,7 +473,7 @@ export default function AdvisorDetailPage({
 
         {/* --------------------------- Latest Articles --------------------------- */}
         {/* <div className="mx-auto mt-12 max-w-7xl px-4"> */}
-          {/* <header className="mb-4 flex items-center justify-between">
+        {/* <header className="mb-4 flex items-center justify-between">
             <h2 className="text-2xl font-semibold text-[#272A2B]">
               Latest Articles
             </h2>
@@ -495,7 +511,7 @@ export default function AdvisorDetailPage({
               </div>
             ))}
           </div> */}
-        </div>
+      </div>
       {/* </div> */}
 
       {/* FAQ Section */}
