@@ -570,7 +570,7 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
 export const videoMap: Record<string, string> = {
   "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
   "2": "https://www.youtube.com/embed/2KXY_0pqccA",
-  "3": "https://www.youtube.com/embed/VIDEO_ID_3",
+  "3": "https://youtu.be/3HcIGQdyvjo?si=nFroc9nbPgdAVrwR",
   "4": "https://www.youtube.com/embed/18F9gdXnKnw",
   "5": "https://www.youtube.com/embed/3UJcfUdvF4U",
 };

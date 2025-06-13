@@ -31,11 +31,11 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: 3,
-    imageSrc: '/images/testimonial-kaumudi.svg', // Replace with actual image path
-    videoTitle: 'From Debt to Wealth – Their Journey!',
-    personName: 'Kaumudi Ingle',
-    personRole: 'Root Canal Specialist',
-    youtubeLink: 'https://youtu.be/3vOna5OaVkk?si=3DJ2RwS5dqS5PCzw',
+    imageSrc: '/images/testimonial-ria.svg', // Replace with actual image path
+    videoTitle: 'Financial Planning for Youngsters',
+    personName: 'Ria Unawane',
+    personRole: 'Social Media Manager',
+    youtubeLink: 'https://youtu.be/IMkBkwZUI6k?si=RXIYzpdlMdBz029M',
   },
 ];
 
