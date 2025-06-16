@@ -408,6 +408,190 @@ export const mockAdvisors: Advisor[] = [
       email: "grievance@elitewealthmanagers.com",
     },
   },
+  {
+    id: "6",
+    firmName: "Bachhat",
+    advisorName: "Name",
+    PrincipalAdvisor: "Name",
+    reg: "SEBI RIA REG NO: INA000009551",
+    photo: "/advisors/NitinSawant3.svg",
+    location: "City, State",
+    tagline: "Specializing in NRI financial planning and investments",
+    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+    audience: ["NRIs", "HNI"],
+    about:
+      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+    description:
+      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+    services: [
+      {
+        name: "Financial Planning",
+        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+      },
+      {
+        name: "Retirement Strategy",
+        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+      },
+      {
+        name: "Tax Optimization",
+        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+      },
+      {
+        name: "Tax Advisory",
+        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+      },
+    ],
+    successStories: [
+      "Helped 200+ NRI families navigate complex cross‑border tax implications",
+      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    ],
+    testimonials: [
+      {
+        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
+        author: "Rohan Mehra",
+        designation: "NRI, Singapore",
+      },
+    ],
+    socialMedia: [
+      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+      { type: "website", url: "https://globalindianadvisors.com" },
+    ],
+    contactDetails: {
+      phone: "+91 9867452310",
+      email: "vikram@globalindianadvisors.com",
+      website: "https://globalindianadvisors.com",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+    },
+    sebiRegistrationNumber: "INH000003456",
+    verifiedBySpring: true,
+    grievanceOfficer: {
+      name: "Neha Kapoor",
+      email: "grievance@globalindianadvisors.com",
+    },
+  },
+  {
+    id: "7",
+    firmName: "Hum Fauji",
+    advisorName: "Name",
+    PrincipalAdvisor: "Name",
+    reg: "SEBI RIA REG NO: INA000009551",
+    photo: "/advisors/NitinSawant3.svg",
+    location: "City, State",
+    tagline: "Specializing in NRI financial planning and investments",
+    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+    audience: ["NRIs", "HNI"],
+    about:
+      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+    description:
+      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+    services: [
+      {
+        name: "Financial Planning",
+        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+      },
+      {
+        name: "Retirement Strategy",
+        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+      },
+      {
+        name: "Tax Optimization",
+        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+      },
+      {
+        name: "Tax Advisory",
+        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+      },
+    ],
+    successStories: [
+      "Helped 200+ NRI families navigate complex cross‑border tax implications",
+      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    ],
+    testimonials: [
+      {
+        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
+        author: "Rohan Mehra",
+        designation: "NRI, Singapore",
+      },
+    ],
+    socialMedia: [
+      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+      { type: "website", url: "https://globalindianadvisors.com" },
+    ],
+    contactDetails: {
+      phone: "+91 9867452310",
+      email: "vikram@globalindianadvisors.com",
+      website: "https://globalindianadvisors.com",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+    },
+    sebiRegistrationNumber: "INH000003456",
+    verifiedBySpring: true,
+    grievanceOfficer: {
+      name: "Neha Kapoor",
+      email: "grievance@globalindianadvisors.com",
+    },
+  },
+  {
+    id: "8",
+    firmName: "Prosperentia Investment Advisors LLP",
+    advisorName: "Name",
+    PrincipalAdvisor: "Name",
+    reg: "SEBI RIA REG NO: INA000018957",
+    photo: "/advisors/NitinSawant3.svg",
+    location: "City, State",
+    tagline: "Specializing in NRI financial planning and investments",
+    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+    audience: ["NRIs", "HNI"],
+    about:
+      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+    description:
+      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+    services: [
+      {
+        name: "Financial Planning",
+        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+      },
+      {
+        name: "Retirement Strategy",
+        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+      },
+      {
+        name: "Tax Optimization",
+        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+      },
+      {
+        name: "Tax Advisory",
+        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+      },
+    ],
+    successStories: [
+      "Helped 200+ NRI families navigate complex cross‑border tax implications",
+      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    ],
+    testimonials: [
+      {
+        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
+        author: "Rohan Mehra",
+        designation: "NRI, Singapore",
+      },
+    ],
+    socialMedia: [
+      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+      { type: "website", url: "https://globalindianadvisors.com" },
+    ],
+    contactDetails: {
+      phone: "+91 9867452310",
+      email: "vikram@globalindianadvisors.com",
+      website: "https://globalindianadvisors.com",
+      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+    },
+    sebiRegistrationNumber: "INH000003456",
+    verifiedBySpring: true,
+    grievanceOfficer: {
+      name: "Neha Kapoor",
+      email: "grievance@globalindianadvisors.com",
+    },
+  },
+
 ];
 
 export const specializations: Specialization[] = [
