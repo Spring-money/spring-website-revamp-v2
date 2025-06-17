@@ -411,14 +411,14 @@ export const mockAdvisors: Advisor[] = [
   {
     id: "6",
     firmName: "Bachhat",
-    advisorName: "Name",
-    PrincipalAdvisor: "Name",
-    reg: "SEBI RIA REG NO: INA000009551",
+    advisorName: "Vishal Bharat Shah",
+    PrincipalAdvisor: "Vishal Bharat Shah",
+    reg: "SEBI RIA REG NO: INA000019220",
     photo: "/advisors/NitinSawant3.svg",
-    location: "City, State",
+    location: "Pune, Maharashtra",
     tagline: "Specializing in NRI financial planning and investments",
-    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
-    audience: ["NRIs", "HNI"],
+    specializations: [ "Financial Planning", "Retirement Planning"],
+    audience: ["NRIs", "HNI", "Young Professionals"],
     about:
       "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
     description:
@@ -462,7 +462,7 @@ export const mockAdvisors: Advisor[] = [
       website: "https://globalindianadvisors.com",
       calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
     },
-    sebiRegistrationNumber: "INH000003456",
+    sebiRegistrationNumber: "INA000019220",
     verifiedBySpring: true,
     grievanceOfficer: {
       name: "Neha Kapoor",
@@ -683,7 +683,31 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
       variant: 'secondary',
       icon: <ChartBar size={16} className="mr-2" />
     },
-  ]
+  ],
+  "6": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
+  "7": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
+  "8": [
+    {
+      text: "Schedule Meeting",
+      href: ".",
+      variant: 'primary',
+      icon: <Calendar size={16} className="mr-2" />
+    },
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -719,7 +743,25 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
     { service: "Estate Planning", amount: "₹40,000 – ₹60,000" },
     { service: "Tax Planning", amount: "₹30,000 – ₹50,000" },
     { service: "Financial Wellness Program", amount: "₹35,000 – ₹55,000" }
-  ]
+  ],
+  "6": [
+    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
+    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
+    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+  ],
+  "7": [
+    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
+    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
+    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+  ],
+  "8": [
+    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
+    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
+    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
+    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -731,6 +773,9 @@ export const videoMap: Record<string, string> = {
   "3": "https://www.youtube.com/embed/VIDEO_ID_3",
   "4": "https://www.youtube.com/embed/VIDEO_ID_4",
   "5": "https://www.youtube.com/embed/VIDEO_ID_5",
+  "6": "https://www.youtube.com/embed/VIDEO_ID_6",
+  "7": "https://www.youtube.com/embed/VIDEO_ID_7",
+  "8": "https://www.youtube.com/embed/VIDEO_ID_8",
 };
 
 /* --------------------------------------------------------------------
@@ -777,6 +822,30 @@ export const faqBank: Record<string, QA[]> = {
     { question: "Question?", answer: "Answer" },
     { question: "Question?", answer: "Answer" },
   ],
+  "6": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],  
+  "7": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],  
+  "8": [
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+    { question: "Question?", answer: "Answer" },
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -812,7 +881,25 @@ export const clientTypePillsMap: Record<string, string[]> = {
     "Family Offices",
     "Wealth Preservation",
     "Legacy Planning"
-  ]
+  ],
+  "6": [
+    "NRIs",
+    "Global Investors",
+    "Cross-border Planning",
+    "International Tax"
+  ],
+  "7": [
+    "NRIs",
+    "Global Investors",
+    "Cross-border Planning",
+    "International Tax"
+  ],
+  "8": [
+    "NRIs",
+    "Global Investors",
+    "Cross-border Planning",
+    "International Tax"
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -823,7 +910,10 @@ export const idealClientDescriptionMap: Record<string, string> = {
   "2": "I work with business owners and entrepreneurs who are looking to grow their wealth while managing their business finances effectively. My expertise lies in business succession planning and comprehensive wealth management.",
   "3": "I specialize in serving NRIs and global investors, providing expert guidance on cross-border investments, tax planning, and wealth management across multiple jurisdictions.",
   "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and retirement income strategies.",
-  "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs."
+  "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs.",
+  "6": "About Bachhat Wealth Management",
+  "7": "About Hum Fauji",
+  "8": "About Prosperentia Investment Advisors LLP",
 };
 
 /* --------------------------------------------------------------------
