@@ -11,6 +11,8 @@ export type Specialization =
   | "Stock Investments"
   | "Financial Planning"
   | "Wealth Management"
+  | "Small Cap Investing"
+  | "Mid Cap Investing"
   | "Debt Management";
 
 export type AudienceType =
@@ -184,11 +186,12 @@ export const mockAdvisors: Advisor[] = [
     specializations: [
       "Stock Investments",
       "Mutual Funds",
-      "Financial Planning",
+      "Small Cap Investing",
+      "Mid Cap Investing",
     ],
     audience: ["Young Professionals", "Salaried"],
     about:
-      "Candor Investing is a SEBI registered investment advisory firm founded by Amey Kulkarni. Amey is a full-time investor who brings significant experience to the table, having worked for over 9 years in corporate roles at companies like L&T, Jindal Steel, and Siemens Ltd.",
+      "Candor Investing is a SEBI registered investment advisory firm founded by Amey Kulkarni. Amey is a full-time investor who brings significant corporate experience to the table, having worked for over 9 years in corporate roles at companies like L&T, Jindal Steel, and Siemens Ltd. before founding Candor Investing in 2017",
     description: `Candor Investing, founded by SEBI registered investment advisor Amey Kulkarni, operates on a core philosophy of "buying quality businesses at reasonable valuations and holding until the company executes." This approach is underpinned by strong values: Integrity, ensuring clients receive appropriate advice and that responsibilities are fulfilled; Focus, driven by the organization's mission to achieve strong CAGR returns; Excellence, aiming for extraordinary results beyond average market performance; and Simplicity, advocating for straightforward investment approaches over complex or exotic solutions. With 15 years of experience, Candor Investing serves a diverse client base including 15 NRI clients and a total of 200 clients, guided by Amey's extensive background in reputable corporations like L&T and Siemens. `,
     services: [
       {
@@ -200,16 +203,6 @@ export const mockAdvisors: Advisor[] = [
         name: "Curated Model Portfolios (via Smallcase)",
         description:
           "Gain access to our expertly curated model portfolios designed for diverse investment objectives, easily accessible and investable through the Smallcase platform. Benefit from our strategic allocation and regular rebalancing for optimal performance.",
-      },
-      {
-        name: "Forensic Accounting Insights for Investors",
-        description:
-          "Equip yourself with crucial knowledge to identify red flags and protect your investments from potential accounting frauds and financial misrepresentation. Our program empowers investors with the skills for due diligence and fraud detection.",
-      },
-      {
-        name: "Wealth Management",
-        description:
-          "Comprehensive strategies for preserving and growing your wealth over time.. ",
       },
     ],
     successStories: [
@@ -458,6 +451,70 @@ export const mockAdvisors: Advisor[] = [
       email: "grievance@elitewealthmanagers.com",
     },
   },
+  {
+    id: "6",
+    firmName: "Bachhat Money",
+    advisorName: "Vishal Shah",
+    PrincipalAdvisor: "Vishal Shah",
+    reg: "SEBI RIA REG NO: INA000019220",
+    photo: "/advisors/NitinSawant3.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Your search for Financial Independence ends here!",
+    specializations: ["Retirement Planning", "Tax Planning", "Financial Planning"],
+    audience: ["Business Owners"],
+    about:
+      "Our team of qualified financial planners, including CFP certificants, collaborates to craft holistic financial plans that deliver clarity and exceptional value to our clients.",
+    description: `Founded by Nitin Sawant and a cadre of seasoned professionals, NS Wealth was born from a vision to establish an all-encompassing financial management system. We recognized the need for services that could be customized to grant individuals freedom from financial burdens, thereby offering a life free from monetary stress. By embracing our proprietary 'Dream > Decide > Do' approach, we empower you to Implement and execute your personalized plan with our guidance. Our commitment to you is unwavering: we provide measurable, executable strategies that propel you toward your goals. Our strength lies in delivering comprehensive financial plans, consolidated investment reports, and end-to-end solutions that bring unparalleled convenience to your financial journey.`,
+    services: [
+      {
+        name: "Holistic Financial Planning",
+        description:
+          "Need quick, expert insights on an urgent investment query or a specific portfolio decision? Our focused 1-on-1 session provides direct, actionable advice to help you navigate immediate investment opportunities or challenges with confidence. Get the answers you need, fast.",
+      },
+      {
+        name: "On-going Financial Health Check-up",
+        description:
+          "Take control of your finances and build a solid foundation for your financial future. Our Budgeting 101 session guides you through practical steps to create an effective budget, track your spending, identify savings opportunities, and achieve your short-term and long-term financial goals. Start your journey to financial freedom today.",
+      },
+    ],
+    successStories: [
+      "Helped 200+ NRI families navigate complex cross‑border tax implications",
+      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    ],
+    testimonials: [
+      {
+        text: "Have engaged with NS Wealth for almost 9 years. It is a one stop place for all your financial goals and investments. The team helps you understand your financial goals. How much one needs to save. It has really helped me in being disciplined related to savings. The quarterly and yearly review is very helpful and the team is transparent about the investments.",
+        author: "Pratibha Jadhav",
+        //designation: "NRI, Singapore",
+      },
+      {
+        text: "Since I came in contact with Nitin, my finance guru, I can not only work with twice the efficiency, but importantly, work freely without any stress. Today I am satisfied with getting even 2 rupees or 2 lakh rupees because whatever my expectations and goals I had set, I have already completed 70-80% of them via my finance.",
+        author: "Dr. Abhijeet",
+        //designation: "Doctor",
+      },
+      {
+        text: "Very very nice experience with Mr. Nitin Sawant.He is handling client very professionally. His guidance has help us for to improve our financial issue. Within small year we saved lot of money we got nice benefits from this guidance. He has very nice plan and idea. I will always recommend for your personal financial plan advice has to take from Mr. Nitin Sawant.",
+        author: "Shree & Mayee",
+        //designation: "NRI, Singapore",
+      },
+    ],
+    socialMedia: [
+      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+      { type: "website", url: "https://globalindianadvisors.com" },
+    ],
+    contactDetails: {
+      phone: "+91 9867452310",
+      email: "vikram@globalindianadvisors.com",
+      website: "https://globalindianadvisors.com",
+      calendlyLink: "https://calendly.com/kiran-nswealth",
+    },
+    sebiRegistrationNumber: "INH000003456",
+    verifiedBySpring: true,
+    grievanceOfficer: {
+      name: "Neha Kapoor",
+      email: "grievance@globalindianadvisors.com",
+    },
+  },
 ];
 
 export const specializations: Specialization[] = [
@@ -544,6 +601,14 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
       icon: <ChartBar size={16} className="mr-2" />,
     },
   ],
+  "6": [
+    {
+      text: "Schedule Meeting",
+      href: "https://calendly.com/enquiry-bachhat",
+      variant: "primary",
+      icon: <ChartBar size={16} className="mr-2" />,
+    },
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -567,6 +632,10 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
     { service: "Investment Advisory", amount: "₹20,000 – ₹40,000" },
     { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
   ],
+  "6": [
+    { service: "Financial Health Check-up", amount: "₹10,000 – ₹12,000" },
+    { service: "Holistic Financial Planning", amount: "₹18,000 – ₹22,000" },
+  ],
 };
 
 /* --------------------------------------------------------------------
@@ -578,6 +647,7 @@ export const videoMap: Record<string, string> = {
   "3": "https://www.youtube.com/embed/3HcIGQdyvjo",
   "4": "https://www.youtube.com/embed/18F9gdXnKnw",
   "5": "https://www.youtube.com/embed/3UJcfUdvF4U",
+  "6": "https://www.youtube.com/embed/3UJcfUdvF4U",
 };
 
 /* --------------------------------------------------------------------
@@ -656,6 +726,7 @@ export const clientTypePillsMap: Record<string, string[]> = {
   "3": ["Doctors", "Salaried Professionals"],
   "4": ["Retirees", "Pre-retirees"],
   "5": ["High Net Worth", "Family Offices"],
+  "6": ["High Net Worth", "Family Offices"],
 };
 
 /* --------------------------------------------------------------------
