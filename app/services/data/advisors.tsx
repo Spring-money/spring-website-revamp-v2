@@ -37,11 +37,6 @@ export interface Testimonial {
   designation?: string;
 }
 
-export interface SocialMedia {
-  type: "linkedin" | "twitter" | "facebook" | "instagram" | "website";
-  url: string;
-}
-
 /**
  * Individual service offered by an advisor.
  */
@@ -72,21 +67,12 @@ export interface Advisor {
    * List of primary services with short copy (updated 2025‑06‑04).
    */
   services: Service[];
-  successStories?: string[];
+  /**
+   * List of professional credentials and certifications (added 2025‑01‑27).
+   */
+  credentials: string[];
   testimonials?: Testimonial[];
-  socialMedia?: SocialMedia[];
-  contactDetails: {
-    phone?: string;
-    email: string;
-    website?: string;
-    calendlyLink?: string;
-  };
-  sebiRegistrationNumber: string;
   verifiedBySpring: boolean;
-  grievanceOfficer?: {
-    name: string;
-    email: string;
-  };
 }
 
 /* ------------ mock advisors ------------ */
@@ -128,9 +114,10 @@ export const mockAdvisors: Advisor[] = [
         description: "Professional Investment Portfolio Design services tailored to your needs.",
       },
     ],
-    successStories: [
-      "Helped a client retire 5 years early through strategic planning and investment management",
-      "Created a tax‑efficient portfolio that saved clients an average of 3.5 % annually",
+    credentials: [
+      "Certified Financial Planner (CFP®)",
+      "SEBI Registered Investment Advisor",
+      
     ],
     testimonials: [
       {
@@ -144,22 +131,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "Business Owner",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/rajivmehta" },
-      { type: "website", url: "https://wealthwisdom.in" },
-    ],
-    contactDetails: {
-      phone: "+91 9876543210",
-      email: "rajiv@wealthwisdom.in",
-      website: "https://wealthwisdom.in",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/rajivmehta"
-    },
-    sebiRegistrationNumber: "INA100013700",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Suman Joshi",
-      email: "grievance@wealthwisdom.in",
-    },
   },
   {
     id: "2",
@@ -198,9 +170,10 @@ export const mockAdvisors: Advisor[] = [
         description: "Comprehensive strategies for preserving and growing your wealth over time.. ",
       },
     ],
-    successStories: [
-      "Guided over 1,000 employees through ESOP diversification.",
-      "Built an automated model portfolio that outperformed the Nifty by 4 % CAGR since 2019.",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+      
+      
     ],
     testimonials: [
       {
@@ -209,22 +182,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "Software Engineer",
       },
     ],
-    socialMedia: [
-      { type: "twitter", url: "https://twitter.com/futureforwardfin" },
-      { type: "website", url: "https://futureforwardfinancial.in" },
-    ],
-    contactDetails: {
-      phone: "+91 9000001122",
-      email: "priya@futureforwardfinancial.in",
-      website: "https://futureforwardfinancial.in",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/priyasingh"
-    },
-    sebiRegistrationNumber: "INH000002345",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Support Team",
-      email: "support@futureforwardfinancial.in",
-    },
   },
   {
     id: "3",
@@ -259,9 +217,9 @@ export const mockAdvisors: Advisor[] = [
         description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
       },
     ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+     
     ],
     testimonials: [
       {
@@ -270,22 +228,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "NRI, Singapore",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INH000003456",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
   },
   {
     id: "4",
@@ -320,9 +263,9 @@ export const mockAdvisors: Advisor[] = [
         description: "Specialized retirement planning services including pension optimization, income planning, and wealth preservation strategies for retirees.",
       },
     ],
-    successStories: [
-      "Built inflation‑beating retirement plans for 500+ families.",
-      "Helped clients generate reliable pension income exceeding ₹2 crores annually.",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+     
     ],
     testimonials: [
       {
@@ -331,22 +274,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "Retired Government Officials",
       },
     ],
-    socialMedia: [
-      { type: "facebook", url: "https://facebook.com/retireright" },
-      { type: "website", url: "https://retireright.in" },
-    ],
-    contactDetails: {
-      phone: "+91 9844556677",
-      email: "ajay@retireright.in",
-      website: "https://retireright.in",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/ajayvaidya"
-    },
-    sebiRegistrationNumber: "INH000004567",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Customer Care",
-      email: "grievance@retireright.in",
-    },
   },
   {
     id: "5",
@@ -380,9 +308,9 @@ export const mockAdvisors: Advisor[] = [
         description: "Serving clients across India and globally, providing convenient access to expert advice.",
       },
     ],
-    successStories: [
-      "Structured a multi‑generational trust saving ₹50 crores in estate taxes",
-      "Guided 30+ founders through pre‑IPO wealth diversification",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+     
     ],
     testimonials: [
       {
@@ -391,22 +319,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "Business Owner",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/nishaagarwal" },
-      { type: "website", url: "https://elitewealthmanagers.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9833221144",
-      email: "nisha@elitewealthmanagers.com",
-      website: "https://elitewealthmanagers.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/nishaagarwal"
-    },
-    sebiRegistrationNumber: "INH000005678",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Rahul Mehta",
-      email: "grievance@elitewealthmanagers.com",
-    },
   },
   {
     id: "6",
@@ -441,9 +354,9 @@ export const mockAdvisors: Advisor[] = [
         description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
       },
     ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+     
     ],
     testimonials: [
       {
@@ -452,22 +365,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "NRI, Singapore",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INA000019220",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
   },
   {
     id: "7",
@@ -476,7 +374,7 @@ export const mockAdvisors: Advisor[] = [
     PrincipalAdvisor: "Name",
     reg: "SEBI RIA REG NO: INA000009551",
     photo: "/advisors/NitinSawant3.svg",
-    location: "City, State",
+    location: "Pune, Maharashtra",
     tagline: "Specializing in NRI financial planning and investments",
     specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
     audience: ["NRIs", "HNI"],
@@ -502,9 +400,9 @@ export const mockAdvisors: Advisor[] = [
         description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
       },
     ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+     
     ],
     testimonials: [
       {
@@ -513,22 +411,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "NRI, Singapore",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INH000003456",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
   },
   {
     id: "8",
@@ -537,7 +420,7 @@ export const mockAdvisors: Advisor[] = [
     PrincipalAdvisor: "Name",
     reg: "SEBI RIA REG NO: INA000018957",
     photo: "/advisors/NitinSawant3.svg",
-    location: "City, State",
+    location: "Mumbai",
     tagline: "Specializing in NRI financial planning and investments",
     specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
     audience: ["NRIs", "HNI"],
@@ -563,9 +446,9 @@ export const mockAdvisors: Advisor[] = [
         description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
       },
     ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+    credentials: [
+      "SEBI Registered Investment Advisor",
+      
     ],
     testimonials: [
       {
@@ -574,22 +457,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "NRI, Singapore",
       },
     ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INH000003456",
     verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
   },
 
 ];

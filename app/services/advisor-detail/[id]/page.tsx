@@ -138,7 +138,7 @@ export default function AdvisorDetailPage({
   const services: ServiceItem[] = advisor.services ?? [];
   const feeStructure: FeeItem[] = feeStructureMap[advisor.id] ?? [];
   const customCTAs: CustomCTA[] = customCTAMap[advisor.id] ?? [];
-  const credentials = [
+  const credentials = advisor.credentials ?? [
     "Certified Financial Planner (CFP)",
     "SEBI Registered Investment Advisor",
   ];
