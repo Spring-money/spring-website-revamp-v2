@@ -286,7 +286,7 @@ export default function AdvisorDetailPage({
         <div className="border-b border-gray-200 bg-[#FCFFFE] pb-2 md:pb-4">
           <div className="mx-auto max-w-7xl px-4 pt-8">
             <Link
-              href="/services"
+              href="/services#advisorList"
               className="mb-6 inline-flex items-center text-spring-green hover:text-opacity-80"
             >
               <ArrowLeft size={16} className="mr-1" />
