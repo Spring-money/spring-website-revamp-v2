@@ -185,7 +185,6 @@ export const mockAdvisors: Advisor[] = [
     tagline: "Building your wealth with right investments",
     specializations: [
       "Stock Investments",
-      "Mutual Funds",
       "Small Cap Investing",
       "Mid Cap Investing",
     ],
@@ -453,35 +452,35 @@ export const mockAdvisors: Advisor[] = [
   },
   {
     id: "6",
-    firmName: "Bachhat",
-    advisorName: "Vishal Bharat Shah",
+    firmName: "Bachhat Money",
+    advisorName: "Vishal Shah",
     PrincipalAdvisor: "Vishal Bharat Shah",
     reg: "SEBI RIA REG NO: INA000019220",
-    photo: "/advisors/NitinSawant3.svg",
+    photo: "/advisors/vishal-shah.svg",
     location: "Pune, Maharashtra",
-    tagline: "Specializing in NRI financial planning and investments",
+    tagline: "Empowering your financial journey with unbiased, simplified, and transparent advice.",
     specializations: [ "Financial Planning", "Retirement Planning"],
     audience: ["NRIs", "HNI", "Young Professionals"],
     about:
-      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+      "Bachhat is built on the pillars of transparency, unbiased advice and making personal finance easy. We ensure our solutions are uncomplicated and provide personalized strategies for your financial well-being.",
     description:
-      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+      "Founded by CA Vishal Bharat Shah, Bachhat Money aims to empower clients in effectively managing their personal finances. Vishal is a SEBI Registered Investment Adviser with over two decades of post-qualification experience across diverse fields including Finance, Treasury, Mergers & Acquisitions, and Strategy. His passion for personal finance led him to start writing about the subject in 2010, forming the bedrock of Bachhat Money's research-backed and conflict-free advisory approach.",
     services: [
       {
-        name: "Financial Planning",
-        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+        name: "Holistic Financial Planning",
+        description: "This comprehensive plan includes net-worth assessment, retirement planning, risk profiling, insurance adequacy, and goal-based investing for your complete financial well-being.",
       },
       {
-        name: "Retirement Strategy",
-        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+        name: "On-going Financial Health Check-up",
+        description: "Following holistic financial planning, Bachhat Money provides ongoing reviews to ascertain investment performance against goals and offers suggestions for portfolio re-balancing.",
       },
       {
-        name: "Tax Optimization",
-        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+        name: "Financial Planning Sessions / Training / Seminars",
+        description: "Bachhat Money conducts customized training and seminars on personal finance for Corporates, Educational Institutions, and Social Groups.",
       },
       {
-        name: "Tax Advisory",
-        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+        name: "Ad hoc consultation for key financial decisions",
+        description: "This service provides targeted advice for specific financial queries or critical financial decisions.",
       },
     ],
     successStories: [
@@ -503,7 +502,7 @@ export const mockAdvisors: Advisor[] = [
       phone: "+91 9867452310",
       email: "vikram@globalindianadvisors.com",
       website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+      calendlyLink: "https://calendly.com/enquiry-bachhat", // Temporarily disabled: "https://calendly.com/vikramkhanna"
     },
     sebiRegistrationNumber: "INA000019220",
     verifiedBySpring: true,
@@ -512,128 +511,128 @@ export const mockAdvisors: Advisor[] = [
       email: "grievance@globalindianadvisors.com",
     },
   },
-  {
-    id: "7",
-    firmName: "Hum Fauji",
-    advisorName: "Name",
-    PrincipalAdvisor: "Name",
-    reg: "SEBI RIA REG NO: INA000009551",
-    photo: "/advisors/NitinSawant3.svg",
-    location: "City, State",
-    tagline: "Specializing in NRI financial planning and investments",
-    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
-    audience: ["NRIs", "HNI"],
-    about:
-      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
-    description:
-      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
-    services: [
-      {
-        name: "Financial Planning",
-        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
-      },
-      {
-        name: "Retirement Strategy",
-        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
-      },
-      {
-        name: "Tax Optimization",
-        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
-      },
-      {
-        name: "Tax Advisory",
-        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
-      },
-    ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
-    ],
-    testimonials: [
-      {
-        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
-        author: "Rohan Mehra",
-        designation: "NRI, Singapore",
-      },
-    ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INH000003456",
-    verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
-  },
-  {
-    id: "8",
-    firmName: "Prosperentia Investment Advisors LLP",
-    advisorName: "Name",
-    PrincipalAdvisor: "Name",
-    reg: "SEBI RIA REG NO: INA000018957",
-    photo: "/advisors/NitinSawant3.svg",
-    location: "City, State",
-    tagline: "Specializing in NRI financial planning and investments",
-    specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
-    audience: ["NRIs", "HNI"],
-    about:
-      "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
-    description:
-      `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
-    services: [
-      {
-        name: "Financial Planning",
-        description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
-      },
-      {
-        name: "Retirement Strategy",
-        description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
-      },
-      {
-        name: "Tax Optimization",
-        description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
-      },
-      {
-        name: "Tax Advisory",
-        description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
-      },
-    ],
-    successStories: [
-      "Helped 200+ NRI families navigate complex cross‑border tax implications",
-      "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
-    ],
-    testimonials: [
-      {
-        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
-        author: "Rohan Mehra",
-        designation: "NRI, Singapore",
-      },
-    ],
-    socialMedia: [
-      { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-      { type: "website", url: "https://globalindianadvisors.com" },
-    ],
-    contactDetails: {
-      phone: "+91 9867452310",
-      email: "vikram@globalindianadvisors.com",
-      website: "https://globalindianadvisors.com",
-      calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
-    },
-    sebiRegistrationNumber: "INH000003456",
-    verifiedBySpring: true,
-    grievanceOfficer: {
-      name: "Neha Kapoor",
-      email: "grievance@globalindianadvisors.com",
-    },
-  },
+  // {
+  //   id: "7",
+  //   firmName: "Hum Fauji",
+  //   advisorName: "Name",
+  //   PrincipalAdvisor: "Name",
+  //   reg: "SEBI RIA REG NO: INA000009551",
+  //   photo: "/advisors/NitinSawant3.svg",
+  //   location: "City, State",
+  //   tagline: "Specializing in NRI financial planning and investments",
+  //   specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+  //   audience: ["NRIs", "HNI"],
+  //   about:
+  //     "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+  //   description:
+  //     `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+  //   services: [
+  //     {
+  //       name: "Financial Planning",
+  //       description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+  //     },
+  //     {
+  //       name: "Retirement Strategy",
+  //       description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+  //     },
+  //     {
+  //       name: "Tax Optimization",
+  //       description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+  //     },
+  //     {
+  //       name: "Tax Advisory",
+  //       description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+  //     },
+  //   ],
+  //   successStories: [
+  //     "Helped 200+ NRI families navigate complex cross‑border tax implications",
+  //     "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
+  //       author: "Rohan Mehra",
+  //       designation: "NRI, Singapore",
+  //     },
+  //   ],
+  //   socialMedia: [
+  //     { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+  //     { type: "website", url: "https://globalindianadvisors.com" },
+  //   ],
+  //   contactDetails: {
+  //     phone: "+91 9867452310",
+  //     email: "vikram@globalindianadvisors.com",
+  //     website: "https://globalindianadvisors.com",
+  //     calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+  //   },
+  //   sebiRegistrationNumber: "INH000003456",
+  //   verifiedBySpring: true,
+  //   grievanceOfficer: {
+  //     name: "Neha Kapoor",
+  //     email: "grievance@globalindianadvisors.com",
+  //   },
+  // },
+  // {
+  //   id: "8",
+  //   firmName: "Prosperentia Investment Advisors LLP",
+  //   advisorName: "Name",
+  //   PrincipalAdvisor: "Name",
+  //   reg: "SEBI RIA REG NO: INA000018957",
+  //   photo: "/advisors/NitinSawant3.svg",
+  //   location: "City, State",
+  //   tagline: "Specializing in NRI financial planning and investments",
+  //   specializations: ["NRI Services", "Tax Planning", "Estate Planning"],
+  //   audience: ["NRIs", "HNI"],
+  //   about:
+  //     "Global Indian Advisors focuses on the unique financial challenges faced by Non‑Resident Indians, including cross‑border taxation and asset repatriation.",
+  //   description:
+  //     `At NS Wealth, we are committed to providing personalized and ethical financial guidance. We help you build robust strategies, understand your investments, and achieve your financial milestones with clarity and confidence. Our focus is on your long‑term prosperity.`,
+  //   services: [
+  //     {
+  //       name: "Financial Planning",
+  //       description: "Holistic plans covering income, spending, goals, and risk tailored to NRI realities.",
+  //     },
+  //     {
+  //       name: "Retirement Strategy",
+  //       description: "Blueprints to accumulate and repatriate retirement wealth across geographies, tax‑efficiently.",
+  //     },
+  //     {
+  //       name: "Tax Optimization",
+  //       description: "Minimizing double‑tax through DTAA awareness and strategic use of foreign income exclusions.",
+  //     },
+  //     {
+  //       name: "Tax Advisory",
+  //       description: "On‑call expertise for specific queries like property sale, remittances, or inheritance taxation.",
+  //     },
+  //   ],
+  //   successStories: [
+  //     "Helped 200+ NRI families navigate complex cross‑border tax implications",
+  //     "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
+  //       author: "Rohan Mehra",
+  //       designation: "NRI, Singapore",
+  //     },
+  //   ],
+  //   socialMedia: [
+  //     { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
+  //     { type: "website", url: "https://globalindianadvisors.com" },
+  //   ],
+  //   contactDetails: {
+  //     phone: "+91 9867452310",
+  //     email: "vikram@globalindianadvisors.com",
+  //     website: "https://globalindianadvisors.com",
+  //     calendlyLink: ".", // Temporarily disabled: "https://calendly.com/vikramkhanna"
+  //   },
+  //   sebiRegistrationNumber: "INH000003456",
+  //   verifiedBySpring: true,
+  //   grievanceOfficer: {
+  //     name: "Neha Kapoor",
+  //     email: "grievance@globalindianadvisors.com",
+  //   },
+  // },
 
 ];
 
@@ -779,10 +778,8 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
     { service: "Financial Wellness Program", amount: "₹35,000 – ₹55,000" }
   ],
   "6": [
-    { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
-    { service: "Cross-border Tax Planning", amount: "₹25,000 – ₹45,000" },
-    { service: "Estate Planning", amount: "₹35,000 – ₹55,000" },
-    { service: "Investment Advisory", amount: "1% – 1.5% of AUM" }
+    { service: "Financial Health Check-up", amount: "₹10,000 – ₹12,000" },
+    { service: "Holistic Financial Planning", amount: "₹18,000 – ₹22,000" },
   ],
   "7": [
     { service: "NRI Financial Planning", amount: "₹30,000 – ₹50,000" },
@@ -833,12 +830,11 @@ export const faqBank: Record<string, QA[]> = {
     // { question: "Question?", answer: "Answer" },
   ],
   "3": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
+    { question: "What is comprehensive financial planning, and why do I need it?", answer: "Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind." },
+    { question: "How is NS Wealth different from other financial advisors?", answer: "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas." },
+    { question: "Who can benefit from NS Wealth's services?", answer: "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs." },
+    { question: "What does it mean to be a SEBI-registered investment advisor (RIA)?", answer: "Being SEBI-registered means that NS Wealth adheres to strict regulatory standards set by the Securities and Exchange Board of India (SEBI). As an RIA, we are required to act in a fiduciary capacity—putting your interests above our own. This ensures transparency, ethical practices, and unbiased advice tailored to your financial well-being." },
+    { question: "How often will my financial plan be reviewed?", answer: "We conduct regular reviews of your financial plan—typically once every quarter or as needed based on changes in your life circumstances or market conditions. These reviews ensure that your plan remains aligned with your goals and allows us to make any necessary adjustments for optimal performance." },
   ],
   "4": [
     { question: "Question?", answer: "Answer" },
