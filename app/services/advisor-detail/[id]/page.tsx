@@ -41,6 +41,7 @@ import {
 import TestimonialCard from "@/components/TestimonialCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import FAQVideosSection from '@/components/FAQVideosSection';
 
 /* --------------------------------------------------------------------
    Types & Constants
@@ -155,6 +156,43 @@ export default function AdvisorDetailPage({
   const faqs = faqBank[advisor.id] ?? [];
   const advisorVideo = videoMap[advisor.id];
   const isSpecial = advisor.id === "1";
+
+  // Add FAQ videos only for specific advisor IDs
+  const faqVideos = id === "2" ? [
+    {
+      id: "1",
+      title: "How does Candor help with financial planning?",
+      videoId: "t8jtaw6fq2Y", // Replace with actual YouTube ID
+      // Optional: custom thumbnail
+      // thumbnailUrl: "/images/advisors/candor-faq1-thumb.jpg"
+    },
+    {
+      id: "2",
+      title: "Long-Term Investing Explained: The Power of Compounding for Financial Freedom",
+      videoId: "7KWRbgw3C28" // Replace with actual YouTube ID
+    },
+    {
+      id: "3",
+      title: "Stocks vs Gold vs Bitcoin – What Really Builds Wealth?",
+      videoId: "WVLqiC0CGk8" // Replace with actual YouTube ID
+    }
+  ] : id === "6" ? [
+    {
+      id: "1",
+      title: "Bachhat Money investment philosophy",
+      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+    },
+    {
+      id: "2",
+      title: "How Bachhat Money helps you save",
+      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+    },
+    {
+      id: "3",
+      title: "Bachhat Money's portfolio management approach",
+      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+    }
+  ] : null;
 
   /* Card factories */
   const FeeCard = () => (
@@ -516,6 +554,9 @@ export default function AdvisorDetailPage({
 
       {/* FAQ Section */}
       {FAQSection()}
+
+      {/* Only show FAQ videos for specified advisors */}
+      {faqVideos && <FAQVideosSection videos={faqVideos} />}
     </main>
   );
 }

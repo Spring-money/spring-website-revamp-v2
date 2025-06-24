@@ -215,7 +215,7 @@ export const mockAdvisors: Advisor[] = [
         designation: "Branch Vertical Head, BCCL (The Times of India)",
       },
       {
-        text: "Have been with Arney for four plus years. His calm approach to the market is striking. He rarely gets excited or anxious about the short term and focusses on the fundamentals.",
+        text: "Have been with Amey for four plus years. His calm approach to the market is striking. He rarely gets excited or anxious about the short term and focusses on the fundamentals.",
         author: "Pradeep Kumar Arora",
         designation: "Ex-Defence, India",
       },
@@ -728,14 +728,6 @@ export const customCTAMap: Record<string, CustomCTA[]> = {
       icon: <ChartBar size={16} className="mr-2" />,
     },
   ],
-  "6": [
-    {
-      text: "Schedule Meeting",
-      href: ".",
-      variant: 'primary',
-      icon: <Calendar size={16} className="mr-2" />
-    },
-  ],
   "7": [
     {
       text: "Schedule Meeting",
@@ -772,10 +764,8 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
   ],
   "4": [{ service: "Comprehensive Planning", amount: "₹25,000 – ₹45,000" }],
   "5": [
-    { service: "Wealth Management", amount: "1.5% – 2% of AUM" },
-    { service: "Estate Planning", amount: "₹40,000 – ₹60,000" },
-    { service: "Tax Planning", amount: "₹30,000 – ₹50,000" },
-    { service: "Financial Wellness Program", amount: "₹35,000 – ₹55,000" }
+    { service: "Financial Planning", amount: "₹15,000 – ₹25,000" },
+    { service: "Investment Management", amount: "0.75% – 1.25% of AUM" }
   ],
   "6": [
     { service: "Financial Health Check-up", amount: "₹10,000 – ₹12,000" },
@@ -800,10 +790,10 @@ export const feeStructureMap: Record<string, FeeItem[]> = {
 -------------------------------------------------------------------- */
 export const videoMap: Record<string, string> = {
   "1": "https://www.youtube.com/embed/JWcG7FCQu1w",
-  "2": "https://www.youtube.com/embed/TvnX-xEjQYk",
-  "3": "https://www.youtube.com/embed/VIDEO_ID_3",
-  "4": "https://www.youtube.com/embed/VIDEO_ID_4",
-  "5": "https://www.youtube.com/embed/VIDEO_ID_5",
+  "2": "https://www.youtube.com/embed/mUIogYox-8k",
+  "3": "https://www.youtube.com/embed/3HcIGQdyvjo",
+  "4": "https://www.youtube.com/embed/18F9gdXnKnw",
+  "5": "https://www.youtube.com/embed/3UJcfUdvF4U",
   "6": "https://www.youtube.com/embed/VIDEO_ID_6",
   "7": "https://www.youtube.com/embed/VIDEO_ID_7",
   "8": "https://www.youtube.com/embed/VIDEO_ID_8",
@@ -813,68 +803,12 @@ export const videoMap: Record<string, string> = {
    FAQ Bank
 -------------------------------------------------------------------- */
 export const faqBank: Record<string, QA[]> = {
-  "1": [
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-  ],
-  "2": [
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-    // { question: "Question?", answer: "Answer" },
-  ],
   "3": [
     { question: "What is comprehensive financial planning, and why do I need it?", answer: "Comprehensive financial planning is a holistic approach to managing your finances. It covers everything from budgeting, saving, and investments to retirement planning, tax strategies, and estate planning. At NS Wealth, we tailor financial plans to your specific needs, helping you achieve your short-term and long-term financial goals. Whether you're a busy professional or nearing retirement, a well-structured plan provides clarity and peace of mind." },
     { question: "How is NS Wealth different from other financial advisors?", answer: "NS Wealth is a SEBI-registered investment advisor (RIA), which means we are legally obligated to act in your best interest. Unlike many advisors who earn commissions by selling financial products, we operate on a fee-based model. This ensures that our advice is unbiased and focused solely on helping you achieve your financial goals without any hidden agendas." },
     { question: "Who can benefit from NS Wealth's services?", answer: "Our services are tailored for busy professionals like doctors, IT professionals, business owners, and individuals who want expert help in managing their finances. Whether you're looking for investment advice, retirement planning, or managing your taxes efficiently, NS Wealth provides personalized solutions to fit your unique needs." },
     { question: "What does it mean to be a SEBI-registered investment advisor (RIA)?", answer: "Being SEBI-registered means that NS Wealth adheres to strict regulatory standards set by the Securities and Exchange Board of India (SEBI). As an RIA, we are required to act in a fiduciary capacity—putting your interests above our own. This ensures transparency, ethical practices, and unbiased advice tailored to your financial well-being." },
     { question: "How often will my financial plan be reviewed?", answer: "We conduct regular reviews of your financial plan—typically once every quarter or as needed based on changes in your life circumstances or market conditions. These reviews ensure that your plan remains aligned with your goals and allows us to make any necessary adjustments for optimal performance." },
-  ],
-  "4": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-  ],
-  "5": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-  ],
-  "6": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-  ],  
-  "7": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-  ],  
-  "8": [
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
-    { question: "Question?", answer: "Answer" },
   ],
 };
 
@@ -891,8 +825,6 @@ export const clientTypePillsMap: Record<string, string[]> = {
   "2": [
     "Business Owners",
     "Entrepreneurs",
-    "Wealth Management",
-    "Succession Planning"
   ],
   "3": [
     "NRIs",
@@ -937,7 +869,7 @@ export const clientTypePillsMap: Record<string, string[]> = {
 -------------------------------------------------------------------- */
 export const idealClientDescriptionMap: Record<string, string> = {
   "1": "We specialize in guiding salaried professionals towards smart financial growth and HNIs with advanced wealth management and strategic investments.",
-  "2": "I work with business owners and entrepreneurs who are looking to grow their wealth while managing their business finances effectively. My expertise lies in business succession planning and comprehensive wealth management.",
+  "2": "First generation rich who are looking for a competent and trusted advisor to help them manage their wealth and investments.",
   "3": "I specialize in serving NRIs and global investors, providing expert guidance on cross-border investments, tax planning, and wealth management across multiple jurisdictions.",
   "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and retirement income strategies.",
   "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs.",

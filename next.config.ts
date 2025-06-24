@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   // 🔧 other config options …
   images: {
     // allow both Wix-hosted and Unsplash images
-    domains: ['static.wixstatic.com', 'images.unsplash.com'],
+    domains: ['static.wixstatic.com', 'images.unsplash.com', 'img.youtube.com'],
 
     /* -----------------------------------------------------------
        Prefer stricter control?  Replace the `domains` array above
