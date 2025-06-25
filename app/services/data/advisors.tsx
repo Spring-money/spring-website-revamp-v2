@@ -459,7 +459,7 @@ export const mockAdvisors: Advisor[] = [
     photo: "/advisors/vishal-shah.svg",
     location: "Pune, Maharashtra",
     tagline: "Empowering your financial journey with unbiased, simplified, and transparent advice.",
-    specializations: [ "Financial Planning", "Retirement Planning"],
+    specializations: [ "Estate Planning", "Retirement Planning"],
     audience: ["NRIs", "HNI", "Young Professionals"],
     about:
       "Bachhat is built on the pillars of transparency, unbiased advice and making personal finance easy. We ensure our solutions are uncomplicated and provide personalized strategies for your financial well-being.",
@@ -488,11 +488,6 @@ export const mockAdvisors: Advisor[] = [
       "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
     ],
     testimonials: [
-      {
-        text: "Vikram's expertise in NRI taxation saved us from several costly mistakes while investing in India from abroad.",
-        author: "Rohan Mehra",
-        designation: "NRI, Singapore",
-      },
     ],
     socialMedia: [
       { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
@@ -841,14 +836,10 @@ export const clientTypePillsMap: Record<string, string[]> = {
   "5": [
     "High Net Worth",
     "Family Offices",
-    "Wealth Preservation",
-    "Legacy Planning"
   ],
   "6": [
     "NRIs",
-    "Global Investors",
-    "Cross-border Planning",
-    "International Tax"
+    "Estate Planning Clients",
   ],
   "7": [
     "NRIs",
@@ -873,7 +864,7 @@ export const idealClientDescriptionMap: Record<string, string> = {
   "3": "I specialize in serving NRIs and global investors, providing expert guidance on cross-border investments, tax planning, and wealth management across multiple jurisdictions.",
   "4": "I focus on helping retirees and pre-retirees create sustainable income streams and preserve their wealth. My approach emphasizes estate planning and retirement income strategies.",
   "5": "I work with high net worth individuals and families, offering sophisticated investment strategies and comprehensive wealth management solutions tailored to their unique needs.",
-  "6": "About Bachhat Wealth Management",
+  "6": "Bachhat Money primarily serves Non-Resident Indians (NRIs) and individuals aged 45 and above with established portfolios, who are seeking expert guidance for comprehensive wealth management and crucial estate planning.",
   "7": "About Hum Fauji",
   "8": "About Prosperentia Investment Advisors LLP",
 };

@@ -42,6 +42,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import FAQVideosSection from '@/components/FAQVideosSection';
+import CredentialsSection from '@/components/CredentialsSection';
+import { getAdvisorName } from '@/services/lib/advisorData';
 
 /* --------------------------------------------------------------------
    Types & Constants
@@ -140,59 +142,65 @@ export default function AdvisorDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
+  const advisorName = getAdvisorName(id);
   const advisor = getAdvisor(id);
 
   /* Derived data */
   const address = advisor.location ?? "Location not specified";
   const sebiReg = advisor.reg ?? "INA1000137000";
   const services: ServiceItem[] = advisor.services ?? [];
-  const feeStructure: FeeItem[] = feeStructureMap[advisor.id] ?? [];
-  const customCTAs: CustomCTA[] = customCTAMap[advisor.id] ?? [];
-  const credentials = [
-    "Certified Financial Planner (CFP)",
-    "SEBI Registered Investment Advisor",
-  ];
+  const feeStructure: FeeItem[] = feeStructureMap[id] ?? [];
+  const customCTAs: CustomCTA[] = customCTAMap[id] ?? [];
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
-  const faqs = faqBank[advisor.id] ?? [];
-  const advisorVideo = videoMap[advisor.id];
-  const isSpecial = advisor.id === "1";
+  const faqs = faqBank[id] ?? [];
+  const advisorVideo = videoMap[id];
+  const isSpecial = id === "1";
 
   // Add FAQ videos only for specific advisor IDs
-  const faqVideos = id === "2" ? [
-    {
-      id: "1",
-      title: "How does Candor help with financial planning?",
-      videoId: "t8jtaw6fq2Y", // Replace with actual YouTube ID
-      // Optional: custom thumbnail
-      // thumbnailUrl: "/images/advisors/candor-faq1-thumb.jpg"
-    },
-    {
-      id: "2",
-      title: "Long-Term Investing Explained: The Power of Compounding for Financial Freedom",
-      videoId: "7KWRbgw3C28" // Replace with actual YouTube ID
-    },
-    {
-      id: "3",
-      title: "Stocks vs Gold vs Bitcoin – What Really Builds Wealth?",
-      videoId: "WVLqiC0CGk8" // Replace with actual YouTube ID
+  const faqVideos = (() => {
+    switch(advisorName) {
+      case "Candor Investing":
+        return [
+          {
+            id: "1",
+            title: "How does Candor help with financial planning?",
+            videoId: "t8jtaw6fq2Y", // Replace with actual YouTube ID
+            // Optional: custom thumbnail
+            // thumbnailUrl: "/images/advisors/candor-faq1-thumb.jpg"
+          },
+          {
+            id: "2",
+            title: "Long-Term Investing Explained: The Power of Compounding for Financial Freedom",
+            videoId: "7KWRbgw3C28" // Replace with actual YouTube ID
+          },
+          {
+            id: "3",
+            title: "Stocks vs Gold vs Bitcoin – What Really Builds Wealth?",
+            videoId: "WVLqiC0CGk8" // Replace with actual YouTube ID
+          }
+        ];
+      case "Bachhat":
+        return [
+          {
+            id: "1",
+            title: "Bachhat investment philosophy",
+            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+          },
+          {
+            id: "2",
+            title: "How Bachhat Money helps you save",
+            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+          },
+          {
+            id: "3",
+            title: "Bachhat Money's portfolio management approach",
+            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+          }
+        ];
+      default:
+        return null;
     }
-  ] : id === "6" ? [
-    {
-      id: "1",
-      title: "Bachhat Money investment philosophy",
-      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
-    },
-    {
-      id: "2",
-      title: "How Bachhat Money helps you save",
-      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
-    },
-    {
-      id: "3",
-      title: "Bachhat Money's portfolio management approach",
-      videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
-    }
-  ] : null;
+  })();
 
   /* Card factories */
   const FeeCard = () => (
@@ -227,7 +235,7 @@ export default function AdvisorDetailPage({
       </CardHeader>
       <CardContent>
         <ul className="space-y-2">
-          {credentials.map((cred) => (
+          {advisorCredentials.map((cred) => (
             <li key={cred} className="flex items-center">
               <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-spring-green">
                 ✓
@@ -251,7 +259,7 @@ export default function AdvisorDetailPage({
       <CardContent>
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {(clientTypePillsMap[advisor.id] || advisor.audience).map(
+            {(clientTypePillsMap[id] || advisor.audience).map(
               (pill) => (
                 <span
                   key={pill}
@@ -263,7 +271,7 @@ export default function AdvisorDetailPage({
             )}
           </div>
           <p className="text-sm text-gray-600">
-            {idealClientDescriptionMap[advisor.id] ||
+            {idealClientDescriptionMap[id] ||
               "Clients seeking personalized financial advice and wealth management solutions."}
           </p>
         </div>
@@ -316,6 +324,49 @@ export default function AdvisorDetailPage({
       </div>
     ) : null;
 
+  // Define credentials for each advisor
+  const getAdvisorCredentials = (advisorId: string) => {
+    const name = getAdvisorName(advisorId);
+    
+    switch(name) {
+      case "MyGuide2Wealth":
+        return [
+          "Certified Financial Planner (CFP)",
+          "SEBI Registered Investment Advisor"
+        ];
+      case "Candor Investing":
+        return [
+          "Certified Investment Advisor (CIA)",
+          "SEBI Registered Investment Advisor",
+          "Masters in Financial Analysis"
+        ];
+      case "NS Wealth Solution":
+        return [
+          "SEBI Registered Investment Advisor"
+        ];
+      case "Artha Fin Plan":
+        return [
+          "Financial Planning Specialist",
+          "MBA Finance"
+        ];
+      case "FinSharpe Investment Advisors":
+        return [
+          "SEBI Registered Investment Advisor",
+          "Wealth Management Certified Professional"
+        ];
+      case "Bachhat":
+        return [
+          "Certified Financial Analyst (CFA)",
+          "SEBI Registered Investment Advisor",
+          "Chartered Accountant",
+        ];
+      default:
+        return [];
+    }
+  };
+  
+  const advisorCredentials = getAdvisorCredentials(id);
+
   /* ----------------------------- JSX ----------------------------- */
   return (
     <main className="mx-auto w-[90%] overflow-x-hidden">
@@ -339,7 +390,7 @@ export default function AdvisorDetailPage({
                     <div className="aspect-[1/1] overflow-hidden rounded-lg bg-gray-100 shadow-md">
                       <Image
                         src={advisor.photo}
-                        alt={advisor.advisorName}
+                        alt={advisorName}
                         width={500}
                         height={500}
                         className="h-full w-full object-cover"
@@ -350,7 +401,7 @@ export default function AdvisorDetailPage({
                   <div className="md:w-2/3">
                     <div className="mb-2 flex flex-wrap items-center gap-2">
                       <h1 className="text-3xl font-bold text-[#272A2B]">
-                        {advisor.firmName}
+                        {advisorName}
                       </h1>
                       {advisor.verifiedBySpring && (
                         <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-semibold text-spring-green">
@@ -427,7 +478,7 @@ export default function AdvisorDetailPage({
                 <CardHeader className="flex flex-col items-start pb-2">
                   <div className="mb-1 flex items-center text-2xl font-semibold text-[#272A2B]">
                     <Video size={24} className="mr-2 text-spring-green" />
-                    Meet {advisor.advisorName}
+                    Meet {advisorName}
                   </div>
                   <p className="text-lg font-light text-[#272A2B]">
                     {advisor.tagline}
@@ -486,7 +537,7 @@ export default function AdvisorDetailPage({
           <Card>
             <CardHeader className="pt-5 pb-2">
               <CardTitle className="text-2xl font-semibold text-[#272A2B]">
-                About {advisor.firmName}
+                About {advisorName}
               </CardTitle>
             </CardHeader>
             <CardContent>
