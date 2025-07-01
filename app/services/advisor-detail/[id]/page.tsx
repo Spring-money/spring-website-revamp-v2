@@ -24,111 +24,29 @@ import type {
   Advisor,
   AudienceType,
   Testimonial,
-  ServiceItem,
+  Service,
   FeeItem,
   QA,
   CustomCTA,
 } from "@/services/data/advisors";
 import {
-  mockAdvisors,
-  customCTAMap,
-  feeStructureMap,
-  videoMap,
-  faqBank,
-  clientTypePillsMap,
-  idealClientDescriptionMap,
+  advisors,
 } from "@/services/data/advisors";
 import TestimonialCard from "@/components/TestimonialCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import FAQVideosSection from '@/components/FAQVideosSection';
-import CredentialsSection from '@/components/CredentialsSection';
-import { getAdvisorName } from '@/services/lib/advisorData';
-
-/* --------------------------------------------------------------------
-   Types & Constants
--------------------------------------------------------------------- */
-
-/* --------------------------------------------------------------------
-   Client Description Map
--------------------------------------------------------------------- */
-const clientDescriptionMap: Record<
-  string,
-  { description: string; icon: React.ReactNode }
-> = {
-  Salaried: {
-    description:
-      "Professionals seeking financial stability, tax optimization, and long-term wealth building through systematic investment planning.",
-    icon: <Users size={16} className="text-spring-green" />,
-  },
-  "Business Owners": {
-    description:
-      "Entrepreneurs looking for business succession planning, tax strategies, and wealth preservation for their business and personal assets.",
-    icon: <TrendingUp size={16} className="text-spring-green" />,
-  },
-  Retired: {
-    description:
-      "Retirees focused on wealth preservation, estate planning, and generating sustainable income from their retirement corpus.",
-    icon: <ChartBar size={16} className="text-spring-green" />,
-  },
-  HNI: {
-    description:
-      "High net worth individuals seeking sophisticated investment strategies, tax optimization, and comprehensive wealth management solutions.",
-    icon: <Globe size={16} className="text-spring-green" />,
-  },
-  NRIs: {
-    description:
-      "Non-resident Indians looking for cross-border investment opportunities, tax planning, and wealth management across multiple jurisdictions.",
-    icon: <Globe size={16} className="text-spring-green" />,
-  },
-  "Young Professionals": {
-    description:
-      "Early career professionals seeking guidance on financial planning, investment strategies, and building a strong financial foundation.",
-    icon: <Users size={16} className="text-spring-green" />,
-  },
-};
-
-const sampleBlogs = [
-  {
-    id: "1",
-    title: "Understanding Mutual Fund Expense Ratios",
-    excerpt:
-      "Learn how expense ratios impact your investment returns and what to look for when choosing mutual funds.",
-    date: "June 15, 2023",
-    slug: "understanding-mutual-fund-expense-ratios",
-    image:
-      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=800&q=60",
-    author: "John Doe",
-  },
-  {
-    id: "2",
-    title: "Tax Planning Strategies for High‑Income Professionals",
-    excerpt:
-      "Discover effective tax‑planning strategies specifically designed for doctors, lawyers, and other high‑income professionals.",
-    date: "May 22, 2023",
-    slug: "tax-planning-strategies-high-income",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=60",
-    author: "Jane Smith",
-  },
-  {
-    id: "3",
-    title: "Retirement Planning in Your 40s: What You Need to Know",
-    excerpt:
-      "It's never too late to start planning for retirement. Here's what to focus on if you're beginning in your 40s.",
-    date: "April 10, 2023",
-    slug: "retirement-planning-40s",
-    image:
-      "https://images.unsplash.com/photo-1559519529-0936e4058364?auto=format&fit=crop&w=800&q=60",
-    author: "Michael Johnson",
-  },
-];
+import FAQVideosSection from "@/components/FAQVideosSection";
+import CredentialsSection from "@/components/CredentialsSection";
+import { getAdvisorName } from "@/services/lib/advisorData";
 
 /* --------------------------------------------------------------------
    Helpers
 -------------------------------------------------------------------- */
 function getAdvisor(id: string): Advisor {
-  const found = mockAdvisors.find((a): a is Advisor => String(a.id) === id);
+  // match on each advisor's `id` instead of firmName
+  const found = advisors.find(
+    (a): a is Advisor => a.id === id
+  );
   if (!found) notFound();
   return found;
 }
@@ -148,54 +66,53 @@ export default function AdvisorDetailPage({
   /* Derived data */
   const address = advisor.location ?? "Location not specified";
   const sebiReg = advisor.reg ?? "INA1000137000";
-  const services: ServiceItem[] = advisor.services ?? [];
-  const feeStructure: FeeItem[] = feeStructureMap[id] ?? [];
-  const customCTAs: CustomCTA[] = customCTAMap[id] ?? [];
+  const services: Service[] = advisor.services ?? [];
+  const feeStructure: FeeItem[] = advisor.feeStructure ?? [];
+  const advisorCTAs: CustomCTA[] = advisor.cta ?? [];
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
-  const faqs = faqBank[id] ?? [];
-  const advisorVideo = videoMap[id];
+  const faqs = advisor.faqs ?? [];
+  const advisorVideo = advisor.videoUrl;
   const isSpecial = id === "1";
 
   // Add FAQ videos only for specific advisor IDs
   const faqVideos = (() => {
-    switch(advisorName) {
+    switch (advisorName) {
       case "Candor Investing":
         return [
           {
             id: "1",
             title: "How does Candor help with financial planning?",
-            videoId: "t8jtaw6fq2Y", // Replace with actual YouTube ID
-            // Optional: custom thumbnail
-            // thumbnailUrl: "/images/advisors/candor-faq1-thumb.jpg"
+            videoId: "t8jtaw6fq2Y",
           },
           {
             id: "2",
-            title: "Long-Term Investing Explained: The Power of Compounding for Financial Freedom",
-            videoId: "7KWRbgw3C28" // Replace with actual YouTube ID
+            title:
+              "Long-Term Investing Explained: The Power of Compounding for Financial Freedom",
+            videoId: "7KWRbgw3C28",
           },
           {
             id: "3",
             title: "Stocks vs Gold vs Bitcoin – What Really Builds Wealth?",
-            videoId: "WVLqiC0CGk8" // Replace with actual YouTube ID
-          }
+            videoId: "WVLqiC0CGk8",
+          },
         ];
       case "Bachhat":
         return [
           {
             id: "1",
             title: "Bachhat investment philosophy",
-            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+            videoId: "dQw4w9WgXcQ",
           },
           {
             id: "2",
             title: "How Bachhat Money helps you save",
-            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
+            videoId: "dQw4w9WgXcQ",
           },
           {
             id: "3",
             title: "Bachhat Money's portfolio management approach",
-            videoId: "dQw4w9WgXcQ" // Replace with actual YouTube ID
-          }
+            videoId: "dQw4w9WgXcQ",
+          },
         ];
       default:
         return null;
@@ -259,19 +176,17 @@ export default function AdvisorDetailPage({
       <CardContent>
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {(clientTypePillsMap[id] || advisor.audience).map(
-              (pill) => (
-                <span
-                  key={pill}
-                  className="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-800"
-                >
-                  {pill}
-                </span>
-              )
-            )}
+            {(advisor.clientTypePills || advisor.audience).map((pill: string) => (
+              <span
+                key={pill}
+                className="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-800"
+              >
+                {pill}
+              </span>
+            ))}
           </div>
           <p className="text-sm text-gray-600">
-            {idealClientDescriptionMap[id] ||
+            {advisor.idealClientDescription ||
               "Clients seeking personalized financial advice and wealth management solutions."}
           </p>
         </div>
@@ -304,7 +219,7 @@ export default function AdvisorDetailPage({
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
-          {faqs.map(({ question, answer }, idx: number) => (
+          {faqs.map(({ question, answer }: { question: string; answer: string }, idx: number) => (
             <details
               key={idx}
               className="group rounded-lg border border-spring-green bg-[#F5FFFB] p-4 shadow-sm open:shadow-md"
@@ -327,51 +242,31 @@ export default function AdvisorDetailPage({
   // Define credentials for each advisor
   const getAdvisorCredentials = (advisorId: string) => {
     const name = getAdvisorName(advisorId);
-    
-    switch(name) {
+
+    switch (name) {
       case "MyGuide2Wealth":
-        return [
-          "Certified Financial Planner (CFP)",
-          "SEBI Registered Investment Advisor"
-        ];
+        return ["Certified Financial Planner (CFP)", "SEBI Registered Investment Advisor"];
       case "Candor Investing":
-        return [
-          "Certified Investment Advisor (CIA)",
-          "SEBI Registered Investment Advisor",
-          "Masters in Financial Analysis"
-        ];
+        return ["Certified Investment Advisor (CIA)", "SEBI Registered Investment Advisor", "Masters in Financial Analysis"];
       case "NS Wealth Solution":
-        return [
-          "SEBI Registered Investment Advisor"
-        ];
+        return ["SEBI Registered Investment Advisor"];
       case "Artha Fin Plan":
-        return [
-          "Financial Planning Specialist",
-          "MBA Finance"
-        ];
+        return ["Financial Planning Specialist", "MBA Finance"];
       case "FinSharpe Investment Advisors":
-        return [
-          "SEBI Registered Investment Advisor",
-          "Wealth Management Certified Professional"
-        ];
+        return ["SEBI Registered Investment Advisor", "Wealth Management Certified Professional"];
       case "Bachhat":
-        return [
-          "Certified Financial Analyst (CFA)",
-          "SEBI Registered Investment Advisor",
-          "Chartered Accountant",
-        ];
+        return ["Certified Financial Analyst (CFA)", "SEBI Registered Investment Advisor", "Chartered Accountant"];
       default:
         return [];
     }
   };
-  
+
   const advisorCredentials = getAdvisorCredentials(id);
 
-  /* ----------------------------- JSX ----------------------------- */
   return (
     <main className="mx-auto w-[90%] overflow-x-hidden">
       <div className="min-h-screen bg-gray-50 pb-12">
-        {/* ----------------------------- Hero Section ----------------------------- */}
+        {/* Hero Section */}
         <div className="border-b border-gray-200 bg-[#FCFFFE] pb-2 md:pb-4">
           <div className="mx-auto max-w-7xl px-4 pt-8">
             <Link
@@ -415,7 +310,7 @@ export default function AdvisorDetailPage({
                         <span className="font-semibold text-[#272A2B]">
                           Principal Advisor:
                         </span>{" "}
-                        {advisor.PrincipalAdvisor}
+                        {advisor.principalAdvisor}
                       </p>
                       <p className="text-sm font-semibold text-[#272A2B]">
                         {sebiReg}
@@ -438,18 +333,12 @@ export default function AdvisorDetailPage({
                     </div>
                     <div className="mt-6 flex flex-wrap gap-4">
                       {/* Custom CTAs */}
-                      {customCTAs.map((cta, index) => (
+                      {advisorCTAs.map((cta, index) => (
                         <a
                           key={index}
                           href={cta.href}
-                          target={
-                            cta.href.startsWith("tel:") ? undefined : "_blank"
-                          }
-                          rel={
-                            cta.href.startsWith("tel:")
-                              ? undefined
-                              : "noopener noreferrer"
-                          }
+                          target={cta.href.startsWith("tel:") ? undefined : "_blank"}
+                          rel={cta.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
                           className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
                             cta.variant === "primary"
                               ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
@@ -468,7 +357,7 @@ export default function AdvisorDetailPage({
           </div>
         </div>
 
-        {/* --------------------------- Conditional Layout --------------------------- */}
+        {/* Conditional Layout */}
         {isSpecial ? (
           InfoCardsGrid()
         ) : (
@@ -501,7 +390,7 @@ export default function AdvisorDetailPage({
           </div>
         )}
 
-        {/* ---------------------------- Services Offered --------------------------- */}
+        {/* Services Offered */}
         <div className="mx-auto mb-8 max-w-7xl px-4">
           <Card>
             <CardHeader className="pb-2">
@@ -532,7 +421,7 @@ export default function AdvisorDetailPage({
           </Card>
         </div>
 
-        {/* -------------------------------- About --------------------------------- */}
+        {/* About */}
         <div className="mx-auto max-w-7xl px-4">
           <Card>
             <CardHeader className="pt-5 pb-2">
@@ -546,7 +435,7 @@ export default function AdvisorDetailPage({
           </Card>
         </div>
 
-        {/* --------------------------- Testimonials ------------------------------- */}
+        {/* Testimonials */}
         {testimonials.length > 0 && (
           <div className="mx-auto mt-12 max-w-7xl px-4">
             <h2 className="mb-4 text-2xl font-semibold text-[#272A2B]">
@@ -560,54 +449,12 @@ export default function AdvisorDetailPage({
           </div>
         )}
 
-        {/* --------------------------- Latest Articles --------------------------- */}
-        {/* <div className="mx-auto mt-12 max-w-7xl px-4"> */}
-        {/* <header className="mb-4 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-[#272A2B]">
-              Latest Articles
-            </h2>
-            <Link
-              href={`/services/advisor-detail/${advisor.id}/blogs`}
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
-            >
-              <Newspaper size={16} />
-              Blogs
-            </Link>
-          </header>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {sampleBlogs.map(({ id, title, excerpt, date, slug, image }) => (
-              <div key={id} className="rounded-lg bg-white p-6 shadow-lg">
-                <div className="h-48 overflow-hidden rounded-md bg-gray-100">
-                  <Image
-                    src={image}
-                    alt={title}
-                    width={400}
-                    height={200}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <h3 className="mt-4 text-xl font-semibold text-[#272A2B]">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500">{excerpt}</p>
-                <p className="mt-4 text-xs text-gray-400">{date}</p>
-                <Link
-                  href={`/blog/${slug}`}
-                  className="mt-4 inline-block text-sm font-medium text-spring-green hover:underline"
-                >
-                  Read More
-                </Link>
-              </div>
-            ))}
-          </div> */}
+        {/* FAQ Section */}
+        {FAQSection()}
+
+        {/* FAQ Videos */}
+        {faqVideos && <FAQVideosSection videos={faqVideos} />}
       </div>
-      {/* </div> */}
-
-      {/* FAQ Section */}
-      {FAQSection()}
-
-      {/* Only show FAQ videos for specified advisors */}
-      {faqVideos && <FAQVideosSection videos={faqVideos} />}
     </main>
   );
 }
