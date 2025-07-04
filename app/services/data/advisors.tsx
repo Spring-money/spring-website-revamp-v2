@@ -50,10 +50,10 @@
      designation?: string;
    }
    
-   export interface SocialMedia {
-     type: "linkedin" | "twitter" | "facebook" | "instagram" | "website";
-     url: string;
-   }
+  //  export interface SocialMedia {
+  //    type: "linkedin" | "twitter" | "facebook" | "instagram" | "website";
+  //    url: string;
+  //  }
    
    export interface CustomCTA {
      text: string;
@@ -103,13 +103,7 @@
      testimonials?: Testimonial[];
      videoUrl?: string;
    
-     socialMedia?: SocialMedia[];
-     contactDetails: {
-       phone?: string;
-       email: string;
-       website?: string;
-       calendlyLink?: string;
-     };
+    
      sebiRegistrationNumber: string;
      verifiedBySpring: boolean;
      grievanceOfficer?: {
@@ -173,10 +167,7 @@
          { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },
        ],
    
-       successStories: [
-         "Helped a client retire 5 years early through strategic planning and investment management",
-         "Created a tax-efficient portfolio that saved clients an average of 3.5 % annually",
-       ],
+      
    
        testimonials: [
          {
@@ -198,16 +189,7 @@
    
        videoUrl: "https://www.youtube.com/embed/JWcG7FCQu1w",
    
-       socialMedia: [
-         { type: "linkedin", url: "https://linkedin.com/in/rajivmehta" },
-         { type: "website", url: "https://wealthwisdom.in" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9876543210",
-         email: "rajiv@wealthwisdom.in",
-         website: "https://wealthwisdom.in",
-       },
+     
    
        sebiRegistrationNumber: "INA100013700",
        verifiedBySpring: true,
@@ -268,11 +250,7 @@
          { service: "Financial Goal Planning", amount: "₹25,000 – ₹45,000" },
        ],
    
-       successStories: [
-         "Guided 1,000+ employees through ESOP diversification",
-         "Model portfolio outperformed Nifty by 4 % CAGR since 2019",
-       ],
-   
+    
        testimonials: [
          {
            text: "Amey's market-research depth is outstanding; I'm thoroughly satisfied.",
@@ -293,16 +271,7 @@
    
        videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
    
-       socialMedia: [
-         { type: "twitter", url: "https://twitter.com/futureforwardfin" },
-         { type: "website", url: "https://futureforwardfinancial.in" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9000001122",
-         email: "priya@futureforwardfinancial.in",
-         website: "https://futureforwardfinancial.in",
-       },
+    
    
        sebiRegistrationNumber: "INH000002345",
        verifiedBySpring: true,
@@ -371,10 +340,7 @@
          { service: "Financial Consultation", amount: "₹15,000 – ₹25,000" },
        ],
    
-       successStories: [
-         "Helped 200+ NRI families navigate complex cross-border tax implications",
-         "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
-       ],
+     
    
        testimonials: [
          {
@@ -393,17 +359,7 @@
    
        videoUrl: "https://www.youtube.com/embed/3HcIGQdyvjo",
    
-       socialMedia: [
-         { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-         { type: "website", url: "https://globalindianadvisors.com" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9867452310",
-         email: "vikram@globalindianadvisors.com",
-         website: "https://globalindianadvisors.com",
-         calendlyLink: "https://calendly.com/kiran-nswealth",
-       },
+    
    
        sebiRegistrationNumber: "INH000003456",
        verifiedBySpring: true,
@@ -499,25 +455,12 @@
          { service: "Comprehensive Planning", amount: "₹25,000 – ₹45,000" },
        ],
    
-       successStories: [
-         "Built inflation-beating retirement plans for 500+ families",
-         "Helped clients generate reliable pension income exceeding ₹2 crores annually",
-       ],
+
    
        testimonials: [],
    
        videoUrl: "https://www.youtube.com/embed/18F9gdXnKnw",
    
-       socialMedia: [
-         { type: "facebook", url: "https://facebook.com/retireright" },
-         { type: "website", url: "https://retireright.in" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9844556677",
-         email: "ajay@retireright.in",
-         website: "https://retireright.in",
-       },
    
        sebiRegistrationNumber: "INA000011796",
        verifiedBySpring: true,
@@ -593,16 +536,7 @@
    
        videoUrl: "https://www.youtube.com/embed/3UJcfUdvF4U",
    
-       socialMedia: [
-         { type: "linkedin", url: "https://linkedin.com/in/nishaagarwal" },
-         { type: "website", url: "https://elitewealthmanagers.com" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9833221144",
-         email: "nisha@elitewealthmanagers.com",
-         website: "https://elitewealthmanagers.com",
-       },
+      
    
        sebiRegistrationNumber: "INA000018489",
        verifiedBySpring: true,
@@ -669,26 +603,14 @@
          { service: "Holistic Financial Planning", amount: "₹18,000 – ₹22,000" },
        ],
    
-       successStories: [
-         "Helped 200+ NRI families navigate complex cross-border tax implications",
-         "Managed repatriation of assets worth over ₹500 crores for clients returning to India",
-       ],
+     
+       
    
        testimonials: [],
    
        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6",
    
-       socialMedia: [
-         { type: "linkedin", url: "https://linkedin.com/in/vikramkhanna" },
-         { type: "website", url: "https://globalindianadvisors.com" },
-       ],
-   
-       contactDetails: {
-         phone: "+91 9867452310",
-         email: "vikram@globalindianadvisors.com",
-         website: "https://globalindianadvisors.com",
-         calendlyLink: "https://calendly.com/enquiry-bachhat",
-       },
+
    
        sebiRegistrationNumber: "INA000019220",
        verifiedBySpring: true,
