@@ -100,18 +100,18 @@ export default function AdvisorDetailPage({
         return [
           {
             id: "1",
-            title: "Bachhat investment philosophy",
-            videoId: "dQw4w9WgXcQ",
+            title: "Markets at All-Time High: Should You Invest or Wait?",
+            videoId: "46dL41WNvhI",
           },
           {
             id: "2",
-            title: "How Bachhat Money helps you save",
-            videoId: "dQw4w9WgXcQ",
+            title: "How to Ensure Your Kids Get Your Wealth",
+            videoId: "k0Tw2mHySI0",
           },
           {
             id: "3",
-            title: "Bachhat Money's portfolio management approach",
-            videoId: "dQw4w9WgXcQ",
+            title: "Can You Retire at 45 with a ₹1 Lakh Monthly Salary?",
+            videoId: "__gBuogQNTE",
           },
         ];
       default:
@@ -245,17 +245,17 @@ export default function AdvisorDetailPage({
 
     switch (name) {
       case "MyGuide2Wealth":
-        return ["Certified Financial Planner (CFP)", "SEBI Registered Investment Advisor"];
+        return ["SEBI Registered Investment Advisor", "NISM Certified Research Analyst and Equity Derivatives Specialist", "Certified Financial Planner (CFP)"];
       case "Candor Investing":
-        return ["Certified Investment Advisor (CIA)", "SEBI Registered Investment Advisor", "Masters in Financial Analysis"];
+        return ["SEBI Registered Investment Advisor"];
       case "NS Wealth Solution":
         return ["SEBI Registered Investment Advisor"];
       case "Artha Fin Plan":
-        return ["Financial Planning Specialist", "MBA Finance"];
+        return ["Financial Planning Specialist", "Certified Financial Planner (CFP)"];
       case "FinSharpe Investment Advisors":
-        return ["SEBI Registered Investment Advisor", "Wealth Management Certified Professional"];
+        return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2 "];
       case "Bachhat":
-        return ["Certified Financial Analyst (CFA)", "SEBI Registered Investment Advisor", "Chartered Accountant"];
+        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
       default:
         return [];
     }

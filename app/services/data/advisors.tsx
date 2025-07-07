@@ -50,10 +50,10 @@
      designation?: string;
    }
    
-  //  export interface SocialMedia {
-  //    type: "linkedin" | "twitter" | "facebook" | "instagram" | "website";
-  //    url: string;
-  //  }
+    export interface SocialMedia {
+     type: "linkedin" | "twitter" | "facebook" | "instagram" | "website";
+     url: string;
+  }
    
    export interface CustomCTA {
      text: string;
@@ -501,24 +501,16 @@
    
        about:
          "As fiduciaries, we offer investment advice with full transparency and without any conflict of interest.",
-       description: `FinSharpe, founded by CFP® Shuchi Mundra, empowers individuals and families through unbiased, education-driven advice. We foster long-term relationships built on trust, transparency, and education.`,
+       description: "FinSharpe came into existence to enable investors to reduce psychological biases from investment decisions by providing data driven insights. As fiduciaries, we offer investment advice with full transparency and without any conflict of interest.",
    
        services: [
          {
-           name: "Comprehensive Financial Planning",
-           description: "Professional, tailored planning services.",
+           name: "Wealth Management",
+           description: "Managed portfolios for HNIs and families seeking sophisticated strategies and comprehensive wealth-management solutions.",
          },
          {
            name: "Investment Advisory Services",
            description: "Expert investment advice aligned with your goals.",
-         },
-         {
-           name: "Financial Wellness Program",
-           description: "Tailored solutions for clarity and growth.",
-         },
-         {
-           name: "Online Financial Advisor",
-           description: "Serving clients across India and globally.",
          },
        ],
    
@@ -550,10 +542,26 @@
            icon: <ChartBar size={16} className="mr-2" />,
          },
        ],
+       faqs: [
+        {
+          question: "Do I have to open a broking account with Finsharpe?",
+          answer:
+            "No. You can execute our advice on any broking account of your choice. However, we recommend you assign a fresh broking account for easier segregation and tracking.",
+        },
+        {
+          question: "Do I have to transfer funds to your account to start?",
+          answer:
+            "No. The investments will be held in your broking account. We would be guiding you on the exact transactions to be done and the subsequent changes.",
+        },
+        {
+          question: "I have some on-going SIPs in Mutual Funds. Could you advise on what to do?",
+          answer: "Yes. We will provide a one-time review of your portfolio. If you would like to continue with Mutual Funds you can invest in our Mutual Fund baskets. Else you could select any of our Direct Stocks strategies as per your risk profile.",
+        },
+      ],
    
        clientTypePills: ["High Net Worth", "Family Offices"],
        idealClientDescription:
-         "I work with HNIs and families seeking sophisticated strategies and comprehensive wealth-management solutions.",
+         "We work with HNIs and families seeking sophisticated strategies and comprehensive wealth-management solutions.",
      },
    
      /* ----------------------- Advisor 6 ----------------------- */
