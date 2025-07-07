@@ -232,14 +232,14 @@ export default function HomePage() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-screen-2xl">
           <WhoWeServeCards
+            img="/who-we-serve/govt-official.svg"
+            heading="Government Officials"
+            subHeading="Customized Planning: Pension, Tax & Loan Strategies."
+          />
+          <WhoWeServeCards
             img="/who-we-serve/it.svg"
             heading="IT Professionals"
             subHeading="Maximize IT Earnings: ESOPs, Stocks & Wealth Growth."
-          />
-          <WhoWeServeCards
-            img="/who-we-serve/mba.svg"
-            heading="MBA Graduates"
-            subHeading="Boost Income, Reduce Taxes, Build Wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/professional.svg"
@@ -252,9 +252,9 @@ export default function HomePage() {
             subHeading="Serve & Secure: Pension, Investment & Financial Planning."
           />
           <WhoWeServeCards
-            img="/who-we-serve/govt-official.svg"
-            heading="Government Officials & Public Servants"
-            subHeading="Customized Planning: Pension, Tax & Loan Strategies."
+            img="/who-we-serve/management.svg"
+            heading="Management Professionals"
+            subHeading="Boost Income, Reduce Taxes, Build Wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/business.svg"

@@ -11,7 +11,7 @@ import VideoSection from '@/components/VideoSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import ResultsHeader from '@/components/ResultsHeader';
 import NoResults from '@/components/NoResults';
-import { mockAdvisors, Advisor, Location, Specialization, AudienceType } from '@/services/data/advisors';
+import { advisors, Advisor, Location, Specialization, AudienceType } from '@/services/data/advisors';
 import { useState, useEffect } from 'react';
 import FAQAccordion from '@/components/FAQAccordion';
 // import Marketplace from "./marketplace/page";
@@ -54,7 +54,7 @@ export default function Marketplace() {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
   const [selectedSpecializations, setSelectedSpecializations] = useState<Specialization[]>([]);
   const [selectedAudience, setSelectedAudience] = useState<AudienceType | null>(null);
-  const [filteredAdvisors, setFilteredAdvisors] = useState<Advisor[]>(mockAdvisors);
+  const [filteredAdvisors, setFilteredAdvisors] = useState<Advisor[]>(advisors);
 
   // Apply filters whenever filter states change
   // useEffect(() => {
@@ -111,7 +111,7 @@ export default function Marketplace() {
         
         {/* Results Header */}
         <ResultsHeader 
-          totalAdvisors={mockAdvisors.length}
+          totalAdvisors={advisors.length}
           filteredAdvisorsCount={filteredAdvisors.length}
         />
         
