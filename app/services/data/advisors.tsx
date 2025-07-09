@@ -107,7 +107,7 @@
    
     
      sebiRegistrationNumber: string;
-     verifiedBySpring: boolean;
+     verifiedBySpring?: boolean;
      grievanceOfficer?: {
        name: string;
        email: string;

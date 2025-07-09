@@ -1,3 +1,5 @@
+"use client";
+
 // /src/app/advisor-detail/[id]/page.tsx
 
 import { use } from "react";
@@ -258,6 +260,16 @@ export default function AdvisorDetailPage({
         return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
       case "Horus Financials":
         return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
+      case "Candura Investment Advisors":
+        return ["SEBI Registered Investment Advisor", "MBA Finance"];
+      case "Deora Investment Advisory":
+        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
+      case "Avro Wealth":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Cedrus Wealth Partners":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)", "MBA Finance"];
+      case "Midas Wealth Advisory":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
       default:
         return [];
     }
@@ -335,22 +347,31 @@ export default function AdvisorDetailPage({
                     </div>
                     <div className="mt-6 flex flex-wrap gap-4">
                       {/* Custom CTAs */}
-                      {advisorCTAs.map((cta, index) => (
-                        <a
-                          key={index}
-                          href={cta.href}
-                          target={cta.href.startsWith("tel:") ? undefined : "_blank"}
-                          rel={cta.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
-                          className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
-                            cta.variant === "primary"
-                              ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
-                              : "border border-spring-green bg-transparent text-spring-green hover:bg-green-50"
-                          }`}
-                        >
-                          {cta.icon}
-                          {cta.text}
-                        </a>
-                      ))}
+                      {advisorCTAs.map((cta, index) => {
+                        // Check if advisor ID is 7-12 (disable navigation)
+                        const isDisabled = parseInt(id) >= 7 && parseInt(id) <= 12;
+                        
+                        return (
+                          <a
+                            key={index}
+                            href={cta.href}
+                            target={cta.href.startsWith("tel:") ? undefined : "_blank"}
+                            rel={cta.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
+                            onClick={isDisabled ? (e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            } : undefined}
+                            className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
+                              cta.variant === "primary"
+                                ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
+                                : "border border-spring-green bg-transparent text-spring-green hover:bg-green-50"
+                            }`}
+                          >
+                            {cta.icon}
+                            {cta.text}
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

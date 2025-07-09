@@ -88,7 +88,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   {
     id: "8",
@@ -177,7 +178,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   {
     id: "9",
@@ -266,7 +268,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   {
     id: "10",
@@ -355,7 +358,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   {
     id: "11",
@@ -444,7 +448,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   {
     id: "12",
@@ -533,7 +538,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Priya Kumar",
       email: "grievance@wealthwisesolutions.com"
-    }
+    },
+    verifiedBySpring: false
   },
   // Add more profiles here - copy the structure above and modify the details
   // You can easily scale this to 100+ profiles by copying and modifying the data
@@ -669,5 +675,8 @@ export const advisorTemplate: AdvisorInput = {
   grievanceOfficer: {
     name: "Your Grievance Officer Name",
     email: "grievance@yourfirm.com"
-  }
+  },
+  
+  // ===== VERIFICATION STATUS =====
+  verifiedBySpring: false // Set to true if verified by Spring Money team
 }; 

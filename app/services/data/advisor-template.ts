@@ -24,6 +24,7 @@ export interface AdvisorInput {
   idealClientDescription?: string;
   successStories?: string[];
   grievanceOfficer?: {name: string, email: string};
+  verifiedBySpring?: boolean;
 }
 
 export const createAdvisorProfile = (data: AdvisorInput): Advisor => ({
@@ -45,7 +46,7 @@ export const createAdvisorProfile = (data: AdvisorInput): Advisor => ({
   testimonials: data.testimonials || [],
   videoUrl: data.videoUrl,
   sebiRegistrationNumber: data.sebiReg,
-  verifiedBySpring: true,
+  verifiedBySpring: data.verifiedBySpring ?? false,
   grievanceOfficer: data.grievanceOfficer || { 
     name: "Support Team", 
     email: "support@springmoney.in" 
