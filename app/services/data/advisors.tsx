@@ -44,7 +44,8 @@
      | "Pune, Maharashtra"
      | "Kolkata, West Bengal"
      | "Remote/Virtual"
-     | "Noida, Uttar Pardesh";
+     | "Noida, Uttar Pardesh"
+     | "Gurugram, Haryana";
    
    export interface Testimonial {
      text: string;
