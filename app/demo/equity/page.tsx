@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ClipLoader } from "react-spinners";
+import BackToDemoButton from "../../components/BackToDemoButton";
 
 declare global {
   interface Window {
@@ -145,107 +146,110 @@ export default function EquityPage() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#108e66]">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-xl font-bold text-[#108e66] mb-6 text-center">
-          SDK Call Form
-        </h2>
+    <div className="min-h-screen bg-[#108e66] py-4">
+      <BackToDemoButton />
+      <div className="flex justify-center items-center">
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+          <h2 className="text-xl font-bold text-[#108e66] mb-6 text-center">
+            SDK Call Form
+          </h2>
 
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">
-            Ticker(Stock Symbol)
-          </label>
-          <select
-            name="ticker"
-            value={form.ticker}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          >
-            <option value="">Select a ticker</option>
-            <option value="M&M">Mahindra & Mahindra</option>
-            <option value="TATATECH">Tata Technologies Ltd</option>
-            <option value="NATCOPHARM">Natco Pharma</option>
-          </select>
-        </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">
+              Ticker(Stock Symbol)
+            </label>
+            <select
+              name="ticker"
+              value={form.ticker}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            >
+              <option value="">Select a ticker</option>
+              <option value="M&M">Mahindra & Mahindra</option>
+              <option value="TATATECH">Tata Technologies Ltd</option>
+              <option value="NATCOPHARM">Natco Pharma</option>
+            </select>
+          </div>
 
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Quantity</label>
-          <input
-            type="number"
-            name="quantity"
-            value={form.quantity}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Type</label>
-          <select
-            name="type"
-            value={form.type}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          >
-            <option value="">Select type</option>
-            <option value="BUY">BUY</option>
-            <option value="SELL">SELL</option>
-          </select>
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Order Type</label>
-          <select
-            name="orderType"
-            value={form.orderType}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          >
-            <option value="">Select order type</option>
-            <option value="MARKET">MARKET</option>
-            <option value="LIMIT">LIMIT</option>
-            <option value="SL">SL(Stop Loss)</option>
-            <option value="SLM">SLM(Stop Loss Market)</option>
-          </select>
-        </div>
-
-        {(form.orderType === "LIMIT" || form.orderType === "SL") && (
-          <div className="mb-6">
-            <label className="block mb-1 text-[#108e66]">Price</label>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Quantity</label>
             <input
               type="number"
-              name="price"
-              value={form.price}
+              name="quantity"
+              value={form.quantity}
               onChange={handleChange}
               className="w-full p-2 border rounded border-[#108e66]"
             />
           </div>
-        )}
 
-        {(form.orderType === "SL" || form.orderType === "SLM") && (
-          <div className="mb-6">
-            <label className="block mb-1 text-[#108e66]">Trigger Price</label>
-            <input
-              type="number"
-              name="price"
-              value={form.triggerPrice}
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Type</label>
+            <select
+              name="type"
+              value={form.type}
               onChange={handleChange}
               className="w-full p-2 border rounded border-[#108e66]"
-            />
+            >
+              <option value="">Select type</option>
+              <option value="BUY">BUY</option>
+              <option value="SELL">SELL</option>
+            </select>
           </div>
-        )}
 
-        <button
-          onClick={handleSubmit}
-          disabled={!isFormValid}
-          className={`w-full p-2 rounded text-white font-semibold transition-colors duration-300 ${
-            isFormValid
-              ? " text-teal-700 bg-teal-400"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-        >
-          {isLoading ? <ClipLoader color="#108e66" /> : "Call SDK"}
-        </button>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Order Type</label>
+            <select
+              name="orderType"
+              value={form.orderType}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            >
+              <option value="">Select order type</option>
+              <option value="MARKET">MARKET</option>
+              <option value="LIMIT">LIMIT</option>
+              <option value="SL">SL(Stop Loss)</option>
+              <option value="SLM">SLM(Stop Loss Market)</option>
+            </select>
+          </div>
+
+          {(form.orderType === "LIMIT" || form.orderType === "SL") && (
+            <div className="mb-6">
+              <label className="block mb-1 text-[#108e66]">Price</label>
+              <input
+                type="number"
+                name="price"
+                value={form.price}
+                onChange={handleChange}
+                className="w-full p-2 border rounded border-[#108e66]"
+              />
+            </div>
+          )}
+
+          {(form.orderType === "SL" || form.orderType === "SLM") && (
+            <div className="mb-6">
+              <label className="block mb-1 text-[#108e66]">Trigger Price</label>
+              <input
+                type="number"
+                name="price"
+                value={form.triggerPrice}
+                onChange={handleChange}
+                className="w-full p-2 border rounded border-[#108e66]"
+              />
+            </div>
+          )}
+
+          <button
+            onClick={handleSubmit}
+            disabled={!isFormValid}
+            className={`w-full p-2 rounded text-white font-semibold transition-colors duration-300 ${
+              isFormValid
+                ? " text-teal-700 bg-teal-400"
+                : "bg-gray-400 cursor-not-allowed"
+            }`}
+          >
+            {isLoading ? <ClipLoader color="#108e66" /> : "Call SDK"}
+          </button>
+        </div>
       </div>
     </div>
   );

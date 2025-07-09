@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ClipLoader } from "react-spinners";
+import BackToDemoButton from "../../components/BackToDemoButton";
 
 // These values would typically come from user/session/context
 const DEFAULT_IIN = "5014886384";
@@ -222,171 +223,174 @@ export default function NsePage() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#108e66]">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-xl font-bold text-[#108e66] mb-6 text-center">
-          NSE NMF Transaction 
-        </h2>
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">IIN</label>
-          <input
-            type="text"
-            name="iin"
-            value={form.iin}
-            readOnly
-            className="w-full p-2 border rounded border-[#108e66] bg-gray-100 cursor-not-allowed"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Bank</label>
-          <input
-            type="text"
-            name="bank"
-            value={form.bank}
-            readOnly
-            className="w-full p-2 border rounded border-[#108e66] bg-gray-100 cursor-not-allowed"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Transaction Type</label>
-          <select
-            name="transaction_type"
-            value={form.transaction_type}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
+    <div className="min-h-screen bg-[#108e66] py-4">
+      <BackToDemoButton />
+      <div className="flex justify-center items-center">
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+          <h2 className="text-xl font-bold text-[#108e66] mb-6 text-center">
+            NSE NMF Transaction 
+          </h2>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">IIN</label>
+            <input
+              type="text"
+              name="iin"
+              value={form.iin}
+              readOnly
+              className="w-full p-2 border rounded border-[#108e66] bg-gray-100 cursor-not-allowed"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Bank</label>
+            <input
+              type="text"
+              name="bank"
+              value={form.bank}
+              readOnly
+              className="w-full p-2 border rounded border-[#108e66] bg-gray-100 cursor-not-allowed"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Transaction Type</label>
+            <select
+              name="transaction_type"
+              value={form.transaction_type}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            >
+              {TRANSACTION_TYPES.map((type) => (
+                <option
+                  key={type.value}
+                  value={type.value}
+                  disabled={[
+                    "sip_scheduled",
+                    "redeem",
+                    "switch",
+                    "stp",
+                    "swp"
+                  ].includes(type.value)}
+                >
+                  {type.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Payment Mode</label>
+            <select
+              name="payment_mode"
+              value={form.payment_mode}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            >
+              {PAYMENT_MODES.map((mode) => (
+                <option
+                  key={mode.value}
+                  value={mode.value}
+                  disabled={[
+                    "OL",
+                    "M",
+                    "CH",
+                    "DD"
+                  ].includes(mode.value)}
+                >
+                  {mode.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-[#108e66]">Product</label>
+            <select
+              name="product"
+              value={form.product}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            >
+              {PRODUCTS.map((product) => (
+                <option key={product.value} value={product.value}>
+                  {product.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-6">
+            <label className="block mb-1 text-[#108e66]">Lump sum Amount</label>
+            <input
+              type="number"
+              name="lum_sum_amount"
+              value={form.lum_sum_amount}
+              onChange={handleChange}
+              className="w-full p-2 border rounded border-[#108e66]"
+            />
+          </div>
+          {isSIP && (function SipFields() {
+            // Calculate min date for sip_from_date (today + 21 days)
+            const today = new Date();
+            const minSipFromDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 21);
+            const minSipFromDateStr = minSipFromDate.toISOString().slice(0, 10);
+
+            // Calculate min date for sip_end_date (sip_from_date + 6 months)
+            let minSipEndDateStr = "";
+            if (form.start_date) {
+              const sipFrom = new Date(form.start_date);
+              const minSipEndDate = new Date(sipFrom.getFullYear(), sipFrom.getMonth() + 6, sipFrom.getDate());
+              minSipEndDateStr = minSipEndDate.toISOString().slice(0, 10);
+            }
+
+            return (
+              <>
+                <div className="mb-4">
+                  <label className="block mb-1 text-[#108e66]">Start Date</label>
+                  <input
+                    type="date"
+                    name="start_date"
+                    value={form.start_date}
+                    min={minSipFromDateStr}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#108e66]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block mb-1 text-[#108e66]">End Date</label>
+                  <input
+                    type="date"
+                    name="end_date"
+                    value={form.end_date}
+                    min={minSipEndDateStr}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#108e66]"
+                    disabled={!form.start_date}
+                  />
+                </div>
+                <div className="mb-6">
+                  <label className="block mb-1 text-[#108e66]">SIP Amount</label>
+                  <input
+                    type="number"
+                    name="sip_amount"
+                    value={form.sip_amount}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#108e66]"
+                  />
+                </div>
+              </>
+            );
+          })()}
+
+
+          <button
+            type="button"
+            onClick={handleSubmit}
+            //   disabled={!isFormValid || isLoading}
+            className={`w-full p-2 rounded text-white font-semibold transition-colors duration-300 ${
+              isFormValid && !isLoading
+                ? "text-teal-700 bg-teal-400"
+                : "bg-gray-400 cursor-not-allowed"
+            }`}
           >
-            {TRANSACTION_TYPES.map((type) => (
-              <option
-                key={type.value}
-                value={type.value}
-                disabled={[
-                  "sip_scheduled",
-                  "redeem",
-                  "switch",
-                  "stp",
-                  "swp"
-                ].includes(type.value)}
-              >
-                {type.label}
-              </option>
-            ))}
-          </select>
+            {isLoading ? <ClipLoader color="#108e66" /> : "Submit"}
+          </button>
         </div>
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Payment Mode</label>
-          <select
-            name="payment_mode"
-            value={form.payment_mode}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          >
-            {PAYMENT_MODES.map((mode) => (
-              <option
-                key={mode.value}
-                value={mode.value}
-                disabled={[
-                  "OL",
-                  "M",
-                  "CH",
-                  "DD"
-                ].includes(mode.value)}
-              >
-                {mode.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1 text-[#108e66]">Product</label>
-          <select
-            name="product"
-            value={form.product}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          >
-            {PRODUCTS.map((product) => (
-              <option key={product.value} value={product.value}>
-                {product.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mb-6">
-          <label className="block mb-1 text-[#108e66]">Lump sum Amount</label>
-          <input
-            type="number"
-            name="lum_sum_amount"
-            value={form.lum_sum_amount}
-            onChange={handleChange}
-            className="w-full p-2 border rounded border-[#108e66]"
-          />
-        </div>
-        {isSIP && (() => {
-          // Calculate min date for sip_from_date (today + 21 days)
-          const today = new Date();
-          const minSipFromDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 21);
-          const minSipFromDateStr = minSipFromDate.toISOString().slice(0, 10);
-
-          // Calculate min date for sip_end_date (sip_from_date + 6 months)
-          let minSipEndDateStr = "";
-          if (form.start_date) {
-            const sipFrom = new Date(form.start_date);
-            const minSipEndDate = new Date(sipFrom.getFullYear(), sipFrom.getMonth() + 6, sipFrom.getDate());
-            minSipEndDateStr = minSipEndDate.toISOString().slice(0, 10);
-          }
-
-          return (
-            <>
-              <div className="mb-4">
-                <label className="block mb-1 text-[#108e66]">Start Date</label>
-                <input
-                  type="date"
-                  name="start_date"
-                  value={form.start_date}
-                  min={minSipFromDateStr}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#108e66]"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1 text-[#108e66]">End Date</label>
-                <input
-                  type="date"
-                  name="end_date"
-                  value={form.end_date}
-                  min={minSipEndDateStr}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#108e66]"
-                  disabled={!form.start_date}
-                />
-              </div>
-              <div className="mb-6">
-                <label className="block mb-1 text-[#108e66]">SIP Amount</label>
-                <input
-                  type="number"
-                  name="sip_amount"
-                  value={form.sip_amount}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#108e66]"
-                />
-              </div>
-            </>
-          );
-        })()}
-
-
-        <button
-          type="button"
-          onClick={handleSubmit}
-          //   disabled={!isFormValid || isLoading}
-          className={`w-full p-2 rounded text-white font-semibold transition-colors duration-300 ${
-            isFormValid && !isLoading
-              ? "text-teal-700 bg-teal-400"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-        >
-          {isLoading ? <ClipLoader color="#108e66" /> : "Submit"}
-        </button>
       </div>
     </div>
   );
