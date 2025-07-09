@@ -35,8 +35,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
     feeStructure: [
       { service: "Financial Check-up", amount: "₹5,000" },
       { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-      { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
-      { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
     testimonials: [
       {
@@ -55,10 +53,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -78,7 +76,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["IT Professionals", "Business Owners"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
@@ -125,8 +123,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
     feeStructure: [
       { service: "Financial Check-up", amount: "₹5,000" },
       { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-      { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
-      { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
     testimonials: [
       {
@@ -145,10 +141,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -168,7 +164,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["IT Professionals", "Business Owners"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
@@ -215,8 +211,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
     feeStructure: [
       { service: "Financial Check-up", amount: "₹5,000" },
       { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-      { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
-      { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
     testimonials: [
       {
@@ -235,10 +229,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -258,7 +252,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["Tax Planning", "Retirement Planning"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
@@ -305,8 +299,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
     feeStructure: [
       { service: "Financial Check-up", amount: "₹5,000" },
       { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-      { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
-      { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
     testimonials: [
       {
@@ -325,10 +317,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -348,7 +340,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["IT Professionals", "Business Owners"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
@@ -393,8 +385,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
       }
     ],
     feeStructure: [
-      { service: "Financial Check-up", amount: "₹5,000" },
-      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
       { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
       { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
@@ -415,10 +405,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -438,7 +428,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["IT Professionals", "Business Owners"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
@@ -485,8 +475,6 @@ export const bulkAdvisorData: AdvisorInput[] = [
     feeStructure: [
       { service: "Financial Check-up", amount: "₹5,000" },
       { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-      { service: "Investment Management", amount: "1.0% – 1.5% of AUM" },
-      { service: "Tax Planning", amount: "₹8,000 – ₹12,000" }
     ],
     testimonials: [
       {
@@ -505,10 +493,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         designation: "Medical Professional"
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
     ctaLinks: [
-      { text: "Schedule Free Consultation", href: "https://calendly.com/rajesh-wealthwise", variant: "primary" },
-      { text: "WhatsApp Query", href: "https://wa.me/+919876543210", variant: "secondary" }
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
     ],
     faqs: [
       {
@@ -528,7 +516,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
       }
     ],
-    clientTypePills: ["IT Professionals", "Business Owners", "Tax Planning", "Retirement Planning"],
+    clientTypePills: ["IT Professionals", "Business Owners"],
     idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
     successStories: [
       "Helped 150+ clients achieve their financial goals",
