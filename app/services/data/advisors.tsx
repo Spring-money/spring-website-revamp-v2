@@ -5,6 +5,8 @@
 
    import { Calendar, ChartBar } from "lucide-react";
    import type { ReactNode } from "react";
+   import { bulkAdvisorData } from "./bulk-advisors";
+   import { createAdvisorProfile } from "./advisor-template";
    
    /* ------------------------------------------------------------------
       Enums & Basic Types
@@ -34,13 +36,13 @@
      | "Young Professionals";
    
    export type Location =
-     | "Mumbai"
+     | "Mumbai, Maharashtra"
      | "Delhi"
-     | "Bengaluru"
-     | "Hyderabad"
-     | "Chennai"
+     | "Bengaluru, Karnataka"
+     | "Hyderabad, Telangana"
+     | "Chennai, Tamil Nadu"
      | "Pune, Maharashtra"
-     | "Kolkata"
+     | "Kolkata, West Bengal"
      | "Remote/Virtual"
      | "Noida, Uttar Pardesh";
    
@@ -567,7 +569,7 @@
      /* ----------------------- Advisor 6 ----------------------- */
      {
        id: "6",
-       firmName: "Bachhat Money",
+       firmName: "Bachhat",
        advisorName: "Vishal Shah",
        principalAdvisor: "Vishal Bharat Shah",
        reg: "SEBI RIA REG NO: INA000019220",
@@ -637,6 +639,10 @@
        idealClientDescription:
          "Bachhat Money serves NRIs and individuals 45+ with established portfolios seeking expert guidance for comprehensive wealth and estate management.",
      },
+     
+    
+    // Add bulk advisors using the template system
+    ...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
    
    /* ------------------------------------------------------------------
@@ -665,13 +671,13 @@
    ];
    
    export const locations: Location[] = [
-     "Mumbai",
+     "Mumbai, Maharashtra",
      "Delhi",
-     "Bengaluru",
-     "Hyderabad",
-     "Chennai",
+     "Bengaluru, Karnataka",
+     "Hyderabad, Telangana",
+     "Chennai, Tamil Nadu",
      "Pune, Maharashtra",
-     "Kolkata",
+     "Kolkata, West Bengal",
      "Remote/Virtual",
      "Noida, Uttar Pardesh",
    ];

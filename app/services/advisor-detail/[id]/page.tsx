@@ -256,6 +256,8 @@ export default function AdvisorDetailPage({
         return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2 "];
       case "Bachhat":
         return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
+      case "Horus Financials":
+        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
       default:
         return [];
     }
