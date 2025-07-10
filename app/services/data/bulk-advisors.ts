@@ -619,10 +619,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "14",
-    firmName: "Boutique Retirement Advisory",
+    firmName: "Deeraj Shetty",
     advisorName: "Deeraj Shetty",
     principalAdvisor: "Deeraj Shetty",
-    sebiReg: "INA",
+    sebiReg: "INA000000000",
     photo: "/advisors/deeraj-shetty.svg",
     location: "Bangalore, Karnataka",
     tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
@@ -635,10 +635,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
         name: "investment management", 
         description: "We engage with you to create wealth protection and long term wealth creation strategies to generate a Secondary Income and achieve your Life‘s Ambitions" 
       },
-      // { 
-      //   name: "Tax Optimization Strategies", 
-      //   description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
-      // },
+       { 
+         name: "Tax Optimization Strategies", 
+         description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+       },
       { 
         name: "Retirement planning", 
         description: "We protect your wealth and create a holistic inflation adjusted pension plan along with a contingency plan to fulfil all your life’s ambitions and to help you create a Legacy! "
