@@ -529,6 +529,535 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false
   },
+  {
+    id: "13",
+    firmName: "PLNR Investment Advisors",
+    advisorName: "Ajay Pruthi",
+    principalAdvisor: "Ajay Pruthi",
+    sebiReg: "INA000018966",
+    photo: "/advisors/ajay-pruthi.svg",
+    location: "Navi Mumbai, Maharashtra",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Ajay Pruthi is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes PLNR Investment Advisors different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+  {
+    id: "14",
+    firmName: "Boutique Retirement Advisory",
+    advisorName: "Deeraj Shetty",
+    principalAdvisor: "Deeraj Shetty",
+    sebiReg: "INA",
+    photo: "/advisors/deeraj-shetty.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Deeraj Shetty is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes Deeraj Shetty different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+  {
+    id: "15",
+    firmName: "Fidelfolio",
+    advisorName: "Kislay Upadhyay",
+    principalAdvisor: "Kislay Upadhyay",
+    sebiReg: "INA000016223",
+    photo: "/advisors/kislay-upadhyay.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Kislay Upadhyay is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes Fidelfolio different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+  {
+    id: "16",
+    firmName: "Prudeno Wealth",
+    advisorName: "Vinit Iyer",
+    principalAdvisor: "Vinit Iyer",
+    sebiReg: "INA000016223",
+    photo: "/advisors/vinit-iyer.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Vinit Iyer is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes Prudeno Wealth different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+  {
+    id: "17",
+    firmName: "Advent",
+    advisorName: "Rahul Agarwal",
+    principalAdvisor: "Rahul Agarwal",
+    sebiReg: "INA000016223",
+    photo: "/advisors/rahul-agarwal.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Rahul Agarwal is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes Advent different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+  {
+    id: "18",
+    firmName: "ApnaDhan",
+    advisorName: "Preeti Zende",
+    principalAdvisor: "Preeti Zende",
+    sebiReg: "INA000016223",
+    photo: "/advisors/preeti-zende.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
+    specializations: ["Retirement Planning", "Insurance"],
+    audience: ["Young Professionals", "Salaried"],
+    about: "Preeti Zende is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    services: [
+      { 
+        name: "Comprehensive Financial Planning", 
+        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+      },
+      { 
+        name: "Tax Optimization Strategies", 
+        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      },
+      { 
+        name: "Retirement Corpus Building", 
+        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+      },
+      { 
+        name: "Portfolio Review & Rebalancing", 
+        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+      }
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹5,000" },
+      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
+        author: "Amit & Priya Patel",
+        designation: "IT Professionals, Mumbai"
+      },
+      {
+        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
+        author: "Vikram Sharma",
+        designation: "Business Owner"
+      },
+      {
+        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
+        author: "Dr. Sneha Joshi",
+        designation: "Medical Professional"
+      }
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      {
+        question: "What makes ApnaDhan different from other financial advisors?",
+        answer: "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA."
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer: "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections."
+      },
+      {
+        question: "What is your typical client profile?",
+        answer: "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning."
+      },
+      {
+        question: "How often do you review portfolios?",
+        answer: "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime."
+      }
+    ],
+    clientTypePills: ["IT Professionals", "Business Owners"],
+    idealClientDescription: "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
+    successStories: [
+      "Helped 150+ clients achieve their financial goals",
+      "Average tax savings of ₹2-5 lakhs per client annually",
+      "Managed portfolios worth ₹50+ crores"
+    ],
+    grievanceOfficer: {
+      name: "Priya Kumar",
+      email: "grievance@wealthwisesolutions.com"
+    },
+    verifiedBySpring: false
+  },
+
   // Add more profiles here - copy the structure above and modify the details
   // You can easily scale this to 100+ profiles by copying and modifying the data
 ];

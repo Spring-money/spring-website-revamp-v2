@@ -267,8 +267,20 @@ export default function AdvisorDetailPage({
       case "Avro Wealth":
         return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
       case "Cedrus Wealth Partners":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)", "MBA Finance"];
-      case "Midas Wealth Advisory":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Midas Wealth Advisory": 
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "PLNR Investment Advisors":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Deeraj Shetty":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Fidelfolio":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Prudeno Wealth":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "Advent":
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
+      case "ApnaDhan":
         return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
       default:
         return [];
