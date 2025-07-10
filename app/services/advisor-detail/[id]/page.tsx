@@ -267,8 +267,8 @@ export default function AdvisorDetailPage({
       case "Avro Wealth":
         return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
       case "Cedrus Wealth Partners":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Midas Wealth Advisory": 
+        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)", "MBA Finance"];
+      case "Midas Wealth Advisory":
         return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
       case "PLNR Investment Advisors":
         return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];

@@ -541,11 +541,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about: "Ajay Pruthi is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    description: "With PLNR, you get unbiased advice for your personal finances. Clean up your portfolio, choose the right financial product with tax efficiency, get a second opinion about your investments, define your goals and a way to achieve them with proper equity/debt allocation, all in the same place.",
     services: [
       { 
         name: "Comprehensive Financial Planning", 
-        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+        description: "We offer comprehensive financial planning at a flat fixed fee. We do not charge differential fee based on your net worth or residential status." 
       },
       { 
         name: "Tax Optimization Strategies", 
@@ -628,24 +628,24 @@ export const bulkAdvisorData: AdvisorInput[] = [
     tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
-    about: "Deeraj Shetty is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
+    about: "Deeraj Shetty, Chief Dreamer – began his journey of money management at the age of 15 when he moved to the USA to pursue his dream of becoming a professional tennis player.Whilst living in Singapore and undergoing two internships at CitiBank Singapore and UBS Singapore, Deeraj quickly realized the alarming gap between the Client’s Expectations & Client’s Experience",
     description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
     services: [
       { 
-        name: "Comprehensive Financial Planning", 
-        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+        name: "investment management", 
+        description: "We engage with you to create wealth protection and long term wealth creation strategies to generate a Secondary Income and achieve your Life‘s Ambitions" 
+      },
+      // { 
+      //   name: "Tax Optimization Strategies", 
+      //   description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+      // },
+      { 
+        name: "Retirement planning", 
+        description: "We protect your wealth and create a holistic inflation adjusted pension plan along with a contingency plan to fulfil all your life’s ambitions and to help you create a Legacy! "
       },
       { 
-        name: "Tax Optimization Strategies", 
-        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
-      },
-      { 
-        name: "Retirement Corpus Building", 
-        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
-      },
-      { 
-        name: "Portfolio Review & Rebalancing", 
-        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+        name: "NRI Advisory", 
+        description: "We consolidate your global assets, manage your Indian real estate and investments and hand-hold you through your transition as an NRI to a tax paying, Indian resident."
       }
     ],
     feeStructure: [
@@ -710,14 +710,14 @@ export const bulkAdvisorData: AdvisorInput[] = [
     firmName: "Fidelfolio",
     advisorName: "Kislay Upadhyay",
     principalAdvisor: "Kislay Upadhyay",
-    sebiReg: "INA000016223",
+    sebiReg: "INA000016056",
     photo: "/advisors/kislay-upadhyay.svg",
     location: "Pune, Maharashtra",
     tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about: "Kislay Upadhyay is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    description: "FidelFolio Investments is an Equity Advisory Firm that invests in equity strategies devised by the powerful combination of machine learning and human oversight. We create long-term fundamental investment strategies scientifically, using proprietary Machine Learning (ML) algorithm",
     services: [
       { 
         name: "Comprehensive Financial Planning", 
@@ -798,30 +798,30 @@ export const bulkAdvisorData: AdvisorInput[] = [
     firmName: "Prudeno Wealth",
     advisorName: "Vinit Iyer",
     principalAdvisor: "Vinit Iyer",
-    sebiReg: "INA000016223",
+    sebiReg: "INA000017806",
     photo: "/advisors/vinit-iyer.svg",
     location: "Pune, Maharashtra",
     tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about: "Vinit Iyer is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    description: "Prudeno is a premium boutique financial advisory company built on the core values of Trust, Transparency & Integrity. As a fiduciary body we understand our responsibilities and hence inspired to do the right things for our clients every day. We specialize in providing unbiased financial planning solutions by giving utmost priority to the interest of the client. We believe in building strong trust based relationship for a lifetime and ensure that we deliver the whole organisation for the benefit of our clients.",
     services: [
       { 
-        name: "Comprehensive Financial Planning", 
-        description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
+        name: "Horizon Assessment", 
+        description: "Assessing your investment time horizon and purpose of investments." 
       },
       { 
-        name: "Tax Optimization Strategies", 
-        description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
+        name: "Risk Profiling", 
+        description: "Capital markets fluctuates and so will investments. Each individual has different risk taking capacity, assessing risk-taking ability becomes critical in designing a portfolio."
       },
       { 
-        name: "Retirement Corpus Building", 
-        description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
+        name: "Investment Advisory", 
+        description: "Designing well suited mutual fund portfolio based on risk profile and investment time horizon."
       },
       { 
-        name: "Portfolio Review & Rebalancing", 
-        description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
+        name: "Asset Allocation & Rebalancing", 
+        description: "Allocating optimally between Equity & Debt mutual fund and rebalancing it periodically in case of any outlier performance."
       }
     ],
     feeStructure: [
@@ -974,29 +974,29 @@ export const bulkAdvisorData: AdvisorInput[] = [
     firmName: "ApnaDhan",
     advisorName: "Preeti Zende",
     principalAdvisor: "Preeti Zende",
-    sebiReg: "INA000016223",
+    sebiReg: "",
     photo: "/advisors/preeti-zende.svg",
     location: "Pune, Maharashtra",
     tagline: "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about: "Preeti Zende is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description: "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
+    description: "At Apana Dhan, we understand your needs for financial planning. We offer Fee-only Financial Planning services. We are committed to your goals and hence to avoid any conflicts of interest, we are not into the distribution of any financial products. Hence our only earning is from the fees we charge to our clients.",
     services: [
       { 
         name: "Comprehensive Financial Planning", 
         description: "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals." 
       },
       { 
-        name: "Tax Optimization Strategies", 
+        name: "Express plann", 
         description: "Strategic tax planning to minimize your tax liability while maximizing savings and investments." 
       },
       { 
-        name: "Retirement Corpus Building", 
+        name: "Senior citizen planning", 
         description: "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments." 
       },
       { 
-        name: "Portfolio Review & Rebalancing", 
+        name: "Financial wellness session", 
         description: "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management." 
       }
     ],

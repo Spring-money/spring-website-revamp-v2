@@ -11,7 +11,13 @@ export const advisorIdToName: { [key: string]: string } = {
   "9": "Deora Investment Advisory",
   "10": "Avro Wealth",
   "11": "Cedrus Wealth Partners",
-  "12": "Midas Wealth Advisory"
+  "12": "Midas Wealth Advisory",
+  "13": "PLNR Investment Advisors",
+  "14": "Deeraj Shetty",
+  "15": "Fidelfolio",
+  "16": "Prudeno Wealth",
+  "17": "Advent",
+  "18": "ApnaDhan"
 };
 
 // Get advisor name from ID

@@ -681,6 +681,7 @@
      "Kolkata, West Bengal",
      "Remote/Virtual",
      "Noida, Uttar Pardesh",
+     "Gurugram, Haryana"
    ];
    
    /* ------------------------------------------------------------------
