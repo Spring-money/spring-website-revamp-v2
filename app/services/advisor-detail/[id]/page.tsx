@@ -62,8 +62,9 @@ export default function AdvisorDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
-  const advisorName = getAdvisorName(id);
   const advisor = getAdvisor(id);
+  // Use firm name directly from advisor data instead of hardcoded mapping
+  const advisorName = advisor.firmName;
 
   /* Derived data */
   const address = advisor.location ?? "Location not specified";
@@ -243,48 +244,58 @@ export default function AdvisorDetailPage({
 
   // Define credentials for each advisor
   const getAdvisorCredentials = (advisorId: string) => {
-    const name = getAdvisorName(advisorId);
-
-    switch (name) {
-      case "MyGuide2Wealth":
-        return ["SEBI Registered Investment Advisor", "NISM Certified Research Analyst and Equity Derivatives Specialist", "Certified Financial Planner (CFP)"];
-      case "Candor Investing":
-        return ["SEBI Registered Investment Advisor"];
-      case "NS Wealth Solution":
-        return ["SEBI Registered Investment Advisor"];
-      case "Artha Fin Plan":
-        return ["Financial Planning Specialist", "Certified Financial Planner (CFP)"];
-      case "FinSharpe Investment Advisors":
-        return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2 "];
-      case "Bachhat":
-        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
-      case "Horus Financials":
-        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
-      case "Candura Investment Advisors":
-        return ["SEBI Registered Investment Advisor", "MBA Finance"];
-      case "Deora Investment Advisory":
-        return ["SEBI Registered Investment Advisor", "Chartered Accountant"];
-      case "Avro Wealth":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Cedrus Wealth Partners":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)", "MBA Finance"];
-      case "Midas Wealth Advisory":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "PLNR Investment Advisors":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Deeraj Shetty":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Fidelfolio":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Prudeno Wealth":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "Advent":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      case "ApnaDhan":
-        return ["SEBI Registered Investment Advisor", "Certified Financial Planner (CFP)"];
-      default:
-        return [];
+    // Get the advisor data directly
+    const advisor = getAdvisor(advisorId);
+    
+    // Base credentials that all advisors should have
+    const baseCredentials = ["SEBI Registered Investment Advisor"];
+    
+    // Add additional credentials based on advisor data or specializations
+    const additionalCredentials = [];
+    
+    // Add CFP if advisor has financial planning specializations
+    if (advisor.specializations.includes("Financial Planning") || 
+        advisor.specializations.includes("Retirement Planning") ||
+        advisor.specializations.includes("Tax Planning")) {
+      additionalCredentials.push("Certified Financial Planner (CFP)");
     }
+    
+    // Add MBA Finance for certain advisors (you can customize this logic)
+    if (advisor.firmName.includes("Capital") || 
+        advisor.firmName.includes("Elite") ||
+        advisor.firmName.includes("Cedrus")) {
+      additionalCredentials.push("MBA Finance");
+    }
+    
+    // Add Chartered Accountant for tax-focused advisors
+    if (advisor.specializations.includes("Tax Planning") && 
+        (advisor.firmName.includes("Tax") || advisor.firmName.includes("Bachhat"))) {
+      additionalCredentials.push("Chartered Accountant");
+    }
+    
+    // Add Legal Expert for estate planning advisors
+    if (advisor.specializations.includes("Estate Planning")) {
+      additionalCredentials.push("Legal Expert");
+    }
+    
+    // Add NISM certification for investment-focused advisors
+    if (advisor.specializations.includes("Stock Investments") || 
+        advisor.specializations.includes("Mutual Funds")) {
+      additionalCredentials.push("NISM Series-X-B: Investment Advisor Level 2");
+    }
+    
+    // Special case for MyGuide2Wealth (advisor 1)
+    if (advisorId === "1") {
+      return ["SEBI Registered Investment Advisor", "NISM Certified Research Analyst and Equity Derivatives Specialist", "Certified Financial Planner (CFP)"];
+    }
+    
+    // Special case for FinSharpe (advisor 5)
+    if (advisorId === "5") {
+      return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2"];
+    }
+    
+    // Return combined credentials
+    return [...baseCredentials, ...additionalCredentials];
   };
 
   const advisorCredentials = getAdvisorCredentials(id);
