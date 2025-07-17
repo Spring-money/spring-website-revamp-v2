@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Advisor } from '@/services/data/advisors';
+import { getAdvisorUrl } from '@/services/lib/advisorData';
 
 interface AdvisorCardProps {
   advisor: Advisor;
@@ -68,7 +69,7 @@ export default function AdvisorCard({ advisor }: AdvisorCardProps) {
 
       <CardFooter className="p-4 pt-0">
         <Link
-          href={`/services/advisor-detail/${id}`}
+          href={getAdvisorUrl(advisorName, firmName, id)}
           className="flex h-11 w-full items-center justify-center rounded-md bg-spring-green px-6 text-base font-semibold text-white transition-colors hover:bg-spring-green/90"
         >
           View Profile
