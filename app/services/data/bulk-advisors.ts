@@ -117,7 +117,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     about:
       "Brijesh is a seasoned professional and a Director at Candura Investment Advisors with over 20 years of experience in the banking and financial sector. Alumnus of Delhi University with an MBA in Finance and a Hons. degree in Chemistry. He began his career in 2000 in banking services, where he gained experience in providing complete banking solutions across geographies such as Bengaluru, Delhi, and Rajasthan.",
     description:
-      "Comprises a team of seasoned professionals with credible vintage across organizations, who have experienced the highs & lows of multiple market cycles, catering to the ‘Wealth Management & Real Estate advisory’ requirement of its clientele assuring personalized client engagement, highest degree of trust and client confidentiality.",
+      "Comprises a team of seasoned professionals with credible vintage across organizations, who have experienced the highs & lows of multiple market cycles, catering to the 'Wealth Management & Real Estate advisory' requirement of its clientele assuring personalized client engagement, highest degree of trust and client confidentiality.",
     services: [
       {
         name: "Comprehensive Financial Planning",
@@ -315,9 +315,9 @@ export const bulkAdvisorData: AdvisorInput[] = [
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about:
-      "Anuj is the Mainframe of ARVO. His clear, creative & proactive approach to problem-solving has allowed him to become the go-to person for all. With 18 years of experience with reputed institutions like IIFL Wealth, Kotak Wealth & ICICI Pru AMC, Anuj’s inclination is simply interacting with clients & managing their portfolios. He co-founded ARVO to articulate & take this passion forward.",
+      "Anuj is the Mainframe of ARVO. His clear, creative & proactive approach to problem-solving has allowed him to become the go-to person for all. With 18 years of experience with reputed institutions like IIFL Wealth, Kotak Wealth & ICICI Pru AMC, Anuj's inclination is simply interacting with clients & managing their portfolios. He co-founded ARVO to articulate & take this passion forward.",
     description:
-      "ARVO (Origin: Finnish / Meaning: Value, Worth, Calibre) is built to have a differentiated approach to Wealth Management & Client Service by combining large-firm resources & expertise with a boutique’s access, close relationships & bespoke solutions. We are committed to understanding our clients’ unique goals & needs, ensuring the achievement of their investments & planning goals. Led by exceptional client service, we strive to make all aspects of our clients’ financial lives easier.",
+      "ARVO (Origin: Finnish / Meaning: Value, Worth, Calibre) is built to have a differentiated approach to Wealth Management & Client Service by combining large-firm resources & expertise with a boutique's access, close relationships & bespoke solutions. We are committed to understanding our clients' unique goals & needs, ensuring the achievement of their investments & planning goals. Led by exceptional client service, we strive to make all aspects of our clients' financial lives easier.",
     services: [
       {
         name: "Comprehensive Financial Planning",
@@ -718,14 +718,14 @@ export const bulkAdvisorData: AdvisorInput[] = [
     specializations: ["Retirement Planning", "Insurance"],
     audience: ["Young Professionals", "Salaried"],
     about:
-      "Deeraj Shetty, Chief Dreamer – began his journey of money management at the age of 15 when he moved to the USA to pursue his dream of becoming a professional tennis player.Whilst living in Singapore and undergoing two internships at CitiBank Singapore and UBS Singapore, Deeraj quickly realized the alarming gap between the Client’s Expectations & Client’s Experience",
+      "Deeraj Shetty, Chief Dreamer – began his journey of money management at the age of 15 when he moved to the USA to pursue his dream of becoming a professional tennis player.Whilst living in Singapore and undergoing two internships at CitiBank Singapore and UBS Singapore, Deeraj quickly realized the alarming gap between the Client's Expectations & Client's Experience",
     description:
       "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
     services: [
       {
         name: "investment management",
         description:
-          "We engage with you to create wealth protection and long term wealth creation strategies to generate a Secondary Income and achieve your Life‘s Ambitions",
+          "We engage with you to create wealth protection and long term wealth creation strategies to generate a Secondary Income and achieve your Life's Ambitions",
       },
       {
         name: "Tax Optimization Strategies",
@@ -735,7 +735,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
       {
         name: "Retirement planning",
         description:
-          "We protect your wealth and create a holistic inflation adjusted pension plan along with a contingency plan to fulfil all your life’s ambitions and to help you create a Legacy! ",
+          "We protect your wealth and create a holistic inflation adjusted pension plan along with a contingency plan to fulfil all your life's ambitions and to help you create a Legacy! ",
       },
       {
         name: "NRI Advisory",
@@ -1294,7 +1294,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "Atharava Bhide",
     sebiReg: "INA000013323",
     photo: "/advisors/Atharava-Bhide.svg",
-    location: "Bengaluru, Karnataka",
+    location: "Pune, Maharashtra",
     tagline: "Growing your capital with strategic investment planning",
     specializations: [
       "Stock Investments",
@@ -1305,7 +1305,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     about:
       "Atharva is a CFA® charterholder from the CFA Institute, USA, and holds a BE in Production Engineering from Mumbai University. He leads a team of advisors dedicated to partnering with clients on their journey to financial freedom through successful investing. He is committed to building lasting partnerships, creating generational wealth, and safeguarding family legacies.",
     description:
-      "Omega by MoneyWorks4Me isn’t just another portfolio advisory. It’s a powerful alliance between your goals and our expertise. As fiduciaries, we’re not here to sell. We’re here to serve—with research-driven strategies, personalized advice, and a disciplined investment process designed to deliver real results.With Omega, you gain access to cutting-edge tools, deep market insights, and a trusted partner who helps you build wealth the right way—long-term, sustainable, and fully in your control.",
+      "Omega by MoneyWorks4Me isn't just another portfolio advisory. It's a powerful alliance between your goals and our expertise. As fiduciaries, we're not here to sell. We're here to serve—with research-driven strategies, personalized advice, and a disciplined investment process designed to deliver real results.With Omega, you gain access to cutting-edge tools, deep market insights, and a trusted partner who helps you build wealth the right way—long-term, sustainable, and fully in your control.",
     services: [
       {
         name: "Equity Portfolio Management",
@@ -1532,7 +1532,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     sebiReg: "INA000015543",
     photo: "/advisors/Sanket-Rathod.svg",
     location: "Pune, Maharashtra",
-    tagline: "Money shouldn’t keep you from your dreams",
+    tagline: "Money shouldn't keep you from your dreams",
     specializations: ["Wealth Management", "HNI Services", "Estate Planning"],
     audience: ["HNI", "Business Owners"],
     about:
@@ -1616,7 +1616,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     about:
       "Samraat Jadhav is a well respected name in Financial Service industry. Over 20+yrs of experience and worked with great companies at a senior level gives him the cult to manage high end portfolios.Educated from XLRI and on a mission towards creating wealth for every individual associated with Prosperity Wealth Adviser.",
     description:
-      "Prosperity Wealth Adviser was founded with a vision to create wealth for our customers through new innovative ideas for money. The vision kick started in creating India’s One of The entity to use Advance Technological Tools like Statistics, Customer Behaviour Analysis, Machine Learning, Data Science and Neuroscience. It’s a digital platform to serve all our customer needs through curated portfolios which are exclusively designed. We feel proud in taking the pledge that all our portfolios will be ACTIVE in nature",
+      "Prosperity Wealth Adviser was founded with a vision to create wealth for our customers through new innovative ideas for money. The vision kick started in creating India's One of The entity to use Advance Technological Tools like Statistics, Customer Behaviour Analysis, Machine Learning, Data Science and Neuroscience. It's a digital platform to serve all our customer needs through curated portfolios which are exclusively designed. We feel proud in taking the pledge that all our portfolios will be ACTIVE in nature",
     services: [
       {
         name: "NRI Investment Planning",
@@ -1688,7 +1688,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     sebiReg: "INA000003643",
     photo: "/advisors/Vipin-Khandelwal.svg",
     location: "Remote/Virtual",
-    tagline: "Focus on What Matters—We’ll Handle the Rest",
+    tagline: "Focus on What Matters—We'll Handle the Rest",
     specializations: [
       "Financial Planning",
       "Digital Investments",
@@ -1930,7 +1930,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     sebiReg: "INA000016649",
     photo: "/advisors/Avinash-Nahata.svg",
     location: "Mumbai, Maharashtra",
-    tagline: "We’re more than a portfolio. We’re a partner.",
+    tagline: "We're more than a portfolio. We're a partner.",
     specializations: ["Insurance", "Financial Planning", "Risk Management"],
     audience: ["Salaried", "Business Owners"],
     about:
@@ -2008,14 +2008,13 @@ export const bulkAdvisorData: AdvisorInput[] = [
     sebiReg: "INA000000045",
     photo: "/advisors/Akash-Praharaj.svg",
     location: "Mumbai, Maharashtra",
-    tagline:
-      "“Helping you to improve your Financial Life and nurture a trusting relationship.”",
+    tagline:"Helping you to improve your Financial Life and nurture a trusting relationship.",
     specializations: ["Mutual Funds", "Financial Planning", "Tax Planning"],
     audience: ["Salaried", "Young Professionals"],
     about:
       "Shri Prakash Praharaj has a passion for excellence. He has been awarded two gold medals for securing top positions both in Graduation and Post-Graduation in Commerce. He is an MBA with specialization in Finance and marketing. He has been awarded Diploma in Treasury, Investment, and Risk Management besides CAIIB from the Indian Institute of Bankers. He is a Certified Financial Planner from the Financial Planning Standards Board, Denver, USA and a SEBI Registered Investment Adviser bearing Regn no INA 000000045 since 2nd August 2013.",
     description:
-      "We, at Max Secure Financial Planners, by providing fee-only financial planning advice, are not only independent of product sales but also provide unbiased recommendations by keeping the client’s interest uppermost in mind and creating a roadmap for financial freedom.",
+      "We, at Max Secure Financial Planners, by providing fee-only financial planning advice, are not only independent of product sales but also provide unbiased recommendations by keeping the client's interest uppermost in mind and creating a roadmap for financial freedom.",
     services: [
       {
         name: "Mutual Fund Portfolio Planning",
@@ -2158,6 +2157,1117 @@ export const bulkAdvisorData: AdvisorInput[] = [
     grievanceOfficer: {
       name: "Legal Support",
       email: "legal@estateplanning.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "31",
+    firmName: "Aurion Advisors",
+    advisorName: "Aarti Mohan",
+    principalAdvisor: "Aarti Mohan",
+    sebiReg: "INA000019999",
+    photo: "/advisors/Aarti-Mohan.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Building wealth through intelligent financial planning",
+    specializations: ["Financial Planning", "Tax Planning", "Mutual Funds"],
+    audience: ["Salaried", "Young Professionals"],
+    about:
+      "Aarti Mohan is a certified financial planner with over 15 years of experience in wealth management and financial planning. She specializes in helping young professionals build their financial foundation.",
+    description:
+      "Aurion Advisors is a SEBI-registered investment advisory firm focused on providing comprehensive financial planning solutions to young professionals and salaried individuals. We believe in creating long-term wealth through systematic investment planning.",
+    services: [
+      {
+        name: "Comprehensive Financial Planning",
+        description:
+          "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals.",
+      },
+      {
+        name: "Tax Optimization Strategies",
+        description:
+          "Strategic tax planning to minimize your tax liability while maximizing savings and investments.",
+      },
+      {
+        name: "Mutual Fund Portfolio Management",
+        description:
+          "Expert guidance on mutual fund selection and portfolio rebalancing.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Check-up", amount: "₹3,000" },
+      { service: "Comprehensive Planning", amount: "₹15,000 – ₹25,000" },
+    ],
+    testimonials: [
+      {
+        text: "Rajesh helped me understand the importance of early financial planning. His advice has been invaluable.",
+        author: "Priya Sharma",
+        designation: "Software Engineer",
+      },
+      {
+        text: "Excellent tax planning strategies that saved me significant money.",
+        author: "Amit Patel",
+        designation: "Marketing Manager",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Free Consultation", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What makes Aurion Advisors different?",
+        answer:
+          "We focus on young professionals and provide personalized, tech-driven financial planning solutions.",
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer:
+          "We analyze your income sources and suggest optimal tax-saving instruments under various sections.",
+      },
+    ],
+    clientTypePills: ["Young Professionals", "Tax Planning"],
+    idealClientDescription:
+      "Young professionals and salaried individuals seeking systematic financial planning and tax optimization.",
+    successStories: [
+      "Helped 100+ young professionals start their investment journey",
+      "Average tax savings of ₹1-3 lakhs per client annually",
+    ],
+    grievanceOfficer: {
+      name: "Support Team",
+      email: "support@wealthwisecapital.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "32",
+    firmName: "Abhijit Talukdar",
+    advisorName: "Abhijit Talukdar",
+    principalAdvisor: "Abhijit Talukdar",
+    sebiReg: "INA000006703",
+    photo: "/advisors/Abhijit-Talukdar.svg",
+    location: "Delhi, Delhi",
+    tagline: "Growing your capital with strategic investment planning",
+    specializations: [
+      "Stock Investments",
+      "Wealth Management",
+      "Financial Planning",
+    ],
+    audience: ["HNI", "Business Owners"],
+    about:
+      "Abhijit Talukdar is a CFA® charterholder with over 20 years of experience in equity markets and wealth management. He specializes in high-net-worth client portfolios and business financial planning.",
+    description:
+      "Abhijit Talukdar provides sophisticated investment solutions for high-net-worth individuals and business owners. We focus on long-term value creation through fundamental analysis and strategic asset allocation.",
+    services: [
+      {
+        name: "Equity Portfolio Management",
+        description:
+          "Custom equity portfolios designed for capital appreciation and wealth building.",
+      },
+      {
+        name: "Wealth Management Services",
+        description:
+          "Comprehensive wealth management including estate planning and succession planning.",
+      },
+      {
+        name: "Business Financial Planning",
+        description:
+          "Specialized financial planning for business owners and entrepreneurs.",
+      },
+    ],
+    feeStructure: [
+      { service: "Portfolio Review", amount: "₹10,000" },
+      { service: "Wealth Management", amount: "1% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "Abhijit's expertise in equity markets has helped grow my portfolio significantly.",
+        author: "Vikram Singh",
+        designation: "Business Owner",
+      },
+      {
+        text: "Professional approach and excellent returns on my investments.",
+        author: "Dr. Anjali Desai",
+        designation: "Medical Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Schedule Consultation", href: "", variant: "primary" },
+      { text: "Portfolio Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is your investment philosophy?",
+        answer:
+          "We focus on long-term value creation through fundamental analysis and strategic asset allocation.",
+      },
+      {
+        question: "Do you handle international investments?",
+        answer:
+          "Yes, we provide guidance on international equity and debt investments for qualified clients.",
+      },
+    ],
+    clientTypePills: ["High Net Worth", "Business Owners"],
+    idealClientDescription:
+      "High-net-worth individuals and business owners seeking sophisticated investment strategies and wealth management.",
+    successStories: [
+      "Managed portfolios worth ₹200+ crores",
+      "Average annual returns of 15%+ over 5 years",
+    ],
+    grievanceOfficer: {
+      name: "Compliance Team",
+      email: "compliance@capitalgrowth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "33",
+    firmName: "Vijya Fintech",
+    advisorName: "Aakash Bansal",
+    principalAdvisor: "Aakash Bansal",
+    sebiReg: "INA000016162",
+    photo: "/advisors/Aakash-Bansal.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Your Journey to Financial Freedom Starts Here",
+    specializations: ["Retirement Planning", "Insurance", "Estate Planning"],
+    audience: ["Retired", "Pre-retirees"],
+    about:
+      "Aakash Bansal has been pivotal in shaping the company into a leading force in retirement planning. With over two decades of experience, Aakash excels in retirement corpus building and post-retirement income planning.",
+    description:
+      "Vijya Fintech specializes in retirement planning and estate planning. We help individuals secure their financial future and create lasting legacies for their families.",
+    services: [
+      {
+        name: "Retirement Planning",
+        description:
+          "Comprehensive retirement planning including corpus building and income planning.",
+      },
+      {
+        name: "Insurance Planning",
+        description:
+          "Assessment of insurance needs and recommendation of appropriate coverage.",
+      },
+      {
+        name: "Estate Planning",
+        description: "Succession planning and wealth transfer strategies.",
+      },
+    ],
+    feeStructure: [
+      { service: "Retirement Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Estate Planning", amount: "₹30,000 – ₹50,000" },
+    ],
+    testimonials: [
+      {
+        text: "Aakash helped me plan my retirement systematically. I feel much more secure now.",
+        author: "Ramesh Kumar",
+        designation: "Retired Bank Officer",
+      },
+      {
+        text: "Excellent estate planning advice that will benefit my family for generations.",
+        author: "Lakshmi Devi",
+        designation: "Business Owner",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Retirement Planning", href: "", variant: "primary" },
+      { text: "Estate Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "When should I start retirement planning?",
+        answer:
+          "The earlier, the better. Ideally, start in your 30s to build a substantial retirement corpus.",
+      },
+      {
+        question: "What is estate planning?",
+        answer:
+          "Estate planning involves organizing your assets and planning their transfer to your heirs in a tax-efficient manner.",
+      },
+    ],
+    clientTypePills: ["Retirees", "Estate Planning"],
+    idealClientDescription:
+      "Individuals approaching retirement or those seeking to secure their family's financial future through proper planning.",
+    successStories: [
+      "Helped 50+ families with estate planning",
+      "Average retirement corpus of ₹2+ crores for clients",
+    ],
+    grievanceOfficer: {
+      name: "Customer Care",
+      email: "care@vijyafintech.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "34",
+    firmName: "Triquetra Wealth",
+    advisorName: "Abhishek Mukim",
+    principalAdvisor: "Abhishek Mukim",
+    sebiReg: "INA000015233",
+    photo: "/advisors/Abhishek-Mukim.svg",
+    location: "Hyderabad, Telangana",
+    tagline: "Smart financial decisions for a brighter future",
+    specializations: ["Financial Planning", "Tax Planning", "Mutual Funds"],
+    audience: ["Salaried", "Young Professionals"],
+    about:
+      "Abhishek Mukim is a PGDBM in Finance with over 15 years of experience in financial planning. He specializes in goal-based financial planning and tax optimization strategies.",
+    description:
+      "Triquetra Wealth is a SEBI-registered Investment Advisor serving clients across India. We follow a disciplined approach to goal-based financial planning and wealth creation.",
+    services: [
+      {
+        name: "Goal-Based Financial Planning",
+        description:
+          "Financial planning aligned with your specific life goals and aspirations.",
+      },
+      {
+        name: "Tax-Saving Investment Planning",
+        description:
+          "Strategic investment planning to optimize tax savings and build wealth.",
+      },
+      {
+        name: "Mutual Fund Advisory",
+        description:
+          "Expert guidance on mutual fund selection and portfolio management.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Planning", amount: "₹12,000 – ₹20,000" },
+      { service: "Portfolio Review", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "Abhishek helped me understand the importance of goal-based investing. My financial goals are now clear.",
+        author: "Rahul Verma",
+        designation: "IT Professional",
+      },
+      {
+        text: "Excellent tax planning advice that saved me significant money.",
+        author: "Neha Gupta",
+        designation: "Marketing Executive",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Free Financial Check-up", href: "", variant: "primary" },
+      { text: "Goal Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is goal-based financial planning?",
+        answer:
+          "It's planning your finances around specific life goals like buying a house, children's education, or retirement.",
+      },
+      {
+        question: "How do you help with tax planning?",
+        answer:
+          "We suggest appropriate tax-saving instruments based on your income and risk profile.",
+      },
+    ],
+    clientTypePills: ["Young Professionals", "Goal Planning"],
+    idealClientDescription:
+      "Young professionals and salaried individuals seeking structured financial planning and goal achievement.",
+    successStories: [
+      "Helped 150+ young professionals achieve their financial goals",
+      "Average tax savings of ₹2-4 lakhs per client",
+    ],
+    grievanceOfficer: {
+      name: "Support Team",
+      email: "support@triquetrawealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "35",
+    firmName: "White Equity",
+    advisorName: "Ankit Shah",
+    principalAdvisor: "Ankit Shah",
+    sebiReg: "INA000007757",
+    photo: "/advisors/Ankit-Shah.svg",
+    location: "Chennai, Tamil Nadu",
+    tagline: "Exclusive wealth management for discerning clients",
+    specializations: ["Wealth Management", "HNI Services", "Estate Planning"],
+    audience: ["HNI", "Business Owners"],
+    about:
+      "Ankit Shah is a senior wealth management advisor with over 20 years of experience serving high-net-worth individuals and business families.",
+    description:
+      "White Equity provides sophisticated wealth management services for high-net-worth individuals, including portfolio management, estate planning, and succession planning.",
+    services: [
+      {
+        name: "Comprehensive Wealth Management",
+        description:
+          "End-to-end wealth management including investment, tax, and estate planning.",
+      },
+      {
+        name: "Family Office Services",
+        description:
+          "Dedicated services for business families including succession planning.",
+      },
+      {
+        name: "Alternative Investments",
+        description:
+          "Access to alternative investment opportunities including private equity and real estate.",
+      },
+    ],
+    feeStructure: [
+      { service: "Wealth Management", amount: "1.5% of AUM" },
+      { service: "Family Office", amount: "₹5,00,000 annually" },
+    ],
+    testimonials: [
+      {
+        text: "Ankit's expertise in wealth management has helped preserve and grow our family wealth.",
+        author: "Rajesh Agarwal",
+        designation: "Business Family",
+      },
+      {
+        text: "Professional family office services that have streamlined our financial affairs.",
+        author: "Priya Kapoor",
+        designation: "HNI Client",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Wealth Consultation", href: "", variant: "primary" },
+      { text: "Family Office Services", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is family office services?",
+        answer:
+          "Comprehensive financial and administrative services for business families including investment management, tax planning, and succession planning.",
+      },
+      {
+        question: "What are alternative investments?",
+        answer:
+          "Non-traditional investments like private equity, real estate, and structured products that can enhance portfolio returns.",
+      },
+    ],
+    clientTypePills: ["High Net Worth", "Family Office"],
+    idealClientDescription:
+      "High-net-worth individuals and business families seeking sophisticated wealth management and family office services.",
+    successStories: [
+      "Managed wealth worth ₹500+ crores",
+      "Successfully handled 20+ family office clients",
+    ],
+    grievanceOfficer: {
+      name: "Compliance Officer",
+      email: "compliance@elitewealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "36",
+    firmName: "Amigos FInserv",
+    advisorName: "Atul Mishra",
+    principalAdvisor: "Atul Mishra",
+    sebiReg: "INA000004245",
+    photo: "/advisors/Atul-Mishra.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Your trusted partner for NRI financial planning",
+    specializations: ["NRI Services", "Cross-border Planning", "Tax Planning"],
+    audience: ["NRIs"],
+    about:
+      "Atul Mishra is a well-respected name in NRI financial services with over 15 years of experience. He specializes in cross-border financial planning and NRI investment strategies.",
+    description:
+      "Amigos FInserv was founded with a vision to serve the unique financial needs of Non-Resident Indians. We provide expert guidance on investments in India and cross-border financial planning.",
+    services: [
+      {
+        name: "NRI Investment Planning",
+        description:
+          "Investment planning tailored for NRIs considering their unique tax and regulatory requirements.",
+      },
+      {
+        name: "Cross-border Tax Planning",
+        description:
+          "Tax optimization strategies for NRIs considering both Indian and foreign tax implications.",
+      },
+      {
+        name: "Repatriation Planning",
+        description:
+          "Planning for smooth repatriation of funds and wealth transfer strategies.",
+      },
+    ],
+    feeStructure: [
+      { service: "NRI Planning", amount: "₹25,000 – ₹40,000" },
+      { service: "Annual Review", amount: "₹10,000" },
+    ],
+    testimonials: [
+      {
+        text: "Atul helped me understand the complexities of NRI investments. His expertise is invaluable.",
+        author: "Amit Shah",
+        designation: "NRI - USA",
+      },
+      {
+        text: "Excellent cross-border tax planning that saved me significant money.",
+        author: "Sunita Reddy",
+        designation: "NRI - UK",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "NRI Consultation", href: "", variant: "primary" },
+      { text: "Tax Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What are the investment options for NRIs?",
+        answer:
+          "NRIs can invest in mutual funds, stocks, bonds, and real estate in India with certain restrictions and compliance requirements.",
+      },
+      {
+        question: "How do you handle cross-border tax planning?",
+        answer:
+          "We consider both Indian and foreign tax implications to optimize your overall tax liability.",
+      },
+    ],
+    clientTypePills: ["NRIs", "Cross-border Planning"],
+    idealClientDescription:
+      "Non-Resident Indians seeking expert guidance on investments in India and cross-border financial planning.",
+    successStories: [
+      "Served 100+ NRI clients across 15 countries",
+      "Average tax savings of ₹3-6 lakhs per NRI client",
+    ],
+    grievanceOfficer: {
+      name: "NRI Support",
+      email: "nri@nrifinancial.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "37",
+    firmName: "Abbakus Invest",
+    advisorName: "Biharilal Deora",
+    principalAdvisor: "Biharilal Deora",
+    sebiReg: "INA000015729",
+    photo: "/advisors/Biharilal-Deora.svg",
+    location: "Remote/Virtual",
+    tagline: "Focus on What Matters—We'll Handle the Rest",
+    specializations: [
+      "Financial Planning",
+      "Digital Investments",
+      "Tax Planning",
+    ],
+    audience: ["Young Professionals", "Salaried"],
+    about:
+      "Biharilal Deora is a seasoned financial advisor with extensive experience in digital financial planning and technology-driven investment solutions.",
+    description:
+      "Abbakus Invest is your trusted partner in achieving financial freedom through technology-driven solutions. We leverage digital tools to provide efficient and transparent financial planning services.",
+    services: [
+      {
+        name: "Digital Financial Planning",
+        description:
+          "Technology-driven financial planning using advanced tools and platforms.",
+      },
+      {
+        name: "Digital Investment Advisory",
+        description:
+          "Guidance on digital investment platforms and robo-advisory services.",
+      },
+      {
+        name: "Tax Planning Apps",
+        description:
+          "Recommendation and guidance on tax planning and tracking applications.",
+      },
+    ],
+    feeStructure: [
+      { service: "Digital Planning", amount: "₹8,000 – ₹15,000" },
+      { service: "App-based Services", amount: "₹2,000 monthly" },
+    ],
+    testimonials: [
+      {
+        text: "Biharilal's digital approach made financial planning so much easier and transparent.",
+        author: "Vikram Kumar",
+        designation: "Tech Professional",
+      },
+      {
+        text: "Love the app-based tracking and regular updates on my investments.",
+        author: "Anjali Desai",
+        designation: "Young Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Digital Consultation", href: "", variant: "primary" },
+      { text: "App Demo", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is digital financial planning?",
+        answer:
+          "Financial planning using technology tools, apps, and digital platforms for better efficiency and transparency.",
+      },
+      {
+        question: "Are digital investments safe?",
+        answer:
+          "Yes, we recommend only SEBI-regulated platforms and maintain strict security protocols.",
+      },
+    ],
+    clientTypePills: ["Tech-savvy", "Digital Planning"],
+    idealClientDescription:
+      "Tech-savvy young professionals and salaried individuals who prefer digital-first financial planning solutions.",
+    successStories: [
+      "200+ clients using digital planning tools",
+      "Average portfolio growth of 12%+ annually",
+    ],
+    grievanceOfficer: {
+      name: "Digital Support",
+      email: "support@digitalwealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "38",
+    firmName: "Kongruent Wealth Management",
+    advisorName: "BHAVESH JHALA",
+    principalAdvisor: "BHAVESH JHALA",
+    sebiReg: "INA000004070",
+    photo: "/advisors/Bhavesh-Jhala.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Expert retirement planning for a secure future",
+    specializations: ["Retirement Planning", "Pension Planning", "Insurance"],
+    audience: ["Pre-retirees", "Retired"],
+    about:
+      "Bhavesh Jhala is a retirement planning specialist with expertise in pension optimization and post-retirement income planning.",
+    description:
+      "Kongruent Wealth Management focus exclusively on retirement planning, helping clients build adequate retirement corpus and plan for post-retirement income needs.",
+    services: [
+      {
+        name: "Retirement Corpus Planning",
+        description:
+          "Systematic planning to build adequate retirement corpus through various investment vehicles.",
+      },
+      {
+        name: "Pension Optimization",
+        description:
+          "Optimization of pension schemes and retirement benefits for maximum income.",
+      },
+      {
+        name: "Post-retirement Income Planning",
+        description:
+          "Planning for sustainable income streams during retirement years.",
+      },
+    ],
+    feeStructure: [
+      { service: "Retirement Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Pension Review", amount: "₹8,000" },
+    ],
+    testimonials: [
+      {
+        text: "Bhavesh Jhala's retirement planning has given me confidence about my financial future.",
+        author: "Ramesh Iyer",
+        designation: "Pre-retiree",
+      },
+      {
+        text: "Excellent pension optimization that increased my retirement income significantly.",
+        author: "Lakshmi Rao",
+        designation: "Retired Teacher",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Retirement Planning", href: "", variant: "primary" },
+      { text: "Pension Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "When should I start retirement planning?",
+        answer:
+          "Ideally in your 30s, but it's never too late. We can help you plan regardless of your age.",
+      },
+      {
+        question: "How much corpus do I need for retirement?",
+        answer:
+          "It depends on your lifestyle, expenses, and retirement goals. We calculate this based on your specific needs.",
+      },
+    ],
+    clientTypePills: ["Pre-retirees", "Pension Planning"],
+    idealClientDescription:
+      "Individuals approaching retirement or those seeking to optimize their retirement planning and pension benefits.",
+    successStories: [
+      "Helped 75+ clients plan their retirement",
+      "Average retirement corpus of ₹1.5+ crores",
+    ],
+    grievanceOfficer: {
+      name: "Retirement Support",
+      email: "retirement@retirementexperts.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "39",
+    firmName: "Right Returns",
+    advisorName: " Devang Shah",
+    principalAdvisor: " Devang Shah",
+    sebiReg: "INA000004930",
+    photo: "/advisors/Devang-Shah.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Smart tax planning for maximum savings",
+    specializations: [
+      "Tax Planning",
+      "Financial Planning",
+      "Business Planning",
+    ],
+    audience: ["Business Owners", "Salaried"],
+    about:
+      "Devang Shah is a highly qualified professional with a strong background in taxation and finance. He specializes in tax optimization strategies for individuals and businesses.",
+    description:
+      "Right Returns was founded in 2000 because while there was a lot of talent representing product vendors (such as Mutual Funds, Banks and Insurance Companies) there was none to represent the consumer of these products. We represented and got paid directly by clients way back in 2000 when Financial Planning as well as Fiduciary Interest were terms unheard of, not only to consumers but to the industry at large.",
+    services: [
+      {
+        name: "Personal Tax Planning",
+        description:
+          "Comprehensive tax planning for individuals including salary optimization and investment planning.",
+      },
+      {
+        name: "Business Tax Planning",
+        description:
+          "Tax optimization strategies for businesses and self-employed professionals.",
+      },
+      {
+        name: "Tax-Saving Investment Advisory",
+        description:
+          "Guidance on tax-saving instruments and investment strategies.",
+      },
+    ],
+    feeStructure: [
+      { service: "Tax Planning", amount: "₹15,000 – ₹25,000" },
+      { service: "Business Planning", amount: "₹30,000 – ₹50,000" },
+    ],
+    testimonials: [
+      {
+        text: "Devang Shah's tax planning saved me over ₹3 lakhs in taxes this year.",
+        author: "Rajesh Kumar",
+        designation: "Business Owner",
+      },
+      {
+        text: "Excellent business tax planning that optimized my company's tax structure.",
+        author: "Priya Sharma",
+        designation: "Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Tax Planning", href: "", variant: "primary" },
+      { text: "Business Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is tax planning?",
+        answer:
+          "Strategic planning to minimize tax liability through legal means like investments, deductions, and exemptions.",
+      },
+      {
+        question: "How much can I save through tax planning?",
+        answer:
+          "Depending on your income and investments, you can save 20-40% of your tax liability through proper planning.",
+      },
+    ],
+    clientTypePills: ["Tax Planning", "Business Owners"],
+    idealClientDescription:
+      "Individuals and business owners seeking expert tax planning and optimization strategies.",
+    successStories: [
+      "Average tax savings of ₹2-5 lakhs per client",
+      "Served 100+ business clients",
+    ],
+    grievanceOfficer: {
+      name: "Tax Support",
+      email: "tax@taxsmart.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "40",
+    firmName: "Buoyant Capital",
+    advisorName: "Dipen Sheth",
+    principalAdvisor: "Dipen Sheth",
+    sebiReg: "INA000016995",
+    photo: "/advisors/Dipen-Sheth.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "A great company is different from a great investment",
+    specializations: ["Insurance", "Financial Planning", "Risk Management"],
+    audience: ["Salaried", "Business Owners"],
+    about:
+      "Dipen has 31 years of diverse professional and entrepreneurial experience spanning sectors such as manufacturing, consulting, infotech, retail, and capital markets. He has previously worked with HDFC Securities and Edelweiss Securities. At HDFC Securities, he was the Head of Institutional Equity Research, advising leading Indian institutional investors.",
+    description:
+      "Buoyant Capital provides comprehensive insurance planning services. We help individuals and families assess their insurance needs and recommend appropriate coverage.",
+    services: [
+      {
+        name: "Insurance Need Analysis",
+        description:
+          "Comprehensive analysis of your insurance needs across life, health, and general insurance.",
+      },
+      {
+        name: "Insurance Portfolio Review",
+        description:
+          "Review of existing insurance policies and recommendations for optimization.",
+      },
+      {
+        name: "Risk Management Planning",
+        description:
+          "Planning for various life risks and appropriate insurance coverage.",
+      },
+    ],
+    feeStructure: [
+      { service: "Insurance Planning", amount: "₹8,000 – ₹15,000" },
+      { service: "Portfolio Review", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "Smita's insurance planning gave me complete peace of mind about my family's protection.",
+        author: "Amit Patel",
+        designation: "Family Man",
+      },
+      {
+        text: "Excellent health insurance planning that covered all my family's needs.",
+        author: "Neha Gupta",
+        designation: "Working Mother",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Insurance Planning", href: "", variant: "primary" },
+      { text: "Policy Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How much life insurance do I need?",
+        answer:
+          "Typically 10-15 times your annual income, but we calculate based on your specific financial obligations and goals.",
+      },
+      {
+        question: "What types of insurance should I have?",
+        answer:
+          "Life insurance, health insurance, and general insurance (motor, home) based on your needs and circumstances.",
+      },
+    ],
+    clientTypePills: ["Insurance Planning", "Risk Management"],
+    idealClientDescription:
+      "Individuals and families seeking comprehensive insurance planning and risk management.",
+    successStories: [
+      "Helped 200+ families with insurance planning",
+      "Average insurance coverage of ₹1+ crore per family",
+    ],
+    grievanceOfficer: {
+      name: "Insurance Support",
+      email: "insurance@insurancepro.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "41",
+    firmName: "Focus Investing",
+    advisorName: "Dipen Doshi",
+    principalAdvisor: "Dipen Doshi",
+    sebiReg: "INA000013855",
+    photo: "/advisors/Dipen-Doshi.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "where financial empowerment meets personalized guidance...",
+    specializations: ["Mutual Funds", "Financial Planning", "Tax Planning"],
+    audience: ["Salaried", "Young Professionals"],
+    about:
+      "Dipen Doshi is a mutual fund specialist with over 12 years of experience in fund analysis and portfolio management.",
+    description:
+      "Focus Investing specializes in mutual fund investments and portfolio management. We help clients build wealth through systematic investment in mutual funds.",
+    services: [
+      {
+        name: "Mutual Fund Portfolio Planning",
+        description:
+          "Customized mutual fund portfolios based on your goals and risk profile.",
+      },
+      {
+        name: "SIP Planning",
+        description:
+          "Systematic Investment Plan (SIP) strategies for long-term wealth creation.",
+      },
+      {
+        name: "Portfolio Rebalancing",
+        description:
+          "Regular review and rebalancing of mutual fund portfolios.",
+      },
+    ],
+    feeStructure: [
+      { service: "Mutual Fund Planning", amount: "₹10,000 – ₹18,000" },
+      { service: "Portfolio Review", amount: "₹3,000" },
+    ],
+    testimonials: [
+      {
+        text: "Deepak's mutual fund guidance has helped me build a substantial portfolio over the years.",
+        author: "Rahul Singh",
+        designation: "IT Professional",
+      },
+      {
+        text: "Excellent SIP planning that has given me consistent returns.",
+        author: "Priya Sharma",
+        designation: "Young Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Mutual Fund Planning", href: "", variant: "primary" },
+      { text: "SIP Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is SIP?",
+        answer:
+          "Systematic Investment Plan is a method of investing a fixed amount regularly in mutual funds for long-term wealth creation.",
+      },
+      {
+        question: "How do you select mutual funds?",
+        answer:
+          "We analyze fund performance, expense ratios, fund manager track record, and alignment with your goals.",
+      },
+    ],
+    clientTypePills: ["Mutual Funds", "SIP Planning"],
+    idealClientDescription:
+      "Individuals seeking expert guidance on mutual fund investments and systematic wealth creation.",
+    successStories: [
+      "Managed mutual fund portfolios worth ₹50+ crores",
+      "Average annual returns of 12-15% for clients",
+    ],
+    grievanceOfficer: {
+      name: "MF Support",
+      email: "support@mutualfundmasters.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "42",
+    firmName: "Finwise Financial Planners & Advisors",
+    advisorName: "Girish Ganaraj ",
+    principalAdvisor: "Girish Ganaraj ",
+    sebiReg: "INA000018850",
+    photo: "/advisors/Girish-Ganaraj.svg",
+    location: "Delhi, Delhi",
+    tagline: "Take our advise , get Finwise",
+    specializations: [
+      "Estate Planning",
+      "Succession Planning",
+      "Legal Advisory",
+    ],
+    audience: ["HNI", "Business Owners"],
+    about:
+      "Girish Ganaraj is a financial advisor specializing in estate planning, succession planning, and wealth transfer strategies.",
+    description:
+      "Finwise Financial Planners & Advisors provide comprehensive estate and succession planning services. We help high-net-worth individuals and business families secure their wealth for future generations.",
+    services: [
+      {
+        name: "Estate Planning",
+        description:
+          "Comprehensive estate planning including will preparation and trust structures.",
+      },
+      {
+        name: "Succession Planning",
+        description:
+          "Business succession planning and family wealth transfer strategies.",
+      },
+      {
+        name: "Legal Advisory",
+        description:
+          "Legal guidance on estate and succession planning matters.",
+      },
+    ],
+    feeStructure: [
+      { service: "Estate Planning", amount: "₹50,000 – ₹1,00,000" },
+      { service: "Succession Planning", amount: "₹1,00,000 – ₹2,00,000" },
+    ],
+    testimonials: [
+      {
+        text: "Girish Ganaraj's estate planning has secured our family's wealth for future generations.",
+        author: "Vikram Singh",
+        designation: "Business Family",
+      },
+      {
+        text: "Excellent succession planning that ensured smooth business transition.",
+        author: "Priya Kapoor",
+        designation: "Business Owner",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Estate Planning", href: "", variant: "primary" },
+      { text: "Succession Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is estate planning?",
+        answer:
+          "Planning for the transfer of your assets to your heirs in a tax-efficient and legally sound manner.",
+      },
+      {
+        question: "When should I start estate planning?",
+        answer:
+          "It's never too early. Ideally, start when you have significant assets or family responsibilities.",
+      },
+    ],
+    clientTypePills: ["Estate Planning", "Succession Planning"],
+    idealClientDescription:
+      "High-net-worth individuals and business families seeking comprehensive estate and succession planning.",
+    successStories: [
+      "Handled estate planning for 25+ business families",
+      "Average estate value of ₹10+ crores per family",
+    ],
+    grievanceOfficer: {
+      name: "Legal Support",
+      email: "legal@estateplanning.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "43",
+    firmName: "SANGUINE WEALTH",
+    advisorName: "GAURAV JHAWAR ",
+    principalAdvisor: "GAURAV JHAWAR ",
+    sebiReg: "INA000009685",
+    photo: "/advisors/GAURAV-JHAWAR.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Make decision today for long term implications",
+    specializations: ["Financial Planning", "Women's Finance", "Tax Planning"],
+    audience: ["Women Professionals", "Salaried"],
+    about:
+          "GAURAV JHAWAR  is a financial advisor specializing in  financial planning. She understands the unique financial challenges and opportunities that women face.",
+    description:
+      "Sanguine Wealth Advisors LLP was founded in October 2017 by Mr. Amar Tekwani, a veteran in the field of private banking, wealth management and finance. With more than two decades of experience in financial services, Amar founded Sanguine to help people create wealth. At Sanguine, our clientele comes from distinct walks of life with distinct financial goals and range from ultra high net worth families to individual investors, both resident & non-resident, to corporates.",
+    services: [
+      {
+        name: "Women's Financial Planning",
+        description:
+          "Comprehensive financial planning tailored to women's unique needs and life stages.",
+      },
+      {
+        name: "Career Break Planning",
+        description:
+          "Financial planning for women taking career breaks for family or other reasons.",
+      },
+      {
+        name: "Investment Education",
+        description:
+          "Financial literacy and investment education programs for women.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Planning", amount: "₹12,000 – ₹20,000" },
+      { service: "Education Programs", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "GAURAV JHAWAR helped me become financially independent and confident about my investments.",
+        author: "Anjali Sharma",
+        designation: "Working Mother",
+      },
+      {
+        text: "Excellent guidance on managing finances during my career break.",
+        author: "Priya Patel",
+        designation: "Returning Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Women's Planning", href: "", variant: "primary" },
+      { text: "Financial Education", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "Why do women need specialized financial planning?",
+        answer:
+          "Women face unique challenges like career breaks, longer life expectancy, and different risk preferences that require specialized planning.",
+      },
+      {
+        question: "How do you help with career break planning?",
+        answer:
+          "We help plan finances to maintain financial security during career breaks and smooth transition back to work.",
+      },
+    ],
+    clientTypePills: ["Women Professionals", "Financial Independence"],
+    idealClientDescription:
+      "Women professionals seeking financial independence and specialized financial planning services.",
+    successStories: [
+      "Helped 100+ women achieve financial independence",
+      "Average portfolio growth of 15%+ for women clients",
+    ],
+    grievanceOfficer: {
+      name: "Women's Support",
+      email: "women@womenswealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "44",
+    firmName: "GRY financial planners",
+    advisorName: "Rohit Shah",
+    principalAdvisor: "Rohit Shah",
+    sebiReg: "INA000015996",
+    photo: "/advisors/Rohit-Shah.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Financial planning for the startup ecosystem",
+    specializations: [
+      "Startup Finance",
+      "Business Planning",
+      "ESOP Planning",
+    ],
+    audience: ["Startup Founders", "Tech Professionals"],
+    about:
+      "I am a SEBI Registered Investment Adviser, running a financial planning practice since 2012. I am one of the directors on the board of the Association of Registered Investment Advisers of India (ARIA).",
+    description:
+      "We are a customer-centric financial planning firm with 11+ years of experience in helping Indian families living within and outside of India. Our goal is to help you live the life you want by building a secure future for you and your loved ones.",
+    services: [
+      {
+        name: "Startup Financial Planning",
+        description:
+          "Comprehensive financial planning for startup founders and employees.",
+      },
+      {
+        name: "ESOP Planning",
+        description:
+          "Planning for Employee Stock Option Plans and equity compensation.",
+      },
+      {
+        name: "Exit Planning",
+        description:
+          "Financial planning for startup exits and wealth management.",
+      },
+    ],
+    feeStructure: [
+      { service: "Startup Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "ESOP Planning", amount: "₹15,000 – ₹25,000" },
+    ],
+    testimonials: [
+      {
+        text: "Amit's expertise in startup finance helped me plan my ESOPs effectively.",
+        author: "Rahul Kumar",
+        designation: "Startup Founder",
+      },
+      {
+        text: "Excellent guidance on managing startup wealth and planning for exits.",
+        author: "Priya Singh",
+        designation: "Tech Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Startup Planning", href: "", variant: "primary" },
+      { text: "ESOP Consultation", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is ESOP planning?",
+        answer:
+          "Planning for Employee Stock Option Plans to maximize their value and tax efficiency.",
+      },
+      {
+        question: "How do you help startup founders?",
+        answer:
+          "We help with personal financial planning, ESOP management, and exit planning for startup founders.",
+      },
+    ],
+    clientTypePills: ["Startup Founders", "ESOP Planning"],
+    idealClientDescription:
+      "Startup founders and employees seeking specialized financial planning for the startup ecosystem.",
+    successStories: [
+      "Helped 50+ startup founders with financial planning",
+      "Average ESOP value optimization of ₹2+ crores per client",
+    ],
+    grievanceOfficer: {
+      name: "Startup Support",
+      email: "startup@startupfinancial.com",
     },
     verifiedBySpring: false,
   },
