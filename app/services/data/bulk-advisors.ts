@@ -1929,14 +1929,14 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "Avinash Nahata",
     sebiReg: "INA000016649",
     photo: "/advisors/Avinash-Nahata.svg",
-    location: "Delhi",
-    tagline: "Comprehensive insurance planning for complete protection",
+    location: "Mumbai, Maharashtra",
+    tagline: "We’re more than a portfolio. We’re a partner.",
     specializations: ["Insurance", "Financial Planning", "Risk Management"],
     audience: ["Salaried", "Business Owners"],
     about:
-      "Avinash Nahata is an insurance planning specialist with expertise in life, health, and general insurance products.",
+      "Before starting his entrepreneurial journey at PARAMI, he worked with Aditya Birla Group for 11 years in the capacity of Equity Fund Manager (5 years) and Fundamental Research Head (6 years) with their broking arm Aditya Birla Money (ABM)",
     description:
-      " PARAMI FINANCIAL SERVICES PRIVATE LIMITED provides comprehensive insurance planning services, helping clients assess their insurance needs and select appropriate coverage.",
+      " At Parami, we value long-term relationships and want to do our business the right way. Our Founders & Advisors and team PARAMI have a strong domain understanding in wealth management, equity research, fund management and consulting. We have good diversity and vintage as a team, have seen many investment cycles, and are therefore cognizant of the challenges associated with the opportunities to protect and grow wealth.",
     services: [
       {
         name: "Insurance Need Analysis",
@@ -2008,7 +2008,8 @@ export const bulkAdvisorData: AdvisorInput[] = [
     sebiReg: "INA000000045",
     photo: "/advisors/Akash-Praharaj.svg",
     location: "Mumbai, Maharashtra",
-    tagline: "“Helping you to improve your Financial Life and nurture a trusting relationship.”",
+    tagline:
+      "“Helping you to improve your Financial Life and nurture a trusting relationship.”",
     specializations: ["Mutual Funds", "Financial Planning", "Tax Planning"],
     audience: ["Salaried", "Young Professionals"],
     about:
