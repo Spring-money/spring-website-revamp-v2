@@ -1371,7 +1371,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "21",
-    firmName: "Purmartha",
+    firmName: "Purn  artha",
     advisorName: "Hemant Vispute",
     principalAdvisor: "Hemant Vispute",
     sebiReg: "INA00000067",
@@ -2937,6 +2937,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
         answer:
           "Life insurance, health insurance, and general insurance (motor, home) based on your needs and circumstances.",
       },
+      {
+        question: "How do you optimize health insurance?",
+        answer:
+          "We analyze your health needs, family history, and budget to recommend optimal coverage and cost-effective plans.",
+      },
     ],
     clientTypePills: ["Insurance Planning", "Risk Management"],
     idealClientDescription:
@@ -3271,6 +3276,2839 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
+  {
+    id: "45",
+    firmName: "Multi Ark Wealth Private Limited",
+    advisorName: "Diksha Vaish",
+    principalAdvisor: "Diksha Vaish",
+    sebiReg: "INA000018504",
+    photo: "/advisors/Diksha-Vaish.svg",
+    location: "Delhi, Delhi",
+    tagline: "Empowering women to take control of their financial future",
+    specializations: ["Women's Finance", "Financial Planning", "Tax Planning"],
+    audience: ["Women Professionals", "Salaried"],
+    about:
+      "Diksha Vaish is a certified financial planner with over 15 years of experience specializing in women's financial planning. She understands the unique challenges women face in financial decision-making.",
+    description:
+      "WealthWise Capital is dedicated to empowering women through financial education and planning. We provide specialized services that address women's unique financial needs, including career breaks, longer life expectancy, and different risk preferences.",
+    services: [
+      {
+        name: "Women's Financial Planning",
+        description:
+          "Comprehensive financial planning tailored to women's unique needs and life stages.",
+      },
+      {
+        name: "Career Break Planning",
+        description:
+          "Financial planning for women taking career breaks for family or other reasons.",
+      },
+      {
+        name: "Investment Education",
+        description:
+          "Financial literacy and investment education programs for women.",
+      },
+      {
+        name: "Retirement Planning for Women",
+        description:
+          "Specialized retirement planning considering women's longer life expectancy.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Planning", amount: "₹12,000 – ₹20,000" },
+      { service: "Education Programs", amount: "₹5,000" },
+      { service: "Career Break Planning", amount: "₹15,000" },
+    ],
+    testimonials: [
+      {
+        text: "Diksha helped me become financially independent and confident about my investments.",
+        author: "Anjali Sharma",
+        designation: "Working Mother",
+      },
+      {
+        text: "Excellent guidance on managing finances during my career break.",
+        author: "Priya Patel",
+        designation: "Returning Professional",
+      },
+      {
+          text: "Her understanding of women's financial needs is exceptional.",
+        author: "Dr. Meera Desai",
+        designation: "Medical Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Women's Planning", href: "", variant: "primary" },
+      { text: "Financial Education", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "Why do women need specialized financial planning?",
+        answer:
+          "Women face unique challenges like career breaks, longer life expectancy, and different risk preferences that require specialized planning.",
+      },
+      {
+        question: "How do you help with career break planning?",
+        answer:
+          "We help plan finances to maintain financial security during career breaks and smooth transition back to work.",
+      },
+      {
+        question: "What investment options are suitable for women?",
+        answer:
+          "We recommend a mix of equity, debt, and gold based on your risk profile and life stage.",
+      },
+    ],
+    clientTypePills: ["Women Professionals", "Financial Independence"],
+    idealClientDescription:
+      "Women professionals seeking financial independence and specialized financial planning services.",
+    successStories: [
+      "Helped 100+ women achieve financial independence",
+      "Average portfolio growth of 15%+ for women clients",
+      "Successfully guided 50+ women through career transitions",
+    ],
+    grievanceOfficer: {
+      name: "Women's Support",
+      email: "women@wealthwisecapital.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "46",
+    firmName: "FEE ONLY INVESTMENT ADVISERS LLP",
+    advisorName: "Harsh Roongta",
+    principalAdvisor: "Harsh Roongta",
+    sebiReg: "INA000014836",
+    photo: "/advisors/Harsh-Roongta.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Financial planning for the tech generation",
+    specializations: ["ESOP Planning", "Startup Finance", "Tech Investments"],
+    audience: ["Tech Professionals", "Startup Founders"],
+    about:
+      "Harsh Roongta is a former tech professional turned financial advisor with deep understanding of ESOPs, startup equity, and tech industry compensation structures.",
+    description:
+      "FEE ONLY INVESTMENT ADVISERS LLP specializes in serving tech professionals and startup founders. We understand the unique financial challenges of the tech industry including ESOPs, RSUs, and volatile compensation structures.",
+    services: [
+      {
+        name: "ESOP & RSU Planning",
+        description:
+          "Strategic planning for Employee Stock Options and Restricted Stock Units.",
+      },
+      {
+        name: "Startup Equity Management",
+        description:
+          "Managing startup equity and planning for liquidity events.",
+      },
+      {
+        name: "Tech Compensation Optimization",
+        description:
+          "Optimizing tech compensation packages including salary, equity, and benefits.",
+      },
+      {
+        name: "Crypto & Digital Asset Planning",
+        description:
+          "Planning for cryptocurrency and digital asset investments.",
+      },
+    ],
+    feeStructure: [
+      { service: "ESOP Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Startup Planning", amount: "₹25,000 – ₹40,000" },
+      { service: "Compensation Review", amount: "₹10,000" },
+    ],
+    testimonials: [
+      {
+        text: "Harsh's expertise in ESOPs helped me maximize my equity value.",
+        author: "Amit Kumar",
+        designation: "Senior Software Engineer",
+      },
+      {
+        text: "Excellent guidance on managing startup equity and planning for exits.",
+        author: "Priya Singh",
+        designation: "Startup Founder",
+      },
+      {
+        text: "He understands the tech industry like no other financial advisor.",
+        author: "Vikram Patel",
+        designation: "Product Manager",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "ESOP Consultation", href: "", variant: "primary" },
+      { text: "Startup Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is ESOP planning?",
+        answer:
+          "Strategic planning to maximize the value of your Employee Stock Options through proper timing and tax optimization.",
+      },
+      {
+        question: "How do you handle startup equity?",
+        answer:
+          "We help you understand vesting schedules, exercise strategies, and plan for liquidity events.",
+      },
+      {
+        question: "Should I invest in crypto?",
+        answer:
+          "We help you understand the risks and incorporate digital assets appropriately in your portfolio.",
+      },
+    ],
+    clientTypePills: ["Tech Professionals", "ESOP Planning"],
+    idealClientDescription:
+      "Tech professionals and startup founders seeking specialized financial planning for equity compensation and tech industry challenges.",
+    successStories: [
+      "Helped 200+ tech professionals optimize their equity compensation",
+      "Average ESOP value optimization of ₹3+ crores per client",
+      "Guided 25+ startup founders through successful exits",
+    ],
+    grievanceOfficer: {
+      name: "Tech Support",
+      email: "tech@feeonlyinvestmentadvisers.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "47",
+    firmName: "Wealth Café Investment Advisors",
+    advisorName: "Harsh Vardhan Dawar",
+    principalAdvisor: "Harsh Vardhan Dawar",
+    sebiReg: "INA000002173",
+    photo: "/advisors/Harsh-Vardhan-Dawar.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Financial planning designed for medical professionals",
+    specializations: ["Medical Practice Finance", "Tax Planning", "Insurance"],
+    audience: ["Medical Professionals", "Doctors"],
+    about:
+      "Harsh Vardhan Dawar is a former medical professional who transitioned to financial planning. He understands the unique financial challenges faced by doctors and medical professionals.",
+    description:
+      "Wealth Café Investment Advisors specializes in serving medical professionals. We understand the high income, irregular cash flows, and unique tax situations that doctors face.",
+    services: [
+      {
+        name: "Medical Practice Financial Planning",
+        description:
+          "Comprehensive financial planning for medical practices and individual doctors.",
+      },
+      {
+        name: "Medical Malpractice Insurance Planning",
+        description:
+          "Assessment and optimization of medical malpractice insurance coverage.",
+      },
+      {
+        name: "Tax Planning for Medical Professionals",
+        description:
+          "Specialized tax planning considering medical practice deductions and income structures.",
+      },
+      {
+        name: "Retirement Planning for Doctors",
+        description:
+          "Retirement planning considering the late start and high earning potential of medical professionals.",
+      },
+    ],
+    feeStructure: [
+      { service: "Medical Practice Planning", amount: "₹30,000 – ₹50,000" },
+      { service: "Insurance Review", amount: "₹8,000" },
+      { service: "Tax Planning", amount: "₹15,000 – ₹25,000" },
+    ],
+    testimonials: [
+      {
+        text: "Harsh Vardhan's understanding of medical practice finances is exceptional.",
+        author: "Dr. Rajesh Kumar",
+        designation: "Cardiologist",
+      },
+      {
+          text: "She helped me optimize my practice finances and save significantly on taxes.",
+        author: "Dr. Priya Sharma",
+        designation: "Dentist",
+      },
+      {
+        text: "Excellent guidance on medical malpractice insurance and practice management.",
+        author: "Dr. Amit Patel",
+        designation: "Surgeon",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Medical Practice Planning", href: "", variant: "primary" },
+      { text: "Insurance Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How do you help with medical practice finances?",
+        answer:
+          "We help optimize practice expenses, manage cash flows, and plan for practice expansion or sale.",
+      },
+      {
+        question: "What insurance do medical professionals need?",
+        answer:
+          "Medical malpractice, professional liability, disability, and life insurance based on your specialty and practice.",
+      },
+      {
+        question: "How do you handle irregular income from medical practice?",
+        answer:
+          "We create cash flow management strategies and emergency funds to handle income variability.",
+      },
+    ],
+    clientTypePills: ["Medical Professionals", "Practice Finance"],
+    idealClientDescription:
+      "Medical professionals and doctors seeking specialized financial planning for their unique income and practice challenges.",
+    successStories: [
+      "Helped 150+ medical professionals optimize their practice finances",
+      "Average tax savings of ₹5-10 lakhs per medical client",
+      "Guided 30+ doctors through practice transitions",
+    ],
+    grievanceOfficer: {
+      name: "Medical Support",
+      email: "medical@wealthcafe.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "48",
+    firmName: "Hemendra Gandhi",
+    advisorName: "Hemendra Gandhi",
+    principalAdvisor: "Hemendra Gandhi",
+    sebiReg: "INA000004237",
+    photo: "/advisors/Hemendra-Gandhi.svg",
+    location: "Chennai, Tamil Nadu",
+    tagline: "Securing your golden years with expert financial planning",
+    specializations: ["Senior Citizen Planning", "Pension Optimization", "Estate Planning"],
+    audience: ["Retired", "Pre-retirees"],
+    about:
+      "Hemendra Gandhi is a senior financial advisor with over 25 years of experience specializing in retirement planning and senior citizen financial services.",
+    description:
+      "Hemendra Gandhi is dedicated to serving senior citizens and pre-retirees. We understand the unique financial needs of this demographic including pension optimization, healthcare planning, and estate planning.",
+    services: [
+      {
+        name: "Senior Citizen Financial Planning",
+        description:
+          "Comprehensive financial planning tailored for senior citizens and retirees.",
+      },
+      {
+        name: "Pension & Annuity Optimization",
+        description:
+          "Optimization of pension schemes, annuities, and retirement income streams.",
+      },
+      {
+        name: "Healthcare Cost Planning",
+        description:
+          "Planning for healthcare costs and medical insurance in retirement.",
+      },
+      {
+        name: "Estate & Legacy Planning",
+        description:
+          "Estate planning and wealth transfer strategies for senior citizens.",
+      },
+    ],
+    feeStructure: [
+      { service: "Senior Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Pension Review", amount: "₹8,000" },
+      { service: "Estate Planning", amount: "₹30,000 – ₹50,000" },
+    ],
+    testimonials: [
+      {
+        text: "Hemendra helped me optimize my pension and increase my retirement income significantly.",
+        author: "Lakshmi Rao",
+        designation: "Retired Teacher",
+      },
+      {
+        text: "Excellent estate planning that will benefit my family for generations.",
+        author: "Vikram Singh",
+        designation: "Retired Bank Officer",
+      },
+      {
+        text: "His understanding of senior citizen needs is exceptional.",
+        author: "Dr. Meera Patel",
+        designation: "Retired Doctor",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Senior Planning", href: "", variant: "primary" },
+      { text: "Pension Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How do you optimize pension income?",
+        answer:
+          "We analyze your pension options, suggest optimal withdrawal strategies, and recommend annuity products if suitable.",
+      },
+      {
+        question: "What healthcare planning do senior citizens need?",
+        answer:
+          "We help plan for medical insurance, long-term care, and healthcare costs in retirement.",
+      },
+      {
+        question: "When should I start estate planning?",
+        answer:
+          "It's never too early, but it becomes crucial as you approach retirement to ensure smooth wealth transfer.",
+      },
+    ],
+    clientTypePills: ["Senior Citizens", "Pension Planning"],
+    idealClientDescription:
+      "Senior citizens and pre-retirees seeking expert guidance on retirement planning, pension optimization, and estate planning.",
+    successStories: [
+      "Helped 200+ senior citizens optimize their retirement income",
+      "Average pension optimization of ₹2-5 lakhs annually per client",
+      "Guided 50+ families through estate planning",
+    ],
+    grievanceOfficer: {
+      name: "Senior Support",
+      email: "senior@hemendragandhi.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "49",
+    firmName: "Green Finance Advisors",
+    advisorName: "Priya Kapoor",
+    principalAdvisor: "Priya Kapoor",
+    sebiReg: "INA000020005",
+    photo: "/advisors/priya-kapoor.svg",
+    location: "Hyderabad, Telangana",
+    tagline: "Sustainable investing for a better future",
+    specializations: ["ESG Investing", "Sustainable Finance", "Green Bonds"],
+    audience: ["Environmentally Conscious", "HNI"],
+    about:
+      "Priya Kapoor is a sustainability expert and financial advisor with over 15 years of experience in ESG investing and sustainable finance.",
+    description:
+      "Green Finance Advisors specializes in sustainable and ESG investing. We help environmentally conscious investors align their financial goals with their values through responsible investment strategies.",
+    services: [
+      {
+        name: "ESG Portfolio Management",
+        description:
+          "Environmental, Social, and Governance focused investment portfolios.",
+      },
+      {
+        name: "Sustainable Investment Advisory",
+        description:
+          "Guidance on green bonds, renewable energy investments, and sustainable funds.",
+      },
+      {
+        name: "Impact Investing",
+        description:
+          "Investments that generate positive social and environmental impact alongside financial returns.",
+      },
+      {
+        name: "Carbon Footprint Analysis",
+        description:
+          "Analysis of investment portfolio's carbon footprint and sustainability metrics.",
+      },
+    ],
+    feeStructure: [
+      { service: "ESG Planning", amount: "₹25,000 – ₹40,000" },
+      { service: "Portfolio Analysis", amount: "₹10,000" },
+      { service: "Impact Investing", amount: "₹30,000 – ₹50,000" },
+    ],
+    testimonials: [
+      {
+        text: "Priya helped me build a portfolio that aligns with my environmental values.",
+        author: "Amit Sharma",
+        designation: "Environmental Consultant",
+      },
+      {
+        text: "Excellent returns while making a positive impact on the environment.",
+        author: "Dr. Neha Gupta",
+        designation: "Climate Scientist",
+      },
+      {
+        text: "She understands both sustainability and finance perfectly.",
+        author: "Vikram Singh",
+        designation: "Green Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "ESG Consultation", href: "", variant: "primary" },
+      { text: "Portfolio Analysis", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is ESG investing?",
+        answer:
+          "Environmental, Social, and Governance investing considers sustainability factors alongside financial returns.",
+      },
+      {
+        question: "Do sustainable investments perform well?",
+        answer:
+          "ESG investments have shown competitive returns while providing positive impact and risk management benefits.",
+      },
+      {
+        question: "What are green bonds?",
+        answer:
+          "Bonds issued to finance environmentally friendly projects like renewable energy and clean transportation.",
+      },
+    ],
+    clientTypePills: ["ESG Investing", "Sustainable Finance"],
+    idealClientDescription:
+      "Environmentally conscious investors seeking to align their financial goals with sustainability values through responsible investment strategies.",
+    successStories: [
+      "Managed ₹100+ crores in sustainable investments",
+      "Average ESG portfolio returns of 12-15% annually",
+      "Helped 100+ clients transition to sustainable investing",
+    ],
+    grievanceOfficer: {
+      name: "Green Support",
+      email: "green@greenfinance.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "50",
+    firmName: "HP Private Wealth Advisory Services",
+    advisorName: "Himanshu Pandya",
+    principalAdvisor: "Himanshu Pandya",
+    sebiReg: "INA000017310",
+    photo: "/advisors/Himanshu-Pandya.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "International wealth management for global citizens",
+    specializations: ["International Investments", "Cross-border Planning", "NRI Services"],
+    audience: ["NRIs", "Global Citizens"],
+    about:
+      "Himanshu Pandya is an international wealth management expert with over 20 years of experience serving NRIs and global citizens across multiple jurisdictions.",
+    description:
+      "HP Private Wealth Advisory Services specializes in international wealth management and cross-border financial planning. We serve NRIs, global citizens, and families with international financial interests.",
+    services: [
+      {
+        name: "International Portfolio Management",
+        description:
+          "Global investment portfolios across multiple markets and currencies.",
+      },
+      {
+        name: "Cross-border Tax Planning",
+        description:
+          "Tax optimization strategies for international income and investments.",
+      },
+      {
+        name: "NRI Investment Advisory",
+        description:
+          "Specialized investment guidance for Non-Resident Indians.",
+      },
+      {
+        name: "Currency Risk Management",
+        description:
+          "Strategies to manage currency risk in international investments.",
+      },
+    ],
+    feeStructure: [
+      { service: "International Planning", amount: "₹50,000 – ₹1,00,000" },
+      { service: "NRI Services", amount: "₹30,000 – ₹60,000" },
+      { service: "Currency Management", amount: "₹20,000" },
+    ],
+    testimonials: [
+      {
+        text: "Himanshu Pandya's expertise in international finance is unmatched.",
+        author: "Amit Shah",
+        designation: "NRI - USA",
+      },
+      {
+        text: "Excellent cross-border tax planning that saved me significant money.",
+        author: "Sunita Reddy",
+        designation: "NRI - UK",
+      },
+      {
+        text: "He understands the complexities of global wealth management perfectly.",
+        author: "Vikram Patel",
+        designation: "Global Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Global Consultation", href: "", variant: "primary" },
+      { text: "NRI Services", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What investment options are available for NRIs?",
+        answer:
+          "NRIs can invest in Indian mutual funds, stocks, bonds, and real estate with certain restrictions and compliance requirements.",
+      },
+      {
+        question: "How do you handle currency risk?",
+        answer:
+          "We use hedging strategies and currency diversification to manage exchange rate fluctuations.",
+      },
+      {
+        question: "What are the tax implications for international investments?",
+        answer:
+          "We consider both Indian and foreign tax implications to optimize your overall tax liability.",
+      },
+    ],
+    clientTypePills: ["NRIs", "International Finance"],
+    idealClientDescription:
+      "Non-Resident Indians and global citizens seeking expert guidance on international investments and cross-border financial planning.",
+    successStories: [
+      "Served 300+ NRI clients across 25 countries",
+      "Managed international portfolios worth ₹500+ crores",
+      "Average tax savings of ₹5-10 lakhs per international client",
+    ],
+    grievanceOfficer: {
+      name: "Global Support",
+      email: "global@hpprivatewealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "51",
+    firmName: "VSK Financial Consultancy Services Pvt. Ltd.",
+    advisorName: "Jaydeep Godbole",
+    principalAdvisor: "Jaydeep Godbole",
+    sebiReg: "INA000017620",
+    photo: "/advisors/Jaydeep-Godbole.svg",
+    location: "Remote/Virtual",
+    tagline: "Technology-driven financial planning for the digital age",
+    specializations: ["Robo-advisory", "Digital Investments", "Fintech Solutions"],
+    audience: ["Tech-savvy", "Young Professionals"],
+    about:
+      "Jaydeep Godbole is a fintech expert and financial advisor with deep expertise in digital financial solutions and technology-driven investment strategies.",
+    description:
+      "VSK Financial Consultancy Services Pvt. Ltd. leverages cutting-edge technology to provide efficient, transparent, and cost-effective financial planning services. We serve tech-savvy individuals who prefer digital-first solutions.",
+    services: [
+      {
+        name: "Robo-advisory Services",
+        description:
+          "Automated investment management using advanced algorithms and technology.",
+      },
+      {
+        name: "Digital Portfolio Management",
+        description:
+          "Technology-driven portfolio management with real-time monitoring and rebalancing.",
+      },
+      {
+        name: "Fintech Integration",
+        description:
+          "Integration of various fintech tools and platforms for comprehensive financial management.",
+      },
+      {
+        name: "Cryptocurrency Planning",
+        description:
+          "Strategic planning for cryptocurrency and digital asset investments.",
+      },
+    ],
+    feeStructure: [
+      { service: "Robo-advisory", amount: "0.5% of AUM" },
+      { service: "Digital Planning", amount: "₹8,000 – ₹15,000" },
+      { service: "Fintech Setup", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "Jaydeep's digital approach made financial planning so much easier and transparent.",
+        author: "Rahul Singh",
+        designation: "Tech Professional",
+      },
+      {
+        text: "Love the real-time portfolio tracking and automated rebalancing.",
+        author: "Anjali Desai",
+        designation: "Young Professional",
+      },
+      {
+        text: "The fintech integration has streamlined all my financial activities.",
+        author: "Priya Patel",
+        designation: "Digital Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Digital Consultation", href: "", variant: "primary" },
+      { text: "App Demo", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is robo-advisory?",
+        answer:
+          "Automated investment management using algorithms to create and maintain optimal portfolios based on your goals and risk profile.",
+      },
+      {
+        question: "Are digital investments safe?",
+        answer:
+          "Yes, we use only SEBI-regulated platforms and maintain strict security protocols for all digital transactions.",
+      },
+      {
+        question: "How do you handle cryptocurrency investments?",
+        answer:
+          "We help you understand the risks and incorporate digital assets appropriately in your overall investment strategy.",
+      },
+    ],
+    clientTypePills: ["Tech-savvy", "Digital Planning"],
+    idealClientDescription:
+      "Tech-savvy young professionals and individuals who prefer digital-first financial planning solutions with transparency and efficiency.",
+    successStories: [
+      "500+ clients using digital planning tools",
+      "Average portfolio growth of 14%+ annually",
+      "95% client satisfaction with digital services",
+    ],
+    grievanceOfficer: {
+      name: "Digital Support",
+      email: "digital@vskfinancial.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "52",
+    firmName: "Jignesh H Shah",
+    advisorName: "Jignesh H Shah",
+    principalAdvisor: "Jignesh H Shah",
+    sebiReg: "INA000017621",
+    photo: "/advisors/Jignesh-H-Shah.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Comprehensive wealth management for business families",
+    specializations: ["Family Office", "Succession Planning", "Wealth Management"],
+    audience: ["HNI", "Business Families"],
+    about:
+      "Jignesh H Shah is a family office expert with over 25 years of experience serving ultra-high-net-worth families and business dynasties.",
+    description:
+      "Jignesh H Shah provides comprehensive wealth management services for business families and ultra-high-net-worth individuals. We handle everything from investment management to succession planning.",
+    services: [
+      {
+        name: "Family Office Services",
+        description:
+          "Comprehensive financial and administrative services for business families.",
+      },
+      {
+        name: "Succession Planning",
+        description:
+          "Business succession planning and family wealth transfer strategies.",
+      },
+      {
+        name: "Alternative Investments",
+        description:
+          "Access to private equity, real estate, and other alternative investment opportunities.",
+      },
+      {
+        name: "Philanthropy Planning",
+        description:
+          "Strategic planning for charitable giving and foundation management.",
+      },
+    ],
+    feeStructure: [
+      { service: "Family Office", amount: "₹10,00,000 annually" },
+      { service: "Succession Planning", amount: "₹5,00,000 – ₹15,00,000" },
+      { service: "Wealth Management", amount: "1.5% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "Jignesh H Shah's family office services have streamlined all our financial affairs.",
+        author: "Rajesh Agarwal",
+        designation: "Business Family",
+      },
+      {
+        text: "Excellent succession planning that ensured smooth business transition.",
+          author: "Priya Kapoor",
+        designation: "Family Business Owner",
+      },
+      {
+        text: "She understands the complexities of family wealth like no other.",
+        author: "Vikram Singh",
+        designation: "Ultra HNI",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Family Office Services", href: "", variant: "primary" },
+      { text: "Succession Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is a family office?",
+        answer:
+          "A family office provides comprehensive financial and administrative services for wealthy families, including investment management, tax planning, and succession planning.",
+      },
+      {
+        question: "When do I need succession planning?",
+        answer:
+          "Succession planning should start early, ideally when the business is stable and you want to ensure smooth transition to the next generation.",
+      },
+      {
+        question: "What are alternative investments?",
+        answer:
+          "Non-traditional investments like private equity, real estate, and structured products that can enhance portfolio returns and diversification.",
+      },
+    ],
+    clientTypePills: ["Family Office", "Succession Planning"],
+    idealClientDescription:
+      "Ultra-high-net-worth individuals and business families seeking comprehensive wealth management and family office services.",
+    successStories: [
+      "Managed wealth worth ₹2000+ crores",
+      "Successfully handled 15+ family office clients",
+      "Guided 10+ families through successful business transitions",
+    ],
+    grievanceOfficer: {
+      name: "Family Office Support",
+      email: "family@familyoffice.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "53",
+    firmName: "Kalpesh Ashar",
+    advisorName: "Kalpesh Ashar",
+    principalAdvisor: "Kalpesh Ashar",
+    sebiReg: "INA000001027",
+    photo: "/advisors/Kalpesh-Ashar.svg",
+    location: "Pune, Maharashtra",
+    tagline: "Building wealth through strategic real estate investments",
+    specializations: ["Real Estate", "REITs", "Property Planning"],
+    audience: ["Property Investors", "Business Owners"],
+    about:
+      "Kalpesh Ashar is a real estate investment specialist with over 20 years of experience in property markets, REITs, and real estate portfolio management.",
+    description:
+      "Kalpesh Ashar specializes in real estate investment strategies and property portfolio management. We help investors build wealth through strategic real estate investments and REITs.",
+    services: [
+      {
+        name: "Real Estate Portfolio Planning",
+        description:
+          "Strategic planning for real estate investments and property portfolios.",
+      },
+      {
+        name: "REIT Investment Advisory",
+        description:
+          "Guidance on Real Estate Investment Trusts and property securities.",
+      },
+      {
+        name: "Property Tax Planning",
+        description:
+          "Tax optimization strategies for real estate investments and property income.",
+      },
+      {
+        name: "Commercial Property Advisory",
+        description:
+          "Investment advisory for commercial properties and rental income optimization.",
+      },
+    ],
+    feeStructure: [
+      { service: "Real Estate Planning", amount: "₹25,000 – ₹40,000" },
+      { service: "REIT Advisory", amount: "₹15,000" },
+      { service: "Property Review", amount: "₹10,000" },
+    ],
+    testimonials: [
+      {
+        text: "Kalpesh's expertise in real estate has helped me build a substantial property portfolio.",
+        author: "Rajesh Kumar",
+        designation: "Property Investor",
+      },
+      {
+        text: "Excellent guidance on REITs and commercial property investments.",
+        author: "Priya Sharma",
+        designation: "Business Owner",
+      },
+      {
+        text: "He understands the real estate market dynamics perfectly.",
+        author: "Vikram Singh",
+        designation: "Real Estate Developer",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Real Estate Planning", href: "", variant: "primary" },
+      { text: "REIT Consultation", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What are REITs?",
+        answer:
+          "Real Estate Investment Trusts are securities that invest in real estate and provide regular income and capital appreciation.",
+      },
+      {
+        question: "How do you evaluate real estate investments?",
+        answer:
+          "We analyze location, rental yields, capital appreciation potential, and market dynamics to evaluate property investments.",
+      },
+      {
+        question: "What tax benefits are available for real estate?",
+        answer:
+          "Various tax deductions for home loans, rental income optimization, and capital gains planning for property investments.",
+      },
+    ],
+    clientTypePills: ["Real Estate", "REITs"],
+    idealClientDescription:
+      "Property investors and business owners seeking expert guidance on real estate investments and property portfolio management.",
+    successStories: [
+      "Helped 200+ clients build real estate portfolios",
+      "Average rental yield optimization of 8-12%",
+      "Managed property portfolios worth ₹500+ crores",
+    ],
+    grievanceOfficer: {
+      name: "Real Estate Support",
+      email: "kalpesh@fullcirclefpa.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "54",
+    firmName: "Kanika Kunal Shah",
+    advisorName: "Kanika Kunal Shah",
+    principalAdvisor: "Kanika Kunal Shah",
+    sebiReg: "INA000012537",
+    photo: "/advisors/Kanika-Kunal-Shah.svg",
+    location: "Delhi, Delhi",
+    tagline: "Protecting your wealth with comprehensive insurance planning",
+    specializations: ["Insurance Planning", "Risk Management", "Health Insurance"],
+    audience: ["Families", "Salaried"],
+    about:
+      "Kanika Kunal Shah is an insurance planning expert with over 15 years of experience in life, health, and general insurance products.",
+    description:
+      "Kanika Kunal Shah specializes in comprehensive insurance planning and risk management. We help families and individuals protect their wealth through appropriate insurance coverage.",
+    services: [
+      {
+        name: "Comprehensive Insurance Planning",
+        description:
+          "Assessment and planning for life, health, and general insurance needs.",
+      },
+      {
+        name: "Health Insurance Optimization",
+        description:
+          "Optimization of health insurance coverage for individuals and families.",
+      },
+      {
+        name: "Risk Management Planning",
+        description:
+          "Planning for various life risks and appropriate insurance coverage.",
+      },
+      {
+        name: "Insurance Portfolio Review",
+        description:
+          "Review of existing insurance policies and recommendations for optimization.",
+      },
+    ],
+    feeStructure: [
+      { service: "Insurance Planning", amount: "₹8,000 – ₹15,000" },
+      { service: "Portfolio Review", amount: "₹5,000" },
+      { service: "Risk Assessment", amount: "₹3,000" },
+    ],
+    testimonials: [
+      {
+        text: "Kanika's insurance planning gave me complete peace of mind about my family's protection.",
+        author: "Amit Patel",
+        designation: "Family Man",
+      },
+      {
+        text: "Excellent health insurance planning that covered all my family's needs.",
+        author: "Priya Sharma",
+        designation: "Working Mother",
+      },
+      {
+        text: "She helped me understand the importance of adequate insurance coverage.",
+        author: "Vikram Kumar",
+        designation: "Young Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Insurance Planning", href: "", variant: "primary" },
+      { text: "Policy Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How much life insurance do I need?",
+        answer:
+          "Typically 10-15 times your annual income, but we calculate based on your specific financial obligations and goals.",
+      },
+      {
+        question: "What types of insurance should I have?",
+        answer:
+          "Life insurance, health insurance, and general insurance (motor, home) based on your needs and circumstances.",
+      },
+      {
+        question: "How do you optimize health insurance?",
+        answer:
+          "We analyze your health needs, family history, and budget to recommend optimal coverage and cost-effective plans.",
+      },
+    ],
+    clientTypePills: ["Insurance Planning", "Risk Management"],
+    idealClientDescription:
+      "Families and individuals seeking comprehensive insurance planning and risk management to protect their wealth and loved ones.",
+    successStories: [
+      "Helped 300+ families with insurance planning",
+      "Average insurance coverage of ₹1.5+ crores per family",
+      "Saved clients ₹2-5 lakhs annually through insurance optimization",
+    ],
+    grievanceOfficer: {
+      name: "Insurance Support",
+      email: "insurance@insurancewealth.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "55",
+    firmName: "EKVITY INVESTMET ADVISORS",
+    advisorName: "Kharanshu Parikh",
+    principalAdvisor: "Kharanshu Parikh",
+    sebiReg: "INA000006952",
+    photo: "/advisors/Kharanshu-Parikh.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Navigating the future of digital assets",
+    specializations: ["Cryptocurrency", "Digital Assets", "Blockchain Investments"],
+    audience: ["Crypto Enthusiasts", "Tech Professionals"],
+    about:
+      "Kharanshu Parikh is a cryptocurrency and digital asset expert with deep understanding of blockchain technology and crypto investment strategies.",
+    description:
+      "Ekvity Investment Advisors specializes in cryptocurrency and digital asset investments. We help investors navigate the complex world of digital assets while maintaining proper risk management.",
+    services: [
+      {
+        name: "Cryptocurrency Portfolio Management",
+        description:
+          "Strategic management of cryptocurrency and digital asset portfolios.",
+      },
+      {
+        name: "Blockchain Investment Advisory",
+        description:
+          "Guidance on blockchain technology investments and crypto projects.",
+      },
+      {
+        name: "Digital Asset Tax Planning",
+        description:
+          "Tax planning strategies for cryptocurrency and digital asset investments.",
+      },
+      {
+        name: "Crypto Risk Management",
+        description:
+          "Risk management strategies for volatile digital asset markets.",
+      },
+    ],
+    feeStructure: [
+      { service: "Crypto Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Portfolio Management", amount: "2% of crypto AUM" },
+      { service: "Tax Planning", amount: "₹15,000" },
+    ],
+    testimonials: [
+      {
+        text: "Kharanshu's expertise in crypto has helped me navigate the volatile market successfully.",
+        author: "Rahul Kumar",
+        designation: "Tech Professional",
+      },
+      {
+        text: "Excellent guidance on blockchain investments and risk management.",
+        author: "Priya Patel",
+        designation: "Crypto Enthusiast",
+      },
+      {
+        text: "He understands both the technology and investment aspects of crypto perfectly.",
+        author: "Vikram Sharma",
+        designation: "Digital Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Crypto Consultation", href: "", variant: "primary" },
+      { text: "Portfolio Review", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How do you manage crypto volatility?",
+        answer:
+          "We use diversification, dollar-cost averaging, and risk management strategies to handle crypto market volatility.",
+      },
+      {
+        question: "What are the tax implications of crypto investments?",
+        answer:
+          "Cryptocurrency gains are taxable in India. We help optimize tax liability through proper planning and documentation.",
+      },
+      {
+        question: "How do you evaluate crypto projects?",
+        answer:
+          "We analyze technology, team, market potential, and regulatory compliance to evaluate crypto investment opportunities.",
+      },
+    ],
+    clientTypePills: ["Cryptocurrency", "Digital Assets"],
+    idealClientDescription:
+      "Crypto enthusiasts and tech professionals seeking expert guidance on cryptocurrency and digital asset investments with proper risk management.",
+    successStories: [
+      "Helped 150+ clients with crypto investments",
+      "Average crypto portfolio returns of 25%+ annually",
+      "Guided clients through multiple crypto market cycles",
+    ],
+    grievanceOfficer: {
+      name: "Crypto Support",
+      email: "kharanshu@ekvity.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "56",
+    firmName: "Equentis Wealth Advisory Services Limited",
+    advisorName: "Manish Goel",
+    principalAdvisor: "Manish Goel",
+    sebiReg: "INA000014836",
+    photo: "/advisors/Manish-Goel.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Institutional-grade investment advisory for discerning investors",
+    specializations: ["Institutional Investing", "Portfolio Management", "Alternative Investments"],
+    audience: ["HNI", "Institutional"],
+    about:
+      "Equentis Wealth Advisory Services Limited is a leading institutional investment advisory firm with decades of experience in managing large portfolios and alternative investments.",
+    description:
+      "We provide institutional-grade investment advisory services to high-net-worth individuals and institutional clients. Our expertise spans traditional and alternative investments with a focus on risk-adjusted returns.",
+    services: [
+      {
+        name: "Institutional Portfolio Management",
+        description:
+          "Professional portfolio management services for large investment portfolios.",
+      },
+      {
+        name: "Alternative Investment Advisory",
+        description:
+          "Guidance on private equity, venture capital, and other alternative investments.",
+      },
+      {
+        name: "Risk Management Solutions",
+        description:
+          "Comprehensive risk management strategies for institutional portfolios.",
+      },
+      {
+        name: "Investment Research & Analysis",
+        description:
+          "In-depth research and analysis for informed investment decisions.",
+      },
+    ],
+    feeStructure: [
+      { service: "Portfolio Management", amount: "0.5% - 1.0% of AUM" },
+      { service: "Alternative Investments", amount: "2% of committed capital" },
+      { service: "Research Services", amount: "₹50,000 - ₹2,00,000" },
+    ],
+    testimonials: [
+      {
+        text: "Manish's institutional approach has transformed our investment strategy.",
+        author: "Rajesh Agarwal",
+        designation: "Family Office",
+      },
+      {
+        text: "Excellent alternative investment opportunities and professional management.",
+        author: "Priya Kapoor",
+        designation: "Ultra HNI",
+      },
+      {
+        text: "Their research capabilities and market insights are world-class.",
+        author: "Vikram Singh",
+        designation: "Institutional Investor",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Institutional Services", href: "", variant: "primary" },
+      { text: "Research Reports", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is the minimum investment for institutional services?",
+        answer:
+          "Our institutional services typically require a minimum portfolio size of ₹10 crores or equivalent.",
+      },
+      {
+        question: "How do you handle alternative investments?",
+        answer:
+          "We provide access to carefully vetted alternative investment opportunities with thorough due diligence.",
+      },
+      {
+        question: "What risk management strategies do you employ?",
+        answer:
+          "We use sophisticated risk models, diversification strategies, and regular portfolio stress testing.",
+      },
+    ],
+    clientTypePills: ["Institutional", "Alternative Investments"],
+    idealClientDescription:
+      "High-net-worth individuals and institutional clients seeking professional portfolio management and alternative investment opportunities.",
+    successStories: [
+      "Managed portfolios worth ₹5000+ crores",
+      "Average annual returns of 15%+ for institutional clients",
+      "Successfully placed ₹500+ crores in alternative investments",
+    ],
+    grievanceOfficer: {
+      name: "Institutional Support",
+      email: "NITEE@FEEONLYIA.COM",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "57",
+    firmName: "Circle Wealth Advisors P. Ltd",
+    advisorName: "Mukul Agarwal",
+    principalAdvisor: "Mukul Agarwal",
+    sebiReg: "INA000016782",
+    photo: "/advisors/Mukul-Agarwal.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Climbing the ladder of financial success together",
+    specializations: ["Goal-based Planning", "Systematic Investing", "Financial Education"],
+    audience: ["Young Professionals", "Salaried"],
+    about:
+      "Circle Wealth Advisors P. Ltd is dedicated to helping young professionals build wealth through systematic, goal-based financial planning and education.",
+    description:
+      "We believe in empowering individuals through financial education and systematic investing. Our approach focuses on building sustainable wealth through disciplined financial habits and smart investment strategies.",
+    services: [
+      {
+        name: "Goal-based Financial Planning",
+        description:
+          "Financial planning aligned with your specific life goals and aspirations.",
+      },
+      {
+        name: "Systematic Investment Planning",
+        description:
+          "Building wealth through disciplined, systematic investment strategies.",
+      },
+      {
+        name: "Financial Education Programs",
+        description:
+          "Comprehensive financial literacy programs for individuals and families.",
+      },
+      {
+        name: "Portfolio Review & Rebalancing",
+        description:
+          "Regular portfolio reviews and strategic rebalancing for optimal performance.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Planning", amount: "₹8,000 – ₹15,000" },
+      { service: "Education Programs", amount: "₹3,000" },
+      { service: "Portfolio Review", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "Circle Wealth Advisors P. Ltd helped me understand the importance of systematic investing.",
+        author: "Amit Kumar",
+        designation: "Software Engineer",
+      },
+      {
+        text: "Their financial education programs are excellent for beginners.",
+        author: "Priya Sharma",
+        designation: "Young Professional",
+      },
+      {
+        text: "Goal-based planning made my financial journey much clearer.",
+        author: "Vikram Patel",
+        designation: "Marketing Manager",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Goal Planning", href: "", variant: "primary" },
+      { text: "Education Programs", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is goal-based financial planning?",
+        answer:
+          "We align your investments and financial strategies with specific life goals like buying a house, children's education, or retirement.",
+      },
+      {
+        question: "How do systematic investments work?",
+        answer:
+          "Regular, disciplined investments in mutual funds or other instruments to build wealth over time.",
+      },
+      {
+        question: "Do you provide financial education?",
+        answer:
+          "Yes, we offer comprehensive financial literacy programs to help you make informed decisions.",
+      },
+    ],
+    clientTypePills: ["Goal Planning", "Systematic Investing"],
+    idealClientDescription:
+      "Young professionals and salaried individuals seeking systematic, goal-based financial planning and education.",
+    successStories: [
+      "Helped 300+ young professionals start their investment journey",
+      "Average portfolio growth of 12%+ annually",
+      "Guided 100+ families through goal-based planning",
+    ],
+    grievanceOfficer: {
+      name: "Circle Wealth Advisors P. Ltd Support",
+      email: "support@circlewealthadvisors.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "58",
+    firmName: "FINNOVATE FINANCIAL SERVICES PRIVATE LIMITED",
+    advisorName: "NEHAL MOTA",
+    principalAdvisor: "Nehal Mota",
+    sebiReg: "INA000013518",
+    photo: "/advisors/Nehal-Mota.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Building wealth step by step with expert guidance",
+    specializations: ["Wealth Management", "Tax Planning", "Estate Planning"],
+    audience: ["HNI", "Business Families"],
+    about:
+      "FINNOVATE FINANCIAL SERVICES PRIVATE LIMITED specializes in comprehensive wealth management for high-net-worth individuals and business families, focusing on wealth preservation and growth.",
+    description:
+      "We provide end-to-end wealth management services including investment management, tax planning, estate planning, and succession planning for affluent families and business owners.",
+    services: [
+      {
+        name: "Comprehensive Wealth Management",
+        description:
+          "Complete wealth management including investments, tax planning, and estate planning.",
+      },
+      {
+        name: "Business Succession Planning",
+        description:
+          "Strategic planning for business succession and family wealth transfer.",
+      },
+      {
+        name: "Tax Optimization Strategies",
+        description:
+          "Advanced tax planning strategies for high-net-worth individuals.",
+      },
+      {
+        name: "Estate & Legacy Planning",
+        description:
+          "Estate planning and wealth transfer strategies for affluent families.",
+      },
+    ],
+    feeStructure: [
+      { service: "Wealth Management", amount: "1.0% - 1.5% of AUM" },
+      { service: "Succession Planning", amount: "₹5,00,000 – ₹15,00,000" },
+      { service: "Tax Planning", amount: "₹25,000 – ₹50,000" },
+    ],
+    testimonials: [
+      {
+        text: "FINNOVATE FINANCIAL SERVICES PRIVATE LIMITED's wealth management services have preserved and grown our family wealth.",
+        author: "Rajesh Agarwal",
+        designation: "Business Family",
+      },
+      {
+        text: "Excellent succession planning that ensured smooth business transition.",
+        author: "Priya Kapoor",
+        designation: "Family Business Owner",
+      },
+      {
+        text: "Their tax optimization strategies saved us significant money.",
+        author: "Vikram Singh",
+        designation: "Ultra HNI",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Wealth Management", href: "", variant: "primary" },
+      { text: "Succession Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is comprehensive wealth management?",
+        answer:
+          "It includes investment management, tax planning, estate planning, and succession planning for complete financial well-being.",
+      },
+      {
+        question: "When should I start succession planning?",
+        answer:
+          "Succession planning should start early, ideally when your business is stable and you want to ensure smooth transition.",
+      },
+      {
+        question: "How do you handle estate planning?",
+        answer:
+          "We help create wills, trusts, and other legal structures to ensure smooth wealth transfer to future generations.",
+      },
+    ],
+    clientTypePills: ["Wealth Management", "Succession Planning"],
+    idealClientDescription:
+      "High-net-worth individuals and business families seeking comprehensive wealth management and succession planning services.",
+    successStories: [
+      "Managed wealth worth ₹3000+ crores",
+      "Guided 50+ families through successful business transitions",
+      "Average tax savings of ₹10-20 lakhs per client annually",
+    ],
+    grievanceOfficer: {
+      name: "FINNOVATE FINANCIAL SERVICES PRIVATE LIMITED Support",
+      email: "nehal.mota@finnovate.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "59",
+    firmName: "Finkasturi Nivesh Pvt Ltd",
+    advisorName: "Nirakar Pradhan",
+    principalAdvisor: "Nirakar Pradhan",
+    sebiReg: "INA000014128",
+    photo: "/advisors/Nirakar-Pradhan.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Growing your wealth like a laurel tree - steady and strong",
+    specializations: ["Equity Investing", "Portfolio Management", "Research-based Investing"],
+    audience: ["Equity Investors", "HNI"],
+    about:
+      "Finkasturi Nivesh Pvt Ltd is a research-driven investment advisory firm specializing in equity investments and portfolio management for discerning investors.",
+    description:
+      "We focus on fundamental research and long-term value investing. Our approach combines deep market analysis with disciplined portfolio management to deliver consistent returns.",
+    services: [
+      {
+        name: "Equity Portfolio Management",
+        description:
+          "Research-driven equity portfolio management for long-term wealth creation.",
+      },
+      {
+        name: "Investment Research & Analysis",
+        description:
+          "In-depth research and analysis of companies and sectors for investment decisions.",
+      },
+      {
+        name: "Portfolio Review & Rebalancing",
+        description:
+          "Regular portfolio reviews and strategic rebalancing based on market conditions.",
+      },
+      {
+        name: "Investment Education",
+        description:
+          "Educational programs on equity investing and market analysis.",
+      },
+    ],
+    feeStructure: [
+      { service: "Portfolio Management", amount: "1.0% - 1.5% of AUM" },
+      { service: "Research Reports", amount: "₹10,000 - ₹25,000" },
+      { service: "Education Programs", amount: "₹5,000" },
+    ],
+    testimonials: [
+      {
+        text: "Finkasturi Nivesh Pvt Ltd's research-driven approach has delivered excellent returns on my equity portfolio.",
+        author: "Amit Patel",
+        designation: "Equity Investor",
+      },
+      {
+        text: "Their market analysis and stock recommendations are always well-researched.",
+        author: "Priya Sharma",
+        designation: "HNI Investor",
+      },
+      {
+        text: "Professional portfolio management with transparent communication.",
+        author: "Vikram Kumar",
+        designation: "Business Owner",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Portfolio Management", href: "", variant: "primary" },
+      { text: "Research Reports", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is your investment philosophy?",
+        answer:
+          "We follow a value investing approach with focus on fundamental analysis and long-term wealth creation.",
+      },
+      {
+        question: "How do you select stocks for portfolios?",
+        answer:
+          "We use comprehensive fundamental analysis, sector research, and company evaluation to select stocks.",
+      },
+      {
+        question: "What is the minimum investment for portfolio management?",
+        answer:
+          "Our portfolio management services typically require a minimum investment of ₹25 lakhs.",
+      },
+    ],
+    clientTypePills: ["Equity Investing", "Research-based"],
+    idealClientDescription:
+      "Equity investors and high-net-worth individuals seeking research-driven portfolio management and investment advisory services.",
+    successStories: [
+      "Managed equity portfolios worth ₹1000+ crores",
+      "Average annual returns of 18%+ for equity clients",
+      "Published 200+ research reports annually",
+    ],
+    grievanceOfficer: {
+      name: "Laurus Support",
+      email: "care@finkasturi.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "60",
+    firmName: "NITEE BAANDAL",
+    advisorName: "NITEE BAANDAL",
+    principalAdvisor: "NITEE BAANDAL",
+    sebiReg: "INA000014836",
+    photo: "/advisors/Nitee-Baandal.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Guiding you through the financial markets with clarity and purpose",
+    specializations: ["Financial Planning", "Mutual Funds", "Goal-based Investing"],
+    audience: ["Salaried", "Young Professionals"],
+    about:
+      "NITEE BAANDAL provides clear guidance and direction in the complex world of financial planning and investments, helping clients navigate their financial journey with confidence.",
+    description:
+      "We believe in providing clear, transparent, and goal-oriented financial planning. Our approach focuses on helping clients understand their investments and make informed decisions for their financial future.",
+    services: [
+      {
+        name: "Comprehensive Financial Planning",
+        description:
+          "Complete financial planning covering all aspects of your financial life.",
+      },
+      {
+        name: "Mutual Fund Advisory",
+        description:
+          "Expert guidance on mutual fund selection and portfolio building.",
+      },
+      {
+        name: "Goal-based Investment Planning",
+        description:
+          "Investment planning aligned with your specific financial goals.",
+      },
+      {
+        name: "Financial Education & Awareness",
+        description:
+          "Educational programs to enhance financial literacy and awareness.",
+      },
+    ],
+    feeStructure: [
+      { service: "Financial Planning", amount: "₹10,000 – ₹20,000" },
+      { service: "Mutual Fund Advisory", amount: "₹5,000 – ₹10,000" },
+      { service: "Education Programs", amount: "₹3,000" },
+    ],
+    testimonials: [
+      {
+        text: "NITEE BAANDAL provided clear guidance that helped me understand my investments better.",
+        author: "Rahul Singh",
+        designation: "Young Professional",
+      },
+      {
+        text: "Their goal-based approach made financial planning much simpler.",
+        author: "Anjali Desai",
+        designation: "Salaried Professional",
+      },
+      {
+        text: "Excellent mutual fund recommendations and portfolio guidance.",
+        author: "Vikram Patel",
+        designation: "IT Professional",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Financial Planning", href: "", variant: "primary" },
+      { text: "Mutual Fund Advisory", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What makes your financial planning approach different?",
+        answer:
+          "We focus on clarity and education, ensuring you understand every aspect of your financial plan.",
+      },
+      {
+        question: "How do you help with mutual fund selection?",
+        answer:
+          "We analyze your goals, risk profile, and time horizon to recommend suitable mutual funds.",
+      },
+      {
+        question: "Do you provide ongoing support?",
+        answer:
+          "Yes, we provide regular reviews and ongoing support to ensure your plan stays on track.",
+      },
+    ],
+    clientTypePills: ["Financial Planning", "Mutual Funds"],
+    idealClientDescription:
+      "Salaried professionals and young individuals seeking clear, goal-oriented financial planning and mutual fund advisory services.",
+    successStories: [
+      "Helped 400+ clients achieve their financial goals",
+      "Average portfolio growth of 13%+ annually",
+      "Guided 200+ families through financial planning",
+    ],
+    grievanceOfficer: {
+      name: "NITEE BAANDAL Support",
+      email: "NITEE@FEEONLYIA.COM",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "61",
+    firmName: "HDFC TRU (HDFC Securities Investment Advisers)",
+    advisorName: "Pranab Uniyal",
+    principalAdvisor: "Pranab Uniyal",
+    sebiReg: "INA000011538",
+    photo: "/advisors/Pranab-Uniyal.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Pure and transparent investment advisory for mindful wealth creation",
+    specializations: ["Ethical Investing", "Sustainable Finance", "Transparent Advisory"],
+    audience: ["Ethical Investors", "Environmentally Conscious"],
+    about:
+      "HDFC TRU (HDFC Securities Investment Advisers) believes in pure, transparent, and ethical investment advisory. We focus on sustainable and responsible investing that aligns with your values.",
+    description:
+      "We provide ethical investment advisory services that prioritize transparency, sustainability, and responsible investing. Our approach ensures your investments align with your values while delivering financial returns.",
+    services: [
+      {
+        name: "Ethical Investment Advisory",
+        description:
+          "Investment advisory focused on ethical and responsible investing principles.",
+      },
+      {
+        name: "Sustainable Portfolio Management",
+        description:
+          "Portfolio management with focus on environmental and social responsibility.",
+      },
+      {
+        name: "Transparent Fee Structure",
+        description:
+          "Clear, transparent fee structure with no hidden charges or commissions.",
+      },
+      {
+        name: "Impact Investment Opportunities",
+        description:
+          "Access to impact investment opportunities that create positive social change.",
+      },
+    ],
+    feeStructure: [
+      { service: "Ethical Advisory", amount: "₹15,000 – ₹25,000" },
+      { service: "Portfolio Management", amount: "0.75% of AUM" },
+      { service: "Impact Investments", amount: "₹20,000 – ₹40,000" },
+    ],
+    testimonials: [
+      {
+        text: "HDFC TRU (HDFC Securities Investment Advisers) helped me invest in companies that align with my values.",
+        author: "Amit Sharma",
+        designation: "Ethical Investor",
+      },
+      {
+        text: "Transparent fee structure and excellent sustainable investment options.",
+        author: "Priya Patel",
+        designation: "Environmentally Conscious",
+      },
+      {
+        text: "Their ethical approach to investing gives me peace of mind.",
+        author: "Vikram Kumar",
+        designation: "Socially Responsible Investor",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Ethical Advisory", href: "", variant: "primary" },
+      { text: "Impact Investments", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is ethical investing?",
+        answer:
+          "Ethical investing focuses on companies that follow responsible business practices and align with your values.",
+      },
+      {
+        question: "How do you ensure transparency?",
+        answer:
+          "We provide clear fee structures, regular reporting, and complete disclosure of all investment decisions.",
+      },
+      {
+        question: "What are impact investments?",
+        answer:
+          "Investments that generate positive social or environmental impact alongside financial returns.",
+      },
+    ],
+    clientTypePills: ["Ethical Investing", "Sustainable Finance"],
+    idealClientDescription:
+      "Ethical investors and environmentally conscious individuals seeking transparent, sustainable investment advisory services.",
+    successStories: [
+      "Helped 150+ clients with ethical investing",
+      "Average portfolio returns of 12%+ annually",
+      "Placed ₹50+ crores in sustainable investments",
+    ],
+    grievanceOfficer: {
+      name: "HDFC TRU (HDFC Securities Investment Advisers) Support",
+      email: "pranab.uniyal@hdfcsec.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "62",
+    firmName: "360 ONE Investment Adviser and Trustee Services Limited",
+    advisorName: "Rohit Wadhwa",
+    principalAdvisor: "Rohit Wadhwa",
+    sebiReg: "INA000000888",
+    photo: "/advisors/Rohit-Wadhwa.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Auspicious financial planning for prosperous wealth creation",
+    specializations: ["Traditional Planning", "Cultural Values", "Family Wealth"],
+    audience: ["Traditional Families", "Cultural Values"],
+    about:
+      "360 ONE Investment Adviser and Trustee Services Limited combines traditional Indian values with modern financial planning to create prosperous wealth for families while preserving cultural heritage.",
+    description:
+      "We understand the importance of family values and cultural traditions in financial decision-making. Our approach integrates traditional wisdom with modern financial planning techniques.",
+    services: [
+      {
+        name: "Family Wealth Planning",
+        description:
+          "Comprehensive wealth planning that respects family values and traditions.",
+      },
+      {
+        name: "Cultural Investment Advisory",
+        description:
+          "Investment advisory that aligns with cultural and traditional values.",
+      },
+      {
+        name: "Generational Wealth Transfer",
+        description:
+          "Planning for smooth transfer of wealth across generations.",
+      },
+      {
+        name: "Traditional Asset Management",
+        description:
+          "Management of traditional assets like gold, property, and family businesses.",
+      },
+    ],
+    feeStructure: [
+      { service: "Family Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Wealth Transfer", amount: "₹50,000 – ₹1,00,000" },
+      { service: "Asset Management", amount: "1.0% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "360 ONE Investment Adviser and Trustee Services Limited understands our family values and has helped preserve our wealth.",
+        author: "Rajesh Agarwal",
+        designation: "Traditional Family",
+      },
+      {
+        text: "Excellent guidance on generational wealth transfer while respecting our culture.",
+        author: "Priya Kapoor",
+        designation: "Family Business Owner",
+      },
+      {
+        text: "Their approach combines tradition with modern financial wisdom perfectly.",
+        author: "Vikram Singh",
+        designation: "Cultural Values",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Family Planning", href: "", variant: "primary" },
+      { text: "Wealth Transfer", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "How do you incorporate cultural values in financial planning?",
+        answer:
+          "We understand your cultural background and integrate traditional values into modern financial planning strategies.",
+      },
+      {
+        question: "What is generational wealth transfer?",
+        answer:
+          "Planning for smooth transfer of wealth, knowledge, and values to future generations.",
+      },
+      {
+        question: "How do you handle traditional assets?",
+        answer:
+          "We provide guidance on managing traditional assets like gold, property, and family businesses.",
+      },
+    ],
+    clientTypePills: ["Traditional Values", "Family Wealth"],
+    idealClientDescription:
+      "Traditional families and individuals who value cultural heritage and seek financial planning that respects their values.",
+    successStories: [
+      "Helped 100+ families preserve their wealth and values",
+      "Guided 50+ families through generational wealth transfer",
+      "Managed traditional assets worth ₹200+ crores",
+    ],
+    grievanceOfficer: {
+      name: "360 ONE Investment Adviser and Trustee Services Limited Support",
+      email: "rohit.wadhwa@360one.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "63",
+    firmName: "Roshni Nayak",
+    advisorName: "Roshni Nayak",
+    principalAdvisor: "Roshni Nayak",
+    sebiReg: "INA000016038",
+    photo: "/advisors/Roshni-Nayak.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "The sacred formula for wealth creation and financial success",
+    specializations: ["Wealth Creation", "Financial Success", "Goal Achievement"],
+    audience: ["Wealth Seekers", "Goal-oriented"],
+    about:
+      "Roshni Nayak provides the sacred formula for wealth creation through disciplined financial planning and strategic investment management.",
+    description:
+      "We believe in the power of disciplined financial practices and strategic planning. Our mantra-based approach helps clients achieve their financial goals through systematic wealth creation strategies.",
+    services: [
+      {
+        name: "Wealth Creation Strategies",
+        description:
+          "Strategic planning for systematic wealth creation and financial success.",
+      },
+      {
+        name: "Goal Achievement Planning",
+        description:
+          "Financial planning focused on achieving specific life goals and aspirations.",
+      },
+      {
+        name: "Disciplined Investment Management",
+        description:
+          "Systematic and disciplined approach to investment management.",
+      },
+      {
+        name: "Financial Success Coaching",
+        description:
+          "Coaching and mentoring for financial success and wealth building.",
+      },
+    ],
+    feeStructure: [
+      { service: "Wealth Creation", amount: "₹25,000 – ₹40,000" },
+      { service: "Goal Planning", amount: "₹15,000 – ₹25,000" },
+      { service: "Success Coaching", amount: "₹10,000" },
+    ],
+    testimonials: [
+      {
+        text: "Roshni Nayak's systematic approach has helped me build significant wealth.",
+        author: "Amit Patel",
+        designation: "Wealth Seeker",
+      },
+      {
+        text: "Their goal-oriented planning helped me achieve my financial dreams.",
+        author: "Priya Sharma",
+        designation: "Goal-oriented",
+      },
+      {
+        text: "Excellent coaching that transformed my financial mindset.",
+        author: "Vikram Kumar",
+        designation: "Financial Success",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Wealth Creation", href: "", variant: "primary" },
+      { text: "Success Coaching", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is the wealth creation mantra?",
+        answer:
+          "Our mantra combines disciplined saving, strategic investing, and goal-oriented planning for systematic wealth creation.",
+      },
+      {
+        question: "How do you help achieve financial goals?",
+        answer:
+          "We create personalized financial plans and provide ongoing coaching to help you achieve your goals.",
+      },
+      {
+        question: "What is financial success coaching?",
+        answer:
+          "Personalized coaching to develop the right mindset and habits for financial success.",
+      },
+    ],
+    clientTypePills: ["Wealth Creation", "Goal Achievement"],
+    idealClientDescription:
+      "Wealth seekers and goal-oriented individuals seeking systematic wealth creation and financial success coaching.",
+    successStories: [
+      "Helped 200+ clients achieve their wealth creation goals",
+      "Average portfolio growth of 16%+ annually",
+      "Guided 100+ clients to financial success",
+    ],
+    grievanceOfficer: {
+      name: "Roshni Nayak Support",
+      email: "roshni.nayak@roshni.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "64",
+    firmName: "Legacy Custodian Advisory Private Limited",
+    advisorName: "Sharad Mendon",
+    principalAdvisor: "Sharad Mendon",
+    sebiReg: "INA000019567",
+    photo: "/advisors/Sharad-Mendon.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Making money work for you through intelligent investment strategies",
+    specializations: ["Intelligent Investing", "Portfolio Optimization", "Wealth Management"],
+    audience: ["Smart Investors", "HNI"],
+    about:
+      "Legacy Custodian Advisory Private Limited specializes in intelligent investment strategies that make your money work harder for you through optimized portfolio management.",
+    description:
+      "We focus on intelligent investment strategies and portfolio optimization to maximize returns while managing risk. Our approach ensures your money works efficiently towards your financial goals.",
+    services: [
+      {
+        name: "Intelligent Portfolio Management",
+        description:
+          "Smart portfolio management using advanced investment strategies and optimization techniques.",
+      },
+      {
+        name: "Wealth Optimization",
+        description:
+          "Optimization of wealth through strategic asset allocation and risk management.",
+      },
+      {
+        name: "Investment Strategy Development",
+        description:
+          "Development of personalized investment strategies based on your goals and risk profile.",
+      },
+      {
+        name: "Performance Monitoring",
+        description:
+          "Continuous monitoring and optimization of investment performance.",
+      },
+    ],
+    feeStructure: [
+      { service: "Portfolio Management", amount: "1.0% - 1.5% of AUM" },
+      { service: "Wealth Optimization", amount: "₹30,000 – ₹50,000" },
+      { service: "Strategy Development", amount: "₹20,000 – ₹35,000" },
+    ],
+    testimonials: [
+      {
+        text: "Legacy Custodian Advisory Private Limited's intelligent strategies have significantly improved my portfolio returns.",
+        author: "Rajesh Agarwal",
+        designation: "Smart Investor",
+      },
+      {
+        text: "Excellent portfolio optimization that maximized my wealth growth.",
+        author: "Priya Kapoor",
+        designation: "HNI",
+      },
+      {
+        text: "Their intelligent approach to investing is truly impressive.",
+        author: "Vikram Singh",
+        designation: "Wealth Manager",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Portfolio Management", href: "", variant: "primary" },
+      { text: "Wealth Optimization", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is intelligent investing?",
+        answer:
+          "Intelligent investing uses data-driven strategies and optimization techniques to maximize returns while managing risk.",
+      },
+      {
+        question: "How do you optimize portfolios?",
+        answer:
+          "We use advanced analytics and optimization techniques to ensure optimal asset allocation and performance.",
+      },
+      {
+        question: "What is the minimum investment for portfolio management?",
+        answer:
+          "Our portfolio management services typically require a minimum investment of ₹50 lakhs.",
+      },
+    ],
+    clientTypePills: ["Intelligent Investing", "Portfolio Optimization"],
+    idealClientDescription:
+      "Smart investors and high-net-worth individuals seeking intelligent investment strategies and portfolio optimization.",
+    successStories: [
+      "Managed portfolios worth ₹2000+ crores",
+      "Average annual returns of 17%+ for optimized portfolios",
+      "Helped 300+ clients optimize their wealth",
+    ],
+    grievanceOfficer: {
+      name: "Legacy Custodian Advisory Private Limited Support",
+      email: "sharad.mendon@legacycustodian.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "65",
+    firmName: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED",
+    advisorName: "Rajesh Kumar",
+    principalAdvisor: "Rajesh Kumar",
+    sebiReg: "INA000001811",
+    photo: "/advisors/Rajesh-Kumar.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Guiding your investments with the light of research and analysis",
+    specializations: ["Research-based Investing", "Mutual Fund Analysis", "Investment Research"],
+    audience: ["Research-oriented", "Mutual Fund Investors"],
+    about:
+      "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED is a research-driven investment advisory firm that provides comprehensive analysis and guidance for informed investment decisions.",
+    description:
+      "We leverage extensive research and analysis to provide investment guidance. Our approach focuses on data-driven decisions and comprehensive market analysis for optimal investment outcomes.",
+    services: [
+      {
+        name: "Research-based Investment Advisory",
+        description:
+          "Investment advisory based on comprehensive research and analysis.",
+      },
+      {
+        name: "Mutual Fund Analysis & Selection",
+        description:
+          "In-depth analysis and selection of mutual funds based on research.",
+      },
+      {
+        name: "Market Research & Analysis",
+        description:
+          "Comprehensive market research and analysis for investment decisions.",
+      },
+      {
+        name: "Investment Education & Research",
+        description:
+          "Educational programs and research reports for informed investing.",
+      },
+    ],
+    feeStructure: [
+      { service: "Research Advisory", amount: "₹15,000 – ₹25,000" },
+      { service: "Fund Analysis", amount: "₹8,000 – ₹15,000" },
+      { service: "Research Reports", amount: "₹5,000 – ₹10,000" },
+    ],
+    testimonials: [
+      {
+        text: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED's research-based approach has helped me make informed investment decisions.",
+        author: "Amit Kumar",
+        designation: "Research-oriented",
+      },
+      {
+        text: "Excellent mutual fund analysis and selection guidance.",
+        author: "Priya Sharma",
+        designation: "Mutual Fund Investor",
+      },
+      {
+        text: "Their research reports are comprehensive and insightful.",
+        author: "Vikram Patel",
+        designation: "Investment Analyst",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Research Advisory", href: "", variant: "primary" },
+      { text: "Fund Analysis", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What makes your research approach different?",
+        answer:
+          "We use comprehensive data analysis and proprietary research methodologies for investment decisions.",
+      },
+      {
+        question: "How do you analyze mutual funds?",
+        answer:
+          "We use multiple parameters including performance, risk, expense ratio, and fund manager track record.",
+      },
+      {
+        question: "Do you provide research reports?",
+        answer:
+          "Yes, we provide detailed research reports on markets, sectors, and investment opportunities.",
+      },
+    ],
+    clientTypePills: ["Research-based", "Mutual Fund Analysis"],
+    idealClientDescription:
+      "Research-oriented investors and mutual fund investors seeking data-driven investment advisory and analysis.",
+    successStories: [
+      "Published 500+ research reports annually",
+      "Analyzed 1000+ mutual funds",
+      "Helped 400+ clients with research-based investing",
+    ],
+    grievanceOfficer: {
+      name: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED Support",
+      email: "rajesh.kumar@waterfield.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "66",
+    firmName: "MANEK FINANCIAL ADVISORS PRIVATE LIMITED",
+    advisorName: "Sonesh Dedhia",
+    principalAdvisor: "Sonesh Dedhia",
+    sebiReg: "INA000004401",
+    photo: "/advisors/Sonesh-Dedhia.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Navigating your financial journey with precision and expertise",
+    specializations: ["Financial Navigation", "Goal Planning", "Portfolio Management"],
+    audience: ["Goal-oriented", "Young Professionals"],
+    about:
+      "MANEK FINANCIAL ADVISORS PRIVATE LIMITED specializes in navigating complex financial markets and helping clients reach their financial destinations through strategic planning and expert guidance.",
+    description:
+      "We act as your financial navigator, guiding you through the complexities of financial markets and helping you reach your financial goals with precision and expertise.",
+    services: [
+      {
+        name: "Financial Journey Planning",
+        description:
+          "Comprehensive planning for your entire financial journey from start to destination.",
+      },
+      {
+        name: "Goal Navigation Services",
+        description:
+          "Strategic navigation towards your specific financial goals and objectives.",
+      },
+      {
+        name: "Portfolio Navigation",
+        description:
+          "Expert navigation of investment portfolios through market complexities.",
+      },
+      {
+        name: "Financial Education & Guidance",
+        description:
+          "Educational programs to help you navigate financial decisions confidently.",
+      },
+    ],
+    feeStructure: [
+      { service: "Journey Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Goal Navigation", amount: "₹15,000 – ₹25,000" },
+      { service: "Portfolio Navigation", amount: "1.0% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "MANEK FINANCIAL ADVISORS PRIVATE LIMITED has been my perfect financial navigator, guiding me towards my goals.",
+        author: "Rahul Singh",
+        designation: "Goal-oriented",
+      },
+      {
+        text: "Their navigation through market complexities has been exceptional.",
+        author: "Anjali Desai",
+        designation: "Young Professional",
+      },
+      {
+        text: "Excellent guidance that helped me navigate my financial journey successfully.",
+        author: "Vikram Patel",
+        designation: "Financial Navigator",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Journey Planning", href: "", variant: "primary" },
+      { text: "Goal Navigation", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is financial journey planning?",
+        answer:
+          "Comprehensive planning that maps your entire financial journey from current situation to desired goals.",
+      },
+      {
+        question: "How do you navigate market complexities?",
+        answer:
+          "We use expert analysis and strategic planning to navigate through market uncertainties and complexities.",
+      },
+      {
+        question: "What makes your navigation approach unique?",
+        answer:
+          "Our approach combines technical expertise with personalized guidance for precise financial navigation.",
+      },
+    ],
+    clientTypePills: ["Financial Navigation", "Goal Planning"],
+    idealClientDescription:
+      "Goal-oriented individuals and young professionals seeking expert navigation through their financial journey.",
+    successStories: [
+      "Helped 300+ clients navigate their financial journey",
+      "Guided 150+ clients to their financial goals",
+      "Navigated portfolios worth ₹800+ crores",
+    ],
+    grievanceOfficer: {
+      name: "MANEK FINANCIAL ADVISORS PRIVATE LIMITED Support",
+      email: "sonesh.dedhia@manek.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "67",
+    firmName: "Ladder7 Wealth Planners Pvt. Ltd.",
+    advisorName: "SURESH SADAGOPAN",
+    principalAdvisor: "SURESH SADAGOPAN",
+    sebiReg: "INA000016001",
+    photo: "/advisors/Suresh-Sadagopan.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Building your wealth nest egg for a secure financial future",
+    specializations: ["Wealth Building", "Retirement Planning", "Financial Security"],
+    audience: ["Wealth Builders", "Retirement Planning"],
+    about:
+      "Ladder7 Wealth Planners Pvt. Ltd. focuses on building secure wealth nests for clients, ensuring financial security and comfortable retirement through systematic wealth building strategies.",
+    description:
+      "We specialize in building secure wealth nests that provide financial security and comfortable retirement. Our approach focuses on systematic wealth building and long-term financial planning.",
+    services: [
+      {
+        name: "Wealth Nest Building",
+        description:
+          "Systematic building of wealth nests for financial security and future needs.",
+      },
+      {
+        name: "Retirement Nest Planning",
+        description:
+          "Comprehensive planning for building a secure retirement nest egg.",
+      },
+      {
+        name: "Financial Security Planning",
+        description:
+          "Planning for financial security through diversified wealth building strategies.",
+      },
+      {
+        name: "Nest Egg Management",
+        description:
+          "Professional management of your wealth nest egg for optimal growth.",
+      },
+    ],
+    feeStructure: [
+      { service: "Nest Building", amount: "₹25,000 – ₹40,000" },
+      { service: "Retirement Planning", amount: "₹20,000 – ₹35,000" },
+      { service: "Nest Management", amount: "1.0% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "Ladder7 Wealth Planners Pvt. Ltd. helped me build a substantial nest egg for my retirement.",
+        author: "Amit Sharma",
+        designation: "Wealth Builder",
+      },
+      {
+        text: "Their systematic approach to wealth building is excellent.",
+        author: "Priya Patel",
+        designation: "Retirement Planning",
+      },
+      {
+        text: "I feel secure knowing my financial nest is well-managed.",
+        author: "Vikram Kumar",
+        designation: "Financial Security",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Nest Building", href: "", variant: "primary" },
+      { text: "Retirement Planning", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is a wealth nest?",
+        answer:
+          "A wealth nest is a systematically built financial reserve that provides security and supports your future needs.",
+      },
+      {
+        question: "How do you build a retirement nest egg?",
+        answer:
+          "We use systematic investment strategies and long-term planning to build a substantial retirement corpus.",
+      },
+      {
+        question: "What makes your nest building approach different?",
+        answer:
+          "Our approach focuses on systematic, disciplined wealth building with emphasis on security and growth.",
+      },
+    ],
+    clientTypePills: ["Wealth Building", "Retirement Planning"],
+    idealClientDescription:
+      "Wealth builders and individuals planning for retirement who seek systematic wealth building and financial security.",
+    successStories: [
+      "Helped 250+ clients build wealth nests",
+      "Average nest egg growth of 14%+ annually",
+      "Guided 100+ clients to secure retirement",
+    ],
+    grievanceOfficer: {
+      name: "Ladder7 Wealth Planners Pvt. Ltd. Support",
+      email: "suresh.sadagopan@ladder7.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "68",
+    firmName: "TBNG CAPITAL ADVISORS PVT. LTD.",
+    advisorName: "Tarun Birani",
+    principalAdvisor: "Tarun Birani",
+    sebiReg: "INA000001837",
+    photo: "/advisors/Tarun-Birani.svg",  
+    location: "Mumbai, Maharashtra",
+    tagline: "Smart and nifty investment strategies for agile wealth creation",
+    specializations: ["Smart Investing", "Agile Strategies", "Market Timing"],
+    audience: ["Smart Investors", "Active Traders"],
+    about:
+      "TBNG CAPITAL ADVISORS PVT. LTD. provides smart and nifty investment strategies that adapt quickly to market conditions and opportunities for agile wealth creation.",
+    description:
+      "We specialize in smart, agile investment strategies that capitalize on market opportunities. Our nifty approach ensures quick adaptation to changing market conditions for optimal returns.",
+    services: [
+      {
+        name: "Smart Investment Strategies",
+        description:
+          "Intelligent investment strategies that adapt to market opportunities.",
+      },
+      {
+        name: "Agile Portfolio Management",
+        description:
+          "Flexible portfolio management that quickly adapts to market changes.",
+      },
+      {
+        name: "Market Opportunity Capture",
+        description:
+          "Strategies to capture market opportunities and optimize returns.",
+      },
+      {
+        name: "Dynamic Asset Allocation",
+        description:
+          "Dynamic asset allocation strategies based on market conditions.",
+      },
+    ],
+    feeStructure: [
+      { service: "Smart Strategies", amount: "₹30,000 – ₹50,000" },
+      { service: "Agile Management", amount: "1.5% of AUM" },
+      { service: "Opportunity Capture", amount: "₹20,000 – ₹35,000" },
+    ],
+    testimonials: [
+      {
+        text: "TBNG CAPITAL ADVISORS PVT. LTD.'s smart strategies have helped me capture excellent market opportunities.",
+        author: "Rajesh Agarwal",
+        designation: "Smart Investor",
+      },
+      {
+        text: "Their agile approach to portfolio management is impressive.",
+        author: "Priya Kapoor",
+        designation: "Active Trader",
+      },
+      {
+        text: "Excellent market timing and opportunity capture strategies.",
+        author: "Vikram Singh",
+        designation: "Market Trader",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Smart Strategies", href: "", variant: "primary" },
+      { text: "Agile Management", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What are smart investment strategies?",
+        answer:
+          "Intelligent strategies that use market analysis and timing to optimize investment returns.",
+      },
+      {
+        question: "How do you implement agile portfolio management?",
+        answer:
+          "We use dynamic asset allocation and quick decision-making to adapt to market changes.",
+      },
+      {
+        question: "What is market opportunity capture?",
+        answer:
+          "Strategies to identify and capitalize on market opportunities for enhanced returns.",
+      },
+    ],
+    clientTypePills: ["Smart Investing", "Agile Strategies"],
+    idealClientDescription:
+      "Smart investors and active traders seeking agile, intelligent investment strategies for optimal returns.",
+    successStories: [
+      "Captured market opportunities worth ₹200+ crores",
+      "Average returns of 20%+ for agile strategies",
+      "Helped 150+ clients with smart investing",
+    ],
+    grievanceOfficer: {
+      name: "TBNG CAPITAL ADVISORS PVT. LTD. Support",
+      email: "tarun.birani@tbn.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "69",
+    firmName: "Urvil Bharatkumar Modi",   
+    advisorName: "Urvil Bharatkumar Modi",
+    principalAdvisor: "Urvil Bharatkumar Modi",
+    sebiReg: "INA000017611",
+    photo: "/advisors/Urvil-Bharatkumar-Modi.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Strategic investment solutions for discerning investors",
+    specializations: ["Strategic Investing", "Portfolio Solutions", "Investment Planning"],
+    audience: ["Strategic Investors", "HNI"],
+    about:
+      "Urvil Bharatkumar Modi provides strategic investment solutions for discerning investors who seek sophisticated portfolio management and investment planning services.",
+    description:
+      "We offer strategic investment solutions that combine sophisticated analysis with personalized portfolio management. Our approach focuses on long-term value creation through strategic investment decisions.",
+    services: [
+      {
+        name: "Strategic Investment Planning",
+        description:
+          "Comprehensive strategic planning for investment portfolios and wealth management.",
+      },
+      {
+        name: "Portfolio Solution Development",
+        description:
+          "Development of customized portfolio solutions for specific investment needs.",
+      },
+      {
+        name: "Strategic Asset Allocation",
+        description:
+          "Strategic asset allocation based on comprehensive market and risk analysis.",
+      },
+      {
+        name: "Investment Strategy Consulting",
+        description:
+          "Consulting services for developing and implementing investment strategies.",
+      },
+    ],
+    feeStructure: [
+      { service: "Strategic Planning", amount: "₹40,000 – ₹60,000" },
+      { service: "Portfolio Solutions", amount: "1.0% - 1.5% of AUM" },
+      { service: "Strategy Consulting", amount: "₹25,000 – ₹40,000" },
+    ],
+    testimonials: [
+      {
+        text: "Urvil Bharatkumar Modi's strategic approach has transformed my investment portfolio.",
+        author: "Amit Patel",
+        designation: "Strategic Investor",
+      },
+      {
+        text: "Excellent portfolio solutions that perfectly match my investment needs.",
+        author: "Priya Sharma",
+        designation: "HNI",
+      },
+      {
+        text: "Their strategic consulting has been invaluable for my investment decisions.",
+        author: "Vikram Kumar",
+        designation: "Portfolio Manager",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Strategic Planning", href: "", variant: "primary" },
+      { text: "Portfolio Solutions", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is strategic investment planning?",
+        answer:
+          "Comprehensive planning that aligns investments with long-term goals and market opportunities.",
+      },
+      {
+        question: "How do you develop portfolio solutions?",
+        answer:
+          "We analyze your needs and develop customized portfolio solutions using strategic asset allocation.",
+      },
+      {
+        question: "What makes your strategic approach unique?",
+        answer:
+          "Our approach combines sophisticated analysis with personalized strategies for optimal results.",
+      },
+    ],
+    clientTypePills: ["Strategic Investing", "Portfolio Solutions"],
+    idealClientDescription:
+      "Strategic investors and high-net-worth individuals seeking sophisticated investment planning and portfolio solutions.",
+    successStories: [
+      "Developed strategic solutions for 200+ clients",
+      "Managed strategic portfolios worth ₹1500+ crores",
+      "Average strategic returns of 16%+ annually",
+    ],
+    grievanceOfficer: {
+      name: "Urvil Bharatkumar Modi Support",
+      email: "urvil.modi@urvilmodi.com",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "70",
+    firmName: "Prosperentia Investment Advisors LLP",
+    advisorName: "Trupti Rane",
+    principalAdvisor: "Trupti Rane",
+    sebiReg: "INA000018957",
+    photo: "/advisors/Trupti-Rane.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "New vision for wealth creation and financial excellence",
+    specializations: ["Wealth Creation", "Financial Excellence", "Innovative Solutions"],
+    audience: ["Wealth Creators", "Innovation Seekers"],
+    about:
+      "Prosperentia Investment Advisors LLP brings a new vision to wealth creation through innovative financial solutions and excellence in investment advisory services.",
+    description:
+      "We provide innovative wealth creation solutions with a focus on financial excellence. Our new vision approach combines traditional wisdom with modern innovation for optimal results.",
+    services: [
+      {
+        name: "Innovative Wealth Creation",
+        description:
+          "Innovative strategies and solutions for systematic wealth creation.",
+      },
+      {
+        name: "Financial Excellence Programs",
+        description:
+          "Programs designed to achieve financial excellence through comprehensive planning.",
+      },
+      {
+        name: "New Vision Investment Advisory",
+        description:
+          "Investment advisory with a fresh perspective and innovative approach.",
+      },
+      {
+        name: "Excellence in Portfolio Management",
+        description:
+          "Portfolio management services focused on achieving excellence in returns.",
+      },
+    ],
+    feeStructure: [
+      { service: "Wealth Creation", amount: "₹35,000 – ₹55,000" },
+      { service: "Excellence Programs", amount: "₹20,000 – ₹35,000" },
+      { service: "Portfolio Management", amount: "1.0% - 1.5% of AUM" },
+    ],
+    testimonials: [
+      {
+        text: "Prosperentia Investment Advisors LLP's innovative approach has revolutionized my wealth creation strategy.",
+        author: "Rajesh Agarwal",
+        designation: "Wealth Creator",
+      },
+      {
+        text: "Their financial excellence programs are truly exceptional.",
+        author: "Priya Kapoor",
+        designation: "Innovation Seeker",
+      },
+      {
+        text: "New vision approach that delivers excellent results consistently.",
+        author: "Vikram Singh",
+        designation: "Financial Excellence",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Wealth Creation", href: "", variant: "primary" },
+      { text: "Excellence Programs", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is innovative wealth creation?",
+        answer:
+          "Innovative strategies that combine traditional and modern approaches for systematic wealth creation.",
+      },
+      {
+        question: "How do you achieve financial excellence?",
+        answer:
+          "Through comprehensive planning, innovative strategies, and excellence in execution.",
+      },
+      {
+        question: "What is the new vision approach?",
+        answer:
+          "A fresh perspective that combines innovation with proven strategies for optimal results.",
+      },
+    ],
+    clientTypePills: ["Wealth Creation", "Financial Excellence"],
+    idealClientDescription:
+      "Wealth creators and innovation seekers looking for new vision approaches to financial planning and wealth creation.",
+    successStories: [
+      "Helped 300+ clients achieve financial excellence",
+      "Created innovative wealth solutions worth ₹2500+ crores",
+      "Average excellence returns of 18%+ annually",
+    ],
+    grievanceOfficer: {
+      name: "Prosperentia Investment Advisors LLP Support",
+      email: "trupti.rane@prosperentia.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "71",
+    firmName: "DV INVESTMENT ADVISORS LLP",
+    advisorName: "VIVEK AGARWAL",
+    principalAdvisor: "VIVEK AGARWAL",
+    sebiReg: "INA000016302",
+    photo: "/advisors/Vivek-Agarwal.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "All-knowing investment wisdom for enlightened wealth creation",
+    specializations: ["Investment Wisdom", "Enlightened Investing", "Comprehensive Knowledge"],
+    audience: ["Knowledge Seekers", "Wisdom-oriented"],
+    about:
+      "DV INVESTMENT ADVISORS LLP provides all-knowing investment wisdom and comprehensive knowledge for enlightened wealth creation and financial success.",
+    description:
+      "We offer comprehensive investment knowledge and wisdom that covers all aspects of financial markets and wealth creation. Our omniscient approach ensures informed and enlightened investment decisions.",
+    services: [
+      {
+        name: "Investment Wisdom Advisory",
+        description:
+          "Comprehensive investment wisdom and knowledge-based advisory services.",
+      },
+      {
+        name: "Enlightened Portfolio Management",
+        description:
+          "Portfolio management based on comprehensive market knowledge and wisdom.",
+      },
+      {
+        name: "Comprehensive Market Analysis",
+        description:
+          "All-encompassing market analysis and investment research.",
+      },
+      {
+        name: "Investment Education & Wisdom",
+        description:
+          "Educational programs that impart investment wisdom and knowledge.",
+      },
+    ],
+    feeStructure: [
+      { service: "Wisdom Advisory", amount: "₹25,000 – ₹40,000" },
+      { service: "Portfolio Management", amount: "1.0% of AUM" },
+      { service: "Education Programs", amount: "₹10,000 – ₹20,000" },
+    ],
+    testimonials: [
+      {
+        text: "DV INVESTMENT ADVISORS LLP's investment wisdom has enlightened my approach to investing.",
+        author: "Amit Kumar",
+        designation: "Knowledge Seeker",
+      },
+      {
+        text: "Their comprehensive knowledge of markets is truly impressive.",
+        author: "Priya Sharma",
+        designation: "Wisdom-oriented",
+      },
+      {
+        text: "Enlightened portfolio management that delivers consistent results.",
+        author: "Vikram Patel",
+        designation: "Investment Wisdom",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Wisdom Advisory", href: "", variant: "primary" },
+      { text: "Education Programs", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is investment wisdom?",
+        answer:
+          "Comprehensive knowledge and understanding of investment principles, markets, and strategies.",
+      },
+      {
+        question: "How do you provide enlightened investing?",
+        answer:
+          "Through comprehensive market knowledge and wisdom-based investment decisions.",
+      },
+      {
+        question: "What makes your knowledge comprehensive?",
+        answer:
+          "Our approach covers all aspects of financial markets and investment strategies.",
+      },
+    ],
+    clientTypePills: ["Investment Wisdom", "Enlightened Investing"],
+    idealClientDescription:
+      "Knowledge seekers and wisdom-oriented individuals seeking comprehensive investment knowledge and enlightened wealth creation.",
+    successStories: [
+      "Imparted investment wisdom to 400+ clients",
+      "Managed enlightened portfolios worth ₹1800+ crores",
+      "Published 300+ knowledge articles annually",
+    ],
+    grievanceOfficer: {
+      name: "DV INVESTMENT ADVISORS LLP Support",
+      email: "vivek.agarwal@dvinvestors.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "72",
+    firmName: "PLAN AHEAD WEALTH ADVISORS PRIVATE LIMITED",
+    advisorName: "Vishal Dhawan",
+    principalAdvisor: "Vishal Dhawan",
+    sebiReg: "INA000000409",
+    photo: "/advisors/Vishal-Dhawan.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Unified wealth solutions for comprehensive financial success",
+    specializations: ["Unified Solutions", "Comprehensive Planning", "Integrated Services"],
+    audience: ["Comprehensive Planners", "Integrated Services"],
+    about:
+      "PLAN AHEAD WEALTH ADVISORS PRIVATE LIMITED provides unified wealth solutions that integrate all aspects of financial planning into one comprehensive service for complete financial success.",
+    description:
+      "We offer unified wealth solutions that bring together all aspects of financial planning under one roof. Our integrated approach ensures seamless coordination and comprehensive financial success.",
+    services: [
+      {
+        name: "Unified Wealth Planning",
+        description:
+          "Comprehensive wealth planning that unifies all financial aspects.",
+      },
+      {
+        name: "Integrated Financial Services",
+        description:
+          "Integrated services covering investments, insurance, tax, and estate planning.",
+      },
+      {
+        name: "One-stop Financial Solutions",
+        description:
+          "Complete financial solutions under one unified platform.",
+      },
+      {
+        name: "Comprehensive Portfolio Management",
+        description:
+          "Portfolio management that integrates all investment strategies.",
+      },
+    ],
+    feeStructure: [
+      { service: "Unified Planning", amount: "₹30,000 – ₹50,000" },
+      { service: "Integrated Services", amount: "1.0% - 1.5% of AUM" },
+      { service: "One-stop Solutions", amount: "₹25,000 – ₹40,000" },
+    ],
+    testimonials: [
+      {
+        text: "PLAN AHEAD WEALTH ADVISORS PRIVATE LIMITED's unified approach has simplified my entire financial planning.",
+        author: "Rajesh Agarwal",
+        designation: "Comprehensive Planner",
+      },
+      {
+        text: "Excellent integrated services that cover all my financial needs.",
+        author: "Priya Kapoor",
+        designation: "Integrated Services",
+      },
+      {
+        text: "One-stop solutions that deliver comprehensive financial success.",
+        author: "Vikram Singh",
+        designation: "Unified Solutions",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Unified Planning", href: "", variant: "primary" },
+      { text: "Integrated Services", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What are unified wealth solutions?",
+        answer:
+          "Comprehensive solutions that integrate all aspects of financial planning under one platform.",
+      },
+      {
+        question: "How do integrated services work?",
+        answer:
+          "All financial services are coordinated and managed together for optimal results.",
+      },
+      {
+        question: "What makes one-stop solutions beneficial?",
+        answer:
+          "Convenience, coordination, and comprehensive coverage of all financial needs.",
+      },
+    ],
+    clientTypePills: ["Unified Solutions", "Comprehensive Planning"],
+    idealClientDescription:
+      "Individuals seeking comprehensive financial planning and integrated services under one unified platform.",
+    successStories: [
+      "Provided unified solutions to 350+ clients",
+      "Managed integrated portfolios worth ₹2200+ crores",
+      "Delivered comprehensive success to 200+ families",
+    ],
+    grievanceOfficer: {
+      name: "PLAN AHEAD WEALTH ADVISORS PRIVATE LIMITED Support",
+      email: "vishal.dhawan@planaheadwealth.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "73",
+    firmName: "V R WEALTH ADVISORS PRIVATE LIMITED",
+    advisorName: "Vivek Rege",
+    principalAdvisor: "Vivek Rege",
+    sebiReg: "INA000000383",
+    photo: "/advisors/Vivek-Rege.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Optimizing your investments for maximum returns and efficiency",
+    specializations: ["Investment Optimization", "Maximum Returns", "Efficiency Focus"],
+    audience: ["Optimization Seekers", "Efficiency Focused"],
+    about:
+      "V R WEALTH ADVISORS PRIVATE LIMITED specializes in optimizing investment portfolios for maximum returns and efficiency, ensuring every investment decision is optimized for the best possible outcomes.",
+    description:
+      "We focus on investment optimization to achieve maximum returns with optimal efficiency. Our approach ensures that every aspect of your investment strategy is optimized for the best possible results.",
+    services: [
+      {
+        name: "Portfolio Optimization",
+        description:
+          "Comprehensive optimization of investment portfolios for maximum efficiency.",
+      },
+      {
+        name: "Return Optimization Strategies",
+        description:
+          "Strategies designed to optimize returns while managing risk effectively.",
+      },
+      {
+        name: "Efficiency Enhancement",
+        description:
+          "Enhancement of investment efficiency through optimization techniques.",
+      },
+      {
+        name: "Optimal Asset Allocation",
+        description:
+          "Optimal asset allocation strategies for maximum portfolio performance.",
+      },
+    ],
+    feeStructure: [
+      { service: "Portfolio Optimization", amount: "₹35,000 – ₹55,000" },
+      { service: "Return Optimization", amount: "1.0% - 1.5% of AUM" },
+      { service: "Efficiency Enhancement", amount: "₹20,000 – ₹35,000" },
+    ],
+    testimonials: [
+      {
+        text: "V R WEALTH ADVISORS PRIVATE LIMITED's portfolio optimization has significantly improved my returns.",
+        author: "Amit Patel",
+        designation: "Optimization Seeker",
+      },
+      {
+        text: "Excellent efficiency enhancement that maximized my portfolio performance.",
+        author: "Priya Sharma",
+        designation: "Efficiency Focused",
+      },
+      {
+        text: "Their optimization strategies deliver maximum returns consistently.",
+        author: "Vikram Kumar",
+        designation: "Return Optimization",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+    ctaLinks: [
+      { text: "Portfolio Optimization", href: "", variant: "primary" },
+      { text: "Return Optimization", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What is portfolio optimization?",
+        answer:
+          "Systematic optimization of portfolio allocation and strategies for maximum efficiency and returns.",
+      },
+      {
+        question: "How do you optimize returns?",
+        answer:
+          "Through strategic asset allocation, risk management, and efficiency enhancement techniques.",
+      },
+      {
+        question: "What makes your optimization approach effective?",
+        answer:
+          "Our approach uses advanced analytics and optimization techniques for maximum effectiveness.",
+      },
+    ],
+    clientTypePills: ["Investment Optimization", "Maximum Returns"],
+    idealClientDescription:
+      "Optimization seekers and efficiency-focused investors looking for maximum returns through optimized investment strategies.",
+    successStories: [
+      "Optimized portfolios worth ₹3000+ crores",
+      "Average optimization returns of 19%+ annually",
+      "Enhanced efficiency for 250+ clients",
+    ],
+    grievanceOfficer: {
+      name: "V R WEALTH ADVISORS PRIVATE LIMITED Support",
+      email: "vivek.rege@vrwealth.in",
+    },
+    verifiedBySpring: false,
+  },
+  {
+    id: "74",
+    firmName: "VSK Financial Consultancy Services Pvt. Ltd.",
+    advisorName: "Yogin Sabnis",
+    principalAdvisor: "Yogin Sabnis",
+    sebiReg: "INA000017620",
+    photo: "/advisors/Yogin-Sabnis.svg",
+    location: "Mumbai, Maharashtra",
+    tagline: "Empowering your financial future with clarity and confidence",
+    specializations: ["Financial Planning", "Retirement Planning", "Women Investors"],
+    audience: ["Young Professionals", "Women", "Salaried"],
+    about:
+      "VSK Financial Consultancy Services Pvt. Ltd. is a passionate financial advisor with over 10 years of experience helping individuals and families achieve their financial goals. She specializes in working with young professionals and women to build strong financial foundations.",
+    description:
+      "VSK Financial Consultancy Services Pvt. Ltd. is dedicated to providing transparent, unbiased, and personalized financial advice. We believe in empowering our clients with knowledge and strategies that lead to long-term financial well-being.",
+    services: [
+      {
+        name: "Goal-Based Financial Planning",
+        description:
+          "Personalized financial plans tailored to your life goals, including budgeting, saving, and investing.",
+      },
+      {
+        name: "Retirement Readiness Assessment",
+        description:
+          "Comprehensive analysis and planning to ensure a secure and comfortable retirement.",
+      },
+      {
+        name: "Women-Centric Investment Advisory",
+        description:
+          "Specialized investment strategies and guidance for women at all life stages.",
+      },
+    ],
+    feeStructure: [
+      { service: "Initial Consultation", amount: "₹2,000" },
+      { service: "Comprehensive Planning", amount: "₹12,000 – ₹18,000" },
+    ],
+    testimonials: [
+      {
+        text: "Yogin's advice helped me start investing with confidence. His approach is practical and easy to follow.",
+        author: "Sneha Rao",
+        designation: "Software Engineer, Bengaluru",
+      },
+      {
+        text: "I appreciate the focus on women investors. Yogin made financial planning accessible and stress-free.",
+        author: "Ankita Mehra",
+        designation: "Entrepreneur",
+      },
+    ],
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    ctaLinks: [
+      { text: "Book a Free Discovery Call", href: "", variant: "primary" },
+      { text: "Email Your Query", href: "", variant: "secondary" },
+    ],
+    faqs: [
+      {
+        question: "What makes VSK Financial Consultancy Services Pvt. Ltd. unique?",
+        answer:
+          "We focus on education and empowerment, especially for women and young professionals, with a transparent, fee-only model.",
+      },
+      {
+        question: "How do you personalize financial plans?",
+        answer:
+          "We start with a deep understanding of your goals, risk profile, and current situation, then build a plan that fits your life.",
+      },
+    ],
+    clientTypePills: ["Women Investors", "Young Professionals"],
+    idealClientDescription:
+      "Women and young professionals seeking clear, actionable financial guidance and long-term planning.",
+    successStories: [
+      "Helped 200+ women start their investment journey",
+      "Enabled 100+ clients to achieve early retirement goals",
+    ],
+    grievanceOfficer: {
+      name: "Yogin Sabnis",
+      email: "yogin.sabnis@vskfinancial.in",
+    },
+    verifiedBySpring: false,
+  }
 ];
 
 // COMPLETE TEMPLATE - Based on Nitin Sawant's profile (ID: 3) with all features
