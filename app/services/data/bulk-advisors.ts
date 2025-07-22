@@ -6108,6 +6108,86 @@ export const bulkAdvisorData: AdvisorInput[] = [
       email: "yogin.sabnis@vskfinancial.in",
     },
     verifiedBySpring: false,
+  },
+  {
+    id: "75",
+    firmName: "Abhishek Kumar",
+    advisorName: "Abhishek Kumar",
+    principalAdvisor: "Abhishek Kumar",
+    sebiReg: "INA100008045",
+    photo: "/advisors/abhishek-kumar.svg",
+       location: "Delhi",
+    tagline: "Empowering your financial journey with clarity and confidence",
+    specializations: ["Financial Planning", "Retirement Planning", "Women Investors"],
+    audience: ["Salaried", ],
+    about: "Abhishek is a SEBI-registered investment advisor with over 10 years of experience helping working professionals and women investors achieve their financial goals.",
+    description: "Abhishek Kumar specializes in holistic financial planning, with a focus on empowering women and first-time investors. We believe in education-first advice and transparent, fee-only services.",
+    services: [
+      { name: "Goal-Based Planning", description: "Personalized plans for education, marriage, retirement, and more." },
+      { name: "Retirement Readiness", description: "Step-by-step guidance to build a secure retirement corpus." },
+      { name: "Women Investor Programs", description: "Workshops and plans tailored for women at all life stages." }
+    ],
+    feeStructure: [
+      { service: "Initial Consultation", amount: "₹2,000" },
+      { service: "Annual Planning", amount: "₹12,000" }
+    ],
+    testimonials: [
+        { text: "Abhishek's approach made investing simple and stress-free.", author: "Meena Rao", designation: "HR Manager" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example1",
+    ctaLinks: [
+      { text: "Book a Free Call", href: "", variant: "primary" },
+      { text: "Email Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+        { question: "Do you offer online consultations?", answer: "Yes, all services are available virtually across India." },
+       { question: "Is there a minimum investment?", answer: "No, we work with all income levels and investment sizes." }
+    ],
+    clientTypePills: ["Women Professionals", "First-time Investors"],
+        idealClientDescription: "Women professionals and salaried individuals seeking clear, unbiased financial guidance.",
+    successStories: ["Helped 300+ women start their investment journey", "Average retirement corpus of ₹1 crore for clients"],
+    grievanceOfficer: { name: "Support Team", email: "support@summitfin.in" },
+    verifiedBySpring: false
+  },
+  {
+    id: "76",
+    firmName: "Truemind Investment Adviser Pvt. Ltd.",
+    advisorName: "Sumit Duseja",
+    principalAdvisor: "Sumit Duseja",
+    sebiReg: "INA100017089",
+    photo: "/advisors/sumit-duseja.svg",
+    location: "Delhi",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Sumit brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Truemind Investment Adviser Pvt. Ltd. partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Sumit's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
   }
 ];
 
