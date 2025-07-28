@@ -1290,10 +1290,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   {
     id: "20",
     firmName: "The Alchemist Ark Private Limited",
-    advisorName: "Atharava Bhide",
-    principalAdvisor: "Atharava Bhide",
+    advisorName: "Atharva Bhide",
+    principalAdvisor: "Atharva Bhide",
     sebiReg: "INA000013323",
-    photo: "/advisors/Atharava-Bhide.svg",
+    photo: "/advisors/atharva-Bhide.svg",
     location: "Pune, Maharashtra",
     tagline: "Growing your capital with strategic investment planning",
     specializations: [
@@ -1371,7 +1371,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "21",
-    firmName: "Purn  artha",
+    firmName: "Purnartha",
     advisorName: "Hemant Vispute",
     principalAdvisor: "Hemant Vispute",
     sebiReg: "INA00000067",
@@ -1608,7 +1608,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Samraat Jadhav",
     principalAdvisor: "Samraat Jadhav",
     sebiReg: "INA000016773",
-    photo: "/advisors/Samraat-Jadhav.svg",
+    photo: "/advisors/samraat-jadhav.svg",
     location: "Pune, Maharashtra",
     tagline: "Using the Power of Data to Simplfy Advice",
     specializations: ["NRI Services", "Cross-border Planning", "Tax Planning"],
@@ -1924,7 +1924,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "28",
-    firmName: "PARAMI FINANCIAL SERVICES PRIVATE LIMITED ",
+    firmName: "Parami Financial Services",
     advisorName: "Avinash Nahata",
     principalAdvisor: "Avinash Nahata",
     sebiReg: "INA000016649",
@@ -2003,10 +2003,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   {
     id: "29",
     firmName: "Max Secure Financial Planners",
-    advisorName: "prakash Praharaj",
-    principalAdvisor: "prakash Praharaj",
+    advisorName: "Prakash Praharaj",
+    principalAdvisor: "Prakash Praharaj",
     sebiReg: "INA000000045",
-    photo: "/advisors/Akash-Praharaj.svg",
+    photo: "/advisors/prakash-praharaj.svg",
     location: "Mumbai, Maharashtra",
     tagline:"Helping you to improve your Financial Life and nurture a trusting relationship.",
     specializations: ["Mutual Funds", "Financial Planning", "Tax Planning"],
@@ -2084,7 +2084,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Suresh Sharma",
     principalAdvisor: "Suresh Sharma",
     sebiReg: "INA000016621",
-    photo: "/advisors/Suresh-Sharma.svg",
+    photo: "/advisors/suresh-sharma.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Get a clear path to your financial goals.",
     specializations: [
@@ -2166,7 +2166,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Aarti Mohan",
     principalAdvisor: "Aarti Mohan",
     sebiReg: "INA000019999",
-    photo: "/advisors/Aarti-Mohan.svg",
+    photo: "/advisors/aarti-mohan.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Building wealth through intelligent financial planning",
     specializations: ["Financial Planning", "Tax Planning", "Mutual Funds"],
@@ -2244,7 +2244,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Abhijit Talukdar",
     principalAdvisor: "Abhijit Talukdar",
     sebiReg: "INA000006703",
-    photo: "/advisors/Abhijit-Talukdar.svg",
+    photo: "/advisors/abhijit-talukdar.svg",
     location: "Delhi, Delhi",
     tagline: "Growing your capital with strategic investment planning",
     specializations: [
@@ -2326,7 +2326,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Aakash Bansal",
     principalAdvisor: "Aakash Bansal",
     sebiReg: "INA000016162",
-    photo: "/advisors/Aakash-Bansal.svg",
+    photo: "/advisors/aakash-bansal.svg",
     location: "Bangalore, Karnataka",
     tagline: "Your Journey to Financial Freedom Starts Here",
     specializations: ["Retirement Planning", "Insurance", "Estate Planning"],
@@ -2403,7 +2403,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Abhishek Mukim",
     principalAdvisor: "Abhishek Mukim",
     sebiReg: "INA000015233",
-    photo: "/advisors/Abhishek-Mukim.svg",
+    photo: "/advisors/abhishek-mukim.svg",
     location: "Hyderabad, Telangana",
     tagline: "Smart financial decisions for a brighter future",
     specializations: ["Financial Planning", "Tax Planning", "Mutual Funds"],
@@ -2481,7 +2481,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Ankit Shah",
     principalAdvisor: "Ankit Shah",
     sebiReg: "INA000007757",
-    photo: "/advisors/Ankit-Shah.svg",
+    photo: "/advisors/ankit-shah.svg",
     location: "Chennai, Tamil Nadu",
     tagline: "Exclusive wealth management for discerning clients",
     specializations: ["Wealth Management", "HNI Services", "Estate Planning"],
@@ -2559,7 +2559,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Atul Mishra",
     principalAdvisor: "Atul Mishra",
     sebiReg: "INA000004245",
-    photo: "/advisors/Atul-Mishra.svg",
+    photo: "/advisors/atul-mishra.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Your trusted partner for NRI financial planning",
     specializations: ["NRI Services", "Cross-border Planning", "Tax Planning"],
@@ -2637,7 +2637,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Biharilal Deora",
     principalAdvisor: "Biharilal Deora",
     sebiReg: "INA000015729",
-    photo: "/advisors/Biharilal-Deora.svg",
+    photo: "/advisors/biharilal-deora.svg",
     location: "Remote/Virtual",
     tagline: "Focus on What Matters—We'll Handle the Rest",
     specializations: [
@@ -2716,10 +2716,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   {
     id: "38",
     firmName: "Kongruent Wealth Management",
-    advisorName: "BHAVESH JHALA",
-    principalAdvisor: "BHAVESH JHALA",
+    advisorName: "Bhavesh Jhala",
+    principalAdvisor: "Bhavesh Jhala",
     sebiReg: "INA000004070",
-    photo: "/advisors/Bhavesh-Jhala.svg",
+    photo: "/advisors/bhavesh-jhala.svg",
     location: "Pune, Maharashtra",
     tagline: "Expert retirement planning for a secure future",
     specializations: ["Retirement Planning", "Pension Planning", "Insurance"],
@@ -2794,10 +2794,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   {
     id: "39",
     firmName: "Right Returns",
-    advisorName: " Devang Shah",
+    advisorName: "Devang Shah",
     principalAdvisor: " Devang Shah",
     sebiReg: "INA000004930",
-    photo: "/advisors/Devang-Shah.svg",
+    photo: "/advisors/devang-shah.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Smart tax planning for maximum savings",
     specializations: [
@@ -2879,7 +2879,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Dipen Sheth",
     principalAdvisor: "Dipen Sheth",
     sebiReg: "INA000016995",
-    photo: "/advisors/Dipen-Sheth.svg",
+    photo: "/advisors/dipen-sheth.svg",
     location: "Mumbai, Maharashtra",
     tagline: "A great company is different from a great investment",
     specializations: ["Insurance", "Financial Planning", "Risk Management"],
@@ -2962,7 +2962,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Dipen Doshi",
     principalAdvisor: "Dipen Doshi",
     sebiReg: "INA000013855",
-    photo: "/advisors/Dipen-Doshi.svg",
+    photo: "/advisors/dipen-doshi.svg",
     location: "Mumbai, Maharashtra",
     tagline: "where financial empowerment meets personalized guidance...",
     specializations: ["Mutual Funds", "Financial Planning", "Tax Planning"],
@@ -3040,7 +3040,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Girish Ganaraj ",
     principalAdvisor: "Girish Ganaraj ",
     sebiReg: "INA000018850",
-    photo: "/advisors/Girish-Ganaraj.svg",
+    photo: "/advisors/girish-ganaraj.svg",
     location: "Delhi, Delhi",
     tagline: "Take our advise , get Finwise",
     specializations: [
@@ -3118,11 +3118,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "43",
-    firmName: "SANGUINE WEALTH",
-    advisorName: "GAURAV JHAWAR ",
-    principalAdvisor: "GAURAV JHAWAR ",
+    firmName: "Sanguine Wealth",
+    advisorName: "Gaurav Jhawar",
+    principalAdvisor: "Gaurav Jhawar",
     sebiReg: "INA000009685",
-    photo: "/advisors/GAURAV-JHAWAR.svg",
+    photo: "/advisors/gaurav-jhawar.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Make decision today for long term implications",
     specializations: ["Financial Planning", "Women's Finance", "Tax Planning"],
@@ -3200,7 +3200,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Rohit Shah",
     principalAdvisor: "Rohit Shah",
     sebiReg: "INA000015996",
-    photo: "/advisors/Rohit-Shah.svg",
+    photo: "/advisors/rohit-shah.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Financial planning for the startup ecosystem",
     specializations: [
@@ -3276,108 +3276,108 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
-  {
-    id: "45",
-    firmName: "Multi Ark Wealth Private Limited",
-    advisorName: "Diksha Vaish",
-    principalAdvisor: "Diksha Vaish",
-    sebiReg: "INA000018504",
-    photo: "/advisors/Diksha-Vaish.svg",
-    location: "Delhi, Delhi",
-    tagline: "Empowering women to take control of their financial future",
-    specializations: ["Women's Finance", "Financial Planning", "Tax Planning"],
-    audience: ["Women Professionals", "Salaried"],
-    about:
-      "Diksha Vaish is a certified financial planner with over 15 years of experience specializing in women's financial planning. She understands the unique challenges women face in financial decision-making.",
-    description:
-      "WealthWise Capital is dedicated to empowering women through financial education and planning. We provide specialized services that address women's unique financial needs, including career breaks, longer life expectancy, and different risk preferences.",
-    services: [
-      {
-        name: "Women's Financial Planning",
-        description:
-          "Comprehensive financial planning tailored to women's unique needs and life stages.",
-      },
-      {
-        name: "Career Break Planning",
-        description:
-          "Financial planning for women taking career breaks for family or other reasons.",
-      },
-      {
-        name: "Investment Education",
-        description:
-          "Financial literacy and investment education programs for women.",
-      },
-      {
-        name: "Retirement Planning for Women",
-        description:
-          "Specialized retirement planning considering women's longer life expectancy.",
-      },
-    ],
-    feeStructure: [
-      { service: "Financial Planning", amount: "₹12,000 – ₹20,000" },
-      { service: "Education Programs", amount: "₹5,000" },
-      { service: "Career Break Planning", amount: "₹15,000" },
-    ],
-    testimonials: [
-      {
-        text: "Diksha helped me become financially independent and confident about my investments.",
-        author: "Anjali Sharma",
-        designation: "Working Mother",
-      },
-      {
-        text: "Excellent guidance on managing finances during my career break.",
-        author: "Priya Patel",
-        designation: "Returning Professional",
-      },
-      {
-          text: "Her understanding of women's financial needs is exceptional.",
-        author: "Dr. Meera Desai",
-        designation: "Medical Professional",
-      },
-    ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "Women's Planning", href: "", variant: "primary" },
-      { text: "Financial Education", href: "", variant: "secondary" },
-    ],
-    faqs: [
-      {
-        question: "Why do women need specialized financial planning?",
-        answer:
-          "Women face unique challenges like career breaks, longer life expectancy, and different risk preferences that require specialized planning.",
-      },
-      {
-        question: "How do you help with career break planning?",
-        answer:
-          "We help plan finances to maintain financial security during career breaks and smooth transition back to work.",
-      },
-      {
-        question: "What investment options are suitable for women?",
-        answer:
-          "We recommend a mix of equity, debt, and gold based on your risk profile and life stage.",
-      },
-    ],
-    clientTypePills: ["Women Professionals", "Financial Independence"],
-    idealClientDescription:
-      "Women professionals seeking financial independence and specialized financial planning services.",
-    successStories: [
-      "Helped 100+ women achieve financial independence",
-      "Average portfolio growth of 15%+ for women clients",
-      "Successfully guided 50+ women through career transitions",
-    ],
-    grievanceOfficer: {
-      name: "Women's Support",
-      email: "women@wealthwisecapital.com",
-    },
-    verifiedBySpring: false,
-  },
+  // {
+  //   id: "45",
+  //   firmName: "Multi Ark Wealth Private Limited",
+  //   advisorName: "Diksha Vaish",
+  //   principalAdvisor: "Diksha Vaish",
+  //   sebiReg: "INA000018504",
+  //   photo: "/advisors/Diksha-Vaish.svg",
+  //   location: "Delhi, Delhi",
+  //   tagline: "Empowering women to take control of their financial future",
+  //   specializations: ["Women's Finance", "Financial Planning", "Tax Planning"],
+  //   audience: ["Women Professionals", "Salaried"],
+  //   about:
+  //     "Diksha Vaish is a certified financial planner with over 15 years of experience specializing in women's financial planning. She understands the unique challenges women face in financial decision-making.",
+  //   description:
+  //     "WealthWise Capital is dedicated to empowering women through financial education and planning. We provide specialized services that address women's unique financial needs, including career breaks, longer life expectancy, and different risk preferences.",
+  //   services: [
+  //     {
+  //       name: "Women's Financial Planning",
+  //       description:
+  //         "Comprehensive financial planning tailored to women's unique needs and life stages.",
+  //     },
+  //     {
+  //       name: "Career Break Planning",
+  //       description:
+  //         "Financial planning for women taking career breaks for family or other reasons.",
+  //     },
+  //     {
+  //       name: "Investment Education",
+  //       description:
+  //         "Financial literacy and investment education programs for women.",
+  //     },
+  //     {
+  //       name: "Retirement Planning for Women",
+  //       description:
+  //         "Specialized retirement planning considering women's longer life expectancy.",
+  //     },
+  //   ],
+  //   feeStructure: [
+  //     { service: "Financial Planning", amount: "₹12,000 – ₹20,000" },
+  //     { service: "Education Programs", amount: "₹5,000" },
+  //     { service: "Career Break Planning", amount: "₹15,000" },
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "Diksha helped me become financially independent and confident about my investments.",
+  //       author: "Anjali Sharma",
+  //       designation: "Working Mother",
+  //     },
+  //     {
+  //       text: "Excellent guidance on managing finances during my career break.",
+  //       author: "Priya Patel",
+  //       designation: "Returning Professional",
+  //     },
+  //     {
+  //         text: "Her understanding of women's financial needs is exceptional.",
+  //       author: "Dr. Meera Desai",
+  //       designation: "Medical Professional",
+  //     },
+  //   ],
+  //   videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+  //   ctaLinks: [
+  //     { text: "Women's Planning", href: "", variant: "primary" },
+  //     { text: "Financial Education", href: "", variant: "secondary" },
+  //   ],
+  //   faqs: [
+  //     {
+  //       question: "Why do women need specialized financial planning?",
+  //       answer:
+  //         "Women face unique challenges like career breaks, longer life expectancy, and different risk preferences that require specialized planning.",
+  //     },
+  //     {
+  //       question: "How do you help with career break planning?",
+  //       answer:
+  //         "We help plan finances to maintain financial security during career breaks and smooth transition back to work.",
+  //     },
+  //     {
+  //       question: "What investment options are suitable for women?",
+  //       answer:
+  //         "We recommend a mix of equity, debt, and gold based on your risk profile and life stage.",
+  //     },
+  //   ],
+  //   clientTypePills: ["Women Professionals", "Financial Independence"],
+  //   idealClientDescription:
+  //     "Women professionals seeking financial independence and specialized financial planning services.",
+  //   successStories: [
+  //     "Helped 100+ women achieve financial independence",
+  //     "Average portfolio growth of 15%+ for women clients",
+  //     "Successfully guided 50+ women through career transitions",
+  //   ],
+  //   grievanceOfficer: {
+  //     name: "Women's Support",
+  //     email: "women@wealthwisecapital.com",
+  //   },
+  //   verifiedBySpring: false,
+  // },
   {
     id: "46",
     firmName: "FEE ONLY INVESTMENT ADVISERS LLP",
     advisorName: "Harsh Roongta",
     principalAdvisor: "Harsh Roongta",
     sebiReg: "INA000014836",
-    photo: "/advisors/Harsh-Roongta.svg",
+    photo: "/advisors/harsh-roongta.svg",
     location: "Bangalore, Karnataka",
     tagline: "Financial planning for the tech generation",
     specializations: ["ESOP Planning", "Startup Finance", "Tech Investments"],
@@ -3472,7 +3472,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Harsh Vardhan Dawar",
     principalAdvisor: "Harsh Vardhan Dawar",
     sebiReg: "INA000002173",
-    photo: "/advisors/Harsh-Vardhan-Dawar.svg",
+    photo: "/advisors/harsh-dawar.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Financial planning designed for medical professionals",
     specializations: ["Medical Practice Finance", "Tax Planning", "Insurance"],
@@ -3567,7 +3567,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Hemendra Gandhi",
     principalAdvisor: "Hemendra Gandhi",
     sebiReg: "INA000004237",
-    photo: "/advisors/Hemendra-Gandhi.svg",
+    photo: "/advisors/hemendra-gandhi.svg",
     location: "Chennai, Tamil Nadu",
     tagline: "Securing your golden years with expert financial planning",
     specializations: ["Senior Citizen Planning", "Pension Optimization", "Estate Planning"],
@@ -3656,108 +3656,108 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
-  {
-    id: "49",
-    firmName: "Green Finance Advisors",
-    advisorName: "Priya Kapoor",
-    principalAdvisor: "Priya Kapoor",
-    sebiReg: "INA000020005",
-    photo: "/advisors/priya-kapoor.svg",
-    location: "Hyderabad, Telangana",
-    tagline: "Sustainable investing for a better future",
-    specializations: ["ESG Investing", "Sustainable Finance", "Green Bonds"],
-    audience: ["Environmentally Conscious", "HNI"],
-    about:
-      "Priya Kapoor is a sustainability expert and financial advisor with over 15 years of experience in ESG investing and sustainable finance.",
-    description:
-      "Green Finance Advisors specializes in sustainable and ESG investing. We help environmentally conscious investors align their financial goals with their values through responsible investment strategies.",
-    services: [
-      {
-        name: "ESG Portfolio Management",
-        description:
-          "Environmental, Social, and Governance focused investment portfolios.",
-      },
-      {
-        name: "Sustainable Investment Advisory",
-        description:
-          "Guidance on green bonds, renewable energy investments, and sustainable funds.",
-      },
-      {
-        name: "Impact Investing",
-        description:
-          "Investments that generate positive social and environmental impact alongside financial returns.",
-      },
-      {
-        name: "Carbon Footprint Analysis",
-        description:
-          "Analysis of investment portfolio's carbon footprint and sustainability metrics.",
-      },
-    ],
-    feeStructure: [
-      { service: "ESG Planning", amount: "₹25,000 – ₹40,000" },
-      { service: "Portfolio Analysis", amount: "₹10,000" },
-      { service: "Impact Investing", amount: "₹30,000 – ₹50,000" },
-    ],
-    testimonials: [
-      {
-        text: "Priya helped me build a portfolio that aligns with my environmental values.",
-        author: "Amit Sharma",
-        designation: "Environmental Consultant",
-      },
-      {
-        text: "Excellent returns while making a positive impact on the environment.",
-        author: "Dr. Neha Gupta",
-        designation: "Climate Scientist",
-      },
-      {
-        text: "She understands both sustainability and finance perfectly.",
-        author: "Vikram Singh",
-        designation: "Green Entrepreneur",
-      },
-    ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "ESG Consultation", href: "", variant: "primary" },
-      { text: "Portfolio Analysis", href: "", variant: "secondary" },
-    ],
-    faqs: [
-      {
-        question: "What is ESG investing?",
-        answer:
-          "Environmental, Social, and Governance investing considers sustainability factors alongside financial returns.",
-      },
-      {
-        question: "Do sustainable investments perform well?",
-        answer:
-          "ESG investments have shown competitive returns while providing positive impact and risk management benefits.",
-      },
-      {
-        question: "What are green bonds?",
-        answer:
-          "Bonds issued to finance environmentally friendly projects like renewable energy and clean transportation.",
-      },
-    ],
-    clientTypePills: ["ESG Investing", "Sustainable Finance"],
-    idealClientDescription:
-      "Environmentally conscious investors seeking to align their financial goals with sustainability values through responsible investment strategies.",
-    successStories: [
-      "Managed ₹100+ crores in sustainable investments",
-      "Average ESG portfolio returns of 12-15% annually",
-      "Helped 100+ clients transition to sustainable investing",
-    ],
-    grievanceOfficer: {
-      name: "Green Support",
-      email: "green@greenfinance.com",
-    },
-    verifiedBySpring: false,
-  },
+  // {
+  //   id: "49",
+  //   firmName: "Green Finance Advisors",
+  //   advisorName: "Priya Kapoor",
+  //   principalAdvisor: "Priya Kapoor",
+  //   sebiReg: "INA000020005",
+  //   photo: "/advisors/priya-kapoor.svg",
+  //   location: "Hyderabad, Telangana",
+  //   tagline: "Sustainable investing for a better future",
+  //   specializations: ["ESG Investing", "Sustainable Finance", "Green Bonds"],
+  //   audience: ["Environmentally Conscious", "HNI"],
+  //   about:
+  //     "Priya Kapoor is a sustainability expert and financial advisor with over 15 years of experience in ESG investing and sustainable finance.",
+  //   description:
+  //     "Green Finance Advisors specializes in sustainable and ESG investing. We help environmentally conscious investors align their financial goals with their values through responsible investment strategies.",
+  //   services: [
+  //     {
+  //       name: "ESG Portfolio Management",
+  //       description:
+  //         "Environmental, Social, and Governance focused investment portfolios.",
+  //     },
+  //     {
+  //       name: "Sustainable Investment Advisory",
+  //       description:
+  //         "Guidance on green bonds, renewable energy investments, and sustainable funds.",
+  //     },
+  //     {
+  //       name: "Impact Investing",
+  //       description:
+  //         "Investments that generate positive social and environmental impact alongside financial returns.",
+  //     },
+  //     {
+  //       name: "Carbon Footprint Analysis",
+  //       description:
+  //         "Analysis of investment portfolio's carbon footprint and sustainability metrics.",
+  //     },
+  //   ],
+  //   feeStructure: [
+  //     { service: "ESG Planning", amount: "₹25,000 – ₹40,000" },
+  //     { service: "Portfolio Analysis", amount: "₹10,000" },
+  //     { service: "Impact Investing", amount: "₹30,000 – ₹50,000" },
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "Priya helped me build a portfolio that aligns with my environmental values.",
+  //       author: "Amit Sharma",
+  //       designation: "Environmental Consultant",
+  //     },
+  //     {
+  //       text: "Excellent returns while making a positive impact on the environment.",
+  //       author: "Dr. Neha Gupta",
+  //       designation: "Climate Scientist",
+  //     },
+  //     {
+  //       text: "She understands both sustainability and finance perfectly.",
+  //       author: "Vikram Singh",
+  //       designation: "Green Entrepreneur",
+  //     },
+  //   ],
+  //   videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+  //   ctaLinks: [
+  //     { text: "ESG Consultation", href: "", variant: "primary" },
+  //     { text: "Portfolio Analysis", href: "", variant: "secondary" },
+  //   ],
+  //   faqs: [
+  //     {
+  //       question: "What is ESG investing?",
+  //       answer:
+  //         "Environmental, Social, and Governance investing considers sustainability factors alongside financial returns.",
+  //     },
+  //     {
+  //       question: "Do sustainable investments perform well?",
+  //       answer:
+  //         "ESG investments have shown competitive returns while providing positive impact and risk management benefits.",
+  //     },
+  //     {
+  //       question: "What are green bonds?",
+  //       answer:
+  //         "Bonds issued to finance environmentally friendly projects like renewable energy and clean transportation.",
+  //     },
+  //   ],
+  //   clientTypePills: ["ESG Investing", "Sustainable Finance"],
+  //   idealClientDescription:
+  //     "Environmentally conscious investors seeking to align their financial goals with sustainability values through responsible investment strategies.",
+  //   successStories: [
+  //     "Managed ₹100+ crores in sustainable investments",
+  //     "Average ESG portfolio returns of 12-15% annually",
+  //     "Helped 100+ clients transition to sustainable investing",
+  //   ],
+  //   grievanceOfficer: {
+  //     name: "Green Support",
+  //     email: "green@greenfinance.com",
+  //   },
+  //   verifiedBySpring: false,
+  // },
   {
     id: "50",
     firmName: "HP Private Wealth Advisory Services",
     advisorName: "Himanshu Pandya",
     principalAdvisor: "Himanshu Pandya",
     sebiReg: "INA000017310",
-    photo: "/advisors/Himanshu-Pandya.svg",
+    photo: "/advisors/himanshu-pandya.svg",
     location: "Mumbai, Maharashtra",
     tagline: "International wealth management for global citizens",
     specializations: ["International Investments", "Cross-border Planning", "NRI Services"],
@@ -3848,11 +3848,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "51",
-    firmName: "VSK Financial Consultancy Services Pvt. Ltd.",
+    firmName: "VSK Financial Consultancy Services",
     advisorName: "Jaydeep Godbole",
     principalAdvisor: "Jaydeep Godbole",
     sebiReg: "INA000017620",
-    photo: "/advisors/Jaydeep-Godbole.svg",
+    photo: "/advisors/jaydeep-godbole.svg",
     location: "Remote/Virtual",
     tagline: "Technology-driven financial planning for the digital age",
     specializations: ["Robo-advisory", "Digital Investments", "Fintech Solutions"],
@@ -3943,11 +3943,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "52",
-    firmName: "Jignesh H Shah",
+    firmName: "Capital Advisors",
     advisorName: "Jignesh H Shah",
     principalAdvisor: "Jignesh H Shah",
     sebiReg: "INA000017621",
-    photo: "/advisors/Jignesh-H-Shah.svg",
+    photo: "/advisors/jignesh-shah.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Comprehensive wealth management for business families",
     specializations: ["Family Office", "Succession Planning", "Wealth Management"],
@@ -4042,7 +4042,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Kalpesh Ashar",
     principalAdvisor: "Kalpesh Ashar",
     sebiReg: "INA000001027",
-    photo: "/advisors/Kalpesh-Ashar.svg",
+    photo: "/advisors/kalpesh-ashar.svg",
     location: "Pune, Maharashtra",
     tagline: "Building wealth through strategic real estate investments",
     specializations: ["Real Estate", "REITs", "Property Planning"],
