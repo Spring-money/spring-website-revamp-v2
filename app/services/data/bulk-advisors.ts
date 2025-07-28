@@ -4232,7 +4232,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Kharanshu Parikh",
     principalAdvisor: "Kharanshu Parikh",
     sebiReg: "INA000006952",
-    photo: "/advisors/Kharanshu-Parikh.svg",
+    photo: "/advisors/kharanshu-parikh.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Navigating the future of digital assets",
     specializations: ["Cryptocurrency", "Digital Assets", "Blockchain Investments"],
@@ -4327,7 +4327,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Manish Goel",
     principalAdvisor: "Manish Goel",
     sebiReg: "INA000014836",
-    photo: "/advisors/Manish-Goel.svg",
+    photo: "/advisors/manish-goel.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Institutional-grade investment advisory for discerning investors",
     specializations: ["Institutional Investing", "Portfolio Management", "Alternative Investments"],
@@ -4422,7 +4422,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Mukul Agarwal",
     principalAdvisor: "Mukul Agarwal",
     sebiReg: "INA000016782",
-    photo: "/advisors/Mukul-Agarwal.svg",
+    photo: "/advisors/mukul-agarwal.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Climbing the ladder of financial success together",
     specializations: ["Goal-based Planning", "Systematic Investing", "Financial Education"],
@@ -4513,11 +4513,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "58",
-    firmName: "FINNOVATE FINANCIAL SERVICES PRIVATE LIMITED",
-    advisorName: "NEHAL MOTA",
+    firmName: "Finnovate Financial Services",
+    advisorName: "Nehal Mota",
     principalAdvisor: "Nehal Mota",
     sebiReg: "INA000013518",
-    photo: "/advisors/Nehal-Mota.svg",
+    photo: "/advisors/nehal-mota.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Building wealth step by step with expert guidance",
     specializations: ["Wealth Management", "Tax Planning", "Estate Planning"],
@@ -4612,7 +4612,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Nirakar Pradhan",
     principalAdvisor: "Nirakar Pradhan",
     sebiReg: "INA000014128",
-    photo: "/advisors/Nirakar-Pradhan.svg",
+    photo: "/advisors/nirakar-pradhan.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Growing your wealth like a laurel tree - steady and strong",
     specializations: ["Equity Investing", "Portfolio Management", "Research-based Investing"],
@@ -4703,11 +4703,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "60",
-    firmName: "NITEE BAANDAL",
-    advisorName: "NITEE BAANDAL",
-    principalAdvisor: "NITEE BAANDAL",
+    firmName: "Fee Only Financial Advisers",
+    advisorName: "Nitee Baandal",
+    principalAdvisor: "Nitee Baandal",
     sebiReg: "INA000014836",
-    photo: "/advisors/Nitee-Baandal.svg",
+    photo: "/advisors/nitee-baandal.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Guiding you through the financial markets with clarity and purpose",
     specializations: ["Financial Planning", "Mutual Funds", "Goal-based Investing"],
@@ -4802,7 +4802,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Pranab Uniyal",
     principalAdvisor: "Pranab Uniyal",
     sebiReg: "INA000011538",
-    photo: "/advisors/Pranab-Uniyal.svg",
+    photo: "/advisors/pranab-uniyal.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Pure and transparent investment advisory for mindful wealth creation",
     specializations: ["Ethical Investing", "Sustainable Finance", "Transparent Advisory"],
@@ -4897,7 +4897,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Rohit Wadhwa",
     principalAdvisor: "Rohit Wadhwa",
     sebiReg: "INA000000888",
-    photo: "/advisors/Rohit-Wadhwa.svg",
+    photo: "/advisors/rohit-wadhwa.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Auspicious financial planning for prosperous wealth creation",
     specializations: ["Traditional Planning", "Cultural Values", "Family Wealth"],
@@ -4992,7 +4992,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Roshni Nayak",
     principalAdvisor: "Roshni Nayak",
     sebiReg: "INA000016038",
-    photo: "/advisors/Roshni-Nayak.svg",
+    photo: "/advisors/roshni-nayak.svg",
     location: "Mumbai, Maharashtra",
     tagline: "The sacred formula for wealth creation and financial success",
     specializations: ["Wealth Creation", "Financial Success", "Goal Achievement"],
@@ -5087,7 +5087,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Sharad Mendon",
     principalAdvisor: "Sharad Mendon",
     sebiReg: "INA000019567",
-    photo: "/advisors/Sharad-Mendon.svg",
+    photo: "/advisors/sharad-mendon.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Making money work for you through intelligent investment strategies",
     specializations: ["Intelligent Investing", "Portfolio Optimization", "Wealth Management"],
@@ -5176,108 +5176,108 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
-  {
-    id: "65",
-    firmName: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED",
-    advisorName: "Rajesh Kumar",
-    principalAdvisor: "Rajesh Kumar",
-    sebiReg: "INA000001811",
-    photo: "/advisors/Rajesh-Kumar.svg",
-    location: "Mumbai, Maharashtra",
-    tagline: "Guiding your investments with the light of research and analysis",
-    specializations: ["Research-based Investing", "Mutual Fund Analysis", "Investment Research"],
-    audience: ["Research-oriented", "Mutual Fund Investors"],
-    about:
-      "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED is a research-driven investment advisory firm that provides comprehensive analysis and guidance for informed investment decisions.",
-    description:
-      "We leverage extensive research and analysis to provide investment guidance. Our approach focuses on data-driven decisions and comprehensive market analysis for optimal investment outcomes.",
-    services: [
-      {
-        name: "Research-based Investment Advisory",
-        description:
-          "Investment advisory based on comprehensive research and analysis.",
-      },
-      {
-        name: "Mutual Fund Analysis & Selection",
-        description:
-          "In-depth analysis and selection of mutual funds based on research.",
-      },
-      {
-        name: "Market Research & Analysis",
-        description:
-          "Comprehensive market research and analysis for investment decisions.",
-      },
-      {
-        name: "Investment Education & Research",
-        description:
-          "Educational programs and research reports for informed investing.",
-      },
-    ],
-    feeStructure: [
-      { service: "Research Advisory", amount: "₹15,000 – ₹25,000" },
-      { service: "Fund Analysis", amount: "₹8,000 – ₹15,000" },
-      { service: "Research Reports", amount: "₹5,000 – ₹10,000" },
-    ],
-    testimonials: [
-      {
-        text: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED's research-based approach has helped me make informed investment decisions.",
-        author: "Amit Kumar",
-        designation: "Research-oriented",
-      },
-      {
-        text: "Excellent mutual fund analysis and selection guidance.",
-        author: "Priya Sharma",
-        designation: "Mutual Fund Investor",
-      },
-      {
-        text: "Their research reports are comprehensive and insightful.",
-        author: "Vikram Patel",
-        designation: "Investment Analyst",
-      },
-    ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "Research Advisory", href: "", variant: "primary" },
-      { text: "Fund Analysis", href: "", variant: "secondary" },
-    ],
-    faqs: [
-      {
-        question: "What makes your research approach different?",
-        answer:
-          "We use comprehensive data analysis and proprietary research methodologies for investment decisions.",
-      },
-      {
-        question: "How do you analyze mutual funds?",
-        answer:
-          "We use multiple parameters including performance, risk, expense ratio, and fund manager track record.",
-      },
-      {
-        question: "Do you provide research reports?",
-        answer:
-          "Yes, we provide detailed research reports on markets, sectors, and investment opportunities.",
-      },
-    ],
-    clientTypePills: ["Research-based", "Mutual Fund Analysis"],
-    idealClientDescription:
-      "Research-oriented investors and mutual fund investors seeking data-driven investment advisory and analysis.",
-    successStories: [
-      "Published 500+ research reports annually",
-      "Analyzed 1000+ mutual funds",
-      "Helped 400+ clients with research-based investing",
-    ],
-    grievanceOfficer: {
-      name: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED Support",
-      email: "rajesh.kumar@waterfield.in",
-    },
-    verifiedBySpring: false,
-  },
+  // {
+  //   id: "65",
+  //   firmName: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED",
+  //   advisorName: "Rajesh Kumar",
+  //   principalAdvisor: "Rajesh Kumar",
+  //   sebiReg: "INA000001811",
+  //   photo: "/advisors/Rajesh-Kumar.svg",
+  //   location: "Mumbai, Maharashtra",
+  //   tagline: "Guiding your investments with the light of research and analysis",
+  //   specializations: ["Research-based Investing", "Mutual Fund Analysis", "Investment Research"],
+  //   audience: ["Research-oriented", "Mutual Fund Investors"],
+  //   about:
+  //     "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED is a research-driven investment advisory firm that provides comprehensive analysis and guidance for informed investment decisions.",
+  //   description:
+  //     "We leverage extensive research and analysis to provide investment guidance. Our approach focuses on data-driven decisions and comprehensive market analysis for optimal investment outcomes.",
+  //   services: [
+  //     {
+  //       name: "Research-based Investment Advisory",
+  //       description:
+  //         "Investment advisory based on comprehensive research and analysis.",
+  //     },
+  //     {
+  //       name: "Mutual Fund Analysis & Selection",
+  //       description:
+  //         "In-depth analysis and selection of mutual funds based on research.",
+  //     },
+  //     {
+  //       name: "Market Research & Analysis",
+  //       description:
+  //         "Comprehensive market research and analysis for investment decisions.",
+  //     },
+  //     {
+  //       name: "Investment Education & Research",
+  //       description:
+  //         "Educational programs and research reports for informed investing.",
+  //     },
+  //   ],
+  //   feeStructure: [
+  //     { service: "Research Advisory", amount: "₹15,000 – ₹25,000" },
+  //     { service: "Fund Analysis", amount: "₹8,000 – ₹15,000" },
+  //     { service: "Research Reports", amount: "₹5,000 – ₹10,000" },
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED's research-based approach has helped me make informed investment decisions.",
+  //       author: "Amit Kumar",
+  //       designation: "Research-oriented",
+  //     },
+  //     {
+  //       text: "Excellent mutual fund analysis and selection guidance.",
+  //       author: "Priya Sharma",
+  //       designation: "Mutual Fund Investor",
+  //     },
+  //     {
+  //       text: "Their research reports are comprehensive and insightful.",
+  //       author: "Vikram Patel",
+  //       designation: "Investment Analyst",
+  //     },
+  //   ],
+  //   videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+  //   ctaLinks: [
+  //     { text: "Research Advisory", href: "", variant: "primary" },
+  //     { text: "Fund Analysis", href: "", variant: "secondary" },
+  //   ],
+  //   faqs: [
+  //     {
+  //       question: "What makes your research approach different?",
+  //       answer:
+  //         "We use comprehensive data analysis and proprietary research methodologies for investment decisions.",
+  //     },
+  //     {
+  //       question: "How do you analyze mutual funds?",
+  //       answer:
+  //         "We use multiple parameters including performance, risk, expense ratio, and fund manager track record.",
+  //     },
+  //     {
+  //       question: "Do you provide research reports?",
+  //       answer:
+  //         "Yes, we provide detailed research reports on markets, sectors, and investment opportunities.",
+  //     },
+  //   ],
+  //   clientTypePills: ["Research-based", "Mutual Fund Analysis"],
+  //   idealClientDescription:
+  //     "Research-oriented investors and mutual fund investors seeking data-driven investment advisory and analysis.",
+  //   successStories: [
+  //     "Published 500+ research reports annually",
+  //     "Analyzed 1000+ mutual funds",
+  //     "Helped 400+ clients with research-based investing",
+  //   ],
+  //   grievanceOfficer: {
+  //     name: "WATERFIELD FINANCIAL AND INVESTMENT ADVISORS PRIVATE LIMITED Support",
+  //     email: "rajesh.kumar@waterfield.in",
+  //   },
+  //   verifiedBySpring: false,
+  // },
   {
     id: "66",
-    firmName: "MANEK FINANCIAL ADVISORS PRIVATE LIMITED",
+    firmName: "Manek Financial Advisors",
     advisorName: "Sonesh Dedhia",
     principalAdvisor: "Sonesh Dedhia",
     sebiReg: "INA000004401",
-    photo: "/advisors/Sonesh-Dedhia.svg",
+    photo: "/advisors/sonesh-dedhia.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Navigating your financial journey with precision and expertise",
     specializations: ["Financial Navigation", "Goal Planning", "Portfolio Management"],
@@ -5369,10 +5369,10 @@ export const bulkAdvisorData: AdvisorInput[] = [
   {
     id: "67",
     firmName: "Ladder7 Wealth Planners Pvt. Ltd.",
-    advisorName: "SURESH SADAGOPAN",
-    principalAdvisor: "SURESH SADAGOPAN",
+    advisorName: "Suresh Sadagopan",
+    principalAdvisor: "Suresh Sadagopan",
     sebiReg: "INA000016001",
-    photo: "/advisors/Suresh-Sadagopan.svg",
+    photo: "/advisors/suresh-sadagopan.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Building your wealth nest egg for a secure financial future",
     specializations: ["Wealth Building", "Retirement Planning", "Financial Security"],
@@ -5463,11 +5463,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "68",
-    firmName: "TBNG CAPITAL ADVISORS PVT. LTD.",
+    firmName: "TBNG Capital Advisors",
     advisorName: "Tarun Birani",
     principalAdvisor: "Tarun Birani",
     sebiReg: "INA000001837",
-    photo: "/advisors/Tarun-Birani.svg",  
+    photo: "/advisors/tarun-birani.svg",  
     location: "Mumbai, Maharashtra",
     tagline: "Smart and nifty investment strategies for agile wealth creation",
     specializations: ["Smart Investing", "Agile Strategies", "Market Timing"],
@@ -5562,7 +5562,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Urvil Bharatkumar Modi",
     principalAdvisor: "Urvil Bharatkumar Modi",
     sebiReg: "INA000017611",
-    photo: "/advisors/Urvil-Bharatkumar-Modi.svg",
+    photo: "/advisors/urvil-modi.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Strategic investment solutions for discerning investors",
     specializations: ["Strategic Investing", "Portfolio Solutions", "Investment Planning"],
@@ -5657,7 +5657,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Trupti Rane",
     principalAdvisor: "Trupti Rane",
     sebiReg: "INA000018957",
-    photo: "/advisors/Trupti-Rane.svg",
+    photo: "/advisors/trupti-rane.svg",
     location: "Mumbai, Maharashtra",
     tagline: "New vision for wealth creation and financial excellence",
     specializations: ["Wealth Creation", "Financial Excellence", "Innovative Solutions"],
@@ -5748,11 +5748,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "71",
-    firmName: "DV INVESTMENT ADVISORS LLP",
-    advisorName: "VIVEK AGARWAL",
-    principalAdvisor: "VIVEK AGARWAL",
+    firmName: "DV Investment Advisors",
+    advisorName: "Vivek Agarwal",
+    principalAdvisor: "Vivek Agarwal",
     sebiReg: "INA000016302",
-    photo: "/advisors/Vivek-Agarwal.svg",
+    photo: "/advisors/vivek-agarwal.svg",
     location: "Mumbai, Maharashtra",
     tagline: "All-knowing investment wisdom for enlightened wealth creation",
     specializations: ["Investment Wisdom", "Enlightened Investing", "Comprehensive Knowledge"],
@@ -5843,11 +5843,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "72",
-    firmName: "PLAN AHEAD WEALTH ADVISORS PRIVATE LIMITED",
+    firmName: "Plan Ahead Wealth Advisors",
     advisorName: "Vishal Dhawan",
     principalAdvisor: "Vishal Dhawan",
     sebiReg: "INA000000409",
-    photo: "/advisors/Vishal-Dhawan.svg",
+    photo: "/advisors/vishal-dhawan.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Unified wealth solutions for comprehensive financial success",
     specializations: ["Unified Solutions", "Comprehensive Planning", "Integrated Services"],
@@ -5938,11 +5938,11 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "73",
-    firmName: "V R WEALTH ADVISORS PRIVATE LIMITED",
+    firmName: "VR Wealth Advisors",
     advisorName: "Vivek Rege",
     principalAdvisor: "Vivek Rege",
     sebiReg: "INA000000383",
-    photo: "/advisors/Vivek-Rege.svg",
+    photo: "/advisors/vivek-rege.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Optimizing your investments for maximum returns and efficiency",
     specializations: ["Investment Optimization", "Maximum Returns", "Efficiency Focus"],
@@ -6037,7 +6037,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Yogin Sabnis",
     principalAdvisor: "Yogin Sabnis",
     sebiReg: "INA000017620",
-    photo: "/advisors/Yogin-Sabnis.svg",
+    photo: "/advisors/yogin-sabnis.svg",
     location: "Mumbai, Maharashtra",
     tagline: "Empowering your financial future with clarity and confidence",
     specializations: ["Financial Planning", "Retirement Planning", "Women Investors"],
