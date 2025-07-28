@@ -1526,7 +1526,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "23",
-    firmName: "FERMI 325 INVESTMENTS ADVISOR",
+    firmName: "Fermi 325 Investments Advisor",
     advisorName: "Sanket Rathod",
     principalAdvisor: "Sanket Rathod",
     sebiReg: "INA000015543",
@@ -4137,7 +4137,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     advisorName: "Kanika Kunal Shah",
     principalAdvisor: "Kanika Kunal Shah",
     sebiReg: "INA000012537",
-    photo: "/advisors/Kanika-Kunal-Shah.svg",
+    photo: "/advisors/kanika-shah.svg",
     location: "Delhi, Delhi",
     tagline: "Protecting your wealth with comprehensive insurance planning",
     specializations: ["Insurance Planning", "Risk Management", "Health Insurance"],
