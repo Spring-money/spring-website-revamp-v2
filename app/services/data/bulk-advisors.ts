@@ -4228,7 +4228,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
   },
   {
     id: "55",
-    firmName: "EKVITY INVESTMET ADVISORS",
+    firmName: "Ekvity Ventures",
     advisorName: "Kharanshu Parikh",
     principalAdvisor: "Kharanshu Parikh",
     sebiReg: "INA000006952",
