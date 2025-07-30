@@ -637,6 +637,97 @@
        idealClientDescription:
          "Bachhat Money serves NRIs and individuals 45+ with established portfolios seeking expert guidance for comprehensive wealth and estate management.",
      },
+     {
+      id: "7",
+      firmName: "Apana Dhan",
+      advisorName: "Preeti Zende",
+      principalAdvisor: "Preeti Zende",
+      reg: "SEBI RIA REG NO: INA100013700",
+      photo: "/advisors/",
+      location: "Pune, Maharashtra    ",
+      tagline: "Your partner on a journey Towards prosperity and Financial wellness",
+  
+      specializations: ["Financial Planning", "Retirement Planning", "Tax Planning"],
+      audience: ["Salaried", "HNI"],
+  
+      about:
+        "At MyGuide2Wealth, we're your partners on a journey towards prosperity and financial wellness.",
+      description: `MyGuide2Wealth is accredited as a SEBI Registered Investment Advisor and Certified Financial Planner CM. We are independent, unbiased and fee-only financial planners based in Noida carving the best investment strategies, equity research & financial planning for our clients all over the globe.`,
+  
+      services: [
+        {
+          name: "Holistic Financial Planning",
+          description:
+            "Crafting personalized strategies to achieve your financial goals and secure your future.",
+        },
+        {
+          name: "Personalized Retirement Planning",
+          description:
+            "Secure your golden years with custom retirement strategies designed for a worry-free future.",
+        },
+        {
+          name: "Strategic Tax Optimization",
+          description:
+            "Reduce your taxable income and increase your net worth through proactive strategies.",
+        },
+        {
+          name: "Children Education Planning",
+          description:
+            "Smart investment portfolios to fund your child's higher-education dreams.",
+        },
+      ],
+  
+      feeStructure: [
+        { service: "Financial Planning", amount: "₹15,000 – ₹25,000" },
+        { service: "Investment Management", amount: "0.75% – 1.25% of AUM" },
+      ],
+  
+     
+  
+      testimonials: [
+        {
+          text: "MyGuide2Wealth's balanced approach in equity & debt is helping me reach my retirement and children's education goals.",
+          author: "Col S Singh",
+          designation: "Armed Forces, India",
+        },
+        {
+          text: "Robins's patience and expertise in mutual funds solved my future goals and matched my risk profile perfectly.",
+          author: "Ankur Pundir",
+          designation: "Software Professional, USA",
+        },
+        {
+          text: "They stay in touch every month to guide us in buying value stocks and mutual funds.",
+          author: "N Kumar",
+          designation: "Young Professional, Gurgaon",
+        },
+      ],
+  
+      videoUrl: "https://www.youtube.com/embed/JWcG7FCQu1w",
+  
+    
+  
+      sebiRegistrationNumber: "INA100013700",
+      verifiedBySpring: true,
+      grievanceOfficer: { name: "Suman Joshi", email: "grievance@wealthwisdom.in" },
+  
+      cta: [
+        {
+          text: "Schedule Meeting",
+          href: "https://wa.me/+919811031535",
+          variant: "primary",
+          icon: <Calendar size={16} className="mr-2" />,
+        },
+      ],
+  
+      clientTypePills: [
+        "Salaried Professionals",
+        "Young Families",
+        "Tax Planning",
+        "Investment Planning",
+      ],
+      idealClientDescription:
+        "Guiding salaried professionals and HNIs towards strategic financial growth.",
+    },
    ];
    
    /* ------------------------------------------------------------------

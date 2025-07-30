@@ -234,41 +234,41 @@ export default function HomePage() {
           <WhoWeServeCards
             img="/who-we-serve/govt-official.svg"
             heading="Government Officials"
-            subHeading="Customized Planning: Pension, Tax & Loan Strategies."
+            subHeading="Custom plans for your service career, pension, and tax efficiency."
           />
           <WhoWeServeCards
             img="/who-we-serve/it.svg"
             heading="IT Professionals"
-            subHeading="Maximize IT Earnings: ESOPs, Stocks & Wealth Growth."
+            subHeading="From code to capital. Grow wealth with your ESOPs and stocks."
           />
           <WhoWeServeCards
             img="/who-we-serve/professional.svg"
             heading="Young Professionals"
-            subHeading="Young Pro Wealth: Smart Start for Long-Term Financial Growth."
+            subHeading="Your career is launched. Create a powerful blueprint for future wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/forces.svg"
             heading="Armed Forces"
-            subHeading="Serve & Secure: Pension, Investment & Financial Planning."
+            subHeading="Securing your family's future. Expert guidance for pension and wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/management.svg"
             heading="Management Professionals"
-            subHeading="Boost Income, Reduce Taxes, Build Wealth."
+            subHeading="Strategic wealth architecture for leaders. Grow income, optimize taxes."
           />
           <WhoWeServeCards
             img="/who-we-serve/business.svg"
             heading="Enterepreneurs & Business Owners"
-            subHeading="Business Wealth: Integrated Growth, Tax & Succession Plans."
+            subHeading="Your business is your legacy. Let's plan its growth and your succession."
           /><WhoWeServeCards
             img="/who-we-serve/doctors.svg"
             heading="Doctors & Medical Professionals"
-            subHeading="Secure Your Practice: Loans, Tax, Retirement & Wealth Plans."
+            subHeading="You focus on patients. We'll help grow your practice and personal wealth."
           />
           <WhoWeServeCards
             img="/who-we-serve/lawyer.svg"
             heading="Lawyers & Legal Professionals"
-            subHeading="Legal Wealth: Expert Planning for Irregular Income & Taxes."
+            subHeading="Structure your variable earnings for consistent growth and tax efficiency."
           />
         </div>
       </section>

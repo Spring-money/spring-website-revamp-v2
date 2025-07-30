@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Spring Money",
-  description: "Discover comprehensive financial services from Spring Money. We offer personalized solutions for wealth management, investments, loans, and more to help you achieve your financial goals.",
+  description: "Partner with Spring Money to build lasting prosperity. We create personalized strategies to grow your personal assets and secure capital for your most important objectives.",
 };
 
 export default function RootLayout({
