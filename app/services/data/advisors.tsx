@@ -15,6 +15,8 @@
    export type Specialization =
      | "Retirement Planning"
      | "Tax Planning"
+     | "Financial Planning for IT Professionals"
+     | "Fee-Only Advisory"
      | "NRI Services"
      | "Custom Smallcase"
      | "Estate Planning"
@@ -29,6 +31,9 @@
    
    export type AudienceType =
      | "Salaried"
+     | "Salaried Professionals"
+     | "IT Professionals"
+     | "Young Professionals"
      | "Business Owners"
      | "Retired"
      | "HNI"
@@ -38,6 +43,7 @@
    export type Location =
      | "Mumbai, Maharashtra"
      | "Delhi"
+     | "Navi Mumbai, Maharashtra"
      | "Bengaluru, Karnataka"
      | "Hyderabad, Telangana"
      | "Chennai, Tamil Nadu"
@@ -646,11 +652,12 @@
       "id": "18",
       "firmName": "Apana Dhan",
       "advisorName": "Preeti Zende",
+      principalAdvisor: "Preeti Zende",
       "reg": "SEBI RIA REG NO: INA000012777",
       "photo": "/advisors/preeti-zende.svg",
       "location": "Navi Mumbai, Maharashtra",
       "tagline": "Your Dhan, Your Way! Partnering with you for a secure and stress-free financial future.",
-      "specializations": ["Comprehensive Financial Planning", "Retirement Planning", "Financial Planning for IT Professionals", "Fee-Only Advisory"],
+      "specializations": ["Retirement Planning", "Financial Planning for IT Professionals", "Fee-Only Advisory"],
       "audience": ["Salaried Professionals", "IT Professionals", "NRIs"],
       "about": "Preeti Zende is a CERTIFIED FINANCIAL PLANNERCM and the founder of ApnaDhan. With a successful prior career in the IT industry, she brings a uniquely analytical and process-driven perspective to personal finance. She is passionate about financial literacy and believes everyone deserves a life free from financial anxiety.",
       "description": "ApnaDhan is a SEBI Registered Investment Adviser and a dedicated fee-only financial planning firm. We do not sell any financial products or earn commissions, ensuring our advice is always 100% unbiased and in your best interest. Our sole focus is to provide clear, actionable financial roadmaps that empower our clients to achieve their goals.",
