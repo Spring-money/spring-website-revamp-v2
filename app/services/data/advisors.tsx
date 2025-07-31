@@ -5,6 +5,8 @@
 
    import { Calendar, ChartBar } from "lucide-react";
    import type { ReactNode } from "react";
+   import { bulkAdvisorData } from "./bulk-advisors";
+   import { createAdvisorProfile } from "./advisor-template";
    
    /* ------------------------------------------------------------------
       Enums & Basic Types
@@ -34,15 +36,16 @@
      | "Young Professionals";
    
    export type Location =
-     | "Mumbai"
+     | "Mumbai, Maharashtra"
      | "Delhi"
-     | "Bengaluru"
-     | "Hyderabad"
-     | "Chennai"
+     | "Bengaluru, Karnataka"
+     | "Hyderabad, Telangana"
+     | "Chennai, Tamil Nadu"
      | "Pune, Maharashtra"
-     | "Kolkata"
+     | "Kolkata, West Bengal"
      | "Remote/Virtual"
-     | "Noida, Uttar Pardesh";
+     | "Noida, Uttar Pardesh"
+     | "Gurugram, Haryana";
    
    export interface Testimonial {
      text: string;
@@ -105,7 +108,7 @@
    
     
      sebiRegistrationNumber: string;
-     verifiedBySpring: boolean;
+     verifiedBySpring?: boolean;
      grievanceOfficer?: {
        name: string;
        email: string;
@@ -567,7 +570,7 @@
      /* ----------------------- Advisor 6 ----------------------- */
      {
        id: "6",
-       firmName: "Bachhat Money",
+       firmName: "Bachhat",
        advisorName: "Vishal Shah",
        principalAdvisor: "Vishal Bharat Shah",
        reg: "SEBI RIA REG NO: INA000019220",
@@ -637,6 +640,86 @@
        idealClientDescription:
          "Bachhat Money serves NRIs and individuals 45+ with established portfolios seeking expert guidance for comprehensive wealth and estate management.",
      },
+     /* ----------------------- Advisor 7 ----------------------- */
+
+     {
+      "id": "18",
+      "firmName": "Apana Dhan",
+      "advisorName": "Preeti Zende",
+      "reg": "SEBI RIA REG NO: INA000012777",
+      "photo": "/advisors/preeti-zende.svg",
+      "location": "Navi Mumbai, Maharashtra",
+      "tagline": "Your Dhan, Your Way! Partnering with you for a secure and stress-free financial future.",
+      "specializations": ["Comprehensive Financial Planning", "Retirement Planning", "Financial Planning for IT Professionals", "Fee-Only Advisory"],
+      "audience": ["Salaried Professionals", "IT Professionals", "NRIs"],
+      "about": "Preeti Zende is a CERTIFIED FINANCIAL PLANNERCM and the founder of ApnaDhan. With a successful prior career in the IT industry, she brings a uniquely analytical and process-driven perspective to personal finance. She is passionate about financial literacy and believes everyone deserves a life free from financial anxiety.",
+      "description": "ApnaDhan is a SEBI Registered Investment Adviser and a dedicated fee-only financial planning firm. We do not sell any financial products or earn commissions, ensuring our advice is always 100% unbiased and in your best interest. Our sole focus is to provide clear, actionable financial roadmaps that empower our clients to achieve their goals.",
+      "services": [
+        {
+          "name": "Comprehensive Financial Planning",
+          "description": "A holistic roadmap covering your life goals, risk management, investments, retirement, and tax optimization."
+        },
+        {
+          "name": "Express Plan (Quick Plan)",
+          "description": "A focused plan for young professionals or those with specific goals who need a clear and actionable starting point."
+        },
+        {
+          "name": "Senior Citizen Financial Planning",
+          "description": "Specialized advice for retirees focusing on capital preservation, sustainable income streams, and wealth transfer."
+        },
+        {
+          "name": "Corporate Financial Wellness",
+          "description": "Customized financial literacy and wellness workshops designed for corporate employees to enhance their financial health."
+        }
+      ],
+      "feeStructure": [
+        { "service": "Comprehensive Plan", "amount": "₹25,000" },
+        { "service": "Express / Senior Citizen Plan", "amount": "₹15,000" }
+      ],
+      "testimonials": [
+        {
+          "text": "When I received such a detailed financial plan I was very much surprised. I did not expect that. My compliments to Preeti for preparing a detailed and a financial comprehensive plan, keeping into consideration my financial needs for the future. I am fortunate and thank the Almighty that out of the four options available, I opted for your services. I am sanguine that with your guidance, not only will I be financially sound but wiser too. The simplicity with which you have dealt with a complex issue needs to be complemented. It hardly leaves any doubt, even to a novice like me. To that extent my compliments to you once again.  Well done. ",
+          "author": "Mohit Lama",
+          "designation": "Retired Colonel, Indian Army"
+        },
+        {
+          "text": "I have decided to avail service of Apanadhan. After series of conversations , Preeti prepared detailed Financial Plan for me based on my goals & mapped my current investments to my goals. This is how my goal based investing started finally with help of Preeti. She is also guiding me in financial queries as and when required. Overall my experience to associate with Preeti is very much pleasent . I am very much thankful to PREETI for the help she has extended to me towards gaining Financial Literacy.",
+          "author": "Amar Joshi",
+          "designation": "Supervisor in Qatar Steel, QPSC"
+        },
+        {
+          "text": "The financial plan handed out by Preeti after the in-depth analysis is comprehensive and easily understandable for a new investor. It focuses in detail on every aspect of an individual. The action plan at the end of the report is crisp and concise and has recommendations that need no further analysis or consultation. Overall the process of consultation, Preeti had been co-operative and patient to every single detail. I have had numerous telephonic interactions with her regarding any doubt that I had in mind, her ability to educate her clients on the pros and cons is remarkable. I am quite satisfied with the quality and promptness of the service provided by Preeti and am willing to continue the contract term for the foreseeable future. ",
+          "author": "Ankit Srivastava",
+          "designation": "Software Quality Engineer 2 at Dell EMC"
+        }
+      ],
+      "sebiRegistrationNumber": "INA000012777",
+      "verifiedBySpring": true,
+      "grievanceOfficer": {
+        "name": "Preeti Zende",
+        "email": "preeti.zende@apanadhan.com"
+      },
+      "cta": [
+        {
+          "text": "Schedule a Consultation",
+          "href": "https://wa.me/919923202026",
+          "variant": "primary"
+        }
+      ],
+      "clientTypePills": [
+        "IT Professionals",
+        "Fee-Only Planning",
+        "Retirement Planning",
+        "NRI Services"
+      ],
+      "idealClientDescription": "For salaried professionals and families, especially in the IT sector, seeking unbiased fee-only advice for long-term wealth creation and financial peace of mind."
+    },
+     /* ----------------------- Advisor 8 ----------------------- */
+
+     /* ----------------------- Advisor 9 ----------------------- */
+
+    // Add bulk advisors using the template system
+    ...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
    
    /* ------------------------------------------------------------------
@@ -665,15 +748,16 @@
    ];
    
    export const locations: Location[] = [
-     "Mumbai",
+     "Mumbai, Maharashtra",
      "Delhi",
-     "Bengaluru",
-     "Hyderabad",
-     "Chennai",
+     "Bengaluru, Karnataka",
+     "Hyderabad, Telangana",
+     "Chennai, Tamil Nadu",
      "Pune, Maharashtra",
-     "Kolkata",
+     "Kolkata, West Bengal",
      "Remote/Virtual",
      "Noida, Uttar Pardesh",
+     "Gurugram, Haryana"
    ];
    
    /* ------------------------------------------------------------------

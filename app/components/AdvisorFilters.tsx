@@ -1,5 +1,13 @@
 import React from 'react';
-import { Location, Specialization, AudienceType, locations, specializations, audienceTypes } from '@/services/data/advisors';
+import { Location, Specialization, AudienceType, specializations, audienceTypes } from '@/services/data/advisors';
+
+// Custom locations array with only the specified cities
+const customLocations: Location[] = [
+  "Pune, Maharashtra",
+  "Mumbai, Maharashtra", 
+  "Gurugram, Haryana",
+  "Noida, Uttar Pardesh"
+];
 
 interface AdvisorFiltersProps {
   selectedLocation: Location | null;
@@ -56,10 +64,16 @@ const AdvisorFilters: React.FC<AdvisorFiltersProps> = ({
             aria-label="Select location"
             value={selectedLocation || ''}
             onChange={(e) => setSelectedLocation(e.target.value as Location || null)}
-            className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE]"
+            className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE] appearance-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
+              backgroundPosition: 'right 0.5rem center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '1.5em 1.5em'
+            }}
           >
             <option value="">All Locations</option>
-            {locations.map((location) => (
+            {customLocations.map((location) => (
               <option key={location} value={location}>
                 {location}
               </option>
@@ -76,7 +90,13 @@ const AdvisorFilters: React.FC<AdvisorFiltersProps> = ({
             aria-label="Select client type"
             value={selectedAudience || ''}
             onChange={(e) => setSelectedAudience(e.target.value as AudienceType || null)}
-            className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE]"
+            className="w-full h-10 pl-3 pr-6 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:border-[#108E66] bg-[#FCFFFE] appearance-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
+              backgroundPosition: 'right 0.5rem center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '1.5em 1.5em'
+            }}
           >
             <option value="">All Client Types</option>
             {audienceTypes.map((audience) => (

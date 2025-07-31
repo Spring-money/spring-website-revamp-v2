@@ -57,30 +57,30 @@ export default function Marketplace() {
   const [filteredAdvisors, setFilteredAdvisors] = useState<Advisor[]>(advisors);
 
   // Apply filters whenever filter states change
-  // useEffect(() => {
-  //   let result = [...mockAdvisors];
+  useEffect(() => {
+    let result = [...advisors];
     
-  //   // Filter by location if selected
-  //   if (selectedLocation) {
-  //     result = result.filter(advisor => advisor.location === selectedLocation);
-  //   }
+    // Filter by location if selected
+    if (selectedLocation) {
+      result = result.filter(advisor => advisor.location === selectedLocation);
+    }
     
-  //   // Filter by specializations if any are selected
-  //   if (selectedSpecializations.length > 0) {
-  //     result = result.filter(advisor => 
-  //       selectedSpecializations.some(spec => advisor.specializations.includes(spec))
-  //     );
-  //   }
+    // Filter by specializations if any are selected
+    if (selectedSpecializations.length > 0) {
+      result = result.filter(advisor => 
+        selectedSpecializations.some(spec => advisor.specializations.includes(spec))
+      );
+    }
     
-  //   // Filter by audience if selected
-  //   if (selectedAudience) {
-  //     result = result.filter(advisor => 
-  //       advisor.audience.includes(selectedAudience)
-  //     );
-  //   }
+    // Filter by audience if selected
+    if (selectedAudience) {
+      result = result.filter(advisor => 
+        advisor.audience.includes(selectedAudience)
+      );
+    }
     
-  //   setFilteredAdvisors(result);
-  // }, [selectedLocation, selectedSpecializations, selectedAudience]);
+    setFilteredAdvisors(result);
+  }, [selectedLocation, selectedSpecializations, selectedAudience]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -100,14 +100,14 @@ export default function Marketplace() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-12" id="advisorList">
         {/* Filters */}
-        {/* <AdvisorFilters 
+        <AdvisorFilters 
           selectedLocation={selectedLocation}
           setSelectedLocation={setSelectedLocation}
           selectedSpecializations={selectedSpecializations}
           setSelectedSpecializations={setSelectedSpecializations}
           selectedAudience={selectedAudience}
           setSelectedAudience={setSelectedAudience}
-        /> */}
+        />
         
         {/* Results Header */}
         <ResultsHeader 
