@@ -1108,107 +1108,95 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
-  {
-    id: "18",
-    firmName: "ApnaDhan",
-    advisorName: "Preeti Zende",
-    principalAdvisor: "Preeti Zende",
-    sebiReg: "",
-    photo: "/advisors/preeti-zende.svg",
-    location: "Pune, Maharashtra",
-    tagline:
-      "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
-    specializations: ["Retirement Planning", "Insurance"],
-    audience: ["Young Professionals", "Salaried"],
-    about:
-      "Preeti Zende is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description:
-      "At Apana Dhan, we understand your needs for financial planning. We offer Fee-only Financial Planning services. We are committed to your goals and hence to avoid any conflicts of interest, we are not into the distribution of any financial products. Hence our only earning is from the fees we charge to our clients.",
-    services: [
-      {
-        name: "Comprehensive Financial Planning",
-        description:
-          "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals.",
-      },
-      {
-        name: "Express plann",
-        description:
-          "Strategic tax planning to minimize your tax liability while maximizing savings and investments.",
-      },
-      {
-        name: "Senior citizen planning",
-        description:
-          "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments.",
-      },
-      {
-        name: "Financial wellness session",
-        description:
-          "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management.",
-      },
-    ],
-    feeStructure: [
-      { service: "Financial Check-up", amount: "₹5,000" },
-      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
-    ],
-    testimonials: [
-      {
-        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
-        author: "Amit & Priya Patel",
-        designation: "IT Professionals, Mumbai",
-      },
-      {
-        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
-        author: "Vikram Sharma",
-        designation: "Business Owner",
-      },
-      {
-        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
-        author: "Dr. Sneha Joshi",
-        designation: "Medical Professional",
-      },
-    ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "Schedule Free Consultation", href: "", variant: "primary" },
-      { text: "WhatsApp Query", href: "", variant: "secondary" },
-    ],
-    faqs: [
-      {
-        question:
-          "What makes ApnaDhan different from other financial advisors?",
-        answer:
-          "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA.",
-      },
-      {
-        question: "How do you help with tax planning?",
-        answer:
-          "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections.",
-      },
-      {
-        question: "What is your typical client profile?",
-        answer:
-          "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning.",
-      },
-      {
-        question: "How often do you review portfolios?",
-        answer:
-          "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime.",
-      },
-    ],
-    clientTypePills: ["IT Professionals", "Business Owners"],
-    idealClientDescription:
-      "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
-    successStories: [
-      "Helped 150+ clients achieve their financial goals",
-      "Average tax savings of ₹2-5 lakhs per client annually",
-      "Managed portfolios worth ₹50+ crores",
-    ],
-    grievanceOfficer: {
-      name: "Priya Kumar",
-      email: "grievance@wealthwisesolutions.com",
-    },
-    verifiedBySpring: false,
-  },
+  // {
+  //   "id": "18",
+  //   "firmName": "ApnaDhan",
+  //   "advisorName": "Preeti Zende",
+  //   "principalAdvisor": "Preeti Zende",
+  //   "sebiReg": "INA000012777",
+  //   "photo": "/advisors/preeti-zende.svg",
+  //   "location": "Pune, Maharashtra",
+  //   "tagline": "Your Dhan, Your Way! Your partner in building a secure and stress-free financial future.",
+  //   "specializations": ["Comprehensive Financial Planning", "Retirement Planning", "Goal-Based Investing", "Financial Planning for IT Professionals"],
+  //   "audience": ["IT Professionals", "Salaried Professionals", "Young Families", "NRIs"],
+  //   "about": "Preeti Zende is a SEBI Registered Investment Adviser and a CERTIFIED FINANCIAL PLANNERCM. With a background in the IT industry, she brings a unique, analytical approach to financial planning. She founded ApnaDhan to empower individuals and families to achieve financial independence through unbiased, process-driven advice. Preeti is passionate about simplifying personal finance and helping her clients build a life free from financial stress.",
+  //   "description": "ApnaDhan is a fee-only financial planning firm dedicated to your financial well-being. As a SEBI Registered Investment Adviser, we operate on a zero-commission model, ensuring our advice is always in your best interest. We do not sell any financial products. Our revenue comes solely from the fees paid by our clients, eliminating all conflicts of interest and allowing us to focus on what truly matters: your goals.",
+  //   "services": [
+  //     {
+  //       "name": "Comprehensive Financial Plan",
+  //       "description": "A detailed financial roadmap covering goal planning, risk profiling, insurance analysis, investment strategy, retirement planning, and tax optimization."
+  //     },
+  //     {
+  //       "name": "Express Plan (Quick Plan)",
+  //       "description": "A focused financial plan for young professionals or those with specific, immediate goals, providing actionable advice to get started."
+  //     },
+  //     {
+  //       "name": "Senior Citizen Plan",
+  //       "description": "Specialized planning for retirees or those nearing retirement, focusing on cash flow management, capital protection, and legacy planning."
+  //     },
+  //     {
+  //       "name": "Financial Wellness Session",
+  //       "description": "Customized financial wellness and literacy workshops for corporate employees to help them improve their financial health."
+  //     }
+  //   ],
+  //   "feeStructure": [
+  //     { "service": "Comprehensive Plan", "amount": "₹25,000" },
+  //     { "service": "Express Plan", "amount": "₹15,000" },
+  //     { "service": "Senior Citizen Plan", "amount": "₹15,000" }
+  //   ],
+  //   "testimonials": [
+  //     {
+  //       "text": "[Placeholder] Preeti's structured approach helped us understand our financial situation clearly. We now have a solid plan for our child's education and our retirement.",
+  //       "author": "A. Sharma",
+  //       "designation": "IT Professional, Pune"
+  //     },
+  //     {
+  //       "text": "[Placeholder] As an NRI, managing finances in India was complex. ApnaDhan simplified everything, from investments to tax compliance. Highly recommended.",
+  //       "author": "R. Singh",
+  //       "designation": "Software Engineer, USA"
+  //     },
+  //     {
+  //       "text": "[Placeholder] The fee-only model gave us confidence that the advice was truly for our benefit. The entire process was transparent and empowering.",
+  //       "author": "P. & S. Kulkarni",
+  //       "designation": "Family Clients"
+  //     }
+  //   ],
+  //   "videoUrl": "",
+  //   "ctaLinks": [
+  //     { "text": "Schedule a Consultation", "href": "", "variant": "primary" },
+  //     { "text": "Connect on WhatsApp", "href": "", "variant": "secondary" }
+  //   ],
+  //   "faqs": [
+  //     {
+  //       "question": "What does 'Fee-Only' financial planning mean?",
+  //       "answer": "It means our only compensation is the fee you pay for our advisory services. We do not receive any commissions or incentives for recommending any financial product, which ensures our advice is 100% unbiased and aligned with your interests."
+  //     },
+  //     {
+  //       "question": "Who is your ideal client?",
+  //       "answer": "We primarily work with salaried professionals, especially from the IT sector, and families who are serious about achieving their long-term financial goals through a structured and disciplined approach."
+  //     },
+  //     {
+  //       "question": "How do you help with tax planning?",
+  //       "answer": "We integrate tax planning into your overall financial plan. We analyze your income and investments to suggest strategies like maximizing deductions under Section 80C, tax-loss harvesting, and choosing tax-efficient investment vehicles."
+  //     },
+  //     {
+  //       "question": "How often will my financial plan be reviewed?",
+  //       "answer": "A comprehensive financial plan includes periodic reviews, typically annually or semi-annually, to ensure it remains aligned with your goals and any changes in your life circumstances. We are also available for consultations as needed."
+  //     }
+  //   ],
+  //   "clientTypePills": ["IT Professionals", "Salaried Professionals", "NRIs"],
+  //   "idealClientDescription": "Salaried individuals and families, particularly those in the IT industry, who are looking for a long-term partnership with a fee-only advisor to create a comprehensive, goal-oriented financial plan.",
+  //   "successStories": [
+  //     "Helped numerous IT professionals optimize their salary structure and ESOPs for long-term wealth creation.",
+  //     "Guided families in creating clear roadmaps for key life goals like children's education and early retirement.",
+  //     "Empowered clients to move from financial uncertainty to clarity and confidence with a structured plan."
+  //   ],
+  //   "grievanceOfficer": {
+  //     "name": "Preeti Zende",
+  //     "email": "preeti.zende@apanadhan.com"
+  //   },
+  //   "verifiedBySpring": false
+  // },
   {
     id: "19",
     firmName: "Alphaniti Fintech Private Limited",
