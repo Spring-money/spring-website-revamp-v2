@@ -81,7 +81,7 @@ export default function AdvisorDetailPage({
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
   const faqs = advisor.faqs ?? [];
   const advisorVideo = advisor.videoUrl;
-  const isSpecial = advisor.id === "1";
+  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "8";
 
   // Add FAQ videos only for specific advisor IDs
   const faqVideos = (() => {
@@ -299,6 +299,10 @@ export default function AdvisorDetailPage({
     // Special case for FinSharpe (advisor 5)
     if (advisorId === "5") {
       return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2"];
+    }
+    // Special case for FinSharpe (advisor 5)
+    if (advisorId === "7") {
+      return ["SEBI Registered Investment Advisor",];
     }
     
     // Return combined credentials
