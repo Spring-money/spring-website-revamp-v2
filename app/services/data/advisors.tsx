@@ -726,157 +726,157 @@
       "idealClientDescription": "For salaried professionals and families, especially in the IT sector, seeking unbiased fee-only advice for long-term wealth creation and financial peace of mind."
     },
      /* ----------------------- Advisor 8 ----------------------- */
-     {
-      "id": "8",
-      "firmName": "Advent Financial",
-      "advisorName": "Rahul Agarwal",
-      "principalAdvisor": "Rahul Agarwal",
-      "reg": "SEBI RIA REG NO: INA300003616",
-      "photo": "/advisors/rahul-agarwal.svg",
-      "location": "Mumbai, Maharashtra",
-      "tagline": "Build a life you love with a financial plan that puts you first.",
-      "specializations": ["Retirement Planning", "NRI Financial Planning", "Investment Portfolio Review"],
-      "audience": ["Salaried Professionals", "Business Owners", "NRIs"],
-      "about": "Rahul Agarwal is a Certified financial Planner (CFP), and a Registered Life Planner with over 15 years of experience in the financial services industry. Prior to founding Advent Financial, he held key positions at HDFC Bank & ICICI Bank. He is dedicated to helping families and individuals achieve their financial goals through structured, unbiased, and process-driven advice.",
-      "description": "Advent Financial is a SEBI Registered Investment Adviser dedicated to providing unbiased, fee-only financial planning. We believe that true financial advice should be free from conflicts of interest. That is why we do not sell any financial products or earn any commissions. Our sole focus is on crafting personalized, process-driven financial roadmaps that empower our clients to achieve their most important life goals. With a commitment to transparency and integrity, we act as your trusted partner, ensuring your financial plan is built exclusively around your needs and your future.",
-      "services":[
-        {
-          "name": "Bespoke Financial Planning",
-          "description": "A personalized roadmap for individuals and couples who want clarity and confidence in their financial life. We work with you to organize your finances, explore life decisions through scenario modeling, and create an actionable plan for your most important goals—from retirement to tax-aware investing."
-        },
-        {
-          "name": "Ongoing Wealth Advisory",
-          "description": "For those who want a long-term thinking partner to manage their wealth with intention. This service includes ongoing investment management, values-based portfolio strategies, and coordination with your tax and estate professionals, so you can focus on living your life, knowing your finances are cared for."
-        },
-        {
-          "name": "Goal-Specific Planning",
-          "description": "Focused advisory when you need to solve for a single, important objective. Whether it's planning for a home purchase, your child's education, or reviewing your insurance, we provide targeted analysis and clear recommendations to help you make the best choice."
-        },
-        {
-          "name": "Corporate Financial Wellness",
-          "description": "Empower your team with financial clarity. We design and deliver customized workshops and financial wellness sessions that enhance literacy, reduce money-related stress, and help your employees build a more secure future."
-        }
-      ],
-      "feeStructure": [
-        { "service": "Comprehensive Plan (Resident)", "amount": "₹25,000" },
-        { "service": "Comprehensive Plan (NRI)", "amount": "₹30,000" },
-        { "service": "Modular Planning (e.g., Retirement)", "amount": "₹10,000" },
-        { "service": "Investment Portfolio Review", "amount": "₹15,000" }
-      ],
-      "testimonials": [
-        {
-          "text": "[Placeholder] Rahul's deep understanding of financial markets and his structured approach gave us the clarity we needed for our retirement planning. His experience truly shows.",
-          "author": "R. Verma",
-          "designation": "Business Owner, Delhi"
-        },
-        {
-          "text": "[Placeholder] As an NRI, I was looking for a trustworthy advisor. Advent Financial's fee-only model and transparent process made them the perfect choice.",
-          "author": "Priya Menon",
-          "designation": "IT Consultant, Dubai"
-        },
-        {
-          "text": "[Placeholder] The portfolio review was an eye-opener. Rahul helped us rebalance our investments and optimize for taxes, significantly improving our potential returns.",
-          "author": "A. & S. Gupta",
-          "designation": "Salaried Professionals, Noida"
-        }
-      ],
-      "sebiRegistrationNumber": "INA100004325",
-      "verifiedBySpring": true,
-      "grievanceOfficer": {
-        "name": "Rahul Agarwal",
-        "email": "rahul@adventfa.com"
-      },
-      "cta": [
-        {
-          "text": "Schedule a Consultation",
-          "href": "https://meetings.hubspot.com/rahul21?uuid=11b7367a-0300-4b48-8369-a09349457cc5",
-          "variant": "primary"
-        }
-      ],
-      "clientTypePills": [
-        "Business Owners",
-        "NRI Clients",
-        "Retirement Planning",
-        "Fee-Only Advisory"
-      ],
-      "idealClientDescription": "For salaried professionals, business owners, and NRIs seeking a comprehensive, long-term financial plan from an experienced and unbiased fee-only advisor."
-    },
-     /* ----------------------- Advisor 9 ----------------------- */
-     {
-      "id": "9",
-      "firmName": "Right Returns",
-      "advisorName": "Devang Shah",
-      "principalAdvisor": "Devang Shah",
-      "reg": "SEBI RIA REG NO: INA000004930",
-      "photo": "/advisors/devang-shah.svg",
-      "location": "Mumbai, Maharashtra",
-      "tagline": "Holistic and unbiased financial advice for a worry-free life.",
-      "specializations": ["NRI Financial Planning", "Investment Portfolio Review", "Fee-Only Advisory"],
-      "audience": ["Families", "Salaried Professionals", "NRIs"],
-      "about": "Devang Shah is a SEBI Registered Investment Adviser with over 20 years of rich experience in the financial services industry, including senior roles at HDFC Bank (Private Banking) and ICICI Bank (Wealth Management). He is passionate about providing high-quality, ethical advice to help families achieve their financial dreams.",
-      "description": "Right Returns is a SEBI Registered Investment Advisory and a dedicated fee-only financial planning firm. We do not sell any financial products or receive commissions, ensuring our advice is always 100% unbiased and aligned with your best interests. Our mission is to provide financial clarity and confidence to our clients through a structured and transparent advisory process.",
-      "services": [
-          {
-            "name": "Investment & Wealth Advisory",
-            "description": "Navigate market uncertainty with clarity. We provide unbiased investment advice and strategic wealth advisory, helping you build a resilient portfolio designed to achieve favourable outcomes while protecting against unfavourable ones."
-          },
-          {
-            "name": "Retirement & Estate Planning",
-            "description": "Plan for a secure future and a lasting legacy with confidence. We create robust retirement income strategies and thoughtful estate plans, ensuring you and your loved ones are financially protected through all of life's stages."
-          },
-          {
-            "name": "Children’s Education Funding",
-            "description": "Secure your child's future education, whether in India or overseas. We design specialized funding strategies that account for inflation and currency risk, ensuring you are fully prepared to meet this critical financial goal without compromise."
-          },
-          {
-            "name": "Insurance Needs Analysis",
-            "description": "Gain clarity on your true risk exposure. We conduct a comprehensive, unbiased evaluation of your life and health insurance needs to ensure your family is adequately protected, giving you peace of mind without unnecessary costs."
-          }
-      ],
-      "feeStructure": [
-        { "service": "Comprehensive Plan (Resident)", "amount": "₹25,000" },
-        { "service": "Comprehensive Plan (NRI)", "amount": "US$ 500 / AED 1800" },
-        { "service": "Investment Portfolio Review", "amount": "₹15,000" },
-        { "service": "Financial Second Opinion", "amount": "₹7,500" }
-      ],
-      "testimonials": [
-        {
-          "text": "[Placeholder] Devang's experience in private banking is evident in his professional approach. He simplified complex financial concepts and gave our family a clear path forward.",
-          "author": "A. Mehta",
-          "designation": "Business Owner, Mumbai"
-        },
-        {
-          "text": "[Placeholder] As an NRI, I needed an advisor I could trust. The fee-only model and transparent communication at Right Returns were exactly what I was looking for.",
-          "author": "S. Patel",
-          "designation": "Tech Professional, Canada"
-        },
-        {
-          "text": "[Placeholder] The portfolio review was incredibly insightful. Devang identified redundancies and helped me re-align my investments for better long-term growth.",
-          "author": "Priya R.",
-          "designation": "Marketing Head, Bangalore"
-        }
-      ],
-      "sebiRegistrationNumber": "INA000015555",
-      "verifiedBySpring": false,
-      "grievanceOfficer": {
-        "name": "Devang Shah",
-        "email": "devang@rightreturns.com"
-      },
-      "cta": [
-        {
-          "text": "Email us",
-          "href": "mailto:assist@rightreturns.com",
-          "variant": "primary"
-        }
-      ],
-      "clientTypePills": [
-        "Families",
-        "NRIs",
-        "Retirement Planning",
-        "Fee-Only Advisory"
-      ],
-      "idealClientDescription": "For individuals, families, and NRIs seeking unbiased, expert financial advice from a seasoned professional with a deep background in banking and wealth management."
-    },
+    //  {
+    //   "id": "8",
+    //   "firmName": "Advent Financial",
+    //   "advisorName": "Rahul Agarwal",
+    //   "principalAdvisor": "Rahul Agarwal",
+    //   "reg": "SEBI RIA REG NO: INA300003616",
+    //   "photo": "/advisors/rahul-agarwal.svg",
+    //   "location": "Mumbai, Maharashtra",
+    //   "tagline": "Build a life you love with a financial plan that puts you first.",
+    //   "specializations": ["Retirement Planning", "NRI Financial Planning", "Investment Portfolio Review"],
+    //   "audience": ["Salaried Professionals", "Business Owners", "NRIs"],
+    //   "about": "Rahul Agarwal is a Certified financial Planner (CFP), and a Registered Life Planner with over 15 years of experience in the financial services industry. Prior to founding Advent Financial, he held key positions at HDFC Bank & ICICI Bank. He is dedicated to helping families and individuals achieve their financial goals through structured, unbiased, and process-driven advice.",
+    //   "description": "Advent Financial is a SEBI Registered Investment Adviser dedicated to providing unbiased, fee-only financial planning. We believe that true financial advice should be free from conflicts of interest. That is why we do not sell any financial products or earn any commissions. Our sole focus is on crafting personalized, process-driven financial roadmaps that empower our clients to achieve their most important life goals. With a commitment to transparency and integrity, we act as your trusted partner, ensuring your financial plan is built exclusively around your needs and your future.",
+    //   "services":[
+    //     {
+    //       "name": "Bespoke Financial Planning",
+    //       "description": "A personalized roadmap for individuals and couples who want clarity and confidence in their financial life. We work with you to organize your finances, explore life decisions through scenario modeling, and create an actionable plan for your most important goals—from retirement to tax-aware investing."
+    //     },
+    //     {
+    //       "name": "Ongoing Wealth Advisory",
+    //       "description": "For those who want a long-term thinking partner to manage their wealth with intention. This service includes ongoing investment management, values-based portfolio strategies, and coordination with your tax and estate professionals, so you can focus on living your life, knowing your finances are cared for."
+    //     },
+    //     {
+    //       "name": "Goal-Specific Planning",
+    //       "description": "Focused advisory when you need to solve for a single, important objective. Whether it's planning for a home purchase, your child's education, or reviewing your insurance, we provide targeted analysis and clear recommendations to help you make the best choice."
+    //     },
+    //     {
+    //       "name": "Corporate Financial Wellness",
+    //       "description": "Empower your team with financial clarity. We design and deliver customized workshops and financial wellness sessions that enhance literacy, reduce money-related stress, and help your employees build a more secure future."
+    //     }
+    //   ],
+    //   "feeStructure": [
+    //     { "service": "Comprehensive Plan (Resident)", "amount": "₹25,000" },
+    //     { "service": "Comprehensive Plan (NRI)", "amount": "₹30,000" },
+    //     { "service": "Modular Planning (e.g., Retirement)", "amount": "₹10,000" },
+    //     { "service": "Investment Portfolio Review", "amount": "₹15,000" }
+    //   ],
+    //   "testimonials": [
+    //     {
+    //       "text": "[Placeholder] Rahul's deep understanding of financial markets and his structured approach gave us the clarity we needed for our retirement planning. His experience truly shows.",
+    //       "author": "R. Verma",
+    //       "designation": "Business Owner, Delhi"
+    //     },
+    //     {
+    //       "text": "[Placeholder] As an NRI, I was looking for a trustworthy advisor. Advent Financial's fee-only model and transparent process made them the perfect choice.",
+    //       "author": "Priya Menon",
+    //       "designation": "IT Consultant, Dubai"
+    //     },
+    //     {
+    //       "text": "[Placeholder] The portfolio review was an eye-opener. Rahul helped us rebalance our investments and optimize for taxes, significantly improving our potential returns.",
+    //       "author": "A. & S. Gupta",
+    //       "designation": "Salaried Professionals, Noida"
+    //     }
+    //   ],
+    //   "sebiRegistrationNumber": "INA100004325",
+    //   "verifiedBySpring": true,
+    //   "grievanceOfficer": {
+    //     "name": "Rahul Agarwal",
+    //     "email": "rahul@adventfa.com"
+    //   },
+    //   "cta": [
+    //     {
+    //       "text": "Schedule a Consultation",
+    //       "href": "https://meetings.hubspot.com/rahul21?uuid=11b7367a-0300-4b48-8369-a09349457cc5",
+    //       "variant": "primary"
+    //     }
+    //   ],
+    //   "clientTypePills": [
+    //     "Business Owners",
+    //     "NRI Clients",
+    //     "Retirement Planning",
+    //     "Fee-Only Advisory"
+    //   ],
+    //   "idealClientDescription": "For salaried professionals, business owners, and NRIs seeking a comprehensive, long-term financial plan from an experienced and unbiased fee-only advisor."
+    // },
+    //  /* ----------------------- Advisor 9 ----------------------- */
+    //  {
+    //   "id": "9",
+    //   "firmName": "Right Returns",
+    //   "advisorName": "Devang Shah",
+    //   "principalAdvisor": "Devang Shah",
+    //   "reg": "SEBI RIA REG NO: INA000004930",
+    //   "photo": "/advisors/devang-shah.svg",
+    //   "location": "Mumbai, Maharashtra",
+    //   "tagline": "Holistic and unbiased financial advice for a worry-free life.",
+    //   "specializations": ["NRI Financial Planning", "Investment Portfolio Review", "Fee-Only Advisory"],
+    //   "audience": ["Families", "Salaried Professionals", "NRIs"],
+    //   "about": "Devang Shah is a SEBI Registered Investment Adviser with over 20 years of rich experience in the financial services industry, including senior roles at HDFC Bank (Private Banking) and ICICI Bank (Wealth Management). He is passionate about providing high-quality, ethical advice to help families achieve their financial dreams.",
+    //   "description": "Right Returns is a SEBI Registered Investment Advisory and a dedicated fee-only financial planning firm. We do not sell any financial products or receive commissions, ensuring our advice is always 100% unbiased and aligned with your best interests. Our mission is to provide financial clarity and confidence to our clients through a structured and transparent advisory process.",
+    //   "services": [
+    //       {
+    //         "name": "Investment & Wealth Advisory",
+    //         "description": "Navigate market uncertainty with clarity. We provide unbiased investment advice and strategic wealth advisory, helping you build a resilient portfolio designed to achieve favourable outcomes while protecting against unfavourable ones."
+    //       },
+    //       {
+    //         "name": "Retirement & Estate Planning",
+    //         "description": "Plan for a secure future and a lasting legacy with confidence. We create robust retirement income strategies and thoughtful estate plans, ensuring you and your loved ones are financially protected through all of life's stages."
+    //       },
+    //       {
+    //         "name": "Children’s Education Funding",
+    //         "description": "Secure your child's future education, whether in India or overseas. We design specialized funding strategies that account for inflation and currency risk, ensuring you are fully prepared to meet this critical financial goal without compromise."
+    //       },
+    //       {
+    //         "name": "Insurance Needs Analysis",
+    //         "description": "Gain clarity on your true risk exposure. We conduct a comprehensive, unbiased evaluation of your life and health insurance needs to ensure your family is adequately protected, giving you peace of mind without unnecessary costs."
+    //       }
+    //   ],
+    //   "feeStructure": [
+    //     { "service": "Comprehensive Plan (Resident)", "amount": "₹25,000" },
+    //     { "service": "Comprehensive Plan (NRI)", "amount": "US$ 500 / AED 1800" },
+    //     { "service": "Investment Portfolio Review", "amount": "₹15,000" },
+    //     { "service": "Financial Second Opinion", "amount": "₹7,500" }
+    //   ],
+    //   "testimonials": [
+    //     {
+    //       "text": "[Placeholder] Devang's experience in private banking is evident in his professional approach. He simplified complex financial concepts and gave our family a clear path forward.",
+    //       "author": "A. Mehta",
+    //       "designation": "Business Owner, Mumbai"
+    //     },
+    //     {
+    //       "text": "[Placeholder] As an NRI, I needed an advisor I could trust. The fee-only model and transparent communication at Right Returns were exactly what I was looking for.",
+    //       "author": "S. Patel",
+    //       "designation": "Tech Professional, Canada"
+    //     },
+    //     {
+    //       "text": "[Placeholder] The portfolio review was incredibly insightful. Devang identified redundancies and helped me re-align my investments for better long-term growth.",
+    //       "author": "Priya R.",
+    //       "designation": "Marketing Head, Bangalore"
+    //     }
+    //   ],
+    //   "sebiRegistrationNumber": "INA000015555",
+    //   "verifiedBySpring": false,
+    //   "grievanceOfficer": {
+    //     "name": "Devang Shah",
+    //     "email": "devang@rightreturns.com"
+    //   },
+    //   "cta": [
+    //     {
+    //       "text": "Email us",
+    //       "href": "mailto:assist@rightreturns.com",
+    //       "variant": "primary"
+    //     }
+    //   ],
+    //   "clientTypePills": [
+    //     "Families",
+    //     "NRIs",
+    //     "Retirement Planning",
+    //     "Fee-Only Advisory"
+    //   ],
+    //   "idealClientDescription": "For individuals, families, and NRIs seeking unbiased, expert financial advice from a seasoned professional with a deep background in banking and wealth management."
+    // },
     // Add bulk advisors using the template system
     ...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
