@@ -2779,88 +2779,88 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
     verifiedBySpring: false,
   },
-  {
-    id: "39",
-    firmName: "Right Returns",
-    advisorName: "Devang Shah",
-    principalAdvisor: " Devang Shah",
-    sebiReg: "INA000004930",
-    photo: "/advisors/devang-shah.svg",
-    location: "Mumbai, Maharashtra",
-    tagline: "Smart tax planning for maximum savings",
-    specializations: [
-      "Tax Planning",
-      "Financial Planning",
-      "Business Planning",
-    ],
-    audience: ["Business Owners", "Salaried"],
-    about:
-      "Devang Shah is a highly qualified professional with a strong background in taxation and finance. He specializes in tax optimization strategies for individuals and businesses.",
-    description:
-      "Right Returns was founded in 2000 because while there was a lot of talent representing product vendors (such as Mutual Funds, Banks and Insurance Companies) there was none to represent the consumer of these products. We represented and got paid directly by clients way back in 2000 when Financial Planning as well as Fiduciary Interest were terms unheard of, not only to consumers but to the industry at large.",
-    services: [
-      {
-        name: "Personal Tax Planning",
-        description:
-          "Comprehensive tax planning for individuals including salary optimization and investment planning.",
-      },
-      {
-        name: "Business Tax Planning",
-        description:
-          "Tax optimization strategies for businesses and self-employed professionals.",
-      },
-      {
-        name: "Tax-Saving Investment Advisory",
-        description:
-          "Guidance on tax-saving instruments and investment strategies.",
-      },
-    ],
-    feeStructure: [
-      { service: "Tax Planning", amount: "₹15,000 – ₹25,000" },
-      { service: "Business Planning", amount: "₹30,000 – ₹50,000" },
-    ],
-    testimonials: [
-      {
-        text: "Devang Shah's tax planning saved me over ₹3 lakhs in taxes this year.",
-        author: "Rajesh Kumar",
-        designation: "Business Owner",
-      },
-      {
-        text: "Excellent business tax planning that optimized my company's tax structure.",
-        author: "Priya Sharma",
-        designation: "Entrepreneur",
-      },
-    ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "Tax Planning", href: "", variant: "primary" },
-      { text: "Business Planning", href: "", variant: "secondary" },
-    ],
-    faqs: [
-      {
-        question: "What is tax planning?",
-        answer:
-          "Strategic planning to minimize tax liability through legal means like investments, deductions, and exemptions.",
-      },
-      {
-        question: "How much can I save through tax planning?",
-        answer:
-          "Depending on your income and investments, you can save 20-40% of your tax liability through proper planning.",
-      },
-    ],
-    clientTypePills: ["Tax Planning", "Business Owners"],
-    idealClientDescription:
-      "Individuals and business owners seeking expert tax planning and optimization strategies.",
-    successStories: [
-      "Average tax savings of ₹2-5 lakhs per client",
-      "Served 100+ business clients",
-    ],
-    grievanceOfficer: {
-      name: "Tax Support",
-      email: "tax@taxsmart.com",
-    },
-    verifiedBySpring: false,
-  },
+  // {
+  //   id: "39",
+  //   firmName: "Right Returns",
+  //   advisorName: "Devang Shah",
+  //   principalAdvisor: " Devang Shah",
+  //   sebiReg: "INA000004930",
+  //   photo: "/advisors/devang-shah.svg",
+  //   location: "Mumbai, Maharashtra",
+  //   tagline: "Smart tax planning for maximum savings",
+  //   specializations: [
+  //     "Tax Planning",
+  //     "Financial Planning",
+  //     "Business Planning",
+  //   ],
+  //   audience: ["Business Owners", "Salaried"],
+  //   about:
+  //     "Devang Shah is a highly qualified professional with a strong background in taxation and finance. He specializes in tax optimization strategies for individuals and businesses.",
+  //   description:
+  //     "Right Returns was founded in 2000 because while there was a lot of talent representing product vendors (such as Mutual Funds, Banks and Insurance Companies) there was none to represent the consumer of these products. We represented and got paid directly by clients way back in 2000 when Financial Planning as well as Fiduciary Interest were terms unheard of, not only to consumers but to the industry at large.",
+  //   services: [
+  //     {
+  //       name: "Personal Tax Planning",
+  //       description:
+  //         "Comprehensive tax planning for individuals including salary optimization and investment planning.",
+  //     },
+  //     {
+  //       name: "Business Tax Planning",
+  //       description:
+  //         "Tax optimization strategies for businesses and self-employed professionals.",
+  //     },
+  //     {
+  //       name: "Tax-Saving Investment Advisory",
+  //       description:
+  //         "Guidance on tax-saving instruments and investment strategies.",
+  //     },
+  //   ],
+  //   feeStructure: [
+  //     { service: "Tax Planning", amount: "₹15,000 – ₹25,000" },
+  //     { service: "Business Planning", amount: "₹30,000 – ₹50,000" },
+  //   ],
+  //   testimonials: [
+  //     {
+  //       text: "Devang Shah's tax planning saved me over ₹3 lakhs in taxes this year.",
+  //       author: "Rajesh Kumar",
+  //       designation: "Business Owner",
+  //     },
+  //     {
+  //       text: "Excellent business tax planning that optimized my company's tax structure.",
+  //       author: "Priya Sharma",
+  //       designation: "Entrepreneur",
+  //     },
+  //   ],
+  //   videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
+  //   ctaLinks: [
+  //     { text: "Tax Planning", href: "", variant: "primary" },
+  //     { text: "Business Planning", href: "", variant: "secondary" },
+  //   ],
+  //   faqs: [
+  //     {
+  //       question: "What is tax planning?",
+  //       answer:
+  //         "Strategic planning to minimize tax liability through legal means like investments, deductions, and exemptions.",
+  //     },
+  //     {
+  //       question: "How much can I save through tax planning?",
+  //       answer:
+  //         "Depending on your income and investments, you can save 20-40% of your tax liability through proper planning.",
+  //     },
+  //   ],
+  //   clientTypePills: ["Tax Planning", "Business Owners"],
+  //   idealClientDescription:
+  //     "Individuals and business owners seeking expert tax planning and optimization strategies.",
+  //   successStories: [
+  //     "Average tax savings of ₹2-5 lakhs per client",
+  //     "Served 100+ business clients",
+  //   ],
+  //   grievanceOfficer: {
+  //     name: "Tax Support",
+  //     email: "tax@taxsmart.com",
+  //   },
+  //   verifiedBySpring: false,
+  // },
   {
     id: "40",
     firmName: "Buoyant Capital",
