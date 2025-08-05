@@ -213,9 +213,8 @@
          {
            text: "Schedule Meeting",
            href: "https://wa.me/+919811031535",
-           variant: "primary",
-           icon: <Calendar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
    
        clientTypePills: [
@@ -298,9 +297,8 @@
          {
            text: "View Smallcase",
            href: "https://candorinvesting.smallcase.com/",
-           variant: "primary",
-           icon: <ChartBar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
    
        clientTypePills: ["Business Owners", "Entrepreneurs"],
@@ -383,9 +381,8 @@
          {
            text: "Schedule Meeting",
            href: "https://calendly.com/kiran-nswealth",
-           variant: "primary",
-           icon: <Calendar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
    
        faqs: [
@@ -484,9 +481,8 @@
          {
            text: "Schedule Meeting",
            href: "https://wa.me/+919769935011",
-           variant: "primary",
-           icon: <Calendar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
    
        clientTypePills: [
@@ -552,9 +548,8 @@
          {
            text: "View Smallcase",
            href: "https://www.smallcase.com/manager/finsharpe/smallcases",
-           variant: "primary",
-           icon: <ChartBar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
        faqs: [
         {
@@ -642,9 +637,8 @@
          {
            text: "Schedule Meeting",
            href: "https://calendly.com/enquiry-bachhat",
-           variant: "primary",
-           icon: <Calendar size={16} className="mr-2" />,
-         },
+           variant: "primary"
+         }
        ],
    
        clientTypePills: ["NRIs", "Estate Planning Clients"],
@@ -663,7 +657,7 @@
       "tagline": "Your Dhan, Your Way! Partnering with you for a secure and stress-free financial future.",
       "specializations": ["Comprehensive Financial Planning", "Retirement Planning", "Fee-Only Advisory"],
       "audience": ["Salaried Professionals", "IT Professionals", "NRIs"],
-      "about": "Preeti Zende is a SEBI Registered Investment Adviser and the founder of Apana Dhan. With a successful prior career in the IT industry, she brings a uniquely analytical and process-driven perspective to personal finance. She is passionate about financial literacy and believes everyone deserves a life free from financial anxiety.",
+      "about": "Preeti Zende is a SEBI Registered Investment Adviser and the founder & CEO of Apana Dhan. She brings a uniquely analytical and process-driven perspective to personal finance. She is passionate about financial literacy and believes everyone deserves a life free from financial anxiety.",
       "description": "ApnaDhan is a SEBI Registered Investment Adviser and a dedicated fee-only financial planning firm. We do not sell any financial products or earn commissions, ensuring our advice is always 100% unbiased and in your best interest. Our sole focus is to provide clear, actionable financial roadmaps that empower our clients to achieve their goals.",
       "services": [
         {
@@ -684,8 +678,9 @@
         }
       ],
       "feeStructure": [
-        { "service": "Comprehensive Plan", "amount": "₹25,000" },
-        { "service": "Express / Senior Citizen Plan", "amount": "₹15,000" }
+        { "service": "Comprehensive Plan", "amount": "₹20,000" },
+        { "service": "Express Plan", "amount": "₹15,000" },
+        { "service": "Special Senior Citizen plan (in some cases)", "amount": "₹15,000" }
       ],
       "testimonials": [
         {
@@ -710,18 +705,17 @@
         "name": "Preeti Zende",
         "email": "preeti.zende@apanadhan.com"
       },
-      "cta": [
+      cta: [
         {
-          "text": "Schedule a Consultation",
-          "href": "https://wa.me/919923202026",
-          "variant": "primary"
+          text: "Book a Call",
+          href: "https://wa.me/9833310722",
+          variant: "primary"
         }
       ],
       "clientTypePills": [
         "IT Professionals",
         "Fee-Only Planning",
-        "Retirement Planning",
-        "NRI Services"
+        "Retirement Planning"
       ],
       "idealClientDescription": "For salaried professionals and families, especially in the IT sector, seeking unbiased fee-only advice for long-term wealth creation and financial peace of mind."
     },

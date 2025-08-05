@@ -300,9 +300,9 @@ export default function AdvisorDetailPage({
     if (advisorId === "5") {
       return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2"];
     }
-    // Special case for FinSharpe (advisor 5)
+    // Special case for Apanadhan (advisor 7)
     if (advisorId === "7") {
-      return ["SEBI Registered Investment Advisor",];
+      return ["SEBI Registered Investment Advisor", "Associate of Indian Insitute of India", "PG Diploma in Business Finance"];
     }
     
     // Return combined credentials
@@ -381,31 +381,22 @@ export default function AdvisorDetailPage({
                     </div>
                     <div className="mt-6 flex flex-wrap gap-4">
                       {/* Custom CTAs */}
-                      {advisorCTAs.map((cta, index) => {
-                        // Check if advisor ID is 7-12 (disable navigation)
-                        const isDisabled = parseInt(advisor.id) >= 7 && parseInt(advisor.id) <= 12;
-                        
-                        return (
-                          <a
-                            key={index}
-                            href={cta.href}
-                            target={cta.href.startsWith("tel:") ? undefined : "_blank"}
-                            rel={cta.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
-                            onClick={isDisabled ? (e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                            } : undefined}
-                            className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
-                              cta.variant === "primary"
-                                ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
-                                : "border border-spring-green bg-transparent text-spring-green hover:bg-green-50"
-                            }`}
-                          >
-                            {cta.icon}
-                            {cta.text}
-                          </a>
-                        );
-                      })}
+                      {advisorCTAs.map((cta, index) => (
+                        <a
+                          key={index}
+                          href={cta.href}
+                          target={cta.href.startsWith("tel:") ? undefined : "_blank"}
+                          rel={cta.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
+                          className={`inline-flex h-10 items-center justify-center rounded-md px-4 font-medium ${
+                            cta.variant === "primary"
+                              ? "bg-[#108e66] text-white shadow hover:bg-[#0d7a55] focus:outline-none focus:ring-2 focus:ring-[#108E66] focus:ring-offset-2"
+                              : "border border-spring-green bg-transparent text-spring-green hover:bg-green-50"
+                          }`}
+                        >
+                          {cta.icon}
+                          {cta.text}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </div>
