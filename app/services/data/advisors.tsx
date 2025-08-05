@@ -14,6 +14,7 @@
    
    export type Specialization =
      | "Retirement Planning"
+     | "Goal-based Planning"
      | "NRI Financial Planning"
      | "Investment Portfolio Review"
      | "Financial Well-being for Corporates"
@@ -585,12 +586,12 @@
        tagline:
          "Empowering your financial journey with unbiased, simplified, and transparent advice.",
    
-       specializations: ["Estate Planning", "Retirement Planning"],
+       specializations: ["Goal-based Planning", "Retirement Planning", "Estate Planning"],
        audience: ["NRIs", "HNI", "Young Professionals"],
    
        about:
          "Bachhat is built on the pillars of transparency and unbiased advice, providing personalized strategies for financial well-being.",
-       description: `Founded by CA Vishal Bharat Shah, Bachhat Money empowers clients through research-backed and conflict-free advisory. Vishal brings over two decades of experience across Finance, Treasury, M&A, and Strategy.`,
+       description: `Founded by CA Vishal Bharat Shah, Bachhat empowers clients through research-backed and conflict-free advisory. Vishal brings over two decades of experience across Finance, Treasury, M&A, and Strategy.`,
    
        services: [
          {
@@ -616,19 +617,12 @@
        ],
    
        feeStructure: [
-         { service: "Financial Health Check-up", amount: "₹10,000 – ₹12,000" },
-         { service: "Holistic Financial Planning", amount: "₹18,000 – ₹22,000" },
+         { service: "Financial Health Check-up", amount: "₹18,000 – ₹22,000" },
+         { service: "Holistic Financial Planning", amount: "₹10,000 – ₹12,000" },
        ],
-   
-     
-       
-   
        testimonials: [],
    
        videoUrl: "https://www.youtube.com/embed/l5wtlLvda9Q",
-   
-
-   
        sebiRegistrationNumber: "INA000019220",
        verifiedBySpring: true,
        grievanceOfficer: { name: "Neha Kapoor", email: "grievance@globalindianadvisors.com" },
@@ -636,14 +630,14 @@
        cta: [
          {
            text: "Schedule Meeting",
-           href: "https://calendly.com/enquiry-bachhat",
+           href: "https://cutt.ly/NrDAgfXM",
            variant: "primary"
          }
        ],
    
-       clientTypePills: ["NRIs", "Estate Planning Clients"],
+       clientTypePills: ["NRIs", "Couples in 30+ Years","Estate Planning Clients"],
        idealClientDescription:
-         "Bachhat Money serves NRIs and individuals 45+ with established portfolios seeking expert guidance for comprehensive wealth and estate management.",
+         "Bachhat serves NRIs, Couples in 30+ Years, and 45+ Individuals with established portfolios seeking expert guidance for comprehensive wealth and estate management.",
      },
      /* ----------------------- Advisor 7 ----------------------- */
      {

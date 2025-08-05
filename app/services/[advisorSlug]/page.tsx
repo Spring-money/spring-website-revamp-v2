@@ -300,7 +300,10 @@ export default function AdvisorDetailPage({
     if (advisorId === "5") {
       return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2"];
     }
-    // Special case for Apanadhan (advisor 7)
+    // Special case for Bachhat (advisor 6)
+    if (advisorId === "6") {
+      return ["SEBI Registered Investment Advisor", "Chartered Accountant and CFA (Level 3 Passed Out)"];
+    }
     if (advisorId === "7") {
       return ["SEBI Registered Investment Advisor", "Associate of Indian Insitute of India", "PG Diploma in Business Finance"];
     }
