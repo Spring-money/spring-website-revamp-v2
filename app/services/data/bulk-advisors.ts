@@ -1009,104 +1009,96 @@ export const bulkAdvisorData: AdvisorInput[] = [
     verifiedBySpring: false,
   },
   {
-    id: "17",
-    firmName: "Advent",
-    advisorName: "Rahul Agarwal",
-    principalAdvisor: "Rahul Agarwal",
-    sebiReg: "INA000016223",
-    photo: "/advisors/rahul-agarwal.svg",
-    location: "Pune, Maharashtra",
-    tagline:
-      "Wealth Management, Financial Planning, Tax Planning, Insurance Planning, Investment Planning, Retirement Planning, Estate Planning, and more.",
-    specializations: ["Retirement Planning", "Insurance"],
-    audience: ["Young Professionals", "Salaried"],
-    about:
-      "Rahul Agarwal is a CERTIFIED FINANCIAL PLANNERCM focused on comprehensive Financial Planning, Tax Planning, Insurance Planning and Investment Planning issues for private clients and HNI. He has earned the CFPCM designation from the Financial Planning Standard Board, India",
-    description:
-      "We offer a progressive planning practice that differentiates itself by being disciplined, well researched and profitable. We are a privately owned company and therefore core decisions regarding our processes and practices start at grassroots, ensuring all angles are covered in the decision making process. It is our belief that by providing a personalized and consistent service experience, we ensure long and fruitful relationships with our clients. In the true spirit of our commitment, we conduct open discussions to seek first to understand what is important to the client and then to be understood when finding solutions to their financial position.",
-    services: [
+    "id": "8",
+    "firmName": "Advent Financial",
+    "advisorName": "Rahul Agarwal",
+    "principalAdvisor": "Rahul Agarwal",
+    "sebiReg": "INA300003616",
+    "photo": "/advisors/rahul-agarwal.svg",
+    "location": "Mumbai, Maharashtra",
+    "tagline": "Build a life you love with a financial plan that puts you first.",
+    "specializations": ["Retirement Planning", "NRI Financial Planning", "Investment Portfolio Review"],
+    "audience": ["Salaried Professionals", "Business Owners", "NRIs"],
+    "about": "Rahul Agarwal is a Certified financial Planner (CFP), and a Registered Life Planner with over 15 years of experience in the financial services industry. Prior to founding Advent Financial, he held key positions at HDFC Bank & ICICI Bank. He is dedicated to helping families and individuals achieve their financial goals through structured, unbiased, and process-driven advice.",
+    "description": "Advent Financial is a SEBI Registered Investment Adviser dedicated to providing unbiased, fee-only financial planning. We believe that true financial advice should be free from conflicts of interest. That is why we do not sell any financial products or earn any commissions. Our sole focus is on crafting personalized, process-driven financial roadmaps that empower our clients to achieve their most important life goals. With a commitment to transparency and integrity, we act as your trusted partner, ensuring your financial plan is built exclusively around your needs and your future.",
+    "services":[
       {
-        name: "Comprehensive Financial Planning",
-        description:
-          "Complete financial roadmap covering investments, insurance, tax planning, and retirement goals.",
+        "name": "Bespoke Financial Planning",
+        "description": "A personalized roadmap for individuals and couples who want clarity and confidence in their financial life. We work with you to organize your finances, explore life decisions through scenario modeling, and create an actionable plan for your most important goals—from retirement to tax-aware investing."
       },
       {
-        name: "Tax Optimization Strategies",
-        description:
-          "Strategic tax planning to minimize your tax liability while maximizing savings and investments.",
+        "name": "Ongoing Wealth Advisory",
+        "description": "For those who want a long-term thinking partner to manage their wealth with intention. This service includes ongoing investment management, values-based portfolio strategies, and coordination with your tax and estate professionals, so you can focus on living your life, knowing your finances are cared for."
       },
       {
-        name: "Retirement Corpus Building",
-        description:
-          "Systematic approach to building retirement wealth through SIPs, EPF optimization, and smart investments.",
+        "name": "Goal-Specific Planning",
+        "description": "Focused advisory when you need to solve for a single, important objective. Whether it's planning for a home purchase, your child's education, or reviewing your insurance, we provide targeted analysis and clear recommendations to help you make the best choice."
       },
       {
-        name: "Portfolio Review & Rebalancing",
-        description:
-          "Regular portfolio analysis and rebalancing to ensure optimal asset allocation and risk management.",
-      },
+        "name": "Corporate Financial Wellness",
+        "description": "Empower your team with financial clarity. We design and deliver customized workshops and financial wellness sessions that enhance literacy, reduce money-related stress, and help your employees build a more secure future."
+      }
     ],
-    feeStructure: [
-      { service: "Financial Check-up", amount: "₹5,000" },
-      { service: "Comprehensive Planning", amount: "₹20,000 – ₹30,000" },
+    "feeStructure": [
+      { "service": "Comprehensive Plan (Resident)", "amount": "₹25,000" },
+      { "service": "Comprehensive Plan (NRI)", "amount": "₹30,000" },
+      { "service": "Modular Planning (e.g., Retirement)", "amount": "₹10,000" },
+      { "service": "Investment Portfolio Review", "amount": "₹15,000" }
     ],
-    testimonials: [
+    "testimonials": [
       {
-        text: "Rajesh helped us plan our retirement effectively. His expertise in tax planning saved us lakhs in taxes.",
-        author: "Amit & Priya Patel",
-        designation: "IT Professionals, Mumbai",
+        "text": "[Placeholder] Rahul's deep understanding of financial markets and his structured approach gave us the clarity we needed for our retirement planning. His experience truly shows.",
+        "author": "R. Verma",
+        "designation": "Business Owner, Delhi"
       },
       {
-        text: "Excellent guidance on portfolio diversification. Our investments are now well-balanced and growing steadily.",
-        author: "Vikram Sharma",
-        designation: "Business Owner",
+        "text": "[Placeholder] As an NRI, I was looking for a trustworthy advisor. Advent Financial's fee-only model and transparent process made them the perfect choice.",
+        "author": "Priya Menon",
+        "designation": "IT Consultant, Dubai"
       },
       {
-        text: "Professional approach and transparent fee structure. Highly recommend for comprehensive financial planning.",
-        author: "Dr. Sneha Joshi",
-        designation: "Medical Professional",
-      },
+        "text": "[Placeholder] The portfolio review was an eye-opener. Rahul helped us rebalance our investments and optimize for taxes, significantly improving our potential returns.",
+        "author": "A. & S. Gupta",
+        "designation": "Salaried Professionals, Noida"
+      }
     ],
-    videoUrl: "https://www.youtube.com/embed/mUIogYox-8k",
-    ctaLinks: [
-      { text: "Schedule Free Consultation", href: "", variant: "primary" },
-      { text: "WhatsApp Query", href: "", variant: "secondary" },
+    "verifiedBySpring": true,
+    "grievanceOfficer": {
+      "name": "Rahul Agarwal",
+      "email": "rahul@adventfa.com"
+    },
+    "ctaLinks": [
+      {
+        "text": "Schedule a Consultation",
+        "href": "https://meetings.hubspot.com/rahul21?uuid=11b7367a-0300-4b48-8369-a09349457cc5",
+        "variant": "primary"
+      }
     ],
     faqs: [
       {
-        question: "What makes Advent different from other financial advisors?",
+        question:
+          "What makes your financial planning different from others?",
         answer:
-          "We are fee-only advisors with no commission bias. Our recommendations are purely in your best interest as SEBI RIA.",
+          "We focus on your whole life, not just your portfolio. Our process helps you clarify what matters most, then we build a plan around that. It’s not just numbers—it’s about peace of mind and progress toward your ideal future.",
       },
       {
-        question: "How do you help with tax planning?",
+        question: "What should I expect in our first conversation?",
         answer:
-          "We analyze your income, investments, and expenses to suggest tax-saving instruments and strategies under various sections.",
+          "No pitches. No pressure. Just a thoughtful conversation to understand where you are, what you want, and whether we’re the right fit to help you get there.",
       },
       {
-        question: "What is your typical client profile?",
+        question: "Is there a minimum investment requirement to work with you?",
         answer:
-          "We work with salaried professionals and business owners with income above ₹8 lakhs annually who want systematic financial planning.",
-      },
-      {
-        question: "How often do you review portfolios?",
-        answer:
-          "We conduct quarterly reviews and rebalancing as needed. Emergency consultations are available anytime.",
+          "No. What matters more to us is that you’re ready to engage in the planning process. If you're serious about building a financial life with intention, we’d love to talk.",
       },
     ],
-    clientTypePills: ["IT Professionals", "Business Owners"],
-    idealClientDescription:
-      "Working professionals and business owners seeking comprehensive financial planning, tax optimization, and systematic wealth creation strategies.",
-    successStories: [
-      "Helped 150+ clients achieve their financial goals",
-      "Average tax savings of ₹2-5 lakhs per client annually",
-      "Managed portfolios worth ₹50+ crores",
+    "clientTypePills": [
+      "Business Owners",
+      "NRI Clients",
+      "Retirement Planning",
+      "Fee-Only Advisory"
     ],
-    grievanceOfficer: {
-      name: "Priya Kumar",
-      email: "grievance@wealthwisesolutions.com",
-    },
-    verifiedBySpring: false,
+    "idealClientDescription": "For salaried professionals, business owners, and NRIs seeking a comprehensive, long-term financial plan from an experienced and unbiased fee-only advisor."
   },
   // {
   //   "id": "18",
@@ -6107,7 +6099,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
        location: "Delhi",
     tagline: "Empowering your financial journey with clarity and confidence",
     specializations: ["Financial Planning", "Retirement Planning", "Women Investors"],
-    audience: ["Salaried", ],
+    audience: ["Salaried"],
     about: "Abhishek is a SEBI-registered investment advisor with over 10 years of experience helping working professionals and women investors achieve their financial goals.",
     description: "Abhishek Kumar specializes in holistic financial planning, with a focus on empowering women and first-time investors. We believe in education-first advice and transparent, fee-only services.",
     services: [
