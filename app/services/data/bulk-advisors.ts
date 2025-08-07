@@ -6776,7 +6776,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "Rajanish P",
     sebiReg: "INA200004177",
     photo: "/advisors/rajanish-p.svg",
-    location: "Delhi",
+    location: "Bengaluru, Karnataka",
     tagline: "Strategic wealth building for new-age entrepreneurs",
     specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
     audience: ["Entrepreneurs", "Business Owners"],
@@ -6816,7 +6816,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "Pranav Shenoy",
     sebiReg: "INA200012674",
     photo: "/advisors/pranav-shenoy.svg",
-    location: "Delhi",
+    location: "Bengaluru, Karnataka",
     tagline: "Strategic wealth building for new-age entrepreneurs",
     specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
     audience: ["Entrepreneurs", "Business Owners"],
@@ -6896,7 +6896,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "sushilkumar Pardeshi",
     sebiReg: "INA000020305",
     photo: "/advisors/sushilkumar-pardeshi.svg",
-    location: "Delhi",
+    location: "Bengaluru, Karnataka",
     tagline: "Strategic wealth building for new-age entrepreneurs",
     specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
     audience: ["Entrepreneurs", "Business Owners"],
@@ -6931,6 +6931,47 @@ export const bulkAdvisorData: AdvisorInput[] = [
     },
   {
     id: "96",
+    firmName: "Mitraz Financial services private limited",
+    advisorName: "Timsi Jhalani",
+    principalAdvisor: "Timsi Jhalani",
+    sebiReg: "INA200001041",
+    photo: "/advisors/timsi-jhalani.svg",
+    location: "Bengaluru, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Timsi Jhalani 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Mitraz Financial services Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "col sanjeev's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+
+  {
+    id: "97",
     firmName: "Hum Fauji Financial Services Pvt Ltd",
     advisorName: "Col Sanjeev Govila (retd)",
     principalAdvisor: "Col Sanjeev Govila (retd)",
