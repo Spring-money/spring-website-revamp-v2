@@ -300,6 +300,10 @@ export default function AdvisorDetailPage({
     if (advisorId === "5") {
       return ["SEBI Registered Investment Advisor", "NISM Series-X-B: Investment Advisor Level 2"];
     }
+    // Special case for Advent (advisor 5)
+    if (advisorId === "8") {
+      return ["SEBI Registered Investment Adviser (RIA)", "Certified Financial Planner (CFP)", "Registered Life Planner"];
+    }
     
     // Return combined credentials
     return [...baseCredentials, ...additionalCredentials];
