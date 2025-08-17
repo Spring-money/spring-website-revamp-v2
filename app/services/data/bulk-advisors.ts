@@ -2469,7 +2469,7 @@ export const bulkAdvisorData: AdvisorInput[] = [
     principalAdvisor: "Ankit Shah",
     sebiReg: "INA000007757",
     photo: "/advisors/ankit-shah.svg",
-    location: "Chennai, Tamil Nadu",
+    location: "Mumbai, Maharashtra",
     tagline: "Exclusive wealth management for discerning clients",
     specializations: ["Wealth Management", "HNI Services", "Estate Planning"],
     audience: ["HNI", "Business Owners"],
@@ -7001,6 +7001,1926 @@ export const bulkAdvisorData: AdvisorInput[] = [
     ],
     testimonials: [
       { text: "col sanjeev's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "98",
+    firmName: "ARVIND BAJRANGRAO TULAKWAR",
+    advisorName: "Arvind  Tulakwar",
+    principalAdvisor: "Arvind  Tulakwar",
+    sebiReg: "INA000011015",
+    photo: "/advisors/arvind-tulakwar.svg",
+    location: "Kavesar Thane West, Maharashtra",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Arvind brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "ARVIND BAJRANGRAO TULAKWAR partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Arvind's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "99",
+    firmName: "SUDA BHANU PRASAD",
+    advisorName: "Suda Bhanu Prasad",
+    principalAdvisor: "Suda Bhanu Prasad",
+    sebiReg: "INA200009050",
+    photo: "/advisors/suda-bhanu-prasad.svg",
+    location: "Peddapuram, Andhra Pradesh",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Suda Bhanu Prasad brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "SUDA BHANU PRASAD partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Suda Bhanu Prasad's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "100",
+    firmName: "Valuegrow Investment Advisors Private Limited",
+    advisorName: "Tirumala Rao Ampolu",
+    principalAdvisor: "Arvind  Tulakwar",
+    sebiReg: "INA200006910",
+    photo: "/advisors/tirumala-rao-ampolu.svg",
+    location: "Visakhapatnam, Andhra Pradesh",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Tirumala Rao brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Valuegrow Investment Advisors Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Tirumala Rao's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "101",
+    firmName: "PVR ADVISORY",
+    advisorName: "VENKATA RAVITEJA PENAGALURU",
+    principalAdvisor: "Venkata Raviteja Penagaluru",
+    sebiReg: "INA200010904",
+    photo: "/advisors/venkata-raviteja-penagaluru.svg",
+    location: "Kadapa, Andhra Pradesh",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Venkata Raviteja brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "PVR ADVISORY partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Venkata Raviteja's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "102",
+    firmName: "Salma Sony",
+    advisorName: "Salma Sony",
+    principalAdvisor: "Salma Sony",
+    sebiReg: "INA000017222",
+    photo: "/advisors/salma-sony.svg",
+    location: "Patna, Bihar",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Salma brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Salma Sony partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Salma's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "103",
+    firmName: "Manikaran Singal",
+    advisorName: "Manikaran Singal",
+    principalAdvisor: "Manikaran Singal", 
+    sebiReg: "INA000018744",
+    photo: "/advisors/manikaran-singal.svg",
+    location: "Chandigarh, Punjab",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Manikaran brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Manikaran Singal partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Manikaran's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "104",
+    firmName: "DreamBluePrintz",
+    advisorName: "Upasana Mondal",
+    principalAdvisor: "Arvind  Tulakwar", 
+    sebiReg: "INA200011684",
+    photo: "/advisors/upasana-mondal.svg",
+    location: "Benaulim, Goa",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Upasana brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "DreamBluePrintz partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Upasana's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "105",
+    firmName: "Brijesh Parikh",
+    advisorName: "Brijesh Parikh",
+    principalAdvisor: "Brijesh Parikh",
+    sebiReg: "INA000004492",
+    photo: "/advisors/brijesh-parikh.svg",
+    location: "Bhavnagar, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Brijesh brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Brijesh Parikh partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Brijesh's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "106",
+    firmName: "CUSP MONEY ADVISORS PRIVATE LIMITED",
+    advisorName: "Hardik Thakkar",
+    principalAdvisor: "Hardik Thakkar",
+    sebiReg: "INA000020004",
+    photo: "/advisors/hardik-thakkar.svg",
+    location: "Ahmedabad, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Hardik brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "CUSP MONEY ADVISORS PRIVATE LIMITED partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Hardik's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "107",
+    firmName: "Ocean Finvest India Private Limited",
+    advisorName: "Himani Barot",
+    principalAdvisor: "Rajesh Kumar",
+    sebiReg: "INA000020369",
+    photo: "/advisors/himani-barot.svg",
+    location: "Ahmedabad, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Himani brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Ocean Finvest India Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Himani's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "108",
+    firmName: "CONCEPT INVESTWELL PRIVATE LIMITED",
+    advisorName: "Jenish Rana",
+    principalAdvisor: "Arvind  Tulakwar",
+    sebiReg: "INA000018337",
+    photo: "/advisors/jenish-rana.svg",
+    location: "Surat, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Jenish brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "CONCEPT INVESTWELL PRIVATE LIMITED partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+       { text: "Jenish's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "109",
+    firmName: "BIA Investment Advisors",
+    advisorName: "Mansi Bhambhani",
+    principalAdvisor: "Arvind  Tulakwar",
+    sebiReg: "INA000005564",
+    photo: "/advisors/mansi-bhambhani.svg",
+    location: "Ahmedabad, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Mansi brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "BIA Investment Advisors partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Mansi's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "110",
+    firmName: "Neuron Wealth Advisors LLP",
+    advisorName: "Jigar Patel",
+    principalAdvisor: "Arvind  Tulakwar",
+    sebiReg: "INA000016481",
+    photo: "/advisors/jigar-patel.svg",
+    location: "Ahmedabad, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Jigar brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Neuron Wealth Advisors LLP partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+       { text: "Jigar's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "111",
+    firmName: "Samyama Advisors Private Limited",
+    advisorName: "Shrimohan Jhawar",
+    principalAdvisor: "Shrimohan Jhawar",
+    sebiReg: "INA000015321",
+    photo: "/advisors/shrimohan-jhawar.svg",
+    location: "Ahmedabad, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Shrimohan brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Samyama Advisors Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Shrimohan's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "112",
+    firmName: "Ascent Financial Solutions Pvt Ltd",
+    advisorName: "Prakash Lohan",
+    principalAdvisor: "Prakash Lohan",
+    sebiReg: "INA000017064",
+    photo: "/advisors/prakash-lohan.svg",
+    location: "Vadodara, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Prakash brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Ascent Financial Solutions Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Prakash's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "113",
+    firmName: "Titiksha Wealth Pvt Ltd",
+    advisorName: "Nirav Kansariwala",
+    principalAdvisor: "Nirav Kansariwala",
+    sebiReg: "INA000019497",
+    photo: "/advisors/nirav-kansariwala.svg",
+    location: "Surat, Gujarat",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Nirav brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Titiksha Wealth Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Nirav's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "114",
+    firmName: "Prasoon Kumar",
+    advisorName: "Prasoon Kumar",
+    principalAdvisor: "Prasoon Kumar",
+    sebiReg: "INA300015207",
+    photo: "/advisors/prasoon-kumar.svg",
+    location: "Hazaribagh, Jharkhand",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Prasoon brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Prasoon Kumar partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Prasoon's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "115",
+    firmName: "360° wealth advice",
+    advisorName: "Abraham Cherian",
+    principalAdvisor: "Abraham Cherian",
+    sebiReg: "INA000019594",
+    photo: "/advisors/abraham-cherian.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Abraham brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "360° wealth advice partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Abraham's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "116",
+    firmName: "Investment Climb Advisory",
+    advisorName: "Ajeet Pandey",
+    principalAdvisor: "Ajeet Pandey",
+    sebiReg: "INA000018726",
+    photo: "/advisors/ajeet-pandey.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Ajeet brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Investment Climb Advisory partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Ajeet's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "117",
+    firmName: "RuDo Wealth Investment Advisory Private Limited",
+    advisorName: "Alok Kumar",
+    principalAdvisor: "Alok Kumar",
+    sebiReg: "INA000019503",
+    photo: "/advisors/alok-kumar.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Alok brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "RuDo Wealth Investment Advisory Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Alok's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "118",
+    firmName: "Finatwork Investment Advisor",
+    advisorName: "Saurabh Bansal",
+    principalAdvisor: "Saurabh Bansal",
+    sebiReg: "INA200002387",
+    photo: "/advisors/saurabh-bansal.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Saurabh brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Finatwork Investment Advisor partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Saurabh's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "119",
+    firmName: "DILZER CONSULTANTS PRIVATE LTD",
+    advisorName: "Dilshad Billimoria",
+    principalAdvisor: "Dilshad Billimoria",
+    sebiReg: "INA200002239",
+    photo: "/advisors/dilshad-billimoria.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Dilshad brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "DILZER CONSULTANTS PRIVATE LTD partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Dilshad's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "120",
+    firmName: "WINWIZE RESEARCH AND ADVISORY PRIVATE LIMITED",
+    advisorName: "Jeevan Dominic",
+    principalAdvisor: "Jeevan Dominic",
+    sebiReg: "INA000019178",
+    photo: "/advisors/jeevan-dominic.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Jeevan brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "WINWIZE RESEARCH AND ADVISORY PRIVATE LIMITED partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Jeevan's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "121",
+    firmName: "Indrani Banerjee & Associates",
+    advisorName: "Indrani Banerjee",
+    principalAdvisor: "Indrani Banerjee",
+    sebiReg: "INA000018610  ",
+    photo: "/advisors/indrani-banerjee.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Indrani brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Indrani Banerjee & Associates partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Indrani's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "122",
+    firmName: "International Money Matters Pvt Ltd",
+    advisorName: "Lovaii Navlakhi",
+    principalAdvisor: "Lovaii Navlakhi",
+    sebiReg: "INA200010676",
+    photo: "/advisors/lovaii-navlakhi.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Lovaii brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "International Money Matters Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+       { text: "Lovaii's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "123",
+    firmName: "Flameback Capital Private Limited",
+    advisorName: "Kishan Murjani Nair",
+    principalAdvisor: "Kishan Murjani Nair",
+    sebiReg: "INA200013798",
+    photo: "/advisors/kishan-murjani-nair.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Kishan brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Flameback Capital Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Kishan's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "124",
+    firmName: "myMoneySage",
+    advisorName: "KishorKumar Balpalli",
+    principalAdvisor: "KishorKumar Balpalli",
+    sebiReg: "INA200014247",
+    photo: "/advisors/kishor-kumar-balpalli.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "KishorKumar brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "myMoneySage partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "KishorKumar's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "125",
+    firmName: "Naveen Rego Capital Private Limited",
+    advisorName: "Manjiri Joshi",
+    principalAdvisor: "Manjiri Joshi",
+    sebiReg: "INA000019211",
+    photo: "/advisors/manjiri-joshi.svg",
+    location: "Mangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Manjiri brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Naveen Rego Capital Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Manjiri's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "126",
+    firmName: "FW Fintech Private Limited",
+    advisorName: "Naveen Changoiwala",
+    principalAdvisor: "Naveen Changoiwala",
+    sebiReg: "INA000019415",
+    photo: "/advisors/naveen-changoiwala.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Naveen brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "FW Fintech Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Naveen's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "127",
+    firmName: "Naveen Rego Capital Private Limited",
+    advisorName: "Naveen Julian Rego",
+    principalAdvisor: "Naveen Julian Rego",
+    sebiReg: "INA000019211",
+    photo: "/advisors/naveen-julian-rego.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Naveen brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Naveen Rego Capital Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Naveen's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "128",
+    firmName: "AGNAM ADVISORS LLP",
+    advisorName: "Prashant Mishra",
+    principalAdvisor: "Prashant Mishra",
+    sebiReg: "INA200013886",
+    photo: "/advisors/prashant-mishra.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Prashant brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "AGNAM ADVISORS LLP partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+      { text: "Prashant's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "129",
+    firmName: "PUGMARK FUND CAPITAL ADVISORS LLP",
+    advisorName: "RAM MANOHAR MAMIDI",
+    principalAdvisor: "Ram Manohar Mamididi",
+    sebiReg: "INA000019576",
+    photo: "/advisors/ram-manohar-mamididi.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Ram Manohar brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "PUGMARK FUND CAPITAL ADVISORS LLP partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+        { text: "Ram Manohar's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "130",
+    firmName: "Finshield Investment Advisors",
+    advisorName: "Rajiv Radhakrishnan",
+    principalAdvisor: "Rajiv Radhakrishnan",
+    sebiReg: "INA200011268",
+    photo: "/advisors/rajiv-radhakrishnan.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Rajiv brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Finshield Investment Advisors partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Rajiv's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "131",
+    firmName: "Ratnasri Karra",
+    advisorName: "Ratnasri Karra",
+    principalAdvisor: "Ratnasri Karra",
+    sebiReg: "INA200009582",
+    photo: "/advisors/ratnasri-karra.svg",
+    location: "Banglore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Ratnasri brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Ratnasri Karra partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Ratnasri's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "132",
+    firmName: "Invest Street",
+    advisorName: "Seshaphani Jonnalagadda",
+    principalAdvisor: "Seshaphani Jonnalagadda",
+    sebiReg: "INA000019390",
+    photo: "/advisors/seshaphani-jonnalagadda.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Seshaphani brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Invest Street partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+         { text: "Seshaphani's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "133",
+    firmName: "SriNivesh Advisors",
+    advisorName: "S R Srinivasan",
+    principalAdvisor: "S R Srinivasan",
+    sebiReg: "INA200013132",
+    photo: "/advisors/s-r-srinivasan.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "S R Srinivasan brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "SriNivesh Advisors partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "S R Srinivasan's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "134",
+    firmName: "PeakAlpha Investment Services Private Limited",
+    advisorName: "Shyam Sunder",
+    principalAdvisor: "Shyam Sunder",
+    sebiReg: "INA200007043",
+    photo: "/advisors/shyam-sunder.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Shyam Sunder brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "PeakAlpha Investment Services Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Shyam Sunder's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "135",
+    firmName: "RightFocus Investments Pvt Ltd.",
+    advisorName: "Shailendra Kumar",
+    principalAdvisor: "Shailendra Kumar",
+    sebiReg: "INA200006628",
+    photo: "/advisors/shailendra-kumar.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Shailendra Kumar brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "RightFocus Investments Pvt Ltd. partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Shailendra Kumar's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "136",
+    firmName: "Succinct FinTech Services Pvt Ltd",
+    advisorName: "Soubhagya Kumar Patra",
+    principalAdvisor: "Soubhagya Kumar Patra",
+    sebiReg: "INA200008705",
+    photo: "/advisors/soubhagya-kumar-patra.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Soubhagya Kumar Patra brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Succinct FinTech Services Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+            { text: "Soubhagya Kumar Patra's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "137",
+    firmName: "Entrust Family Office Investment Advisors Pvt Ltd",
+    advisorName: "Sreepriya N S",
+    principalAdvisor: "Sreepriya N S",
+    sebiReg: "INA200004201",
+    photo: "/advisors/sreepriya-n-s.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Sreepriya N S brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Entrust Family Office Investment Advisors Pvt Ltd partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Sreepriya N S's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "138",
+    firmName: "Prasidhi",
+    advisorName: "Sudheer M",
+    principalAdvisor: "Sudheer M",
+    sebiReg: "INA200010986",
+    photo: "/advisors/sudheer-m.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Sudheer M brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "Prasidhi partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+            { text: "Sudheer M's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "139",
+    firmName: "AKSHAYA WEALTH MANAGEMENT PRIVATE LIMITED",
+    advisorName: "SUDARSHAN G V",
+    principalAdvisor: "Sudarshan G V",
+    sebiReg: "INA200001249",
+    photo: "/advisors/sudarshan-g-v.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Sudarshan G V brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+   description: "AKSHAYA WEALTH MANAGEMENT PRIVATE LIMITED partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+              { text: "Sudarshan G V's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "140",
+    firmName: "Mentor Ring Financial Advisory Private Limited",
+    advisorName: "Thejus Palathingal",
+    principalAdvisor: "Thejus Palathingal",
+    sebiReg: "INA000018832",
+    photo: "/advisors/thejus-palathingal.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Thejus Palathingal brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Mentor Ring Financial Advisory Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+         { text: "Thejus Palathingal's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "141",
+    firmName: "OyePaisa Consulting Private Limited",
+    advisorName: "Uday Dhoot",
+    principalAdvisor: "Uday Dhoot",
+    sebiReg: "INA200004300",
+    photo: "/advisors/uday-dhoot.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Uday Dhoot brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "OyePaisa Consulting Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Uday Dhoot's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "142",
+    firmName: "Mitraz Financial services private limited",
+    advisorName: "Varun Girilal",
+    principalAdvisor: "Varun Girilal",
+    sebiReg: "INA200001041",
+    photo: "/advisors/varun-girilal.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Varun Girilal brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Mitraz Financial services private limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Varun Girilal's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "143",
+    firmName: "Multipl Wealth Management Private Limited",
+    advisorName: "Vikas Jain",
+    principalAdvisor: "Vikas Jain",
+    sebiReg: "INA200014681",
+    photo: "/advisors/vikas-jain.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Vikas Jain brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Multipl Wealth Management Private Limited partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+          { text: "Vikas Jain's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "144",
+    firmName: "AROHA CAPITAL PVT LTD",
+    advisorName: "Vivek Pai",
+    principalAdvisor: "Vivek Pai",
+    sebiReg: "INA200000175",
+    photo: "/advisors/vivek-pai.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Vivek Pai brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "AROHA CAPITAL PVT LTD partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+            { text: "Vivek Pai's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/example2",
+    ctaLinks: [
+      { text: "Schedule Strategy Session", href: "", variant: "primary" },
+      { text: "WhatsApp Query", href: "", variant: "secondary" }
+    ],
+    faqs: [
+      { question: "Do you work with early-stage startups?", answer: "Yes, we advise founders at all stages, from pre-seed to exit." },
+      { question: "Can you help with ESOP liquidation?", answer: "Absolutely, we provide end-to-end ESOP advisory." }
+    ],
+    clientTypePills: ["Startup Founders", "Business Owners"],
+    idealClientDescription: "Entrepreneurs and business owners seeking expert guidance on wealth creation and tax efficiency.",
+    successStories: ["Guided 50+ founders through successful exits", "Saved clients over ₹10 crores in taxes"],
+    grievanceOfficer: { name: "Compliance Team", email: "compliance@trumind.in" },
+    verifiedBySpring: false
+    },
+  {
+    id: "145",
+    firmName: "Wealth Crafts",
+    advisorName: "Vivek S G",
+    principalAdvisor: "Vivek S G",
+    sebiReg: "INA000018328",
+    photo: "/advisors/vivek-s-g.svg",
+    location: "Bangalore, Karnataka",
+    tagline: "Strategic wealth building for new-age entrepreneurs",
+    specializations: ["Wealth Management", "Startup Founders", "Tax Planning"],
+    audience: ["Entrepreneurs", "Business Owners"],
+    about: "Vivek S G brings 15 years of experience in wealth management, with a special focus on startup founders and business families.",
+    description: "Wealth Crafts partners with entrepreneurs to create, grow, and protect wealth through every business cycle. We offer tailored solutions for founders, including ESOP planning and exit strategies.",
+    services: [
+      { name: "Founder Wealth Planning", description: "Comprehensive planning for founders, from seed to exit." },
+       { name: "ESOP & Equity Advisory", description: "Maximize value from ESOPs and equity stakes." },
+      { name: "Tax Optimization for Startups", description: "Specialized tax planning for founders and business owners." }
+    ],
+    feeStructure: [
+      { service: "Startup Founder Plan", amount: "₹25,000" },
+      { service: "Annual Wealth Review", amount: "₹15,000" }
+    ],
+    testimonials: [
+    { text: "Vivek S G's advice helped me structure my exit and save on taxes.", author: "Siddharth Jain", designation: "Startup Founder" }
     ],
     videoUrl: "https://www.youtube.com/embed/example2",
     ctaLinks: [
