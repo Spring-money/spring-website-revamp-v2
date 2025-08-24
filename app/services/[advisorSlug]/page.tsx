@@ -72,6 +72,14 @@ export default function AdvisorDetailPage({
   // Use firm name directly from advisor data instead of hardcoded mapping
   const advisorName = advisor.firmName;
 
+  // Generate custom video section title
+  const getVideoTitle = () => {
+    if (advisorName === "Advent Financial") {
+      return "Meet Rahul, Founder & Principal Adviser of Advent Financial";
+    }
+    return `Meet ${advisorName}`;
+  };
+
   /* Derived data */
   const address = advisor.location ?? "Location not specified";
   const sebiReg = advisor.reg ?? "INA1000137000";
@@ -81,7 +89,7 @@ export default function AdvisorDetailPage({
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
   const faqs = advisor.faqs ?? [];
   const advisorVideo = advisor.videoUrl;
-  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "8" || advisor.id === "9";
+  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "9";
 
   // Add FAQ videos only for specific advisor IDs
   const faqVideos = (() => {
@@ -307,6 +315,9 @@ export default function AdvisorDetailPage({
     if (advisorId === "7") {
       return ["SEBI Registered Investment Advisor", "Associate of Indian Insitute of India", "PG Diploma in Business Finance"];
     }
+    if (advisorId === "8") {
+      return ["SEBI Registered Investment Advisor", "Certified Financial Planner", "Registered Life Planner"];
+    }
     
     // Return combined credentials
     return [...baseCredentials, ...additionalCredentials];
@@ -418,7 +429,7 @@ export default function AdvisorDetailPage({
                 <CardHeader className="flex flex-col items-start pb-2">
                   <div className="mb-1 flex items-center text-2xl font-semibold text-[#272A2B]">
                     <Video size={24} className="mr-2 text-spring-green" />
-                    Meet {advisorName}
+                    {getVideoTitle()}
                   </div>
                   <p className="text-lg font-light text-[#272A2B]">
                     {advisor.tagline}
