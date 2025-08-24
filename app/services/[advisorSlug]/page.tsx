@@ -131,7 +131,7 @@ export default function AdvisorDetailPage({
             videoId: "__gBuogQNTE",
           },
         ];
-      default:
+      
         return null;
     }
   })();
