@@ -5,7 +5,7 @@
 
    import { Calendar, ChartBar } from "lucide-react";
    import type { ReactNode } from "react";
-   import { bulkAdvisorData } from "./bulk-advisors";
+   //import { bulkAdvisorData } from "./bulk-advisors";
    import { createAdvisorProfile } from "./advisor-template";
    
    /* ------------------------------------------------------------------
@@ -14,6 +14,9 @@
    
    export type Specialization =
      | "Retirement Planning"
+     | "Financial Life Planning"
+     | "Evidenced Based Investing"
+     | "Personal Wealth Management"
      | "Tax Planning"
      | "Financial Planning for IT Professionals"
      | "Fee-Only Advisory"
@@ -722,11 +725,110 @@
       "idealClientDescription": "For salaried professionals and families, especially in the IT sector, seeking unbiased fee-only advice for long-term wealth creation and financial peace of mind."
     },
      /* ----------------------- Advisor 8 ----------------------- */
-
+    {
+          "id": "8",
+          "firmName": "Advent Financial",
+          "advisorName": "Rahul Agarwal",
+          "principalAdvisor": "Rahul Agarwal",
+          "reg": "INA300003616",
+          "photo": "/advisors/rahul-agarwal.svg",
+          "location": "Mumbai, Maharashtra",
+          "tagline": "Build a life you love with a financial plan that puts you first.",
+          "specializations": ["Financial Life Planning", "Evidenced Based Investing", "Personal Wealth Management"],
+          "audience": ["Salaried Professionals", "Business Owners", "NRIs"],
+          "about": "Rahul believes that financial plans should be 'life-shaped'. He specializes in helping couples make better money decisions through authentic and empathetic conversations. His approach goes beyond mere spreadsheets, focusing on creating plans that align finances with shared dreams and support both partners. This ensures their financial future is not only looks good on paper but feels right in real life.",
+          "description": "Meet Rahul, the founder of Advent Financial. He believes financial planning should truly reflect your life. Because, too often, the advice focuses only on numbers, not people. \n It’s usually technical, impersonal, and overlooks that real life involves two people navigating shared dreams and different perspectives on money. Rahul has seen the impact of couples struggling with money talks, or plans that look good on paper but don't fit real life. That's why he created Advent Financial: to offer empathetic advice, rooted in real conversations, and designed to support both partners. \n Rahul is a Certified Financial Planner® (CFP®) and a Registered Life Planner (RLP®). More importantly, he prioritizes understanding you before offering any advice. \n Because your plan shouldn't just look good on paper; it should feel right in real life.",
+          "services":[
+            {
+              "name": "Financial Life Planning",
+              "description": "For individuals and couples seeking financial clarity, strategic direction, and confidence to make informed decisions. Together, we’ll explore life scenarios and build a practical plan that supports your unique vision of a rich and fulfilling life. We'll help you make truly conscious choices for your future."
+            },
+            {
+              "name": "Personal Wealth Management",
+              "description": "For those who want ongoing support, guidance and management of all their financial affairs. We cover savings and investments, budgeting and cashflow management, insurance, tax and estate planning. We even help you organize your financial records and information so that you can stay focused on living your life."
+            },
+            {
+              "name": "One-off Advice / Second Opinion",
+              "description": "Need help with one important decision? Whether buying a home, planning a child’s education, or reviewing insurance, I offer focused, one-time guidance to help you move forward confidently. It is a great way to kickstart your journey, but cannot replace holistic planning. Consider an ongoing service if needs evolve."
+            },
+            {
+              "name": "Financial Wellness for Teams",
+              "description": "I conduct tailored workshops designed to empower employees with practical tools and knowledge. The goal is to cultivate healthier money habits, significantly reduce financial stress, and foster informed decision-making for a more secure financial future. This investment in your team builds confidence and well-being."
+            }
+          ],
+          "feeStructure": [
+            { "service": "Available upon request.", "amount": "" },
+          ],
+          "testimonials": [
+            {
+              "text": "Rahul is an outstanding financial planner who tailors strategies to individual goals and risk appetite. He takes the time to understand financial aspirations, creating a plan that balances security and growth. What truly sets him apart is his flexibility. As my priorities evolved with career changes and market shifts, Rahul proactively adjusted my portfolio to align with my long-term objectives. His expertise and client-first approach make financial planning seamless and stress-free.If you need a planner who adapts to your needs, he is an excellent choice.",
+              "author": "Pallavi Palkar",
+              "designation": "National Business Head at Big Basket"
+            },
+            {
+              "text": "In a short time, Rahul became our go-to person for everything related to money management. What sets him apart is his balanced approach to long-term wealth management, backed by a clearly defined process. At every point, he focuses on enabling you to make the right decision rather than prescribing something. Rahul and his team are always on top of all the paperwork and tracking, making it easy to have all information in one place. He is also very accommodative of scheduling constraints, going the extra mile to support us.",
+              "author": "Kartik Pal",
+              "designation": "Manager at Kearney"
+            },
+            {
+              "text": "For over six years, Rahul's guidance has been invaluable in shaping my financial journey. He has a deep understanding of financial markets and strategies, providing well-researched advice aligned with my long-term goals. What truly sets him apart is his integrity and client-centric approach; he simplifies complex topics, understands my evolving needs, and offers a proactive, long-term perspective that has given me financial stability and peace of mind. I highly recommend him as a knowledgeable, trustworthy, and dedicated financial advisor.",
+              "author": "Anirban De",
+              "designation": "Strategic Partnerships at Swift"
+            }
+          ],
+          "sebiRegistrationNumber": "INA300003616",
+          "verifiedBySpring": true,
+          "grievanceOfficer": {
+            "name": "Rahul Agarwal",
+            "email": "rahul@adventfa.com"
+          },
+          "cta": [
+            {
+              "text": "Schedule a Consultation",
+              "href": "https://meetings.hubspot.com/rahul21?uuid=11b7367a-0300-4b48-8369-a09349457cc5",
+              "variant": "primary"
+            }
+          ],
+          faqs: [
+            {
+              question:
+                "What makes your financial planning different from others?",
+              answer:
+                "My financial planning is different because I focus on your whole life, not just your portfolio. I believe that true financial success isn't just about the numbers; it's about achieving peace of mind and making meaningful progress toward your ideal future. My structured process helps you clarify what truly matters most to you and your family. From there, I build a comprehensive, personalized plan that aligns every financial decision with your unique life goals, ensuring your money is a tool supporting your happiness.",
+            },
+            {
+              question: "What should I expect in our first conversation?",
+              answer:
+                "You can expect a relaxed and completely confidential conversation with absolutely no pitches and no pressure. The entire focus of our first meeting is simply to get to know each other. It's a thoughtful conversation where we listen to understand where you are in life, what you want, and what your concerns are. This initial dialogue is crucial for us to determine if our expertise and approach are the right fit to help you get there, ensuring we can build a successful and trusted partnership.",
+            },
+            {
+              question: "What does the ongoing process look like after the initial financial plan is created?",
+              answer:
+                "Creating the financial plan is just the beginning of our journey together. The ongoing process starts with implementation, where we work together to put your plan into action, one step at a time. This may involve adjusting your investments, setting up protection strategies, or coordinating with other professionals. After that, our partnership continues with regular meetings where we review your progress, revisit your goals, and make necessary changes as your life evolves, ensuring your plan always remains relevant.",
+            },
+            {
+              question: "What is your investment philosophy?",
+              answer:
+                "My investment philosophy is that your financial plan must be uniquely designed for your specific goals, resources, and risk appetite. I believe robust asset allocation, the principle of compounding, focusing on real returns and keeping costs low has a more significant impact on your investment experience than picking individual securities, chasing returns or market timing. Therefore, I focus on a disciplined, long-term approach using simple products and systematic investing. I do not provide stock tips, recommend day trading, or use complicated structured products.",
+            },
+            {
+              question: "Why should I pay fees when there are many free tools available online?",
+              answer:
+                "The choice is a simple economic one: the value of professional advice should always exceed its cost. While free tools provide information, our role is to serve as your “living insurance policy” against the costly mistakes any investor can be tempted to make in volatile times. Avoiding just one such error can save you multiples of our fee. This human guidance is our core value. As a fee-only advisor, our structure also creates a perfect alignment of interests, ensuring our advice is always a direct investment in your long-term financial security.",
+            },
+          ],
+          "clientTypePills": [
+            "Corporate Executives",
+            "Professionals",
+            "NRIs",
+            "Business Owners"
+          ],
+          "idealClientDescription": "Couples who want a financial plan built around their life, one that reflects their shared life goals and values."
+        },
      /* ----------------------- Advisor 9 ----------------------- */
 
     // Add bulk advisors using the template system
-    ...bulkAdvisorData.map(data => createAdvisorProfile(data))
+    //...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
    
    /* ------------------------------------------------------------------
