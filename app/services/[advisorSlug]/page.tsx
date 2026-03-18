@@ -319,6 +319,16 @@ export default function AdvisorDetailPage({
       return ["SEBI Registered Investment Advisor", "Certified Financial Planner", "Registered Life Planner"];
     }
     
+    // Special case for Ketan Kiran Gogte (advisor 10)
+    if (advisorId === "10") {
+      return ["SEBI Registered Investment Advisor", "MBA from IIT Kharagpur"];
+    }
+    
+    // Special case for Jay Sheth (advisor 11)
+    if (advisorId === "11") {
+      return ["SEBI Registered Investment Advisor", "MBA", "ACCA"];
+    }
+    
     // Return combined credentials
     return [...baseCredentials, ...additionalCredentials];
   };
