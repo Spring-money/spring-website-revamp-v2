@@ -908,6 +908,143 @@
     //   ],
     //   "idealClientDescription": "For individuals, families, and NRIs seeking unbiased, expert financial advice from a seasoned professional with a deep background in banking and wealth management."
     // },
+      /* ----------------------- Advisor 10 ----------------------- */
+      {
+        id: "10",
+        firmName: "Ketan Kiran Gogte",
+        advisorName: "Ketan Kiran Gogte",
+        principalAdvisor: "Ketan Kiran Gogte",
+        reg: "SEBI RIA REG NO: INA000009649",
+        photo: "/advisors/ketan-gogte.jpg",
+        location: "Pune, Maharashtra",
+        tagline: "Advising working professionals and business owners on Financial planning, Long term investing and Portfolio advisory.",
+        videoUrl: "https://www.youtube.com/embed/R96BWUXPeOE",
+    
+        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Funds", "Stock Investments", "Investment Portfolio Review"],
+        audience: ["Professionals", "Business Owners", "Families", "NRIs"],
+    
+        about:
+          "Ketan offers research driven independent Investment Advisory services. The offerings include comprehensive financial planning based on Goals, Time horizon and Risk profile, advisory on Asset allocation and building a portfolio through long term investing for wealth creation.",
+        description: `Ketan offers research driven independent Investment Advisory services. The offerings include comprehensive financial planning based on Goals, Time horizon and Risk profile, advisory on Asset allocation and building a portfolio through long term investing for wealth creation. He advises on SEBI regulated products like the listed Stocks, Mutual funds (MFs) and Exchange Traded Funds (ETFs). Services are non-discretionary in nature and are customized as per client’s goals and risk profile. Ketan acts in a fiduciary capacity towards his clients.`,
+    
+        services: [
+          {
+            name: "Comprehensive Financial Planning",
+            description:
+              "Holistic planning based on goals, time horizon, and risk profile.",
+          },
+          {
+            name: "Goal-Based Long Term Investing",
+            description:
+              "Portfolio building through long-term investing for wealth creation.",
+          },
+          {
+            name: "Retirement Planning",
+            description:
+              "Dedicated strategies for a secure post-retirement life.",
+          },
+          {
+            name: "Mutual Fund, Stocks & ETF Advisory",
+            description:
+              "Research-driven advice on SEBI-regulated investment products.",
+          },
+        ],
+    
+        feeStructure: [
+          { service: "Advisory Fee", amount: "Based on scope, within SEBI RIA limits." },
+        ],
+    
+        sebiRegistrationNumber: "INA000009649",
+        verifiedBySpring: true,
+        grievanceOfficer: { name: "Ketan Kiran Gogte", email: "ketangogte@gmail.com" },
+    
+        cta: [
+          {
+            text: "Schedule Meeting",
+            href: "https://wa.me/919158911324",
+            variant: "primary"
+          }
+        ],
+    
+        faqs: [
+          { question: "How does Ketan view the role of a Financial plan?", answer: "Financial plan has to be a Life plan. It should be a dynamic document rather than a static one. It should help an individual or a family take decisions and simulate the scenarios in order to anticipate the impact of certain events on the finances so that they are better prepared to take a decision." },
+          { question: "Are the Advisory Services Customized as per an Individual’s needs?", answer: "Yes the Advisory services are customized based on one’s Goals, time horizon and risk profile. It’s a very close knit engagement between Ketan (The Advisor) and the client with regular interactions and timely reviews." },
+          { question: "Is the rationale for investment explained to the Client?", answer: "Yes, the rationale for making any investment decision is explained in detail to the client. Ketan wants to empower the client and wants him / her to take control of his / her finances and thus provides all necessary information required." },
+          { question: "Are portfolio reviews included in the scope of the engagement?", answer: "Yes, Ketan believes that whatever gets tracked and reviewed, get executed. Thus it is important to have reviews with clients on their portfolios at regular time intervals through the course of the engagement." },
+          { question: "Is the already existing investments portfolio of a client included in the scope of Advisory?", answer: "Yes, analysis of the existing client investment portfolio comprising of SEBI regulated products such as the listed Stocks, Mutual funds (MFs) and Exchange Traded Funds (ETFs) is included as part of the engagement." }
+        ],
+    
+        clientTypePills: ["Professionals", "Business Owners", "NRIs"],
+      },
+    
+      /* ----------------------- Advisor 11 ----------------------- */
+      {
+        id: "11",
+        firmName: "Shwealth",
+        advisorName: "Jay Sheth",
+        principalAdvisor: "Jay Sheth",
+        reg: "SEBI RIA REG NO: INA000019062",
+        photo: "/advisors/jay-sheth.jpg",
+        location: "Mumbai, Maharashtra",
+        tagline: "Assisting Individuals build and preserve their Wealth through smart, research driven financial strategies and products.",
+    
+        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Funds", "Stock Investments", "Insurance", "Tax Planning", "NRI Services", "Estate Planning"],
+        audience: ["Professionals", "Retired", "NRIs"],
+    
+        about:
+          "At Shwealth, our primary belief lies in simplifying finance and investments whether you are a beginner or experienced investor. Each of our plans are unique and tailored to an individual’s personal situation.",
+        description: `At Shwealth, our primary belief lies in simplifying finance and investments whether you are a beginner or experienced investor. Each of our plans are unique and tailored to an individual’s personal situation. We have built unique models for Mutual Fund research and preparing flexible personal finance plans. Client’s trust us for our research driven and conflict free approach.`,
+    
+        services: [
+          {
+            name: "Comprehensive Financial Planning",
+            description:
+              "Tailored personal finance plans simplifying investments for all levels of experience.",
+          },
+          {
+            name: "Research-Driven Mutual Fund Advisory",
+            description:
+              "Unique models for Mutual Fund research ensuring a conflict-free approach.",
+          },
+          {
+            name: "Goal-Based Investing",
+            description:
+              "Aligning your investments with specific financial milestones.",
+          },
+        ],
+    
+        feeStructure: [
+          { service: "Flat Fee Plans", amount: "Standard flat fee for engagement; custom plans available." },
+        ],
+    
+        testimonials: [
+          { text: "The mutual fund portfolio review done by Jay was an eye opener for me. He clearly showed me the cost of going through an agent. He also showed me how to tie in my investments with specific goals.", author: "High Court Lawyer - Mumbai" },
+          { text: "Jay assisted me in transitioning my investments from MF agent to direct schemes. Apart from the saving in commissions, I am more confident about where my investments are being made.", author: "Primary Teacher - Mumbai" },
+          { text: "Your comprehensive approach, which included a thorough review of my assets, goals, and insurance needs, provided me with a clear roadmap for her financial future.", author: "IT Consultant - UAE" }
+        ],
+    
+        videoUrl: "https://www.youtube.com/embed/v-m-Thcwv94",
+    
+        sebiRegistrationNumber: "INA000019062",
+        verifiedBySpring: true,
+        grievanceOfficer: { name: "Jay Sheth", email: "jay@shwealth.in" },
+    
+        cta: [
+          {
+            text: "Book a Call",
+            href: "https://www.shwealth.in",
+            variant: "primary"
+          }
+        ],
+    
+        faqs: [
+          { question: "Do you cater to clients outside of Mumbai?", answer: "Yes, we cater to clients across India and NRIs as well" },
+          { question: "How do you charge fees? Is it a % of AUA?", answer: "We only charge a flat fee. We have two plans in which the offering and pricing varies. For customized plans we provide a separate quotation" },
+          { question: "What do we get in a typical engagement?", answer: "A standard engagement would consist of 2-4 Microsoft Teams calls, a written report, an excel financial plan, and access to our in-house Mutual Fund model." }
+        ],
+    
+        clientTypePills: ["Professionals", "NRIs", "Retirees"],
+      },
     // Add bulk advisors using the template system
     ...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
