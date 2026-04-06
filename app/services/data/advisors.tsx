@@ -35,7 +35,12 @@
      | "Wealth Management"
      | "Small Cap Investing"
      | "Mid Cap Investing"
-     | "Debt Management";
+     | "Debt Management"
+     | "NRI Financial Services"
+     | "Direct Equity or PMS"
+     | "Mutual Fund Advisory"
+     | "Insurance Advisory"
+     | "Portfolio Advisory Services";
    
    export type AudienceType =
      | "Salaried"
@@ -915,12 +920,12 @@
         advisorName: "Ketan Kiran Gogte",
         principalAdvisor: "Ketan Kiran Gogte",
         reg: "SEBI RIA REG NO: INA000009649",
-        photo: "/advisors/ketan-gogte.jpg",
+        photo: "/advisors/ketan-gogte.svg",
         location: "Pune, Maharashtra",
         tagline: "Advising working professionals and business owners on Financial planning, Long term investing and Portfolio advisory.",
         videoUrl: "https://www.youtube.com/embed/R96BWUXPeOE",
     
-        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Funds", "Stock Investments", "Investment Portfolio Review"],
+        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Funds", "Stock Investments", "Investment Portfolio Review", "NRI Financial Services", "Portfolio Advisory Services"],
         audience: ["Professionals", "Business Owners", "Families", "NRIs"],
     
         about:
@@ -967,14 +972,17 @@
         ],
     
         faqs: [
-          { question: "How does Ketan view the role of a Financial plan?", answer: "Financial plan has to be a Life plan. It should be a dynamic document rather than a static one. It should help an individual or a family take decisions and simulate the scenarios in order to anticipate the impact of certain events on the finances so that they are better prepared to take a decision." },
+          { question: "How does Ketan view the role of a Financial plan?", answer: "Financial plan has to be a Life plan. It should be a dynamic document rather than a static one. It should help an individual or a family take decisions and simulate the scenarios in order to anticipate the impact of certain events (for e.g. taking on a Home loan or Going on a foreign vacation in a particular year) on the finances so that they are better prepared to take a decision. It should highlight the gap between what an individual or a family is currently doing and what needs to be done in order to achieve their Goals." },
           { question: "Are the Advisory Services Customized as per an Individual’s needs?", answer: "Yes the Advisory services are customized based on one’s Goals, time horizon and risk profile. It’s a very close knit engagement between Ketan (The Advisor) and the client with regular interactions and timely reviews." },
-          { question: "Is the rationale for investment explained to the Client?", answer: "Yes, the rationale for making any investment decision is explained in detail to the client. Ketan wants to empower the client and wants him / her to take control of his / her finances and thus provides all necessary information required." },
-          { question: "Are portfolio reviews included in the scope of the engagement?", answer: "Yes, Ketan believes that whatever gets tracked and reviewed, get executed. Thus it is important to have reviews with clients on their portfolios at regular time intervals through the course of the engagement." },
-          { question: "Is the already existing investments portfolio of a client included in the scope of Advisory?", answer: "Yes, analysis of the existing client investment portfolio comprising of SEBI regulated products such as the listed Stocks, Mutual funds (MFs) and Exchange Traded Funds (ETFs) is included as part of the engagement." }
+          { question: "Is the rationale for investment explained to the Client?", answer: "Yes, the rationale for making any investment decision is explained in detail to the client. Ketan wants to empower the client and wants him / her to take control of his / her finances and thus provides all necessary information required from time to time for the client to do so." },
+          { question: "Are portfolio reviews included in the scope of the engagement?", answer: "Yes, Ketan believes that whatever gets tracked and reviewed, get executed. Thus it is important to have reviews with clients on their portfolios at regular time intervals through the course of the engagement. It brings discipline and consistency." },
+          { question: "Is the already existing investments portfolio of a client included in the scope of Advisory?", answer: "Yes, analysis of the existing client investment portfolio comprising of SEBI regulated products such as the listed Stocks, Mutual funds (MFs) and Exchange Traded Funds (ETFs) is included as part of the engagement." },
+          { question: "What is not included as part of the Advisory scope? ", answer: "Any sort of short term trading in listed stocks, Futures & Options or Derivatives, Commodities trading, Forex, Crypto currencies, Real Estate and Overseas direct equities and unlisted stocks are excluded from the scope of the Advisory engagement." }
+
         ],
     
         clientTypePills: ["Professionals", "Business Owners", "NRIs"],
+        idealClientDescription: "Ketan primarily works with Individuals and families. He has been advising both working professionals and business owners. Clientele includes NRIs as well.",
       },
     
       /* ----------------------- Advisor 11 ----------------------- */
@@ -984,11 +992,11 @@
         advisorName: "Jay Sheth",
         principalAdvisor: "Jay Sheth",
         reg: "SEBI RIA REG NO: INA000019062",
-        photo: "/advisors/jay-sheth.jpg",
+        photo: "/advisors/jay-sheth.svg",
         location: "Mumbai, Maharashtra",
         tagline: "Assisting Individuals build and preserve their Wealth through smart, research driven financial strategies and products.",
     
-        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Funds", "Stock Investments", "Insurance", "Tax Planning", "NRI Services", "Estate Planning"],
+        specializations: ["Comprehensive Financial Planning", "Goal-based Planning", "Retirement Planning", "Mutual Fund Advisory", "Stock Investments", "Insurance Advisory", "Tax Planning", "NRI Services", "NRI Financial Services", "Estate Planning", "Direct Equity or PMS"],
         audience: ["Professionals", "Retired", "NRIs"],
     
         about:
@@ -1018,9 +1026,9 @@
         ],
     
         testimonials: [
-          { text: "The mutual fund portfolio review done by Jay was an eye opener for me. He clearly showed me the cost of going through an agent. He also showed me how to tie in my investments with specific goals.", author: "High Court Lawyer - Mumbai" },
-          { text: "Jay assisted me in transitioning my investments from MF agent to direct schemes. Apart from the saving in commissions, I am more confident about where my investments are being made.", author: "Primary Teacher - Mumbai" },
-          { text: "Your comprehensive approach, which included a thorough review of my assets, goals, and insurance needs, provided me with a clear roadmap for her financial future.", author: "IT Consultant - UAE" }
+          { text: "The mutual fund portfolio review done by Jay was an eye opener for me. He clearly showed me the cost of going through an agent. He also showed me how to tie in my investments with specific goals. The attention and time he gave was refreshing.", author: "High Court Lawyer - Mumbai" },
+          { text: "Jay assisted me in transitioning my investments from MF agent to direct schemes. Apart from the saving in commissions, I am more confident about where my investments are being made and how I will reach a corpus to be financially independent.", author: "Primary Teacher - Mumbai" },
+          { text: "I wanted to take a moment to express my sincere appreciation for your help in developing my financial plan. Your comprehensive approach, which included a thorough review of my assets, goals, and insurance needs, provided me with a clear roadmap for her financial future.", author: "IT Consultant - UAE" }
         ],
     
         videoUrl: "https://www.youtube.com/embed/v-m-Thcwv94",
@@ -1040,10 +1048,11 @@
         faqs: [
           { question: "Do you cater to clients outside of Mumbai?", answer: "Yes, we cater to clients across India and NRIs as well" },
           { question: "How do you charge fees? Is it a % of AUA?", answer: "We only charge a flat fee. We have two plans in which the offering and pricing varies. For customized plans we provide a separate quotation" },
-          { question: "What do we get in a typical engagement?", answer: "A standard engagement would consist of 2-4 Microsoft Teams calls, a written report, an excel financial plan, and access to our in-house Mutual Fund model." }
+          { question: "What do we get in a typical engagement?", answer: "A standard engagement would consist of 2-4 Microsoft Teams calls over which the financial plan is prepared and discussed. Post this, we provide:\n\n1. A written report\n2. A financial plan in excel which clients can use to run iterations on variables\n3. Access to our in-house Mutual Fund model" }
         ],
     
         clientTypePills: ["Professionals", "NRIs", "Retirees"],
+        idealClientDescription: "We work with professionals across all career stages from beginner to retirees. Though we are Mumbai based we cater to NRIs and Clients across India.",
       },
     // Add bulk advisors using the template system
     ...bulkAdvisorData.map(data => createAdvisorProfile(data))

@@ -249,7 +249,7 @@ export default function AdvisorDetailPage({
                 />
               </summary>
               <hr className="-mx-4 my-2 h-px w-[calc(100%+2rem)] border-0 bg-spring-green" />
-              <p className="text-sm text-[#272A2B]">{answer}</p>
+              <p className="text-sm text-[#272A2B] whitespace-pre-line">{answer}</p>
             </details>
           ))}
         </div>
