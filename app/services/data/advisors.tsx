@@ -711,9 +711,14 @@
       },
       cta: [
         {
-          text: "Book a Call",
+          text: "Get in Touch",
           href: "https://wa.me/9833310722",
           variant: "primary"
+        },
+        {
+          text: "Visit Website",
+          href: "https://share.google/lnBnouVqEP7htsYKq",
+          variant: "secondary"
         }
       ],
       "clientTypePills": [
@@ -965,7 +970,7 @@
     
         cta: [
           {
-            text: "Schedule Meeting",
+            text: "Get in Touch",
             href: "https://wa.me/919158911324",
             variant: "primary"
           }
@@ -992,7 +997,7 @@
         advisorName: "Jay Sheth",
         principalAdvisor: "Jay Sheth",
         reg: "SEBI RIA REG NO: INA000019062",
-        photo: "/advisors/jay-sheth.svg",
+        photo: "/advisors/jay-sheth.jpeg",
         location: "Mumbai, Maharashtra",
         tagline: "Assisting Individuals build and preserve their Wealth through smart, research driven financial strategies and products.",
     
@@ -1039,9 +1044,14 @@
     
         cta: [
           {
-            text: "Book a Call",
-            href: "https://www.shwealth.in",
+            text: "Get in Touch",
+            href: "https://wa.me/918369460917",
             variant: "primary"
+          },
+          {
+            text: "Visit Website",
+            href: "https://www.shwealth.in",
+            variant: "secondary"
           }
         ],
     
