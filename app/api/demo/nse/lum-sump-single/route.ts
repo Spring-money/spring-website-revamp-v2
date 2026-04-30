@@ -1,35 +1,30 @@
+import { apiFetch } from "../../http-client";
+
 interface RetirementCalculatorPayload {
-  // Add specific payload fields here based on your actual payload structure
-  [key: string]: any; // This is a temporary type, replace with actual payload structure
+  [key: string]: any;
 }
 
-interface RetirementCalculatorResponse {
-  // Add specific response fields here based on your actual response structure
-  [key: string]: any; // This is a temporary type, replace with actual response structure
-}
 export async function POST(request: Request): Promise<Response> {
   try {
     const payload: RetirementCalculatorPayload = await request.json();
-    const response = await fetch(
-      "https://uatapi.springmoneyapisuite.money/nse-transaction/purchase",
+    const response = await apiFetch(
+      `${process.env.APISUITE_BASE_URL}/nse-transaction/purchase`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-      }
+      },
     );
 
     if (!response.ok) {
-        console.log("error occures while fetching ",response)
-      return new Response(JSON.stringify({ error: `Failed to get` }), {
+      const errorBody = response.text();
+      console.error("Upstream error", response.status, errorBody);
+      return new Response(JSON.stringify({ error: errorBody }), {
         status: response.status,
       });
     }
 
-    const data: RetirementCalculatorResponse = await response.json();
-    return Response.json(data);
+    return Response.json(response.json());
   } catch (error) {
     console.error("Error in POST request:", error);
     return new Response(JSON.stringify({ error: (error as Error).message }), {
