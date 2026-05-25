@@ -511,8 +511,14 @@ export default function AdvisorDetailPage({
                 About {advisorName}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-6">
               <p className="text-[#272A2B]">{advisor.description}</p>
+              {advisor.philosophy && (
+                <div className="rounded-lg border-l-4 border-spring-green bg-[#F5FFFB] px-5 py-4">
+                  <h3 className="mb-2 text-base font-semibold text-spring-green">Our Philosophy</h3>
+                  <p className="text-[#272A2B]">{advisor.philosophy}</p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>

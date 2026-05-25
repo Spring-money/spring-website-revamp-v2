@@ -18,6 +18,7 @@
      | "Evidence Based Investing"
      | "Retirement Planning"
      | "Goal-based Planning"
+     | "Goal-based Investing"
      | "NRI Financial Planning"
      | "Investment Portfolio Review"
      | "Financial Well-being for Corporates"
@@ -40,7 +41,9 @@
      | "Direct Equity or PMS"
      | "Mutual Fund Advisory"
      | "Insurance Advisory"
-     | "Portfolio Advisory Services";
+     | "Portfolio Advisory Services"
+     | "Investment Advisory"
+     | "Portfolio Management";
    
    export type AudienceType =
      | "Salaried"
@@ -54,7 +57,9 @@
      | "Young Professionals"
      | "Salaried Professionals"
      | "IT Professionals"
-     | "Fee-Only Planning";
+     | "Fee-Only Planning"
+     | "Entrepreneurs"
+     | "Family business individuals";
    
    export type Location =
      | "Mumbai, Maharashtra"
@@ -121,6 +126,7 @@
    
      about: string;
      description: string;
+     philosophy?: string;
    
      services: Service[];
      feeStructure: FeeItem[];
@@ -1078,14 +1084,14 @@
     
         specializations: [
           "Comprehensive Financial Planning",
-          "Goal-based Planning",
+          "Goal-based Investing",
           "Retirement Planning",
           "Mutual Fund Advisory",
-          "Direct Equity or PMS",
+          // "Direct Equity or PMS",
           "Insurance Advisory",
           "Tax Planning",
           "NRI Financial Services",
-          "Estate Planning"
+          // "Estate Planning"
         ],
         audience: ["Professionals", "Families", "HNI"],
     
@@ -1175,25 +1181,24 @@ The practice operates on a fee-only model, so the focus remains on what works fo
     
         specializations: [
           "Comprehensive Financial Planning",
-          "Goal-based Planning",
+          "Goal-based Investing",
           "Retirement Planning",
           "Mutual Fund Advisory",
-          "Direct Equity or PMS",
-          "Insurance Advisory",
-          "Tax Planning",
+          // "Direct Equity or PMS",
+          // "Insurance Advisory",
+          // "Tax Planning",
           "NRI Financial Services",
-          "Estate Planning",
-          "Wealth Management"
+          // "Estate Planning",
+          "Investment Advisory",
+          "Portfolio Management"
         ],
-        audience: ["Professionals", "Business Owners", "HNI"],
+        audience: ["Professionals", "Entrepreneurs", "Family business individuals"],
     
         about:
           "At Redwoods Wealth, we empower busy professionals and business owners to pursue their ambitions without the burden of investment decisions, offering transparent, fee-only advisory.",
-        description: `At Redwoods Wealth, we empower busy professionals and business owners to pursue their ambitions without the burden of investment decisions. As a SEBI-registered individual RIA based in Mumbai, our firm is dedicated to delivering transparent, fee-only advisory focused on mutual fund strategies and disciplined asset allocation. You build your career or business, we build your portfolio with clarity and precision.
-
-Our Philosophy
-
-We understand the demands of a high-stakes professional life. Whether you're scaling your company, advancing in corporate ranks, or honing specialized skills, your time is your most valuable asset. That's why Redwoods Wealth takes investment management off your plate. Our fiduciary commitment means we always prioritize your interests: no commissions, no product pushing, just straightforward advice tailored to your goals, risk tolerance, and life stage. We cut through market noise to focus on long-term growth, using data-driven insights for optimal portfolio construction.`,
+        description: `At Redwoods Wealth, we empower busy professionals and business owners to pursue their ambitions without the burden of investment decisions. As a SEBI-registered individual RIA based in Mumbai, our firm is dedicated to delivering transparent, fee-only advisory focused on mutual fund strategies and disciplined asset allocation. You build your career or business, we build your portfolio with clarity and precision.`,
+    
+        philosophy: `We understand the demands of a high-stakes professional life. Whether you're scaling your company, advancing in corporate ranks, or honing specialized skills, your time is your most valuable asset. That's why Redwoods Wealth takes investment management off your plate. Our fiduciary commitment means we always prioritize your interests: no commissions, no product pushing, just straightforward advice tailored to your goals, risk tolerance, and life stage. We cut through market noise to focus on long-term growth, using data-driven insights for optimal portfolio construction.`,
     
         services: [
           {
@@ -1236,9 +1241,9 @@ We understand the demands of a high-stakes professional life. Whether you're sca
           }
         ],
     
-        clientTypePills: ["Professionals", "Entrepreneurs", "HNIs"],
+        clientTypePills: ["Professionals", "Entrepreneurs", "Family business individuals"],
         idealClientDescription:
-          "Busy professionals, corporate executives, and business owners seeking transparent, fee-only investment advisory without the burden of day-to-day portfolio decisions.",
+          "Busy professionals, entrepreneurs, and family business individuals seeking transparent, fee-only investment advisory without the burden of day-to-day portfolio decisions.",
       },
     // Add bulk advisors using the template system
     ...bulkAdvisorData.map(data => createAdvisorProfile(data))
@@ -1258,6 +1263,9 @@ We understand the demands of a high-stakes professional life. Whether you're sca
      "Financial Planning",
      "Wealth Management",
      "Debt Management",
+     "Goal-based Investing",
+     "Investment Advisory",
+     "Portfolio Management",
    ];
    
    export const audienceTypes: AudienceType[] = [
@@ -1267,6 +1275,8 @@ We understand the demands of a high-stakes professional life. Whether you're sca
      "HNI",
      "NRIs",
      "Young Professionals",
+     "Entrepreneurs",
+     "Family business individuals",
    ];
    
    export const locations: Location[] = [
