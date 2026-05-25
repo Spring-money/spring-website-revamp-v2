@@ -89,7 +89,7 @@ export default function AdvisorDetailPage({
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
   const faqs = advisor.faqs ?? [];
   const advisorVideo = advisor.videoUrl;
-  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "9";
+  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "9" || advisor.id === "12" || advisor.id === "13";
 
   // Add FAQ videos only for specific advisor IDs
   const faqVideos = (() => {
@@ -327,6 +327,16 @@ export default function AdvisorDetailPage({
     // Special case for Jay Sheth (advisor 11)
     if (advisorId === "11") {
       return ["SEBI Registered Investment Advisor", "MBA", "ACCA"];
+    }
+    
+    // Special case for Phi Wealth (advisor 12)
+    if (advisorId === "12") {
+      return ["SEBI Registered Investment Advisor", "Former Investment Banker"];
+    }
+    
+    // Special case for Redwoods Wealth (advisor 13)
+    if (advisorId === "13") {
+      return ["SEBI Registered Investment Advisor", "CFA® Charterholder"];
     }
     
     // Return combined credentials
