@@ -1155,7 +1155,7 @@ The practice operates on a fee-only model, so the focus remains on what works fo
           {
             question: "How do I get started?",
             answer:
-              "The first step is a discovery call — no commitment required. We'll understand your situation, walk you through our approach, and let you decide if it's a fit. You can book directly through our website at https://phiwealth.in/contact.",
+              "The first step is a discovery call — no commitment required. We'll understand your situation, walk you through our approach, and let you decide if it's a fit. You can book directly through our website at https://phiwealth.in/contact",
           },
           {
             question: "I've never worked with a financial advisor before and honestly find this overwhelming - is that okay?",
