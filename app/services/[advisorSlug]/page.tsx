@@ -89,7 +89,7 @@ export default function AdvisorDetailPage({
   const testimonials = (advisor.testimonials ?? []) as Testimonial[];
   const faqs = advisor.faqs ?? [];
   const advisorVideo = advisor.videoUrl;
-  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "9";
+  const isSpecial = advisor.id === "1" || advisor.id === "7" || advisor.id === "9" || advisor.id === "12" || advisor.id === "13";
 
   // Add FAQ videos only for specific advisor IDs
   const faqVideos = (() => {
@@ -249,7 +249,23 @@ export default function AdvisorDetailPage({
                 />
               </summary>
               <hr className="-mx-4 my-2 h-px w-[calc(100%+2rem)] border-0 bg-spring-green" />
-              <p className="text-sm text-[#272A2B] whitespace-pre-line">{answer}</p>
+              <p className="text-sm text-[#272A2B] whitespace-pre-line">
+                {answer.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+                  /^https?:\/\//.test(part) ? (
+                    <a
+                      key={i}
+                      href={part}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-spring-green underline hover:opacity-80"
+                    >
+                      {part}
+                    </a>
+                  ) : (
+                    part
+                  )
+                )}
+              </p>
             </details>
           ))}
         </div>
@@ -327,6 +343,16 @@ export default function AdvisorDetailPage({
     // Special case for Jay Sheth (advisor 11)
     if (advisorId === "11") {
       return ["SEBI Registered Investment Advisor", "MBA", "ACCA"];
+    }
+    
+    // Special case for Phi Wealth (advisor 12)
+    if (advisorId === "12") {
+      return ["SEBI Registered Investment Advisor", "Former Investment Banker"];
+    }
+    
+    // Special case for Redwoods Wealth (advisor 13)
+    if (advisorId === "13") {
+      return ["SEBI Registered Investment Advisor", "CFA® Charterholder"];
     }
     
     // Return combined credentials
@@ -501,8 +527,14 @@ export default function AdvisorDetailPage({
                 About {advisorName}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-6">
               <p className="text-[#272A2B]">{advisor.description}</p>
+              {advisor.philosophy && (
+                <div className="rounded-lg border-l-4 border-spring-green bg-[#F5FFFB] px-5 py-4">
+                  <h3 className="mb-2 text-base font-semibold text-spring-green">Our Philosophy</h3>
+                  <p className="text-[#272A2B]">{advisor.philosophy}</p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>

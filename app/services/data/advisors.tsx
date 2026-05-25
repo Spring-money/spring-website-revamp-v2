@@ -18,6 +18,7 @@
      | "Evidence Based Investing"
      | "Retirement Planning"
      | "Goal-based Planning"
+     | "Goal-based Investing"
      | "NRI Financial Planning"
      | "Investment Portfolio Review"
      | "Financial Well-being for Corporates"
@@ -40,7 +41,9 @@
      | "Direct Equity or PMS"
      | "Mutual Fund Advisory"
      | "Insurance Advisory"
-     | "Portfolio Advisory Services";
+     | "Portfolio Advisory Services"
+     | "Investment Advisory"
+     | "Portfolio Management";
    
    export type AudienceType =
      | "Salaried"
@@ -54,11 +57,14 @@
      | "Young Professionals"
      | "Salaried Professionals"
      | "IT Professionals"
-     | "Fee-Only Planning";
+     | "Fee-Only Planning"
+     | "Entrepreneurs"
+     | "Family business individuals";
    
    export type Location =
      | "Mumbai, Maharashtra"
      | "Delhi"
+     | "New Delhi"
      | "Bengaluru, Karnataka"
      | "Hyderabad, Telangana"
      | "Chennai, Tamil Nadu"
@@ -120,6 +126,7 @@
    
      about: string;
      description: string;
+     philosophy?: string;
    
      services: Service[];
      feeStructure: FeeItem[];
@@ -1064,6 +1071,180 @@
         clientTypePills: ["Professionals", "NRIs", "Retirees"],
         idealClientDescription: "We work with professionals across all career stages from beginner to retirees. Though we are Mumbai based we cater to NRIs and Clients across India.",
       },
+      /* ----------------------- Advisor 12 ----------------------- */
+      {
+        id: "12",
+        firmName: "Phi Wealth",
+        advisorName: "Palnika Hemnani",
+        principalAdvisor: "Palnika Hemnani",
+        reg: "SEBI RIA REG NO: INA000021605",
+        photo: "/advisors/palnika-hemnani.png",
+        location: "New Delhi",
+        tagline: "Advice for the way your life actually unfolds.",
+    
+        specializations: [
+          "Comprehensive Financial Planning",
+          "Goal-based Investing",
+          "Retirement Planning",
+          "Mutual Fund Advisory",
+          // "Direct Equity or PMS",
+          "Insurance Advisory",
+          "Tax Planning",
+          "NRI Financial Services",
+          // "Estate Planning"
+        ],
+        audience: ["Professionals", "Families", "HNI"],
+    
+        about:
+          "Phi Wealth is built around the unique financial realities that women often navigate. Advice here is holistic by design and operates on a fee-only model.",
+        description: `Phi Wealth, founded by former investment banker Palnika Hemnani, is based on a simple conviction: you deserve advice that reflects your life as it is, not as it is assumed to be.
+
+From caregiving responsibilities to uneven entrepreneurship, from pay gaps to longer lifespans, women often navigate financial realities that require thoughtful, specialized guidance. Most advisory practices are not built around these realities. Phi Wealth is.
+
+Advice here is holistic by design. Your investments, cash flows, insurance, and long-term goals are considered together, so you can make decisions with clarity and context, not in isolation.
+
+The practice operates on a fee-only model, so the focus remains on what works for you. No commissions, no product push, no hidden incentives. Just advice that is thoughtful, practical, and designed to stay relevant as your life evolves.`,
+    
+        services: [
+          {
+            name: "Comprehensive Financial Planning",
+            description:
+              "Holistic planning covering investments, cash flows, insurance, and long-term goals.",
+          },
+          {
+            name: "Women-Centric Wealth Advisory",
+            description:
+              "Thoughtful, specialized guidance designed around the financial realities of women professionals.",
+          },
+          {
+            name: "Fee-Only Investment Advisory",
+            description:
+              "Conflict-free and unbiased investment advisory with zero commissions and product push.",
+          },
+        ],
+    
+        feeStructure: [
+          { service: "Flat Fee / Retainer", amount: "Available on request" },
+        ],
+    
+        testimonials: [],
+    
+        sebiRegistrationNumber: "INA000021605",
+        verifiedBySpring: true,
+        grievanceOfficer: { name: "Palnika Hemnani", email: "compliance@phiwealth.in" },
+    
+        cta: [
+          {
+            text: "Schedule Meeting",
+            href: "https://zoho139.zohobookings.in/#/421495000000045050",
+            variant: "primary"
+          },
+          {
+            text: "Visit Website",
+            href: "https://phiwealth.in",
+            variant: "secondary"
+          }
+        ],
+    
+        faqs: [
+          {
+            question: "Is Phi Wealth's advice different for women clients?",
+            answer:
+              "The financial planning fundamentals are the same for everyone, but the context often isn't. Women professionals frequently navigate career breaks, unequal pay trajectories, longer retirement horizons, and financial decisions made within a family dynamic where they may not have historically been the primary voice. Phi Wealth is built with that context in mind: we make sure women clients are active, informed participants in their own financial plan, not just co-signatories on someone else's.",
+          },
+          {
+            question: "How do I get started?",
+            answer:
+              "The first step is a discovery call — no commitment required. We'll understand your situation, walk you through our approach, and let you decide if it's a fit. You can book directly through our website at https://phiwealth.in/contact",
+          },
+          {
+            question: "I've never worked with a financial advisor before and honestly find this overwhelming - is that okay?",
+            answer:
+              "That's exactly who we're built for. You don't need to have your finances in order before you speak with us. That's our job. The first conversation is just that: a conversation. No jargon, no pressure, no judgment about where you're starting from.",
+          }
+        ],
+    
+        clientTypePills: ["Women Professionals", "Families", "HNIs"],
+        idealClientDescription:
+          "Women professionals, couples and families, and HNIs seeking thoughtful, specialized, and holistic fee-only advice.",
+      },
+      /* ----------------------- Advisor 13 ----------------------- */
+      {
+        id: "13",
+        firmName: "Redwoods Wealth",
+        advisorName: "Viral Parekh",
+        principalAdvisor: "Viral Parekh",
+        reg: "SEBI RIA REG NO: INA000022039",
+        photo: "/advisors/viral-parekh.jpg",
+        location: "Mumbai, Maharashtra",
+        tagline: "You build your career, we build your portfolio.",
+    
+        specializations: [
+          "Comprehensive Financial Planning",
+          "Goal-based Investing",
+          "Retirement Planning",
+          "Mutual Fund Advisory",
+          // "Direct Equity or PMS",
+          // "Insurance Advisory",
+          // "Tax Planning",
+          "NRI Financial Services",
+          // "Estate Planning",
+          "Investment Advisory",
+          "Portfolio Management"
+        ],
+        audience: ["Professionals", "Entrepreneurs", "Family business individuals"],
+    
+        about:
+          "At Redwoods Wealth, we empower busy professionals and business owners to pursue their ambitions without the burden of investment decisions, offering transparent, fee-only advisory.",
+        description: `At Redwoods Wealth, we empower busy professionals and business owners to pursue their ambitions without the burden of investment decisions. As a SEBI-registered individual RIA based in Mumbai, our firm is dedicated to delivering transparent, fee-only advisory focused on mutual fund strategies and disciplined asset allocation. You build your career or business, we build your portfolio with clarity and precision.`,
+    
+        philosophy: `We understand the demands of a high-stakes professional life. Whether you're scaling your company, advancing in corporate ranks, or honing specialized skills, your time is your most valuable asset. That's why Redwoods Wealth takes investment management off your plate. Our fiduciary commitment means we always prioritize your interests: no commissions, no product pushing, just straightforward advice tailored to your goals, risk tolerance, and life stage. We cut through market noise to focus on long-term growth, using data-driven insights for optimal portfolio construction.`,
+    
+        services: [
+          {
+            name: "Investment Advisory",
+            description:
+              "Disciplined asset allocation and mutual fund advisory focused on long-term growth and capital appreciation.",
+          },
+          {
+            name: "Comprehensive Financial Planning",
+            description:
+              "Fiduciary and conflict-free financial planning aligned with your goals, risk tolerance, and life stage.",
+          },
+          {
+            name: "Portfolio Management & Advisory",
+            description:
+              "Straightforward, commission-free strategies tailored to scale and preserve your wealth.",
+          },
+        ],
+    
+        feeStructure: [
+          { service: "Flat Fee / Retainer", amount: "Available on request" },
+        ],
+    
+        testimonials: [],
+    
+        sebiRegistrationNumber: "INA000022039",
+        verifiedBySpring: true,
+        grievanceOfficer: { name: "Viral Parekh", email: "viralparekh724@gmail.com" },
+    
+        cta: [
+          {
+            text: "Get in Touch",
+            href: "https://wa.me/919137925174",
+            variant: "primary"
+          },
+          {
+            text: "Visit Website",
+            href: "https://redwoodswealth.com",
+            variant: "secondary"
+          }
+        ],
+    
+        clientTypePills: ["Professionals", "Entrepreneurs", "Family business individuals"],
+        idealClientDescription:
+          "Busy professionals, entrepreneurs, and family business individuals seeking transparent, fee-only investment advisory without the burden of day-to-day portfolio decisions.",
+      },
     // Add bulk advisors using the template system
     ...bulkAdvisorData.map(data => createAdvisorProfile(data))
    ];
@@ -1082,6 +1263,9 @@
      "Financial Planning",
      "Wealth Management",
      "Debt Management",
+     "Goal-based Investing",
+     "Investment Advisory",
+     "Portfolio Management",
    ];
    
    export const audienceTypes: AudienceType[] = [
@@ -1091,11 +1275,14 @@
      "HNI",
      "NRIs",
      "Young Professionals",
+     "Entrepreneurs",
+     "Family business individuals",
    ];
    
    export const locations: Location[] = [
      "Mumbai, Maharashtra",
      "Delhi",
+     "New Delhi",
      "Bengaluru, Karnataka",
      "Hyderabad, Telangana",
      "Chennai, Tamil Nadu",
