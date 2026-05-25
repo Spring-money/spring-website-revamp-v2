@@ -249,7 +249,23 @@ export default function AdvisorDetailPage({
                 />
               </summary>
               <hr className="-mx-4 my-2 h-px w-[calc(100%+2rem)] border-0 bg-spring-green" />
-              <p className="text-sm text-[#272A2B] whitespace-pre-line">{answer}</p>
+              <p className="text-sm text-[#272A2B] whitespace-pre-line">
+                {answer.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+                  /^https?:\/\//.test(part) ? (
+                    <a
+                      key={i}
+                      href={part}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-spring-green underline hover:opacity-80"
+                    >
+                      {part}
+                    </a>
+                  ) : (
+                    part
+                  )
+                )}
+              </p>
             </details>
           ))}
         </div>
